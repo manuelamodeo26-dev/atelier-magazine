@@ -1,0 +1,9 @@
+{
+  "name": "ATELIER — Fashion, Design & Culture",
+  "short_name": "ATELIER",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f1eee6",
+  "theme_color": "#f1eee6",
+  "description": "Rivista indipendente di moda, design e cultura."
+}
