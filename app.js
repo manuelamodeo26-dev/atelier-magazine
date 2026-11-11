@@ -42,7 +42,7 @@
   }
   async function loadArticles() {
     try {
-      const response = await fetch('data/articles.json', {cache:'no-store'});
+      const response = await fetch('./data/articles.json', {cache:'no-store'});
       if (!response.ok) throw new Error('Archivio non disponibile');
       const data = await response.json();
       articles = Array.isArray(data.articles) ? data.articles : fallback;
