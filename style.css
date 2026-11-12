@@ -494,3 +494,12 @@ section[id] { scroll-margin-top: 100px; }
 #account-open span,#account-open strong,#account-open::first-line{color:#B51F1F!important;-webkit-text-fill-color:#B51F1F!important}
 #account-open{background:transparent!important;background-color:transparent!important;border:1px solid #B51F1F!important}
 #account-open:hover,#account-open:focus-visible{color:#8f1b1b!important;-webkit-text-fill-color:#8f1b1b!important;border-color:#8f1b1b!important;background:rgba(181,31,31,.06)!important}
+
+
+/* CONTROLLI TESTUALI ATELIER: solo testo e cuore rossi, nessun contenitore grafico */
+.account-dialog .account-actions .outline-button,#account-dialog .account-actions button,.account-actions .outline-button{background:transparent!important;background-color:transparent!important;border:0!important;border-color:transparent!important;box-shadow:none!important;border-radius:0!important;color:#B51F1F!important;-webkit-text-fill-color:#B51F1F!important;padding:10px 0!important}
+.account-dialog .account-actions .outline-button:hover,#account-dialog .account-actions button:hover,.account-actions .outline-button:hover{background:transparent!important;border:0!important;color:#8f1b1b!important;-webkit-text-fill-color:#8f1b1b!important;text-decoration:underline!important}
+.save-article,.like-article{background:transparent!important;background-color:transparent!important;border:0!important;border-color:transparent!important;border-radius:0!important;box-shadow:none!important;color:#B51F1F!important;-webkit-text-fill-color:#B51F1F!important;padding:10px 8px!important;outline-offset:3px}
+.save-article:hover,.like-article:hover,.save-article.is-saved,.like-article.is-liked{background:transparent!important;background-color:transparent!important;border:0!important;border-color:transparent!important;box-shadow:none!important;color:#B51F1F!important;-webkit-text-fill-color:#B51F1F!important;text-decoration:none!important}
+.save-article:focus-visible,.like-article:focus-visible{outline:2px solid #B51F1F!important;outline-offset:3px!important}
+.save-article [data-like-count],.like-article [data-like-count]{color:#B51F1F!important;-webkit-text-fill-color:#B51F1F!important}
