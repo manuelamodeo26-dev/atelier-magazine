@@ -87,9 +87,12 @@ def is_valid_editorial_summary(summary, level):
     if level not in ("standard", "approfondimento") or not isinstance(summary, str):
         return False
     paragraphs = [part.strip() for part in re.split(r"\n\s*\n", summary) if part.strip()]
+    words = _word_count(summary)
+    # Accetta il vecchio formato durante la migrazione dell'archivio.
+    if 2 <= len(paragraphs) <= 3 and 120 <= words <= 180:
+        return True
     if not 4 <= len(paragraphs) <= 6:
         return False
-    words = _word_count(summary)
     lower, upper = (450, 600) if level == "approfondimento" else (300, 400)
     return lower <= words <= upper
 
@@ -114,11 +117,10 @@ def generate_editorial_summary(article, source_text):
         "inventare fatti, date, numeri, citazioni, intenzioni o conseguenze. Se un dettaglio "
         "non è presente, omettilo. Distingui chiaramente fatti e interpretazioni. Non aggiungere "
         "commenti generici per raggiungere la lunghezza.\n\n"
-        "Valuta prima la rilevanza: usa livello 'approfondimento' soltanto se la fonte contiene "
-        "sviluppi sostanziali, più elementi verificabili o un tema di particolare rilievo; in "
-        "quel caso scrivi 450-600 parole. Per una notizia ordinaria usa livello 'standard' e "
-        "scrivi 300-400 parole. Quando produci una sintesi usa 4-6 paragrafi, senza titolo, elenchi o "
-        "sottotitoli. Apri con il fatto principale e il suo contesto; sviluppa i dettagli "
+        "Scrivi in modo sintetico: 120-180 parole totali, divise in 2-3 paragrafi brevi. "
+        "Anche gli approfondimenti devono restare entro 180 parole: seleziona soltanto i dettagli "
+        "più importanti, senza ripetizioni e senza introduzioni generiche. Non usare titoli, elenchi "
+        "o sottotitoli nella sintesi. Apri con il fatto principale e il suo contesto; scegli i dettagli "
         "concreti; spiega la rilevanza per il settore solo se supportata dalla fonte; chiudi "
         "con una conclusione informativa, non promozionale. Se la fonte è troppo povera per "
         "una sintesi affidabile, restituisci esattamente JSON con level 'standard' e paragraphs come array vuoto. Non aggiungere testo fuori dal JSON.\n\n"
@@ -191,16 +193,12 @@ def generate_editorial_summary(article, source_text):
                     break
                 paragraphs = [re.sub(r"\s+", " ", str(p)).strip() for p in paragraphs]
                 paragraphs = [p for p in paragraphs if p]
-                if not 4 <= len(paragraphs) <= 6:
+                if not 2 <= len(paragraphs) <= 3:
                     print("Groq {}: numero di paragrafi non valido.".format(model))
                     break
                 summary = "\n\n".join(paragraphs)
                 words = _word_count(summary)
-                if level == "approfondimento" and 300 <= words <= 400:
-                    print("Groq {}: sintesi riclassificata come standard ({} parole).".format(model, words))
-                    level = "standard"
-                lower, upper = (450, 600) if level == "approfondimento" else (300, 400)
-                if not lower <= words <= upper:
+                if not 120 <= words <= 180:
                     print("Groq {}: sintesi scartata ({} parole).".format(model, words))
                     break
                 if model != MODEL:
