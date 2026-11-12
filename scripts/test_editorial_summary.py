@@ -76,7 +76,7 @@ class EditorialSummaryTests(unittest.TestCase):
                 self._article(), "Testo della fonte " * 100
             )
         self.assertEqual(level, "standard")
-        self.assertEqual(editorial_summary._word_count(summary), 360)
+        self.assertEqual(editorial_summary._word_count(summary), 270)
         sleep.assert_called_once_with(7)
 
     def test_falls_back_to_smaller_model_on_quota_exhaustion(self):
@@ -97,7 +97,7 @@ class EditorialSummaryTests(unittest.TestCase):
                 self._article(), "Testo della fonte " * 100
             )
         self.assertEqual(level, "standard")
-        self.assertEqual(editorial_summary._word_count(summary), 150)
+        self.assertEqual(editorial_summary._word_count(summary), 270)
         self.assertEqual(mocked.call_count, 2)
         second_payload = json.loads(mocked.call_args_list[1].args[0].data.decode("utf-8"))
         self.assertEqual(second_payload["model"], "openai/gpt-oss-20b")
@@ -114,7 +114,7 @@ class EditorialSummaryTests(unittest.TestCase):
                 self._article(), "Testo della fonte " * 100
             )
         self.assertEqual(level, "approfondimento")
-        self.assertEqual(editorial_summary._word_count(summary), 150)
+        self.assertEqual(editorial_summary._word_count(summary), 360)
 
     def test_quota_exhaustion_stops_repeated_requests_for_the_run(self):
         error_body = json.dumps({
