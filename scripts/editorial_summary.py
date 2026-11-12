@@ -108,7 +108,7 @@ def generate_editorial_summary(article, source_text):
         "con una conclusione informativa, non promozionale. Se la fonte è troppo povera per "
         "una sintesi affidabile, restituisci esattamente JSON con level 'standard' e paragraphs come array vuoto. Non aggiungere testo fuori dal JSON.\n\n"
         "Rispondi esclusivamente in JSON valido con le chiavi 'level' (standard o approfondimento) "
-        "e 'paragraphs' (array di 3-5 paragrafi).\n\n"
+        "e 'paragraphs' (array di 4-6 paragrafi).\n\n"
         "TITOLO: " + title + "\n"
         "FONTE: " + str(article.get("source") or "") + "\n"
         "MATERIALE DISPONIBILE:\n" + combined
@@ -117,7 +117,7 @@ def generate_editorial_summary(article, source_text):
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {
             "thinkingConfig": {"thinkingLevel": "low"},
-            "maxOutputTokens": 2200,
+            "maxOutputTokens": 3500,
             "responseMimeType": "application/json",
         },
     }
@@ -184,12 +184,12 @@ def generate_editorial_summary(article, source_text):
                     break
                 paragraphs = [re.sub(r"\s+", " ", str(p)).strip() for p in paragraphs]
                 paragraphs = [p for p in paragraphs if p]
-                if not 3 <= len(paragraphs) <= 5:
+                if not 4 <= len(paragraphs) <= 6:
                     print("Gemini {}: numero di paragrafi non valido.".format(model))
                     break
                 summary = "\n\n".join(paragraphs)
                 words = _word_count(summary)
-                lower, upper = (300, 450) if level == "approfondimento" else (180, 250)
+                lower, upper = (450, 600) if level == "approfondimento" else (300, 400)
                 if not lower <= words <= upper:
                     print("Gemini {}: sintesi scartata ({} parole).".format(model, words))
                     break
