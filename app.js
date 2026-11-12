@@ -46,8 +46,8 @@
     const source=article.source||'Editore non identificato';
     const author=article.author?'<p class="detail-byline">A cura di '+escapeHTML(article.author)+'</p>':'';
     const excerpt=article.excerpt
-      ?'<section class="detail-section"><p class="eyebrow">INFORMAZIONI E CONTESTO</p><p class="detail-excerpt">'+escapeHTML(article.excerpt)+'</p></section>'
-      :'<section class="detail-section"><p class="eyebrow">INFORMAZIONI E CONTESTO</p><p class="detail-muted">La fonte non ha fornito un testo di presentazione. ATELIER non aggiunge dettagli non verificati.</p></section>';
+      ?'<section class="detail-section"><p class="eyebrow">SINTESI FORNITA DALLA FONTE</p><p class="detail-excerpt">'+escapeHTML(article.excerpt)+'</p></section>'
+      :'<section class="detail-section"><p class="eyebrow">SINTESI FORNITA DALLA FONTE</p><p class="detail-muted">La fonte non ha fornito un testo di presentazione. ATELIER non aggiunge dettagli non verificati.</p></section>';
     const photo=image
       ?'<figure class="detail-figure"><img src="'+escapeHTML(image)+'" alt="Fotografia verificata: '+escapeHTML(article.title||'articolo')+'" referrerpolicy="no-referrer"><figcaption>Immagine verificata · '+escapeHTML(String(article.image_width||'')+(article.image_width?' × ':'')+String(article.image_height||''))+' px · '+escapeHTML(source)+'</figcaption></figure>'
       :'<div class="detail-no-image">IMMAGINE NON DISPONIBILE O NON VERIFICATA</div>';
