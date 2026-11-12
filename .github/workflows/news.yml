@@ -6,6 +6,7 @@ on:
     paths:
       - 'scripts/fetch_news.py'
       - 'scripts/editorial_summary.py'
+      - 'scripts/test_*.py'
       - '.github/workflows/news.yml'
   schedule:
     - cron: "17 */6 * * *"
