@@ -1,5 +1,5 @@
-const CACHE = 'atelier-v9';
-const CORE = ['./', './index.html', './style.css', './app.js', './account.js', './supabase-config.js', './article.html', './article-page.js', './data/articles.json', './manifest.webmanifest', './favicon.svg'];
+const CACHE = 'atelier-v10';
+const CORE = ['./', './index.html', './style.css', './app.js', './account.js', './supabase-config.js', './article.html', './article-page.js', './data/articles.json', './manifest.webmanifest', './favicon.svg', './community.html', './community.css', './community.js', './atelier-hub.html', './atelier-hub.css', './atelier-hub.js'];
 
 self.addEventListener('install', event => {
   event.waitUntil(
