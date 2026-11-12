@@ -32,6 +32,8 @@ jobs:
         uses: actions/setup-python@v6
         with:
           python-version: "3.x"
+      - name: Install image verification dependency
+        run: python -m pip install --disable-pip-version-check Pillow
       - name: Check Python syntax
         run: python -m py_compile scripts/*.py
       - name: Run editorial tests
