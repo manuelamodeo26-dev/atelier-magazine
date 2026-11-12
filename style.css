@@ -34,3 +34,5 @@
 .article-image{position:relative}.image-verified{position:absolute;left:10px;bottom:10px;padding:7px 9px;background:#f1eee6;color:#242321;font:9px var(--mono);letter-spacing:.06em}
 .article-image.image-unavailable{display:none}
 @media(max-width:600px){.article-dialog{width:100vw;max-width:none;max-height:94vh;padding:22px 18px;border-radius:0}.detail-title{font-size:42px}.detail-metadata{grid-template-columns:1fr;gap:6px}.detail-metadata strong{margin-bottom:9px}.detail-topline{font-size:8px}}
+
+.article-dialog button.text-link{appearance:none;border:0;background:transparent;padding:0;color:var(--ink);font:10px var(--mono);cursor:pointer;text-align:left}.article-dialog button.text-link:hover{color:var(--red)}
