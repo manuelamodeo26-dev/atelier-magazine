@@ -37,7 +37,7 @@
       '<div class="story-placeholder '+(index%3===0?'placeholder-red':index%3===1?'placeholder-cream':'placeholder-black')+'"><span>'+escapeHTML(String(category).toUpperCase())+'<br>RIVISTA</span><b>A/'+String(index+1).padStart(2,'0')+'</b></div>';
     const language=String(article.language||'').toLowerCase();
     const languageNote=language&&language!=='it'?' · LINGUA ORIGINALE '+escapeHTML(language.toUpperCase()):'';
-    return '<article class="story-card">'+visual+'<div class="story-meta">'+escapeHTML(categoryLabel(category))+' · '+formatDate(article.date)+' · '+escapeHTML(article.source||'ATELIER')+languageNote+'</div><h3>'+escapeHTML(article.title||'Senza titolo')+'</h3><p>'+escapeHTML(article.excerpt||'')+'</p>'+(url?'<a class="text-link card-link" href="'+escapeHTML(url)+'" target="_blank" rel="noopener noreferrer">LEGGI L’ARTICOLO ↗</a>':'')+'</article>';
+    return '<article class="story-card'+(index===0?' feature-card':'')+'">'+visual+'<div class="story-meta">'+escapeHTML(categoryLabel(category))+' · '+formatDate(article.date)+' · '+escapeHTML(article.source||'ATELIER')+languageNote+'</div><h3>'+escapeHTML(article.title||'Senza titolo')+'</h3><p>'+escapeHTML(article.excerpt||'')+'</p>'+(url?'<a class="text-link card-link" href="'+escapeHTML(url)+'" target="_blank" rel="noopener noreferrer">LEGGI L’ARTICOLO ↗</a>':'')+'</article>';
   }
   function visibleArticles(){
     return articles.filter(a=>activeFilter==='Tutti'||categoryOf(a.category)===activeFilter);
