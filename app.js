@@ -18,7 +18,7 @@
   }
   function categoryOf(value){
     const c=String(value||'').trim().toLowerCase();
-    if(c==='culture'||c==='art'||c==='art & culture'||c==='art and culture') return 'Arte e cultura';
+    if(c==='culture'||c==='art'||c==='art & culture'||c==='art and culture') return 'Art & Culture';
     if(c==='tech'||c==='technology') return 'Tecnologia';
     if(c==='architecture'||c==='business'||c==='lifestyle'||c==='streetwear'||c==='fashion'||c==='design') return c.charAt(0).toUpperCase()+c.slice(1);
     return value||'Rivista';
@@ -36,7 +36,7 @@
     const visual=image?'<a class="article-image" href="'+escapeHTML(url||image)+'" target="_blank" rel="noopener noreferrer" aria-label="Apri la fotografia della storia: '+escapeHTML(article.title||'articolo')+'"><img src="'+escapeHTML(image)+'" alt="Fotografia: '+escapeHTML(article.title||'articolo')+'" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.closest(\'.article-image\').classList.add(\'image-unavailable\');this.remove()"></a>':
       '<div class="story-placeholder '+(index%3===0?'placeholder-red':index%3===1?'placeholder-cream':'placeholder-black')+'"><span>'+escapeHTML(String(category).toUpperCase())+'<br>JOURNAL</span><b>A/'+String(index+1).padStart(2,'0')+'</b></div>';
     const language=String(article.language||'').toLowerCase();
-    const languageNote=language&&language!=='it'?' · ORIGINALE '+escapeHTML(language.toUpperCase()):'';
+    const languageNote=language&&language!=='it'?' · LINGUA ORIGINALE '+escapeHTML(language.toUpperCase()):'';
     return '<article class="story-card">'+visual+'<div class="story-meta">'+escapeHTML(categoryLabel(category))+' · '+formatDate(article.date)+' · '+escapeHTML(article.source||'ATELIER')+languageNote+'</div><h3>'+escapeHTML(article.title||'Senza titolo')+'</h3><p>'+escapeHTML(article.excerpt||'')+'</p>'+(url?'<a class="text-link card-link" href="'+escapeHTML(url)+'" target="_blank" rel="noopener noreferrer">LEGGI LA FONTE ↗</a>':'')+'</article>';
   }
   function visibleArticles(){
