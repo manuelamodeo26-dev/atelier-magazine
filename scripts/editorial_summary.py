@@ -131,92 +131,92 @@ def generate_editorial_summary(article, source_text):
         headers={"Content-Type": "application/json", "User-Agent": USER_AGENT},
         method="POST",
     )
-    for attempt in range(2):
-        try:
-            with urlopen(request, timeout=45) as response:
-                result = json.loads(response.read().decode("utf-8"))
-            if not isinstance(result, dict):
-                print("Sintesi AI non disponibile: risposta API non strutturata.")
-                return "", ""
-            candidates = result.get("candidates") or []
-            if not candidates:
-                reason = (result.get("promptFeedback") or {}).get("blockReason", "nessun candidato")
-                print("Sintesi AI senza contenuto utilizzabile: {}.".format(reason))
-                return "", ""
-            candidate = candidates[0]
-            if not isinstance(candidate, dict):
-                return "", ""
-            finish_reason = candidate.get("finishReason", "non indicato")
-            content_data = candidate.get("content") or {}
-            parts = content_data.get("parts", []) if isinstance(content_data, dict) else []
-            if not isinstance(parts, list):
-                parts = []
-            raw = "".join(part.get("text", "") for part in parts if isinstance(part, dict)).strip()
-            if raw.startswith(chr(96) * 3):
-                raw = raw.split("\n", 1)[-1]
-                raw = raw.rsplit(chr(96) * 3, 1)[0].strip()
-            if not raw:
-                print("Sintesi AI vuota (finishReason={}).".format(finish_reason))
-                return "", ""
+    fallback_models = ["gemini-3.7-flash", "gemini-3.6-flash"]
+    models = list(dict.fromkeys([MODEL] + fallback_models))
+    for model in models:
+        endpoint = (
+            "https://generativelanguage.googleapis.com/v1beta/models/"
+            + quote(model, safe="") + ":generateContent?key=" + quote(API_KEY, safe="")
+        )
+        request = Request(
+            endpoint,
+            data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
+            headers={"Content-Type": "application/json", "User-Agent": USER_AGENT},
+            method="POST",
+        )
+        for attempt in range(2):
             try:
-                data = json.loads(raw)
-            except json.JSONDecodeError:
-                # Recover a JSON object even if the model adds a short preamble.
-                start_json = raw.find("{")
-                if start_json < 0:
-                    raise
-                data, _ = json.JSONDecoder().raw_decode(raw[start_json:])
-            if not isinstance(data, dict):
-                return "", ""
-            level = data.get("level")
-            paragraphs = data.get("paragraphs")
-            if level not in ("standard", "approfondimento") or not isinstance(paragraphs, list):
-                return "", ""
-            paragraphs = [re.sub(r"\s+", " ", str(p)).strip() for p in paragraphs]
-            paragraphs = [p for p in paragraphs if p]
-            if not paragraphs or not 3 <= len(paragraphs) <= 5:
-                return "", ""
-            summary = "\n\n".join(paragraphs)
-            words = _word_count(summary)
-            lower, upper = (300, 450) if level == "approfondimento" else (180, 250)
-            if not lower <= words <= upper:
-                print("Sintesi AI scartata: lunghezza fuori standard ({} parole).".format(words))
-                return "", ""
-            return summary, level
-        except HTTPError as exc:
-            # Retry temporary overload and quota responses once; never block RSS publishing.
-            if exc.code in (429, 500, 502, 503, 504) and attempt == 0:
-                time.sleep(6 if exc.code == 429 else 3)
-                continue
-            print("Sintesi AI non disponibile (HTTP {}).".format(exc.code))
-            return "", ""
-        except (URLError, TimeoutError, OSError) as exc:
-            if attempt == 0:
-                time.sleep(3)
-                continue
-            print("Sintesi AI non disponibile: {}".format(type(exc).__name__))
-            return "", ""
-        except (ValueError, KeyError, IndexError, TypeError) as exc:
-            print("Sintesi AI non disponibile: {}".format(type(exc).__name__))
-            return "", ""
-            paragraphs = [re.sub(r"\s+", " ", str(p)).strip() for p in paragraphs]
-            paragraphs = [p for p in paragraphs if p]
-            if not 3 <= len(paragraphs) <= 5:
-                return "", ""
-            summary = "\n\n".join(paragraphs)
-            words = _word_count(summary)
-            lower, upper = (300, 450) if level == "approfondimento" else (180, 250)
-            if not lower <= words <= upper:
-                return "", ""
-            return summary, level
-        except HTTPError as exc:
-            # Quota/rate-limit errors are non-fatal: the source excerpt remains visible.
-            if exc.code == 429 and attempt == 0:
-                time.sleep(8)
-                continue
-            print("Sintesi AI non disponibile (HTTP {}).".format(exc.code))
-            return "", ""
-        except (URLError, TimeoutError, OSError, ValueError, KeyError, IndexError, TypeError) as exc:
-            print("Sintesi AI non disponibile: {}".format(type(exc).__name__))
-            return "", ""
+                with urlopen(request, timeout=24) as response:
+                    result = json.loads(response.read().decode("utf-8"))
+                if not isinstance(result, dict):
+                    print("Risposta Gemini non strutturata su {}.".format(model))
+                    break
+                candidates = result.get("candidates") or []
+                if not candidates:
+                    reason = (result.get("promptFeedback") or {}).get("blockReason", "nessun candidato")
+                    print("Gemini {} senza contenuto utilizzabile: {}.".format(model, reason))
+                    break
+                candidate = candidates[0]
+                if not isinstance(candidate, dict):
+                    break
+                finish_reason = candidate.get("finishReason", "non indicato")
+                content_data = candidate.get("content") or {}
+                parts = content_data.get("parts", []) if isinstance(content_data, dict) else []
+                if not isinstance(parts, list):
+                    parts = []
+                raw = "".join(
+                    part.get("text", "") for part in parts if isinstance(part, dict)
+                ).strip()
+                if raw.startswith(chr(96) * 3):
+                    raw = raw.split("\n", 1)[-1]
+                    raw = raw.rsplit(chr(96) * 3, 1)[0].strip()
+                if not raw:
+                    print("Gemini {} ha restituito testo vuoto ({}).".format(model, finish_reason))
+                    break
+                try:
+                    data = json.loads(raw)
+                except json.JSONDecodeError:
+                    start_json = raw.find("{")
+                    if start_json < 0:
+                        print("Gemini {} ha restituito JSON non valido.".format(model))
+                        break
+                    try:
+                        data, _ = json.JSONDecoder().raw_decode(raw[start_json:])
+                    except json.JSONDecodeError:
+                        print("Gemini {} ha restituito JSON incompleto.".format(model))
+                        break
+                if not isinstance(data, dict):
+                    break
+                level = data.get("level")
+                paragraphs = data.get("paragraphs")
+                if level not in ("standard", "approfondimento") or not isinstance(paragraphs, list):
+                    print("Gemini {}: struttura della sintesi non valida.".format(model))
+                    break
+                paragraphs = [re.sub(r"\s+", " ", str(p)).strip() for p in paragraphs]
+                paragraphs = [p for p in paragraphs if p]
+                if not 3 <= len(paragraphs) <= 5:
+                    print("Gemini {}: numero di paragrafi non valido.".format(model))
+                    break
+                summary = "\n\n".join(paragraphs)
+                words = _word_count(summary)
+                lower, upper = (300, 450) if level == "approfondimento" else (180, 250)
+                if not lower <= words <= upper:
+                    print("Gemini {}: sintesi scartata ({} parole).".format(model, words))
+                    break
+                if model != MODEL:
+                    print("Sintesi generata con modello alternativo {}.".format(model))
+                return summary, level
+            except HTTPError as exc:
+                if exc.code == 429 and attempt == 0:
+                    time.sleep(3)
+                    continue
+                print("Gemini {} non disponibile (HTTP {}).".format(model, exc.code))
+                break
+            except (URLError, TimeoutError, OSError) as exc:
+                print("Gemini {} non disponibile: {}.".format(model, type(exc).__name__))
+                break
+            except (ValueError, KeyError, IndexError, TypeError) as exc:
+                print("Risposta Gemini {} non valida: {}.".format(model, type(exc).__name__))
+                break
+    print("Sintesi AI non disponibile: esauriti modello principale e modelli alternativi.")
     return "", ""
