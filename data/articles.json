@@ -1,13 +1,29 @@
 {
-  "updated_at": "2026-11-12T12:24:34.756592+00:00",
+  "updated_at": "2026-11-12T12:59:15.486168+00:00",
   "feeds_ok": 5,
   "feeds_total": 5,
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 77
+    "verified_count": 78
   },
   "articles": [
+    {
+      "id": "https://www.vogue.it/article/matrimoni-invernali-da-fiaba-ispirazioni-abiti-da-sposa-allestimento",
+      "title": "14 matrimoni invernali da fiaba: dagli abiti da sposa all'allestimento",
+      "excerpt": "L'inverno non è la stagione preferita dai più per sposarsi. Eppure un sì pronunciato quando fuori fa freddo (o cade la neve) può avere qualcosa di magico. Come dimostrano le immagini di questi 14 matrimoni raccontati da Vogue",
+      "author": "Anna Grace Lee, Elise Taylor",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-12T12:50:35+00:00",
+      "url": "https://www.vogue.it/article/matrimoni-invernali-da-fiaba-ispirazioni-abiti-da-sposa-allestimento",
+      "image": "https://compass-media.vogue.it/photos/6af495870783f5f941be8e99/master/pass/madison-jordan_011.JPG",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 2091,
+      "image_height": 2700,
+      "image_format": "webp"
+    },
     {
       "id": "https://www.vogue.it/article/vestito-da-cerimonia-con-nodo-modelli-tendenza-autunno",
       "title": "Vestito da cerimonia con nodo per l'autunno 2026: 10 modelli eleganti secondo dress code",
