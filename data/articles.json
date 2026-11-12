@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T13:01:52.892516+00:00",
+  "updated_at": "2026-11-12T13:05:31.694961+00:00",
   "feeds_ok": 5,
   "feeds_total": 5,
   "language": "it",
@@ -1619,7 +1619,9 @@
       "language": "it",
       "image_width": 2000,
       "image_height": 1334,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_attempted_at": "2026-11-12T13:05:31.692699+00:00",
+      "editorial_retry_after": "2026-11-13T01:05:31.692699+00:00"
     },
     {
       "id": "https://www.ad-italia.it/article/piscine-ad-italia-45-anni-evoluzione-design-anni-80-oggi/",
@@ -1667,7 +1669,10 @@
       "language": "it",
       "image_width": 1080,
       "image_height": 1620,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_summary": "A Lurano, i fondatori dello Studio Modoo, gli interior designer Davide Defendi e Roberta Rovaris, hanno realizzato la propria abitazione familiare di 130 metri quadrati proponendo un'interpretazione personale dell'architettura brutalista. L'edificio si presenta all'esterno come un volume parallelepipedo sollevato da terra e sostenuto da soli sei plinti, offrendo un'illusione di sospensione nel paesaggio circostante. La struttura adotta elementi prefabbricati industriali in cemento, un'opzione poco diffusa nell'ambito residenziale che lascia la materia prima a vista. L'imponenza del cemento viene mitigata dall'apertura verso il giardino mediante grandi vetrate orientate a sud e a ovest, oltre a tagli orizzontali nella zona notte e lucernari sul tetto.\n\nL'ispirazione per l'opera deriva direttamente dallo studio del brutalismo brasiliano e dalla scuola paulista, con riferimenti a figure come Paulo Mendes da Rocha e Vilanova Artigas. Un viaggio d'istruzione a San Paolo ha consentito ai progettisti di analizzare sul campo edifici storici come la Facoltà di Architettura, Casa Butantã e Casa Gerassi. Dall'osservazione diretta di quest'ultima sono stati tratti spunti concreti inseriti nell'abitazione italiana, tra cui l'uso di cementine decorate e dettagli in ferro. Sul piano tecnico, l'impossibilità di forare i pannelli prefabbricati in cemento per gli impianti ha spinto i designer a lasciare a vista le tubazioni nere sulla parete verde, convertendo un vincolo costruttivo in elemento grafico integrato.\n\nGli spazi interni bilanciano il rigore della struttura con una ricca gamma cromatica composta da verde, giallo, azzurro, blu, terracotta e rosa antico. La palette, organizzata secondo la regola di proporzione 60-30-10 per mantenere una saturazione uniforme, trae origine dalla miscela di graniglie di marmo dei pavimenti ed è stata aggiornata nel tempo. L'arredamento su misura riflette diverse influenze e ricordi di viaggio: la camera delle bambine impiega cerchi, quadrati e triangoli richiamando le teorie di Bruno Munari, mentre nel bagno di servizio è stata installata una turca colorata progettata ad hoc sulla scorta di quanto osservato in India. Il progetto testimonia una sintesi tra monumentalità architettonica, funzionalità ed esigenze della vita quotidiana.",
+      "editorial_level": "approfondimento",
+      "editorial_word_count": 326
     }
   ]
 }
