@@ -39,7 +39,7 @@ La raccolta RSS non equivale a una verifica giornalistica: controllare sempre no
 
 Quando è configurato il secret GitHub Actions `GEMINI_API_KEY`, il raccoglitore può creare una sintesi originale in italiano a partire dal titolo, dal testo disponibile nel feed e dal testo leggibile della pagina pubblica della fonte:
 
-Il workflow utilizza il modello stabile `gemini-3.8-flash`; il nome del modello è configurato in `.github/workflows/news.yml` e può essere aggiornato quando necessario.
+Il workflow privilegia `gemini-3.5-flash-lite` per contenere il consumo di quota e usa `gemini-3.6-flash`, `gemini-3.7-flash` e `gemini-3.8-flash` come alternative. I nomi dei modelli sono configurati in `scripts/editorial_summary.py` e `.github/workflows/news.yml` e possono essere aggiornati quando necessario. La scelta di un modello più leggero riduce il consumo atteso, ma non aggira i limiti di quota del progetto Google.
 
 - Notizie standard: 300–400 parole, in 4–6 paragrafi.
 - Approfondimenti: 450–600 parole, in 4–6 paragrafi, soltanto quando il materiale contiene dettagli sufficienti.
