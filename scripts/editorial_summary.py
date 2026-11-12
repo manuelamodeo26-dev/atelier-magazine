@@ -48,7 +48,7 @@ class ArticleTextParser(HTMLParser):
         if self.ignored:
             return
         if self.current_tag == tag:
-            value = re.sub(r"\\s+", " ", " ".join(self.buffer)).strip()
+            value = re.sub(r"\s+", " ", " ".join(self.buffer)).strip()
             if len(value) >= 45 and value not in self.parts:
                 self.parts.append(value)
             self.current_tag = None
@@ -79,7 +79,7 @@ def fetch_article_text(url):
 
 
 def _word_count(value):
-    return len(re.findall(r"\\b[\\wÀ-ÖØ-öø-ÿ’'-]+\\b", value, flags=re.UNICODE))
+    return len(re.findall(r"\b[\wÀ-ÖØ-öø-ÿ’'-]+\b", value, flags=re.UNICODE))
 
 
 def generate_editorial_summary(article, source_text):
@@ -101,7 +101,7 @@ def generate_editorial_summary(article, source_text):
         "ESCLUSIVAMENTE sul materiale della fonte qui sotto. Non copiare frasi estese, non "
         "inventare fatti, date, numeri, citazioni, intenzioni o conseguenze. Se un dettaglio "
         "non è presente, omettilo. Distingui chiaramente fatti e interpretazioni. Non aggiungere "
-        "commenti generici per raggiungere la lunghezza.\\n\\n"
+        "commenti generici per raggiungere la lunghezza.\n\n"
         "Valuta prima la rilevanza: usa livello 'approfondimento' soltanto se la fonte contiene "
         "sviluppi sostanziali, più elementi verificabili o un tema di particolare rilievo; in "
         "quel caso scrivi 450-600 parole. Per una notizia ordinaria usa livello 'standard' e "
@@ -109,12 +109,12 @@ def generate_editorial_summary(article, source_text):
         "sottotitoli. Apri con il fatto principale e il suo contesto; sviluppa i dettagli "
         "concreti; spiega la rilevanza per il settore solo se supportata dalla fonte; chiudi "
         "con una conclusione informativa, non promozionale. Se la fonte è troppo povera per "
-        "una sintesi affidabile, restituisci esattamente JSON con level 'standard' e paragraphs come array vuoto. Non aggiungere testo fuori dal JSON.\\n\\n"
+        "una sintesi affidabile, restituisci esattamente JSON con level 'standard' e paragraphs come array vuoto. Non aggiungere testo fuori dal JSON.\n\n"
         "Rispondi esclusivamente in JSON valido con le chiavi 'level' (standard o approfondimento) "
-        "e 'paragraphs' (array di 4-6 paragrafi).\\n\\n"
-        "TITOLO: " + title + "\\n"
-        "FONTE: " + str(article.get("source") or "") + "\\n"
-        "MATERIALE DISPONIBILE:\\n" + combined
+        "e 'paragraphs' (array di 4-6 paragrafi).\n\n"
+        "TITOLO: " + title + "\n"
+        "FONTE: " + str(article.get("source") or "") + "\n"
+        "MATERIALE DISPONIBILE:\n" + combined
     )
     payload = {
         "model": MODEL,
@@ -177,7 +177,7 @@ def generate_editorial_summary(article, source_text):
                 if level not in ("standard", "approfondimento") or not isinstance(paragraphs, list):
                     print("Groq {}: struttura della sintesi non valida.".format(model))
                     break
-                paragraphs = [re.sub(r"\\s+", " ", str(p)).strip() for p in paragraphs]
+                paragraphs = [re.sub(r"\s+", " ", str(p)).strip() for p in paragraphs]
                 paragraphs = [p for p in paragraphs if p]
                 if not 4 <= len(paragraphs) <= 6:
                     print("Groq {}: numero di paragrafi non valido.".format(model))
