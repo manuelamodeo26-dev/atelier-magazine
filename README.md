@@ -104,3 +104,22 @@ e aggiungi lo stesso indirizzo tra i Redirect URLs.
 In **Authentication → Providers → Email**, abilita Email. Per maggiore sicurezza lascia attiva la conferma dell'indirizzo email.
 
 Gli account permettono registrazione e accesso con email e password, feed personale per argomenti, preferiti persistenti e Mi piace con conteggi condivisi. I preferiti restano visibili anche quando un articolo esce dall'archivio corrente di 120 giorni, conservando la scheda salvata e il collegamento alla fonte. Il primo accesso crea automaticamente profilo e preferenze predefinite.
+
+
+## ATELIER Community
+
+La community è disponibile in `community.html` e usa lo stesso progetto Supabase degli account del magazine.
+
+- Discussioni pubbliche per Fashion Talk, Streetwear, Design & Creativity, Arte & Cultura, Fashion Industry, Your Style e Off Topic.
+- Pubblicazione e commenti riservati agli utenti autenticati.
+- Reazioni, segnalazioni e rimozione dei propri contenuti.
+- Pannello segnalazioni visibile agli account con `app_metadata.role = "admin"`.
+- Row Level Security attiva su tutte le tabelle della community; nessuna chiave privilegiata è esposta al browser.
+- Limiti lato database: una nuova discussione al minuto e un commento ogni cinque secondi per account.
+- I nomi degli autori sono volutamente minimizzati nella prima versione: gli altri utenti vedono "Membro ATELIER".
+
+Tabelle Supabase: `community_discussions`, `community_comments`, `community_reactions`, `community_reports`.
+
+Per abilitare la moderazione amministrativa, assegna il ruolo `admin` all'utente autorizzato tramite **Supabase Dashboard → Authentication → Users → utente → Edit app metadata**. Non usare `user_metadata` per i privilegi. Mantieni questo ruolo soltanto su account redazionali fidati.
+
+La community è inizialmente senza messaggi privati e senza caricamento immagini: queste funzioni vanno introdotte solo dopo aver definito ulteriori strumenti di privacy e moderazione.
