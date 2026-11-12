@@ -22,12 +22,12 @@
   function mount(){
     const header=$('.site-header');
     if(header && !$('#account-open')){
-      const b=document.createElement('button'); b.id='account-open'; b.className='search-open account-open'; b.type='button'; b.textContent='ACCEDI ↗';
+      const b=document.createElement('button'); b.id='account-open'; b.className='search-open account-open'; b.type='button'; b.setAttribute('aria-controls','account-dialog'); b.setAttribute('aria-haspopup','dialog'); b.textContent='ACCEDI ↗';
       header.appendChild(b);
     }
     if(!$('#account-dialog')){
-      const d=document.createElement('dialog'); d.id='account-dialog'; d.className='search-dialog account-dialog';
-      d.innerHTML='<form method="dialog"><button class="dialog-close" type="submit" aria-label="Chiudi">×</button></form><p class="eyebrow">ATELIER / ACCOUNT</p><h2 class="account-heading">Il tuo spazio.</h2><p id="account-status" class="account-status">Accedi o crea un account per personalizzare la rivista.</p><form id="account-form" class="account-form"><label for="account-name">Nome (solo per la registrazione)</label><input id="account-name" autocomplete="name" placeholder="Il tuo nome"><label for="account-email">Email</label><input id="account-email" type="email" autocomplete="email" required placeholder="nome@email.com"><label for="account-password">Password</label><input id="account-password" type="password" autocomplete="current-password" minlength="8" required placeholder="Almeno 8 caratteri"><div class="account-actions"><button class="outline-button" type="submit" data-mode="login">ACCEDI</button><button class="outline-button" type="submit" data-mode="signup">REGISTRATI</button></div></form><div id="account-tools" hidden><h3>Il mio feed</h3><p class="account-help">Scegli gli argomenti che vuoi vedere nel tuo feed personale.</p><div id="account-categories" class="account-categories"></div><button id="save-preferences" class="outline-button" type="button">SALVA PREFERENZE</button><button id="account-logout" class="outline-button" type="button">ESCI DALL’ACCOUNT</button></div><p id="account-message" class="account-message" role="status" aria-live="polite"></p>';
+      const d=document.createElement('dialog'); d.id='account-dialog'; d.className='search-dialog account-dialog'; d.setAttribute('aria-labelledby','account-heading'); d.setAttribute('aria-describedby','account-status');
+      d.innerHTML='<form method="dialog"><button class="dialog-close" type="submit" aria-label="Chiudi">×</button></form><p class="eyebrow">ATELIER / ACCOUNT</p><h2 id="account-heading" class="account-heading">Il tuo spazio.</h2><p id="account-status" class="account-status" role="status" aria-live="polite">Accedi o crea un account per personalizzare la rivista.</p><form id="account-form" class="account-form"><label for="account-name">Nome (solo per la registrazione)</label><input id="account-name" autocomplete="name" placeholder="Il tuo nome"><label for="account-email">Email</label><input id="account-email" type="email" autocomplete="email" required placeholder="nome@email.com"><label for="account-password">Password</label><input id="account-password" type="password" autocomplete="current-password" minlength="8" required placeholder="Almeno 8 caratteri"><div class="account-actions"><button class="outline-button" type="submit" data-mode="login">ACCEDI</button><button class="outline-button" type="submit" data-mode="signup">REGISTRATI</button></div></form><div id="account-tools" hidden><h3>Il mio feed</h3><p class="account-help">Scegli gli argomenti che vuoi vedere nel tuo feed personale.</p><div id="account-categories" class="account-categories"></div><button id="save-preferences" class="outline-button" type="button">SALVA PREFERENZE</button><button id="account-logout" class="outline-button" type="button">ESCI DALL’ACCOUNT</button></div><p id="account-message" class="account-message" role="status" aria-live="polite"></p>';
       document.body.appendChild(d);
     }
     if(!$('#personal-feed')){
@@ -51,8 +51,8 @@
   function setLoggedIn(on){
     const open=$('#account-open');
     if(open)open.textContent=on?'IL MIO ACCOUNT ↗':'ACCEDI ↗';
-    $('#account-form').hidden=on; $('#account-tools').hidden=!on;
-    $('#personal-feed').hidden=!on;
+    const form=$('#account-form'), tools=$('#account-tools'), feed=$('#personal-feed');
+    if(form)form.hidden=on;if(tools)tools.hidden=!on;if(feed)feed.hidden=!on;
     if(on)status('Connesso come '+(user.email||'utente ATELIER'));
     else status(configured?'Accedi o crea un account per personalizzare la rivista.':'Configurazione necessaria: collega prima il progetto Supabase.');
   }
@@ -152,7 +152,7 @@
       client=createClient(cfg.url,cfg.anonKey);
       const {data}=await client.auth.getSession();
       if(data.session){user=data.session.user;await loadUserData();}else setLoggedIn(false);
-      client.auth.onAuthStateChange((_event,session)=>{setTimeout(async()=>{user=session?.user||null;if(user)await loadUserData();else{saved.clear();setLoggedIn(false);}},0);});
+      client.auth.onAuthStateChange((_event,session)=>{setTimeout(async()=>{try{user=session?.user||null;if(user)await loadUserData();else{saved.clear();setLoggedIn(false);}}catch(e){user=null;saved.clear();setLoggedIn(false);message(e.message||'Impossibile caricare i dati dell’account.',true);}},0);});
     }catch(e){setLoggedIn(false);message('Servizio account non raggiungibile. Riprova più tardi.',true);}
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
