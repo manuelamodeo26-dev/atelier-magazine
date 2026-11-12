@@ -1,43 +1,47 @@
-# ATELIER — Fashion, Design & Culture
+# ATELIER — Moda, Design e Cultura
 
-Rivista digitale indipendente in italiano, pubblicata come sito statico tramite GitHub Pages.
+Rivista digitale indipendente, in italiano, con un linguaggio visivo editoriale ispirato alla cultura dei magazine contemporanei e una direzione artistica originale.
 
-## Pubblicazione
+## Identità editoriale
 
-Il workflow **Deploy ATELIER to GitHub Pages** pubblica la root del repository a ogni push su `main`.
+- Palette: avorio, nero, rosso e grigio cemento.
+- Tipografia: Syne, Cormorant Garamond, DM Sans e IBM Plex Mono.
+- Impaginazione editoriale ibrida: immagini, titoli forti, rubriche e percorsi tematici.
+- Navigazione e interfaccia in italiano.
+- Layout responsive per smartphone, tablet e desktop.
 
-In **Settings → Pages**, imposta **Source: GitHub Actions**. La pubblicazione richiede che GitHub Pages sia abilitato per il repository e che l'account/repository ne abbia accesso.
+## Contenuti e immagini
 
-## Aggiornamento automatico delle notizie
+Le notizie vengono raccolte da feed pubblici di editori italiani dedicati a moda, design, architettura e arte. I titoli e i sommari vengono mostrati nella lingua originale della fonte: il progetto non dichiara traduzioni automatiche che non esegue.
 
-Il workflow **Update ATELIER news** prova ad aggiornare l'archivio ogni 6 ore e può essere avviato manualmente dalla scheda **Actions**.
+Le fotografie sono quelle distribuite dalle fonti nei rispettivi feed. Quando l'indirizzo dell'immagine consente parametri di dimensione, il raccoglitore richiede una versione più grande; la resa finale dipende comunque dal file originale, dal CDN e dalle condizioni d'uso del publisher. Le immagini non vengono copiate nel repository.
 
-- Le fonti sono feed RSS/Atom pubblici configurati in `scripts/fetch_news.py`.
-- L'archivio viene salvato in `data/articles.json`.
-- Sono importati titolo, descrizione, fonte, data, link e, quando presente, immagine fornita dal feed.
-- Se una fonte non risponde o cambia formato, il processo registra l'errore e continua con le altre fonti.
-- Le notizie restano nella lingua originale: non viene eseguita una traduzione automatica.
-- La raccolta automatica non equivale a verifica giornalistica. Verificare sempre contenuti, attribuzione, diritti e condizioni d'uso delle immagini prima della pubblicazione.
+Fonti configurate in `scripts/fetch_news.py`: Vogue Italia, Pambianco, Fashion News Magazine, AD Italia, Artribune, Exibart, Finestre sull'Arte e Domus. La disponibilità effettiva di ogni feed può cambiare.
 
-La disponibilità e la frequenza di aggiornamento dipendono dai feed esterni e dalla pianificazione di GitHub Actions; GitHub può ritardare i workflow programmati.
+## Aggiornamento e pubblicazione
 
-## Funzioni attive
+- **Update ATELIER news**: esecuzione programmata ogni 6 ore e avvio manuale da GitHub Actions.
+- Il processo conserva l'archivio se le fonti non rispondono, elimina i contenuti non italiani e quelli più vecchi di 120 giorni e rimuove i duplicati tramite URL.
+- **Deploy ATELIER to GitHub Pages**: pubblicazione del sito statico.
+- In **Settings → Pages**, la sorgente deve essere **GitHub Actions**.
 
-- Homepage editoriale responsive.
-- Filtri per categoria e ricerca nell'archivio caricato.
-- Apertura delle fonti originali.
-- Fallback editoriale quando l'archivio non è disponibile o è vuoto.
-- Cache PWA con aggiornamento degli asset e fallback offline.
+La raccolta RSS non equivale a una verifica giornalistica: controllare sempre notizie, attribuzioni e diritti di utilizzo prima della pubblicazione.
 
-La newsletter è **non attiva**: il sito non raccoglie né invia indirizzi email.
+## Funzioni
+
+- Ricerca e filtri per categoria.
+- Schede editoriali con immagini responsive e caricamento differito.
+- Collegamenti alle fonti originali.
+- Cache PWA e supporto offline.
+- Newsletter non attiva: il sito non raccoglie indirizzi email.
 
 ## File principali
 
-- `index.html`: homepage e struttura.
-- `style.css`: stile responsive.
-- `app.js`: caricamento articoli, filtri, ricerca e menu.
-- `data/articles.json`: archivio.
+- `index.html`: struttura e contenuti della homepage.
+- `style.css`: sistema visivo e layout responsive.
+- `app.js`: archivio, filtri, ricerca e navigazione.
+- `data/articles.json`: articoli importati.
 - `scripts/fetch_news.py`: raccolta RSS/Atom.
 - `.github/workflows/deploy.yml`: pubblicazione.
-- `.github/workflows/news.yml`: aggiornamento notizie.
+- `.github/workflows/news.yml`: aggiornamento automatico delle notizie.
 - `manifest.webmanifest` e `sw.js`: installazione e cache PWA.
