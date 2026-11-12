@@ -14,6 +14,7 @@ from email.utils import parsedate_to_datetime
 from urllib.parse import parse_qsl, quote, urlencode, urljoin, urlparse, urlunparse
 from urllib.request import Request, urlopen
 from PIL import Image
+import editorial_summary
 from editorial_summary import fetch_article_text, generate_editorial_summary, is_valid_editorial_summary
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -786,7 +787,7 @@ def main():
             else:
                 attempted_at = datetime.now(timezone.utc)
                 article["editorial_attempted_at"] = attempted_at.isoformat()
-                if QUOTA_EXHAUSTED_FOR_RUN:
+                if editorial_summary.QUOTA_EXHAUSTED_FOR_RUN:
                     article["editorial_retry_after"] = (attempted_at + timedelta(hours=EDITORIAL_QUOTA_RETRY_HOURS)).isoformat()
                     prior_payload["editorial_api_retry_after"] = article["editorial_retry_after"]
                     print("Quota AI esaurita: sospendo la coda editoriale per 24 ore.")
