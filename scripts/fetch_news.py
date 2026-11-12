@@ -6,11 +6,14 @@ import json
 import os
 import re
 import time
+import io
+import concurrent.futures
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse
 from urllib.request import Request, urlopen
+from PIL import Image
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "data", "articles.json")
@@ -24,6 +27,9 @@ FEEDS = [
 MAX_PER_FEED = 18
 MAX_ARTICLES = 180
 MAX_AGE_DAYS = 120
+MAX_IMAGE_BYTES = 8 * 1024 * 1024
+MIN_IMAGE_LONG_EDGE = 1000
+MIN_IMAGE_SHORT_EDGE = 500
 USER_AGENT = "ATELIER-Magazine/2.0 (+https://github.com/manuelamodeo26-dev/atelier-magazine)"
 TRACKING_KEYS = {"fbclid", "gclid", "mc_cid", "mc_eid"}
 
@@ -124,28 +130,87 @@ class ImageMetaParser(HTMLParser):
     def __init__(self):
         super().__init__()
         self.image = ""
+        self.description = ""
+        self.author = ""
 
     def handle_starttag(self, tag, attrs):
         if tag.lower() != "meta" or self.image:
             return
         values = {key.lower(): value for key, value in attrs if key and value}
         key = (values.get("property") or values.get("name") or "").lower()
-        if key in ("og:image", "twitter:image"):
-            self.image = values.get("content", "")
+        content = values.get("content", "").strip()
+        if key in ("og:image", "twitter:image") and not self.image:
+            self.image = content
+        elif key in ("og:description", "twitter:description", "description") and not self.description:
+            self.description = content
+        elif key in ("author", "article:author") and not self.author:
+            self.author = content
 
 
-def fetch_page_image(article_url):
+def fetch_page_metadata(article_url):
     try:
         request = Request(article_url, headers={
             "User-Agent": USER_AGENT,
             "Accept": "text/html,application/xhtml+xml",
         })
-        with urlopen(request, timeout=5) as response:
+        with urlopen(request, timeout=8) as response:
             parser = ImageMetaParser()
-            parser.feed(response.read(250000).decode("utf-8", errors="replace"))
-        return upgrade_image_url(urljoin(article_url, parser.image))
+            parser.feed(response.read(350000).decode("utf-8", errors="replace"))
+        return {
+            "image": upgrade_image_url(urljoin(article_url, parser.image)),
+            "description": clean(parser.description)[:1400],
+            "author": clean(parser.author)[:160],
+        }
     except Exception:
-        return ""
+        return {"image": "", "description": "", "author": ""}
+
+
+def verify_image(article):
+    image_url = canonical_url(article.get("image"))
+    if not image_url or not image_url.startswith("https://"):
+        return {**article, "image": "", "image_verified": False}
+    try:
+        request = Request(image_url, headers={
+            "User-Agent": USER_AGENT,
+            "Referer": article.get("url", ""),
+            "Accept": "image/avif,image/webp,image/apng,image/*,*/*;q=0.8",
+        })
+        with urlopen(request, timeout=12) as response:
+            content_type = response.headers.get("Content-Type", "").split(";", 1)[0].lower()
+            if not content_type.startswith("image/"):
+                raise ValueError("Il server non ha restituito un file immagine")
+            raw = response.read(MAX_IMAGE_BYTES + 1)
+        if len(raw) > MAX_IMAGE_BYTES:
+            raise ValueError("Immagine troppo pesante")
+        if len(raw) < 12000:
+            raise ValueError("File immagine troppo piccolo")
+        with Image.open(io.BytesIO(raw)) as picture:
+            picture.verify()
+        with Image.open(io.BytesIO(raw)) as picture:
+            width, height = picture.size
+            image_format = (picture.format or "").upper()
+        if max(width, height) < MIN_IMAGE_LONG_EDGE or min(width, height) < MIN_IMAGE_SHORT_EDGE:
+            raise ValueError(f"Risoluzione insufficiente: {width}x{height}")
+        if image_format not in ("JPEG", "PNG", "WEBP"):
+            raise ValueError(f"Formato non supportato: {image_format}")
+        return {
+            **article,
+            "image": image_url,
+            "image_verified": True,
+            "image_width": width,
+            "image_height": height,
+            "image_format": image_format.lower(),
+        }
+    except Exception as exc:
+        print(f"Foto scartata per verifica: {image_url} ({exc})")
+        return {
+            **article,
+            "image": "",
+            "image_verified": False,
+            "image_width": 0,
+            "image_height": 0,
+            "image_format": "",
+        }
 
 
 def article_date(node):
@@ -187,22 +252,31 @@ def parse_feed(feed_url, category):
                 if not title or not link:
                     continue
                 description = child_text(node, "description", "summary", "encoded", "content")
+                author = child_text(node, "creator", "author", "artist")
                 articles.append({
                     "id": link,
                     "title": title[:300],
-                    "excerpt": description[:700],
+                    "excerpt": description[:1400],
+                    "author": author[:160],
                     "category": category,
                     "source": host,
                     "date": article_date(node),
                     "url": link,
                     "image": upgrade_image_url(article_image(node)),
+                    "image_verified": False,
                     "language": "it",
                 })
-            image_attempts = 0
+            metadata_attempts = 0
             for article in articles:
-                if not article["image"] and image_attempts < 4:
-                    image_attempts += 1
-                    article["image"] = fetch_page_image(article["url"])
+                if (not article["image"] or not article["excerpt"] or not article["author"]) and metadata_attempts < 8:
+                    metadata_attempts += 1
+                    metadata = fetch_page_metadata(article["url"])
+                    if not article["image"]:
+                        article["image"] = metadata["image"]
+                    if not article["excerpt"]:
+                        article["excerpt"] = metadata["description"]
+                    if not article["author"]:
+                        article["author"] = metadata["author"]
             print(f"{host}: {len(articles)} articoli")
             return articles
         except Exception as exc:
@@ -276,6 +350,16 @@ def main():
     articles = sorted(recent,
                       key=lambda item: item.get("date") or "0000", reverse=True)[:MAX_ARTICLES]
 
+    to_verify = [item for item in articles if item.get("image") and not item.get("image_verified")]
+    if to_verify:
+        print(f"Verifica fotografica: {len(to_verify)} immagini da controllare.")
+        with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
+            checked = list(executor.map(verify_image, to_verify))
+        checked_by_url = {item["url"]: item for item in checked}
+        articles = [checked_by_url.get(item["url"], item) for item in articles]
+        valid_images = sum(1 for item in articles if item.get("image_verified"))
+        print(f"Fotografie verificate: {valid_images}/{len(articles)} articoli.")
+
     if articles == sorted(previous.values(),
                           key=lambda item: item.get("date") or "0000", reverse=True)[:MAX_ARTICLES]:
         print(f"Nessuna modifica: {len(articles)} articoli già archiviati.")
@@ -286,6 +370,10 @@ def main():
         "feeds_ok": successful_feeds,
         "feeds_total": len(FEEDS),
         "language": "it",
+        "image_verification": {
+            "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
+            "verified_count": sum(1 for item in articles if item.get("image_verified")),
+        },
         "articles": articles,
     }
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
