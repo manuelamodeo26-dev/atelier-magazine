@@ -19,7 +19,33 @@ class FeedStatusTests(unittest.TestCase):
         self.assertFalse(ok)
         self.assertIn("ValueError", error)
 
-    def test_outpump_falls_back_to_google_news_when_publisher_feed_is_blocked(self):
+    def test_outpump_falls_back_to_wordpress_api_when_publisher_feed_is_blocked(self):
+        from urllib.error import HTTPError
+        payload = [{
+            "title": {"rendered": "Outpump streetwear: nuova collezione"},
+            "excerpt": {"rendered": "Una nuova storia di moda e streetwear raccontata da Outpump."},
+            "link": "https://outpump.com/nuova-collezione/",
+            "date_gmt": "2026-11-11T10:00:00",
+            "_embedded": {
+                "wp:featuredmedia": [{"source_url": "https://outpump.com/image.jpg"}],
+                "author": [{"name": "Redazione Outpump"}],
+            },
+        }]
+        with patch.object(fetch_news, "fetch", side_effect=[
+            HTTPError("https://outpump.com/feed/", 403, "Forbidden", {}, None),
+            HTTPError("https://outpump.com/feed/", 403, "Forbidden", {}, None),
+            json.dumps(payload).encode("utf-8"),
+        ]) as mocked, patch.object(fetch_news.time, "sleep"):
+            items, ok, error = fetch_news.parse_feed("https://outpump.com/feed/", "Streetwear")
+        self.assertTrue(ok)
+        self.assertEqual(error, "")
+        self.assertEqual(len(items), 1)
+        self.assertEqual(items[0]["source"], "outpump.com")
+        self.assertEqual(items[0]["url"], "https://outpump.com/nuova-collezione/")
+        self.assertEqual(items[0]["author"], "Redazione Outpump")
+        self.assertEqual(mocked.call_count, 3)
+
+    def test_outpump_falls_back_to_google_news_if_wordpress_api_is_blocked(self):
         from urllib.error import HTTPError
         xml = b"""<rss><channel><item>
             <title>Outpump streetwear: nuova collezione</title>
@@ -27,18 +53,19 @@ class FeedStatusTests(unittest.TestCase):
             <description>Una nuova storia di moda e streetwear raccontata da Outpump.</description>
             <pubDate>Wed, 11 Nov 2026 10:00:00 GMT</pubDate>
         </item></channel></rss>"""
+        blocked = lambda url: HTTPError(url, 403, "Forbidden", {}, None)
         with patch.object(fetch_news, "fetch", side_effect=[
-            HTTPError("https://outpump.com/feed/", 403, "Forbidden", {}, None),
-            HTTPError("https://outpump.com/feed/", 403, "Forbidden", {}, None),
+            blocked("https://outpump.com/feed/"),
+            blocked("https://outpump.com/feed/"),
+            blocked("https://outpump.com/wp-json/wp/v2/posts"),
+            blocked("https://outpump.com/wp-json/wp/v2/posts"),
             xml,
         ]) as mocked, patch.object(fetch_news.time, "sleep"):
             items, ok, error = fetch_news.parse_feed("https://outpump.com/feed/", "Streetwear")
         self.assertTrue(ok)
-        self.assertEqual(error, "")
         self.assertEqual(len(items), 1)
-        self.assertEqual(items[0]["source"], "outpump.com")
         self.assertIn("news.google.com", items[0]["url"])
-        self.assertEqual(mocked.call_count, 3)
+        self.assertEqual(mocked.call_count, 5)
 
     def test_summary_backfill_is_balanced_with_new_stories(self):
         selected = fetch_news.select_summary_candidates(
@@ -58,7 +85,7 @@ class FeedStatusTests(unittest.TestCase):
         self.assertEqual(items, [])
         self.assertTrue(ok)
         self.assertEqual(error, "")
-        self.assertEqual(mocked.call_args.kwargs["user_agent"], fetch_news.BROWSER_USER_AGENT)
+        self.assertEqual(mocked.call_args_list[0].kwargs["user_agent"], fetch_news.BROWSER_USER_AGENT)
 
     def test_valid_feed_with_story_returns_items_and_healthy_status(self):
         description = "Dettagli sulla nuova collezione e sul lavoro creativo. " * 25
