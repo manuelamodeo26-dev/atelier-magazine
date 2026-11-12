@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths:
       - 'scripts/test_*.py'
+      - 'scripts/fetch_news.py'
+      - 'scripts/editorial_summary.py'
+      - 'scripts/validate_archive.py'
       - '.github/workflows/news.yml'
       - '.github/workflows/tests.yml'
   pull_request:
