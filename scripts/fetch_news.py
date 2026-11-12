@@ -390,6 +390,7 @@ def main():
     articles = sorted(recent,
                       key=lambda item: item.get("date") or "0000", reverse=True)[:MAX_ARTICLES]
 
+    new_urls = {canonical_url(item.get("url")) for item in fresh}
     # Generate a small batch of source-grounded editorial summaries per run.
     # The publisher excerpt remains the fallback whenever source text is thin
     # or the optional AI service is unavailable.
