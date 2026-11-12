@@ -475,3 +475,15 @@ section[id] { scroll-margin-top: 100px; }
 #search-open:hover,#search-open:focus-visible{background:transparent!important;border:0!important;color:#8f1b1b!important;box-shadow:none!important}
 #search-open:hover .search-icon,#search-open:focus-visible .search-icon{stroke:#8f1b1b!important}
 @media(max-width:760px){#search-open{width:34px!important;height:34px!important;min-width:34px!important;flex-basis:34px!important;margin-left:10px!important}#search-open .search-icon{width:21px!important;height:21px!important}.menu-toggle{margin-left:auto!important;margin-right:0!important}}
+
+
+/* PATCH COLORI HEADER ATELIER: lente rossa senza pulsante circolare; accesso rosso */
+#search-open.search-open{background:transparent!important;background-color:transparent!important;border:0!important;border-color:transparent!important;border-radius:0!important;box-shadow:none!important;color:#B51F1F!important;outline:0!important;width:36px!important;height:36px!important;min-width:36px!important;flex:0 0 36px!important;padding:0!important;margin:0 0 0 12px!important;display:inline-flex!important;align-items:center!important;justify-content:center!important}
+#search-open.search-open .search-icon{display:block!important;width:23px!important;height:23px!important;stroke:#B51F1F!important;color:#B51F1F!important;fill:none!important;stroke-width:2.2!important;opacity:1!important;visibility:visible!important}
+#search-open.search-open::before,#search-open.search-open::after{display:none!important;content:none!important}
+#search-open.search-open:hover,#search-open.search-open:focus-visible{background:transparent!important;border:0!important;box-shadow:none!important;color:#8f1b1b!important}
+#search-open.search-open:hover .search-icon,#search-open.search-open:focus-visible .search-icon{stroke:#8f1b1b!important}
+#account-open.account-open{background:transparent!important;background-color:transparent!important;border:1px solid #B51F1F!important;border-radius:0!important;color:#B51F1F!important;-webkit-text-fill-color:#B51F1F!important;box-shadow:none!important;padding:10px 13px!important}
+#account-open.account-open:hover,#account-open.account-open:focus-visible{background:rgba(181,31,31,.07)!important;color:#8f1b1b!important;-webkit-text-fill-color:#8f1b1b!important;border-color:#8f1b1b!important}
+#account-open.account-open.has-account-avatar{border:0!important;border-radius:50%!important;padding:0!important}
+.account-actions .outline-button,#profile-login,.profile-home-link{color:#B51F1F!important;-webkit-text-fill-color:#B51F1F!important}
