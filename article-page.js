@@ -16,16 +16,16 @@ Lifestyle:['photo-1490481651871-ab68de25d43d','photo-1515886657613-9f3515b0c78f'
 };
 const imageFor=a=>{
 const original=url(a.image);
-if(original)return {url:original,verified:a.image_verified===true};
+if(original)return {url:original,verified:a.image_verified===true,sourceImage:true};
 const choices=fallbackPhotos[a.category]||fallbackPhotos.Fashion;
 const seed=String(a.title||a.id||'ATELIER').split('').reduce((n,c)=>n+c.charCodeAt(0),0);
-return {url:'https://images.unsplash.com/'+choices[seed%choices.length]+'?auto=format&fit=crop&w=1600&q=85',verified:false};
+return {url:'https://images.unsplash.com/'+choices[seed%choices.length]+'?auto=format&fit=crop&w=1600&q=85',verified:false,sourceImage:false};
 };
 const date=v=>{const d=new Date(v);return v&&!Number.isNaN(d.getTime())?d.toLocaleDateString('it-IT',{day:'2-digit',month:'long',year:'numeric'}).toUpperCase():'DATA NON DISPONIBILE';};
 function fail(msg){content.innerHTML='<p class="eyebrow">ATELIER / ARCHIVIO</p><h1 class="detail-title">Articolo non disponibile.</h1><p class="detail-excerpt">'+esc(msg)+'</p><a class="text-link" href="./">TORNA ALLA RIVISTA ↗</a>';}
 function render(a){
 const source=a.source||'Editore non identificato', category=cat(a.category), published=date(a.date), imageInfo=imageFor(a), image=imageInfo.url;
-const photo=image?'<figure class="detail-figure"><img src="'+esc(image)+'" alt="'+esc(a.title||'Immagine editoriale ATELIER')+'" referrerpolicy="no-referrer" onerror="this.closest(\'.detail-figure\').classList.add(\'image-unavailable\');this.remove()"><figcaption>'+(imageInfo.verified?'Fotografia verificata · ':'Immagine illustrativa non verificata · ')+esc(source)+'</figcaption></figure>':'<div class="detail-no-image">IMMAGINE EDITORIALE NON DISPONIBILE</div>';
+const photo=image?'<figure class="detail-figure"><img src="'+esc(image)+'" alt="'+esc(a.title||'Immagine editoriale ATELIER')+'" referrerpolicy="no-referrer" onerror="this.closest(\'.detail-figure\').classList.add(\'image-unavailable\');this.remove()"><figcaption>'+(imageInfo.verified?'Fotografia verificata · ':imageInfo.sourceImage?'Immagine della fonte, non verificata · ':'Immagine illustrativa · ')+esc(source)+'</figcaption></figure>':'<div class="detail-no-image">IMMAGINE EDITORIALE NON DISPONIBILE</div>';
 const editorial=String(a.editorial_summary||'').trim();
 const editorialHtml=editorial?'<section class="detail-section editorial-summary"><p class="eyebrow">IL RACCONTO ATELIER · '+(a.editorial_level==='approfondimento'?'APPROFONDIMENTO':'NOTIZIA')+'</p>'+editorial.split(/\n\s*\n/).map(p=>'<p class="detail-excerpt">'+esc(p)+'</p>').join('')+'</section>':'';
 const sourceSummary=a.excerpt?'<section class="detail-section"><p class="eyebrow">'+(editorial?'DESCRIZIONE DELLA FONTE':'IL RACCONTO DELLA FONTE')+'</p><p class="detail-excerpt">'+esc(a.excerpt)+'</p></section>':'';
