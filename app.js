@@ -46,9 +46,14 @@
     const category=categoryLabel(article.category);
     const source=article.source||'Editore non identificato';
     const author=article.author?'<p class="detail-byline">A cura di '+escapeHTML(article.author)+'</p>':'';
-    const excerpt=article.excerpt
-      ?'<section class="detail-section"><p class="eyebrow">IL RACCONTO DELLA FONTE</p><p class="detail-excerpt">'+escapeHTML(article.excerpt)+'</p></section>'
-      :'<section class="detail-section"><p class="eyebrow">SINTESI FORNITA DALLA FONTE</p><p class="detail-muted">La fonte non mette a disposizione una descrizione più ampia. ATELIER non aggiunge dettagli non verificati.</p></section>';
+    const editorial=String(article.editorial_summary||'').trim();
+    const editorialHtml=editorial
+      ?'<section class="detail-section editorial-summary"><p class="eyebrow">IL RACCONTO ATELIER · '+(article.editorial_level==='approfondimento'?'APPROFONDIMENTO':'NOTIZIA')+'</p>'+editorial.split(/\\n\\s*\\n/).map(p=>'<p class="detail-excerpt">'+escapeHTML(p)+'</p>').join('')+'</section>'
+      :'';
+    const sourceExcerpt=article.excerpt
+      ?'<section class="detail-section"><p class="eyebrow">'+(editorial?'DESCRIZIONE DELLA FONTE':'IL RACCONTO DELLA FONTE')+'</p><p class="detail-excerpt">'+escapeHTML(article.excerpt)+'</p></section>'
+      :'';
+    const excerpt=editorialHtml+sourceExcerpt||(editorial?'':'<section class="detail-section"><p class="eyebrow">SINTESI FORNITA DALLA FONTE</p><p class="detail-muted">La fonte non mette a disposizione una descrizione più ampia. ATELIER non aggiunge dettagli non verificati.</p></section>');
     const photo=image
       ?'<figure class="detail-figure"><img src="'+escapeHTML(image)+'" alt="Fotografia verificata: '+escapeHTML(article.title||'articolo')+'" referrerpolicy="no-referrer"><figcaption>Immagine verificata · '+escapeHTML(String(article.image_width||'')+(article.image_width?' × ':'')+String(article.image_height||''))+' px · '+escapeHTML(source)+'</figcaption></figure>'
       :'<div class="detail-no-image">IMMAGINE NON DISPONIBILE O NON VERIFICATA</div>';
