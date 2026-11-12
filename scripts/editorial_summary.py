@@ -88,17 +88,9 @@ def is_valid_editorial_summary(summary, level):
         return False
     paragraphs = [part.strip() for part in re.split(r"\n\s*\n", summary) if part.strip()]
     words = _word_count(summary)
-    # Mantiene compatibilità con gli articoli già presenti nell'archivio.
-    if 2 <= len(paragraphs) <= 3 and 120 <= words <= 180:
-        return True
-    if level == "standard" and 3 <= len(paragraphs) <= 4 and 250 <= words <= 300:
-        return True
-    if level == "approfondimento" and 4 <= len(paragraphs) <= 5 and 350 <= words <= 450:
-        return True
-    if not 4 <= len(paragraphs) <= 6:
-        return False
-    lower, upper = (450, 600) if level == "approfondimento" else (300, 400)
-    return lower <= words <= upper
+    if level == "standard":
+        return 3 <= len(paragraphs) <= 4 and 250 <= words <= 300
+    return 4 <= len(paragraphs) <= 5 and 350 <= words <= 450
 
 
 def generate_editorial_summary(article, source_text):
