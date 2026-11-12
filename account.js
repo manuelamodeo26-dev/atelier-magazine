@@ -113,15 +113,15 @@
     }catch(e){message(e.message||'Non è stato possibile completare l’operazione.',true);}
   }
   async function loadUserData(){
-    const [prefs,favs,likes]=await Promise.all([
+    const [prefs,favs,likes,profile]=await Promise.all([
       client.from('user_preferences').select('categories').eq('user_id',user.id).maybeSingle(),
       client.from('saved_articles').select('article_id,title,category,excerpt,source,url,image,saved_at').eq('user_id',user.id),
       client.from('article_likes').select('article_id').eq('user_id',user.id),
       client.from('profiles').select('avatar_url,display_name').eq('id',user.id).maybeSingle()
     ]);
-    if(prefs.error)throw prefs.error;if(favs.error)throw favs.error;if(likes.error)throw likes.error;
-    if(arguments.length){}
-    avatarUrl=arguments.length?avatarUrl:avatarUrl;
+    if(prefs.error)throw prefs.error;if(favs.error)throw favs.error;if(likes.error)throw likes.error;if(profile.error)throw profile.error;
+    avatarUrl=profile.data?.avatar_url||'';
+    if(profile.data?.display_name&&user?.user_metadata)user.user_metadata.display_name=profile.data.display_name;
     preferred=Array.isArray(prefs.data?.categories)?prefs.data.categories:categories.slice();
     savedRecords=new Map((favs.data||[]).map(x=>[x.article_id,x]));
     saved=new Set(savedRecords.keys());
