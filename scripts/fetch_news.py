@@ -574,17 +574,18 @@ def main():
     # Recover missing editorial images from each publisher's Open Graph metadata.
     # Backfill a small batch per run, then verify the actual image bytes and dimensions.
     image_backfill_urls = set()
-    missing_image_candidates = [
-        item for item in articles if not item.get("image")
+    metadata_backfill_candidates = [
+        item for item in articles
+        if (not item.get("image") or len(item.get("excerpt", "")) < 250 or not item.get("author"))
     ][:MAX_IMAGE_BACKFILLS_PER_RUN]
-    if missing_image_candidates:
+    if metadata_backfill_candidates:
         with concurrent.futures.ThreadPoolExecutor(max_workers=6) as executor:
             metadata_rows = list(executor.map(
                 fetch_page_metadata,
-                [item.get("url", "") for item in missing_image_candidates],
+                [item.get("url", "") for item in metadata_backfill_candidates],
             ))
-        for article, metadata in zip(missing_image_candidates, metadata_rows):
-            if metadata.get("image"):
+        for article, metadata in zip(metadata_backfill_candidates, metadata_rows):
+            if not article.get("image") and metadata.get("image"):
                 article["image"] = metadata["image"]
                 image_backfill_urls.add(canonical_url(article.get("url")))
             if len(metadata.get("description", "")) > len(article.get("excerpt", "")):
