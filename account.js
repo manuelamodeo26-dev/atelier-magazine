@@ -57,7 +57,7 @@
     if(open)open.textContent=on?'IL MIO ACCOUNT ↗':'ACCEDI ↗';
     const form=$('#account-form'), tools=$('#account-tools'), feed=$('#personal-feed');
     if(form)form.hidden=on;if(tools)tools.hidden=!on;if(feed)feed.hidden=!on;
-    if(on)status('Connesso come '+(user.email||'utente ATELIER'));
+    if(on)status('Accesso effettuato. Il tuo spazio ATELIER è pronto.');
     else status(configured?'Accedi o crea un account per personalizzare la rivista.':'Configurazione necessaria: collega prima il progetto Supabase.');
   }
   async function handleAuth(event){
