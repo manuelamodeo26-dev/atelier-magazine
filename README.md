@@ -22,6 +22,7 @@ Fonti configurate in `scripts/fetch_news.py`: Vogue Italia, Pambianco, AD Italia
 
 - **Update ATELIER news**: esecuzione programmata ogni 6 ore e avvio manuale da GitHub Actions.
 - Il processo conserva l'archivio se le fonti non rispondono, elimina i contenuti non italiani e quelli più vecchi di 120 giorni e rimuove i duplicati tramite URL.
+- Ogni aggiornamento registra per ciascun feed lo stato di risposta e il numero di articoli letti, così è possibile distinguere una fonte non raggiungibile da un feed valido senza nuove notizie.
 - **Deploy ATELIER to GitHub Pages**: pubblicazione del sito statico.
 - In **Settings → Pages**, la sorgente deve essere **GitHub Actions**.
 
