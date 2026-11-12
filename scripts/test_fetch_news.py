@@ -60,13 +60,15 @@ class FeedStatusTests(unittest.TestCase):
             blocked("https://outpump.com/feed/"),
             blocked("https://outpump.com/wp-json/wp/v2/posts"),
             blocked("https://outpump.com/wp-json/wp/v2/posts"),
+            blocked("https://outpump.com/?rest_route=/wp/v2/posts"),
+            blocked("https://outpump.com/?rest_route=/wp/v2/posts"),
             xml,
         ]) as mocked, patch.object(fetch_news.time, "sleep"):
             items, ok, error = fetch_news.parse_feed("https://outpump.com/feed/", "Streetwear")
         self.assertTrue(ok)
         self.assertEqual(len(items), 1)
         self.assertIn("news.google.com", items[0]["url"])
-        self.assertEqual(mocked.call_count, 5)
+        self.assertEqual(mocked.call_count, 7)
 
     def test_summary_backfill_is_balanced_with_new_stories(self):
         selected = fetch_news.select_summary_candidates(
