@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
-"""Generate original Italian editorial summaries from publicly available source text."""
+"""Generate original Italian editorial summaries using the Groq API."""
 import json
 import os
 import re
 import time
 from html.parser import HTMLParser
 from urllib.error import HTTPError, URLError
-from urllib.parse import quote
 from urllib.request import Request, urlopen
 
 USER_AGENT = "ATELIER-Magazine/2.0 (+https://github.com/manuelamodeo26-dev/atelier-magazine)"
-MODEL = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
-API_KEY = os.getenv("GEMINI_API_KEY", "").strip()
+MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
+API_KEY = os.getenv("GROQ_API_KEY", "").strip()
+API_ENDPOINT = "https://api.groq.com/openai/v1/chat/completions"
 MAX_SOURCE_CHARS = 12000
 QUOTA_EXHAUSTED_FOR_RUN = False
 
@@ -48,7 +48,7 @@ class ArticleTextParser(HTMLParser):
         if self.ignored:
             return
         if self.current_tag == tag:
-            value = re.sub(r"\s+", " ", " ".join(self.buffer)).strip()
+            value = re.sub(r"\\s+", " ", " ".join(self.buffer)).strip()
             if len(value) >= 45 and value not in self.parts:
                 self.parts.append(value)
             self.current_tag = None
@@ -79,7 +79,7 @@ def fetch_article_text(url):
 
 
 def _word_count(value):
-    return len(re.findall(r"\b[\wÀ-ÖØ-öø-ÿ’'-]+\b", value, flags=re.UNICODE))
+    return len(re.findall(r"\\b[\\wÀ-ÖØ-öø-ÿ’'-]+\\b", value, flags=re.UNICODE))
 
 
 def generate_editorial_summary(article, source_text):
@@ -101,7 +101,7 @@ def generate_editorial_summary(article, source_text):
         "ESCLUSIVAMENTE sul materiale della fonte qui sotto. Non copiare frasi estese, non "
         "inventare fatti, date, numeri, citazioni, intenzioni o conseguenze. Se un dettaglio "
         "non è presente, omettilo. Distingui chiaramente fatti e interpretazioni. Non aggiungere "
-        "commenti generici per raggiungere la lunghezza.\n\n"
+        "commenti generici per raggiungere la lunghezza.\\n\\n"
         "Valuta prima la rilevanza: usa livello 'approfondimento' soltanto se la fonte contiene "
         "sviluppi sostanziali, più elementi verificabili o un tema di particolare rilievo; in "
         "quel caso scrivi 450-600 parole. Per una notizia ordinaria usa livello 'standard' e "
@@ -109,119 +109,106 @@ def generate_editorial_summary(article, source_text):
         "sottotitoli. Apri con il fatto principale e il suo contesto; sviluppa i dettagli "
         "concreti; spiega la rilevanza per il settore solo se supportata dalla fonte; chiudi "
         "con una conclusione informativa, non promozionale. Se la fonte è troppo povera per "
-        "una sintesi affidabile, restituisci esattamente JSON con level 'standard' e paragraphs come array vuoto. Non aggiungere testo fuori dal JSON.\n\n"
+        "una sintesi affidabile, restituisci esattamente JSON con level 'standard' e paragraphs come array vuoto. Non aggiungere testo fuori dal JSON.\\n\\n"
         "Rispondi esclusivamente in JSON valido con le chiavi 'level' (standard o approfondimento) "
-        "e 'paragraphs' (array di 4-6 paragrafi).\n\n"
-        "TITOLO: " + title + "\n"
-        "FONTE: " + str(article.get("source") or "") + "\n"
-        "MATERIALE DISPONIBILE:\n" + combined
+        "e 'paragraphs' (array di 4-6 paragrafi).\\n\\n"
+        "TITOLO: " + title + "\\n"
+        "FONTE: " + str(article.get("source") or "") + "\\n"
+        "MATERIALE DISPONIBILE:\\n" + combined
     )
     payload = {
-        "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {
-            "thinkingConfig": {"thinkingLevel": "low"},
-            "maxOutputTokens": 1800,
-            "responseMimeType": "application/json",
-        },
+        "model": MODEL,
+        "messages": [{"role": "user", "content": prompt}],
+        "temperature": 0.2,
+        "max_completion_tokens": 1800,
+        "response_format": {"type": "json_object"},
+        "reasoning_effort": "low",
+        "reasoning_format": "hidden",
     }
-    fallback_models = ["gemini-3.6-flash", "gemini-3.7-flash", "gemini-3.8-flash"]
+    fallback_models = ["openai/gpt-oss-20b"]
     models = list(dict.fromkeys([MODEL] + fallback_models))
     for model in models:
-        endpoint = (
-            "https://generativelanguage.googleapis.com/v1beta/models/"
-            + quote(model, safe="") + ":generateContent?key=" + quote(API_KEY, safe="")
-        )
+        payload["model"] = model
         request = Request(
-            endpoint,
+            API_ENDPOINT,
             data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
-            headers={"Content-Type": "application/json", "User-Agent": USER_AGENT},
+            headers={
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + API_KEY,
+                "User-Agent": USER_AGENT,
+            },
             method="POST",
         )
         for attempt in range(2):
             try:
-                with urlopen(request, timeout=24) as response:
+                with urlopen(request, timeout=45) as response:
                     result = json.loads(response.read().decode("utf-8"))
                 if not isinstance(result, dict):
-                    print("Risposta Gemini non strutturata su {}.".format(model))
+                    print("Risposta Groq non strutturata su {}.".format(model))
                     break
-                candidates = result.get("candidates") or []
-                if not candidates:
-                    reason = (result.get("promptFeedback") or {}).get("blockReason", "nessun candidato")
-                    print("Gemini {} senza contenuto utilizzabile: {}.".format(model, reason))
+                choices = result.get("choices") or []
+                if not choices or not isinstance(choices[0], dict):
+                    print("Groq {} senza contenuto utilizzabile.".format(model))
                     break
-                candidate = candidates[0]
-                if not isinstance(candidate, dict):
-                    break
-                finish_reason = candidate.get("finishReason", "non indicato")
-                content_data = candidate.get("content") or {}
-                parts = content_data.get("parts", []) if isinstance(content_data, dict) else []
-                if not isinstance(parts, list):
-                    parts = []
-                raw = "".join(
-                    part.get("text", "") for part in parts if isinstance(part, dict)
-                ).strip()
-                if raw.startswith(chr(96) * 3):
-                    raw = raw.split("\n", 1)[-1]
-                    raw = raw.rsplit(chr(96) * 3, 1)[0].strip()
+                choice = choices[0]
+                message = choice.get("message") or {}
+                raw = str(message.get("content") or "").strip()
                 if not raw:
-                    print("Gemini {} ha restituito testo vuoto ({}).".format(model, finish_reason))
+                    print("Groq {} ha restituito testo vuoto ({}).".format(
+                        model, choice.get("finish_reason", "non indicato")
+                    ))
                     break
                 try:
                     data = json.loads(raw)
                 except json.JSONDecodeError:
                     start_json = raw.find("{")
                     if start_json < 0:
-                        print("Gemini {} ha restituito JSON non valido.".format(model))
+                        print("Groq {} ha restituito JSON non valido.".format(model))
                         break
                     try:
                         data, _ = json.JSONDecoder().raw_decode(raw[start_json:])
                     except json.JSONDecodeError:
-                        print("Gemini {} ha restituito JSON incompleto.".format(model))
+                        print("Groq {} ha restituito JSON incompleto.".format(model))
                         break
                 if not isinstance(data, dict):
                     break
                 level = data.get("level")
                 paragraphs = data.get("paragraphs")
                 if level not in ("standard", "approfondimento") or not isinstance(paragraphs, list):
-                    print("Gemini {}: struttura della sintesi non valida.".format(model))
+                    print("Groq {}: struttura della sintesi non valida.".format(model))
                     break
-                paragraphs = [re.sub(r"\s+", " ", str(p)).strip() for p in paragraphs]
+                paragraphs = [re.sub(r"\\s+", " ", str(p)).strip() for p in paragraphs]
                 paragraphs = [p for p in paragraphs if p]
                 if not 4 <= len(paragraphs) <= 6:
-                    print("Gemini {}: numero di paragrafi non valido.".format(model))
+                    print("Groq {}: numero di paragrafi non valido.".format(model))
                     break
                 summary = "\n\n".join(paragraphs)
                 words = _word_count(summary)
-                # Keep a useful 300–400-word text if a model mislabels it as an in-depth feature.
                 if level == "approfondimento" and 300 <= words <= 400:
-                    print("Gemini {}: sintesi riclassificata come standard ({} parole).".format(model, words))
+                    print("Groq {}: sintesi riclassificata come standard ({} parole).".format(model, words))
                     level = "standard"
                 lower, upper = (450, 600) if level == "approfondimento" else (300, 400)
                 if not lower <= words <= upper:
-                    print("Gemini {}: sintesi scartata ({} parole).".format(model, words))
+                    print("Groq {}: sintesi scartata ({} parole).".format(model, words))
                     break
                 if model != MODEL:
                     print("Sintesi generata con modello alternativo {}.".format(model))
                 return summary, level
             except HTTPError as exc:
-                # Respect Google's rate-limit window instead of hammering
-                # every model immediately with the same project quota.
                 detail = ""
                 try:
                     error_body = exc.read().decode("utf-8", errors="replace")
                     error_data = json.loads(error_body) if error_body else {}
-                    detail = str(
-                        ((error_data.get("error") or {}).get("message")) or ""
-                    ).strip()
+                    detail = str(error_data.get("error", {}).get("message") or "").strip()
                 except (ValueError, AttributeError, TypeError):
                     detail = ""
                 if exc.code == 429:
                     quota_exhausted = any(token in detail.lower() for token in (
-                        "quota", "resource_exhausted", "exceeded your current"
+                        "rate_limit", "tokens per day", "requests per day", "quota", "limit"
                     ))
                     if quota_exhausted:
                         quota_exhausted_during_attempts = True
-                        print("Gemini {}: quota esaurita; passo al modello alternativo senza ripetere la richiesta.".format(model))
+                        print("Groq {}: limite di utilizzo raggiunto; provo il modello alternativo.".format(model))
                         break
                     if attempt == 0:
                         retry_after = exc.headers.get("Retry-After") if exc.headers else None
@@ -229,24 +216,22 @@ def generate_editorial_summary(article, source_text):
                             delay = min(20, max(3, int(retry_after))) if retry_after else 8
                         except (TypeError, ValueError):
                             delay = 8
-                        print("Gemini {}: limite richieste (HTTP 429); nuovo tentativo tra {}s.".format(
+                        print("Groq {}: limite richieste (HTTP 429); nuovo tentativo tra {}s.".format(
                             model, delay
                         ))
                         time.sleep(delay)
                         continue
                 message = (" — " + detail[:220]) if detail else ""
-                print("Gemini {} non disponibile (HTTP {}){}.".format(
-                    model, exc.code, message
-                ))
+                print("Groq non disponibile (HTTP {}){}.".format(exc.code, message))
                 break
             except (URLError, TimeoutError, OSError) as exc:
-                print("Gemini {} non disponibile: {}.".format(model, type(exc).__name__))
+                print("Groq non disponibile: {}.".format(type(exc).__name__))
                 break
             except (ValueError, KeyError, IndexError, TypeError) as exc:
-                print("Risposta Gemini {} non valida: {}.".format(model, type(exc).__name__))
+                print("Risposta Groq non valida: {}.".format(type(exc).__name__))
                 break
     if quota_exhausted_during_attempts:
         QUOTA_EXHAUSTED_FOR_RUN = True
-        print("Quota Gemini esaurita: sospendo gli altri tentativi AI per questa esecuzione.")
-    print("Sintesi AI non disponibile: esauriti modello principale e modelli alternativi.")
+        print("Limiti Groq esauriti: sospendo gli altri tentativi AI per questa esecuzione.")
+    print("Sintesi AI non disponibile: esauriti modello principale e modello alternativo Groq.")
     return "", ""
