@@ -550,3 +550,11 @@ section[id] { scroll-margin-top: 100px; }
 .article-dialog .like-article [data-like-count]{
   color:#B51F1F!important;-webkit-text-fill-color:#B51F1F!important;
 }
+
+
+/* Icona segnalibro per Salva: sostituisce il cuore in ogni vista */
+.save-bookmark-icon{display:inline-block!important;width:15px!important;height:17px!important;flex:0 0 15px!important;fill:none!important;stroke:#B51F1F!important;stroke-width:1.8!important;stroke-linecap:round!important;stroke-linejoin:round!important;vertical-align:middle!important}
+.save-article{display:inline-flex!important;align-items:center!important;gap:6px!important}
+.save-article .save-bookmark-icon{color:#B51F1F!important}
+#article-back.article-back{appearance:none!important;-webkit-appearance:none!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;margin:0!important;cursor:pointer!important}
+#article-back.article-back:hover{background:transparent!important;border:0!important;box-shadow:none!important}
