@@ -9,7 +9,7 @@
     {title:'Quando il design incontra la vita quotidiana.',category:'Design',excerpt:'Oggetti, ambienti e dettagli che raccontano il nostro tempo.',source:'ATELIER',date:'2026-11-11',url:'#'},
     {title:'Le nuove energie creative da tenere d’occhio.',category:'Art & Culture',excerpt:'Una selezione di linguaggi e visioni che attraversano la cultura contemporanea.',source:'ATELIER',date:'2026-11-11',url:'#'}
   ];
-  let articles=[], activeFilter='Tutti', showAll=false;
+  let articles=[], activeFilter='Tutti', showAll=false, loadFailed=false;
   const escapeHTML=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   function safeURL(value){
     if(typeof value!=='string'||!value.trim()||value.trim()==='#') return '';
@@ -104,7 +104,8 @@
     const visible=visibleArticles(), list=showAll?visible:visible.slice(0,9);
     grid.innerHTML=list.map(card).join('');
     empty.hidden=list.length!==0;
-    count.textContent=visible.length+' '+(visible.length===1?'ARTICOLO':'ARTICOLI')+' · '+categoryLabel(activeFilter).toLocaleUpperCase('it');
+    empty.textContent=loadFailed?'Archivio temporaneamente non disponibile. Riprova tra poco.':'Nessun articolo in questa sezione. Prova un altro filtro.';
+    count.textContent=loadFailed?'ARCHIVIO TEMPORANEAMENTE NON DISPONIBILE':visible.length+' '+(visible.length===1?'ARTICOLO':'ARTICOLI')+' · '+categoryLabel(activeFilter).toLocaleUpperCase('it');
     $('#show-more').hidden=visible.length<=9;
     $('#show-more').textContent=showAll?'MOSTRA MENO ↑':'MOSTRA TUTTI GLI ARTICOLI ↗';
     $('#show-more').setAttribute('aria-expanded',String(showAll));
@@ -117,10 +118,11 @@
       const data=await response.json();
       if(!data||!Array.isArray(data.articles)) throw new Error('Formato archivio non valido');
       articles=data.articles.filter(a=>a&&typeof a.title==='string'&&a.title.trim()).map(a=>({...a,category:categoryOf(a.category)}));
-      if(!articles.length) articles=fallback;
+      loadFailed=false;
     }catch(error){
       console.warn('ATELIER: impossibile caricare le notizie.',error);
-      articles=fallback;
+      articles=[];
+      loadFailed=true;
     }
     const heroImage=articles[0]&&articles[0].image_verified===true&&safeURL(articles[0].image)?articles[0]:null;
     if(heroImage){
