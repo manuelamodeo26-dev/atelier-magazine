@@ -58,6 +58,18 @@ def child_text(node, *names):
     return clean(" ".join(part.strip() for part in item.itertext() if part.strip()))
 
 
+def best_description(node, *names, limit=1800):
+    """Prefer the most informative publisher-supplied RSS/Atom description."""
+    wanted = {name.lower() for name in names}
+    candidates = []
+    for item in node.iter():
+        if local_name(item.tag) in wanted:
+            value = clean(" ".join(part.strip() for part in item.itertext() if part.strip()))
+            if value and value not in candidates:
+                candidates.append(value)
+    return max(candidates, key=len, default="")[:limit]
+
+
 def canonical_url(value):
     value = html.unescape((value or "").strip())
     try:
@@ -134,7 +146,7 @@ class ImageMetaParser(HTMLParser):
         self.author = ""
 
     def handle_starttag(self, tag, attrs):
-        if tag.lower() != "meta" or self.image:
+        if tag.lower() != "meta":
             return
         values = {key.lower(): value for key, value in attrs if key and value}
         key = (values.get("property") or values.get("name") or "").lower()
@@ -251,7 +263,7 @@ def parse_feed(feed_url, category):
                 link = article_link(node)
                 if not title or not link:
                     continue
-                description = child_text(node, "description", "summary", "encoded", "content")
+                description = best_description(node, "description", "summary", "encoded", "content")
                 author = child_text(node, "creator", "author", "artist")
                 articles.append({
                     "id": link,
@@ -268,13 +280,13 @@ def parse_feed(feed_url, category):
                 })
             metadata_attempts = 0
             for article in articles:
-                if (not article["image"] or not article["excerpt"] or not article["author"]) and metadata_attempts < 8:
+                if (not article["image"] or len(article["excerpt"]) < 500 or not article["author"]) and metadata_attempts < 8:
                     metadata_attempts += 1
                     metadata = fetch_page_metadata(article["url"])
                     if not article["image"]:
                         article["image"] = metadata["image"]
-                    if not article["excerpt"]:
-                        article["excerpt"] = metadata["description"]
+                    if len(metadata["description"]) > len(article["excerpt"]):
+                        article["excerpt"] = metadata["description"][:1800]
                     if not article["author"]:
                         article["author"] = metadata["author"]
             print(f"{host}: {len(articles)} articoli")
@@ -345,6 +357,13 @@ def main():
         article["id"] = url
         if url in seen_urls:
             duplicates += 1
+            # Keep the existing record and its verified image, but enrich its
+            # publisher-supplied description when the fresh feed has more detail.
+            existing = merged[url]
+            if len(article.get("excerpt", "")) > len(existing.get("excerpt", "")):
+                existing["excerpt"] = article["excerpt"][:1800]
+            if not existing.get("author") and article.get("author"):
+                existing["author"] = article["author"]
             continue
         seen_urls.add(url)
         merged[url] = article
