@@ -86,7 +86,7 @@ def is_valid_editorial_summary(summary, level):
     """Check that a stored summary meets ATELIER's editorial format."""
     if level not in ("standard", "approfondimento") or not isinstance(summary, str):
         return False
-    paragraphs = [part.strip() for part in re.split(r"\\n\\s*\\n", summary) if part.strip()]
+    paragraphs = [part.strip() for part in re.split(r"\n\s*\n", summary) if part.strip()]
     if not 4 <= len(paragraphs) <= 6:
         return False
     words = _word_count(summary)
