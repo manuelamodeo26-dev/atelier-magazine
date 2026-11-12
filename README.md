@@ -16,7 +16,7 @@ Le notizie vengono raccolte da feed pubblici di editori italiani dedicati a moda
 
 Le fotografie sono quelle distribuite dalle fonti nei rispettivi feed. Quando l'indirizzo dell'immagine consente parametri di dimensione, il raccoglitore richiede una versione più grande; la resa finale dipende comunque dal file originale, dal CDN e dalle condizioni d'uso del publisher. Le immagini non vengono copiate nel repository.
 
-Fonti configurate in `scripts/fetch_news.py`: Vogue Italia, Pambianco, AD Italia, Exibart e Finestre sull'Arte. Le immagini mancanti nel feed vengono cercate nei metadati Open Graph delle pagine originali, con un numero limitato di richieste. La disponibilità effettiva di ogni feed può cambiare.
+Fonti configurate in `scripts/fetch_news.py`: Vogue Italia, Pambianco, AD Italia, Exibart e Finestre sull'Arte. Le immagini mancanti nel feed vengono cercate nei metadati Open Graph delle pagine originali, con un numero limitato di richieste. La disponibilità effettiva di ogni feed può cambiare. Un filtro editoriale esclude alcune rubriche generiche fuori tema (per esempio oroscopi e contenuti sanitari generalisti); le notizie vengono inoltre assegnate a sezioni più specifiche in base a titolo e descrizione. Questi controlli automatici aiutano la selezione, ma non sostituiscono una verifica redazionale.
 
 ## Aggiornamento e pubblicazione
 
@@ -38,6 +38,8 @@ La raccolta RSS non equivale a una verifica giornalistica: controllare sempre no
 ## Redazione e sintesi editoriali ATELIER
 
 Quando è configurato il secret GitHub Actions `GEMINI_API_KEY`, il raccoglitore può creare una sintesi originale in italiano a partire dal titolo, dal testo disponibile nel feed e dal testo leggibile della pagina pubblica della fonte:
+
+Il workflow utilizza il modello stabile `gemini-3.8-flash`; il nome del modello è configurato in `.github/workflows/news.yml` e può essere aggiornato quando necessario.
 
 - Notizie standard: 180–250 parole, in 3–5 paragrafi.
 - Approfondimenti: 300–450 parole, in 3–5 paragrafi, soltanto quando il materiale contiene dettagli sufficienti.
