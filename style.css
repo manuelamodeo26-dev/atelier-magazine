@@ -457,3 +457,12 @@ section[id] { scroll-margin-top: 100px; }
 #search-open::before,#search-open::after{content:none!important;display:none!important}
 #search-open:hover{background:#8f1b1b!important;border-color:#8f1b1b!important}
 @media(max-width:760px){#search-open{flex:0 0 36px!important;width:36px!important;height:36px!important;min-width:36px!important}#search-open .search-icon{width:18px!important;height:18px!important}}
+
+
+/* FIX DEFINITIVO 12/11/2026: ricerca mobile visibile e chiusure rosse trasparenti */
+#search-open{display:inline-flex!important;align-items:center!important;justify-content:center!important;flex:0 0 42px!important;width:42px!important;height:42px!important;min-width:42px!important;padding:0!important;background:#B51F1F!important;border:1px solid #B51F1F!important;border-radius:50%!important;color:#fff!important;visibility:visible!important;opacity:1!important;position:relative!important;z-index:30!important}
+#search-open .search-icon{display:block!important;visibility:visible!important;opacity:1!important;width:20px!important;height:20px!important;fill:none!important;stroke:#fff!important;stroke-width:2.2!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+#search-open::before,#search-open::after{content:none!important;display:none!important}
+.dialog-close{background:transparent!important;border:0!important;border-radius:0!important;color:#B51F1F!important;box-shadow:none!important;font-size:32px!important;font-weight:400!important;line-height:1!important;width:38px!important;height:38px!important;min-width:38px!important;padding:0!important}
+.dialog-close:hover,.dialog-close:focus-visible{background:rgba(181,31,31,.08)!important;border:0!important;color:#8f1b1b!important}
+@media(max-width:760px){#search-open{flex:0 0 36px!important;width:36px!important;height:36px!important;min-width:36px!important;margin-left:8px!important}#search-open .search-icon{width:18px!important;height:18px!important}.site-header{gap:8px}.menu-toggle{margin-left:auto!important;margin-right:0!important}}
