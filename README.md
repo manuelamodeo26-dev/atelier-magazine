@@ -29,7 +29,7 @@ La raccolta RSS non equivale a una verifica giornalistica: controllare sempre no
 
 ## Lettura e verifica editoriale
 
-- Ogni articolo si apre in una scheda interna: titolo, categoria, data, editore, autore quando disponibile e sintesi fornita dall'editore.
+- Ogni articolo si apre in una scheda interna: titolo, categoria, data, editore, autore quando disponibile e descrizione estesa ricavata dai contenuti RSS/Atom e dai metadati pubblici della fonte. Il raccoglitore privilegia il testo più informativo disponibile e arricchisce anche gli articoli già archiviati quando la fonte pubblica una descrizione migliore.
 - Le fonti sono raccolte in fondo alla scheda. Il collegamento esterno è facoltativo e viene aperto solo se il lettore lo seleziona.
 - ATELIER non ripubblica integralmente articoli protetti o contenuti paywall: mostra le informazioni e le sintesi effettivamente disponibili nei feed e nei metadati pubblici, senza inventare dettagli.
 - Le fotografie vengono verificate prima della pubblicazione: risposta HTTP, tipo MIME, formato immagine reale, dimensioni minime 1000 px sul lato lungo e 500 px sul lato corto. Le immagini non conformi vengono escluse.
