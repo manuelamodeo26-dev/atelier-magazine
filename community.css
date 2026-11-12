@@ -25,3 +25,25 @@
 .atelier-lab-form-bottom>span{font:9px/1.5 var(--mono);color:#777168}
 .atelier-lab-form button:disabled{opacity:.5;cursor:wait}
 @media(max-width:650px){.atelier-lab{padding:44px 0 52px}.atelier-lab-heading{grid-template-columns:1fr;gap:18px}.atelier-lab-heading h2{font-size:58px}.atelier-lab-form-bottom{align-items:stretch;flex-direction:column}.atelier-lab-form-bottom button{width:100%}}
+
+/* Writing experience — editorial, guided and lightweight */
+.writer-field-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:8px}
+.writer-field-head label{margin:0!important}
+.writer-counter{font:9px var(--mono);color:#817a70;white-space:nowrap;font-variant-numeric:tabular-nums}
+.writer-counter.is-near-limit{color:var(--red)}
+.writer-prompts{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin:2px 0 4px}
+.writer-prompts>span{font:8px var(--mono);letter-spacing:.09em;color:#8b8378;margin-right:4px}
+.writer-prompts button{border:1px solid #d5cfc5;background:#ebe7df;color:#514b43;border-radius:999px;padding:7px 11px;font:10px var(--body);cursor:pointer;transition:background .18s,border-color .18s,color .18s}
+.writer-prompts button:hover,.writer-prompts button:focus-visible{background:#292622;border-color:#292622;color:#f1eee6;outline:none}
+.writer-helper{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0;color:#827b71;font:10px/1.55 var(--body)}
+.community-form textarea,.atelier-lab-form textarea{min-height:150px;resize:vertical;line-height:1.75;padding:16px 17px;transition:border-color .18s,box-shadow .18s}
+.community-form textarea:focus,.community-form input:focus,.community-form select:focus,.atelier-lab-form textarea:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 3px #b51f1f12}
+.community-form textarea::placeholder,.atelier-lab-form textarea::placeholder{color:#9a9388}
+.community-form input{min-height:46px}
+.community-dialog .writer-submit{margin-top:4px}
+.atelier-lab-form{gap:13px}
+.atelier-lab-form textarea{background:#f5f2eb;border-color:#d0c9be;min-height:132px}
+.atelier-lab-form-bottom{padding-top:5px}
+.atelier-lab-form-bottom button{min-height:44px}
+.writer-counter,.writer-helper{user-select:none}
+@media(max-width:600px){.writer-prompts{gap:6px}.writer-prompts>span{width:100%;margin-bottom:2px}.writer-prompts button{font-size:9px;padding:8px 10px}.writer-helper{font-size:9px}.community-dialog{padding:22px}.community-form textarea{min-height:170px}}
