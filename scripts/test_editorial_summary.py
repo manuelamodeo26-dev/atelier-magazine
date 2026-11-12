@@ -11,12 +11,12 @@ class EditorialSummaryTests(unittest.TestCase):
     def _response(self, level="standard"):
         paragraphs = [" ".join(["moda"] * 80) for _ in range(4)]
         body = json.dumps({
-            "candidates": [{
-                "finishReason": "STOP",
-                "content": {"parts": [{"text": json.dumps({
+            "choices": [{
+                "finish_reason": "stop",
+                "message": {"content": json.dumps({
                     "level": level,
                     "paragraphs": paragraphs,
-                })}]},
+                })},
             }]
         }).encode("utf-8")
         response = MagicMock()
@@ -30,39 +30,55 @@ class EditorialSummaryTests(unittest.TestCase):
             "source": "Fonte di prova",
         }
 
+    def test_uses_groq_chat_completions_and_json_mode(self):
+        response = self._response()
+        with (
+            patch.object(editorial_summary, "API_KEY", "unit-test-key"),
+            patch.object(editorial_summary, "MODEL", "openai/gpt-oss-120b"),
+            patch.object(editorial_summary, "urlopen", return_value=response) as mocked,
+        ):
+            summary, level = editorial_summary.generate_editorial_summary(
+                self._article(), "Testo della fonte " * 100
+            )
+        self.assertEqual(level, "standard")
+        self.assertEqual(editorial_summary._word_count(summary), 320)
+        request = mocked.call_args.args[0]
+        self.assertEqual(request.full_url, "https://api.groq.com/openai/v1/chat/completions")
+        self.assertEqual(request.get_header("Authorization"), "Bearer unit-test-key")
+        payload = json.loads(request.data.decode("utf-8"))
+        self.assertEqual(payload["model"], "openai/gpt-oss-120b")
+        self.assertEqual(payload["response_format"], {"type": "json_object"})
+
     def test_respects_retry_after_for_rate_limits(self):
         response = self._response()
         rate_limit = HTTPError(
-            "https://example.com", 429, "Too Many Requests",
+            "https://api.groq.com", 429, "Too Many Requests",
             {"Retry-After": "7"}, None,
         )
-
         with (
             patch.object(editorial_summary, "API_KEY", "unit-test-key"),
-            patch.object(editorial_summary, "MODEL", "primary-test-model"),
+            patch.object(editorial_summary, "MODEL", "openai/gpt-oss-120b"),
             patch.object(editorial_summary, "urlopen", side_effect=[rate_limit, response]),
             patch.object(editorial_summary.time, "sleep") as sleep,
         ):
             summary, level = editorial_summary.generate_editorial_summary(
                 self._article(), "Testo della fonte " * 100
             )
-
         self.assertEqual(level, "standard")
         self.assertEqual(editorial_summary._word_count(summary), 320)
         sleep.assert_called_once_with(7)
 
-
-    def test_quota_exhaustion_skips_retry_and_uses_next_model(self):
+    def test_falls_back_to_smaller_model_on_quota_exhaustion(self):
         error_body = json.dumps({
-            "error": {"message": "You exceeded your current quota", "status": "RESOURCE_EXHAUSTED"}
+            "error": {"message": "Rate limit reached for requests per day", "type": "requests"}
         }).encode("utf-8")
         quota_error = HTTPError(
-            "https://example.com", 429, "Too Many Requests", {}, io.BytesIO(error_body)
+            "https://api.groq.com", 429, "Too Many Requests", {}, io.BytesIO(error_body)
         )
         response = self._response()
         with (
             patch.object(editorial_summary, "API_KEY", "unit-test-key"),
-            patch.object(editorial_summary, "MODEL", "primary-test-model"),
+            patch.object(editorial_summary, "MODEL", "openai/gpt-oss-120b"),
             patch.object(editorial_summary, "urlopen", side_effect=[quota_error, response]) as mocked,
             patch.object(editorial_summary.time, "sleep") as sleep,
         ):
@@ -72,14 +88,15 @@ class EditorialSummaryTests(unittest.TestCase):
         self.assertEqual(level, "standard")
         self.assertEqual(editorial_summary._word_count(summary), 320)
         self.assertEqual(mocked.call_count, 2)
-        self.assertIn("gemini-3.6-flash", mocked.call_args_list[1].args[0].full_url)
+        second_payload = json.loads(mocked.call_args_list[1].args[0].data.decode("utf-8"))
+        self.assertEqual(second_payload["model"], "openai/gpt-oss-20b")
         sleep.assert_not_called()
 
     def test_reclassifies_short_in_depth_text_as_standard(self):
         response = self._response(level="approfondimento")
         with (
             patch.object(editorial_summary, "API_KEY", "unit-test-key"),
-            patch.object(editorial_summary, "MODEL", "primary-test-model"),
+            patch.object(editorial_summary, "MODEL", "openai/gpt-oss-120b"),
             patch.object(editorial_summary, "urlopen", return_value=response),
         ):
             summary, level = editorial_summary.generate_editorial_summary(
@@ -88,41 +105,20 @@ class EditorialSummaryTests(unittest.TestCase):
         self.assertEqual(level, "standard")
         self.assertEqual(editorial_summary._word_count(summary), 320)
 
-    def test_falls_back_when_primary_model_is_overloaded(self):
-        response = self._response()
-
-        with (
-            patch.object(editorial_summary, "API_KEY", "unit-test-key"),
-            patch.object(editorial_summary, "MODEL", "primary-test-model"),
-            patch.object(editorial_summary, "urlopen", side_effect=[
-                HTTPError("https://example.com", 503, "Unavailable", {}, None),
-                response,
-            ]) as mocked,
-        ):
-            summary, level = editorial_summary.generate_editorial_summary(
-                self._article(), "Testo della fonte " * 100
-            )
-
-        self.assertEqual(level, "standard")
-        self.assertEqual(editorial_summary._word_count(summary), 320)
-        self.assertEqual(mocked.call_count, 2)
-        self.assertIn("gemini-3.6-flash", mocked.call_args_list[1].args[0].full_url)
-
-
     def test_quota_exhaustion_stops_repeated_requests_for_the_run(self):
         error_body = json.dumps({
-            "error": {"message": "You exceeded your current quota", "status": "RESOURCE_EXHAUSTED"}
+            "error": {"message": "Rate limit reached for requests per day", "type": "requests"}
         }).encode("utf-8")
         errors = [
             HTTPError(
-                "https://example.com", 429, "Too Many Requests", {},
+                "https://api.groq.com", 429, "Too Many Requests", {},
                 io.BytesIO(error_body),
             )
-            for _ in range(4)
+            for _ in range(2)
         ]
         with (
             patch.object(editorial_summary, "API_KEY", "unit-test-key"),
-            patch.object(editorial_summary, "MODEL", "primary-test-model"),
+            patch.object(editorial_summary, "MODEL", "openai/gpt-oss-120b"),
             patch.object(editorial_summary, "QUOTA_EXHAUSTED_FOR_RUN", False),
             patch.object(editorial_summary, "urlopen", side_effect=errors) as mocked,
         ):
@@ -132,10 +128,9 @@ class EditorialSummaryTests(unittest.TestCase):
             second = editorial_summary.generate_editorial_summary(
                 self._article(), "Altro testo della fonte " * 100
             )
-
         self.assertEqual(first, ("", ""))
         self.assertEqual(second, ("", ""))
-        self.assertEqual(mocked.call_count, 4)
+        self.assertEqual(mocked.call_count, 2)
 
 
 if __name__ == "__main__":
