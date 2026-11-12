@@ -101,7 +101,7 @@ def generate_editorial_summary(article, source_text):
         "commenti generici per raggiungere la lunghezza.\n\n"
         "Valuta prima la rilevanza: usa livello 'approfondimento' soltanto se la fonte contiene "
         "sviluppi sostanziali, più elementi verificabili o un tema di particolare rilievo; in "
-        "quel caso scrivi 300-450 parole. Per una notizia ordinaria usa livello 'standard' e "
+        "quel caso scrivi 450-600 parole. Per una notizia ordinaria usa livello 'standard' e "
         "scrivi 300-400 parole. Quando produci una sintesi usa 4-6 paragrafi, senza titolo, elenchi o "
         "sottotitoli. Apri con il fatto principale e il suo contesto; sviluppa i dettagli "
         "concreti; spiega la rilevanza per il settore solo se supportata dalla fonte; chiudi "
