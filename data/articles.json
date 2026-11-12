@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T19:17:10.777755+00:00",
+  "updated_at": "2026-11-12T19:19:19.153565+00:00",
   "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
@@ -1983,7 +1983,9 @@
       "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFA1aXIxTVJwVndrM0l0QlNXbWVlcHpyMEhEVkJPOEYwTHB6QUFKdUdZOXJqT01UWWp3Uk5MbS1oWG5FaDYzWFY1LTNsLXRoeHJvSU5vZFVPcFBxbGQ4ZmstZjdHWmNjcW53ZW5TaGhB?oc=5",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "editorial_attempted_at": "2026-11-12T19:19:18.917013+00:00",
+      "editorial_retry_after": "2026-11-13T07:19:18.917013+00:00"
     },
     {
       "id": "https://www.ad-italia.it/article/marva-griffin-casa-milano-talenti-design/",
@@ -2211,7 +2213,9 @@
       "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPMEZuSjE5ckJ5ak5KcTl3Z05IUmVBY1dxS2RKZWVRNzZWZ0RrbEJiR05HYmk5NklBVC0tRTg2dXE3c3FVdnpjaFhNb3FnaUVUM3FfZFRwVjFKTlFxYk9NX2NDNnd2Tkt4dEsyNzd2R2tjR0prSW1jazJQVzRtV0R2X25DOTlWV3U4b0E?oc=5",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "editorial_attempted_at": "2026-11-12T19:19:18.638309+00:00",
+      "editorial_retry_after": "2026-11-13T07:19:18.638309+00:00"
     },
     {
       "id": "https://www.ad-italia.it/article/casa-piccola-varsavia-25-m2-cubo-rivestito-in-ottone-distribuisce-gli-spazi/",
@@ -2423,7 +2427,9 @@
       "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5PbG40c0dpYzRlUVk1OVBRak5xNThKeGd5bUdQbnItTC1NTUNiYXpPMW8yMnRWZTRPOFlrNzAyenA4czdTc2FrbVVMRmtWejdrV2lXTGg0eWVKNzQ?oc=5",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "editorial_attempted_at": "2026-11-12T19:19:18.397384+00:00",
+      "editorial_retry_after": "2026-11-13T07:19:18.397384+00:00"
     }
   ]
 }
