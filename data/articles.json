@@ -1,7 +1,7 @@
 {
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
   "editorial_api_retry_after": "2026-11-13T21:38:01.357099+00:00",
-  "updated_at": "2026-11-12T21:38:02.569872+00:00",
+  "updated_at": "2026-11-12T22:58:00.329273+00:00",
   "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
@@ -51,7 +51,7 @@
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 119
+    "verified_count": 129
   },
   "articles": [
     {
@@ -1694,9 +1694,12 @@
       "source": "finestresullarte.info",
       "date": "2026-11-10T23:15:40+00:00",
       "url": "https://www.finestresullarte.info/eventi/a-milano-si-puo-entrare-nel-cantiere-del-museo-della-resistenza-visite",
-      "image": "",
-      "image_verified": false,
-      "language": "it"
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/cantiere-museo-resistenza-nov-26-1.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 2057,
+      "image_height": 1056,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.finestresullarte.info/arte-contemporanea/in-danimarca-un-museo-ha-affidato-a-olafur-eliasson-un-progetto-che-va-oltre-mostra",
@@ -1707,9 +1710,12 @@
       "source": "finestresullarte.info",
       "date": "2026-11-10T23:06:44+00:00",
       "url": "https://www.finestresullarte.info/arte-contemporanea/in-danimarca-un-museo-ha-affidato-a-olafur-eliasson-un-progetto-che-va-oltre-mostra",
-      "image": "",
-      "image_verified": false,
-      "language": "it"
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/olafur-eliasson-presence-aarhus-1.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1605,
+      "image_height": 824,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.finestresullarte.info/arte-antica/caravaggio-dipinse-ritratto-musicista-mai-trovato-ci-sono-novita",
@@ -1720,9 +1726,12 @@
       "source": "finestresullarte.info",
       "date": "2026-11-10T22:48:59+00:00",
       "url": "https://www.finestresullarte.info/arte-antica/caravaggio-dipinse-ritratto-musicista-mai-trovato-ci-sono-novita",
-      "image": "",
-      "image_verified": false,
-      "language": "it"
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/caravaggio-suonatore-liuto-d-1.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 657,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.exibart.com/mercato/old-masters-litalia-protagonista-da-lempertz-da-fede-galizia-a-tiepolo/",
@@ -1781,9 +1790,12 @@
       "source": "finestresullarte.info",
       "date": "2026-11-10T16:47:45+00:00",
       "url": "https://www.finestresullarte.info/arte-antica/getty-avvia-progetto-per-salvare-una-chiesa-barocca-del-peru-sue-opere",
-      "image": "",
-      "image_verified": false,
-      "language": "it"
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/peru-membri-della-comunita-locale-interno-della-chiesa-rondocan-cover.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1200,
+      "image_height": 616,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.finestresullarte.info/opinioni/musei-per-non-vedenti-aggiungere-braille-senza-co-progettare-e-paternalismo",
@@ -1794,9 +1806,12 @@
       "source": "finestresullarte.info",
       "date": "2026-11-10T16:44:49+00:00",
       "url": "https://www.finestresullarte.info/opinioni/musei-per-non-vedenti-aggiungere-braille-senza-co-progettare-e-paternalismo",
-      "image": "",
-      "image_verified": false,
-      "language": "it"
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/3741/lettura-braille.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 657,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.finestresullarte.info/attualita/donatore-anonimo-dona-6-milioni-di-euro-per-salvare-biblioteca-del-castello-chantilly",
@@ -1807,9 +1822,12 @@
       "source": "finestresullarte.info",
       "date": "2026-11-10T15:53:51+00:00",
       "url": "https://www.finestresullarte.info/attualita/donatore-anonimo-dona-6-milioni-di-euro-per-salvare-biblioteca-del-castello-chantilly",
-      "image": "",
-      "image_verified": false,
-      "language": "it"
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/le-tres-riches-heures-berry-cover.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1200,
+      "image_height": 616,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.finestresullarte.info/archeologia/catania-riapre-antico-ipogeo-cinque-camere-sepolcrali-tre-metri-sotto-la-citta",
@@ -1820,9 +1838,12 @@
       "source": "finestresullarte.info",
       "date": "2026-11-10T15:53:21+00:00",
       "url": "https://www.finestresullarte.info/archeologia/catania-riapre-antico-ipogeo-cinque-camere-sepolcrali-tre-metri-sotto-la-citta",
-      "image": "",
-      "image_verified": false,
-      "language": "it"
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/antico-ipogeo-della-chiesa-di-sant-agostino-cover.jpeg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1200,
+      "image_height": 616,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/il-botswana-raddoppiera-la-sua-quota-in-de-beers-si-avvicina-la-vendita-500253/",
@@ -1838,7 +1859,9 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "image_attempted_at": "2026-11-12T22:57:55.504861+00:00",
+      "image_retry_after": "2026-11-13T22:57:55.504861+00:00"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/luisaviaroma-resta-a-lvr-nessun-rilancio-sullofferta-da-188-milioni-500187/",
@@ -1854,7 +1877,9 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "image_attempted_at": "2026-11-12T22:57:55.504861+00:00",
+      "image_retry_after": "2026-11-13T22:57:55.504861+00:00"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/piazza-italia-compra-conbipel-in-arrivo-un-piano-di-opening-da-100-nuovi-negozi-500181/",
@@ -1881,9 +1906,12 @@
       "source": "pambianconews.com",
       "date": "2026-11-10T11:00:08+00:00",
       "url": "https://www.pambianconews.com/2026/11/10/menswear-italiano-a-doppia-velocita-nei-7-mesi-export-a-09-import-a-65-500143/",
-      "image": "",
-      "image_verified": false,
-      "language": "it"
+      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/Final_Files8.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1320,
+      "image_height": 1100,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/kiton-raddoppia-nel-quadrilatero-nuova-boutique-in-via-montenapoleone-500111/",
@@ -1894,12 +1922,12 @@
       "source": "pambianconews.com",
       "date": "2026-11-10T10:46:03+00:00",
       "url": "https://www.pambianconews.com/2026/11/10/kiton-raddoppia-nel-quadrilatero-nuova-boutique-in-via-montenapoleone-500111/",
-      "image": "",
-      "image_verified": false,
+      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/Kiton_1.jpg",
+      "image_verified": true,
       "language": "it",
-      "image_width": 0,
-      "image_height": 0,
-      "image_format": ""
+      "image_width": 1590,
+      "image_height": 822,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/subdued-da-apac-e-usa-previsti-45-milioni-di-fatturato-nel-2026-500171/",
@@ -1910,9 +1938,12 @@
       "source": "pambianconews.com",
       "date": "2026-11-10T09:49:44+00:00",
       "url": "https://www.pambianconews.com/2026/11/10/subdued-da-apac-e-usa-previsti-45-milioni-di-fatturato-nel-2026-500171/",
-      "image": "",
-      "image_verified": false,
-      "language": "it"
+      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/Subdued_Store-Flatiron-New-York-e1794301344832.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 2000,
+      "image_height": 1050,
+      "image_format": "jpeg"
     },
     {
       "id": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB2N19oZ05aOUJDVE84d2ZtS01hNzY3WW11WV9qVzhEMnJfSFJDcXdaU3NiRzB3dnVFSldhcDZnTFBhMkJJZ0d5ZEVneV9UQ1NIYkhjZUhmUTVONHdkdXhZNXlvYzc4S3ppWFhOT3ducXBxZUl6bFVtUUs2ZnRxVVU?oc=5",
