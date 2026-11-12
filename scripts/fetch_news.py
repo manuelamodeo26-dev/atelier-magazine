@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Collect public RSS/Atom metadata for the ATELIER editorial archive."""
 import html
+from html.parser import HTMLParser
 import json
 import os
 import re
@@ -16,12 +17,9 @@ OUT = os.path.join(ROOT, "data", "articles.json")
 FEEDS = [
     ("https://www.vogue.it/feed/rss", "Fashion"),
     ("https://www.pambianconews.com/feed/", "Fashion"),
-    ("https://www.fashionnewsmagazine.com/feed/", "Fashion"),
     ("https://www.ad-italia.it/feed/rss", "Design"),
-    ("https://www.artribune.com/feed-rss/", "Art & Culture"),
     ("https://www.exibart.com/feed/", "Art & Culture"),
     ("https://www.finestresullarte.info/finestresullarte.xml", "Art & Culture"),
-    ("https://www.domusweb.it/it/rss.xml", "Design"),
 ]
 MAX_PER_FEED = 18
 MAX_ARTICLES = 180
@@ -122,6 +120,34 @@ def upgrade_image_url(value):
         return value
 
 
+class ImageMetaParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.image = ""
+
+    def handle_starttag(self, tag, attrs):
+        if tag.lower() != "meta" or self.image:
+            return
+        values = {key.lower(): value for key, value in attrs if key and value}
+        key = (values.get("property") or values.get("name") or "").lower()
+        if key in ("og:image", "twitter:image"):
+            self.image = values.get("content", "")
+
+
+def fetch_page_image(article_url):
+    try:
+        request = Request(article_url, headers={
+            "User-Agent": USER_AGENT,
+            "Accept": "text/html,application/xhtml+xml",
+        })
+        with urlopen(request, timeout=5) as response:
+            parser = ImageMetaParser()
+            parser.feed(response.read(250000).decode("utf-8", errors="replace"))
+        return upgrade_image_url(parser.image)
+    except Exception:
+        return ""
+
+
 def article_date(node):
     raw = child_text(node, "pubDate", "published", "updated", "date", "dateCreated")
     if not raw:
@@ -172,6 +198,11 @@ def parse_feed(feed_url, category):
                     "image": upgrade_image_url(article_image(node)),
                     "language": "it",
                 })
+            image_attempts = 0
+            for article in articles:
+                if not article["image"] and image_attempts < 4:
+                    image_attempts += 1
+                    article["image"] = fetch_page_image(article["url"])
             print(f"{host}: {len(articles)} articoli")
             return articles
         except Exception as exc:
