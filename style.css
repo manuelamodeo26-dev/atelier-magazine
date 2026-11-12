@@ -417,3 +417,30 @@ section[id] { scroll-margin-top: 100px; }
 #search-open::before{content:"";display:block;width:12px;height:12px;border:2px solid #fff;border-radius:50%;position:absolute;left:12px;top:11px}
 #search-open::after{content:"";display:block;position:absolute;width:8px;height:2px;background:#fff;border-radius:2px;left:25px;top:26px;transform:rotate(45deg);transform-origin:left center}
 @media(max-width:760px){#search-open{flex-basis:36px!important;width:36px!important;height:36px!important;min-width:36px!important}#search-open::before{left:9px;top:9px}#search-open::after{left:22px;top:24px}}
+
+/* Pulsanti di chiusura delle schede: rosso ATELIER, mai tono su tono */
+.dialog-close{
+  float:right!important;
+  display:inline-grid!important;
+  place-items:center!important;
+  width:38px!important;
+  height:38px!important;
+  min-width:38px!important;
+  padding:0!important;
+  border:1px solid var(--red-surface)!important;
+  border-radius:50%!important;
+  background:var(--red-surface)!important;
+  color:#fff!important;
+  font:500 25px/1 var(--body)!important;
+  cursor:pointer!important;
+  opacity:1!important;
+  transition:background .2s,border-color .2s,transform .2s!important;
+}
+.dialog-close:hover,.dialog-close:focus-visible{
+  background:#8f1b1b!important;
+  border-color:#8f1b1b!important;
+  color:#fff!important;
+}
+.dialog-close:hover{transform:scale(1.05)}
+.dialog-close:focus-visible{outline:2px solid var(--red-surface)!important;outline-offset:4px!important}
+@media(max-width:760px){.dialog-close{width:34px!important;height:34px!important;min-width:34px!important;font-size:23px!important}}
