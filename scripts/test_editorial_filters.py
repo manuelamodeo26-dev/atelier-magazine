@@ -1,7 +1,7 @@
 import json
 import tempfile
 import unittest
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import fetch_news
@@ -31,7 +31,7 @@ class EditorialFilterTests(unittest.TestCase):
         now = datetime.now(timezone.utc)
         self.assertFalse(summary_retry_due({
             "editorial_retry_after": (now.replace(microsecond=0)).isoformat()
-        }, now=now.replace(microsecond=0) - __import__("datetime").timedelta(seconds=1)))
+        }, now=now.replace(microsecond=0) - timedelta(seconds=1)))
         self.assertTrue(summary_retry_due({
             "editorial_retry_after": (now - __import__("datetime").timedelta(seconds=1)).isoformat()
         }, now=now))
