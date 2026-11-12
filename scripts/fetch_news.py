@@ -497,7 +497,7 @@ def main():
     if not fresh:
         print("Nessun nuovo articolo: archivio precedente preservato.")
         if not previous:
-            raise SystemExit("Archivio vuoto e nessun feed valido: aggiornamento annullato.")
+            raise SystemExit("Archivio vuoto e nessun nuovo articolo utilizzabile: aggiornamento annullato.")
         try:
             with open(OUT, encoding="utf-8") as file:
                 payload = json.load(file)
@@ -509,7 +509,7 @@ def main():
                 temporary = OUT + ".tmp"
                 with open(temporary, "w", encoding="utf-8") as file:
                     json.dump(payload, file, ensure_ascii=False, indent=2)
-                    file.write("\\n")
+                    file.write("\n")
                 os.replace(temporary, OUT)
         except (OSError, ValueError, TypeError) as exc:
             print("Stato feed non salvato: {}.".format(type(exc).__name__))
