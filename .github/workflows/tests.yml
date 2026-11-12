@@ -1,0 +1,38 @@
+name: Test ATELIER Python pipeline
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/test_*.py'
+      - '.github/workflows/news.yml'
+      - '.github/workflows/tests.yml'
+  pull_request:
+    paths:
+      - 'scripts/test_*.py'
+      - '.github/workflows/news.yml'
+      - '.github/workflows/tests.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: atelier-python-tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.x"
+      - name: Check Python syntax
+        run: python -m py_compile scripts/*.py
+      - name: Run editorial tests
+        run: python -m unittest discover -s scripts -p 'test_*.py' -v
