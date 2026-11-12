@@ -60,6 +60,7 @@ jobs:
             echo "No archive changes."
           else
             git commit -m "chore: update ATELIER news"
+            git pull --rebase origin main
             git push
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
