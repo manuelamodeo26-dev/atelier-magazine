@@ -134,7 +134,7 @@
       b.classList.toggle('is-saved',active);
       b.setAttribute('aria-pressed',String(active));
       b.setAttribute('aria-label',active?'Rimuovi dai preferiti':'Salva articolo nei preferiti');
-      b.textContent=active?'♥ SALVATO':'♡ SALVA';
+      b.innerHTML='<svg class="save-bookmark-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3.5h12v17l-6-4-6 4z"/></svg> '+(active?'SALVATO':'SALVA');
     });
   }
   function syncLikeButtons(){
@@ -213,7 +213,7 @@
       ?'<a class="text-link card-link" href="./article.html?id='+encodeURIComponent(id)+'">APRI ARTICOLO ↗</a>'
       :safeURL(a.url)?'<a class="text-link card-link" href="'+esc(safeURL(a.url))+'" target="_blank" rel="noopener noreferrer">APRI FONTE ORIGINALE ↗</a>'
       :'<span class="card-link detail-muted">CONTENUTO NON PIÙ DISPONIBILE</span>';
-    return '<article class="story-card">'+visual+'<div class="story-meta">'+esc(labels[a.category]||a.category||'ATELIER')+' · '+esc(a.source||'')+'</div><h3>'+esc(a.title)+'</h3><p>'+esc(teaser)+'</p>'+action+'<button type="button" class="like-article '+(liked.has(id)?'is-liked':'')+'" data-like-article="'+esc(id)+'" aria-label="Mi piace" aria-pressed="'+String(liked.has(id))+'">♡ <span data-like-count="'+esc(id)+'">'+(likeCounts.get(id)||0)+'</span></button><button type="button" class="save-article '+(saved.has(id)?'is-saved':'')+'" data-save-article="'+esc(id)+'" aria-label="Salva articolo nei preferiti" aria-pressed="'+String(saved.has(id))+'">'+(saved.has(id)?'♥ SALVATO':'♡ SALVA')+'</button></article>';
+    return '<article class="story-card">'+visual+'<div class="story-meta">'+esc(labels[a.category]||a.category||'ATELIER')+' · '+esc(a.source||'')+'</div><h3>'+esc(a.title)+'</h3><p>'+esc(teaser)+'</p>'+action+'<button type="button" class="like-article '+(liked.has(id)?'is-liked':'')+'" data-like-article="'+esc(id)+'" aria-label="Mi piace" aria-pressed="'+String(liked.has(id))+'">♡ <span data-like-count="'+esc(id)+'">'+(likeCounts.get(id)||0)+'</span></button><button type="button" class="save-article '+(saved.has(id)?'is-saved':'')+'" data-save-article="'+esc(id)+'" aria-label="Salva articolo nei preferiti" aria-pressed="'+String(saved.has(id))+'">'+ '<svg class="save-bookmark-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3.5h12v17l-6-4-6 4z"/></svg> '+(saved.has(id)?'SALVATO':'SALVA')+'</button></article>';
   }
   async function toggleSaved(id){
     if(!user){$('#account-dialog').showModal();message('Accedi per salvare i tuoi articoli.');return;}
