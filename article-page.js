@@ -22,14 +22,23 @@ const seed=String(a.title||a.id||'ATELIER').split('').reduce((n,c)=>n+c.charCode
 return {url:'https://images.unsplash.com/'+choices[seed%choices.length]+'?auto=format&fit=crop&w=1600&q=85',verified:false,sourceImage:false};
 };
 const date=v=>{const d=new Date(v);return v&&!Number.isNaN(d.getTime())?d.toLocaleDateString('it-IT',{day:'2-digit',month:'long',year:'numeric'}).toUpperCase():'DATA NON DISPONIBILE';};
+function compactText(value,maxWords=105){
+const clean=String(value||'').replace(/\s+/g,' ').trim();if(!clean)return '';
+const sentences=clean.match(/[^.!?]+[.!?]+|[^.!?]+$/g)||[clean];const chosen=[];let count=0;
+for(const sentence of sentences){const words=sentence.trim().split(/\s+/);if(count&&count+words.length>maxWords)break;chosen.push(sentence.trim());count+=words.length;if(count>=maxWords)break;}
+let result=chosen.join(' ');if(result.length<clean.length)result=result.replace(/[,:;\s]+$/,'')+'…';return result;
+}
+function keyPoint(value){return compactText(value,32);}
 function fail(msg){content.innerHTML='<p class="eyebrow">ATELIER / ARCHIVIO</p><h1 class="detail-title">Articolo non disponibile.</h1><p class="detail-excerpt">'+esc(msg)+'</p><a class="text-link" href="./">TORNA ALLA RIVISTA ↗</a>';}
 function render(a){
 const source=a.source||'Editore non identificato', category=cat(a.category), published=date(a.date), imageInfo=imageFor(a), image=imageInfo.url;
 const photo=image?'<figure class="detail-figure"><img src="'+esc(image)+'" alt="'+esc(a.title||'Immagine editoriale ATELIER')+'" referrerpolicy="no-referrer" onerror="this.closest(\'.detail-figure\').classList.add(\'image-unavailable\');this.remove()"><figcaption>'+(imageInfo.verified?'Immagine verificata tecnicamente · ':imageInfo.sourceImage?'Immagine della fonte, non verificata · ':'Immagine illustrativa · ')+esc(source)+'</figcaption></figure>':'<div class="detail-no-image">IMMAGINE EDITORIALE NON DISPONIBILE</div>';
 const editorial=String(a.editorial_summary||'').trim();
-const editorialHtml=editorial?'<section class="detail-section editorial-summary"><p class="eyebrow">IL RACCONTO ATELIER · '+(a.editorial_level==='approfondimento'?'APPROFONDIMENTO':'NOTIZIA')+'</p>'+editorial.split(/\n\s*\n/).map(p=>'<p class="detail-excerpt">'+esc(p)+'</p>').join('')+'</section>':'';
-const sourceSummary=a.excerpt?'<section class="detail-section"><p class="eyebrow">'+(editorial?'DESCRIZIONE DELLA FONTE':'IL RACCONTO DELLA FONTE')+'</p><p class="detail-excerpt">'+esc(a.excerpt)+'</p></section>':'';
-const summary=editorialHtml+sourceSummary||'<section class="detail-section"><p class="eyebrow">SINTESI FORNITA DALLA FONTE</p><p class="detail-muted">La fonte non mette a disposizione una descrizione più ampia. ATELIER non aggiunge dettagli non verificati.</p></section>';
+const sourceText=String(a.excerpt||'').trim();
+const important=keyPoint(editorial||sourceText||a.title);
+const highlight=important?'<aside class="key-point"><span>IL PUNTO CHIAVE</span><p>'+esc(important)+'</p></aside>':'';
+const mainText=editorial?compactText(editorial,115):compactText(sourceText,95);
+const summary=highlight+(mainText?'<section class="detail-section editorial-summary"><p class="eyebrow">'+(editorial?'IN BREVE · ATELIER':'IN BREVE · DALLA FONTE')+'</p><p class="detail-excerpt">'+esc(mainText)+'</p></section>':'<p class="detail-muted">La fonte non mette a disposizione una sintesi più ampia.</p>');
 const sourceUrl=url(a.url);
 const articleId=String(a.id||a.url||'');
 content.innerHTML='<button type="button" class="like-article" data-like-article="'+esc(articleId)+'" aria-pressed="false">♡ <span data-like-count="'+esc(articleId)+'">0</span> MI PIACE</button><button type="button" class="save-article" data-save-article="'+esc(articleId)+'" aria-label="Salva articolo nei preferiti" aria-pressed="false">♡ SALVA NEI PREFERITI</button><div class="detail-topline"><span>'+esc(category.toLocaleUpperCase('it'))+'</span><span>'+esc(published)+'</span></div><h1 class="detail-title">'+esc(a.title||'Senza titolo')+'</h1>'+(a.author?'<p class="detail-byline">A cura di '+esc(a.author)+'</p>':'')+photo+summary+'<div class="detail-metadata"><span>EDITORE</span><strong>'+esc(source)+'</strong><span>DATA DI PUBBLICAZIONE</span><strong>'+esc(published)+'</strong><span>CATEGORIA</span><strong>'+esc(category)+'</strong>'+(a.language?'<span>LINGUA</span><strong>'+esc(String(a.language).toLocaleUpperCase('it'))+'</strong>':'')+'</div><section class="detail-sources"><p class="eyebrow">FONTI E ATTRIBUZIONI</p><p><strong>'+esc(source)+'</strong> · Fonte originale del contenuto e delle informazioni riportate in questa scheda.</p>'+(sourceUrl?'<a class="text-link" href="'+esc(sourceUrl)+'" target="_blank" rel="noopener noreferrer">CONSULTA LA FONTE ORIGINALE ↗</a>':'<p class="detail-muted">Collegamento alla fonte non disponibile.</p>')+'<p class="detail-muted">Le fotografie contrassegnate come verificate provengono dai metadati della fonte e hanno superato i controlli tecnici. Le immagini illustrative sono alternative visive e non documentano necessariamente il fatto narrato.</p></section>';
