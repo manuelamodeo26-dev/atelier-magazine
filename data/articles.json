@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T13:36:21.713037+00:00",
+  "updated_at": "2026-11-12T14:02:45.222111+00:00",
   "feeds_ok": 6,
   "feeds_total": 7,
   "language": "it",
@@ -1498,7 +1498,9 @@
       "language": "it",
       "image_width": 4402,
       "image_height": 5502,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_attempted_at": "2026-11-12T14:02:45.219804+00:00",
+      "editorial_retry_after": "2026-11-13T02:02:45.219804+00:00"
     },
     {
       "id": "https://www.ad-italia.it/article/ellen-von-unwerth-toiletpaper-calendario-2027-intervista/",
@@ -1811,7 +1813,9 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "editorial_attempted_at": "2026-11-12T14:02:45.098635+00:00",
+      "editorial_retry_after": "2026-11-13T02:02:45.098635+00:00"
     },
     {
       "id": "https://www.sneakersmagazine.it/2026/10/29/expo-riva-schuh-e-gardabags-il-mercato-di-calzature-e-borse-cambia-volto/",
@@ -1827,7 +1831,9 @@
       "language": "it",
       "image_width": 1024,
       "image_height": 768,
-      "image_format": "jpeg"
+      "image_format": "jpeg",
+      "editorial_attempted_at": "2026-11-12T14:02:44.034506+00:00",
+      "editorial_retry_after": "2026-11-13T02:02:44.034506+00:00"
     },
     {
       "id": "https://www.sneakersmagazine.it/2026/10/26/new-balance-presenta-la-made-in-usa-990v7/",
@@ -1843,7 +1849,9 @@
       "language": "it",
       "image_width": 1024,
       "image_height": 544,
-      "image_format": "png"
+      "image_format": "png",
+      "editorial_attempted_at": "2026-11-12T14:02:42.945037+00:00",
+      "editorial_retry_after": "2026-11-13T02:02:42.945037+00:00"
     },
     {
       "id": "https://www.sneakersmagazine.it/2026/10/26/saucony-x-evelynn-escobar-una-nuova-idea-di-mom-shoe-prende-forma-nella-progrid-triumph-4/",
@@ -1859,7 +1867,9 @@
       "language": "it",
       "image_width": 1024,
       "image_height": 1024,
-      "image_format": "jpeg"
+      "image_format": "jpeg",
+      "editorial_attempted_at": "2026-11-12T14:02:41.993149+00:00",
+      "editorial_retry_after": "2026-11-13T02:02:41.993149+00:00"
     },
     {
       "id": "https://www.sneakersmagazine.it/2026/10/16/saucony-x-highsnobiety-performance-e-lifestyle-si-incontrano-in-una-nuova-collaborazione/",
@@ -1875,7 +1885,9 @@
       "language": "it",
       "image_width": 819,
       "image_height": 1024,
-      "image_format": "jpeg"
+      "image_format": "jpeg",
+      "editorial_attempted_at": "2026-11-12T14:02:41.069887+00:00",
+      "editorial_retry_after": "2026-11-13T02:02:41.069887+00:00"
     }
   ]
 }
