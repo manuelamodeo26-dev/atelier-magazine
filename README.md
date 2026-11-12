@@ -37,25 +37,25 @@ La raccolta RSS non equivale a una verifica giornalistica: controllare sempre no
 
 ## Redazione e sintesi editoriali ATELIER
 
-Quando è configurato il secret GitHub Actions `GEMINI_API_KEY`, il raccoglitore può creare una sintesi originale in italiano a partire dal titolo, dal testo disponibile nel feed e dal testo leggibile della pagina pubblica della fonte:
+Quando è configurato il secret GitHub Actions `GROQ_API_KEY`, il raccoglitore può creare una sintesi originale in italiano a partire dal titolo, dal testo disponibile nel feed e dal testo leggibile della pagina pubblica della fonte.
 
-Il workflow privilegia `gemini-3.5-flash-lite` per contenere il consumo di quota e usa `gemini-3.6-flash`, `gemini-3.7-flash` e `gemini-3.8-flash` come alternative. I nomi dei modelli sono configurati in `scripts/editorial_summary.py` e `.github/workflows/news.yml` e possono essere aggiornati quando necessario. La scelta di un modello più leggero riduce il consumo atteso, ma non aggira i limiti di quota del progetto Google.
+ATELIER usa l'API Chat Completions di Groq con il modello `openai/gpt-oss-120b`; se il modello raggiunge un limite temporaneo o di utilizzo, prova `openai/gpt-oss-20b`. Le richieste usano la modalità JSON e la risposta viene validata prima di essere salvata. I limiti del piano gratuito sono stabiliti da Groq, possono cambiare e si applicano per modello e per finestra temporale: consulta la dashboard del tuo account. Il piano gratuito non garantisce disponibilità illimitata.
 
 - Notizie standard: 300–400 parole, in 4–6 paragrafi.
 - Approfondimenti: 450–600 parole, in 4–6 paragrafi, soltanto quando il materiale contiene dettagli sufficienti.
 - Le sintesi vengono mostrate separatamente dalla descrizione originale dell'editore.
-- Se la fonte è troppo breve, il modello non risponde, la quota è esaurita o il secret manca, resta visibile il testo originale: non vengono inventati contenuti.
-- Vengono elaborate al massimo sei schede per esecuzione, dando priorità alle notizie nuove e poi recuperando gradualmente l'archivio. Se un modello raggiunge la quota, il processo passa al successivo senza ripetere inutilmente la stessa richiesta.
+- Se la fonte è troppo breve, il modello non risponde, il limite è raggiunto o il secret manca, resta visibile il testo originale: non vengono inventati contenuti.
+- Vengono elaborate al massimo sei schede per esecuzione, dando priorità alle notizie nuove e poi recuperando gradualmente l'archivio. Se i limiti di entrambi i modelli sono raggiunti, il processo sospende le richieste AI per quella esecuzione.
 - Le sintesi sono conservate in `data/articles.json`; il testo integrale della pagina sorgente non viene salvato.
 
 ### Configurazione facoltativa dell'AI
 
-1. Crea una chiave Gemini API nel portale Google AI Studio.
+1. Crea un account gratuito su [GroqCloud](https://console.groq.com/) e genera una API key.
 2. Nel repository GitHub apri **Settings → Secrets and variables → Actions → New repository secret**.
-3. Inserisci come nome `GEMINI_API_KEY` e incolla il valore della chiave nel campo secret.
+3. Inserisci come nome `GROQ_API_KEY` e incolla il valore della chiave nel campo secret.
 4. Salva. La chiave viene letta soltanto da GitHub Actions e non viene inserita nel sito o nel repository.
 
-Senza il secret il sito e la raccolta RSS continuano a funzionare normalmente, ma le sintesi editoriali AI non vengono generate. Il piano gratuito del provider è soggetto a limiti e condizioni proprie: verifica quote, disponibilità e trattamento dei dati nel tuo account Google prima di abilitarlo. Non inserire mai la chiave in un file del progetto o in una chat.
+Senza il secret il sito e la raccolta RSS continuano a funzionare normalmente, ma le sintesi editoriali AI non vengono generate. Verifica quote e condizioni del piano gratuito nel tuo account Groq. Non inserire mai la chiave in un file del progetto o in una chat.
 
 ## Funzioni
 
