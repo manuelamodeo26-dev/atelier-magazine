@@ -32,12 +32,43 @@
     return Number.isNaN(date.getTime())?'DATA NON DISPONIBILE':date.toLocaleDateString('it-IT',{day:'2-digit',month:'short',year:'numeric'}).toUpperCase();
   }
   function card(article,index){
-    const url=safeURL(article.url), image=safeURL(article.image), category=categoryOf(article.category);
-    const visual=image?'<a class="article-image" href="'+escapeHTML(url||image)+'" target="_blank" rel="noopener noreferrer" aria-label="Apri la fotografia della storia: '+escapeHTML(article.title||'articolo')+'"><img src="'+escapeHTML(image)+'" alt="Fotografia: '+escapeHTML(article.title||'articolo')+'" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.closest(\'.article-image\').classList.add(\'image-unavailable\');this.remove()"></a>':
-      '<div class="story-placeholder '+(index%3===0?'placeholder-red':index%3===1?'placeholder-cream':'placeholder-black')+'"><span>'+escapeHTML(String(category).toUpperCase())+'<br>RIVISTA</span><b>A/'+String(index+1).padStart(2,'0')+'</b></div>';
-    const language=String(article.language||'').toLowerCase();
-    const languageNote=language&&language!=='it'?' · LINGUA ORIGINALE '+escapeHTML(language.toUpperCase()):'';
-    return '<article class="story-card'+(index===0?' feature-card':'')+'">'+visual+'<div class="story-meta">'+escapeHTML(categoryLabel(category))+' · '+formatDate(article.date)+' · '+escapeHTML(article.source||'ATELIER')+languageNote+'</div><h3>'+escapeHTML(article.title||'Senza titolo')+'</h3><p>'+escapeHTML(article.excerpt||'')+'</p>'+(url?'<a class="text-link card-link" href="'+escapeHTML(url)+'" target="_blank" rel="noopener noreferrer">LEGGI L’ARTICOLO ↗</a>':'')+'</article>';
+    const image=article.image_verified===true?safeURL(article.image):'';
+    const category=categoryOf(article.category);
+    const visual=image
+      ?'<div class="article-image"><img src="'+escapeHTML(image)+'" alt="Fotografia verificata: '+escapeHTML(article.title||'articolo')+'" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.closest(\'.article-image\').classList.add(\'image-unavailable\');this.remove()"><span class="image-verified">FOTOGRAFIA VERIFICATA</span></div>'
+      :'<div class="story-placeholder '+(index%3===0?'placeholder-red':index%3===1?'placeholder-cream':'placeholder-black')+'"><span>'+escapeHTML(categoryLabel(category).toLocaleUpperCase('it'))+'<br>ATELIER</span><b>A/'+String(index+1).padStart(2,'0')+'</b></div>';
+    return '<article class="story-card'+(index===0?' feature-card':'')+'">'+visual+'<div class="story-meta">'+escapeHTML(categoryLabel(category))+' · '+formatDate(article.date)+' · '+escapeHTML(article.source||'Fonte non indicata')+'</div><h3>'+escapeHTML(article.title||'Senza titolo')+'</h3><p>'+escapeHTML(article.excerpt||'')+'</p><button type="button" class="text-link card-link" data-open-article="'+escapeHTML(article.id||article.url||String(index))+'">LEGGI LA SCHEDA ↗</button></article>';
+  }
+  function articleDetail(article){
+    const image=article.image_verified===true?safeURL(article.image):'';
+    const date=formatDate(article.date);
+    const category=categoryLabel(article.category);
+    const source=article.source||'Editore non identificato';
+    const author=article.author?'<p class="detail-byline">A cura di '+escapeHTML(article.author)+'</p>':'';
+    const excerpt=article.excerpt
+      ?'<section class="detail-section"><p class="eyebrow">INFORMAZIONI E CONTESTO</p><p class="detail-excerpt">'+escapeHTML(article.excerpt)+'</p></section>'
+      :'<section class="detail-section"><p class="eyebrow">INFORMAZIONI E CONTESTO</p><p class="detail-muted">La fonte non ha fornito un testo di presentazione. ATELIER non aggiunge dettagli non verificati.</p></section>';
+    const photo=image
+      ?'<figure class="detail-figure"><img src="'+escapeHTML(image)+'" alt="Fotografia verificata: '+escapeHTML(article.title||'articolo')+'" referrerpolicy="no-referrer"><figcaption>Immagine verificata · '+escapeHTML(String(article.image_width||'')+(article.image_width?' × ':'')+String(article.image_height||''))+' px · '+escapeHTML(source)+'</figcaption></figure>'
+      :'<div class="detail-no-image">IMMAGINE NON DISPONIBILE O NON VERIFICATA</div>';
+    const sourceUrl=safeURL(article.url);
+    const sourceBlock='<section class="detail-sources"><p class="eyebrow">FONTI E ATTRIBUZIONI</p><p><strong>'+escapeHTML(source)+'</strong> · Fonte originale del contenuto e delle informazioni riportate in questa scheda.</p>'+(sourceUrl?'<a class="text-link" href="'+escapeHTML(sourceUrl)+'" target="_blank" rel="noopener noreferrer">CONSULTA LA FONTE ORIGINALE ↗</a>':'<p class="detail-muted">Collegamento alla fonte non disponibile.</p>')+'<p class="detail-muted">La fotografia, quando presente, è stata controllata tecnicamente da ATELIER per formato, accessibilità e risoluzione. L’attribuzione resta all’editore originale.</p></section>';
+    return '<div class="detail-topline"><span>'+escapeHTML(category.toLocaleUpperCase('it'))+'</span><span>'+escapeHTML(date)+'</span></div><h2 class="detail-title">'+escapeHTML(article.title||'Senza titolo')+'</h2>'+author+photo+excerpt+'<div class="detail-metadata"><span>EDITORE</span><strong>'+escapeHTML(source)+'</strong><span>DATA DI PUBBLICAZIONE</span><strong>'+escapeHTML(date)+'</strong><span>CATEGORIA</span><strong>'+escapeHTML(category)+'</strong>'+(article.language?'<span>LINGUA</span><strong>'+escapeHTML(String(article.language).toLocaleUpperCase('it'))+'</strong>':'')+'</div>'+sourceBlock;
+  }
+  function openArticle(identifier){
+    const article=articles.find(item=>(item.id||item.url)===identifier);
+    if(!article)return;
+    let dialog=$('#article-dialog');
+    if(!dialog){
+      dialog=document.createElement('dialog');
+      dialog.id='article-dialog';
+      dialog.className='article-dialog';
+      dialog.innerHTML='<form method="dialog" class="detail-close-row"><button class="dialog-close" type="submit" aria-label="Chiudi scheda">×</button></form><article id="article-detail-content"></article>';
+      document.body.appendChild(dialog);
+    }
+    $('#article-detail-content',dialog).innerHTML=articleDetail(article);
+    if(!dialog.open)dialog.showModal();
+    dialog.scrollTop=0;
   }
   function visibleArticles(){
     return articles.filter(a=>activeFilter==='Tutti'||categoryOf(a.category)===activeFilter);
@@ -62,7 +93,7 @@
       console.warn('ATELIER: impossibile caricare le notizie.',error);
       articles=fallback;
     }
-    const heroImage=articles.find(article=>safeURL(article.image));
+    const heroImage=articles.find(article=>article.image_verified===true&&safeURL(article.image));
     if(heroImage){
       const heroArt=$('.hero-art');
       if(heroArt&&!heroArt.querySelector('.hero-photo')){
@@ -80,7 +111,7 @@
     }
     render();
   }
-  filters.addEventListener('click',event=>{
+  grid.addEventListener('click',event=>{\n    const button=event.target.closest('[data-open-article]');\n    if(button)openArticle(button.dataset.openArticle);\n  });\n  filters.addEventListener('click',event=>{
     const button=event.target.closest('[data-filter]');
     if(!button)return;
     activeFilter=button.dataset.filter; showAll=false;
@@ -108,10 +139,10 @@
     const found=articles.filter(a=>[a.title,a.excerpt,a.category,a.source,a.language].join(' ').toLocaleLowerCase('it').includes(q)).slice(0,12);
     searchResults.innerHTML=found.length?found.map(a=>{
       const url=safeURL(a.url);
-      return '<div class="search-result"><small>'+escapeHTML(categoryLabel(a.category))+' · '+formatDate(a.date)+'</small><h4>'+escapeHTML(a.title)+'</h4>'+(url?'<a class="text-link" href="'+escapeHTML(url)+'" target="_blank" rel="noopener noreferrer">APRI FONTE ↗</a>':'')+'</div>';
+      return '<div class="search-result"><small>'+escapeHTML(categoryLabel(a.category))+' · '+formatDate(a.date)+'</small><h4>'+escapeHTML(a.title)+'</h4><button type="button" class="text-link" data-open-search-article="'+escapeHTML(a.id||a.url||'')+'">APRI SCHEDA ↗</button></div>';
     }).join(''):'<p>Nessun risultato trovato.</p>';
   });
-  const today=$('#today-label');
+  searchResults.addEventListener('click',event=>{\n    const button=event.target.closest('[data-open-search-article]');\n    if(!button)return;\n    searchDialog.close();\n    openArticle(button.dataset.openSearchArticle);\n  });\n  const today=$('#today-label');
   if(today)today.textContent=new Date().toLocaleDateString('it-IT',{day:'2-digit',month:'long',year:'numeric'}).toUpperCase()+' · ITALIA';
   loadArticles();
   if('serviceWorker' in navigator && location.protocol==='https:'){
