@@ -1,0 +1,130 @@
+(() => {
+  'use strict';
+  const cfg = window.ATELIER_SUPABASE || {};
+  const configured = /^https:\/\/[a-z0-9-]+\.supabase\.co$/.test(cfg.url || '') &&
+    typeof cfg.anonKey === 'string' && cfg.anonKey.length > 20 &&
+    !cfg.url.includes('INSERISCI') && !cfg.anonKey.includes('INSERISCI');
+  const categories = ['Fashion','Streetwear','Design','Art & Culture','Technology','Architecture','Business','Lifestyle'];
+  const labels = {'Fashion':'Moda','Streetwear':'Streetwear','Design':'Design','Art & Culture':'Arte e cultura','Technology':'Tecnologia','Architecture':'Architettura','Business':'Impresa','Lifestyle':'Stili di vita'};
+  let client=null, user=null, saved=new Set(), preferred=categories.slice(), articles=[];
+  const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const $=(s,r=document)=>r.querySelector(s);
+  function mount(){
+    const header=$('.site-header');
+    if(header && !$('#account-open')){
+      const b=document.createElement('button'); b.id='account-open'; b.className='search-open account-open'; b.type='button'; b.textContent='ACCEDI ↗';
+      header.appendChild(b);
+    }
+    if(!$('#account-dialog')){
+      const d=document.createElement('dialog'); d.id='account-dialog'; d.className='search-dialog account-dialog';
+      d.innerHTML='<form method="dialog"><button class="dialog-close" type="submit" aria-label="Chiudi">×</button></form><p class="eyebrow">ATELIER / ACCOUNT</p><h2 class="account-heading">Il tuo spazio.</h2><p id="account-status" class="account-status">Accedi o crea un account per personalizzare la rivista.</p><form id="account-form" class="account-form"><label for="account-name">Nome (solo per la registrazione)</label><input id="account-name" autocomplete="name" placeholder="Il tuo nome"><label for="account-email">Email</label><input id="account-email" type="email" autocomplete="email" required placeholder="nome@email.com"><label for="account-password">Password</label><input id="account-password" type="password" autocomplete="current-password" minlength="8" required placeholder="Almeno 8 caratteri"><div class="account-actions"><button class="outline-button" type="submit" data-mode="login">ACCEDI</button><button class="outline-button" type="submit" data-mode="signup">REGISTRATI</button></div></form><div id="account-tools" hidden><h3>Il mio feed</h3><p class="account-help">Scegli gli argomenti che vuoi vedere nel tuo feed personale.</p><div id="account-categories" class="account-categories"></div><button id="save-preferences" class="outline-button" type="button">SALVA PREFERENZE</button><button id="account-logout" class="outline-button" type="button">ESCI DALL’ACCOUNT</button></div><p id="account-message" class="account-message" role="status" aria-live="polite"></p>';
+      document.body.appendChild(d);
+    }
+    if(!$('#personal-feed')){
+      const host=document.createElement('section'); host.id='personal-feed'; host.className='section-block personal-area'; host.hidden=true;
+      host.innerHTML='<div class="section-heading"><div><p class="eyebrow">ATELIER / PER TE</p><h2>Il tuo <em>feed.</em></h2></div><button type="button" class="text-link" id="open-account-settings">GESTISCI PREFERENZE ↗</button></div><div class="story-grid" id="personal-feed-grid"></div><p id="personal-feed-empty" class="empty-state" hidden>Non ci sono ancora articoli nei tuoi argomenti preferiti.</p><div class="section-heading saved-heading"><div><p class="eyebrow">ATELIER / COLLEZIONE PERSONALE</p><h2>I tuoi <em>preferiti.</em></h2></div></div><div class="story-grid" id="saved-grid"></div><p id="saved-empty" class="empty-state">Accedi per conservare gli articoli che vuoi ritrovare.</p></section>';
+      const manifesto=$('.manifesto'); if(manifesto) manifesto.before(host);
+    }
+    $('#account-open')?.addEventListener('click',()=>$('#account-dialog').showModal());
+    $('#open-account-settings')?.addEventListener('click',()=>$('#account-dialog').showModal());
+    $('#account-form')?.addEventListener('submit',handleAuth);
+    $('#account-logout')?.addEventListener('click',logout);
+    $('#save-preferences')?.addEventListener('click',savePreferences);
+    document.addEventListener('click',event=>{
+      const btn=event.target.closest('[data-save-article]');
+      if(btn){event.preventDefault();toggleSaved(btn.dataset.saveArticle);}
+    });
+  }
+  function message(text,error=false){const el=$('#account-message');if(el){el.textContent=text;el.classList.toggle('is-error',error);}}
+  function status(text){const el=$('#account-status');if(el)el.textContent=text;}
+  function setLoggedIn(on){
+    $('#account-form').hidden=on; $('#account-tools').hidden=!on;
+    $('#account-open').textContent=on?'IL MIO ACCOUNT ↗':'ACCEDI ↗';
+    $('#personal-feed').hidden=!on;
+    if(on)status('Connesso come '+(user.email||'utente ATELIER'));
+    else status(configured?'Accedi o crea un account per personalizzare la rivista.':'Configurazione necessaria: collega prima il progetto Supabase.');
+  }
+  async function handleAuth(event){
+    event.preventDefault();
+    if(!client){message('Il servizio account non è ancora configurato. Segui i passaggi di attivazione indicati. ',true);return;}
+    const submitter=event.submitter, mode=submitter?.dataset.mode||'login';
+    const email=$('#account-email').value.trim(), password=$('#account-password').value, name=$('#account-name').value.trim();
+    if(password.length<8){message('La password deve contenere almeno 8 caratteri.',true);return;}
+    message('Operazione in corso…');
+    try{
+      if(mode==='signup'){
+        const {data,error}=await client.auth.signUp({email,password,options:{data:{display_name:name}}});
+        if(error)throw error;
+        if(data.session){user=data.user;await loadUserData();message('Account creato. Benvenuto in ATELIER.');}
+        else message('Registrazione avviata. Controlla la tua email per confermare l’indirizzo, poi accedi.');
+      }else{
+        const {data,error}=await client.auth.signInWithPassword({email,password});
+        if(error)throw error; user=data.user; await loadUserData(); message('Accesso effettuato.');
+      }
+    }catch(e){message(e.message||'Non è stato possibile completare l’operazione.',true);}
+  }
+  async function loadUserData(){
+    const [prefs,favs]=await Promise.all([
+      client.from('user_preferences').select('categories').eq('user_id',user.id).maybeSingle(),
+      client.from('saved_articles').select('article_id').eq('user_id',user.id)
+    ]);
+    if(prefs.error)throw prefs.error;if(favs.error)throw favs.error;
+    preferred=Array.isArray(prefs.data?.categories)?prefs.data.categories:categories.slice();
+    saved=new Set((favs.data||[]).map(x=>x.article_id));
+    renderAccount();setLoggedIn(true);
+  }
+  function renderAccount(){
+    const box=$('#account-categories');
+    if(box)box.innerHTML=categories.map(c=>'<label class="account-category"><input type="checkbox" value="'+esc(c)+'" '+(preferred.includes(c)?'checked':'')+'> '+esc(labels[c])+'</label>').join('');
+    document.querySelectorAll('[data-save-article]').forEach(b=>{const active=saved.has(b.dataset.saveArticle);b.classList.toggle('is-saved',active);b.textContent=active?'♥ SALVATO':'♡ SALVA';});
+    renderPersonal();
+  }
+  function renderPersonal(){
+    const feed=$('#personal-feed-grid'), fav=$('#saved-grid'); if(!feed||!fav)return;
+    const picked=articles.filter(a=>preferred.includes(a.category)).slice(0,9);
+    feed.innerHTML=picked.map((a,i)=>accountCard(a,i)).join('');
+    $('#personal-feed-empty').hidden=picked.length>0;
+    const favourites=articles.filter(a=>saved.has(String(a.id||a.url)));
+    fav.innerHTML=favourites.map((a,i)=>accountCard(a,i)).join('');
+    $('#saved-empty').hidden=favourites.length>0;
+  }
+  function accountCard(a,i){
+    const id=String(a.id||a.url||''); const image=a.image_verified===true&&/^https:\/\//.test(a.image||'')?'<div class="article-image"><img loading="lazy" src="'+esc(a.image)+'" alt=""></div>':'';
+    return '<article class="story-card">'+image+'<div class="story-meta">'+esc(labels[a.category]||a.category||'ATELIER')+' · '+esc(a.source||'')+'</div><h3>'+esc(a.title)+'</h3><p>'+esc(a.excerpt||'')+'</p><a class="text-link card-link" href="./article.html?id='+encodeURIComponent(id)+'">APRI ARTICOLO ↗</a><button type="button" class="save-article '+(saved.has(id)?'is-saved':'')+'" data-save-article="'+esc(id)+'">'+(saved.has(id)?'♥ SALVATO':'♡ SALVA')+'</button></article>';
+  }
+  async function toggleSaved(id){
+    if(!user){$('#account-dialog').showModal();message('Accedi per salvare i tuoi articoli.');return;}
+    const a=articles.find(x=>String(x.id||x.url)===id);if(!a)return;
+    message('Aggiornamento preferiti…');
+    try{
+      if(saved.has(id)){
+        const {error}=await client.from('saved_articles').delete().eq('user_id',user.id).eq('article_id',id);if(error)throw error;saved.delete(id);
+      }else{
+        const {error}=await client.from('saved_articles').insert({user_id:user.id,article_id:id,title:a.title,category:a.category,excerpt:a.excerpt||'',source:a.source||'',url:a.url||'',image:a.image_verified===true?a.image||'':''});if(error)throw error;saved.add(id);
+      }
+      renderAccount();message(saved.has(id)?'Articolo aggiunto ai preferiti.':'Articolo rimosso dai preferiti.');
+    }catch(e){message(e.message||'Errore durante il salvataggio.',true);}
+  }
+  async function savePreferences(){
+    const chosen=[...$('#account-categories').querySelectorAll('input:checked')].map(x=>x.value);
+    if(!chosen.length){message('Seleziona almeno un argomento.',true);return;}
+    const {error}=await client.from('user_preferences').upsert({user_id:user.id,categories:chosen,updated_at:new Date().toISOString()});
+    if(error){message(error.message,true);return;} preferred=chosen;renderPersonal();message('Preferenze aggiornate.');
+  }
+  async function logout(){await client.auth.signOut();user=null;saved.clear();setLoggedIn(false);renderAccount();message('Hai effettuato la disconnessione.');}
+  async function init(){
+    mount();
+    try{
+      const response=await fetch('./data/articles.json',{cache:'no-store'});const data=await response.json();articles=(data.articles||[]).map(a=>({...a,category:a.category||'Fashion'}));
+    }catch(_){articles=[];}
+    if(!configured){setLoggedIn(false);message('Per attivare gli account: crea il progetto Supabase, esegui supabase-setup.sql e inserisci URL e chiave pubblica in supabase-config.js.',true);return;}
+    try{
+      const {createClient}=await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm');
+      client=createClient(cfg.url,cfg.anonKey);
+      const {data}=await client.auth.getSession();
+      if(data.session){user=data.session.user;await loadUserData();}else setLoggedIn(false);
+      client.auth.onAuthStateChange((_event,session)=>{setTimeout(async()=>{user=session?.user||null;if(user)await loadUserData();else{saved.clear();setLoggedIn(false);}},0);});
+    }catch(e){setLoggedIn(false);message('Servizio account non raggiungibile. Riprova più tardi.',true);}
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
