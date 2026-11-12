@@ -353,6 +353,7 @@ def main():
     seen_urls = set(previous)
     added = 0
     duplicates = 0
+    new_article_urls = set()
     for article in fresh:
         url = canonical_url(article.get("url"))
         if not url:
@@ -370,6 +371,7 @@ def main():
                 existing["author"] = article["author"]
             continue
         seen_urls.add(url)
+        new_article_urls.add(url)
         merged[url] = article
         added += 1
     print(f"Nuovi articoli: {added}; già presenti/duplicati ignorati: {duplicates}.")
@@ -397,7 +399,7 @@ def main():
     if os.getenv("GEMINI_API_KEY", "").strip():
         candidates = [
             item for item in articles
-            if canonical_url(item.get("url")) in new_urls
+            if canonical_url(item.get("url")) in new_article_urls
             and not item.get("editorial_summary")
         ][:5]
         for article in candidates:
