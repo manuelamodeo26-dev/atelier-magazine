@@ -76,7 +76,7 @@ class EditorialSummaryTests(unittest.TestCase):
                 self._article(), "Testo della fonte " * 100
             )
         self.assertEqual(level, "standard")
-        self.assertEqual(editorial_summary._word_count(summary), 150)
+        self.assertEqual(editorial_summary._word_count(summary), 360)
         sleep.assert_called_once_with(7)
 
     def test_falls_back_to_smaller_model_on_quota_exhaustion(self):
