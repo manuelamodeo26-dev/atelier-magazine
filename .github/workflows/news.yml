@@ -61,15 +61,35 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/articles.json
-          if git diff --cached --quiet; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "No archive changes."
-          else
-            git commit -m "chore: update ATELIER news"
-            git pull --rebase origin main
-            git push
+          # Keep the freshly generated archive outside the checkout while syncing
+          # the latest main branch. This prevents stale workflow checkouts from
+          # rebasing competing edits to data/articles.json.
+          cp data/articles.json /tmp/atelier-articles-generated.json
+          changed=false
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/atelier-articles-generated.json data/articles.json
+            git add data/articles.json
+            if git diff --cached --quiet; then
+              echo "No archive changes."
+              changed=false
+              break
+            fi
+            git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "chore: update ATELIER news"
+            if git push origin HEAD:main; then
+              changed=true
+              break
+            fi
+            echo "Push attempt $attempt failed because main moved; retrying from latest main."
+          done
+          if [ "$changed" = true ]; then
             echo "changed=true" >> "$GITHUB_OUTPUT"
+          elif git diff --quiet && git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "Unable to publish archive after 3 attempts." >&2
+            exit 1
           fi
 
   deploy-updated-news:
