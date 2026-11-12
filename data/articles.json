@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-11-12T00:30:20.206220+00:00",
+  "updated_at": "2026-11-12T00:31:35.549348+00:00",
   "feeds_ok": 5,
-  "feeds_total": 8,
+  "feeds_total": 5,
   "language": "it",
   "articles": [
     {
@@ -34,7 +34,7 @@
       "source": "finestresullarte.info",
       "date": "2026-11-11T19:18:49+00:00",
       "url": "https://www.finestresullarte.info/opinioni/una-mostra-su-un-grande-artista-non-necessariamente-e-una-bella-mostra",
-      "image": "",
+      "image": "https://www.finestresullarte.info/rivista/immagini/2025/3019/caravaggio-pubblico-mostra-1.jpg",
       "language": "it"
     },
     {
@@ -56,7 +56,7 @@
       "source": "finestresullarte.info",
       "date": "2026-11-11T18:34:26+00:00",
       "url": "https://www.finestresullarte.info/arte-antica/un-botticelli-ritrovato-rischiava-di-lasciare-il-regno-unito-ora-a-oxford",
-      "image": "",
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/sandro-botticelli-madonna-col-bambino-klesch-1-1.jpg",
       "language": "it"
     },
     {
@@ -67,7 +67,7 @@
       "source": "finestresullarte.info",
       "date": "2026-11-11T18:22:19+00:00",
       "url": "https://www.finestresullarte.info/attualita/ministero-cultura-compra-complesso-argiletum-roma-16-milioni-euro",
-      "image": "",
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/complesso-argiletum-1.jpg",
       "language": "it"
     },
     {
@@ -78,7 +78,7 @@
       "source": "finestresullarte.info",
       "date": "2026-11-11T18:12:01+00:00",
       "url": "https://www.finestresullarte.info/mercato/artqoo-lancia-multiqo-ne-multiplo-ne-pezzo-unico-collezionismo",
-      "image": "",
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/artqoo-p-1.jpg",
       "language": "it"
     },
     {
@@ -100,7 +100,7 @@
       "source": "exibart.com",
       "date": "2026-11-11T17:39:02+00:00",
       "url": "https://www.exibart.com/mercato/paris-photo-celebra-i-200-anni-della-fotografia/",
-      "image": "",
+      "image": "https://www.exibart.com/repository/media/2026/11/grand-palais.jpg",
       "language": "it"
     },
     {
@@ -166,7 +166,7 @@
       "source": "exibart.com",
       "date": "2026-11-11T15:55:03+00:00",
       "url": "https://www.exibart.com/fiere-e-manifestazioni/art-basel-paris-sconto-del-20-agli-espositori-dopo-la-chiusura-anticipata/",
-      "image": "",
+      "image": "https://www.exibart.com/repository/media/2026/11/grand-palais-1-1.jpg",
       "language": "it"
     },
     {
@@ -287,7 +287,7 @@
       "source": "pambianconews.com",
       "date": "2026-11-11T12:30:23+00:00",
       "url": "https://www.pambianconews.com/2026/11/11/la-corsa-di-golden-goose-non-si-arresta-16-nei-primi-9-mesi-oltre-200-mln-nel-q3-500448/",
-      "image": "",
+      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/golden-goose.jpg",
       "language": "it"
     },
     {
@@ -386,7 +386,7 @@
       "source": "pambianconews.com",
       "date": "2026-11-11T08:30:52+00:00",
       "url": "https://www.pambianconews.com/2026/11/11/sita-ricerca-scalda-i-motori-per-levento-al-centergross-sui-numeri-del-fashion-in-italia-500263/",
-      "image": "",
+      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/getty-images-M_5e4kZyL0k-unsplash-2-e1794323462232.jpg",
       "language": "it"
     },
     {
@@ -408,7 +408,7 @@
       "source": "pambianconews.com",
       "date": "2026-11-11T08:15:29+00:00",
       "url": "https://www.pambianconews.com/2026/11/11/under-armour-in-affanno-ricavi-a-124-mld-nel-q2-7-pesa-il-medio-oriente-499993/",
-      "image": "",
+      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/Screenshot-2026-11-09-alle-11.47.05-e1794221513518.png",
       "language": "it"
     },
     {
@@ -540,7 +540,7 @@
       "source": "pambianconews.com",
       "date": "2026-11-10T23:19:53+00:00",
       "url": "https://www.pambianconews.com/2026/11/11/safilo-torna-a-crescere-nel-q3-3-trainato-da-usa-e-cina-500317/",
-      "image": "",
+      "image": "https://www.pambianconews.com/wp-content/uploads/2026/08/AT.jpg",
       "language": "it"
     },
     {
