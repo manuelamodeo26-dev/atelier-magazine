@@ -35,11 +35,15 @@ class EditorialSummaryTests(unittest.TestCase):
         valid = "\n\n".join([" ".join(["moda"] * 70) for _ in range(4)])
         self.assertTrue(editorial_summary.is_valid_editorial_summary(valid, "standard"))
         short = "\n\n".join([" ".join(["moda"] * 50) for _ in range(3)])
-        self.assertTrue(editorial_summary.is_valid_editorial_summary(short, "standard"))
+        self.assertFalse(editorial_summary.is_valid_editorial_summary(short, "standard"))
         invalid = "\n\n".join([" ".join(["moda"] * 50) for _ in range(1)])
         self.assertFalse(editorial_summary.is_valid_editorial_summary(invalid, "standard"))
         self.assertFalse(editorial_summary.is_valid_editorial_summary(valid, "unknown"))
         self.assertFalse(editorial_summary.is_valid_editorial_summary(valid, "approfondimento"))
+        too_long = "\\n\\n".join([" ".join(["moda"] * 80) for _ in range(4)])
+        self.assertFalse(editorial_summary.is_valid_editorial_summary(too_long, "standard"))
+        valid_deep = "\\n\\n".join([" ".join(["moda"] * 90) for _ in range(4)])
+        self.assertTrue(editorial_summary.is_valid_editorial_summary(valid_deep, "approfondimento"))
 
     def test_uses_groq_chat_completions_and_json_mode(self):
         response = self._response()
