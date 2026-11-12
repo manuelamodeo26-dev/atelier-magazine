@@ -88,8 +88,12 @@ def is_valid_editorial_summary(summary, level):
         return False
     paragraphs = [part.strip() for part in re.split(r"\n\s*\n", summary) if part.strip()]
     words = _word_count(summary)
-    # Accetta il vecchio formato durante la migrazione dell'archivio.
+    # Mantiene compatibilità con gli articoli già presenti nell'archivio.
     if 2 <= len(paragraphs) <= 3 and 120 <= words <= 180:
+        return True
+    if level == "standard" and 3 <= len(paragraphs) <= 4 and 250 <= words <= 300:
+        return True
+    if level == "approfondimento" and 4 <= len(paragraphs) <= 5 and 350 <= words <= 450:
         return True
     if not 4 <= len(paragraphs) <= 6:
         return False
@@ -117,15 +121,20 @@ def generate_editorial_summary(article, source_text):
         "inventare fatti, date, numeri, citazioni, intenzioni o conseguenze. Se un dettaglio "
         "non è presente, omettilo. Distingui chiaramente fatti e interpretazioni. Non aggiungere "
         "commenti generici per raggiungere la lunghezza.\n\n"
-        "Scrivi in modo sintetico: 120-180 parole totali, divise in 2-3 paragrafi brevi. "
-        "Anche gli approfondimenti devono restare entro 180 parole: seleziona soltanto i dettagli "
-        "più importanti, senza ripetizioni e senza introduzioni generiche. Non usare titoli, elenchi "
-        "o sottotitoli nella sintesi. Apri con il fatto principale e il suo contesto; scegli i dettagli "
-        "concreti; spiega la rilevanza per il settore solo se supportata dalla fonte; chiudi "
-        "con una conclusione informativa, non promozionale. Se la fonte è troppo povera per "
-        "una sintesi affidabile, restituisci esattamente JSON con level 'standard' e paragraphs come array vuoto. Non aggiungere testo fuori dal JSON.\n\n"
+        "Scrivi un articolo editoriale completo ma scorrevole, pensato per un pubblico giovane. "
+        "Per una notizia standard usa 250-300 parole in 3-4 paragrafi; per un vero approfondimento "
+        "usa 350-450 parole in 4-5 paragrafi. Non allungare artificialmente il testo e non ripetere "
+        "concetti. Usa un italiano naturale, contemporaneo e preciso, senza gergo inutile e senza "
+        "tono scolastico o pubblicitario. Apri spiegando chiaramente che cosa è successo e perché "
+        "è interessante; sviluppa i fatti, il contesto e i dettagli concreti; spiega le possibili "
+        "ricadute sul settore solo se supportate dalla fonte. Inserisci nel terzo paragrafo una "
+        "frase centrale che riassuma il punto più importante: sarà evidenziata in grassetto sul sito, "
+        "quindi deve essere autonoma, informativa e non generica. Chiudi con una conclusione utile. "
+        "Non usare titoli, elenchi o sottotitoli nei paragrafi. Se la fonte è troppo povera per "
+        "una sintesi affidabile, restituisci JSON con level 'standard' e paragraphs come array vuoto. "
+        "Non aggiungere fatti non presenti nel materiale.\n\n"
         "Rispondi esclusivamente in JSON valido con le chiavi 'level' (standard o approfondimento) "
-        "e 'paragraphs' (array di 4-6 paragrafi).\n\n"
+        "e 'paragraphs' (array di 3-5 paragrafi, secondo la lunghezza scelta).\n\n"
         "TITOLO: " + title + "\n"
         "FONTE: " + str(article.get("source") or "") + "\n"
         "MATERIALE DISPONIBILE:\n" + combined
@@ -134,7 +143,7 @@ def generate_editorial_summary(article, source_text):
         "model": MODEL,
         "messages": [{"role": "user", "content": prompt}],
         "temperature": 0.2,
-        "max_completion_tokens": 1800,
+        "max_completion_tokens": 2400,
         "response_format": {"type": "json_object"},
         "reasoning_effort": "low",
         "reasoning_format": "hidden",
@@ -193,13 +202,15 @@ def generate_editorial_summary(article, source_text):
                     break
                 paragraphs = [re.sub(r"\s+", " ", str(p)).strip() for p in paragraphs]
                 paragraphs = [p for p in paragraphs if p]
-                if not 2 <= len(paragraphs) <= 3:
-                    print("Groq {}: numero di paragrafi non valido.".format(model))
-                    break
                 summary = "\n\n".join(paragraphs)
                 words = _word_count(summary)
-                if not 120 <= words <= 180:
-                    print("Groq {}: sintesi scartata ({} parole).".format(model, words))
+                min_paragraphs, max_paragraphs = (4, 5) if level == "approfondimento" else (3, 4)
+                min_words, max_words = (350, 450) if level == "approfondimento" else (250, 300)
+                if not min_paragraphs <= len(paragraphs) <= max_paragraphs:
+                    print("Groq {}: numero di paragrafi non valido.".format(model))
+                    break
+                if not min_words <= words <= max_words:
+                    print("Groq {}: articolo scartato ({} parole).".format(model, words))
                     break
                 if model != MODEL:
                     print("Sintesi generata con modello alternativo {}.".format(model))
