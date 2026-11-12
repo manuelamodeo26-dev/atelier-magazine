@@ -378,3 +378,18 @@ section[id] { scroll-margin-top: 100px; }
 .profile-page .personal-area .story-grid{margin-top:25px}
 .profile-page .personal-area .saved-heading{margin-top:65px}
 @media(max-width:760px){.profile-intro{padding:52px 0 30px}.profile-identity{align-items:flex-start;flex-wrap:wrap;padding:18px}.profile-avatar{width:54px;height:54px;flex-basis:54px;font-size:28px}.profile-identity .outline-button{margin:5px 0 0 76px}.profile-shortcuts{grid-template-columns:1fr}.profile-shortcuts a,.profile-shortcuts button{border-right:0;border-bottom:1px solid var(--line);padding:17px 4px}.profile-page .personal-area{padding:38px 0}.profile-home-link{font-size:8px;padding:9px}}
+
+
+/* ATELIER / avatar personale scelto dall'utente */
+.account-open.has-account-avatar{width:42px;height:42px;min-width:42px;padding:0;border:0;border-radius:50%;overflow:hidden;display:grid;place-items:center;background:#e4e0d7}
+.account-avatar-image{width:100%;height:100%;object-fit:cover;display:block;border-radius:50%}
+.account-avatar-placeholder{width:100%;height:100%;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:#e4e0d7}
+.account-avatar-placeholder svg{width:21px;height:21px}
+.profile-avatar-wrap{display:flex;flex-direction:column;align-items:center;gap:8px;flex:0 0 96px}
+.profile-avatar{width:96px;height:96px;flex:0 0 96px;border-radius:50%;overflow:hidden;display:grid;place-items:center;background:#dedad2;color:var(--ink)}
+.profile-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.profile-avatar span{width:38px;height:38px;display:grid;place-items:center}
+.profile-avatar span svg{width:100%;height:100%}
+.avatar-change,.avatar-remove{font:8px var(--mono);letter-spacing:.07em;text-align:center;cursor:pointer;color:var(--ink);background:transparent;border:0;padding:4px}
+.avatar-change:hover,.avatar-remove:hover{color:var(--red-text)}
+@media(max-width:760px){.account-open.has-account-avatar{width:36px;height:36px;min-width:36px}.profile-avatar-wrap{flex-basis:72px}.profile-avatar{width:72px;height:72px;flex-basis:72px}}
