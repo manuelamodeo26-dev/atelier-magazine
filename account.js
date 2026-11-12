@@ -30,6 +30,7 @@
     $('#account-form')?.addEventListener('submit',handleAuth);
     $('#account-logout')?.addEventListener('click',logout);
     $('#save-preferences')?.addEventListener('click',savePreferences);
+    document.addEventListener('atelier:articles-rendered',syncSaveButtons);
     document.addEventListener('click',event=>{
       const btn=event.target.closest('[data-save-article]');
       if(btn){event.preventDefault();toggleSaved(btn.dataset.saveArticle);}
@@ -72,6 +73,9 @@
     preferred=Array.isArray(prefs.data?.categories)?prefs.data.categories:categories.slice();
     saved=new Set((favs.data||[]).map(x=>x.article_id));
     renderAccount();setLoggedIn(true);
+  }
+  function syncSaveButtons(){
+    syncSaveButtons();
   }
   function renderAccount(){
     const box=$('#account-categories');
