@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-11-12T00:41:31.086117+00:00",
+  "updated_at": "2026-11-12T00:47:43.863439+00:00",
   "feeds_ok": 5,
   "feeds_total": 5,
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 60
+    "verified_count": 61
   },
   "articles": [
     {
@@ -177,7 +177,7 @@
       "source": "vogue.it",
       "date": "2026-11-11T17:07:11+00:00",
       "url": "https://www.vogue.it/article/prada-x-mytheresa-holiday-collection-natale-2026",
-      "image": "https://compass-media.vogue.it/photos/6af4794cd9d87e18ca210937/master/pass/Prada%20x%20Mytheresa%20Holiday%20Collection%20feat.%20Exclusive%20Styles%20for%20WW%20%26%20MW%20(2).jpeg",
+      "image": "https://compass-media.vogue.it/photos/6af4794cd9d87e18ca210937/master/pass/Prada%20x%20Mytheresa%20Holiday%20Collection%20feat.%20Exclusive%20Styles%20for%20WW%20&%20MW%20(2).jpeg",
       "image_verified": true,
       "language": "it",
       "image_width": 8256,
@@ -697,6 +697,22 @@
       "date": "2026-11-11T05:30:00+00:00",
       "url": "https://www.vogue.it/oroscopo/article/oroscopo-oggi-cancro",
       "image": "https://compass-media.vogue.it/photos/680d0aade5bd17a26ad5ebe6/master/pass/oroscopo%20oggi%20cancro.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1331,
+      "image_height": 1800,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.vogue.it/oroscopo/article/oroscopo-oggi-pesci",
+      "title": "Oroscopo di oggi dei Pesci: cosa ti riservano le stelle?",
+      "excerpt": "",
+      "author": "Marco Pesatori",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-11T05:30:00+00:00",
+      "url": "https://www.vogue.it/oroscopo/article/oroscopo-oggi-pesci",
+      "image": "https://compass-media.vogue.it/photos/680d1c67c9c01d216075c8c7/master/pass/oroscopo%20oggi%20pesci.jpg",
       "image_verified": true,
       "language": "it",
       "image_width": 1331,
@@ -1258,7 +1274,7 @@
       "source": "ad-italia.it",
       "date": "2026-11-09T05:00:00+00:00",
       "url": "https://www.ad-italia.it/article/piscine-ad-italia-45-anni-evoluzione-design-anni-80-oggi/",
-      "image": "https://media-assets.ad-italia.it/photos/6405d5b2d5c4e1094bbb96f1/master/pass/1%20.%20EXTERIORS%20%26%20POOL%20(20%20of%2027)%20-%20IMG_1243.RETOUCHED.jpg",
+      "image": "https://media-assets.ad-italia.it/photos/6405d5b2d5c4e1094bbb96f1/master/pass/1%20.%20EXTERIORS%20&%20POOL%20(20%20of%2027)%20-%20IMG_1243.RETOUCHED.jpg",
       "image_verified": true,
       "language": "it",
       "image_width": 2500,
