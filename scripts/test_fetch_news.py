@@ -78,6 +78,14 @@ class FeedStatusTests(unittest.TestCase):
         )
         self.assertEqual(selected, ["new-1", "old-1"])
 
+    def test_summary_backfill_prioritizes_two_archive_items_after_one_new_item(self):
+        selected = fetch_news.select_summary_candidates(
+            ["new-1", "new-2", "new-3"],
+            ["old-1", "old-2", "old-3"],
+            3,
+        )
+        self.assertEqual(selected, ["new-1", "old-1", "old-2"])
+
     def test_summary_backfill_uses_available_pool_when_one_side_is_empty(self):
         selected = fetch_news.select_summary_candidates([], ["old-1", "old-2"], 2)
         self.assertEqual(selected, ["old-1", "old-2"])
