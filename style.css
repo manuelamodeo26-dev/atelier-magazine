@@ -241,3 +241,20 @@ body{background:var(--paper)}
 /* Non mostrare badge di verifica quando il file immagine non è stato caricato */
 .article-image.image-unavailable .image-verified{display:none}
 .detail-figure.image-unavailable figcaption{display:none}
+
+.hero-photo-credit{
+  position:absolute;
+  z-index:4;
+  right:34px;
+  bottom:60px;
+  max-width:calc(100% - 68px);
+  padding:7px 9px;
+  background:rgba(17,17,17,.72);
+  color:var(--paper);
+  font:8px var(--mono);
+  letter-spacing:.06em;
+  text-align:right;
+}
+@media(max-width:760px){
+  .hero-photo-credit{right:24px;bottom:56px;max-width:calc(100% - 48px);font-size:7px}
+}
