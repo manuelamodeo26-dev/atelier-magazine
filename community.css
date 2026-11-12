@@ -4,3 +4,24 @@
 @media(max-width:600px){.community-main{width:92%}.community-hero{padding:48px 0 28px}.community-hero h1{font-size:68px}.community-stats{font-size:8px;gap:12px}.community-layout{padding:35px 0 65px}.community-sidebar{grid-template-columns:1fr}.community-rules{margin-top:10px}.community-feed-heading{align-items:flex-start;flex-direction:column}.community-feed-heading .outline-button{width:100%}.discussion-card{padding:20px 0}.discussion-card h3{font-size:24px}.comment-form{flex-direction:column}.comment-form button{padding:12px}.guideline-grid{grid-template-columns:1fr}.guideline-grid article{min-height:auto}.community-guidelines{padding:55px 0}.community-toolbar{font-size:8px}}
 
 .community-header-actions{display:flex;align-items:center;gap:22px}.community-auth-actions{display:flex;gap:10px;flex-wrap:wrap}.community-moderation{padding:25px 0;border-top:1px solid var(--line)}.community-moderation h2{font:800 clamp(34px,5vw,58px)/.95 var(--display);letter-spacing:-.07em}.moderation-item{display:flex;justify-content:space-between;gap:15px;padding:16px 0;border-bottom:1px solid var(--line)}.moderation-item b{font:10px var(--mono)}.moderation-item p{font-size:11px;color:#777168}.moderation-item>div:last-child{display:flex;gap:12px;align-items:center}@media(max-width:600px){.community-header-actions{gap:10px}.community-header-actions .search-open{font-size:8px}.moderation-item{flex-direction:column}.moderation-item>div:last-child{justify-content:flex-start}}
+
+/* ATELIER LAB — shared writing space */
+.atelier-lab{padding:58px 0 72px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.atelier-lab-heading{display:grid;grid-template-columns:1fr minmax(240px,.62fr);gap:40px;align-items:end;margin-bottom:34px}
+.atelier-lab-heading h2{font:800 clamp(48px,7vw,82px)/.9 var(--display);letter-spacing:-.085em;margin:0}
+.atelier-lab-heading>p{max-width:470px;margin:0 0 5px;color:#625e57;font-size:14px;line-height:1.8}
+.atelier-lab-workspace{background:#e7e3db;padding:clamp(18px,3vw,34px)}
+.atelier-lab-feed-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #cbc6bc;padding-bottom:13px;font:9px var(--mono);letter-spacing:.08em}
+.atelier-lab-messages{display:flex;flex-direction:column;gap:0;max-height:540px;overflow:auto}
+.atelier-lab-message{padding:18px 0;border-bottom:1px solid #cbc6bc}
+.atelier-lab-message-meta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;font:9px var(--mono);color:#777168}
+.atelier-lab-message-meta strong{color:var(--ink);font-weight:600}
+.atelier-lab-message p{margin:9px 0 0;font-size:14px;line-height:1.75;white-space:pre-wrap;overflow-wrap:anywhere;color:#38342f}
+.atelier-lab-empty{padding:26px 0;color:#777168;font:italic 20px var(--editorial,var(--body))}
+.atelier-lab-form{display:flex;flex-direction:column;gap:10px;margin-top:18px;padding-top:20px;border-top:1px solid #cbc6bc}
+.atelier-lab-form label{font:9px var(--mono);letter-spacing:.08em;color:#777168}
+.atelier-lab-form textarea{width:100%;resize:vertical;min-height:105px;padding:14px;border:1px solid #c7c1b7;background:#f1eee6;color:var(--ink);font:14px/1.7 var(--body)}
+.atelier-lab-form-bottom{display:flex;align-items:center;justify-content:space-between;gap:15px}
+.atelier-lab-form-bottom>span{font:9px/1.5 var(--mono);color:#777168}
+.atelier-lab-form button:disabled{opacity:.5;cursor:wait}
+@media(max-width:650px){.atelier-lab{padding:44px 0 52px}.atelier-lab-heading{grid-template-columns:1fr;gap:18px}.atelier-lab-heading h2{font-size:58px}.atelier-lab-form-bottom{align-items:stretch;flex-direction:column}.atelier-lab-form-bottom button{width:100%}}
