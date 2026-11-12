@@ -120,3 +120,67 @@
 .save-article.is-saved{background:var(--ink);color:var(--paper)}
 .story-card .save-article{display:inline-block}
 @media(max-width:760px){.account-open{font-size:9px;padding:9px}.account-categories{grid-template-columns:1fr 1fr}.account-dialog{padding:24px}}
+
+
+/* ATELIER 2026 — rifinitura editoriale */
+:root{--paper:#f4f1e9;--ink:#151513;--red:#c83a32;--cement:#dedad1;--line:rgba(21,21,19,.17)}
+::selection{background:var(--red);color:#fff}
+body{background:var(--paper)}
+.site-header{box-shadow:0 8px 28px rgba(20,18,15,.035)}
+.brand{gap:13px}.brand-mark{font-size:43px}.brand-name{letter-spacing:.13em}
+.main-nav a{transition:color .2s}.main-nav a:hover{color:var(--red)}
+.hero-wrap{padding-top:30px}.hero-grid{min-height:590px;gap:6%}
+.hero-copy h1{max-width:760px}.hero-intro{font-size:17px}
+.hero-art{box-shadow:16px 16px 0 rgba(21,21,19,.08)}
+.ticker{letter-spacing:.13em}
+.section-block{padding-top:112px;padding-bottom:112px}
+.section-heading{margin-bottom:42px}
+.story-grid{gap:28px}
+.story-card{position:relative;padding-bottom:8px}
+.story-card h3{font-size:clamp(21px,2vw,27px);line-height:1.12;max-width:95%}
+.story-card p{max-width:95%;font-size:13px}
+.story-card .article-image{border:1px solid rgba(21,21,19,.08);background:#e1ddd4}
+.article-image img{transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .4s}
+.story-card:hover .article-image img{transform:scale(1.045);filter:saturate(1.08)}
+.image-verified{font-size:8px;letter-spacing:.08em;background:rgba(244,241,233,.94);backdrop-filter:blur(8px)}
+.image-verified.image-illustrative{background:rgba(21,21,19,.82);color:#f4f1e9}
+.card-link{margin-top:20px}
+.save-article{transition:background .2s,color .2s,border-color .2s}
+.save-article:hover{background:var(--ink);color:var(--paper)}
+.filter-chip{padding:11px 17px}
+.manifesto{background:#e4e0d7}
+.category-visual{box-shadow:12px 12px 0 rgba(21,21,19,.08)}
+.dark-graphic{border:1px solid #383633}
+.culture-strip a{min-height:78px;align-items:center}
+.newsletter{background:var(--red);position:relative;overflow:hidden}
+.newsletter:before,.newsletter:after{content:"";position:absolute;width:260px;height:260px;border:1px solid rgba(255,255,255,.2);border-radius:50%;pointer-events:none}
+.newsletter:before{left:-150px;top:-130px}.newsletter:after{right:-150px;bottom:-160px}
+.site-footer{padding-top:58px}
+.search-dialog{border:1px solid var(--line)}
+.article-page-main{max-width:1180px}
+.article-page-content{max-width:940px}
+.detail-figure{position:relative;margin:30px 0 42px}
+.detail-figure img{width:100%;max-height:640px;object-fit:cover;aspect-ratio:16/9;background:#e2ded6}
+.detail-figure figcaption{font:9px var(--mono);letter-spacing:.07em;text-transform:uppercase}
+.detail-section{padding:30px 0}
+.detail-excerpt{line-height:1.75}
+.detail-sources{border-left:3px solid var(--red)}
+.detail-figure.image-unavailable{display:none}
+@media(min-width:761px){
+ .story-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .feature-card{grid-column:span 2}
+ .feature-card .article-image{aspect-ratio:16/9}
+ .feature-card h3{font-size:clamp(27px,3vw,38px)}
+}
+@media(min-width:1100px){.hero-art{min-height:500px}.hero-grid{min-height:620px}}
+@media(max-width:760px){
+ .hero-wrap{padding-top:18px}
+ .hero-art{box-shadow:8px 8px 0 rgba(21,21,19,.08)}
+ .section-block{padding-top:76px;padding-bottom:76px}
+ .story-grid{gap:40px}
+ .story-card .article-image{aspect-ratio:16/10}
+ .feature-card .article-image{aspect-ratio:16/10}
+ .story-card h3{font-size:25px}
+ .manifesto{padding-top:52px;padding-bottom:52px}
+ .detail-figure img{aspect-ratio:4/3;object-fit:cover}
+}
