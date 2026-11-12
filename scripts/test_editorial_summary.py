@@ -8,7 +8,7 @@ import editorial_summary
 
 class EditorialSummaryTests(unittest.TestCase):
     def test_respects_retry_after_for_rate_limits(self):
-        paragraphs = [" ".join(["moda"] * 60) for _ in range(3)]
+        paragraphs = [" ".join(["moda"] * 80) for _ in range(4)]
         body = json.dumps({
             "candidates": [{
                 "finishReason": "STOP",
@@ -36,7 +36,7 @@ class EditorialSummaryTests(unittest.TestCase):
             )
 
         self.assertEqual(level, "standard")
-        self.assertEqual(editorial_summary._word_count(summary), 180)
+        self.assertEqual(editorial_summary._word_count(summary), 320)
         sleep.assert_called_once_with(7)
 
     def test_falls_back_when_primary_model_is_overloaded(self):
