@@ -31,6 +31,7 @@ MAX_PER_FEED = 18
 MAX_ARTICLES = 180
 MAX_AGE_DAYS = 120
 MAX_SUMMARIES_PER_RUN = 6
+MAX_IMAGE_BACKFILLS_PER_RUN = 10
 
 # Keep the archive focused on fashion, design and contemporary culture.
 # Exclude recurring general-interest formats that broad publisher feeds can contain.
@@ -436,9 +437,10 @@ def load_previous():
                 ))
                 for key in ("editorial_summary", "editorial_level", "editorial_word_count"):
                     item.pop(key, None)
-                attempted_at = datetime.now(timezone.utc)
-                item["editorial_attempted_at"] = attempted_at.isoformat()
-                item["editorial_retry_after"] = (attempted_at + timedelta(hours=12)).isoformat()
+                # Requeue legacy summaries immediately; future failed attempts
+                # receive a cooldown in the generation loop below.
+                item.pop("editorial_attempted_at", None)
+                item.pop("editorial_retry_after", None)
             url = canonical_url(item.get("url"))
             if not url:
                 continue
@@ -568,6 +570,28 @@ def main():
                       key=lambda item: item.get("date") or "0000", reverse=True)[:MAX_ARTICLES]
 
     new_urls = {canonical_url(item.get("url")) for item in fresh}
+
+    # Recover missing editorial images from each publisher's Open Graph metadata.
+    # Backfill a small batch per run, then verify the actual image bytes and dimensions.
+    image_backfill_urls = set()
+    missing_image_candidates = [
+        item for item in articles if not item.get("image")
+    ][:MAX_IMAGE_BACKFILLS_PER_RUN]
+    if missing_image_candidates:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=6) as executor:
+            metadata_rows = list(executor.map(
+                fetch_page_metadata,
+                [item.get("url", "") for item in missing_image_candidates],
+            ))
+        for article, metadata in zip(missing_image_candidates, metadata_rows):
+            if metadata.get("image"):
+                article["image"] = metadata["image"]
+                image_backfill_urls.add(canonical_url(article.get("url")))
+            if len(metadata.get("description", "")) > len(article.get("excerpt", "")):
+                article["excerpt"] = metadata["description"][:2200]
+            if not article.get("author") and metadata.get("author"):
+                article["author"] = metadata["author"]
+
     # Generate a small batch of source-grounded editorial summaries per run.
     # The publisher excerpt remains the fallback whenever source text is thin
     # or the optional AI service is unavailable.
@@ -613,7 +637,8 @@ def main():
     # archive entries are left untouched and are not downloaded again.
     new_urls = {canonical_url(item.get("url")) for item in fresh}
     to_verify = [item for item in articles
-                 if canonical_url(item.get("url")) in new_urls
+                 if (canonical_url(item.get("url")) in new_urls
+                     or canonical_url(item.get("url")) in image_backfill_urls)
                  and item.get("image") and not item.get("image_verified")]
     if to_verify:
         print(f"Verifica fotografica: {len(to_verify)} immagini da controllare.")
