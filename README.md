@@ -16,7 +16,7 @@ Le notizie vengono raccolte da feed pubblici di editori italiani dedicati a moda
 
 Le fotografie sono quelle distribuite dalle fonti nei rispettivi feed. Quando l'indirizzo dell'immagine consente parametri di dimensione, il raccoglitore richiede una versione più grande; la resa finale dipende comunque dal file originale, dal CDN e dalle condizioni d'uso del publisher. Le immagini non vengono copiate nel repository.
 
-Fonti configurate in `scripts/fetch_news.py`: Vogue Italia, Pambianco, Fashion News Magazine, AD Italia, Artribune, Exibart, Finestre sull'Arte e Domus. La disponibilità effettiva di ogni feed può cambiare.
+Fonti configurate in `scripts/fetch_news.py`: Vogue Italia, Pambianco, AD Italia, Exibart e Finestre sull'Arte. Le immagini mancanti nel feed vengono cercate nei metadati Open Graph delle pagine originali, con un numero limitato di richieste. La disponibilità effettiva di ogni feed può cambiare.
 
 ## Aggiornamento e pubblicazione
 
