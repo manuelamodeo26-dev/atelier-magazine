@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f1eee6">
-  <meta name="description" content="ATELIER — Rivista indipendente di moda, design, arte e cultura contemporanea.">
+  <meta name="description" content="ATELIER — Rivista indipendente di moda, design, arte e cultura contemporanea."><meta name="color-scheme" content="light"><meta property="og:type" content="website"><meta property="og:title" content="ATELIER — Fashion, Design & Culture"><meta property="og:description" content="Uno sguardo indipendente su moda, design e cultura contemporanea."><meta name="robots" content="index,follow">
   <title>ATELIER — Fashion, Design & Culture</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,11 +19,11 @@
     <a class="brand" href="./" aria-label="ATELIER homepage">
       <span class="brand-mark">A<span>.</span></span><span class="brand-name">ATELIER</span>
     </a>
-    <button class="menu-toggle" id="menu-toggle" aria-label="Apri menu" aria-expanded="false">☰</button>
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Apri menu" aria-controls="main-nav" aria-expanded="false">☰</button>
     <nav class="main-nav" id="main-nav">
       <a href="#latest">LATEST</a><a href="#fashion">FASHION</a><a href="#design">DESIGN</a><a href="#culture">CULTURE</a><a href="#about">ABOUT</a>
     </nav>
-    <button class="search-open" id="search-open" aria-label="Apri ricerca">SEARCH ↗</button>
+    <button class="search-open" id="search-open" type="button" aria-label="Apri ricerca">SEARCH ↗</button>
   </header>
 
   <main>
@@ -51,8 +51,8 @@
     <section class="section-block" id="latest">
       <div class="section-heading"><div><p class="eyebrow">01 / THE EDIT</p><h2>Latest <em>stories.</em></h2></div><span class="section-note">NOTIZIE, IDEE E PROSPETTIVE</span></div>
       <div class="filter-row" id="filters">
-        <button class="filter-chip active" data-filter="Tutti">TUTTI</button>
-        <button class="filter-chip" data-filter="Fashion">FASHION</button>
+        <button type="button" class="filter-chip active" data-filter="Tutti">TUTTI</button>
+        <button type="button" class="filter-chip" data-filter="Fashion">FASHION</button>
         <button class="filter-chip" data-filter="Streetwear">STREETWEAR</button>
         <button class="filter-chip" data-filter="Design">DESIGN</button>
         <button class="filter-chip" data-filter="Art & Culture">ART & CULTURE</button>
@@ -64,7 +64,7 @@
         <article class="story-card"><div class="story-placeholder placeholder-black"><span>NEW<br>CREATIVE<br>ENERGY</span></div><div class="story-meta">CULTURE · NOTEBOOK</div><h3>Le nuove energie creative da tenere d'occhio.</h3><p>Una selezione di linguaggi e visioni che attraversano la cultura contemporanea.</p></article>
       </div>
       <p class="empty-state" id="empty-state" hidden>Nessun articolo in questa sezione. Prova un altro filtro.</p>
-      <div class="load-row"><span id="story-count">SELEZIONE EDITORIALE</span><button class="outline-button" id="show-more">MOSTRA TUTTI GLI ARTICOLI ↗</button></div>
+      <div class="load-row"><span id="story-count">SELEZIONE EDITORIALE</span><button type="button" class="outline-button" id="show-more">MOSTRA TUTTI GLI ARTICOLI ↗</button></div>
     </section>
 
     <section class="manifesto">
@@ -88,13 +88,13 @@
 
     <section class="newsletter">
       <p class="eyebrow">THE ATELIER LETTER</p><h2>Ideas worth<br><em>keeping.</em></h2><p>Una selezione delle storie più interessanti, direttamente nella tua casella.</p>
-      <form id="newsletter-form"><input type="email" id="newsletter-email" placeholder="La tua email" aria-label="La tua email" required><button type="submit">COMING SOON ↗</button></form><small>Il servizio newsletter sarà attivato in una fase successiva. Nessun dato viene inviato.</small>
+      <p class="newsletter-notice">La newsletter non è ancora attiva. Nessun indirizzo email viene raccolto.</p>
     </section>
   </main>
 
   <footer class="site-footer" id="about"><div class="footer-top"><a class="brand footer-brand" href="./"><span class="brand-mark">A<span>.</span></span><span class="brand-name">ATELIER</span></a><p>INDEPENDENT FASHION,<br>DESIGN & CULTURE JOURNAL.</p><a class="back-top" href="#">BACK TO TOP ↑</a></div><div class="footer-bottom"><span>© ATELIER 2026</span><span>MADE TO OBSERVE WHAT'S NEXT.</span><span>ITALIAN EDITION</span></div></footer>
 
-  <dialog class="search-dialog" id="search-dialog"><form method="dialog"><button class="dialog-close" aria-label="Chiudi">×</button></form><p class="eyebrow">SEARCH THE JOURNAL</p><label for="search-input">Cosa stai cercando?</label><input id="search-input" type="search" placeholder="Cerca articoli, temi, parole..."><div id="search-results"></div></dialog>
+  <dialog class="search-dialog" id="search-dialog"><form method="dialog"><button class="dialog-close" type="submit" aria-label="Chiudi ricerca">×</button></form><p class="eyebrow">SEARCH THE JOURNAL</p><label for="search-input">Cosa stai cercando?</label><input id="search-input" type="search" placeholder="Cerca articoli, temi, parole..."><div id="search-results"></div></dialog>
   <script src="./app.js"></script>
 </body>
 </html>
