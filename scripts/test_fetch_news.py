@@ -19,6 +19,27 @@ class FeedStatusTests(unittest.TestCase):
         self.assertFalse(ok)
         self.assertIn("ValueError", error)
 
+    def test_outpump_falls_back_to_google_news_when_publisher_feed_is_blocked(self):
+        from urllib.error import HTTPError
+        xml = b"""<rss><channel><item>
+            <title>Outpump streetwear: nuova collezione</title>
+            <link>https://news.google.com/rss/articles/OUTPUMP123</link>
+            <description>Una nuova storia di moda e streetwear raccontata da Outpump.</description>
+            <pubDate>Wed, 11 Nov 2026 10:00:00 GMT</pubDate>
+        </item></channel></rss>"""
+        with patch.object(fetch_news, "fetch", side_effect=[
+            HTTPError("https://outpump.com/feed/", 403, "Forbidden", {}, None),
+            HTTPError("https://outpump.com/feed/", 403, "Forbidden", {}, None),
+            xml,
+        ]) as mocked, patch.object(fetch_news.time, "sleep"):
+            items, ok, error = fetch_news.parse_feed("https://outpump.com/feed/", "Streetwear")
+        self.assertTrue(ok)
+        self.assertEqual(error, "")
+        self.assertEqual(len(items), 1)
+        self.assertEqual(items[0]["source"], "outpump.com")
+        self.assertIn("news.google.com", items[0]["url"])
+        self.assertEqual(mocked.call_count, 3)
+
     def test_summary_backfill_is_balanced_with_new_stories(self):
         selected = fetch_news.select_summary_candidates(
             ["new-1", "new-2", "new-3"],
