@@ -16,6 +16,25 @@
     try { const url=new URL(value.trim(),location.href); return ['http:','https:'].includes(url.protocol)?url.href:''; }
     catch (_) { return ''; }
   }
+  const fallbackPhotos={
+    Fashion:['photo-1529139574466-a303027c1d8b','photo-1483985988355-763728e1935b','photo-1490481651871-ab68de25d43d'],
+    Streetwear:['photo-1523398002811-999ca8dec234','photo-1529139574466-a303027c1d8b'],
+    Design:['photo-1497366754035-f200968a6e72','photo-1494438639946-1ebd1d20bf85'],
+    'Art & Culture':['photo-1513364776144-60967b0f800f','photo-1518998053901-5348d3961a04'],
+    Architecture:['photo-1487958449943-2429e8be8625','photo-1511818966892-d7d671e672a2'],
+    Technology:['photo-1518770660439-4636190af475','photo-1519389950473-47ba0277781c'],
+    Business:['photo-1486406146926-c627a92ad1ab','photo-149 años'],
+    Lifestyle:['photo-1490481651871-ab68de25d43d','photo-1515886657613-9f3515b0c78f']
+  };
+  function imageFor(article){
+    const original=safeURL(article.image);
+    if(original)return {url:original,verified:article.image_verified===true};
+    const category=categoryOf(article.category);
+    const choices=fallbackPhotos[category]||fallbackPhotos.Fashion;
+    const seed=String(article.title||article.id||'ATELIER').split('').reduce((sum,char)=>sum+char.charCodeAt(0),0);
+    const photo=choices[seed%choices.length];
+    return {url:'https://images.unsplash.com/'+photo+'?auto=format&fit=crop&w=1400&q=82',verified:false};
+  }
   function categoryOf(value){
     const c=String(value||'').trim().toLowerCase();
     if(c==='culture'||c==='art'||c==='art & culture'||c==='art and culture') return 'Art & Culture';
@@ -32,16 +51,16 @@
     return Number.isNaN(date.getTime())?'DATA NON DISPONIBILE':date.toLocaleDateString('it-IT',{day:'2-digit',month:'short',year:'numeric'}).toUpperCase();
   }
   function card(article,index){
-    const image=article.image_verified===true?safeURL(article.image):'';
+    const imageInfo=imageFor(article), image=imageInfo.url;
     const category=categoryOf(article.category);
     const visual=image
-      ?'<div class="article-image"><img src="'+escapeHTML(image)+'" alt="Fotografia verificata: '+escapeHTML(article.title||'articolo')+'" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.closest(\'.article-image\').classList.add(\'image-unavailable\');this.remove()"><span class="image-verified">FOTOGRAFIA VERIFICATA</span></div>'
+      ?'<div class="article-image"><img src="'+escapeHTML(image)+'" alt="'+escapeHTML(article.title||'Immagine editoriale ATELIER')+'" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.closest(\'.article-image\').classList.add(\'image-unavailable\');this.remove()"><span class="image-verified '+(imageInfo.verified?'':'image-illustrative')+'">'+(imageInfo.verified?'FOTOGRAFIA VERIFICATA':'IMMAGINE ILLUSTRATIVA · NON VERIFICATA')+'</span></div>'
       :'<div class="story-placeholder '+(index%3===0?'placeholder-red':index%3===1?'placeholder-cream':'placeholder-black')+'"><span>'+escapeHTML(categoryLabel(category).toLocaleUpperCase('it'))+'<br>ATELIER</span><b>A/'+String(index+1).padStart(2,'0')+'</b></div>';
     const articleId=article.id||article.url||String(index);
     return '<article class="story-card'+(index===0?' feature-card':'')+'">'+visual+'<div class="story-meta">'+escapeHTML(categoryLabel(category))+' · '+formatDate(article.date)+' · '+escapeHTML(article.source||'Fonte non indicata')+'</div><h3>'+escapeHTML(article.title||'Senza titolo')+'</h3><p>'+escapeHTML(article.excerpt||'')+'</p><a class="text-link card-link" href="./article.html?id='+encodeURIComponent(articleId)+'">APRI ARTICOLO ↗</a><button type="button" class="save-article" data-save-article="'+escapeHTML(articleId)+'" aria-label="Salva articolo nei preferiti">♡ SALVA</button></article>';
   }
   function articleDetail(article){
-    const image=article.image_verified===true?safeURL(article.image):'';
+    const imageInfo=imageFor(article), image=imageInfo.url;
     const date=formatDate(article.date);
     const category=categoryLabel(article.category);
     const source=article.source||'Editore non identificato';
@@ -55,10 +74,10 @@
       :'';
     const excerpt=editorialHtml+sourceExcerpt||(editorial?'':'<section class="detail-section"><p class="eyebrow">SINTESI FORNITA DALLA FONTE</p><p class="detail-muted">La fonte non mette a disposizione una descrizione più ampia. ATELIER non aggiunge dettagli non verificati.</p></section>');
     const photo=image
-      ?'<figure class="detail-figure"><img src="'+escapeHTML(image)+'" alt="Fotografia verificata: '+escapeHTML(article.title||'articolo')+'" referrerpolicy="no-referrer"><figcaption>Immagine verificata · '+escapeHTML(String(article.image_width||'')+(article.image_width?' × ':'')+String(article.image_height||''))+' px · '+escapeHTML(source)+'</figcaption></figure>'
+      ?'<figure class="detail-figure"><img src="'+escapeHTML(image)+'" alt="'+escapeHTML(article.title||'Immagine editoriale ATELIER')+'" referrerpolicy="no-referrer" onerror="this.closest(\'.detail-figure\').classList.add(\'image-unavailable\');this.remove()"><figcaption>'+(imageInfo.verified?'Fotografia verificata · ':'Immagine illustrativa non verificata · ')+escapeHTML(source)+'</figcaption></figure>'
       :'<div class="detail-no-image">IMMAGINE NON DISPONIBILE O NON VERIFICATA</div>';
     const sourceUrl=safeURL(article.url);
-    const sourceBlock='<section class="detail-sources"><p class="eyebrow">FONTI E ATTRIBUZIONI</p><p><strong>'+escapeHTML(source)+'</strong> · Fonte originale del contenuto e delle informazioni riportate in questa scheda.</p>'+(sourceUrl?'<a class="text-link" href="'+escapeHTML(sourceUrl)+'" target="_blank" rel="noopener noreferrer">CONSULTA LA FONTE ORIGINALE ↗</a>':'<p class="detail-muted">Collegamento alla fonte non disponibile.</p>')+'<p class="detail-muted">La fotografia, quando presente, è stata controllata tecnicamente da ATELIER per formato, accessibilità e risoluzione. L’attribuzione resta all’editore originale.</p></section>';
+    const sourceBlock='<section class="detail-sources"><p class="eyebrow">FONTI E ATTRIBUZIONI</p><p><strong>'+escapeHTML(source)+'</strong> · Fonte originale del contenuto e delle informazioni riportate in questa scheda.</p>'+(sourceUrl?'<a class="text-link" href="'+escapeHTML(sourceUrl)+'" target="_blank" rel="noopener noreferrer">CONSULTA LA FONTE ORIGINALE ↗</a>':'<p class="detail-muted">Collegamento alla fonte non disponibile.</p>')+'<p class="detail-muted">Le fotografie contrassegnate come verificate provengono dai metadati della fonte e hanno superato i controlli tecnici. Le immagini illustrative sono alternative visive e non documentano necessariamente il fatto narrato.</p></section>';
     return '<div class="detail-topline"><span>'+escapeHTML(category.toLocaleUpperCase('it'))+'</span><span>'+escapeHTML(date)+'</span></div><h2 class="detail-title">'+escapeHTML(article.title||'Senza titolo')+'</h2>'+author+photo+excerpt+'<div class="detail-metadata"><span>EDITORE</span><strong>'+escapeHTML(source)+'</strong><span>DATA DI PUBBLICAZIONE</span><strong>'+escapeHTML(date)+'</strong><span>CATEGORIA</span><strong>'+escapeHTML(category)+'</strong>'+(article.language?'<span>LINGUA</span><strong>'+escapeHTML(String(article.language).toLocaleUpperCase('it'))+'</strong>':'')+'</div>'+sourceBlock;
   }
   function openArticle(identifier){
