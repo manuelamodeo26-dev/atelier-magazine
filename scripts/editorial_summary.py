@@ -131,7 +131,7 @@ def generate_editorial_summary(article, source_text):
         headers={"Content-Type": "application/json", "User-Agent": USER_AGENT},
         method="POST",
     )
-    fallback_models = ["gemini-3.7-flash", "gemini-3.6-flash"]
+    fallback_models = ["gemini-3.7-flash", "gemini-3.6-flash", "gemini-3.5-flash-lite"]
     models = list(dict.fromkeys([MODEL] + fallback_models))
     for model in models:
         endpoint = (
