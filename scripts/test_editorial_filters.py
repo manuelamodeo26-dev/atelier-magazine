@@ -9,6 +9,8 @@ class EditorialFilterTests(unittest.TestCase):
             {"title": "Oroscopo di oggi della Bilancia", "url": "https://example.com/oroscopo"},
             {"title": "Apnee del sonno: sintomi e rimedi", "url": "https://example.com/salute"},
             {"title": "Come smettere di guardare il telefono continuamente", "url": "https://example.com"},
+            {"title": "Allergie mattutine e materiali in camera da letto", "url": "https://example.com"},
+            {"title": "Destinazioni esotiche per l'inverno", "url": "https://example.com"},
         ]
         for article in samples:
             with self.subTest(title=article["title"]):
@@ -33,6 +35,9 @@ class EditorialFilterTests(unittest.TestCase):
             ("L'intelligenza artificiale nel progetto creativo", "", "Fashion", "Technology"),
             ("Il nuovo design degli oggetti", "", "Fashion", "Design"),
             ("Una mostra di fotografia", "", "Fashion", "Art & Culture"),
+            ("Gli anelli del potere: storia e significato", "Un approfondimento con parole AI e ai materiali", "Fashion", "Fashion"),
+            ("A Milano si apre il cantiere del futuro Museo nazionale", "Un progetto di tecnologia e cultura", "Art & Culture", "Art & Culture"),
+            ("Come abbinare cappotto midi e décolleté", "Un racconto di street style e moda", "Fashion", "Fashion"),
         ]
         for title, excerpt, current, expected in cases:
             with self.subTest(title=title):
