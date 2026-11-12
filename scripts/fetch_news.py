@@ -377,55 +377,73 @@ def parse_feed(feed_url, category):
     last_error = "Errore non specificato"
     host = urlparse(feed_url).netloc.lower().removeprefix("www.")
     request_user_agent = BROWSER_USER_AGENT if host == "outpump.com" else USER_AGENT
-    for attempt in range(2):
-        try:
-            root = ET.fromstring(fetch(feed_url, user_agent=request_user_agent))
-            nodes = [item for item in root.iter()
-                     if local_name(item.tag) in ("item", "entry")]
-            articles = []
-            for node in nodes[:MAX_PER_FEED]:
-                title = child_text(node, "title")
-                link = article_link(node)
-                if not title or not link:
-                    continue
-                description = best_description(node, "description", "summary", "encoded", "content")
-                author = child_text(node, "creator", "author", "artist")
-                article = {
-                    "id": link,
-                    "title": title[:300],
-                    "excerpt": description[:2200],
-                    "author": author[:160],
-                    "category": infer_category(title, description, category),
-                    "source": host,
-                    "date": article_date(node),
-                    "url": link,
-                    "image": upgrade_image_url(article_image(node)),
-                    "image_verified": False,
-                    "language": "it",
-                }
-                if is_relevant(article):
-                    articles.append(article)
-            metadata_attempts = 0
-            for article in articles:
-                if (not article["image"] or len(article["excerpt"]) < 900 or not article["author"]) and metadata_attempts < 18:
-                    metadata_attempts += 1
-                    metadata = fetch_page_metadata(article["url"])
-                    if not article["image"]:
-                        article["image"] = metadata["image"]
-                    if len(metadata["description"]) > len(article["excerpt"]):
-                        article["excerpt"] = metadata["description"][:2200]
-                    if not article["author"]:
-                        article["author"] = metadata["author"]
-            print(f"{host}: {len(articles)} articoli")
-            return articles, True, ""
-        except Exception as exc:
-            last_error = "{}: {}".format(type(exc).__name__, str(exc)[:220])
-            if attempt == 0:
-                time.sleep(1.5)
-            else:
-                print(f"Feed non disponibile {feed_url}: {exc}")
-    return [], False, last_error
+    feed_candidates = [feed_url]
+    if host == "outpump.com":
+        feed_candidates.append(
+            "https://news.google.com/rss/search?q=site%3Aoutpump.com&hl=it&gl=IT&ceid=IT%3Ait"
+        )
 
+    for candidate_url in feed_candidates:
+        is_fallback = candidate_url != feed_url
+        for attempt in range(2):
+            try:
+                user_agent = USER_AGENT if is_fallback else request_user_agent
+                root = ET.fromstring(fetch(candidate_url, user_agent=user_agent))
+                nodes = [item for item in root.iter()
+                         if local_name(item.tag) in ("item", "entry")]
+                articles = []
+                for node in nodes[:MAX_PER_FEED]:
+                    title = child_text(node, "title")
+                    link = article_link(node)
+                    if not title or not link:
+                        continue
+                    description = best_description(node, "description", "summary", "encoded", "content")
+                    author = child_text(node, "creator", "author", "artist")
+                    article = {
+                        "id": link,
+                        "title": title[:300],
+                        "excerpt": description[:2200],
+                        "author": author[:160],
+                        "category": infer_category(title, description, category),
+                        "source": host,
+                        "date": article_date(node),
+                        "url": link,
+                        "image": upgrade_image_url(article_image(node)),
+                        "image_verified": False,
+                        "language": "it",
+                    }
+                    if is_relevant(article):
+                        articles.append(article)
+
+                # Google News already supplies a publisher description and redirects
+                # to the original Outpump story. Avoid making repeated blocked requests
+                # to the publisher for metadata when using this fallback.
+                if not is_fallback:
+                    metadata_attempts = 0
+                    for article in articles:
+                        if (not article["image"] or len(article["excerpt"]) < 900 or not article["author"]) and metadata_attempts < 18:
+                            metadata_attempts += 1
+                            metadata = fetch_page_metadata(article["url"])
+                            if not article["image"]:
+                                article["image"] = metadata["image"]
+                            if len(metadata["description"]) > len(article["excerpt"]):
+                                article["excerpt"] = metadata["description"][:2200]
+                            if not article["author"]:
+                                article["author"] = metadata["author"]
+
+                if not articles and not is_fallback and host == "outpump.com":
+                    raise ValueError("Feed Outpump vuoto; provo la fonte RSS alternativa")
+                if is_fallback:
+                    print("Outpump: uso il feed Google News come fallback; i link rimandano agli articoli originali")
+                print(f"{host}: {len(articles)} articoli")
+                return articles, True, ""
+            except Exception as exc:
+                last_error = "{}: {}".format(type(exc).__name__, str(exc)[:220])
+                if attempt == 0:
+                    time.sleep(1.5)
+                else:
+                    print(f"Feed non disponibile {candidate_url}: {exc}")
+    return [], False, last_error
 
 def load_previous():
     try:
