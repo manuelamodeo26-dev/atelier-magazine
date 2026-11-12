@@ -5,6 +5,16 @@
     typeof cfg.anonKey === 'string' && cfg.anonKey.length > 20 &&
     !cfg.url.includes('INSERISCI') && !cfg.anonKey.includes('INSERISCI');
   const categories = ['Fashion','Streetwear','Design','Art & Culture','Technology','Architecture','Business','Lifestyle'];
+  const fallbackPhotos={
+    Fashion:['photo-1529139574466-a303027c1d8b','photo-1483985988355-763728e1935b','photo-1490481651871-ab68de25d43d'],
+    Streetwear:['photo-1523398002811-999ca8dec234','photo-1529139574466-a303027c1d8b'],
+    Design:['photo-1497366754035-f200968a6e72','photo-1494438639946-1ebd1d20bf85'],
+    'Art & Culture':['photo-1513364776144-60967b0f800f','photo-1518998053901-5348d3961a04'],
+    Architecture:['photo-1487958449943-2429e8be8625','photo-1511818966892-d7d671e672a2'],
+    Technology:['photo-1518770660439-4636190af475','photo-1519389950473-47ba0277781c'],
+    Business:['photo-1486406146926-c627a92ad1ab'],
+    Lifestyle:['photo-1490481651871-ab68de25d43d','photo-1515886657613-9f3515b0c78f']
+  };
   const labels = {'Fashion':'Moda','Streetwear':'Streetwear','Design':'Design','Art & Culture':'Arte e cultura','Technology':'Tecnologia','Architecture':'Architettura','Business':'Impresa','Lifestyle':'Stili di vita'};
   let client=null, user=null, saved=new Set(), preferred=categories.slice(), articles=[];
   const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -98,8 +108,14 @@
     $('#saved-empty').hidden=favourites.length>0;
   }
   function accountCard(a,i){
-    const id=String(a.id||a.url||''); const image=a.image_verified===true&&/^https:\/\//.test(a.image||'')?'<div class="article-image"><img loading="lazy" src="'+esc(a.image)+'" alt=""></div>':'';
-    return '<article class="story-card">'+image+'<div class="story-meta">'+esc(labels[a.category]||a.category||'ATELIER')+' · '+esc(a.source||'')+'</div><h3>'+esc(a.title)+'</h3><p>'+esc(a.excerpt||'')+'</p><a class="text-link card-link" href="./article.html?id='+encodeURIComponent(id)+'">APRI ARTICOLO ↗</a><button type="button" class="save-article '+(saved.has(id)?'is-saved':'')+'" data-save-article="'+esc(id)+'">'+(saved.has(id)?'♥ SALVATO':'♡ SALVA')+'</button></article>';
+    const id=String(a.id||a.url||'');
+    const original=typeof a.image==='string'&&/^https:\/\//.test(a.image)?a.image:'';
+    const choices=fallbackPhotos[a.category]||fallbackPhotos.Fashion;
+    const seed=String(a.title||id).split('').reduce((n,c)=>n+c.charCodeAt(0),0);
+    const image=original||('https://images.unsplash.com/'+choices[seed%choices.length]+'?auto=format&fit=crop&w=1200&q=82');
+    const imageLabel=a.image_verified===true?'FOTOGRAFIA VERIFICATA':original?'IMMAGINE DELLA FONTE · NON VERIFICATA':'IMMAGINE ILLUSTRATIVA';
+    const visual='<div class="article-image"><img loading="lazy" decoding="async" src="'+esc(image)+'" alt="'+esc(a.title||'Immagine editoriale ATELIER')+'" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add(\\'image-unavailable\\');this.remove()"><span class="image-verified '+(a.image_verified===true?'':'image-illustrative')+'">'+imageLabel+'</span></div>';
+    return '<article class="story-card">'+visual+'<div class="story-meta">'+esc(labels[a.category]||a.category||'ATELIER')+' · '+esc(a.source||'')+'</div><h3>'+esc(a.title)+'</h3><p>'+esc(a.excerpt||'')+'</p><a class="text-link card-link" href="./article.html?id='+encodeURIComponent(id)+'">APRI ARTICOLO ↗</a><button type="button" class="save-article '+(saved.has(id)?'is-saved':'')+'" data-save-article="'+esc(id)+'">'+(saved.has(id)?'♥ SALVATO':'♡ SALVA')+'</button></article>';
   }
   async function toggleSaved(id){
     if(!user){$('#account-dialog').showModal();message('Accedi per salvare i tuoi articoli.');return;}
