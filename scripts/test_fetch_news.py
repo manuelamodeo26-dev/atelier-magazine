@@ -70,6 +70,17 @@ class FeedStatusTests(unittest.TestCase):
         self.assertIn("news.google.com", items[0]["url"])
         self.assertEqual(mocked.call_count, 7)
 
+    def test_page_metadata_resolves_relative_image_after_redirect(self):
+        from unittest.mock import MagicMock
+        response = MagicMock()
+        response.__enter__.return_value.geturl.return_value = "https://publisher.example/story/"
+        response.__enter__.return_value.read.return_value = (
+            b'<html><head><meta property="og:image" content="/media/cover.jpg"></head></html>'
+        )
+        with patch.object(fetch_news, "urlopen", return_value=response):
+            metadata = fetch_news.fetch_page_metadata("https://news.google.com/rss/articles/redirect")
+        self.assertEqual(metadata["image"], "https://publisher.example/media/cover.jpg")
+
     def test_summary_backfill_is_balanced_with_new_stories(self):
         selected = fetch_news.select_summary_candidates(
             ["new-1", "new-2", "new-3"],
