@@ -66,6 +66,17 @@ def is_relevant(article):
 
 
 
+def select_summary_candidates(new_candidates, older_candidates, limit):
+    """Balance fresh coverage with gradual improvement of the existing archive."""
+    if limit <= 0:
+        return []
+    if new_candidates and older_candidates and limit >= 2:
+        selected = [new_candidates[0], older_candidates[0]]
+        remaining = new_candidates[1:] + older_candidates[1:]
+        return selected + remaining[:limit - 2]
+    return (new_candidates + older_candidates)[:limit]
+
+
 def summary_retry_due(article, now=None):
     retry_after = article.get("editorial_retry_after")
     if not retry_after:
@@ -579,7 +590,7 @@ def main():
     image_backfill_urls = set()
     metadata_backfill_candidates = [
         item for item in articles
-        if (not item.get("image") or len(item.get("excerpt", "")) < 250)
+        if (not item.get("image") or not item.get("image_verified") or len(item.get("excerpt", "")) < 250)
     ][:MAX_IMAGE_BACKFILLS_PER_RUN]
     if metadata_backfill_candidates:
         with concurrent.futures.ThreadPoolExecutor(max_workers=6) as executor:
@@ -588,7 +599,7 @@ def main():
                 [item.get("url", "") for item in metadata_backfill_candidates],
             ))
         for article, metadata in zip(metadata_backfill_candidates, metadata_rows):
-            if not article.get("image") and metadata.get("image"):
+            if not article.get("image_verified") and metadata.get("image"):
                 article["image"] = metadata["image"]
                 image_backfill_urls.add(canonical_url(article.get("url")))
             if len(metadata.get("description", "")) > len(article.get("excerpt", "")):
@@ -617,7 +628,7 @@ def main():
             key=lambda item: item.get("date") or "9999",
             reverse=False,
         )
-        candidates = (new_candidates + older_candidates)[:MAX_SUMMARIES_PER_RUN]
+        candidates = select_summary_candidates(new_candidates, older_candidates, MAX_SUMMARIES_PER_RUN)
         print("Sintesi AI in coda: {} (massimo {} per esecuzione).".format(len(candidates), MAX_SUMMARIES_PER_RUN))
         for article in candidates:
             source_text = fetch_article_text(article.get("url", ""))
