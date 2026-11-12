@@ -43,7 +43,7 @@ jobs:
       - name: Collect RSS and Atom articles
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: gemini-3.8-flash
+          GEMINI_MODEL: gemini-3.5-flash-lite
         run: python scripts/fetch_news.py
       - name: Validate generated archive
         run: |
