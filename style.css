@@ -503,3 +503,10 @@ section[id] { scroll-margin-top: 100px; }
 .save-article:hover,.like-article:hover,.save-article.is-saved,.like-article.is-liked{background:transparent!important;background-color:transparent!important;border:0!important;border-color:transparent!important;box-shadow:none!important;color:#B51F1F!important;-webkit-text-fill-color:#B51F1F!important;text-decoration:none!important}
 .save-article:focus-visible,.like-article:focus-visible{outline:2px solid #B51F1F!important;outline-offset:3px!important}
 .save-article [data-like-count],.like-article [data-like-count]{color:#B51F1F!important;-webkit-text-fill-color:#B51F1F!important}
+
+
+/* Freccia di ritorno dalle notizie: chiude solo la scheda e conserva la posizione dell'elenco */
+.detail-close-row{display:flex!important;justify-content:flex-start!important;align-items:center!important;padding:0 0 18px!important;margin:0!important}
+.detail-back{appearance:none!important;-webkit-appearance:none!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;width:42px!important;height:42px!important;padding:0!important;margin:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;color:#B51F1F!important;-webkit-text-fill-color:#B51F1F!important;font-size:34px!important;font-weight:400!important;line-height:1!important;cursor:pointer!important}
+.detail-back:hover,.detail-back:focus-visible{background:transparent!important;border:0!important;box-shadow:none!important;color:#8f1b1b!important;-webkit-text-fill-color:#8f1b1b!important;transform:translateX(-2px)}
+.detail-back:focus-visible{outline:2px solid #B51F1F!important;outline-offset:3px!important}
