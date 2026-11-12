@@ -7,15 +7,17 @@ import fetch_news
 class FeedStatusTests(unittest.TestCase):
     def test_valid_feed_with_no_matching_stories_is_still_healthy(self):
         with patch.object(fetch_news, "fetch", return_value=b"<rss><channel></channel></rss>"):
-            items, ok = fetch_news.parse_feed("https://example.com/feed", "Fashion")
+            items, ok, error = fetch_news.parse_feed("https://example.com/feed", "Fashion")
         self.assertEqual(items, [])
         self.assertTrue(ok)
+        self.assertEqual(error, "")
 
     def test_unavailable_feed_is_reported_as_failed(self):
         with patch.object(fetch_news, "fetch", side_effect=ValueError("invalid feed")), patch.object(fetch_news.time, "sleep"):
             items, ok = fetch_news.parse_feed("https://example.com/feed", "Fashion")
         self.assertEqual(items, [])
         self.assertFalse(ok)
+        self.assertIn("ValueError", error)
 
     def test_valid_feed_with_story_returns_items_and_healthy_status(self):
         description = "Dettagli sulla nuova collezione e sul lavoro creativo. " * 25
@@ -32,6 +34,7 @@ class FeedStatusTests(unittest.TestCase):
         with patch.object(fetch_news, "fetch", return_value=xml):
             items, ok = fetch_news.parse_feed("https://example.com/feed", "Fashion")
         self.assertTrue(ok)
+        self.assertEqual(error, "")
         self.assertEqual(len(items), 1)
         self.assertEqual(items[0]["url"], "https://example.com/story")
 
