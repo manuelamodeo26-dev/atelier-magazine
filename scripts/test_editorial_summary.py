@@ -13,7 +13,7 @@ class EditorialSummaryTests(unittest.TestCase):
             "candidates": [{
                 "finishReason": "STOP",
                 "content": {"parts": [{"text": json.dumps({
-                    "level": "approfondimento",
+                    "level": "standard",
                     "paragraphs": paragraphs,
                 })}]},
             }]
@@ -46,7 +46,7 @@ class EditorialSummaryTests(unittest.TestCase):
                 self._article(), "Testo della fonte " * 100
             )
 
-        self.assertEqual(level, "approfondimento")
+        self.assertEqual(level, "standard")
         self.assertEqual(editorial_summary._word_count(summary), 320)
         sleep.assert_called_once_with(7)
 
