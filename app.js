@@ -12,7 +12,8 @@
   let articles=[], activeFilter='Tutti', showAll=false;
   const escapeHTML=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   function safeURL(value){
-    try { const url=new URL(String(value||''),location.href); return ['http:','https:'].includes(url.protocol)?url.href:''; }
+    if(typeof value!=='string'||!value.trim()||value.trim()==='#') return '';
+    try { const url=new URL(value.trim(),location.href); return ['http:','https:'].includes(url.protocol)?url.href:''; }
     catch (_) { return ''; }
   }
   function categoryOf(value){
