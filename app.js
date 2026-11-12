@@ -119,19 +119,23 @@
       console.warn('ATELIER: impossibile caricare le notizie.',error);
       articles=fallback;
     }
-    const heroImage=articles.find(article=>article.image_verified===true&&safeURL(article.image));
+    const heroImage=articles[0]&&articles[0].image_verified===true&&safeURL(articles[0].image)?articles[0]:null;
     if(heroImage){
       const heroArt=$('.hero-art');
       if(heroArt&&!heroArt.querySelector('.hero-photo')){
         const photo=document.createElement('img');
         photo.className='hero-photo';
         photo.src=safeURL(heroImage.image);
-        photo.alt='Fotografia editoriale dalla selezione ATELIER';
+        photo.alt=heroImage.title||'Immagine editoriale ATELIER';
         photo.loading='eager';
         photo.decoding='async';
         photo.referrerPolicy='no-referrer';
         photo.onerror=()=>photo.remove();
         heroArt.prepend(photo);
+        const credit=document.createElement('span');
+        credit.className='hero-photo-credit';
+        credit.textContent=(heroImage.source||'Fonte originale')+' · IMMAGINE VERIFICATA TECNICAMENTE';
+        heroArt.appendChild(credit);
         heroArt.classList.add('has-photo');
       }
     }
