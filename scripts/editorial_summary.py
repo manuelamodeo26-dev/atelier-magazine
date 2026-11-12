@@ -106,7 +106,7 @@ def generate_editorial_summary(article, source_text):
         "sottotitoli. Apri con il fatto principale e il suo contesto; sviluppa i dettagli "
         "concreti; spiega la rilevanza per il settore solo se supportata dalla fonte; chiudi "
         "con una conclusione informativa, non promozionale. Se la fonte è troppo povera per "
-        "una sintesi affidabile, restituisci JSON con level 'standard' e paragraphs come array vuoto.\n\n"
+        "una sintesi affidabile, restituisci esattamente JSON con level 'standard' e paragraphs come array vuoto. Non aggiungere testo fuori dal JSON.\n\n"
         "Rispondi esclusivamente in JSON valido con le chiavi 'level' (standard o approfondimento) "
         "e 'paragraphs' (array di 3-5 paragrafi).\n\n"
         "TITOLO: " + title + "\n"
@@ -121,7 +121,7 @@ def generate_editorial_summary(article, source_text):
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {
             "temperature": 0.25,
-            "maxOutputTokens": 1800,
+            "maxOutputTokens": 2200,
             "responseMimeType": "application/json",
         },
     }
@@ -136,15 +136,59 @@ def generate_editorial_summary(article, source_text):
             with urlopen(request, timeout=45) as response:
                 result = json.loads(response.read().decode("utf-8"))
             candidates = result.get("candidates") or []
-            parts = candidates[0].get("content", {}).get("parts", []) if candidates else []
+            if not candidates:
+                reason = (result.get("promptFeedback") or {}).get("blockReason", "nessun candidato")
+                print("Sintesi AI senza contenuto utilizzabile: {}.".format(reason))
+                return "", ""
+            candidate = candidates[0]
+            finish_reason = candidate.get("finishReason", "non indicato")
+            parts = candidate.get("content", {}).get("parts", [])
             raw = "".join(part.get("text", "") for part in parts).strip()
-            if raw.startswith("```"):
-                raw = re.sub(r"^\`\`\`(?:json)?\s*|\s*\`\`\`$", "", raw, flags=re.I)
-            data = json.loads(raw)
+            if raw.startswith(chr(96) * 3):
+                raw = raw.split("\n", 1)[-1]
+                raw = raw.rsplit(chr(96) * 3, 1)[0].strip()
+            if not raw:
+                print("Sintesi AI vuota (finishReason={}).".format(finish_reason))
+                return "", ""
+            try:
+                data = json.loads(raw)
+            except json.JSONDecodeError:
+                # Recover a JSON object even if the model adds a short preamble.
+                start_json = raw.find("{")
+                if start_json < 0:
+                    raise
+                data, _ = json.JSONDecoder().raw_decode(raw[start_json:])
             level = data.get("level")
             paragraphs = data.get("paragraphs")
             if level not in ("standard", "approfondimento") or not isinstance(paragraphs, list):
                 return "", ""
+            paragraphs = [re.sub(r"\s+", " ", str(p)).strip() for p in paragraphs]
+            paragraphs = [p for p in paragraphs if p]
+            if not paragraphs or not 3 <= len(paragraphs) <= 5:
+                return "", ""
+            summary = "\n\n".join(paragraphs)
+            words = _word_count(summary)
+            lower, upper = (300, 450) if level == "approfondimento" else (180, 250)
+            if not lower <= words <= upper:
+                print("Sintesi AI scartata: lunghezza fuori standard ({} parole).".format(words))
+                return "", ""
+            return summary, level
+        except HTTPError as exc:
+            # Retry temporary overload and quota responses once; never block RSS publishing.
+            if exc.code in (429, 500, 502, 503, 504) and attempt == 0:
+                time.sleep(6 if exc.code == 429 else 3)
+                continue
+            print("Sintesi AI non disponibile (HTTP {}).".format(exc.code))
+            return "", ""
+        except (URLError, TimeoutError, OSError) as exc:
+            if attempt == 0:
+                time.sleep(3)
+                continue
+            print("Sintesi AI non disponibile: {}".format(type(exc).__name__))
+            return "", ""
+        except (ValueError, KeyError, IndexError, TypeError) as exc:
+            print("Sintesi AI non disponibile: {}".format(type(exc).__name__))
+            return "", ""
             paragraphs = [re.sub(r"\s+", " ", str(p)).strip() for p in paragraphs]
             paragraphs = [p for p in paragraphs if p]
             if not 3 <= len(paragraphs) <= 5:
