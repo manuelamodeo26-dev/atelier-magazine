@@ -58,13 +58,13 @@ def infer_category(title, excerpt, current="Fashion"):
     rules = [
         ("Streetwear", r"streetwear|street style|street-style|sneaker|skateboard|hip.?hop"),
         ("Business", r"fatturato|ricavi|utile netto|bilancio|acquisizion|quotazione|"
-                     r"margini|vendite|retail|ceo|amministratore delegato|investiment[oi]|"
+                     r"margini|vendite|retail|ceo|amministratore delegato|investiment[oi]|mln|milion|\\bq[1-4]\\b|"
                      r"risultati finanziari|trimestre|mercato azionario"),
         ("Architecture", r"architettur|edificio|edifici|appartamento|villa|palazzo|"
                          r"interior design|interior|interni|urbanistica"),
         ("Technology", r"intelligenza artificiale|\bai\b|tecnolog|digitale|"
                        r"realtà virtuale|realtà aumentata|videogiochi|gaming"),
-        ("Design", r"design|designer|arredamento|arredo|prodotto|oggetto|"
+        ("Design", r"design|arredamento|arredo|prodotto|oggetto|"
                    r"progettazione|industrial design|mobili|materiali"),
         ("Art & Culture", r"arte|artista|mostra|museo|galleria|fotografia|fotografo|"
                           r"cinema|film|musica|music|libro|romanzo|letteratura|teatro|"
