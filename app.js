@@ -81,6 +81,7 @@
     count.textContent=visible.length+' '+(visible.length===1?'ARTICOLO':'ARTICOLI')+' · '+categoryLabel(activeFilter).toLocaleUpperCase('it');
     $('#show-more').hidden=visible.length<=9;
     $('#show-more').textContent=showAll?'MOSTRA MENO ↑':'MOSTRA TUTTI GLI ARTICOLI ↗';
+    document.dispatchEvent(new Event('atelier:articles-rendered'));
   }
   async function loadArticles(){
     try{
