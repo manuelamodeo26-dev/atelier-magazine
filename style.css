@@ -295,3 +295,22 @@ section[id] { scroll-margin-top: 100px; }
 @media (max-width: 760px) {
   section[id] { scroll-margin-top: 80px; }
 }
+
+
+/* Mantieni una copertura editoriale leggibile anche quando un'immagine non risponde */
+.story-card .article-image.image-unavailable {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 210px;
+  background: var(--cement);
+  color: #5f5a52;
+}
+.story-card .article-image.image-unavailable::before {
+  content: "ATELIER / IMMAGINE NON DISPONIBILE";
+  padding: 20px;
+  font: 10px var(--mono);
+  letter-spacing: .1em;
+  text-align: center;
+}
+.story-card .article-image.image-unavailable .image-verified { display: none; }
