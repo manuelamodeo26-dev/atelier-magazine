@@ -1,50 +1,231 @@
 {
-  "updated_at": "2026-11-12T15:44:52.493369+00:00",
+  "updated_at": "2026-11-12T19:09:27.280251+00:00",
   "feeds_ok": 6,
   "feeds_total": 7,
   "feed_status": [
     {
       "source": "vogue.it",
       "ok": true,
-      "articles": 12
+      "articles": 15,
+      "error": ""
     },
     {
       "source": "pambianconews.com",
       "ok": true,
-      "articles": 18
+      "articles": 18,
+      "error": ""
     },
     {
       "source": "ad-italia.it",
       "ok": true,
-      "articles": 16
+      "articles": 16,
+      "error": ""
     },
     {
       "source": "exibart.com",
       "ok": true,
-      "articles": 12
+      "articles": 12,
+      "error": ""
     },
     {
       "source": "finestresullarte.info",
       "ok": true,
-      "articles": 18
+      "articles": 18,
+      "error": ""
     },
     {
       "source": "outpump.com",
       "ok": false,
-      "articles": 0
+      "articles": 0,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
       "source": "sneakersmagazine.it",
       "ok": true,
-      "articles": 10
+      "articles": 10,
+      "error": ""
     }
   ],
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 98
+    "verified_count": 111
   },
   "articles": [
+    {
+      "id": "https://www.vogue.it/article/maison-crivelli-24-hours-with-gabrielle-caunesil-hibiscus-mahajad",
+      "title": "Maison Crivelli 24 Hours With Gabrielle Caunesil e il suo profumo preferito in 3 versioni, tra fiori, power dressing e gesti d'amore",
+      "excerpt": "Seguiamo l'extrait de parfum di Maison Crivelli, Hibiscus Mahajad e le sue declinazioni in Body Oil e Candela Profumata, mentre accendono di luce ed energia la giornata dell'influencer e direttrice creativa",
+      "author": "Irene Coltrinari",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-12T18:47:10+00:00",
+      "url": "https://www.vogue.it/article/maison-crivelli-24-hours-with-gabrielle-caunesil-hibiscus-mahajad",
+      "image": "https://compass-media.vogue.it/photos/6af60960be9fb7c68c2fb01a/master/pass/maison%20crivelli%20gabrielle%20caunesil%20vogue.png",
+      "image_verified": true,
+      "language": "it",
+      "editorial_summary": "Maison Crivelli presenta Hibiscus Mahajad, il suo profumo di lancio, in tre declinazioni – eau de parfum, body oil e candela profumata – e lo segue per 24 ore nella vita di Gabrielle Caunesil, influencer e direttrice creativa. La fragranza si caratterizza per un bouquet floreale vivace di ribes nero e rosa di damasco, arricchito da una nota di menta che si fonde con la pelle. Gabrielle la utilizza fin dal mattino, dopo il caffè e la routine familiare, massaggiandola sui polsi e sul collo con la versione body oil, prodotto che ha registrato un rapido sold‑out online per la sua persistenza.\n\nDopo il primo strato, Gabrielle indossa il suo “power outfit”: jeans, stivali lucidi, giacca e occhiali aviator, spiegando che il look deve sostenerla durante gli appuntamenti importanti. **Il punto cruciale è che Hibiscus Mahajad diventa un alleato di stile, accompagnando la creatività e la fiducia di Gabrielle per tutta la giornata**. La scelta di Maison Crivelli e la sua filosofia di semplicità sofisticata trovano eco nella giovane direttrice, che prosegue la mattinata nel suo design studio, accendendo la candela della stessa fragranza per illuminare l’ambiente mentre seleziona materiali per il nuovo ufficio di Forma Poiesis Studio.\n\nNel pomeriggio, Gabrielle ricorda il matrimonio con Riccardo Pozzoli, segnato da un bouquet lime che ha ispirato un gesto d’amore: comprare fiori contenenti l’elemento verde di Hibiscus Mahajad per il marito. Conclude sottolineando l’importanza di sperimentare e credere in sé stessi, un messaggio che trasmette anche ai figli e che si riflette nella sua carriera, dalla moda con La Semaine Paris al nuovo progetto di design.",
+      "editorial_level": "standard",
+      "editorial_word_count": 263,
+      "image_width": 1080,
+      "image_height": 1920,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.exibart.com/mostre/letizia-battaglia-a-torino-la-fotografia-tra-quotidianita-militanza-e-denuncia/",
+      "title": "Letizia Battaglia a Torino: la fotografia tra quotidianità, militanza e denuncia",
+      "excerpt": "È arrivata a Torino, negli spazi di CAMERA – Centro Italiano per la Fotografia , l’attesissima mostra di Letizia Battaglia (Palermo, 1935-2022). La fotografa di fama internazionale, vincitrice del prestigioso Premio Smith nel 1985, ex aequo con Donna Ferrato, è conosciuta per la forza e l’autenticità dei suoi scatti e per il suo importante impegno civile. Legata per tutta la vita alla sua Palermo, si spinse oltre i confini nazionali, fotografando anche in Turchia, Egitto, Russia, Jugoslavia, Stati Uniti, Scozia e Groenlandia. Letizia Battaglia. Quartiere Cala. La bambina con il pallone. Palermo, 1980 © Archivio Letizia Battaglia Il filo conduttore della ricerca di Letizia Battaglia è il racconto della vita nella sua dimensione reale, quotidiana e umana, in tutta la sua complessità. I suoi scatti spaziano dai piccoli dettagli dell’esistenza ordinaria fino alla drammaticità estrema della vita. Il suo sguardo si inserisce in una sensibilità che richiama, per certi aspetti, la tradizione verista siciliana: un’attenzione alla realtà nella sua immediatezza, alle condizioni sociali e alla vita delle persone, colta senza idealizzazioni, nelle sue contraddizioni, nella sua bellezza e nella sua autenticità. È uno sguardo che non si sottrae neppure agli aspetti più strazianti dell’esistenza, arrivando a documentare e denunciare apertamente e con coraggio la violenza e le ingiustizie della mafia. Letizia Battaglia. L’opera, 1970-2020 , in mostra fino al 7 febbraio 2027, con oltre 200 fotografie, coprodotta da CAMERA e Jeu de Paume, in collaborazione con l’Archivio Letizia Battaglia e a cura di Walter Guadagnini , ripercorre il percorso creativo e personale della fotografa palermitana «nella sua duplice anima» – come la definisce il curatore nel testo di apertura del catalogo realizzato per l’occasione e pubblicato da Dario Cimorelli Editore – «tra militanza e documentazione, nella quale risiede la specificità della parabola fotografica di Letizia Battaglia». Letizia Battaglia. L’opera, 1970-2020. Veduta della mostra. ©Antonio Jordan Battaglia aveva un cuore e un animo sensibili alle ingiustizie e alla povertà e, usando la macchina fotografica come un’arma di pace per dissen",
+      "author": "Cristina Meli",
+      "category": "Art & Culture",
+      "source": "exibart.com",
+      "date": "2026-11-12T17:30:49+00:00",
+      "url": "https://www.exibart.com/mostre/letizia-battaglia-a-torino-la-fotografia-tra-quotidianita-militanza-e-denuncia/",
+      "image": "https://www.exibart.com/repository/media/2026/11/Letizia-Battaglia-684x1024.jpeg",
+      "image_verified": true,
+      "language": "it",
+      "editorial_summary": "La mostra di Letizia Battaglia, aperta al Centro Italiano per la Fotografia di Torino, è una retrospettiva che raccoglie oltre 200 scatti realizzati tra il 1970 e il 2020. La mostra, che rimarrà in esposizione fino al 7 febbraio 2027, è co‑prodotta da CAMERA e Jeu de Paume e curata da Walter Guadagnini, con la collaborazione dell’Archivio Letizia Battaglia. Il catalogo, pubblicato da Dario Cimorelli Editore, descrive l’opera come una “duplice anima” tra militanza e documentazione, un percorso che segue la fotografa palermitana dalla sua città natale fino a destinazioni come Turchia, Egitto, Russia, Jugoslavia, Stati Uniti, Scozia e Groenlandia.\n\nBattaglia è nota per la sua capacità di catturare la realtà quotidiana con una sensibilità verista siciliana: i suoi scatti spaziano dai piccoli dettagli della vita di tutti i giorni a scene di violenza estrema, documentando e denunciando la mafia con coraggio. La sua fotografia non si limita a registrare eventi drammatici; racconta anche la bellezza, le donne, i bambini e la vita di chi vive in condizioni di povertà. Il curatore sottolinea che la macchina fotografica è stata per lei un’arma di pace, un mezzo per partecipare alla battaglia contro le ingiustizie e per dare voce a chi spesso rimane silenzioso.\n\n**Battaglia ha usato la fotografia come strumento di denuncia e di resistenza, trasformando la sua arte in un atto di resistenza civile.**\n\nLa mostra mette in luce come la fotografia di Battaglia sia un documento storico che supera la mera cronaca: è un frammento di memoria collettiva che mostra una Sicilia complessa, contraddittoria e, nonostante la violenza, ricca di bellezza, forza e dignità. La sua opera è stata riconosciuta a livello internazionale, con il Premio Smith del 1985, e continua a influenzare il modo in cui la fotografia può essere usata per raccontare storie di vita reale e per promuovere il cambiamento sociale.\n\nIn conclusione, la retrospettiva di Letizia Battaglia a Torino offre un’opportunità unica di confrontarsi con la storia della Sicilia e con le sfide universali della giustizia e della dignità umana. La mostra invita il pubblico a riflettere sul potere della fotografia come mezzo di denuncia, memoria e, soprattutto, di resistenza civile.",
+      "editorial_level": "approfondimento",
+      "editorial_word_count": 357,
+      "image_width": 684,
+      "image_height": 1024,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.finestresullarte.info/opinioni/il-critico-ribelle-e-il-nuovo-conformista",
+      "title": "Il critico ribelle è il nuovo conformista",
+      "excerpt": "Il critico ribelle? È il nuovo conformista: oggi, contestare il sistema e proporsi come critici radicali può diventare una strategia per conquistarne posizioni. E così la critica si trasforma in brand, il dissenso in prodotto e la ribellione in carriera. Ma quando la critica diventa una posa e la contestazione un marchio, cosa resta della vera ribellione? L’articolo di Vincenzo Profeta.",
+      "author": "Vincenzo Profeta",
+      "category": "Art & Culture",
+      "source": "finestresullarte.info",
+      "date": "2026-11-12T17:20:02+00:00",
+      "url": "https://www.finestresullarte.info/opinioni/il-critico-ribelle-e-il-nuovo-conformista",
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/3743/punk-met-1.jpg",
+      "image_verified": true,
+      "language": "it",
+      "editorial_attempted_at": "2026-11-12T19:09:22.074942+00:00",
+      "editorial_retry_after": "2026-11-13T07:09:22.074942+00:00",
+      "image_width": 1200,
+      "image_height": 616,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.pambianconews.com/2026/11/12/alessandro-michele-racconta-il-lato-unconvention-delle-feste-per-valentino-500667/",
+      "title": "Alessandro Michele racconta il lato unconvention delle feste per Valentino",
+      "excerpt": "La campagna di Valentino dedicata alla collezione Cruise/Holiday prende le distanze dalle consuete immagini di alberi addobbati, sorrisi, brindisi, luci intermittenti e melodie natalizie. Ancora una volta il direttore creativo Alessandro Michele va oltre le convenzioni e si interroga su cosa accade quando un universo costruito attorno alla promessa del desiderio incontra la propria vulnerabilità. Le immagini, scattate da Liv Liberg lo scorso luglio, raccontano ciò che rimane di una festa quando the party is over . “Quel momento sospeso in cui l’euforia si è consumata e lo spazio conserva le tracce di qualcosa che è già accaduto – spiega Michele in una lettera -. Bicchieri infranti, lampadari caduti, oggetti disseminati sul pavimento. In mezzo, figure che continuano ad abitare quelle stanze, immerse in un’atmosfera in cui la bellezza sembra sopravvivere al tumulto della notte”. Lo stilista descrive non solo le immagini ma anche gli stati d’animo: “È una sorta di risveglio. I volti conservano qualcosa di indefinito, alcuni corpi si abbandonano sulle sedie, altri restano distesi a terra, come se indugiassero ancora in un ricordo. Una ragazza si rimette una scarpa, quasi a voler ritrovare, attraverso un piccolo gesto quotidiano, il filo di una normalità interrotta”. Valentino Cruise Holiday campaign; Ph. courtesy of Valentino Sebbene la festa si sia conclusa, resta una “bellezza più disarmata, l’incertezza di chi ancora non sa bene come tornare al mondo”. La campagna è immersa in un’estetica del giorno dopo, “un tempo nel quale le cose sembrano aver perso la funzione che le teneva al loro posto, rivelando una fragilità che lo splendore della festa aveva temporaneamente nascosto”. La campagna va oltre, Michele immagina la festa come una metafora delle trasformazioni che attraversano il mondo della moda: “un sistema che ha fatto dell’eccezionalità, dell’esclusività e della spettacolarizzazione alcuni dei propri codici di riconoscimento e che oggi si confronta con una ridefinizione dei propri linguaggi, dei propri valori e del rapporto con la società. Le immagini evocano così la possibilità che un ordine apparentemente inattaccabile perda improvvisamente la propria com",
+      "author": "Redazione",
+      "category": "Art & Culture",
+      "source": "pambianconews.com",
+      "date": "2026-11-12T17:16:23+00:00",
+      "url": "https://www.pambianconews.com/2026/11/12/alessandro-michele-racconta-il-lato-unconvention-delle-feste-per-valentino-500667/",
+      "image": "",
+      "image_verified": false,
+      "language": "it",
+      "editorial_attempted_at": "2026-11-12T19:09:24.119682+00:00",
+      "editorial_retry_after": "2026-11-13T07:09:24.119682+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
+    },
+    {
+      "id": "https://www.exibart.com/mercato/dentro-il-catalogo-di-pandolfini-storie-nomi-e-opere-da-collezione/",
+      "title": "Dentro il catalogo di Pandolfini: storie, nomi e opere da collezione",
+      "excerpt": "Torna il 18 novembre, a Milano, l’ Arte Moderna e Contemporanea di Pandolfini . Un appuntamento con un catalogo particolarmente ampio, che riunisce opere provenienti da prestigiose collezioni private, alcune delle quali inedite sul mercato, e attraversa alcune delle stagioni più significative dell’arte del Novecento, con uno sguardo aperto anche alla ricerca contemporanea. C’è tutto quello che ha reso il secolo scorso uno dei periodi più interessanti per il collezionismo: dal surrealismo di Salvador Dalí alla materia di Lucio Fontana; arrivando al presente, fino a un’opera di Giulia Cenci, tra le artiste italiane più riconosciute nel panorama internazionale, la cui ricerca è stata protagonista anche della 59ª Biennale di Venezia del 2022, Il latte dei sogni . Le provenienze aggiungono un ulteriore livello di interesse alla selezione, come nel caso del Crocifisso in terracotta dipinta di Lucio Fontana, acquistato direttamente dall’artista dall’attuale collezionista presso la fornace di Albisola Marina, o del lavoro su carta di Jannis Kounellis, proveniente dalla storica Galleria La Tartaruga. Sguardo agli highlights di Pandolfini, dal Novecento al presente Tra i protagonisti dell’incanto figura Salvador Dalí, presente con Senza titolo [Don Chisciotte vedendo che il suo avversario non attaccava, si arrestò a metà della sua corsa] , opera appartenente al ciclo dedicato alle avventure del celebre cavaliere della Mancia, proposta con una stima di 50.000-100.000 euro. Un soggetto che trova un interessante contrappunto in Combattimento tra due cavalieri di Giorgio de Chirico, valutato 18.000-30.000 euro: due interpretazioni differenti, ma accomunate dalla centralità dell’immaginario cavalleresco. CHRISTO, Running Fence (Project for Sonoma and Marin Counties, State of California). Courtesy: Pandolfini Sul versante delle esperienze che hanno ridefinito il rapporto tra arte e spazio, si segnala Running Fence (Project for Sonoma and Marin Counties, State of California) di Christo, con una stima di 60.000-80.000 euro. Il lavoro rimanda alla dimensione monumentale dei progetti ambientali realizzati da Christo insieme a Jeanne-Claude a partire dagli anni Sessanta – una ricerc",
+      "author": "Lucrezia Comelli",
+      "category": "Art & Culture",
+      "source": "exibart.com",
+      "date": "2026-11-12T16:55:22+00:00",
+      "url": "https://www.exibart.com/mercato/dentro-il-catalogo-di-pandolfini-storie-nomi-e-opere-da-collezione/",
+      "image": "https://www.exibart.com/repository/media/2026/11/CHRISTO-Running-Fence-Project-for-Sonoma-and-Marin-Counties-State-of-California.jpg",
+      "image_verified": true,
+      "language": "it",
+      "editorial_attempted_at": "2026-11-12T19:09:25.083995+00:00",
+      "editorial_retry_after": "2026-11-13T07:09:25.083995+00:00",
+      "image_width": 648,
+      "image_height": 1017,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.exibart.com/design/mercatini-vintage-e-antiquariato-5-appuntamenti-da-non-perdere-nel-weekend/",
+      "title": "Mercatini vintage e antiquariato: 5 appuntamenti da non perdere nel weekend",
+      "excerpt": "Il fine settimana del 14 e 15 novembre offre diverse occasioni per andare alla ricerca di oggetti d’epoca, pezzi di design, collezionabili e capi d’abbigliamento vintage. Da Milano a Roma, passando per Parma e Pisa, gli appuntamenti in calendario attraversano ambiti diversi, dal collezionismo alla moda second hand , fino al design del Novecento e all’artigianato indipendente. Ecco cinque mercatini da attenzionare per il prossimo weekend. Ph. Marco Menghi SOMO, Milano Il 14 e 15 novembre torna a Milano, negli spazi di Superstudio Più , SOMO: Solo Modernariato al Superstudio Più , fiera trasversale e accessibile dedicata al modernariato e al design del Novecento. Giunta alla sua sesta edizione, la manifestazione riunisce oltre 70 espositori selezionati dalla direttrice Francesca Buliani e distribuiti su oltre 4000 metri quadri di spazio, con una proposta che comprende arredi, illuminazione, ceramiche e oggetti d’autore. Tra le novità di questa edizione figura la sezione Gallery , curata da Nicola Quadri , pensata per approfondire il rapporto tra collezionismo e cultura del progetto. Oltre alla Galleria Nicola Quadri, che presenterà una sua selezione in dialogo con un progetto speciale firmato da Marinella Rossi , saranno in mostra Cristiano Calore Spazio Industrial, Massimo Costa, Alberto Cremonesi, Davide Desio, Valter Fabiani – Carl Kraag, Monica Lupi. Ph. Marco Menghi La selezione attraversa diverse stagioni del design del Novecento, con arredi e oggetti firmati da protagonisti come Gio Ponti , Ico Parisi , Osvaldo Borsani , Gae Aulenti ed Ettore Sottsass , accanto a pezzi di produzione artigianale e a opere di ricerca, per rivolgersi tanto ai collezionisti quanto a chi si avvicina per la prima volta al modernariato, con proposte di diverse fasce di prezzo e un’attenzione al riuso. SOMO sarà aperta sabato 14 novembre dalle 10 alle 19 e domenica 15 novembre dalle 10 alle 18. Il biglietto d’ingresso costa 10 euro, con possibilità di acquistarlo online o direttamente in fiera; l’accesso è gratuito per i bambini fino a 12 anni. SOMO, Milano Vintage Fest Pisa, Pisa Sabato 14 e domenica 15 novembre la Stazione Leopolda di Pisa ospita la 27ª edizione del Vintage Fest ",
+      "author": "redazione",
+      "category": "Art & Culture",
+      "source": "exibart.com",
+      "date": "2026-11-12T16:30:59+00:00",
+      "url": "https://www.exibart.com/design/mercatini-vintage-e-antiquariato-5-appuntamenti-da-non-perdere-nel-weekend/",
+      "image": "https://www.exibart.com/repository/media/2026/11/Foto-still-life-prodotto-1-819x1024.jpg",
+      "image_verified": true,
+      "language": "it",
+      "editorial_attempted_at": "2026-11-12T19:09:25.825717+00:00",
+      "editorial_retry_after": "2026-11-13T07:09:25.825717+00:00",
+      "image_width": 819,
+      "image_height": 1024,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.vogue.it/article/gcds-morso-profumo-perfetto-per-un-primo-appuntamento-note-recensione",
+      "title": "GCDS presenta MORSO, il profumo perfetto per un primo appuntamento",
+      "excerpt": "O come dice Giuliano Calza: «Sexy, ma non troppo revealing!». Ecco come GCDS con MORSO ha immaginato una fragranza che convince in sette secondi. Quelli in qui nasce la prima impressione",
+      "author": "Vittoria Fassola",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-12T16:25:13+00:00",
+      "url": "https://www.vogue.it/article/gcds-morso-profumo-perfetto-per-un-primo-appuntamento-note-recensione",
+      "image": "https://compass-media.vogue.it/photos/6af5e3f4b35f45dcfc4dafff/master/pass/Photo%202025-10-22,%203%2007%2032%20PM.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 3024,
+      "image_height": 4032,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.finestresullarte.info/mostre/mart-rovereto-mostra-fronti-opposti-arte-italiana-tra-guttuso-e-vedova",
+      "title": "Guttuso contro Vedova: al Mart di Rovereto una mostra racconta lo scontro tra figurativo e astratto nell'arte italiana",
+      "excerpt": "Il Mart di Rovereto ripercorre in una mostra il dibattito artistico che ha attraversato l’Italia del secondo dopoguerra, mettendo a confronto le visioni di Renato Guttuso ed Emilio Vedova. Tra realismo sociale, Informale e sperimentazione, fino alle ricerche di Fontana, Burri e Manzoni.",
+      "author": "Redazione",
+      "category": "Art & Culture",
+      "source": "finestresullarte.info",
+      "date": "2026-11-12T15:50:59+00:00",
+      "url": "https://www.finestresullarte.info/mostre/mart-rovereto-mostra-fronti-opposti-arte-italiana-tra-guttuso-e-vedova",
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/renato-guttuso-le-donne-degli-zolfatari-di-lercara-durante-uno-sciopero.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1378,
+      "image_height": 865,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.vogue.it/article/ljubljana-fashion-week-2026",
+      "title": "Alla Ljubljana Fashion Week 2026, la moda circolare è la vera protagonista, e diventa un esempio per le passerelle europee",
+      "excerpt": "La fashion week di Lubiana si conferma uno dei laboratori più interessanti per immaginare la moda europea di domani",
+      "author": "Sennait Ghebreab",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-12T15:50:11+00:00",
+      "url": "https://www.vogue.it/article/ljubljana-fashion-week-2026",
+      "image": "https://compass-media.vogue.it/photos/6aedfb6444aeafaa2e0725bb/master/pass/LJFW17_oct26_Day4_photoJureMakovec_231.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 3200,
+      "image_height": 4800,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.finestresullarte.info/attualita/art-basel-paris-chiude-in-anticipo-gallerie-sconto-20-per-cento",
+      "title": "Art Basel Paris chiusa in anticipo: alle gallerie uno sconto del 20% sugli stand",
+      "excerpt": "Art Basel Paris ha chiuso in anticipo per motivi di sicurezza in vista delle proteste annunciate a Parigi. Ora riduce del 20% le tariffe degli stand per tutti gli espositori. I biglietti del fine settimana sono già stati rimborsati.",
+      "author": "Redazione",
+      "category": "Art & Culture",
+      "source": "finestresullarte.info",
+      "date": "2026-11-12T15:35:22+00:00",
+      "url": "https://www.finestresullarte.info/attualita/art-basel-paris-chiude-in-anticipo-gallerie-sconto-20-per-cento",
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/art-basel-paris-26-1-1.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1500,
+      "image_height": 770,
+      "image_format": "jpeg"
+    },
     {
       "id": "https://www.exibart.com/mostre/mostra-costantinopoli-istanbul-capitale-londra/",
       "title": "Da Costantinopoli a Istanbul: una grande mostra racconta la città che fu capitale di due imperi",
@@ -78,6 +259,38 @@
       "image_format": "webp"
     },
     {
+      "id": "https://www.finestresullarte.info/musei/reggia-di-colorno-nel-2027-riqualificazione-piano-da-quasi-6-milioni-di-euro",
+      "title": "Reggia di Colorno, nel 2027 la riqualificazione: un piano da quasi 6 milioni",
+      "excerpt": "Nel 2027 la Provincia di Parma avvierà i lavori sulla Reggia di Colorno, guidati da un nuovo masterplan per il palazzo e il parco. L’annuncio è arrivato davanti ai direttori di Versailles, Schönbrunn e delle altre residenze reali europee, riuniti a Colorno.",
+      "author": "Redazione",
+      "category": "Business",
+      "source": "finestresullarte.info",
+      "date": "2026-11-12T15:18:45+00:00",
+      "url": "https://www.finestresullarte.info/musei/reggia-di-colorno-nel-2027-riqualificazione-piano-da-quasi-6-milioni-di-euro",
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/reggia-colorno-ph-provincia-di-parma-1-1.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1920,
+      "image_height": 986,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.finestresullarte.info/mostre/orfani-mostra-fotografie-valerio-bispuri-palazzo-toniolo-pisa",
+      "title": "Gli orfani che non vediamo più: le fotografie di Valerio Bispuri in mostra a Pisa",
+      "excerpt": "Fino al 15 novembre Palazzo Toniolo, a Pisa, espone per la prima volta il progetto Orfani del fotografo Valerio Bispuri: 33 immagini scattate tra Pakistan, Bielorussia, Argentina e Zambia, finalista al Visa d’Or di Perpignan nel 2024. Parte del percorso è nella casa museo del beato Toniolo.",
+      "author": "Redazione",
+      "category": "Art & Culture",
+      "source": "finestresullarte.info",
+      "date": "2026-11-12T15:07:46+00:00",
+      "url": "https://www.finestresullarte.info/mostre/orfani-mostra-fotografie-valerio-bispuri-palazzo-toniolo-pisa",
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/valerio-bispuri-orfani-pakistan-1.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1200,
+      "image_height": 616,
+      "image_format": "jpeg"
+    },
+    {
       "id": "https://www.vogue.it/article/penny-loafers-donna-modelli-tendenza-inverno-2026",
       "title": "I penny loafers sono le scarpe eleganti maschili protagoniste dei look street style dell'inverno 2026 2027. Modelli di tendenza e colori cult, con e senza moneta",
       "excerpt": "Dal guardaroba maschile, i penny loafers diventano un pezzo cult dei look contemporaneo dello street style. Ecco i modelli cult dell'inverno 2026 2027",
@@ -108,6 +321,38 @@
       "image_width": 7008,
       "image_height": 4672,
       "image_format": "webp"
+    },
+    {
+      "id": "https://www.finestresullarte.info/musei/cosa-nascondono-depositi-dei-musei-in-eilia-romagna-otto-istituzioni-svelano-loro-collezioni",
+      "title": "Cosa nascondono i depositi dei musei? In Emilia-Romagna otto istituzioni svelano le loro collezioni",
+      "excerpt": "La rassegna “Depositi Aperti”, promossa dalla rete Depositi e Patrimoni in Rete e finanziata dalla Regione Emilia-Romagna, propone nove appuntamenti gratuiti in otto musei per far conoscere le collezioni conservate nei depositi. Il programma si conclude il 22 gennaio 2027 al Museo del Duomo di Fidenza.",
+      "author": "Redazione",
+      "category": "Art & Culture",
+      "source": "finestresullarte.info",
+      "date": "2026-11-12T14:51:19+00:00",
+      "url": "https://www.finestresullarte.info/musei/cosa-nascondono-depositi-dei-musei-in-eilia-romagna-otto-istituzioni-svelano-loro-collezioni",
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/museo-civico-di-modena-monete-del-novi-sad-cover.jpeg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1200,
+      "image_height": 616,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.finestresullarte.info/mostre/riemerge-dopo-quasi-600-anni-volto-terracotta-di-brunelleschi-scoperta-mostra-firenze",
+      "title": "Riemerge dopo quasi 600 anni il volto in terracotta di Brunelleschi: la scoperta in mostra a Firenze",
+      "excerpt": "Il volto di Filippo Brunelleschi, restituito da una terracotta del 1447 realizzata dal figlio adottivo e scultore Andrea di Lazzaro Cavalcanti, detto il Buggiano, è al centro della mostra a Palazzo Guadagni Strozzi Sacrati, a Firenze, dal 12 novembre 2026 al 14 febbraio 2027.",
+      "author": "Redazione",
+      "category": "Art & Culture",
+      "source": "finestresullarte.info",
+      "date": "2026-11-12T14:51:09+00:00",
+      "url": "https://www.finestresullarte.info/mostre/riemerge-dopo-quasi-600-anni-volto-terracotta-di-brunelleschi-scoperta-mostra-firenze",
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/andrea-di-lazzaro-cavalcanti-testa-di-filippo-brunelleschi-cover.jpeg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1200,
+      "image_height": 616,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.vogue.it/moda/gallery/anne-hathaway-stile-look-piu-belli",
