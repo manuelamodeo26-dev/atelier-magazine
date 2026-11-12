@@ -113,24 +113,14 @@ def generate_editorial_summary(article, source_text):
         "FONTE: " + str(article.get("source") or "") + "\n"
         "MATERIALE DISPONIBILE:\n" + combined
     )
-    endpoint = (
-        "https://generativelanguage.googleapis.com/v1beta/models/"
-        + quote(MODEL, safe="") + ":generateContent?key=" + quote(API_KEY, safe="")
-    )
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {
-            "temperature": 0.25,
+            "thinkingConfig": {"thinkingLevel": "low"},
             "maxOutputTokens": 2200,
             "responseMimeType": "application/json",
         },
     }
-    request = Request(
-        endpoint,
-        data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
-        headers={"Content-Type": "application/json", "User-Agent": USER_AGENT},
-        method="POST",
-    )
     fallback_models = ["gemini-3.7-flash", "gemini-3.6-flash", "gemini-3.5-flash-lite"]
     models = list(dict.fromkeys([MODEL] + fallback_models))
     for model in models:
