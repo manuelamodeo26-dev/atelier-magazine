@@ -31,7 +31,7 @@ MAX_PER_FEED = 18
 MAX_ARTICLES = 180
 MAX_AGE_DAYS = 120
 MAX_SUMMARIES_PER_RUN = 6
-MAX_IMAGE_BACKFILLS_PER_RUN = 10
+MAX_IMAGE_BACKFILLS_PER_RUN = 12
 
 # Keep the archive focused on fashion, design and contemporary culture.
 # Exclude recurring general-interest formats that broad publisher feeds can contain.
