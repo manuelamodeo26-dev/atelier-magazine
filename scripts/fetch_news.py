@@ -397,14 +397,21 @@ def main():
     # The publisher excerpt remains the fallback whenever source text is thin
     # or the optional AI service is unavailable.
     if os.getenv("GEMINI_API_KEY", "").strip():
-        candidates = sorted(
-            (item for item in articles if not item.get("editorial_summary")),
-            key=lambda item: (
-                canonical_url(item.get("url")) not in new_article_urls,
-                item.get("date") or "0000",
-            ),
-            reverse=False,
-        )[:5]
+        new_candidates = sorted(
+            (item for item in articles
+             if canonical_url(item.get("url")) in new_article_urls
+             and not item.get("editorial_summary")),
+            key=lambda item: item.get("date") or "0000",
+            reverse=True,
+        )
+        older_candidates = sorted(
+            (item for item in articles
+             if canonical_url(item.get("url")) not in new_article_urls
+             and not item.get("editorial_summary")),
+            key=lambda item: item.get("date") or "0000",
+            reverse=True,
+        )
+        candidates = (new_candidates + older_candidates)[:5]
         for article in candidates:
             source_text = fetch_article_text(article.get("url", ""))
             summary, level = generate_editorial_summary(article, source_text)
