@@ -1,6 +1,6 @@
 import unittest
 
-from fetch_news import infer_category, is_relevant
+from fetch_news import infer_category, is_relevant, source_category
 
 
 class EditorialFilterTests(unittest.TestCase):
@@ -27,6 +27,11 @@ class EditorialFilterTests(unittest.TestCase):
             with self.subTest(title=article["title"]):
                 self.assertTrue(is_relevant(article))
 
+    def test_restores_feed_base_category(self):
+        self.assertEqual(source_category({"source": "exibart.com", "category": "Technology"}), "Art & Culture")
+        self.assertEqual(source_category({"source": "ad-italia.it", "category": "Architecture"}), "Design")
+        self.assertEqual(source_category({"source": "pambianconews.com", "category": "Business"}), "Fashion")
+
     def test_classifies_editorial_sections(self):
         cases = [
             ("Sneakers e streetwear", "", "Fashion", "Streetwear"),
@@ -38,6 +43,7 @@ class EditorialFilterTests(unittest.TestCase):
             ("Gli anelli del potere: storia e significato", "Un approfondimento con parole AI e ai materiali", "Fashion", "Fashion"),
             ("A Milano si apre il cantiere del futuro Museo nazionale", "Un progetto di tecnologia e cultura", "Art & Culture", "Art & Culture"),
             ("Come abbinare cappotto midi e décolleté", "Un racconto di street style e moda", "Fashion", "Fashion"),
+            ("The game is NOT HER: il progetto di Elena Bellantoni", "Investimenti e retail nel sistema dell'arte", "Art & Culture", "Art & Culture"),
         ]
         for title, excerpt, current, expected in cases:
             with self.subTest(title=title):
