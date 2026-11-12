@@ -114,7 +114,7 @@
     const seed=String(a.title||id).split('').reduce((n,c)=>n+c.charCodeAt(0),0);
     const image=original||('https://images.unsplash.com/'+choices[seed%choices.length]+'?auto=format&fit=crop&w=1200&q=82');
     const imageLabel=a.image_verified===true?'FOTOGRAFIA VERIFICATA':original?'IMMAGINE DELLA FONTE · NON VERIFICATA':'IMMAGINE ILLUSTRATIVA';
-    const visual='<div class="article-image"><img loading="lazy" decoding="async" src="'+esc(image)+'" alt="'+esc(a.title||'Immagine editoriale ATELIER')+'" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add(\\'image-unavailable\\');this.remove()"><span class="image-verified '+(a.image_verified===true?'':'image-illustrative')+'">'+imageLabel+'</span></div>';
+    const visual='<div class="article-image"><img loading="lazy" decoding="async" src="'+esc(image)+'" alt="'+esc(a.title||'Immagine editoriale ATELIER')+'" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add(\'image-unavailable\');this.remove()"><span class="image-verified '+(a.image_verified===true?'':'image-illustrative')+'">'+imageLabel+'</span></div>';
     return '<article class="story-card">'+visual+'<div class="story-meta">'+esc(labels[a.category]||a.category||'ATELIER')+' · '+esc(a.source||'')+'</div><h3>'+esc(a.title)+'</h3><p>'+esc(a.excerpt||'')+'</p><a class="text-link card-link" href="./article.html?id='+encodeURIComponent(id)+'">APRI ARTICOLO ↗</a><button type="button" class="save-article '+(saved.has(id)?'is-saved':'')+'" data-save-article="'+esc(id)+'">'+(saved.has(id)?'♥ SALVATO':'♡ SALVA')+'</button></article>';
   }
   async function toggleSaved(id){
