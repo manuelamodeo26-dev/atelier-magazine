@@ -54,7 +54,7 @@
     const preview=String(article.excerpt||article.editorial_summary||'').trim();
     const teaser=preview?(preview.length>155?preview.slice(0,152).trimEnd()+'…':preview):'La fonte non mette a disposizione un estratto editoriale.';
     const articleId=article.id||article.url||String(index);
-    return '<article class="story-card'+(index===0?' feature-card':'')+'"><a class="story-card-link" href="./article.html?id='+encodeURIComponent(articleId)+'" aria-label="Apri la notizia: '+escapeHTML(article.title||'Senza titolo')+'">'+visual+'<div class="story-meta">'+escapeHTML(categoryLabel(category))+' · '+formatDate(article.date)+' · '+escapeHTML(article.source||'Fonte non indicata')+'</div><h3>'+escapeHTML(article.title||'Senza titolo')+'</h3><p class="story-card-summary"><span>IN BREVE</span>'+escapeHTML(teaser)+'</p></a><button type="button" class="like-article" data-like-article="'+escapeHTML(articleId)+'" aria-label="Mi piace" aria-pressed="false">♡ <span data-like-count="'+escapeHTML(articleId)+'">0</span></button><button type="button" class="save-article" data-save-article="'+escapeHTML(articleId)+'" aria-label="Salva articolo nei preferiti" aria-pressed="false"><svg class="save-bookmark-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3.5h12v17l-6-4-6 4z"/></svg> SALVA</button></article>';
+    return '<article class="story-card'+(index===0?' feature-card':'')+'"><a class="story-card-link" href="./article.html?id='+encodeURIComponent(articleId)+'" aria-label="Apri la notizia: '+escapeHTML(article.title||'Senza titolo')+'">'+visual+'<div class="story-meta">'+escapeHTML(categoryLabel(category))+' · '+formatDate(article.date)+' · '+escapeHTML(article.source||'Fonte non indicata')+'</div><h3>'+escapeHTML(article.title||'Senza titolo')+'</h3><p class="story-card-summary"><span>IN BREVE</span>'+escapeHTML(teaser)+'</p></a><div class="story-card-actions"><button type="button" class="like-article" data-like-article="'+escapeHTML(articleId)+'" aria-label="Mi piace" aria-pressed="false"><span class="like-heart" aria-hidden="true">♥</span> <span data-like-count="'+escapeHTML(articleId)+'">0</span></button><button type="button" class="save-article" data-save-article="'+escapeHTML(articleId)+'" aria-label="Salva articolo nei preferiti" aria-pressed="false"><svg class="save-bookmark-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3.5h12v17l-6-4-6 4z"/></svg> SALVA</button></div></article>';
   }
   function articleDetail(article){
     const imageInfo=imageFor(article), image=imageInfo.url;
@@ -85,7 +85,7 @@
       dialog=document.createElement('dialog');
       dialog.id='article-dialog';
       dialog.className='article-dialog';
-      dialog.innerHTML='<form method="dialog" class="detail-close-row"><button class="detail-back" type="submit" aria-label="Torna alle notizie" title="Torna alle notizie">←</button></form><article id="article-detail-content"></article>';
+      dialog.innerHTML='<article id="article-detail-content"></article>';
       document.body.appendChild(dialog);
     }
     $('#article-detail-content',dialog).innerHTML=articleDetail(article);
