@@ -40,7 +40,10 @@ def local_name(tag):
 
 def clean(value):
     value = html.unescape(re.sub(r"<[^>]*>", " ", value or ""))
-    return re.sub(r"\s+", " ", value).strip()
+    # Remove media URLs often embedded at the start of publisher RSS content.
+    value = re.sub(r"https?://\\S+", " ", value, flags=re.I)
+    value = re.sub(r"\\b(?:https?://)?(?:www\\.)?[^\\s]+\\.(?:jpe?g|png|webp|gif)(?:\\?[^\\s]*)?", " ", value, flags=re.I)
+    return re.sub(r"\\s+", " ", value).strip()
 
 
 def child(node, *names):
@@ -58,7 +61,7 @@ def child_text(node, *names):
     return clean(" ".join(part.strip() for part in item.itertext() if part.strip()))
 
 
-def best_description(node, *names, limit=1800):
+def best_description(node, *names, limit=2400):
     """Prefer the most informative publisher-supplied RSS/Atom description."""
     wanted = {name.lower() for name in names}
     candidates = []
@@ -268,7 +271,7 @@ def parse_feed(feed_url, category):
                 articles.append({
                     "id": link,
                     "title": title[:300],
-                    "excerpt": description[:1400],
+                    "excerpt": description[:2200],
                     "author": author[:160],
                     "category": category,
                     "source": host,
@@ -280,13 +283,13 @@ def parse_feed(feed_url, category):
                 })
             metadata_attempts = 0
             for article in articles:
-                if (not article["image"] or len(article["excerpt"]) < 500 or not article["author"]) and metadata_attempts < 8:
+                if (not article["image"] or len(article["excerpt"]) < 900 or not article["author"]) and metadata_attempts < 18:
                     metadata_attempts += 1
                     metadata = fetch_page_metadata(article["url"])
                     if not article["image"]:
                         article["image"] = metadata["image"]
                     if len(metadata["description"]) > len(article["excerpt"]):
-                        article["excerpt"] = metadata["description"][:1800]
+                        article["excerpt"] = metadata["description"][:2200]
                     if not article["author"]:
                         article["author"] = metadata["author"]
             print(f"{host}: {len(articles)} articoli")
@@ -361,7 +364,7 @@ def main():
             # publisher-supplied description when the fresh feed has more detail.
             existing = merged[url]
             if len(article.get("excerpt", "")) > len(existing.get("excerpt", "")):
-                existing["excerpt"] = article["excerpt"][:1800]
+                existing["excerpt"] = article["excerpt"][:2200]
             if not existing.get("author") and article.get("author"):
                 existing["author"] = article["author"]
             continue
