@@ -33,7 +33,15 @@
     </section>
     <section class="profile-content" id="profile-content" hidden>
       <div class="profile-identity">
-        <div class="profile-avatar" aria-hidden="true">A.</div>
+        <div class="profile-avatar-wrap">
+          <div class="profile-avatar" aria-label="Foto profilo">
+            <img id="profile-avatar-image" alt="La tua foto profilo" hidden>
+            <span id="profile-avatar-fallback" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="3.5"></circle><path d="M4.5 21a7.5 7.5 0 0 1 15 0"></path></svg></span>
+          </div>
+          <label class="avatar-change" for="profile-avatar-input">CAMBIA FOTO</label>
+          <input id="profile-avatar-input" type="file" accept="image/jpeg,image/png,image/webp,image/avif" hidden>
+          <button id="profile-avatar-remove" class="avatar-remove" type="button" hidden>RIMUOVI FOTO</button>
+        </div>
         <div><p class="eyebrow">BENVENUTO IN ATELIER</p><h2 id="profile-nickname">Membro ATELIER</h2><p id="profile-member-since" class="profile-member-since">IL TUO PROFILO PERSONALE</p></div>
         <button class="outline-button" type="button" id="profile-manage">IMPOSTAZIONI ↗</button>
       </div>
