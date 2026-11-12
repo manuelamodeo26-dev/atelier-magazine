@@ -85,7 +85,7 @@
       dialog=document.createElement('dialog');
       dialog.id='article-dialog';
       dialog.className='article-dialog';
-      dialog.innerHTML='<form method="dialog" class="detail-close-row"><button class="dialog-close" type="submit" aria-label="Chiudi scheda">×</button></form><article id="article-detail-content"></article>';
+      dialog.innerHTML='<form method="dialog" class="detail-close-row"><button class="detail-back" type="submit" aria-label="Torna alle notizie" title="Torna alle notizie">←</button></form><article id="article-detail-content"></article>';
       document.body.appendChild(dialog);
     }
     $('#article-detail-content',dialog).innerHTML=articleDetail(article);
