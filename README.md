@@ -35,6 +35,26 @@ La raccolta RSS non equivale a una verifica giornalistica: controllare sempre no
 - Le fotografie vengono verificate prima della pubblicazione: risposta HTTP, tipo MIME, formato immagine reale, dimensioni minime 1000 px sul lato lungo e 500 px sul lato corto. Le immagini non conformi vengono escluse.
 - Le immagini restano attribuite agli editori originali; la verifica tecnica non equivale a una licenza di riutilizzo.
 
+## Redazione e sintesi editoriali ATELIER
+
+Quando è configurato il secret GitHub Actions `GEMINI_API_KEY`, il raccoglitore può creare una sintesi originale in italiano a partire dal titolo, dal testo disponibile nel feed e dal testo leggibile della pagina pubblica della fonte:
+
+- Notizie standard: 180–250 parole, in 3–5 paragrafi.
+- Approfondimenti: 300–450 parole, in 3–5 paragrafi, soltanto quando il materiale contiene dettagli sufficienti.
+- Le sintesi vengono mostrate separatamente dalla descrizione originale dell'editore.
+- Se la fonte è troppo breve, il modello non risponde, la quota è esaurita o il secret manca, resta visibile il testo originale: non vengono inventati contenuti.
+- Vengono elaborate al massimo cinque schede per esecuzione, dando priorità alle notizie nuove e poi recuperando gradualmente l'archivio.
+- Le sintesi sono conservate in `data/articles.json`; il testo integrale della pagina sorgente non viene salvato.
+
+### Configurazione facoltativa dell'AI
+
+1. Crea una chiave Gemini API nel portale Google AI Studio.
+2. Nel repository GitHub apri **Settings → Secrets and variables → Actions → New repository secret**.
+3. Inserisci come nome `GEMINI_API_KEY` e incolla il valore della chiave nel campo secret.
+4. Salva. La chiave viene letta soltanto da GitHub Actions e non viene inserita nel sito o nel repository.
+
+Senza il secret il sito e la raccolta RSS continuano a funzionare normalmente, ma le sintesi editoriali AI non vengono generate. Il piano gratuito del provider è soggetto a limiti e condizioni proprie: verifica quote, disponibilità e trattamento dei dati nel tuo account Google prima di abilitarlo. Non inserire mai la chiave in un file del progetto o in una chat.
+
 ## Funzioni
 
 - Ricerca e filtri per categoria.
