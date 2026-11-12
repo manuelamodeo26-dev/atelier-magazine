@@ -33,6 +33,8 @@ MAX_AGE_DAYS = 120
 MAX_SUMMARIES_PER_RUN = 12  # Editorial rebuild in controlled batches across scheduled runs.
 EDITORIAL_REBUILD_VERSION = "2026-11-12-atelier-editorial-v2"
 MAX_IMAGE_BACKFILLS_PER_RUN = 12
+IMAGE_BACKFILL_RETRY_HOURS = 24
+EDITORIAL_QUOTA_RETRY_HOURS = 24
 
 # Keep the archive focused on fashion, design and contemporary culture.
 # Exclude recurring general-interest formats that broad publisher feeds can contain.
@@ -87,6 +89,34 @@ def summary_retry_due(article, now=None):
         return True
     try:
         retry_at = datetime.fromisoformat(str(retry_after).replace("Z", "+00:00"))
+        if retry_at.tzinfo is None:
+            retry_at = retry_at.replace(tzinfo=timezone.utc)
+        return retry_at <= (now or datetime.now(timezone.utc))
+    except (TypeError, ValueError):
+        return True
+
+
+def image_backfill_due(article, now=None):
+    """Avoid retrying the same unavailable image on every hourly run."""
+    if article.get("image_verified"):
+        return False
+    retry_after = article.get("image_retry_after")
+    if not retry_after:
+        return True
+    try:
+        retry_at = datetime.fromisoformat(str(retry_after).replace("Z", "+00:00"))
+        if retry_at.tzinfo is None:
+            retry_at = retry_at.replace(tzinfo=timezone.utc)
+        return retry_at <= (now or datetime.now(timezone.utc))
+    except (TypeError, ValueError):
+        return True
+
+
+def retry_window_open(timestamp, now=None):
+    if not timestamp:
+        return True
+    try:
+        retry_at = datetime.fromisoformat(str(timestamp).replace("Z", "+00:00"))
         if retry_at.tzinfo is None:
             retry_at = retry_at.replace(tzinfo=timezone.utc)
         return retry_at <= (now or datetime.now(timezone.utc))
@@ -293,10 +323,11 @@ def fetch_page_metadata(article_url):
             "Accept": "text/html,application/xhtml+xml",
         })
         with urlopen(request, timeout=8) as response:
+            final_url = response.geturl() or article_url
             parser = ImageMetaParser()
             parser.feed(response.read(350000).decode("utf-8", errors="replace"))
         return {
-            "image": upgrade_image_url(urljoin(article_url, parser.image)),
+            "image": upgrade_image_url(urljoin(final_url, parser.image)),
             "description": clean(parser.description)[:1400],
             "author": clean(parser.author)[:160],
         }
@@ -332,7 +363,7 @@ def verify_image(article):
             raise ValueError(f"Risoluzione insufficiente: {width}x{height}")
         if image_format not in ("JPEG", "PNG", "WEBP"):
             raise ValueError(f"Formato non supportato: {image_format}")
-        return {
+        verified = {
             **article,
             "image": image_url,
             "image_verified": True,
@@ -340,6 +371,9 @@ def verify_image(article):
             "image_height": height,
             "image_format": image_format.lower(),
         }
+        verified.pop("image_retry_after", None)
+        verified.pop("image_attempted_at", None)
+        return verified
     except Exception as exc:
         print(f"Foto scartata per verifica: {image_url} ({exc})")
         return {
@@ -690,10 +724,15 @@ def main():
     # Recover missing editorial images from each publisher's Open Graph metadata.
     # Backfill a small batch per run, then verify the actual image bytes and dimensions.
     image_backfill_urls = set()
+    image_now = datetime.now(timezone.utc)
     metadata_backfill_candidates = [
         item for item in articles
-        if (not item.get("image") or not item.get("image_verified") or len(item.get("excerpt", "")) < 250)
+        if (not item.get("image_verified") and image_backfill_due(item, image_now)
+            and (not item.get("image") or len(item.get("excerpt", "")) < 250))
     ][:MAX_IMAGE_BACKFILLS_PER_RUN]
+    for item in metadata_backfill_candidates:
+        item["image_attempted_at"] = image_now.isoformat()
+        item["image_retry_after"] = (image_now + timedelta(hours=IMAGE_BACKFILL_RETRY_HOURS)).isoformat()
     if metadata_backfill_candidates:
         with concurrent.futures.ThreadPoolExecutor(max_workers=6) as executor:
             metadata_rows = list(executor.map(
@@ -712,7 +751,9 @@ def main():
     # Generate a small batch of source-grounded editorial summaries per run.
     # The publisher excerpt remains the fallback whenever source text is thin
     # or the optional AI service is unavailable.
-    if os.getenv("GROQ_API_KEY", "").strip():
+    editorial_api_retry_after = prior_payload.get("editorial_api_retry_after")
+    editorial_api_ready = retry_window_open(editorial_api_retry_after)
+    if os.getenv("GROQ_API_KEY", "").strip() and editorial_api_ready:
         now = datetime.now(timezone.utc)
         new_candidates = sorted(
             (item for item in articles
@@ -745,8 +786,15 @@ def main():
             else:
                 attempted_at = datetime.now(timezone.utc)
                 article["editorial_attempted_at"] = attempted_at.isoformat()
+                if QUOTA_EXHAUSTED_FOR_RUN:
+                    article["editorial_retry_after"] = (attempted_at + timedelta(hours=EDITORIAL_QUOTA_RETRY_HOURS)).isoformat()
+                    prior_payload["editorial_api_retry_after"] = article["editorial_retry_after"]
+                    print("Quota AI esaurita: sospendo la coda editoriale per 24 ore.")
+                    break
                 article["editorial_retry_after"] = (attempted_at + timedelta(hours=12)).isoformat()
                 print("Sintesi editoriale rinviata per 12 ore: {}".format(article.get("title", "")[:90]))
+    elif os.getenv("GROQ_API_KEY", "").strip() and not editorial_api_ready:
+        print("Quota AI in pausa fino a {}: evito richieste inutili.".format(editorial_api_retry_after))
     else:
         print("GROQ_API_KEY non configurata: si mantiene il testo originale delle fonti.")
 
@@ -779,6 +827,7 @@ def main():
 
     payload = {
         "editorial_rebuild_version": EDITORIAL_REBUILD_VERSION,
+        "editorial_api_retry_after": prior_payload.get("editorial_api_retry_after", ""),
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "feeds_ok": successful_feeds,
         "feeds_total": len(FEEDS),
