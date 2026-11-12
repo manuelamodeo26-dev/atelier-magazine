@@ -623,8 +623,15 @@ def main():
 
     current_snapshot = json.dumps(articles, ensure_ascii=False, sort_keys=True)
     if current_snapshot == previous_snapshot:
-        print(f"Nessuna modifica: {len(articles)} articoli già archiviati.")
-        return
+        try:
+            with open(OUT, encoding="utf-8") as file:
+                current_payload = json.load(file)
+            if current_payload.get("feed_status") == feed_status and current_payload.get("feeds_ok") == successful_feeds:
+                print(f"Nessuna modifica: {len(articles)} articoli già archiviati.")
+                return
+        except (OSError, ValueError, TypeError):
+            pass
+        print("Aggiorno soltanto lo stato diagnostico dei feed.")
 
     payload = {
         "updated_at": datetime.now(timezone.utc).isoformat(),
