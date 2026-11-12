@@ -59,10 +59,6 @@ create policy saved_insert_own on public.saved_articles
 create policy saved_delete_own on public.saved_articles
   for delete to authenticated using ((select auth.uid()) = user_id);
 
-grant usage on schema public to authenticated;
-grant select, update on public.profiles to authenticated;
-grant select, insert, update on public.user_preferences to authenticated;
-grant select, insert, delete on public.saved_articles to authenticated;
 
 create or replace function private.handle_new_user()
 returns trigger
@@ -112,8 +108,6 @@ create policy "Users can remove their own article likes" on public.article_likes
 create policy "Anyone can read public article like counts" on public.article_like_counts
   for select to anon, authenticated using (true);
 
-grant select, insert, delete on public.article_likes to authenticated;
-grant select on public.article_like_counts to anon, authenticated;
 
 create or replace function public.maintain_article_like_counts()
 returns trigger
@@ -144,3 +138,25 @@ drop trigger if exists article_likes_update_counts on public.article_likes;
 create trigger article_likes_update_counts
   after insert or delete on public.article_likes
   for each row execute function public.maintain_article_like_counts();
+
+
+-- Least-privilege grants: RLS does not replace SQL privileges such as TRUNCATE.
+revoke all privileges on table
+  public.profiles,
+  public.user_preferences,
+  public.saved_articles,
+  public.article_likes,
+  public.article_like_counts
+from anon, authenticated, public;
+
+alter default privileges for role postgres in schema public
+  revoke all on tables from anon, authenticated, public;
+alter default privileges for role postgres in schema public
+  revoke all on sequences from anon, authenticated, public;
+
+grant usage on schema public to anon, authenticated;
+grant select, update on table public.profiles to authenticated;
+grant select, insert, update on table public.user_preferences to authenticated;
+grant select, insert, delete on table public.saved_articles to authenticated;
+grant select, insert, delete on table public.article_likes to authenticated;
+grant select on table public.article_like_counts to anon, authenticated;
