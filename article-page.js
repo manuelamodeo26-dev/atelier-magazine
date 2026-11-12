@@ -28,17 +28,24 @@ const sentences=clean.match(/[^.!?]+[.!?]+|[^.!?]+$/g)||[clean];const chosen=[];
 for(const sentence of sentences){const words=sentence.trim().split(/\s+/);if(count&&count+words.length>maxWords)break;chosen.push(sentence.trim());count+=words.length;if(count>=maxWords)break;}
 let result=chosen.join(' ');if(result.length<clean.length)result=result.replace(/[,:;\s]+$/,'')+'…';return result;
 }
-function keyPoint(value){return compactText(value,32);}
+function editorialParagraphs(value){
+const parts=String(value||'').trim().split(/\n\s*\n/).map(part=>part.trim()).filter(Boolean);
+const highlightIndex=parts.length>=3?2:Math.max(0,parts.length-1);
+return parts.map((part,index)=>{
+if(index!==highlightIndex)return '<p>'+esc(part)+'</p>';
+const match=part.match(/^(.+?[.!?])(?=\s|$)([\s\S]*)$/);
+if(!match)return '<p><strong>'+esc(part)+'</strong></p>';
+return '<p><strong>'+esc(match[1])+'</strong>'+esc(match[2])+'</p>';
+}).join('');
+}
 function fail(msg){content.innerHTML='<p class="eyebrow">ATELIER / ARCHIVIO</p><h1 class="detail-title">Articolo non disponibile.</h1><p class="detail-excerpt">'+esc(msg)+'</p><a class="text-link" href="./">TORNA ALLA RIVISTA ↗</a>';}
 function render(a){
 const source=a.source||'Editore non identificato', category=cat(a.category), published=date(a.date), imageInfo=imageFor(a), image=imageInfo.url;
 const photo=image?'<figure class="detail-figure"><img src="'+esc(image)+'" alt="'+esc(a.title||'Immagine editoriale ATELIER')+'" referrerpolicy="no-referrer" onerror="this.closest(\'.detail-figure\').classList.add(\'image-unavailable\');this.remove()"><figcaption>'+(imageInfo.verified?'Immagine verificata tecnicamente · ':imageInfo.sourceImage?'Immagine della fonte, non verificata · ':'Immagine illustrativa · ')+esc(source)+'</figcaption></figure>':'<div class="detail-no-image">IMMAGINE EDITORIALE NON DISPONIBILE</div>';
 const editorial=String(a.editorial_summary||'').trim();
 const sourceText=String(a.excerpt||'').trim();
-const important=keyPoint(editorial||sourceText||a.title);
-const highlight=important?'<aside class="key-point"><span>IL PUNTO CHIAVE</span><p>'+esc(important)+'</p></aside>':'';
-const mainText=editorial?compactText(editorial,115):compactText(sourceText,95);
-const summary=highlight+(mainText?'<section class="detail-section editorial-summary"><p class="eyebrow">'+(editorial?'IN BREVE · ATELIER':'IN BREVE · DALLA FONTE')+'</p><p class="detail-excerpt">'+esc(mainText)+'</p></section>':'<p class="detail-muted">La fonte non mette a disposizione una sintesi più ampia.</p>');
+const mainText=editorial?editorialParagraphs(editorial):'<p>'+esc(compactText(sourceText,170))+'</p>';
+const summary=mainText?'<section class="detail-section editorial-summary"><p class="eyebrow">'+(editorial?'ATELIER · LA NOTIZIA':'IN BREVE · DALLA FONTE')+'</p><div class="detail-excerpt">'+mainText+'</div></section>':'<p class="detail-muted">La fonte non mette a disposizione una sintesi più ampia.</p>';
 const sourceUrl=url(a.url);
 const articleId=String(a.id||a.url||'');
 content.innerHTML='<button type="button" class="like-article" data-like-article="'+esc(articleId)+'" aria-pressed="false">♡ <span data-like-count="'+esc(articleId)+'">0</span> MI PIACE</button><button type="button" class="save-article" data-save-article="'+esc(articleId)+'" aria-label="Salva articolo nei preferiti" aria-pressed="false">♡ SALVA NEI PREFERITI</button><div class="detail-topline"><span>'+esc(category.toLocaleUpperCase('it'))+'</span><span>'+esc(published)+'</span></div><h1 class="detail-title">'+esc(a.title||'Senza titolo')+'</h1>'+(a.author?'<p class="detail-byline">A cura di '+esc(a.author)+'</p>':'')+photo+summary+'<div class="detail-metadata"><span>EDITORE</span><strong>'+esc(source)+'</strong><span>DATA DI PUBBLICAZIONE</span><strong>'+esc(published)+'</strong><span>CATEGORIA</span><strong>'+esc(category)+'</strong>'+(a.language?'<span>LINGUA</span><strong>'+esc(String(a.language).toLocaleUpperCase('it'))+'</strong>':'')+'</div><section class="detail-sources"><p class="eyebrow">FONTI E ATTRIBUZIONI</p><p><strong>'+esc(source)+'</strong> · Fonte originale del contenuto e delle informazioni riportate in questa scheda.</p>'+(sourceUrl?'<a class="text-link" href="'+esc(sourceUrl)+'" target="_blank" rel="noopener noreferrer">CONSULTA LA FONTE ORIGINALE ↗</a>':'<p class="detail-muted">Collegamento alla fonte non disponibile.</p>')+'<p class="detail-muted">Le fotografie contrassegnate come verificate provengono dai metadati della fonte e hanno superato i controlli tecnici. Le immagini illustrative sono alternative visive e non documentano necessariamente il fatto narrato.</p></section>';
