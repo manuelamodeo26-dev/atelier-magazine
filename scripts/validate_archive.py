@@ -27,6 +27,21 @@ def validate_payload(payload):
         errors.append("Metadati dei feed non validi.")
     elif ok < total:
         warnings.append("Feed disponibili: {}/{}.".format(ok, total))
+    feed_status = payload.get("feed_status")
+    if feed_status is not None:
+        if not isinstance(feed_status, list) or (isinstance(total, int) and len(feed_status) != total):
+            errors.append("Diagnostica feed non coerente con il numero di fonti.")
+        else:
+            sources = set()
+            for feed in feed_status:
+                if not isinstance(feed, dict) or not isinstance(feed.get("source"), str) or not feed["source"].strip():
+                    errors.append("Voce diagnostica feed non valida.")
+                    continue
+                if feed["source"] in sources:
+                    errors.append("Fonte duplicata nella diagnostica feed.")
+                sources.add(feed["source"])
+                if not isinstance(feed.get("ok"), bool) or not isinstance(feed.get("articles"), int) or feed["articles"] < 0:
+                    errors.append("Stato o conteggio articoli del feed non valido.")
     seen = set()
     for number, article in enumerate(articles, 1):
         label = "Articolo {}: ".format(number)
