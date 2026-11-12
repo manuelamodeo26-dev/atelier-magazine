@@ -61,6 +61,8 @@ jobs:
     steps:
       - name: Checkout latest repository
         uses: actions/checkout@v4
+        with:
+          ref: main
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload site
