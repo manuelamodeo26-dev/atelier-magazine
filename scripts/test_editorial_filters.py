@@ -5,7 +5,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import fetch_news
-from fetch_news import infer_category, is_relevant, source_category
+from fetch_news import infer_category, is_relevant, source_category, summary_retry_due
 
 
 class EditorialFilterTests(unittest.TestCase):
@@ -26,6 +26,15 @@ class EditorialFilterTests(unittest.TestCase):
             "title": "La nuova collezione debutta a Milano",
             "excerpt": "Il testo cita dieta e sintomi soltanto come esempi secondari.",
         }))
+
+    def test_failed_summary_has_a_retry_cooldown(self):
+        now = datetime.now(timezone.utc)
+        self.assertFalse(summary_retry_due({
+            "editorial_retry_after": (now.replace(microsecond=0)).isoformat()
+        }, now=now.replace(microsecond=0) - __import__("datetime").timedelta(seconds=1)))
+        self.assertTrue(summary_retry_due({
+            "editorial_retry_after": (now - __import__("datetime").timedelta(seconds=1)).isoformat()
+        }, now=now))
 
     def test_legacy_archive_is_cleaned_and_saved(self):
         original_path = fetch_news.OUT
