@@ -1,6 +1,11 @@
 name: Update ATELIER news
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/fetch_news.py'
+      - '.github/workflows/news.yml'
   schedule:
     - cron: "17 */6 * * *"
   workflow_dispatch:
@@ -31,6 +36,19 @@ jobs:
           python-version: "3.x"
       - name: Collect RSS and Atom articles
         run: python scripts/fetch_news.py
+      - name: Validate generated archive
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path('data/articles.json')
+          data = json.loads(path.read_text(encoding='utf-8'))
+          assert isinstance(data.get('articles'), list), 'articles deve essere una lista'
+          assert data['articles'], 'L’archivio non contiene articoli: non pubblicare un archivio vuoto'
+          for article in data['articles']:
+              assert article.get('title') and article.get('url', '').startswith(('http://', 'https://'))
+          print(f"Archivio valido: {len(data['articles'])} articoli")
+          PY
       - name: Commit updated archive
         id: commit
         run: |
