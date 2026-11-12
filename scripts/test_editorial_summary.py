@@ -9,7 +9,8 @@ import editorial_summary
 
 class EditorialSummaryTests(unittest.TestCase):
     def _response(self, level="standard"):
-        paragraphs = [" ".join(["moda"] * 90) for _ in range(3)]
+        count = 4 if level == "approfondimento" else 3
+        paragraphs = [" ".join(["moda"] * 90) for _ in range(count)]
         body = json.dumps({
             "choices": [{
                 "finish_reason": "stop",
