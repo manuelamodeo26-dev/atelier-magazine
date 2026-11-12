@@ -9,7 +9,7 @@ import time
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
-from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
+from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse
 from urllib.request import Request, urlopen
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -143,7 +143,7 @@ def fetch_page_image(article_url):
         with urlopen(request, timeout=5) as response:
             parser = ImageMetaParser()
             parser.feed(response.read(250000).decode("utf-8", errors="replace"))
-        return upgrade_image_url(parser.image)
+        return upgrade_image_url(urljoin(article_url, parser.image))
     except Exception:
         return ""
 
