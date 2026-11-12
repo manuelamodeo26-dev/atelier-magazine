@@ -43,11 +43,17 @@ class ArchiveValidationTests(unittest.TestCase):
         errors, _ = validate_payload(payload)
         self.assertTrue(any("sintesi editoriale fuori standard" in error for error in errors))
 
+    def test_accepts_portrait_images_with_minimum_short_and_long_edges(self):
+        payload = self.payload()
+        payload["articles"][0].update({"image_verified": True, "image": "https://example.com/photo.jpg", "image_width": 683, "image_height": 1024, "image_format": "jpeg"})
+        errors, _ = validate_payload(payload)
+        self.assertEqual(errors, [])
+
     def test_rejects_unverified_dimensions_marked_as_verified(self):
         payload = self.payload()
-        payload["articles"][0].update({"image_verified": True, "image": "https://example.com/photo.jpg", "image_width": 600, "image_height": 300, "image_format": "jpeg"})
+        payload["articles"][0].update({"image_verified": True, "image": "https://example.com/photo.jpg", "image_width": 300, "image_height": 1100, "image_format": "jpeg"})
         errors, _ = validate_payload(payload)
-        self.assertTrue(any("larghezza immagine" in error for error in errors))
+        self.assertTrue(any("risoluzione immagine" in error for error in errors))
 
 
 if __name__ == "__main__":
