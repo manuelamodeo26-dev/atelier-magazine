@@ -314,3 +314,5 @@ section[id] { scroll-margin-top: 100px; }
   text-align: center;
 }
 .story-card .article-image.image-unavailable .image-verified { display: none; }
+
+.like-article{margin-top:15px;margin-right:8px;border:1px solid var(--line);background:transparent;padding:10px 13px;font:10px var(--mono);letter-spacing:.06em;cursor:pointer;transition:background .2s,color .2s,border-color .2s}.like-article:hover,.like-article.is-liked{background:var(--red);border-color:var(--red);color:var(--paper)}.like-article [data-like-count]{font-variant-numeric:tabular-nums}.like-article:focus-visible{outline:2px solid var(--red);outline-offset:4px}
