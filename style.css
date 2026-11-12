@@ -406,3 +406,7 @@ section[id] { scroll-margin-top: 100px; }
 .profile-shortcuts button{border-right:0}
 .avatar-remove{padding:5px 8px;font:8px var(--mono);letter-spacing:.07em}
 @media(max-width:760px){#search-open{width:36px;height:36px;min-width:36px}.search-icon{width:17px;height:17px}}
+
+/* Controlli di selezione e like con la stessa identità rossa */
+.filter-chip,.community-filter,.like-article{background:var(--red-surface);border:1px solid var(--red-surface);color:#fff}
+.filter-chip:hover,.filter-chip.active,.community-filter:hover,.community-filter.is-active,.like-article:hover,.like-article.is-liked{background:#8f1b1b;border-color:#8f1b1b;color:#fff}
