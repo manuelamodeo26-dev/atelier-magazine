@@ -41,6 +41,7 @@
     $('#account-logout')?.addEventListener('click',logout);
     $('#save-preferences')?.addEventListener('click',savePreferences);
     document.addEventListener('atelier:articles-rendered',()=>{syncSaveButtons();syncLikeButtons();syncLikeCounts();});
+    document.addEventListener('atelier:article-rendered',()=>{syncSaveButtons();syncLikeButtons();syncLikeCounts();});
     document.addEventListener('click',event=>{
       const btn=event.target.closest?.('[data-save-article]');
       if(btn){event.preventDefault();event.stopPropagation();toggleSaved(btn.dataset.saveArticle);}
@@ -111,7 +112,7 @@
   async function loadLikeCounts(){
     const ids=[...new Set(articles.map(a=>String(a.id||a.url||'')).filter(Boolean))];
     if(!client||!ids.length)return;
-    const {data,error}=await client.rpc('get_article_like_counts',{article_ids:ids});
+    const {data,error}=await client.from('article_like_counts').select('article_id,like_count').in('article_id',ids);
     if(error)throw error;
     likeCounts=new Map((data||[]).map(row=>[row.article_id,Number(row.like_count)||0]));
     syncLikeButtons();syncLikeCounts();
@@ -189,7 +190,7 @@
     try{
       const {createClient}=await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm');
       client=createClient(cfg.url,cfg.anonKey);
-      await loadLikeCounts();
+      loadLikeCounts().catch(error=>console.warn('ATELIER: conteggi Mi piace non disponibili.',error));
       const {data}=await client.auth.getSession();
       if(data.session){user=data.session.user;await loadUserData();}else setLoggedIn(false);
       client.auth.onAuthStateChange((_event,session)=>{setTimeout(async()=>{try{user=session?.user||null;if(user)await loadUserData();else{saved.clear();liked.clear();setLoggedIn(false);renderAccount();}}catch(e){user=null;saved.clear();setLoggedIn(false);message(e.message||'Impossibile caricare i dati dell’account.',true);}},0);});
