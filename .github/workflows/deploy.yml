@@ -24,6 +24,8 @@ jobs:
         uses: actions/setup-python@v6
         with:
           python-version: "3.12"
+      - name: Check Python syntax
+        run: python -m compileall -q scripts
       - name: Run editorial and archive tests
         run: |
           python -m unittest discover -s scripts -p 'test_*.py' -v
