@@ -42,6 +42,8 @@ def validate_payload(payload):
                 sources.add(feed["source"])
                 if not isinstance(feed.get("ok"), bool) or not isinstance(feed.get("articles"), int) or feed["articles"] < 0:
                     errors.append("Stato o conteggio articoli del feed non valido.")
+                if "error" in feed and not isinstance(feed["error"], str):
+                    errors.append("Dettaglio errore del feed non valido.")
     seen = set()
     for number, article in enumerate(articles, 1):
         label = "Articolo {}: ".format(number)
