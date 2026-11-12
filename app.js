@@ -18,8 +18,9 @@
   }
   function categoryOf(value){
     const c=String(value||'').trim().toLowerCase();
-    if(c==='culture'||c==='art'||c==='art and culture') return 'Art & Culture';
-    if(c==='tech') return 'Technology';
+    if(c==='culture'||c==='art'||c==='art & culture'||c==='art and culture') return 'Art & Culture';
+    if(c==='tech'||c==='technology') return 'Technology';
+    if(c==='architecture'||c==='business'||c==='lifestyle'||c==='streetwear'||c==='fashion'||c==='design') return c.charAt(0).toUpperCase()+c.slice(1);
     return value||'Journal';
   }
   function formatDate(value){
@@ -31,7 +32,9 @@
     const url=safeURL(article.url), image=safeURL(article.image), category=categoryOf(article.category);
     const visual=image?'<a class="article-image" href="'+escapeHTML(url||image)+'" target="_blank" rel="noopener noreferrer"><img src="'+escapeHTML(image)+'" alt="" loading="lazy" referrerpolicy="no-referrer"></a>':
       '<div class="story-placeholder '+(index%3===0?'placeholder-red':index%3===1?'placeholder-cream':'placeholder-black')+'"><span>'+escapeHTML(String(category).toUpperCase())+'<br>JOURNAL</span><b>A/'+String(index+1).padStart(2,'0')+'</b></div>';
-    return '<article class="story-card">'+visual+'<div class="story-meta">'+escapeHTML(category)+' · '+formatDate(article.date)+' · '+escapeHTML(article.source||'ATELIER')+'</div><h3>'+escapeHTML(article.title||'Senza titolo')+'</h3><p>'+escapeHTML(article.excerpt||'')+'</p>'+(url?'<a class="text-link card-link" href="'+escapeHTML(url)+'" target="_blank" rel="noopener noreferrer">LEGGI LA FONTE ↗</a>':'')+'</article>';
+    const language=String(article.language||'').toLowerCase();
+    const languageNote=language&&language!=='it'?' · ORIGINALE '+escapeHTML(language.toUpperCase()):'';
+    return '<article class="story-card">'+visual+'<div class="story-meta">'+escapeHTML(category)+' · '+formatDate(article.date)+' · '+escapeHTML(article.source||'ATELIER')+languageNote+'</div><h3>'+escapeHTML(article.title||'Senza titolo')+'</h3><p>'+escapeHTML(article.excerpt||'')+'</p>'+(url?'<a class="text-link card-link" href="'+escapeHTML(url)+'" target="_blank" rel="noopener noreferrer">LEGGI LA FONTE ↗</a>':'')+'</article>';
   }
   function visibleArticles(){
     return articles.filter(a=>activeFilter==='Tutti'||categoryOf(a.category)===activeFilter);
@@ -62,12 +65,12 @@
     const button=event.target.closest('[data-filter]');
     if(!button)return;
     activeFilter=button.dataset.filter; showAll=false;
-    filters.querySelectorAll('.filter-chip').forEach(el=>el.classList.toggle('active',el===button));
+    filters.querySelectorAll('.filter-chip').forEach(el=>{const active=el===button;el.classList.toggle('active',active);el.setAttribute('aria-pressed',String(active));});
     render();
   });
   document.querySelectorAll('[data-jump-filter]').forEach(link=>link.addEventListener('click',()=>{
     activeFilter=link.dataset.jumpFilter; showAll=false;
-    filters.querySelectorAll('.filter-chip').forEach(el=>el.classList.toggle('active',el.dataset.filter===activeFilter));
+    filters.querySelectorAll('.filter-chip').forEach(el=>{const active=el.dataset.filter===activeFilter;el.classList.toggle('active',active);el.setAttribute('aria-pressed',String(active));});
     render();
   }));
   $('#show-more').addEventListener('click',()=>{showAll=!showAll;render();});
@@ -83,7 +86,7 @@
   searchInput.addEventListener('input',()=>{
     const q=searchInput.value.trim().toLocaleLowerCase('it');
     if(!q){searchResults.innerHTML='';return;}
-    const found=articles.filter(a=>[a.title,a.excerpt,a.category,a.source].join(' ').toLocaleLowerCase('it').includes(q)).slice(0,12);
+    const found=articles.filter(a=>[a.title,a.excerpt,a.category,a.source,a.language].join(' ').toLocaleLowerCase('it').includes(q)).slice(0,12);
     searchResults.innerHTML=found.length?found.map(a=>{
       const url=safeURL(a.url);
       return '<div class="search-result"><small>'+escapeHTML(categoryOf(a.category))+' · '+formatDate(a.date)+'</small><h4>'+escapeHTML(a.title)+'</h4>'+(url?'<a class="text-link" href="'+escapeHTML(url)+'" target="_blank" rel="noopener noreferrer">APRI FONTE ↗</a>':'')+'</div>';
