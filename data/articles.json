@@ -1,7 +1,44 @@
 {
-  "updated_at": "2026-11-12T15:42:44.817149+00:00",
+  "updated_at": "2026-11-12T15:44:52.493369+00:00",
   "feeds_ok": 6,
   "feeds_total": 7,
+  "feed_status": [
+    {
+      "source": "vogue.it",
+      "ok": true,
+      "articles": 12
+    },
+    {
+      "source": "pambianconews.com",
+      "ok": true,
+      "articles": 18
+    },
+    {
+      "source": "ad-italia.it",
+      "ok": true,
+      "articles": 16
+    },
+    {
+      "source": "exibart.com",
+      "ok": true,
+      "articles": 12
+    },
+    {
+      "source": "finestresullarte.info",
+      "ok": true,
+      "articles": 18
+    },
+    {
+      "source": "outpump.com",
+      "ok": false,
+      "articles": 0
+    },
+    {
+      "source": "sneakersmagazine.it",
+      "ok": true,
+      "articles": 10
+    }
+  ],
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
@@ -1433,7 +1470,9 @@
       "url": "https://www.finestresullarte.info/opinioni/musei-per-non-vedenti-aggiungere-braille-senza-co-progettare-e-paternalismo",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "editorial_attempted_at": "2026-11-12T15:44:52.491834+00:00",
+      "editorial_retry_after": "2026-11-13T03:44:52.491834+00:00"
     },
     {
       "id": "https://www.finestresullarte.info/attualita/donatore-anonimo-dona-6-milioni-di-euro-per-salvare-biblioteca-del-castello-chantilly",
@@ -1446,7 +1485,9 @@
       "url": "https://www.finestresullarte.info/attualita/donatore-anonimo-dona-6-milioni-di-euro-per-salvare-biblioteca-del-castello-chantilly",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "editorial_attempted_at": "2026-11-12T15:44:51.719313+00:00",
+      "editorial_retry_after": "2026-11-13T03:44:51.719313+00:00"
     },
     {
       "id": "https://www.finestresullarte.info/archeologia/catania-riapre-antico-ipogeo-cinque-camere-sepolcrali-tre-metri-sotto-la-citta",
@@ -1459,7 +1500,10 @@
       "url": "https://www.finestresullarte.info/archeologia/catania-riapre-antico-ipogeo-cinque-camere-sepolcrali-tre-metri-sotto-la-citta",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "editorial_summary": "Lunedì 9 novembre è stato inaugurato l’Antico Ipogeo della chiesa di Sant’Agostino, oggi Santuario di Santa Rita, a Catania, dopo un intervento di restauro che ha reso nuovamente accessibili al pubblico cinque camere sepolcrali situate a tre metri e mezzo sotto il centro storico. L’apertura è avvenuta alla presenza dell’arcivescovo metropolita Luigi Renna, del sindaco Enrico Trantino e di rappresentanti dell’Università di Catania e dell’Accademia di Belle Arti, tra gli altri invitati istituzionali.\n\nL’intervento di recupero, illustrato dall’ingegnere Mauro Scaccianoce e dagli architetti Francesco Anfuso e Marco Bertolone, ha preservato le cinque sale funerarie caratterizzate da volte a botte e a crociera, pavimentazioni in cotto, nicchie e ossari. I corridoi e le antiche scale collegano le camere, che documentano pratiche funerarie diffuse tra il XVIII e il XIX secolo, inclusi i cosiddetti colatoi, spazi destinati al trattamento delle salme prima della deposizione finale.\n\nDurante la cerimonia è stato proiettato un video realizzato dall’Accademia di Belle Arti di Catania, che, grazie all’intelligenza artificiale, ricostruisce le diverse fasi storiche dell’ipogeo, dalle testimonianze dell’epoca romana alle funzioni agostiniane e al suo utilizzo come rifugio antiaereo. L’evento è stato accompagnato dal Coro Polifonico San Giorgio, diretto da Paolo Cipolla e Franco Lazzaro, e si è concluso con il taglio del nastro da parte dell’arcivescovo Renna.\n\nL’ipogeo è ora inserito nel circuito Pulcherrima, un percorso di turismo culturale promosso dall’Arcidiocesi di Catania in collaborazione con Kalatà, che collega sei luoghi storici e religiosi della città. Con un unico biglietto è possibile visitare, oltre al Santuario di Santa Rita, la Badia di Sant’Agata, la chiesa di San Giuseppe al Duomo, la chiesa della Santissima Trinità e la chiesa di Santa Maria dell’Aiuto, quest’ultima arricchita da una mostra dedicata all’artista Salvatore Incorpora a partire da dicembre.\n\nL’Antico Ipogeo sarà aperto al pubblico il lunedì, mercoledì, venerdì e sabato dalle 15:00 alle 18:00 e la domenica dalle 9:30 alle 12:30, offrendo ai residenti e ai turisti un nuovo punto di accesso alla storia funeraria e religiosa di Catania, integrato in un itinerario che valorizza sia le architetture barocche sia gli spazi sotterranei della città.",
+      "editorial_level": "standard",
+      "editorial_word_count": 350
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/il-botswana-raddoppiera-la-sua-quota-in-de-beers-si-avvicina-la-vendita-500253/",
@@ -1475,7 +1519,10 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "editorial_summary": "Il presidente del Botswana, Duma Boko, ha annunciato che il Paese raddoppierà la sua partecipazione in De Beers, passando dal 15 % al 30 %, diventando così il maggiore azionista singolo della storica azienda di diamanti. L’aumento di quota è inteso a facilitare l’uscita di Anglo American, che da due anni sta cercando di vendere la propria partecipazione, e il Botswana, titolare del diritto di prelazione, giocherà un ruolo chiave nella conclusione dell’operazione.\n\nNel luglio scorso Anglo American aveva indicato il Global Diamond Consortium (GDC) come offerente preferenziale. Il consorzio, guidato da Gareth Penny, ex amministratore delegato di De Beers (2006‑2010), comprende i governi di Namibia e Angola, due dei principali produttori mondiali di diamanti, oltre a importanti commercianti di diamanti con sede ad Anversa, tra cui dirigenti di Diarough e Pluczenik. Penny ha riferito che anche il governo dell’Oman è coinvolto, mentre il gruppo di lusso Richemont è in trattative per aderire.\n\nBoko ha sottolineato che Namibia e Angola, dove De Beers ha attività operative, acquisiranno anch’esse quote nella società, rafforzando una struttura di proprietà più regionale. Per il Botswana, che fornisce circa il 70 % dei diamanti estratti da De Beers, l’aumento di partecipazione rappresenta un’opportunità di diversificazione economica, riducendo la dipendenza esclusiva dal mercato dei diamanti naturali.\n\nSecondo Reuters, l’accordo garantirà al Botswana l’accesso a tecnologie avanzate tramite Element Six, la divisione di diamanti sintetici del gruppo minerario. Questa unità è leader nella produzione di diamanti per applicazioni ad alte prestazioni, come il calcolo ad alte prestazioni, un settore destinato a crescere con l’espansione dell’intelligenza artificiale e dei data‑center su larga scala.\n\nIn sintesi, il raddoppio della quota del Botswana in De Beers non solo accelera la cessione di Anglo American, ma consolida una governance più africana del mercato dei diamanti, apre nuove prospettive tecnologiche attraverso i diamanti sintetici e potenzia la capacità del Paese di diversificare la propria economia in un contesto di crescente domanda di materiali avanzati.",
+      "editorial_level": "standard",
+      "editorial_word_count": 321
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/luisaviaroma-resta-a-lvr-nessun-rilancio-sullofferta-da-188-milioni-500187/",
@@ -1491,7 +1538,9 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "editorial_attempted_at": "2026-11-12T15:44:42.790161+00:00",
+      "editorial_retry_after": "2026-11-13T03:44:42.790161+00:00"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/piazza-italia-compra-conbipel-in-arrivo-un-piano-di-opening-da-100-nuovi-negozi-500181/",
@@ -1507,7 +1556,10 @@
       "language": "it",
       "image_width": 1304,
       "image_height": 618,
-      "image_format": "jpeg"
+      "image_format": "jpeg",
+      "editorial_summary": "Piazza Italia, il gruppo di abbigliamento campano guidato dalla famiglia Bernardo, ha completato l’acquisizione di Conbipel, marchio piemontese fondato nel 1958 e originariamente specializzato in pelletteria. L’operazione vede Piazza Italia salire al 49% di Arcadia Fashion, la società che dal giugno 2025 controlla Conbipel, con diritti di opzione per raggiungere il 100% entro la primavera 2027. Con la chiusura dell’accordo, Invitalia, che deteneva il 49% di Arcadia tramite il Fondo Salvaguardia Imprese, uscirà dal capitale.\n\nIl nuovo proprietario ha annunciato un piano quinquennale di rilancio per Conbipel, che prevede l’apertura di 100 nuovi negozi monomarca e l’assunzione di nuovo personale. L’amministratore delegato di Piazza Italia, Arnaldo Bernardo, ha sottolineato che il gruppo intende sfruttare la storicità e la riconoscibilità del marchio per invertire la crisi che ha colpito l’insegna dal 2022. Per l’esercizio in corso, chiuso a marzo 2027, Conbipel prevede ricavi di circa 120 milioni di euro, un pareggio sostanziale e un utile di circa 1 milione, dopo una perdita di circa 10 milioni l’anno precedente.\n\nLa crisi di Conbipel, iniziata nel 2022, ha visto il marchio passare dal fondo Oaktree a BTX Italian Retail and Brand, controllata dal fondo singaporiano Grow Capital e da Invitalia. Dopo una composizione negoziata della crisi avviata a dicembre 2024, Arcadia Fashion ha rilevato il ramo d’azienda a giugno 2025 con l’autorizzazione del Tribunale di Asti. L’acquisizione da parte di Piazza Italia chiude questo lungo periodo di difficoltà e si inserisce nella più ampia strategia di crescita del gruppo.\n\nPiazza Italia, che conta circa 340 negozi, punta a raddoppiare i ricavi lordi a circa 1 miliardo di euro e l’EBITDA a 100 milioni entro il 2031. Contestualmente, l’assetto azionario del gruppo sta cambiando: Green Arrow Capital intende acquisire il 14,63% del capitale tramite un aumento di capitale riservato, mentre, grazie a un patto parasociale, condividerà il controllo con GB Holding, la holding di Luigi Bernardo, che manterrà l’85,37% delle quote. Il dossier è attualmente in esame all’Antitrust.",
+      "editorial_level": "standard",
+      "editorial_word_count": 326
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/menswear-italiano-a-doppia-velocita-nei-7-mesi-export-a-09-import-a-65-500143/",
