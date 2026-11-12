@@ -36,7 +36,10 @@
       host.innerHTML='<div class="section-heading"><div><p class="eyebrow">ATELIER / PER TE</p><h2>Il tuo <em>feed.</em></h2></div><button type="button" class="text-link" id="open-account-settings">GESTISCI PREFERENZE ↗</button></div><div class="story-grid" id="personal-feed-grid"></div><p id="personal-feed-empty" class="empty-state" hidden>Non ci sono ancora articoli nei tuoi argomenti preferiti.</p><div class="section-heading saved-heading"><div><p class="eyebrow">ATELIER / COLLEZIONE PERSONALE</p><h2>I tuoi <em>preferiti.</em></h2></div></div><div class="story-grid" id="saved-grid"></div><p id="saved-empty" class="empty-state">Accedi per conservare gli articoli che vuoi ritrovare.</p></section>';
       const manifesto=$('.manifesto'); if(manifesto) manifesto.before(host);
     }
-    $('#account-open')?.addEventListener('click',()=>$('#account-dialog').showModal());
+    $('#account-open')?.addEventListener('click',()=>{if(user){location.href='./account.html';}else $('#account-dialog').showModal();});
+    $('#profile-manage')?.addEventListener('click',()=>$('#account-dialog').showModal());
+    $('#profile-login')?.addEventListener('click',()=>$('#account-dialog').showModal());
+    $('#profile-logout')?.addEventListener('click',logout);
     $('#open-account-settings')?.addEventListener('click',()=>$('#account-dialog').showModal());
     $('#account-form')?.addEventListener('submit',handleAuth);
     $('#account-logout')?.addEventListener('click',logout);
@@ -62,6 +65,10 @@
     const form=$('#account-form'), tools=$('#account-tools'), feed=$('#personal-feed');
     if(form)form.hidden=on;if(tools)tools.hidden=!on;if(feed)feed.hidden=!on;
     if(on)status('Accesso effettuato. Il tuo spazio ATELIER è pronto.');
+    const profileAction=$('#profile-manage');if(profileAction)profileAction.hidden=!on;
+    const profileGuest=$('#profile-guest');if(profileGuest)profileGuest.hidden=on;
+    const profileContent=$('#profile-content');if(profileContent)profileContent.hidden=!on;
+    if(on){const nick=user?.user_metadata?.display_name||'Membro ATELIER';const welcome=$('#profile-nickname');if(welcome)welcome.textContent=nick;const since=$('#profile-member-since');if(since&&user?.created_at)since.textContent='MEMBRO DAL '+new Date(user.created_at).toLocaleDateString('it-IT',{month:'long',year:'numeric'}).toUpperCase();}
     else status(configured?'Accedi o crea un account per personalizzare la rivista.':'Configurazione necessaria: collega prima il progetto Supabase.');
   }
   async function handleAuth(event){
@@ -77,11 +84,11 @@
         if(!/^[A-Za-z0-9_]{3,20}$/.test(name)){message('Scegli un nickname di 3–20 caratteri: lettere, numeri o underscore.',true);return;}
         const {data,error}=await client.auth.signUp({email,password,options:{data:{display_name:name}}});
         if(error)throw error;
-        if(data.session){user=data.user;const profile=await client.from('profiles').upsert({id:user.id,display_name:name},{onConflict:'id'});if(profile.error)throw profile.error;await loadUserData();message('Account creato. Benvenuto in ATELIER.');}
+        if(data.session){user=data.user;const profile=await client.from('profiles').upsert({id:user.id,display_name:name},{onConflict:'id'});if(profile.error)throw profile.error;await loadUserData();message('Account creato. Benvenuto in ATELIER.'); if(location.pathname.endsWith('/account.html'))location.replace('./index.html');}
         else message('Registrazione avviata. Controlla la tua email per confermare l’indirizzo, poi accedi.');
       }else{
         const {data,error}=await client.auth.signInWithPassword({email,password});
-        if(error)throw error; user=data.user; const existing=await client.from('profiles').select('id,display_name').eq('id',user.id).maybeSingle();if(existing.error)throw existing.error;if(!existing.data){const fallback=String(user.user_metadata?.display_name||('Membro_'+user.id.slice(0,6))).replace(/[^A-Za-z0-9_]/g,'').slice(0,20)||('Membro_'+user.id.slice(0,6));const created=await client.from('profiles').insert({id:user.id,display_name:fallback});if(created.error&&created.error.code!=='23505')throw created.error;} await loadUserData(); message('Accesso effettuato.');
+        if(error)throw error; user=data.user; const existing=await client.from('profiles').select('id,display_name').eq('id',user.id).maybeSingle();if(existing.error)throw existing.error;if(!existing.data){const fallback=String(user.user_metadata?.display_name||('Membro_'+user.id.slice(0,6))).replace(/[^A-Za-z0-9_]/g,'').slice(0,20)||('Membro_'+user.id.slice(0,6));const created=await client.from('profiles').insert({id:user.id,display_name:fallback});if(created.error&&created.error.code!=='23505')throw created.error;} await loadUserData(); message('Accesso effettuato.'); if(location.pathname.endsWith('/account.html'))location.replace('./index.html');
       }
     }catch(e){message(e.message||'Non è stato possibile completare l’operazione.',true);}
   }
@@ -226,7 +233,7 @@
       const {createClient}=await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm');
       client=createClient(cfg.url,cfg.anonKey,{auth:{storage:window.ATELIER_AUTH_STORAGE,persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
       const {data}=await client.auth.getSession();
-      if(data.session){user=data.session.user;await loadUserData();}else setLoggedIn(false);
+      if(data.session){user=data.session.user;await loadUserData();}else{setLoggedIn(false);if(location.pathname.endsWith('/account.html'))$('#account-dialog')?.showModal();}
       if(location.hash==='#account-settings')$('#account-dialog')?.showModal();
       loadLikeCounts().catch(error=>console.warn('ATELIER: conteggi Mi piace non disponibili.',error));
       client.auth.onAuthStateChange((_event,session)=>{setTimeout(async()=>{try{user=session?.user||null;if(user){await loadUserData();loadLikeCounts().catch(error=>console.warn('ATELIER: conteggi Mi piace non disponibili.',error));}else{saved.clear();savedRecords.clear();liked.clear();setLoggedIn(false);renderAccount();}}catch(e){user=null;saved.clear();setLoggedIn(false);message(e.message||'Impossibile caricare i dati dell’account.',true);}},0);});
