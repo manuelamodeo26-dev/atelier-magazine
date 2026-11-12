@@ -444,3 +444,9 @@ section[id] { scroll-margin-top: 100px; }
 .dialog-close:hover{transform:scale(1.05)}
 .dialog-close:focus-visible{outline:2px solid var(--red-surface)!important;outline-offset:4px!important}
 @media(max-width:760px){.dialog-close{width:34px!important;height:34px!important;min-width:34px!important;font-size:23px!important}}
+
+/* Chiusura schede: X rossa su fondo trasparente, senza bottone circolare */
+.dialog-close{background:transparent!important;border:0!important;border-radius:0!important;color:#B51F1F!important;box-shadow:none!important;font-size:32px!important;font-weight:400!important;line-height:1!important;width:38px!important;height:38px!important;min-width:38px!important}
+.dialog-close:hover,.dialog-close:focus-visible{background:rgba(181,31,31,.08)!important;border:0!important;color:#8f1b1b!important}
+.dialog-close:focus-visible{outline:2px solid #B51F1F!important;outline-offset:2px!important}
+@media(max-width:760px){.dialog-close{width:34px!important;height:34px!important;min-width:34px!important;font-size:29px!important}}
