@@ -42,8 +42,8 @@ jobs:
         run: python -m unittest discover -s scripts -p 'test_*.py' -v
       - name: Collect RSS and Atom articles
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: gemini-3.5-flash-lite
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_MODEL: openai/gpt-oss-120b
         run: python scripts/fetch_news.py
       - name: Validate generated archive
         run: |
