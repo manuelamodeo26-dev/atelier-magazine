@@ -9,7 +9,7 @@ import editorial_summary
 
 class EditorialSummaryTests(unittest.TestCase):
     def _response(self, level="standard"):
-        paragraphs = [" ".join(["moda"] * 50) for _ in range(3)]
+        paragraphs = [" ".join(["moda"] * 90) for _ in range(3)]
         body = json.dumps({
             "choices": [{
                 "finish_reason": "stop",
@@ -31,7 +31,7 @@ class EditorialSummaryTests(unittest.TestCase):
         }
 
     def test_summary_format_validator_accepts_only_complete_editorial_summaries(self):
-        valid = "\n\n".join([" ".join(["moda"] * 80) for _ in range(4)])
+        valid = "\n\n".join([" ".join(["moda"] * 70) for _ in range(4)])
         self.assertTrue(editorial_summary.is_valid_editorial_summary(valid, "standard"))
         short = "\\n\\n".join([" ".join(["moda"] * 50) for _ in range(3)])
         self.assertTrue(editorial_summary.is_valid_editorial_summary(short, "standard"))
@@ -51,7 +51,7 @@ class EditorialSummaryTests(unittest.TestCase):
                 self._article(), "Testo della fonte " * 100
             )
         self.assertEqual(level, "standard")
-        self.assertEqual(editorial_summary._word_count(summary), 150)
+        self.assertEqual(editorial_summary._word_count(summary), 270)
         request = mocked.call_args.args[0]
         self.assertEqual(request.full_url, "https://api.groq.com/openai/v1/chat/completions")
         self.assertEqual(request.get_header("Authorization"), "Bearer unit-test-key")
