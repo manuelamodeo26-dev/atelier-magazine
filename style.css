@@ -326,3 +326,13 @@ section[id] { scroll-margin-top: 100px; }
 .newsletter .eyebrow{color:var(--paper)}
 .story-meta,.detail-muted,.detail-metadata span,.detail-byline,.detail-figure figcaption,.detail-topline,.article-page-top,.empty-state,.section-note,.load-row,.search-result small{color:var(--muted-text)}
 .like-article:hover,.like-article.is-liked{background:var(--red-surface);border-color:var(--red-surface);color:var(--paper)}
+
+
+/* ATELIER / sintesi brevi e punto chiave */
+.key-point{margin:24px 0 8px;padding:18px 22px 20px;border-left:4px solid var(--red-surface);background:#e7e2d8}
+.key-point span{display:block;margin-bottom:9px;font:600 9px var(--mono);letter-spacing:.12em;color:var(--red-text)}
+.key-point p{margin:0;max-width:760px;font:500 clamp(17px,2.2vw,22px)/1.45 var(--body);letter-spacing:-.015em}
+.article-page-content .detail-section{padding:18px 0 24px}
+.article-page-content .detail-excerpt{max-width:780px;font-size:16px;line-height:1.75}
+.story-card p{font-size:13px;line-height:1.55}
+@media(max-width:760px){.key-point{padding:15px 16px;margin:18px 0 5px}.key-point p{font-size:17px}.article-page-content .detail-excerpt{font-size:15px}}
