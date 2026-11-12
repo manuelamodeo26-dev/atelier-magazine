@@ -7,6 +7,38 @@ import editorial_summary
 
 
 class EditorialSummaryTests(unittest.TestCase):
+    def test_respects_retry_after_for_rate_limits(self):
+        paragraphs = [" ".join(["moda"] * 60) for _ in range(3)]
+        body = json.dumps({
+            "candidates": [{
+                "finishReason": "STOP",
+                "content": {"parts": [{"text": json.dumps({
+                    "level": "standard",
+                    "paragraphs": paragraphs,
+                })}]},
+            }]
+        }).encode("utf-8")
+        response = MagicMock()
+        response.__enter__.return_value.read.return_value = body
+        rate_limit = HTTPError(
+            "https://example.com", 429, "Too Many Requests",
+            {"Retry-After": "7"}, None,
+        )
+
+        with patch.object(editorial_summary, "API_KEY", "unit-test-key"), \\
+             patch.object(editorial_summary, "MODEL", "primary-test-model"), \\
+             patch.object(editorial_summary, "urlopen", side_effect=[rate_limit, response]), \\
+             patch.object(editorial_summary.time, "sleep") as sleep:
+            summary, level = editorial_summary.generate_editorial_summary(
+                {"title": "Una nuova collezione", "excerpt": "Contesto editoriale " * 40,
+                 "source": "Fonte di prova"},
+                "Testo della fonte " * 100,
+            )
+
+        self.assertEqual(level, "standard")
+        self.assertEqual(editorial_summary._word_count(summary), 180)
+        sleep.assert_called_once_with(7)
+
     def test_falls_back_when_primary_model_is_overloaded(self):
         paragraphs = [" ".join(["moda"] * 60) for _ in range(3)]
         body = json.dumps({
