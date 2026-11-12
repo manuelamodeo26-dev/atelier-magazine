@@ -33,7 +33,7 @@ class EditorialFilterTests(unittest.TestCase):
             "editorial_retry_after": (now.replace(microsecond=0)).isoformat()
         }, now=now.replace(microsecond=0) - timedelta(seconds=1)))
         self.assertTrue(summary_retry_due({
-            "editorial_retry_after": (now - __import__("datetime").timedelta(seconds=1)).isoformat()
+            "editorial_retry_after": (now - timedelta(seconds=1)).isoformat()
         }, now=now))
 
     def test_legacy_archive_is_cleaned_and_saved(self):
