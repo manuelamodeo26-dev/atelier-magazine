@@ -336,3 +336,6 @@ section[id] { scroll-margin-top: 100px; }
 .article-page-content .detail-excerpt{max-width:780px;font-size:16px;line-height:1.75}
 .story-card p{font-size:13px;line-height:1.55}
 @media(max-width:760px){.key-point{padding:15px 16px;margin:18px 0 5px}.key-point p{font-size:17px}.article-page-content .detail-excerpt{font-size:15px}}
+
+.story-card-summary{margin-top:10px;padding:10px 12px;border-left:2px solid var(--red-surface);background:#e7e2d8;font-size:12px;line-height:1.5}
+.story-card-summary span{display:block;margin-bottom:5px;color:var(--red-text);font:600 8px var(--mono);letter-spacing:.12em}
