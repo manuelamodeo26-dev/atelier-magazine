@@ -33,6 +33,8 @@ class EditorialSummaryTests(unittest.TestCase):
     def test_summary_format_validator_accepts_only_complete_editorial_summaries(self):
         valid = "\n\n".join([" ".join(["moda"] * 80) for _ in range(4)])
         self.assertTrue(editorial_summary.is_valid_editorial_summary(valid, "standard"))
+        short = "\\n\\n".join([" ".join(["moda"] * 50) for _ in range(3)])
+        self.assertTrue(editorial_summary.is_valid_editorial_summary(short, "standard"))
         invalid = "\n\n".join([" ".join(["moda"] * 50) for _ in range(1)])
         self.assertFalse(editorial_summary.is_valid_editorial_summary(invalid, "standard"))
         self.assertFalse(editorial_summary.is_valid_editorial_summary(valid, "unknown"))
@@ -73,7 +75,7 @@ class EditorialSummaryTests(unittest.TestCase):
                 self._article(), "Testo della fonte " * 100
             )
         self.assertEqual(level, "standard")
-        self.assertEqual(editorial_summary._word_count(summary), 320)
+        self.assertEqual(editorial_summary._word_count(summary), 150)
         sleep.assert_called_once_with(7)
 
     def test_falls_back_to_smaller_model_on_quota_exhaustion(self):
@@ -94,13 +96,13 @@ class EditorialSummaryTests(unittest.TestCase):
                 self._article(), "Testo della fonte " * 100
             )
         self.assertEqual(level, "standard")
-        self.assertEqual(editorial_summary._word_count(summary), 320)
+        self.assertEqual(editorial_summary._word_count(summary), 150)
         self.assertEqual(mocked.call_count, 2)
         second_payload = json.loads(mocked.call_args_list[1].args[0].data.decode("utf-8"))
         self.assertEqual(second_payload["model"], "openai/gpt-oss-20b")
         sleep.assert_not_called()
 
-    def test_reclassifies_short_in_depth_text_as_standard(self):
+    def test_keeps_short_in_depth_text_with_its_editorial_level(self):
         response = self._response(level="approfondimento")
         with (
             patch.object(editorial_summary, "API_KEY", "unit-test-key"),
@@ -110,8 +112,8 @@ class EditorialSummaryTests(unittest.TestCase):
             summary, level = editorial_summary.generate_editorial_summary(
                 self._article(), "Testo della fonte " * 100
             )
-        self.assertEqual(level, "standard")
-        self.assertEqual(editorial_summary._word_count(summary), 320)
+        self.assertEqual(level, "approfondimento")
+        self.assertEqual(editorial_summary._word_count(summary), 150)
 
     def test_quota_exhaustion_stops_repeated_requests_for_the_run(self):
         error_body = json.dumps({
