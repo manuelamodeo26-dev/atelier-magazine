@@ -22,7 +22,7 @@ concurrency:
 jobs:
   update-news:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 25
     outputs:
       changed: ${{ steps.commit.outputs.changed }}
     steps:
