@@ -20,7 +20,7 @@ Fonti configurate in `scripts/fetch_news.py`: Vogue Italia, Pambianco, AD Italia
 
 ## Aggiornamento e pubblicazione
 
-- **Update ATELIER news**: esecuzione programmata ogni 6 ore e avvio manuale da GitHub Actions.
+- **Update ATELIER news**: esecuzione programmata ogni ora e avvio manuale da GitHub Actions.
 - Il processo conserva l'archivio se le fonti non rispondono, elimina i contenuti non italiani e quelli più vecchi di 120 giorni e rimuove i duplicati tramite URL.
 - Ogni aggiornamento registra per ciascun feed lo stato di risposta, il numero di articoli letti e, in caso di errore, il messaggio tecnico essenziale. È così possibile distinguere una fonte non raggiungibile da un feed valido senza nuove notizie e diagnosticare il problema.
 - **Deploy ATELIER to GitHub Pages**: pubblicazione del sito statico.
@@ -34,7 +34,7 @@ Ogni pubblicazione tramite GitHub Pages passa prima da una verifica automatica:
 
 - test unitari del generatore delle sintesi editoriali;
 - controllo dell'integrità dell'archivio JSON e dell'assenza di URL duplicati;
-- verifica del formato delle sintesi (4–6 paragrafi e intervalli di parole previsti);
+- verifica del formato delle sintesi (standard: 250–300 parole in 3–4 paragrafi; approfondimento: 350–450 parole in 4–5 paragrafi);
 - controllo dei metadati delle immagini marcate come verificate, con soglie di risoluzione applicate al lato lungo e al lato corto;
 - controllo della sintassi JavaScript prima del deploy.
 
@@ -54,11 +54,11 @@ Quando è configurato il secret GitHub Actions `GROQ_API_KEY`, il raccoglitore p
 
 ATELIER usa l'API Chat Completions di Groq con il modello `openai/gpt-oss-120b`; se il modello raggiunge un limite temporaneo o di utilizzo, prova `openai/gpt-oss-20b`. Le richieste usano la modalità JSON e la risposta viene validata prima di essere salvata. I limiti del piano gratuito sono stabiliti da Groq, possono cambiare e si applicano per modello e per finestra temporale: consulta la dashboard del tuo account. Il piano gratuito non garantisce disponibilità illimitata.
 
-- Notizie standard: 300–400 parole, in 4–6 paragrafi.
-- Approfondimenti: 450–600 parole, in 4–6 paragrafi, soltanto quando il materiale contiene dettagli sufficienti.
+- Notizie standard: 250–300 parole, in 3–4 paragrafi.
+- Approfondimenti: 350–450 parole, in 4–5 paragrafi, soltanto quando il materiale contiene dettagli sufficienti.
 - Le sintesi vengono mostrate separatamente dalla descrizione originale dell'editore.
 - Se la fonte è troppo breve, il modello non risponde, il limite è raggiunto o il secret manca, resta visibile il testo originale: non vengono inventati contenuti.
-- Vengono elaborate al massimo sei schede per esecuzione, dando priorità alle notizie nuove e poi recuperando gradualmente l'archivio. Se i limiti di entrambi i modelli sono raggiunti, il processo sospende le richieste AI per quella esecuzione.
+- Vengono elaborate al massimo dodici schede per esecuzione, dando priorità alle notizie nuove e poi recuperando gradualmente l'archivio. Se i limiti di entrambi i modelli sono raggiunti, il processo sospende le richieste AI per quella esecuzione.
 - Le sintesi sono conservate in `data/articles.json`; il testo integrale della pagina sorgente non viene salvato.
 
 ### Configurazione facoltativa dell'AI
