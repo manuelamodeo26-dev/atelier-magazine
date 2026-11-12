@@ -19,6 +19,18 @@ class ArchiveValidationTests(unittest.TestCase):
     def payload(self):
         return {"feeds_ok": 7, "feeds_total": 7, "articles": [self.article()]}
 
+    def test_rejects_incomplete_feed_diagnostics(self):
+        payload = self.payload()
+        payload["feed_status"] = [{"source": "example.com", "ok": True, "articles": 1}]
+        errors, _ = validate_payload(payload)
+        self.assertTrue(any("numero di fonti" in error for error in errors))
+
+    def test_accepts_complete_feed_diagnostics(self):
+        payload = self.payload()
+        payload["feed_status"] = [{"source": "one.example", "ok": True, "articles": 2}, {"source": "two.example", "ok": False, "articles": 0}, {"source": "three.example", "ok": True, "articles": 1}, {"source": "four.example", "ok": True, "articles": 3}, {"source": "five.example", "ok": True, "articles": 4}, {"source": "six.example", "ok": True, "articles": 1}, {"source": "seven.example", "ok": True, "articles": 2}]
+        errors, _ = validate_payload(payload)
+        self.assertEqual(errors, [])
+
     def test_accepts_valid_archive(self):
         errors, warnings = validate_payload(self.payload())
         self.assertEqual(errors, [])
