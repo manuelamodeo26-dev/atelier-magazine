@@ -393,3 +393,16 @@ section[id] { scroll-margin-top: 100px; }
 .avatar-change,.avatar-remove{font:8px var(--mono);letter-spacing:.07em;text-align:center;cursor:pointer;color:var(--ink);background:transparent;border:0;padding:4px}
 .avatar-change:hover,.avatar-remove:hover{color:var(--red-text)}
 @media(max-width:760px){.account-open.has-account-avatar{width:36px;height:36px;min-width:36px}.profile-avatar-wrap{flex-basis:72px}.profile-avatar{width:72px;height:72px;flex-basis:72px}}
+
+
+/* ATELIER — pulsanti d'azione in rosso e ricerca con icona */
+#search-open{width:42px;height:42px;min-width:42px;padding:0;display:grid;place-items:center;border:1px solid var(--red-surface);border-radius:50%;background:var(--red-surface);color:#fff;transition:background .2s,border-color .2s,transform .2s}
+#search-open:hover{background:#a91f1f;border-color:#a91f1f;transform:scale(1.04)}
+#search-open:focus-visible{outline:2px solid var(--red-surface);outline-offset:4px}
+.search-icon{width:19px;height:19px;display:block;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.outline-button,.account-actions button,#save-preferences,#account-logout,.save-article,.profile-shortcuts button,.community-auth-actions button,.discussion-action,.avatar-remove{background:var(--red-surface);border:1px solid var(--red-surface);color:#fff;transition:background .2s,border-color .2s,color .2s,transform .2s}
+.outline-button:hover,.account-actions button:hover,#save-preferences:hover,#account-logout:hover,.save-article:hover,.profile-shortcuts button:hover,.community-auth-actions button:hover,.discussion-action:hover,.avatar-remove:hover{background:#a91f1f;border-color:#a91f1f;color:#fff}
+.save-article.is-saved{background:#8f1b1b;border-color:#8f1b1b;color:#fff}
+.profile-shortcuts button{border-right:0}
+.avatar-remove{padding:5px 8px;font:8px var(--mono);letter-spacing:.07em}
+@media(max-width:760px){#search-open{width:36px;height:36px;min-width:36px}.search-icon{width:17px;height:17px}}
