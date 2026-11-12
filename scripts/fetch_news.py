@@ -28,6 +28,7 @@ FEEDS = [
 MAX_PER_FEED = 18
 MAX_ARTICLES = 180
 MAX_AGE_DAYS = 120
+MAX_SUMMARIES_PER_RUN = 2
 
 # Keep the archive focused on fashion, design and contemporary culture.
 # Exclude recurring general-interest formats that broad publisher feeds can contain.
@@ -499,7 +500,8 @@ def main():
             key=lambda item: item.get("date") or "0000",
             reverse=True,
         )
-        candidates = (new_candidates + older_candidates)[:5]
+        candidates = (new_candidates + older_candidates)[:MAX_SUMMARIES_PER_RUN]
+        print("Sintesi AI in coda: {} (massimo {} per esecuzione).".format(len(candidates), MAX_SUMMARIES_PER_RUN))
         for article in candidates:
             source_text = fetch_article_text(article.get("url", ""))
             summary, level = generate_editorial_summary(article, source_text)
