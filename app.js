@@ -162,7 +162,7 @@
   searchInput.addEventListener('input',()=>{
     const q=searchInput.value.trim().toLocaleLowerCase('it');
     if(!q){searchResults.innerHTML='';return;}
-    const found=articles.filter(a=>[a.title,a.excerpt,a.category,a.source,a.language].join(' ').toLocaleLowerCase('it').includes(q)).slice(0,12);
+    const found=articles.filter(a=>[a.title,a.excerpt,a.editorial_summary,a.category,a.source,a.language].join(' ').toLocaleLowerCase('it').includes(q)).slice(0,12);
     searchResults.innerHTML=found.length?found.map(a=>{
       const url=safeURL(a.url);
       return '<div class="search-result"><small>'+escapeHTML(categoryLabel(a.category))+' · '+formatDate(a.date)+'</small><h4>'+escapeHTML(a.title)+'</h4><a class="text-link" href="./article.html?id='+encodeURIComponent(a.id||a.url||'')+'">APRI ARTICOLO ↗</a></div>';
@@ -170,6 +170,7 @@
   });
   const today=$('#today-label');
   if(today)today.textContent=new Date().toLocaleDateString('it-IT',{day:'2-digit',month:'long',year:'numeric'}).toUpperCase()+' · ITALIA';
+  filters.querySelectorAll('[data-filter]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.filter==='Tutti')));
   loadArticles();
   if('serviceWorker' in navigator && location.protocol==='https:'){
     window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(error=>console.warn('ATELIER: service worker non registrato.',error)));
