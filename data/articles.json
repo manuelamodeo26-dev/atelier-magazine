@@ -1,13 +1,29 @@
 {
-  "updated_at": "2026-11-12T15:24:11.989259+00:00",
+  "updated_at": "2026-11-12T15:29:57.412161+00:00",
   "feeds_ok": 6,
   "feeds_total": 7,
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 96
+    "verified_count": 97
   },
   "articles": [
+    {
+      "id": "https://www.vogue.it/article/look-back-recensione-film-koreeda",
+      "title": "Look Back, la recensione del film di Kore-eda : la grandezza della vita è nella piccolezza dell'infanzia",
+      "excerpt": "Hirokazu Kore-eda trasforma il manga di Tatsuki Fujimoto in una favola sull’infanzia, l’amicizia e il tempo: un film, tra i favoriti al Festival di Venezia 2026, fatto dei silenzi che difficilmente si dimenticano",
+      "author": "Corinne Corci",
+      "category": "Art & Culture",
+      "source": "vogue.it",
+      "date": "2026-11-12T15:24:11+00:00",
+      "url": "https://www.vogue.it/article/look-back-recensione-film-koreeda",
+      "image": "https://compass-media.vogue.it/photos/6aa4465491f4080cd961e42f/master/pass/117150-LOOK_BACK_-_Furi_Nanasa_and_Rokka_Okada__2_.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1208,
+      "image_height": 679,
+      "image_format": "webp"
+    },
     {
       "id": "https://www.vogue.it/article/penny-loafers-donna-modelli-tendenza-inverno-2026",
       "title": "I penny loafers sono le scarpe eleganti maschili protagoniste dei look street style dell'inverno 2026 2027. Modelli di tendenza e colori cult, con e senza moneta",
