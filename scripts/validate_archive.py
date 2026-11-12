@@ -62,10 +62,11 @@ def validate_payload(payload):
             image = urlparse(str(article.get("image", "")))
             if image.scheme != "https" or not image.netloc:
                 errors.append(label + "immagine verificata senza URL HTTPS.")
-            if not isinstance(article.get("image_width"), int) or article["image_width"] < 1000:
-                errors.append(label + "larghezza immagine verificata insufficiente.")
-            if not isinstance(article.get("image_height"), int) or article["image_height"] < 500:
-                errors.append(label + "altezza immagine verificata insufficiente.")
+            width, height = article.get("image_width"), article.get("image_height")
+            if not isinstance(width, int) or not isinstance(height, int):
+                errors.append(label + "dimensioni immagine verificate mancanti.")
+            elif max(width, height) < 1000 or min(width, height) < 500:
+                errors.append(label + "risoluzione immagine verificata inferiore a 1000x500.")
             if article.get("image_format") not in ("jpeg", "png", "webp"):
                 errors.append(label + "formato immagine verificata non supportato.")
     return errors, warnings
