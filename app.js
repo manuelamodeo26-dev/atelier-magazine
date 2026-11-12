@@ -5,9 +5,9 @@
   const filters=$('#filters'), menuToggle=$('#menu-toggle'), nav=$('#main-nav');
   const searchDialog=$('#search-dialog'), searchInput=$('#search-input'), searchResults=$('#search-results');
   const fallback=[
-    {title:'La moda come spazio di ricerca, non soltanto di tendenza.',category:'Moda',excerpt:'Un punto di partenza per leggere il presente attraverso forme, materiali e nuove idee.',source:'ATELIER',date:'2026-11-11',url:'#'},
+    {title:'La moda come spazio di ricerca, non soltanto di tendenza.',category:'Fashion',excerpt:'Un punto di partenza per leggere il presente attraverso forme, materiali e nuove idee.',source:'ATELIER',date:'2026-11-11',url:'#'},
     {title:'Quando il design incontra la vita quotidiana.',category:'Design',excerpt:'Oggetti, ambienti e dettagli che raccontano il nostro tempo.',source:'ATELIER',date:'2026-11-11',url:'#'},
-    {title:'Le nuove energie creative da tenere d’occhio.',category:'Arte e cultura',excerpt:'Una selezione di linguaggi e visioni che attraversano la cultura contemporanea.',source:'ATELIER',date:'2026-11-11',url:'#'}
+    {title:'Le nuove energie creative da tenere d’occhio.',category:'Art & Culture',excerpt:'Una selezione di linguaggi e visioni che attraversano la cultura contemporanea.',source:'ATELIER',date:'2026-11-11',url:'#'}
   ];
   let articles=[], activeFilter='Tutti', showAll=false;
   const escapeHTML=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -19,7 +19,7 @@
   function categoryOf(value){
     const c=String(value||'').trim().toLowerCase();
     if(c==='culture'||c==='art'||c==='art & culture'||c==='art and culture') return 'Art & Culture';
-    if(c==='tech'||c==='technology') return 'Tecnologia';
+    if(c==='tech'||c==='technology'||c==='tecnologia') return 'Technology';
     if(c==='architecture'||c==='business'||c==='lifestyle'||c==='streetwear'||c==='fashion'||c==='design') return c.charAt(0).toUpperCase()+c.slice(1);
     return value||'Rivista';
   }
@@ -34,10 +34,10 @@
   function card(article,index){
     const url=safeURL(article.url), image=safeURL(article.image), category=categoryOf(article.category);
     const visual=image?'<a class="article-image" href="'+escapeHTML(url||image)+'" target="_blank" rel="noopener noreferrer" aria-label="Apri la fotografia della storia: '+escapeHTML(article.title||'articolo')+'"><img src="'+escapeHTML(image)+'" alt="Fotografia: '+escapeHTML(article.title||'articolo')+'" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.closest(\'.article-image\').classList.add(\'image-unavailable\');this.remove()"></a>':
-      '<div class="story-placeholder '+(index%3===0?'placeholder-red':index%3===1?'placeholder-cream':'placeholder-black')+'"><span>'+escapeHTML(String(category).toUpperCase())+'<br>JOURNAL</span><b>A/'+String(index+1).padStart(2,'0')+'</b></div>';
+      '<div class="story-placeholder '+(index%3===0?'placeholder-red':index%3===1?'placeholder-cream':'placeholder-black')+'"><span>'+escapeHTML(String(category).toUpperCase())+'<br>RIVISTA</span><b>A/'+String(index+1).padStart(2,'0')+'</b></div>';
     const language=String(article.language||'').toLowerCase();
     const languageNote=language&&language!=='it'?' · LINGUA ORIGINALE '+escapeHTML(language.toUpperCase()):'';
-    return '<article class="story-card">'+visual+'<div class="story-meta">'+escapeHTML(categoryLabel(category))+' · '+formatDate(article.date)+' · '+escapeHTML(article.source||'ATELIER')+languageNote+'</div><h3>'+escapeHTML(article.title||'Senza titolo')+'</h3><p>'+escapeHTML(article.excerpt||'')+'</p>'+(url?'<a class="text-link card-link" href="'+escapeHTML(url)+'" target="_blank" rel="noopener noreferrer">LEGGI LA FONTE ↗</a>':'')+'</article>';
+    return '<article class="story-card">'+visual+'<div class="story-meta">'+escapeHTML(categoryLabel(category))+' · '+formatDate(article.date)+' · '+escapeHTML(article.source||'ATELIER')+languageNote+'</div><h3>'+escapeHTML(article.title||'Senza titolo')+'</h3><p>'+escapeHTML(article.excerpt||'')+'</p>'+(url?'<a class="text-link card-link" href="'+escapeHTML(url)+'" target="_blank" rel="noopener noreferrer">LEGGI L’ARTICOLO ↗</a>':'')+'</article>';
   }
   function visibleArticles(){
     return articles.filter(a=>activeFilter==='Tutti'||categoryOf(a.category)===activeFilter);
@@ -61,6 +61,22 @@
     }catch(error){
       console.warn('ATELIER: impossibile caricare le notizie.',error);
       articles=fallback;
+    }
+    const heroImage=articles.find(article=>safeURL(article.image));
+    if(heroImage){
+      const heroArt=$('.hero-art');
+      if(heroArt&&!heroArt.querySelector('.hero-photo')){
+        const photo=document.createElement('img');
+        photo.className='hero-photo';
+        photo.src=safeURL(heroImage.image);
+        photo.alt='Fotografia editoriale dalla selezione ATELIER';
+        photo.loading='eager';
+        photo.decoding='async';
+        photo.referrerPolicy='no-referrer';
+        photo.onerror=()=>photo.remove();
+        heroArt.prepend(photo);
+        heroArt.classList.add('has-photo');
+      }
     }
     render();
   }
