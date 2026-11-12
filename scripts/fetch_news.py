@@ -30,7 +30,7 @@ FEEDS = [
 MAX_PER_FEED = 18
 MAX_ARTICLES = 180
 MAX_AGE_DAYS = 120
-MAX_SUMMARIES_PER_RUN = 2  # Keep each run within free-tier model limits, with a short backfill queue and stable retries.
+MAX_SUMMARIES_PER_RUN = 3  # Controlled batch: one fresh story plus two archive backfills.
 MAX_IMAGE_BACKFILLS_PER_RUN = 12
 
 # Keep the archive focused on fashion, design and contemporary culture.
@@ -70,11 +70,14 @@ def select_summary_candidates(new_candidates, older_candidates, limit):
     """Balance fresh coverage with gradual improvement of the existing archive."""
     if limit <= 0:
         return []
-    if new_candidates and older_candidates and limit >= 2:
-        selected = [new_candidates[0], older_candidates[0]]
-        remaining = new_candidates[1:] + older_candidates[1:]
-        return selected + remaining[:limit - 2]
-    return (new_candidates + older_candidates)[:limit]
+    if not new_candidates:
+        return older_candidates[:limit]
+    if not older_candidates:
+        return new_candidates[:limit]
+    selected = new_candidates[:1]
+    selected.extend(older_candidates[:limit - len(selected)])
+    remaining = new_candidates[1:] + older_candidates[len(selected) - 1:]
+    return selected + remaining[:limit - len(selected)]
 
 
 def summary_retry_due(article, now=None):
@@ -731,8 +734,7 @@ def main():
     else:
         print("GROQ_API_KEY non configurata: si mantiene il testo originale delle fonti.")
 
-    # Verify only images belonging to newly imported articles. Existing
-    # archive entries are left untouched and are not downloaded again.
+    # Verify images for new articles and the bounded archive backfill batch.
     new_urls = {canonical_url(item.get("url")) for item in fresh}
     to_verify = [item for item in articles
                  if (canonical_url(item.get("url")) in new_urls
