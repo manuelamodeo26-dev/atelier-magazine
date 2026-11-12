@@ -531,6 +531,7 @@ def main():
     # The publisher excerpt remains the fallback whenever source text is thin
     # or the optional AI service is unavailable.
     if os.getenv("GEMINI_API_KEY", "").strip():
+        now = datetime.now(timezone.utc)
         new_candidates = sorted(
             (item for item in articles
              if canonical_url(item.get("url")) in new_article_urls
@@ -539,7 +540,6 @@ def main():
             key=lambda item: item.get("date") or "0000",
             reverse=True,
         )
-        now = datetime.now(timezone.utc)
         older_candidates = sorted(
             (item for item in articles
              if canonical_url(item.get("url")) not in new_article_urls
