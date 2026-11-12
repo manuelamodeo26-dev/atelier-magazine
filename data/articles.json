@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-11-12T13:15:58.084211+00:00",
+  "updated_at": "2026-11-12T13:33:51.396497+00:00",
   "feeds_ok": 5,
   "feeds_total": 5,
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 81
+    "verified_count": 82
   },
   "articles": [
     {
@@ -41,6 +41,25 @@
       "image_width": 2048,
       "image_height": 3072,
       "image_format": "webp"
+    },
+    {
+      "id": "https://www.finestresullarte.info/arte-antica/firenze-si-sale-sui-ponteggi-per-ammirare-vicino-ultima-cena-andrea-del-castagno",
+      "title": "A Firenze si sale sui ponteggi per ammirare da vicino l’Ultima Cena di Andrea del Castagno",
+      "excerpt": "Riapre il Cenacolo di Sant’Apollonia a Firenze, dove è in corso il restauro del ciclo pittorico realizzato intorno al 1447. Un secondo ponteggio permetterà ai visitatori di osservare da vicino l’Ultima Cena e le altre scene dipinte dall’artista, scoprendone dettagli tecnici e storia conservativa.",
+      "author": "Redazione",
+      "category": "Business",
+      "source": "finestresullarte.info",
+      "date": "2026-11-12T12:00:59+00:00",
+      "url": "https://www.finestresullarte.info/arte-antica/firenze-si-sale-sui-ponteggi-per-ammirare-vicino-ultima-cena-andrea-del-castagno",
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/andrea-del-castagno-cenacolo-sant-apollonia-ultima-cena-cover.jpg",
+      "image_verified": true,
+      "language": "it",
+      "editorial_summary": "A Firenze riapre al pubblico il Cenacolo di Sant’Apollonia in concomitanza con l'avvio dei lavori di restauro del ciclo pittorico realizzato intorno al 1447 da Andrea del Castagno. L’iniziativa prevede l’allestimento di un ponteggio speciale che, dal 15 novembre 2026 al 26 giugno 2027, permetterà ai visitatori di salire a ridosso delle superfici dipinte. L'opportunità consente di osservare da vicino l’Ultima Cena e le altre scene del complesso monumentale, offrendo uno sguardo diretto sulle caratteristiche tecniche, le soluzioni prospettiche e la storia conservativa dell'opera. Questa modalità di fruizione richiama un'esperienza analoga proposta ad Arezzo per il ciclo della Leggenda della Vera Croce di Piero della Francesca nella Cappella Bacci della Basilica di San Francesco.\n\nIl progetto affronta in modo unitario la conservazione del ciclo monumentale e si avvale di una campagna di indagini scientifiche per studiare materiali, tecniche ed esecuzioni effettuate nei secoli. L’intervento è diretto e coordinato dalla Direzione regionale Musei nazionali Toscana del Ministero della Cultura – Museo di San Marco e Cenacoli, con la collaborazione dell’Opificio delle Pietre Dure per gli aspetti diagnostici e metodologici. Il cantiere vede la partecipazione della Soprintendenza Archeologia, Belle Arti e Paesaggio per la città metropolitana di Firenze e la provincia di Prato, il contributo scientifico del Consiglio nazionale delle ricerche (CNR) e il sostegno della Fondazione Isabel e Balz Baechi, organizzazione privata no profit dedicata alla tutela del patrimonio storico-artistico.\n\nIl ciclo decorativo occupa la parete di fondo dell'antico refettorio del monastero delle benedettine osservanti, fondato nel 1339 e ampliato nel Quattrocento. Andrea del Castagno concepì un programma figurativo unitario incentrato sulla Passione e Resurrezione di Cristo: l’Ultima Cena occupa la fascia inferiore all'interno di una loggia con rigorosa prospettiva e specchiature marmoree, mentre la Crocifissione, la Resurrezione e la Deposizione nel sepolcro occupano la zona superiore. Per secoli la clausura monastica ha impedito la visione di queste pitture, che non vennero menzionate nemmeno da Giorgio Vasari nelle Vite. Soltanto dopo la soppressione dell'ordine nell'Ottocento gli affreschi furono riscoperti, portando poi all'inaugurazione del museo il 1° aprile 1891.\n\nLa storia conservativa del complesso ha visto l'Ultima Cena rimanere sul supporto murario originale, mentre nel 1953 le tre scene superiori vennero distaccate per ragioni di tutela. Tale intervento portò alla luce le sinopie preparatorie dell'artista, a loro volta staccate nel 1961 e oggi esposte sulla parete opposta del refettorio insieme ad altre opere pertinenti, tra cui una lunetta con Cristo in pietà, una Crocifissione dal chiostro di Santa Maria degli Angeli e la sinopia della Visione di San Girolamo. Completa la sala un Crocifisso ligneo policromo attribuito a Raffaello da Montelupo. Il percorso sui ponteggi intende quindi mostrare non solo il valore estetico dell'opera, ma anche la complessità del suo processo creativo e conservativo.\n\nDal 30 ottobre 2026 il Cenacolo è visitabile ordinariamente dal lunedì al sabato e la prima e terza domenica del mese dalle 8.30 alle 13.50, con biglietto a 3 euro (ridotto 2 euro per i giovani tra 18 e 25 anni e gratuito sotto i 18 anni). Le visite sui ponteggi, della durata di 30 minuti al costo di 8 euro (ridotto 4 euro per minori e giovani fino a 25 anni), richiedono la prenotazione consigliata per i singoli e obbligatoria per i gruppi fino a 10 persone. Dal 21 novembre 2026 sono previste anche visite guidate dedicate da 45 minuti al costo di 10 euro (6 euro ridotto). L'accesso alle impalcature è consentito esclusivamente a partire dai 7 anni con obbligo di casco e non risulta accessibile alle persone con difficoltà motorie.",
+      "editorial_level": "approfondimento",
+      "editorial_word_count": 586,
+      "image_width": 1200,
+      "image_height": 616,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.finestresullarte.info/mercato/cy-twombly-opera-di-punta-asta-il-ponte",
@@ -1462,7 +1481,9 @@
       "language": "it",
       "image_width": 4402,
       "image_height": 5502,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_attempted_at": "2026-11-12T13:31:38.388326+00:00",
+      "editorial_retry_after": "2026-11-13T01:31:38.388326+00:00"
     },
     {
       "id": "https://www.ad-italia.it/article/ellen-von-unwerth-toiletpaper-calendario-2027-intervista/",
@@ -1478,7 +1499,9 @@
       "language": "it",
       "image_width": 4589,
       "image_height": 3134,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_attempted_at": "2026-11-12T13:32:10.466608+00:00",
+      "editorial_retry_after": "2026-11-13T01:32:10.466608+00:00"
     },
     {
       "id": "https://www.ad-italia.it/article/appartamento-piccolo-madrid-48-m2-ex-casa-antiquata-open-space-rosa-blu/",
@@ -1494,7 +1517,9 @@
       "language": "it",
       "image_width": 2000,
       "image_height": 1500,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_attempted_at": "2026-11-12T13:32:44.241576+00:00",
+      "editorial_retry_after": "2026-11-13T01:32:44.241576+00:00"
     },
     {
       "id": "https://www.ad-italia.it/gallery/fiori-autunnali-10-specie-coloratissime-per-portare-energia-positiva-in-casa-feng-shui/",
@@ -1510,7 +1535,9 @@
       "language": "it",
       "image_width": 7952,
       "image_height": 5304,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_attempted_at": "2026-11-12T13:33:21.243013+00:00",
+      "editorial_retry_after": "2026-11-13T01:33:21.243013+00:00"
     },
     {
       "id": "https://www.ad-italia.it/article/dopamine-decor-design-trend-colori-casa-allegra/",
@@ -1526,7 +1553,9 @@
       "language": "it",
       "image_width": 6708,
       "image_height": 4472,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_attempted_at": "2026-11-12T13:33:50.549559+00:00",
+      "editorial_retry_after": "2026-11-13T01:33:50.549559+00:00"
     },
     {
       "id": "https://www.ad-italia.it/article/casa-notting-hill-film-porta-blu-vendita-interni/",
@@ -1647,9 +1676,9 @@
       "image_width": 2500,
       "image_height": 1667,
       "image_format": "webp",
-      "editorial_summary": "La rivista AD Italia ha tracciato un bilancio dell'evoluzione delle piscine private nel corso di quarantacinque anni, documentando il passaggio estetico e strutturale dai modelli diffusi negli anni Ottanta fino alle soluzioni contemporanee. Secondo quanto emerge dall'analisi storica pubblicata dalla testata, nei decenni passati la piscina privata rappresentava un elemento di forte ostentazione riservato a pochi, una piscina di grandi dimensioni poteva persino far rientrare l'abitazione nella categoria dei beni di lusso ai fini fiscali.\n\nNel dettaglio, le vasche degli anni Ottanta erano caratterizzate da forme geometriche rigide come rettangoli azzurro shocking in cemento armato e piastrelline, oppure da configurazioni eccentriche a forma di fagiolo con dimensioni limitate che rendevano difficile il nuoto. Erano dotate di trampolini con la molla e bordi ruvidi in graniglia grezza antiscivolo, mentre la scelta cromatica puntava a un azzurro intenso e visibile anche a grande distanza dagli aerei, in netto contrasto con il verde dei giardini.\n\nA partire dagli anni Novanta, l'approccio progettuale documentato da AD Italia si è spostato dall'ostentazione alla ricerca della mimesi con la natura, rispondendo all'esigenza di integrare gli spazi d'acqua nei contesti verdi imitando paesaggi esotici o naturali. Le forme geometriche nette hanno ceduto il passo a linee sinuose, curve e anfratti simili a laghetti, mentre le piastrelle azzurre sono state sostituite da rivestimenti color sabbia o verde capaci di restituire riflessi più caldi e naturali.\n\nQuesta fase di transizione ha visto l'introduzione di elementi decorativi come rocce artificiali, cascate e trampolini in vetroresina, presto superati grazie all'evoluzione delle tecnologie costruttive. L'impiego di pannelli prefabbricati in acciaio zincato e di rivestimenti in PVC al posto del cemento armato e delle piastrelle ha ridefinito il mercato, aprendo la strada alla diffusione delle piscine a sfioro.\n\nNel panorama contemporaneo, le piscine si sono trasformate in un prolungamento degli spazi interni ed esterni della casa, caratterizzate da bordi in legno o pietra naturale come marmo, travertino e pietra di Luserna. Le soluzioni attuali includono le infinity pool, che creano continuità visiva con il paesaggio circostante, e l'introduzione di 'spiagge' d'ingresso con acqua bassa al posto delle tradizionali scalette in acciaio, consolidando un dialogo continuo tra architettura residenziale e natura.",
+      "editorial_summary": "La rivista AD Italia ha tracciato un bilancio dell'evoluzione delle piscine private nel corso di quarantacinque anni, documentando il passaggio estetico e strutturale dai modelli diffusi negli anni Ottanta fino alle soluzioni contemporanee. Secondo quanto emerge dall'analisi storica pubblicata dalla testata, nei decenni passati la piscina privata rappresentava un elemento di forte ostentazione riservato a pochi, la cui presenza poteva persino determinare la classificazione dell'immobile come bene di lusso ai fini fiscali.\n\nNel dettaglio, le vasche degli anni Ottanta erano caratterizzate da forme geometriche rigide come rettangoli azzurro shocking in cemento armato e piastrelline, oppure da configurazioni eccentriche a forma di fagiolo con dimensioni limitate che rendevano difficile il nuoto. Erano dotate di trampolini con la molla e bordi ruvidi in graniglia grezza antiscivolo, mentre la scelta cromatica puntava a un azzurro intenso e visibile anche a grande distanza dagli aerei, in netto contrasto con il verde dei giardini.\n\nA partire dagli anni Novanta, l'approccio progettuale documentato da AD Italia si è spostato dall'ostentazione alla ricerca della mimesi con la natura, rispondendo all'esigenza di integrare gli spazi d'acqua nei contesti verdi imitando paesaggi esotici o naturali. Le forme geometriche nette hanno ceduto il passo a linee sinuose, curve e anfratti simili a laghetti, mentre le piastrelle azzurre sono state sostituite da rivestimenti color sabbia o verde capaci di restituire riflessi più caldi e naturali.\n\nQuesta fase di transizione ha visto l'introduzione di elementi decorativi come rocce artificiali, cascate e trampolini in vetroresina, presto superati grazie all'evoluzione delle tecnologie costruttive. L'impiego di pannelli prefabbricati in acciaio zincato e di rivestimenti in PVC al posto del cemento armato e delle piastrelle ha ridefinito il mercato, aprendo la strada alla diffusione delle piscine a sfioro.\n\nNel panorama contemporaneo, le piscine si sono trasformate in un prolungamento degli spazi interni ed esterni della casa, caratterizzate da bordi in legno o pietra naturale come marmo, travertino e pietra di Luserna. Le soluzioni attuali includono le infinity pool, che creano continuità visiva con il paesaggio circostante, e l'introduzione di 'spiagge' d'ingresso con acqua bassa al posto delle tradizionali scalette in acciaio, consolidando un dialogo continuo tra architettura residenziale e natura.",
       "editorial_level": "standard",
-      "editorial_word_count": 356
+      "editorial_word_count": 354
     },
     {
       "id": "https://www.ad-italia.it/article/modernariato-5-pezzi-vintage-facili-arredare-casa-consigli/",
