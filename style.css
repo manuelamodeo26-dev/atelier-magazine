@@ -410,3 +410,10 @@ section[id] { scroll-margin-top: 100px; }
 /* Controlli di selezione e like con la stessa identità rossa */
 .filter-chip,.community-filter,.like-article{background:var(--red-surface);border:1px solid var(--red-surface);color:#fff}
 .filter-chip:hover,.filter-chip.active,.community-filter:hover,.community-filter.is-active,.like-article:hover,.like-article.is-liked{background:#8f1b1b;border-color:#8f1b1b;color:#fff}
+
+/* Ricerca: icona lente disegnata via CSS, visibile anche senza SVG */
+#search-open{position:relative!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;flex:0 0 42px!important;width:42px!important;height:42px!important;min-width:42px!important;padding:0!important;font-size:0!important;line-height:0!important;overflow:visible!important}
+#search-open .search-icon{display:none!important}
+#search-open::before{content:"";display:block;width:12px;height:12px;border:2px solid #fff;border-radius:50%;position:absolute;left:12px;top:11px}
+#search-open::after{content:"";display:block;position:absolute;width:8px;height:2px;background:#fff;border-radius:2px;left:25px;top:26px;transform:rotate(45deg);transform-origin:left center}
+@media(max-width:760px){#search-open{flex-basis:36px!important;width:36px!important;height:36px!important;min-width:36px!important}#search-open::before{left:9px;top:9px}#search-open::after{left:22px;top:24px}}
