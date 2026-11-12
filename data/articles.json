@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T15:00:00.000Z",
+  "updated_at": "2026-11-12T15:40:49.274225+00:00",
   "feeds_ok": 6,
   "feeds_total": 7,
   "language": "it",
@@ -1520,7 +1520,9 @@
       "url": "https://www.pambianconews.com/2026/11/10/menswear-italiano-a-doppia-velocita-nei-7-mesi-export-a-09-import-a-65-500143/",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "editorial_attempted_at": "2026-11-12T15:40:49.272745+00:00",
+      "editorial_retry_after": "2026-11-13T03:40:49.272745+00:00"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/kiton-raddoppia-nel-quadrilatero-nuova-boutique-in-via-montenapoleone-500111/",
@@ -1536,7 +1538,9 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "editorial_attempted_at": "2026-11-12T15:40:48.399929+00:00",
+      "editorial_retry_after": "2026-11-13T03:40:48.399929+00:00"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/subdued-da-apac-e-usa-previsti-45-milioni-di-fatturato-nel-2026-500171/",
@@ -1549,7 +1553,9 @@
       "url": "https://www.pambianconews.com/2026/11/10/subdued-da-apac-e-usa-previsti-45-milioni-di-fatturato-nel-2026-500171/",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "editorial_attempted_at": "2026-11-12T15:40:47.749401+00:00",
+      "editorial_retry_after": "2026-11-13T03:40:47.749401+00:00"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/verga-1947-un-anno-da-protagonista-tra-alta-orologeria-e-nuovi-traguardi-498797/",
@@ -1565,7 +1571,9 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "editorial_attempted_at": "2026-11-12T15:40:46.930049+00:00",
+      "editorial_retry_after": "2026-11-13T03:40:46.930049+00:00"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/wivian-factory-padova-ampliare-mappa-strategica-498031/",
@@ -1581,7 +1589,9 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "editorial_attempted_at": "2026-11-12T15:40:46.070685+00:00",
+      "editorial_retry_after": "2026-11-13T03:40:46.070685+00:00"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/partnership-mango-coin-dopo-catania-aperto-uno-store-a-roma-500121/",
@@ -1597,7 +1607,10 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "editorial_summary": "Mango ha inaugurato a Roma, all’interno del Coin di piazzale Appio, un nuovo store di 1.000 metri quadrati che ospita le collezioni uomo e donna e segue il concept retail ‘New Med’. La nuova apertura fa parte dell’accordo firmato il 3 giugno, che prevede la realizzazione di 22 negozi tra 400 e 1.000 metri quadrati in diverse location della catena Coin entro la fine del 2027, tutti concepiti come veri e propri punti vendita Mango.\n\nCon l’apertura romana, il marchio spagnolo supera i dieci punti vendita nel Lazio. Per Coin, l’alleanza con Mango rappresenta un elemento chiave del rilancio, accompagnata da un aumento di capitale di 30 milioni di euro. Entrambe le operazioni rientrano nel piano industriale volto a trasformare il modello di business e a trasformare la catena in una piattaforma per brand internazionali.\n\nEntro fine anno Mango aprirà altri dieci store Coin, tra cui Firenze, Bari e Milano, e, sommati alle 20 aperture già in programma in Italia, porterà il bilancio del 2026 a quasi 30 nuovi negozi. Nel 2027 la partnership si estenderà al nord con Genova, Como e Trieste, rafforzando la presenza in Sicilia e Sardegna.\n\nLo sviluppo della rete rientra nel piano strategico 4Es 2024‑2026, che punta sull’espansione e sulla crescita delle vendite nei negozi esistenti e online. Nel 2025 Mango ha registrato un fatturato di 3,8 miliardi di euro, in crescita del 13 % (16 % a cambi costanti), mentre il primo semestre 2026 ha mostrato ricavi di 1,852 miliardi di euro, in aumento del 7,2 % (10,7 % a cambi costanti).\n\nNel 2024 il giro d’affari italiano è salito del 30 %, con oltre 20 nuove aperture e circa 6.700 metri quadrati di superficie in più. Presente in Italia dal 2001, il gruppo festeggia quest’anno i 25 anni sul mercato, con 120 punti vendita e oltre 40.000 metri quadrati di superficie, oltre all’e-commerce mango.com e altri marketplace.",
+      "editorial_level": "standard",
+      "editorial_word_count": 319
     },
     {
       "id": "https://www.ad-italia.it/article/marva-griffin-casa-milano-talenti-design/",
@@ -1884,8 +1897,9 @@
       "image_width": 1080,
       "image_height": 1620,
       "image_format": "webp",
-      "editorial_attempted_at": "2026-11-12T15:00:00.000Z",
-      "editorial_retry_after": "2026-11-13T03:00:00.000Z"
+      "editorial_summary": "A Lurano, i fondatori dello Studio Modoo, gli interior designer Davide Defendi e Roberta Rovaris, hanno realizzato la propria abitazione familiare di 130 metri quadrati proponendo un'interpretazione personale dell'architettura brutalista. L'edificio si presenta all'esterno come un volume parallelepipedo sollevato da terra e sostenuto da soli sei plinti, offrendo un'illusione di sospensione nel paesaggio circostante. La struttura adotta elementi prefabbricati industriali in cemento, un'opzione poco diffusa nell'ambito residenziale che lascia la materia prima a vista. L'imponenza del cemento viene mitigata dall'apertura verso il giardino mediante grandi vetrate orientate a sud e a ovest, oltre a tagli orizzontali nella zona notte e lucernari sul tetto.\n\nL'ispirazione per l'opera deriva direttamente dallo studio del brutalismo brasiliano e dalla scuola paulista, con riferimenti a figure come Paulo Mendes da Rocha e Vilanova Artigas. Un viaggio d'istruzione a San Paolo ha consentito ai progettisti di analizzare sul campo edifici storici come la Facoltà di Architettura, Casa Butantã e Casa Gerassi. Dall'osservazione diretta di quest'ultima sono stati tratti spunti concreti inseriti nell'abitazione italiana, tra cui l'uso di cementine decorate e dettagli in ferro. Sul piano tecnico, l'impossibilità di forare i pannelli prefabbricati in cemento per gli impianti ha spinto i designer a lasciare a vista le tubazioni nere sulla parete verde, convertendo un vincolo costruttivo in elemento grafico integrato.\n\nGli spazi interni bilanciano il rigore della struttura con una ricca gamma cromatica composta da verde, giallo, azzurro, blu, terracotta e rosa antico. La palette, organizzata secondo la regola di proporzione 60-30-10 per mantenere una saturazione uniforme, trae origine dalla miscela di graniglie di marmo dei pavimenti ed è stata aggiornata nel tempo. L'arredamento su misura riflette diverse influenze e ricordi di viaggio: la camera delle bambine impiega cerchi, quadrati e triangoli richiamando le teorie di Bruno Munari, mentre nel bagno di servizio è stata installata una turca colorata progettata ad hoc sulla scorta di quanto osservato in India. Il progetto testimonia una sintesi tra monumentalità architettonica, funzionalità ed esigenze della vita quotidiana.",
+      "editorial_level": "standard",
+      "editorial_word_count": 326
     },
     {
       "id": "https://www.sneakersmagazine.it/2026/11/06/saucony-presenta-la-nuova-endorphin-speed-6/",
