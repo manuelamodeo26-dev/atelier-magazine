@@ -53,7 +53,7 @@ class FeedStatusTests(unittest.TestCase):
             <description>Una nuova storia di moda e streetwear raccontata da Outpump.</description>
             <pubDate>Wed, 11 Nov 2026 10:00:00 GMT</pubDate>
         </item></channel></rss>"""
-        blocked = lambda url: HTTPError(url, 403, "Forbidden", {}, None)
+        blocked = lambda url, user_agent=None: HTTPError(url, 403, "Forbidden", {}, None)
         with patch.object(fetch_news, "fetch", side_effect=[
             blocked("https://outpump.com/feed/"),
             blocked("https://outpump.com/feed/"),
