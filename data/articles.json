@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T13:05:31.694961+00:00",
+  "updated_at": "2026-11-12T13:11:37.254907+00:00",
   "feeds_ok": 5,
   "feeds_total": 5,
   "language": "it",
@@ -1558,7 +1558,9 @@
       "language": "it",
       "image_width": 4500,
       "image_height": 5625,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_attempted_at": "2026-11-12T13:11:37.253099+00:00",
+      "editorial_retry_after": "2026-11-13T01:11:37.253099+00:00"
     },
     {
       "id": "https://www.ad-italia.it/article/lac-lugano-museo-teatro-architetto-ivano-gianola-intervista/",
@@ -1574,7 +1576,9 @@
       "language": "it",
       "image_width": 6720,
       "image_height": 4480,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_attempted_at": "2026-11-12T13:10:52.869807+00:00",
+      "editorial_retry_after": "2026-11-13T01:10:52.869807+00:00"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/09/supereroi-senza-super-poteri-la-crisi-degli-autori-nella-moda-dei-conglomerati-500011/",
@@ -1590,7 +1594,10 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "editorial_summary": "Un'analisi pubblicata su Pambianco Magazine evidenzia una profonda crisi nel ruolo dei direttori creativi all'interno delle maison di moda controllate dai grandi conglomerati finanziari. Negli ultimi due anni si è assistito a una rotazione vertiginosa di designer tra le principali case di moda e a un record di 12 debutti registrato durante le sfilate donna per la stagione primavera/estate 2026 tra Milano e Parigi. Se da un lato ai creativi vengono affidate ampie responsabilità e viene chiesto di applicare la propria cifra stilistica ai brand, dall'altro l'effettivo potere decisionale risulta ridotto a causa dei tempi di risultato sempre più compressi e delle logiche del management.\n\nIl critico di moda Angelo Flaccavento (The Business of Fashion e Il Sole 24 Ore) rileva come l'autorialità dei designer tenda oggi a imporre una formula stilistica personale anziché adattarsi all'identità della maison che li ospita. Tra gli esempi citati figurano l'uso del nero rigoroso e austero di Maria Grazia Chiuri da Fendi, le sperimentazioni artistiche di Jonathan Anderson trasferite da Loewe a Dior e la prima collezione couture di Pierpaolo Piccioli per Balenciaga (dove è stato recente sostituito da Martine Rose), vista come una continuità rispetto al suo lavoro per Valentino. Tale dinamica rischia di uniformare le estetiche sul mercato, mentre cambia soltanto l'etichetta dei marchi.\n\nSecondo le analisi raccolte, la radice del problema risiede anche nel sistema formativo dei designer, spesso orientato a produrre un impatto stilistico immediato piuttosto che una crescita graduale nel tempo. Al contempo, la dimensione finanziaria ha spostato il baricentro decisionale dai creativi ai manager. Jacopo Bedussi, editor-at-large per Vernissage – Il Giornale dell'Arte, sottolinea come i designer rappresentino il volto visibile di un brand sostenuto da una struttura manageriale; tuttavia, quando i risultati economici non soddisfano le aspettative, sono proprio i direttori creativi a pagare le conseguenze dei repentini cambi di rotta.\n\nIl settore registra inoltre decisioni di avvicendamento anche a fronte di vendite stabili o di progetti strutturati. Tra i casi citati figurano l'uscita di Anthony Vaccarello da Saint Laurent, quella di Seán McGirr da Alexander McQueen e l'addio di Veronica Leoni da Calvin Klein Collection dopo sole quattro collezioni. La costante pressione per ottenere ritorni commerciali immediati contrasta con la necessità di tempo indispensabile per sviluppare un linguaggio stilistico solido, creando un paradosso tra la ricerca dell'autore e la gestione guidata dai CEO e dalle esigenze di Borsa.\n\nIn conclusione, l'accelerazione dei cambi al vertice creativo rischia di produrre effetti negativi anche sulle collezioni correnti. Come osservato dai critici, l'annuncio immediato dell'uscita di un direttore creativo svaluta i prodotti appena presentati prima dell'arrivo del successore. Nonostante la leadership dei gruppi del lusso dichiari l'importanza della pazienza e dei tempi lunghi, le dinamiche operative negli uffici stile mostrano una continua instabilità che travolge tanto i designer quanto la coerenza estetica delle maison.",
+      "editorial_level": "approfondimento",
+      "editorial_word_count": 465
     },
     {
       "id": "https://www.pambianconews.com/2026/11/09/milano-le-dedichera-un-luogo-il-ricordo-di-franca-sozzani-a-dieci-anni-dalla-scomparsa-499982/",
@@ -1603,7 +1610,9 @@
       "url": "https://www.pambianconews.com/2026/11/09/milano-le-dedichera-un-luogo-il-ricordo-di-franca-sozzani-a-dieci-anni-dalla-scomparsa-499982/",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "editorial_attempted_at": "2026-11-12T13:09:57.066959+00:00",
+      "editorial_retry_after": "2026-11-13T01:09:57.066959+00:00"
     },
     {
       "id": "https://www.ad-italia.it/article/casa-piccola-varsavia-25-m2-cubo-rivestito-in-ottone-distribuisce-gli-spazi/",
@@ -1637,7 +1646,9 @@
       "language": "it",
       "image_width": 2500,
       "image_height": 1667,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_attempted_at": "2026-11-12T13:08:58.330568+00:00",
+      "editorial_retry_after": "2026-11-13T01:08:58.330568+00:00"
     },
     {
       "id": "https://www.ad-italia.it/article/modernariato-5-pezzi-vintage-facili-arredare-casa-consigli/",
@@ -1653,7 +1664,9 @@
       "language": "it",
       "image_width": 6192,
       "image_height": 8256,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_attempted_at": "2026-11-12T13:09:18.308062+00:00",
+      "editorial_retry_after": "2026-11-13T01:09:18.308062+00:00"
     },
     {
       "id": "https://www.ad-italia.it/article/casa-stile-brutalista-colorata-milano/",
