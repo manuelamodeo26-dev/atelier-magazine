@@ -14,7 +14,7 @@ class FeedStatusTests(unittest.TestCase):
 
     def test_unavailable_feed_is_reported_as_failed(self):
         with patch.object(fetch_news, "fetch", side_effect=ValueError("invalid feed")), patch.object(fetch_news.time, "sleep"):
-            items, ok = fetch_news.parse_feed("https://example.com/feed", "Fashion")
+            items, ok, error = fetch_news.parse_feed("https://example.com/feed", "Fashion")
         self.assertEqual(items, [])
         self.assertFalse(ok)
         self.assertIn("ValueError", error)
@@ -32,7 +32,7 @@ class FeedStatusTests(unittest.TestCase):
             "</item></channel></rss>"
         ).encode("utf-8")
         with patch.object(fetch_news, "fetch", return_value=xml):
-            items, ok = fetch_news.parse_feed("https://example.com/feed", "Fashion")
+            items, ok, error = fetch_news.parse_feed("https://example.com/feed", "Fashion")
         self.assertTrue(ok)
         self.assertEqual(error, "")
         self.assertEqual(len(items), 1)
