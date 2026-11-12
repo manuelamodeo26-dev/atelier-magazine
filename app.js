@@ -4,11 +4,6 @@
   const grid=$('#story-grid'), empty=$('#empty-state'), count=$('#story-count');
   const filters=$('#filters'), menuToggle=$('#menu-toggle'), nav=$('#main-nav');
   const searchDialog=$('#search-dialog'), searchInput=$('#search-input'), searchResults=$('#search-results');
-  const fallback=[
-    {title:'La moda come spazio di ricerca, non soltanto di tendenza.',category:'Fashion',excerpt:'Un punto di partenza per leggere il presente attraverso forme, materiali e nuove idee.',source:'ATELIER',date:'2026-11-11',url:'#'},
-    {title:'Quando il design incontra la vita quotidiana.',category:'Design',excerpt:'Oggetti, ambienti e dettagli che raccontano il nostro tempo.',source:'ATELIER',date:'2026-11-11',url:'#'},
-    {title:'Le nuove energie creative da tenere d’occhio.',category:'Art & Culture',excerpt:'Una selezione di linguaggi e visioni che attraversano la cultura contemporanea.',source:'ATELIER',date:'2026-11-11',url:'#'}
-  ];
   let articles=[], activeFilter='Tutti', showAll=false, loadFailed=false;
   const escapeHTML=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   function safeURL(value){
