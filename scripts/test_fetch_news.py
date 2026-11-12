@@ -19,6 +19,18 @@ class FeedStatusTests(unittest.TestCase):
         self.assertFalse(ok)
         self.assertIn("ValueError", error)
 
+    def test_summary_backfill_is_balanced_with_new_stories(self):
+        selected = fetch_news.select_summary_candidates(
+            ["new-1", "new-2", "new-3"],
+            ["old-1", "old-2", "old-3"],
+            2,
+        )
+        self.assertEqual(selected, ["new-1", "old-1"])
+
+    def test_summary_backfill_uses_available_pool_when_one_side_is_empty(self):
+        selected = fetch_news.select_summary_candidates([], ["old-1", "old-2"], 2)
+        self.assertEqual(selected, ["old-1", "old-2"])
+
     def test_outpump_uses_browser_user_agent(self):
         with patch.object(fetch_news, "fetch", return_value=b"<rss><channel></channel></rss>") as mocked:
             items, ok, error = fetch_news.parse_feed("https://outpump.com/feed/", "Streetwear")
