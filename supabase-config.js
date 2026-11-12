@@ -6,25 +6,36 @@ window.ATELIER_SUPABASE = {
 };
 
 
-// Preferenza "Resta collegato": sessionStorage mantiene l'accesso solo nella sessione
-// corrente; localStorage lo conserva anche dopo la chiusura del browser.
+// Preferenza globale del dispositivo: sessionStorage = uscita alla chiusura;
+// localStorage = resta collegato. La scelta viene gestita dalle impostazioni account.
 (() => {
-  let remember = false;
   const authKey = 'sb-bhbdrihvutdukrskrolj-auth-token';
-  const storage = {
+  const preferenceKey = 'atelier-remember-session';
+  let remember = false;
+  try { remember = localStorage.getItem(preferenceKey) === 'true'; } catch (_) {}
+
+  function migrateSession() {
+    try {
+      const source = remember ? sessionStorage : localStorage;
+      const target = remember ? localStorage : sessionStorage;
+      const token = source.getItem(authKey) || target.getItem(authKey);
+      if (token) target.setItem(authKey, token);
+      source.removeItem(authKey);
+    } catch (error) {
+      console.warn('ATELIER: impossibile aggiornare la persistenza della sessione.', error);
+    }
+  }
+  migrateSession();
+
+  window.ATELIER_AUTH_STORAGE = {
     getItem(key) {
-      try { return localStorage.getItem(key) ?? sessionStorage.getItem(key); }
+      try { return (remember ? localStorage : sessionStorage).getItem(key); }
       catch (_) { return null; }
     },
     setItem(key, value) {
       try {
-        if (remember) {
-          localStorage.setItem(key, value);
-          sessionStorage.removeItem(key);
-        } else {
-          sessionStorage.setItem(key, value);
-          localStorage.removeItem(key);
-        }
+        (remember ? localStorage : sessionStorage).setItem(key, value);
+        (remember ? sessionStorage : localStorage).removeItem(key);
       } catch (error) {
         console.warn('ATELIER: impossibile salvare la sessione nel browser.', error);
       }
@@ -34,17 +45,11 @@ window.ATELIER_SUPABASE = {
       try { sessionStorage.removeItem(key); } catch (_) {}
     }
   };
-  window.ATELIER_AUTH_STORAGE = storage;
+
+  window.ATELIER_GET_REMEMBER = () => remember;
   window.ATELIER_SET_REMEMBER = value => {
     remember = Boolean(value);
-    try {
-      const current = remember
-        ? sessionStorage.getItem(authKey)
-        : localStorage.getItem(authKey);
-      if (current) {
-        (remember ? localStorage : sessionStorage).setItem(authKey, current);
-        (remember ? sessionStorage : localStorage).removeItem(authKey);
-      }
-    } catch (_) {}
+    try { localStorage.setItem(preferenceKey, String(remember)); } catch (_) {}
+    migrateSession();
   };
 })();
