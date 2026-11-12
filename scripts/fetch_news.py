@@ -722,16 +722,23 @@ def main():
 
     new_urls = {canonical_url(item.get("url")) for item in fresh}
 
-    # Recover missing editorial images from each publisher's Open Graph metadata.
-    # Backfill a small batch per run, then verify the actual image bytes and dimensions.
-    image_backfill_urls = set()
+    # Recheck every unverified archive image in bounded batches, including records
+    # that already have an image URL and a complete excerpt. This prevents older
+    # records from being skipped forever by metadata-only backfill filters.
     image_now = datetime.now(timezone.utc)
-    metadata_backfill_candidates = [
+    image_backfill_candidates = [
         item for item in articles
-        if (not item.get("image_verified") and image_backfill_due(item, image_now)
-            and (not item.get("image") or len(item.get("excerpt", "")) < 250))
+        if not item.get("image_verified") and image_backfill_due(item, image_now)
     ][:MAX_IMAGE_BACKFILLS_PER_RUN]
-    for item in metadata_backfill_candidates:
+    image_backfill_urls = {
+        canonical_url(item.get("url")) for item in image_backfill_candidates
+        if canonical_url(item.get("url"))
+    }
+    metadata_backfill_candidates = [
+        item for item in image_backfill_candidates
+        if not item.get("image") or len(item.get("excerpt", "")) < 250
+    ]
+    for item in image_backfill_candidates:
         item["image_attempted_at"] = image_now.isoformat()
         item["image_retry_after"] = (image_now + timedelta(hours=IMAGE_BACKFILL_RETRY_HOURS)).isoformat()
     if metadata_backfill_candidates:
@@ -743,7 +750,6 @@ def main():
         for article, metadata in zip(metadata_backfill_candidates, metadata_rows):
             if not article.get("image_verified") and metadata.get("image"):
                 article["image"] = metadata["image"]
-                image_backfill_urls.add(canonical_url(article.get("url")))
             if len(metadata.get("description", "")) > len(article.get("excerpt", "")):
                 article["excerpt"] = metadata["description"][:2200]
             if not article.get("author") and metadata.get("author"):
