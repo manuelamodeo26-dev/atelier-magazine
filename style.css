@@ -510,3 +510,43 @@ section[id] { scroll-margin-top: 100px; }
 .detail-back{appearance:none!important;-webkit-appearance:none!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;width:42px!important;height:42px!important;padding:0!important;margin:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;color:#B51F1F!important;-webkit-text-fill-color:#B51F1F!important;font-size:34px!important;font-weight:400!important;line-height:1!important;cursor:pointer!important}
 .detail-back:hover,.detail-back:focus-visible{background:transparent!important;border:0!important;box-shadow:none!important;color:#8f1b1b!important;-webkit-text-fill-color:#8f1b1b!important;transform:translateX(-2px)}
 .detail-back:focus-visible{outline:2px solid #B51F1F!important;outline-offset:3px!important}
+
+
+/* Scheda articolo: Mi piace e Salva sono solo cuore e testo rossi, senza contenitori */
+.article-page-content .like-article,
+.article-page-content .save-article,
+.article-dialog .like-article,
+.article-dialog .save-article{
+  appearance:none!important;-webkit-appearance:none!important;
+  display:inline-flex!important;align-items:center!important;gap:6px!important;
+  width:auto!important;min-width:0!important;height:auto!important;
+  margin:0 18px 22px 0!important;padding:4px 0!important;
+  background:transparent!important;background-color:transparent!important;
+  border:0!important;border-radius:0!important;box-shadow:none!important;
+  color:#B51F1F!important;-webkit-text-fill-color:#B51F1F!important;
+  font:600 11px var(--mono)!important;letter-spacing:.06em!important;
+  text-decoration:none!important;cursor:pointer!important;
+}
+.article-page-content .like-article:hover,
+.article-page-content .like-article.is-liked,
+.article-page-content .save-article:hover,
+.article-page-content .save-article.is-saved,
+.article-dialog .like-article:hover,
+.article-dialog .like-article.is-liked,
+.article-dialog .save-article:hover,
+.article-dialog .save-article.is-saved{
+  background:transparent!important;background-color:transparent!important;
+  border:0!important;box-shadow:none!important;
+  color:#B51F1F!important;-webkit-text-fill-color:#B51F1F!important;
+  text-decoration:none!important;
+}
+.article-page-content .like-article:focus-visible,
+.article-page-content .save-article:focus-visible,
+.article-dialog .like-article:focus-visible,
+.article-dialog .save-article:focus-visible{
+  outline:2px solid #B51F1F!important;outline-offset:4px!important;
+}
+.article-page-content .like-article [data-like-count],
+.article-dialog .like-article [data-like-count]{
+  color:#B51F1F!important;-webkit-text-fill-color:#B51F1F!important;
+}
