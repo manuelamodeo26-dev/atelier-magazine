@@ -47,7 +47,7 @@ class ArticleTextParser(HTMLParser):
         if self.ignored:
             return
         if self.current_tag == tag:
-            value = re.sub(r"\\s+", " ", " ".join(self.buffer)).strip()
+            value = re.sub(r"\s+", " ", " ".join(self.buffer)).strip()
             if len(value) >= 45 and value not in self.parts:
                 self.parts.append(value)
             self.current_tag = None
