@@ -55,6 +55,17 @@ def is_relevant(article):
     return not EXCLUDED_CONTENT.search(text)
 
 
+def source_category(article):
+    source = str(article.get("source") or "").lower().removeprefix("www.")
+    if source in ("vogue.it", "pambianconews.com"):
+        return "Fashion"
+    if source == "ad-italia.it":
+        return "Design"
+    if source in ("exibart.com", "finestresullarte.info"):
+        return "Art & Culture"
+    return article.get("category") or "Fashion"
+
+
 def infer_category(title, excerpt, current="Fashion"):
     title_text = str(title or "").lower()
     excerpt_text = str(excerpt or "").lower()
@@ -62,10 +73,12 @@ def infer_category(title, excerpt, current="Fashion"):
         ("Streetwear", r"streetwear|street style|street-style|sneaker|skateboard|hip.?hop"),
         ("Business", r"fatturato|ricavi|utile netto|bilancio|acquisizion|quotazione|"
                      r"margini|vendite|retail|ceo|amministratore delegato|investiment[oi]|"
-                     r"mln|milion|\bq[1-4]\b|risultati finanziari|trimestre|"
-                     r"mercato azionario|export|import|asta|boutique|negozi"),
+                     r"mln|milion|miliard|\bq[1-4]\b|risultati finanziari|trimestre|"
+                     r"mercato azionario|export|import|asta|boutique|negozi|"
+                     r"asset light|pricing|distribuzion|partnership|collaborazion|"
+                     r"accordo|multibrand|diritti tv|rallentamento|piano da"),
         ("Architecture", r"architettur|edificio|edifici|appartamento|villa|palazzo|"
-                         r"interior design|interior|interni|urbanistica"),
+                         r"hôtel particulier|interior design|interior|interni|urbanistica"),
         ("Technology", r"intelligenza artificiale|\bia\b|tecnolog|digitale|"
                        r"realtà virtuale|realtà aumentata|videogiochi|gaming"),
         ("Design", r"\bdesign\b|arredamento|arredo|prodotto|oggetto|"
@@ -73,7 +86,7 @@ def infer_category(title, excerpt, current="Fashion"):
         ("Art & Culture", r"arte|artist[ai]|mostra|museo|galleria|fotografia|fotografo|"
                           r"cinema|film|musica|music|libr[oi]|romanzo|letteratura|teatro|"
                           r"cultura|festival|curator|fumett|biennale|documentario|"
-                          r"serie tv|netflix"),
+                          r"serie tv|netflix|ricordo|memoria|omaggio|tributo"),
     ]
     for category, pattern in rules:
         if re.search(pattern, title_text, re.IGNORECASE):
@@ -86,14 +99,19 @@ def infer_category(title, excerpt, current="Fashion"):
         r"scarpe|sneaker|streetwear|make.?up|skincare|profum|gioiell|anell|"
         r"orolog|bors[ae]|accessori|tendenz|trend|beauty|designer|brand|maison|"
         r"tailoring|menswear|womenswear|maglieria|tessut|fashion week|"
-        r"abbinar|indoss|vestire|camicia|pantalon|gonna|giacca|décolleté"
+        r"abbinar|indoss|vestire|camicia|pantalon|gonna|giacca|décolleté|"
+        r"direzione creativa|direttore creativo|direttrice creativa"
     )
     if current == "Fashion" and re.search(fashion_headline, title_text, re.IGNORECASE):
         return "Fashion"
 
-    for category, pattern in rules:
-        if re.search(pattern, excerpt_text, re.IGNORECASE):
-            return category
+    # Only the broad Fashion feeds need excerpt-based refinement. Dedicated
+    # art and design feeds keep their editorial section unless the headline
+    # itself clearly identifies a more specific topic.
+    if current == "Fashion":
+        for category, pattern in rules:
+            if re.search(pattern, excerpt_text, re.IGNORECASE):
+                return category
     return current or "Fashion"
 
 
@@ -379,7 +397,7 @@ def load_previous():
                 continue
             if not is_relevant(item):
                 continue
-            item["category"] = infer_category(item.get("title"), item.get("excerpt"), item.get("category"))
+            item["category"] = infer_category(item.get("title"), item.get("excerpt"), source_category(item))
             url = canonical_url(item.get("url"))
             if not url:
                 continue
