@@ -58,19 +58,14 @@ La raccolta RSS non equivale a una verifica giornalistica: controllare sempre no
 
 L'interfaccia account usa Supabase Auth e il database Supabase. Il sito statico non conserva password e non contiene chiavi segrete.
 
-### Attivazione richiesta
+Il progetto è collegato al database Supabase tramite una publishable key, destinata al browser. La protezione dei dati personali è applicata tramite Row Level Security (RLS): ogni utente può leggere e modificare esclusivamente i propri record.
 
-1. Crea un progetto gratuito su https://supabase.com/ .
-2. In **SQL Editor** del progetto, apri il file `supabase-setup.sql` presente nel repository, copia tutto il contenuto ed eseguilo una sola volta.
-3. In **Project Settings → API** (o **Connect**), copia Project URL e la chiave pubblica **anon/publishable**. Non usare mai la chiave `service_role` o una secret key nel browser.
-4. Apri `supabase-config.js` nel repository e sostituisci i due valori segnaposto:
-   - `url`: Project URL Supabase;
-   - `anonKey`: chiave pubblica anon/publishable.
-5. In **Authentication → URL Configuration**, imposta come Site URL:
-   `https://manuelamodeo26-dev.github.io/atelier-magazine/`
-   e aggiungi lo stesso indirizzo tra i Redirect URLs.
-6. In **Authentication → Providers → Email**, abilita Email. Per maggiore sicurezza lascia attiva la conferma dell'indirizzo email.
+### Impostazioni di autenticazione
 
-Il file SQL crea profili, preferenze e preferiti e attiva Row Level Security: ogni utente può leggere e modificare esclusivamente i propri record. Le chiavi pubbliche sono utilizzabili dal browser; la sicurezza dei dati è affidata alle policy RLS. Non pubblicare mai credenziali private.
+In **Authentication → URL Configuration**, imposta come Site URL:
+`https://manuelamodeo26-dev.github.io/atelier-magazine/`
+e aggiungi lo stesso indirizzo tra i Redirect URLs.
 
-Finché URL e chiave pubblica non vengono configurati, il pulsante account mostra l'avviso di configurazione e registrazione/accesso non sono attivi. Il feed generale e la lettura degli articoli restano disponibili senza account.
+In **Authentication → Providers → Email**, abilita Email. Per maggiore sicurezza lascia attiva la conferma dell'indirizzo email.
+
+Gli account permettono registrazione e accesso con email e password, feed personale per argomenti e preferiti sincronizzati sul database. Il primo accesso crea automaticamente profilo e preferenze predefinite.
