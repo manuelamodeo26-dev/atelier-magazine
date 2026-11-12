@@ -184,3 +184,56 @@ body{background:var(--paper)}
  .manifesto{padding-top:52px;padding-bottom:52px}
  .detail-figure img{aspect-ratio:4/3;object-fit:cover}
 }
+
+
+/* ATELIER / rifinitura editoriale e stati di caricamento */
+.story-card>p{
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:3;
+  overflow:hidden;
+}
+.story-card .article-image.image-unavailable{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:210px;
+  background:var(--cement);
+  color:#5f5a52;
+}
+.story-card .article-image.image-unavailable::after{
+  content:"IMMAGINE NON DISPONIBILE";
+  padding:18px;
+  font:10px var(--mono);
+  letter-spacing:.1em;
+}
+.detail-figure.image-unavailable{
+  min-height:190px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:var(--cement);
+}
+.detail-figure.image-unavailable::before{
+  content:"IMMAGINE NON DISPONIBILE";
+  padding:35px 18px 12px;
+  font:10px var(--mono);
+  letter-spacing:.1em;
+  color:#5f5a52;
+}
+.detail-figure.image-unavailable figcaption{
+  padding:8px 18px 24px;
+  text-align:center;
+}
+@media(min-width:761px) and (max-width:1050px){
+  .story-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .story-grid .feature-card{grid-column:1/-1}
+  .story-grid .feature-card .article-image{aspect-ratio:16/9}
+}
+@media(max-width:760px){
+  .story-card h3{font-size:22px}
+  .story-card .article-image{aspect-ratio:4/3}
+  .article-dialog{width:96vw;max-height:94vh;padding:20px}
+  .detail-title{font-size:clamp(34px,10vw,52px)}
+}
