@@ -30,7 +30,7 @@ FEEDS = [
 MAX_PER_FEED = 18
 MAX_ARTICLES = 180
 MAX_AGE_DAYS = 120
-MAX_SUMMARIES_PER_RUN = 2  # Keep each run within free-tier model limits.
+MAX_SUMMARIES_PER_RUN = 2  # Keep each run within free-tier model limits, with a short backfill queue.
 MAX_IMAGE_BACKFILLS_PER_RUN = 12
 
 # Keep the archive focused on fashion, design and contemporary culture.
