@@ -1,7 +1,7 @@
 {
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
   "editorial_api_retry_after": "2026-11-13T21:38:01.357099+00:00",
-  "updated_at": "2026-11-12T22:58:00.329273+00:00",
+  "updated_at": "2026-11-12T23:50:56.126564+00:00",
   "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
@@ -51,7 +51,7 @@
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 129
+    "verified_count": 134
   },
   "articles": [
     {
@@ -1956,7 +1956,12 @@
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB2N19oZ05aOUJDVE84d2ZtS01hNzY3WW11WV9qVzhEMnJfSFJDcXdaU3NiRzB3dnVFSldhcDZnTFBhMkJJZ0d5ZEVneV9UQ1NIYkhjZUhmUTVONHdkdXhZNXlvYzc4S3ppWFhOT3ducXBxZUl6bFVtUUs2ZnRxVVU?oc=5",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "image_attempted_at": "2026-11-12T23:50:52.799031+00:00",
+      "image_retry_after": "2026-11-13T11:50:52.799031+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/verga-1947-un-anno-da-protagonista-tra-alta-orologeria-e-nuovi-traguardi-498797/",
@@ -1967,12 +1972,12 @@
       "source": "pambianconews.com",
       "date": "2026-11-10T08:30:15+00:00",
       "url": "https://www.pambianconews.com/2026/11/10/verga-1947-un-anno-da-protagonista-tra-alta-orologeria-e-nuovi-traguardi-498797/",
-      "image": "",
-      "image_verified": false,
+      "image": "https://www.pambianconews.com/wp-content/uploads/2026/10/DD_8451-HDR.jpg",
+      "image_verified": true,
       "language": "it",
-      "image_width": 0,
-      "image_height": 0,
-      "image_format": ""
+      "image_width": 2000,
+      "image_height": 1334,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/wivian-factory-padova-ampliare-mappa-strategica-498031/",
@@ -1983,12 +1988,12 @@
       "source": "pambianconews.com",
       "date": "2026-11-10T08:15:44+00:00",
       "url": "https://www.pambianconews.com/2026/11/10/wivian-factory-padova-ampliare-mappa-strategica-498031/",
-      "image": "",
-      "image_verified": false,
+      "image": "https://www.pambianconews.com/wp-content/uploads/2026/10/Wivians_Factory_Sede_Padova_6-e1793089468546.jpg",
+      "image_verified": true,
       "language": "it",
-      "image_width": 0,
-      "image_height": 0,
-      "image_format": ""
+      "image_width": 2000,
+      "image_height": 1017,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/partnership-mango-coin-dopo-catania-aperto-uno-store-a-roma-500121/",
@@ -1999,12 +2004,12 @@
       "source": "pambianconews.com",
       "date": "2026-11-10T08:04:31+00:00",
       "url": "https://www.pambianconews.com/2026/11/10/partnership-mango-coin-dopo-catania-aperto-uno-store-a-roma-500121/",
-      "image": "",
-      "image_verified": false,
+      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/MANGO-COIN-Roma-San-Giovanni-.jpeg",
+      "image_verified": true,
       "language": "it",
-      "image_width": 0,
-      "image_height": 0,
-      "image_format": ""
+      "image_width": 1086,
+      "image_height": 913,
+      "image_format": "jpeg"
     },
     {
       "id": "https://news.google.com/rss/articles/CBMibkFVX3lxTFA1aXIxTVJwVndrM0l0QlNXbWVlcHpyMEhEVkJPOEYwTHB6QUFKdUdZOXJqT01UWWp3Uk5MbS1oWG5FaDYzWFY1LTNsLXRoeHJvSU5vZFVPcFBxbGQ4ZmstZjdHWmNjcW53ZW5TaGhB?oc=5",
@@ -2017,7 +2022,12 @@
       "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFA1aXIxTVJwVndrM0l0QlNXbWVlcHpyMEhEVkJPOEYwTHB6QUFKdUdZOXJqT01UWWp3Uk5MbS1oWG5FaDYzWFY1LTNsLXRoeHJvSU5vZFVPcFBxbGQ4ZmstZjdHWmNjcW53ZW5TaGhB?oc=5",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "image_attempted_at": "2026-11-12T23:50:52.799031+00:00",
+      "image_retry_after": "2026-11-13T11:50:52.799031+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
     },
     {
       "id": "https://www.ad-italia.it/article/marva-griffin-casa-milano-talenti-design/",
@@ -2190,12 +2200,12 @@
       "source": "pambianconews.com",
       "date": "2026-11-09T11:59:00+00:00",
       "url": "https://www.pambianconews.com/2026/11/09/supereroi-senza-super-poteri-la-crisi-degli-autori-nella-moda-dei-conglomerati-500011/",
-      "image": "",
-      "image_verified": false,
+      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/Copertina-Direttori-Creativi-x-newsletter.jpg",
+      "image_verified": true,
       "language": "it",
-      "image_width": 0,
-      "image_height": 0,
-      "image_format": "",
+      "image_width": 1575,
+      "image_height": 909,
+      "image_format": "jpeg",
       "editorial_summary": "Negli ultimi due anni la rotazione dei direttori creativi nelle grandi maison è stata senza precedenti: Alessandro Michele ha lasciato Valentino, Matthieu Blazy è uscito da Chanel, Maria Grazia Chiuri da Fendi, Pierpaolo Piccioli è stato sostituito a Balenciaga da Martine Rose, Demna da Gucci, Jonathan Anderson da Dior e altri ancora. Durante le fashion week primavera‑estate 2026 di Milano e Parigi si sono registrati ben dodici debutti, un record storico. Questo flusso rapido ha messo in discussione il tradizionale patto tra designer e casa di moda, dove un tempo il creativo doveva adeguarsi al DNA del marchio; ora sembra essere il marchio a piegarsi alla visione dell’autore, trasformando il ruolo da “designer” a “autore”.\n\nIl critico Angelo Flaccavento osserva che l’autorialità non è più sinonimo di coerenza stilistica, ma spesso si traduce in un trasferimento di estetica da una maison all’altra senza una reale decodifica. Esempi concreti includono l’uso del nero da parte di Chiuri per Fendi, che richiama il suo linguaggio a Dior, e le sperimentazioni di Anderson, prima di successo a Loewe, percepite come forzature in Dior. Anche la prima collezione couture di Piccioli per Balenciaga appare come un “copia‑incolla” della sua estetica di Valentino, evidenziando un fenomeno di omologazione tra i brand.\n\n**Il punto cruciale è che la pressione per risultati commerciali immediati sta erodendo la capacità dei creativi di sviluppare un linguaggio distintivo nel tempo**; i manager, guidati da obiettivi trimestrali e dalla volatilità dei mercati azionari, impongono cicli di produzione più rapidi, lasciando poco spazio alla lenta maturazione di un’identità stilistica.\n\nQuesta dinamica ha conseguenze sia per i brand che per i consumatori. Quando un nuovo direttore creativo prende il posto, le collezioni appena presentate rischiano di perdere valore percepito, poiché i clienti si chiedono se investire in un’estetica destinata a cambiare subito. Inoltre, la formazione dei giovani designer, orientata a produrre collezioni di laurea di grande impatto, non prepara a una carriera sostenibile in un contesto che premia la rapidità più della profondità. In sintesi, la crisi degli autori nella moda dei conglomerati è il risultato di un conflitto tra la necessità di innovazione immediata e la mancanza di tempo per coltivare una vera autorità creativa.",
       "editorial_level": "approfondimento",
       "editorial_word_count": 365
@@ -2209,11 +2219,14 @@
       "source": "pambianconews.com",
       "date": "2026-11-09T11:11:20+00:00",
       "url": "https://www.pambianconews.com/2026/11/09/milano-le-dedichera-un-luogo-il-ricordo-di-franca-sozzani-a-dieci-anni-dalla-scomparsa-499982/",
-      "image": "",
-      "image_verified": false,
+      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/Sozzani--scaled.jpg",
+      "image_verified": true,
       "language": "it",
       "editorial_attempted_at": "2026-11-12T21:37:56.956713+00:00",
-      "editorial_retry_after": "2026-11-13T09:37:56.956713+00:00"
+      "editorial_retry_after": "2026-11-13T09:37:56.956713+00:00",
+      "image_width": 2560,
+      "image_height": 1207,
+      "image_format": "jpeg"
     },
     {
       "id": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPMEZuSjE5ckJ5ak5KcTl3Z05IUmVBY1dxS2RKZWVRNzZWZ0RrbEJiR05HYmk5NklBVC0tRTg2dXE3c3FVdnpjaFhNb3FnaUVUM3FfZFRwVjFKTlFxYk9NX2NDNnd2Tkt4dEsyNzd2R2tjR0prSW1jazJQVzRtV0R2X25DOTlWV3U4b0E?oc=5",
@@ -2228,7 +2241,12 @@
       "image_verified": false,
       "language": "it",
       "editorial_attempted_at": "2026-11-12T21:37:53.249795+00:00",
-      "editorial_retry_after": "2026-11-13T09:37:53.249795+00:00"
+      "editorial_retry_after": "2026-11-13T09:37:53.249795+00:00",
+      "image_attempted_at": "2026-11-12T23:50:52.799031+00:00",
+      "image_retry_after": "2026-11-13T11:50:52.799031+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
     },
     {
       "id": "https://www.ad-italia.it/article/casa-piccola-varsavia-25-m2-cubo-rivestito-in-ottone-distribuisce-gli-spazi/",
@@ -2355,7 +2373,9 @@
       "image_height": 0,
       "image_format": "",
       "editorial_attempted_at": "2026-11-12T21:21:09.340448+00:00",
-      "editorial_retry_after": "2026-11-13T09:21:09.340448+00:00"
+      "editorial_retry_after": "2026-11-13T09:21:09.340448+00:00",
+      "image_attempted_at": "2026-11-12T23:50:52.799031+00:00",
+      "image_retry_after": "2026-11-13T11:50:52.799031+00:00"
     },
     {
       "id": "https://www.sneakersmagazine.it/2026/10/29/expo-riva-schuh-e-gardabags-il-mercato-di-calzature-e-borse-cambia-volto/",
@@ -2444,7 +2464,12 @@
       "image_verified": false,
       "language": "it",
       "editorial_attempted_at": "2026-11-12T21:20:56.494830+00:00",
-      "editorial_retry_after": "2026-11-13T09:20:56.494830+00:00"
+      "editorial_retry_after": "2026-11-13T09:20:56.494830+00:00",
+      "image_attempted_at": "2026-11-12T23:50:52.799031+00:00",
+      "image_retry_after": "2026-11-13T11:50:52.799031+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
     }
   ]
 }
