@@ -34,7 +34,7 @@ class EditorialSummaryTests(unittest.TestCase):
     def test_summary_format_validator_accepts_only_complete_editorial_summaries(self):
         valid = "\n\n".join([" ".join(["moda"] * 70) for _ in range(4)])
         self.assertTrue(editorial_summary.is_valid_editorial_summary(valid, "standard"))
-        short = "\\n\\n".join([" ".join(["moda"] * 50) for _ in range(3)])
+        short = "\n\n".join([" ".join(["moda"] * 50) for _ in range(3)])
         self.assertTrue(editorial_summary.is_valid_editorial_summary(short, "standard"))
         invalid = "\n\n".join([" ".join(["moda"] * 50) for _ in range(1)])
         self.assertFalse(editorial_summary.is_valid_editorial_summary(invalid, "standard"))
