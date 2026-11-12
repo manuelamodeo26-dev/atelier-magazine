@@ -123,7 +123,7 @@
 
 
 /* ATELIER 2026 — rifinitura editoriale */
-:root{--paper:#f4f1e9;--ink:#151513;--red:#c83a32;--cement:#dedad1;--line:rgba(21,21,19,.17)}
+:root{--paper:#F1EEE6;--ink:#111111;--red:#D92F2F;--cement:#D7D3CB;--line:rgba(17,17,17,.17)}
 ::selection{background:var(--red);color:#fff}
 body{background:var(--paper)}
 .site-header{box-shadow:0 8px 28px rgba(20,18,15,.035)}
@@ -143,7 +143,7 @@ body{background:var(--paper)}
 .article-image img{transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .4s}
 .story-card:hover .article-image img{transform:scale(1.045);filter:saturate(1.08)}
 .image-verified{font-size:8px;letter-spacing:.08em;background:rgba(244,241,233,.94);backdrop-filter:blur(8px)}
-.image-verified.image-illustrative{background:rgba(21,21,19,.82);color:#f4f1e9}
+.image-verified.image-illustrative{background:rgba(21,21,19,.82);color:#F1EEE6}
 .card-link{margin-top:20px}
 .save-article{transition:background .2s,color .2s,border-color .2s}
 .save-article:hover{background:var(--ink);color:var(--paper)}
