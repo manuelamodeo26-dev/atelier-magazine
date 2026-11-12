@@ -76,6 +76,8 @@ class EditorialFilterTests(unittest.TestCase):
         self.assertEqual(source_category({"source": "exibart.com", "category": "Technology"}), "Art & Culture")
         self.assertEqual(source_category({"source": "ad-italia.it", "category": "Architecture"}), "Design")
         self.assertEqual(source_category({"source": "pambianconews.com", "category": "Business"}), "Fashion")
+        self.assertEqual(source_category({"source": "outpump.com", "category": "Fashion"}), "Streetwear")
+        self.assertEqual(source_category({"source": "sneakersmagazine.it", "category": "Fashion"}), "Streetwear")
 
     def test_classifies_editorial_sections(self):
         cases = [
@@ -85,6 +87,7 @@ class EditorialFilterTests(unittest.TestCase):
             ("L'intelligenza artificiale nel progetto creativo", "", "Fashion", "Technology"),
             ("Il nuovo design degli oggetti", "", "Fashion", "Design"),
             ("Una mostra di fotografia", "", "Fashion", "Art & Culture"),
+            ("Nuovi hotel per un weekend di viaggio", "", "Streetwear", "Lifestyle"),
             ("Gli anelli del potere: storia e significato", "Un approfondimento con parole AI e ai materiali", "Fashion", "Fashion"),
             ("A Milano si apre il cantiere del futuro Museo nazionale", "Un progetto di tecnologia e cultura", "Art & Culture", "Art & Culture"),
             ("Come abbinare cappotto midi e décolleté", "Un racconto di street style e moda", "Fashion", "Fashion"),

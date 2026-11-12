@@ -24,6 +24,8 @@ FEEDS = [
     ("https://www.ad-italia.it/feed/rss", "Design"),
     ("https://www.exibart.com/feed/", "Art & Culture"),
     ("https://www.finestresullarte.info/finestresullarte.xml", "Art & Culture"),
+    ("https://outpump.com/feed/", "Streetwear"),
+    ("https://www.sneakersmagazine.it/feed/", "Streetwear"),
 ]
 MAX_PER_FEED = 18
 MAX_ARTICLES = 180
@@ -78,6 +80,8 @@ def source_category(article):
     source = str(article.get("source") or "").lower().removeprefix("www.")
     if source in ("vogue.it", "pambianconews.com"):
         return "Fashion"
+    if source in ("outpump.com", "sneakersmagazine.it"):
+        return "Streetwear"
     if source == "ad-italia.it":
         return "Design"
     if source in ("exibart.com", "finestresullarte.info"):
@@ -106,6 +110,8 @@ def infer_category(title, excerpt, current="Fashion"):
                           r"cinema|film|musica|music|libr[oi]|romanzo|letteratura|teatro|"
                           r"cultura|festival|curator|fumett|biennale|documentario|"
                           r"serie tv|netflix|ricordo|memoria|omaggio|tributo"),
+        ("Lifestyle", r"lifestyle|stile di vita|viagg[io]|travel|hotel|ospitalità|"
+                      r"sport|fitness|running|outdoor|wellness|benessere|vita quotidiana"),
     ]
     for category, pattern in rules:
         if re.search(pattern, title_text, re.IGNORECASE):

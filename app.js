@@ -57,7 +57,7 @@
       ?'<div class="article-image"><img src="'+escapeHTML(image)+'" alt="'+escapeHTML(article.title||'Immagine editoriale ATELIER')+'" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.closest(\'.article-image\').classList.add(\'image-unavailable\');this.remove()"><span class="image-verified '+(imageInfo.verified?'':'image-illustrative')+'">'+(imageInfo.verified?'IMMAGINE VERIFICATA TECNICAMENTE':imageInfo.sourceImage?'IMMAGINE DELLA FONTE · NON VERIFICATA':'IMMAGINE ILLUSTRATIVA')+'</span></div>'
       :'<div class="story-placeholder '+(index%3===0?'placeholder-red':index%3===1?'placeholder-cream':'placeholder-black')+'"><span>'+escapeHTML(categoryLabel(category).toLocaleUpperCase('it'))+'<br>ATELIER</span><b>A/'+String(index+1).padStart(2,'0')+'</b></div>';
     const articleId=article.id||article.url||String(index);
-    return '<article class="story-card'+(index===0?' feature-card':'')+'"><a class="story-card-link" href="./article.html?id='+encodeURIComponent(articleId)+'" aria-label="Apri la notizia: '+escapeHTML(article.title||'Senza titolo')+'">'+visual+'<div class="story-meta">'+escapeHTML(categoryLabel(category))+' · '+formatDate(article.date)+' · '+escapeHTML(article.source||'Fonte non indicata')+'</div><h3>'+escapeHTML(article.title||'Senza titolo')+'</h3><p>'+escapeHTML(article.excerpt||'')+'</p></a><button type="button" class="like-article" data-like-article="'+escapeHTML(articleId)+'" aria-label="Mi piace">♡ <span data-like-count="'+escapeHTML(articleId)+'">0</span></button><button type="button" class="save-article" data-save-article="'+escapeHTML(articleId)+'" aria-label="Salva articolo nei preferiti">♡ SALVA</button></article>';
+    return '<article class="story-card'+(index===0?' feature-card':'')+'"><a class="story-card-link" href="./article.html?id='+encodeURIComponent(articleId)+'" aria-label="Apri la notizia: '+escapeHTML(article.title||'Senza titolo')+'">'+visual+'<div class="story-meta">'+escapeHTML(categoryLabel(category))+' · '+formatDate(article.date)+' · '+escapeHTML(article.source||'Fonte non indicata')+'</div><h3>'+escapeHTML(article.title||'Senza titolo')+'</h3><p>'+escapeHTML(article.excerpt||'')+'</p></a><button type="button" class="like-article" data-like-article="'+escapeHTML(articleId)+'" aria-label="Mi piace" aria-pressed="false">♡ <span data-like-count="'+escapeHTML(articleId)+'">0</span></button><button type="button" class="save-article" data-save-article="'+escapeHTML(articleId)+'" aria-label="Salva articolo nei preferiti" aria-pressed="false">♡ SALVA</button></article>';
   }
   function articleDetail(article){
     const imageInfo=imageFor(article), image=imageInfo.url;
@@ -105,6 +105,7 @@
     count.textContent=visible.length+' '+(visible.length===1?'ARTICOLO':'ARTICOLI')+' · '+categoryLabel(activeFilter).toLocaleUpperCase('it');
     $('#show-more').hidden=visible.length<=9;
     $('#show-more').textContent=showAll?'MOSTRA MENO ↑':'MOSTRA TUTTI GLI ARTICOLI ↗';
+    $('#show-more').setAttribute('aria-expanded',String(showAll));
     document.dispatchEvent(new Event('atelier:articles-rendered'));
   }
   async function loadArticles(){

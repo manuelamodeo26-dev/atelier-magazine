@@ -16,7 +16,7 @@ Le notizie vengono raccolte da feed pubblici di editori italiani dedicati a moda
 
 Le fotografie sono quelle distribuite dalle fonti nei rispettivi feed. Quando l'indirizzo dell'immagine consente parametri di dimensione, il raccoglitore richiede una versione più grande; la resa finale dipende comunque dal file originale, dal CDN e dalle condizioni d'uso del publisher. Le immagini non vengono copiate nel repository.
 
-Fonti configurate in `scripts/fetch_news.py`: Vogue Italia, Pambianco, AD Italia, Exibart e Finestre sull'Arte. Le immagini mancanti nel feed vengono cercate nei metadati Open Graph delle pagine originali, con un numero limitato di richieste. La disponibilità effettiva di ogni feed può cambiare. Un filtro editoriale esclude alcune rubriche generiche fuori tema (per esempio oroscopi e contenuti sanitari generalisti); le notizie vengono inoltre assegnate a sezioni più specifiche in base a titolo e descrizione. Questi controlli automatici aiutano la selezione, ma non sostituiscono una verifica redazionale.
+Fonti configurate in `scripts/fetch_news.py`: Vogue Italia, Pambianco, AD Italia, Exibart, Finestre sull'Arte, Outpump e Sneakers Magazine. Le ultime due ampliano soprattutto la copertura di sneakers, streetwear e cultura pop. Le immagini mancanti nel feed vengono cercate nei metadati Open Graph delle pagine originali, con un numero limitato di richieste. La disponibilità effettiva di ogni feed può cambiare. Un filtro editoriale esclude alcune rubriche generiche fuori tema (per esempio oroscopi e contenuti sanitari generalisti); le notizie vengono inoltre assegnate a sezioni più specifiche in base a titolo e descrizione. Questi controlli automatici aiutano la selezione, ma non sostituiscono una verifica redazionale.
 
 ## Aggiornamento e pubblicazione
 
@@ -41,11 +41,11 @@ Quando è configurato il secret GitHub Actions `GEMINI_API_KEY`, il raccoglitore
 
 Il workflow utilizza il modello stabile `gemini-3.8-flash`; il nome del modello è configurato in `.github/workflows/news.yml` e può essere aggiornato quando necessario.
 
-- Notizie standard: 180–250 parole, in 3–5 paragrafi.
-- Approfondimenti: 300–450 parole, in 3–5 paragrafi, soltanto quando il materiale contiene dettagli sufficienti.
+- Notizie standard: 300–400 parole, in 4–6 paragrafi.
+- Approfondimenti: 450–600 parole, in 4–6 paragrafi, soltanto quando il materiale contiene dettagli sufficienti.
 - Le sintesi vengono mostrate separatamente dalla descrizione originale dell'editore.
 - Se la fonte è troppo breve, il modello non risponde, la quota è esaurita o il secret manca, resta visibile il testo originale: non vengono inventati contenuti.
-- Vengono elaborate al massimo cinque schede per esecuzione, dando priorità alle notizie nuove e poi recuperando gradualmente l'archivio.
+- Vengono elaborate al massimo sei schede per esecuzione, dando priorità alle notizie nuove e poi recuperando gradualmente l'archivio. Se un modello raggiunge la quota, il processo passa al successivo senza ripetere inutilmente la stessa richiesta.
 - Le sintesi sono conservate in `data/articles.json`; il testo integrale della pagina sorgente non viene salvato.
 
 ### Configurazione facoltativa dell'AI
@@ -90,4 +90,4 @@ e aggiungi lo stesso indirizzo tra i Redirect URLs.
 
 In **Authentication → Providers → Email**, abilita Email. Per maggiore sicurezza lascia attiva la conferma dell'indirizzo email.
 
-Gli account permettono registrazione e accesso con email e password, feed personale per argomenti e preferiti sincronizzati sul database. Il primo accesso crea automaticamente profilo e preferenze predefinite.
+Gli account permettono registrazione e accesso con email e password, feed personale per argomenti, preferiti persistenti e Mi piace con conteggi condivisi. I preferiti restano visibili anche quando un articolo esce dall'archivio corrente di 120 giorni, conservando la scheda salvata e il collegamento alla fonte. Il primo accesso crea automaticamente profilo e preferenze predefinite.

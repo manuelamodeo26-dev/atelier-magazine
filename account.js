@@ -16,9 +16,10 @@
     Lifestyle:['photo-1490481651871-ab68de25d43d','photo-1515886657613-9f3515b0c78f']
   };
   const labels = {'Fashion':'Moda','Streetwear':'Streetwear','Design':'Design','Art & Culture':'Arte e cultura','Technology':'Tecnologia','Architecture':'Architettura','Business':'Impresa','Lifestyle':'Stili di vita'};
-  let client=null, user=null, saved=new Set(), liked=new Set(), likeCounts=new Map(), preferred=categories.slice(), articles=[];
+  let client=null, user=null, saved=new Set(), savedRecords=new Map(), liked=new Set(), likeCounts=new Map(), preferred=categories.slice(), articles=[];
   const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const $=(s,r=document)=>r.querySelector(s);
+  const safeURL=v=>{try{const raw=String(v||'').trim();if(!raw||raw==='#')return '';const u=new URL(raw,location.href);return ['http:','https:'].includes(u.protocol)?u.href:'';}catch(_){return '';}};
   function mount(){
     const header=$('.site-header');
     if(header && !$('#account-open')){
@@ -81,12 +82,13 @@
   async function loadUserData(){
     const [prefs,favs,likes]=await Promise.all([
       client.from('user_preferences').select('categories').eq('user_id',user.id).maybeSingle(),
-      client.from('saved_articles').select('article_id').eq('user_id',user.id),
+      client.from('saved_articles').select('article_id,title,category,excerpt,source,url,image,saved_at').eq('user_id',user.id),
       client.from('article_likes').select('article_id').eq('user_id',user.id)
     ]);
     if(prefs.error)throw prefs.error;if(favs.error)throw favs.error;if(likes.error)throw likes.error;
     preferred=Array.isArray(prefs.data?.categories)?prefs.data.categories:categories.slice();
-    saved=new Set((favs.data||[]).map(x=>x.article_id));
+    savedRecords=new Map((favs.data||[]).map(x=>[x.article_id,x]));
+    saved=new Set(savedRecords.keys());
     liked=new Set((likes.data||[]).map(x=>x.article_id));
     renderAccount();setLoggedIn(true);
   }
@@ -94,6 +96,8 @@
     document.querySelectorAll('[data-save-article]').forEach(b=>{
       const active=saved.has(b.dataset.saveArticle);
       b.classList.toggle('is-saved',active);
+      b.setAttribute('aria-pressed',String(active));
+      b.setAttribute('aria-label',active?'Rimuovi dai preferiti':'Salva articolo nei preferiti');
       b.textContent=active?'♥ SALVATO':'♡ SALVA';
     });
   }
@@ -102,6 +106,7 @@
       const active=liked.has(b.dataset.likeArticle);
       b.classList.toggle('is-liked',active);
       b.setAttribute('aria-pressed',String(active));
+      b.setAttribute('aria-label',active?'Rimuovi Mi piace':'Mi piace');
       const count=b.querySelector('[data-like-count]');
       if(count)count.textContent=String(likeCounts.get(b.dataset.likeArticle)||0);
     });
@@ -143,31 +148,53 @@
     const picked=articles.filter(a=>preferred.includes(a.category)).slice(0,9);
     feed.innerHTML=picked.map((a,i)=>accountCard(a,i)).join('');
     $('#personal-feed-empty').hidden=picked.length>0;
-    const favourites=articles.filter(a=>saved.has(String(a.id||a.url)));
+    const currentById=new Map(articles.map(a=>[String(a.id||a.url||''),a]));
+    const favourites=[...savedRecords.values()].map(record=>{
+      const id=String(record.article_id||'');
+      const current=currentById.get(id);
+      return current||{
+        id, article_id:id, title:record.title||'Articolo salvato',
+        category:record.category||'Fashion', excerpt:record.excerpt||'',
+        source:record.source||'', url:record.url||'', image:record.image||'',
+        image_verified:false, date:record.saved_at||'', archived:false
+      };
+    });
     fav.innerHTML=favourites.map((a,i)=>accountCard(a,i)).join('');
     $('#saved-empty').hidden=favourites.length>0;
   }
   function accountCard(a,i){
-    const id=String(a.id||a.url||'');
+    const id=String(a.id||a.article_id||a.url||'');
+    const inArchive=articles.some(item=>String(item.id||item.url||'')===id);
     const original=typeof a.image==='string'&&/^https:\/\//.test(a.image)?a.image:'';
     const choices=fallbackPhotos[a.category]||fallbackPhotos.Fashion;
     const seed=String(a.title||id).split('').reduce((n,c)=>n+c.charCodeAt(0),0);
     const image=original||('https://images.unsplash.com/'+choices[seed%choices.length]+'?auto=format&fit=crop&w=1200&q=82');
     const imageLabel=a.image_verified===true?'IMMAGINE VERIFICATA TECNICAMENTE':original?'IMMAGINE DELLA FONTE · NON VERIFICATA':'IMMAGINE ILLUSTRATIVA';
     const visual='<div class="article-image"><img loading="lazy" decoding="async" src="'+esc(image)+'" alt="'+esc(a.title||'Immagine editoriale ATELIER')+'" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add(\'image-unavailable\');this.remove()"><span class="image-verified '+(a.image_verified===true?'':'image-illustrative')+'">'+imageLabel+'</span></div>';
-    return '<article class="story-card">'+visual+'<div class="story-meta">'+esc(labels[a.category]||a.category||'ATELIER')+' · '+esc(a.source||'')+'</div><h3>'+esc(a.title)+'</h3><p>'+esc(a.excerpt||'')+'</p><a class="text-link card-link" href="./article.html?id='+encodeURIComponent(id)+'">APRI ARTICOLO ↗</a><button type="button" class="like-article '+(liked.has(id)?'is-liked':'')+'" data-like-article="'+esc(id)+'" aria-pressed="'+String(liked.has(id))+'">♡ <span data-like-count="'+esc(id)+'">'+(likeCounts.get(id)||0)+'</span></button><button type="button" class="save-article '+(saved.has(id)?'is-saved':'')+'" data-save-article="'+esc(id)+'">'+(saved.has(id)?'♥ SALVATO':'♡ SALVA')+'</button></article>';
+    const action=inArchive
+      ?'<a class="text-link card-link" href="./article.html?id='+encodeURIComponent(id)+'">APRI ARTICOLO ↗</a>'
+      :safeURL(a.url)?'<a class="text-link card-link" href="'+esc(safeURL(a.url))+'" target="_blank" rel="noopener noreferrer">APRI FONTE ORIGINALE ↗</a>'
+      :'<span class="card-link detail-muted">CONTENUTO NON PIÙ DISPONIBILE</span>';
+    return '<article class="story-card">'+visual+'<div class="story-meta">'+esc(labels[a.category]||a.category||'ATELIER')+' · '+esc(a.source||'')+'</div><h3>'+esc(a.title)+'</h3><p>'+esc(a.excerpt||'')+'</p>'+action+'<button type="button" class="like-article '+(liked.has(id)?'is-liked':'')+'" data-like-article="'+esc(id)+'" aria-label="Mi piace" aria-pressed="'+String(liked.has(id))+'">♡ <span data-like-count="'+esc(id)+'">'+(likeCounts.get(id)||0)+'</span></button><button type="button" class="save-article '+(saved.has(id)?'is-saved':'')+'" data-save-article="'+esc(id)+'" aria-label="Salva articolo nei preferiti" aria-pressed="'+String(saved.has(id))+'">'+(saved.has(id)?'♥ SALVATO':'♡ SALVA')+'</button></article>';
   }
   async function toggleSaved(id){
     if(!user){$('#account-dialog').showModal();message('Accedi per salvare i tuoi articoli.');return;}
-    const a=articles.find(x=>String(x.id||x.url)===id);if(!a)return;
+    const a=articles.find(x=>String(x.id||x.url)===id);
+    const wasSaved=saved.has(id);
+    if(!wasSaved&&!a)return;
     message('Aggiornamento preferiti…');
     try{
-      if(saved.has(id)){
-        const {error}=await client.from('saved_articles').delete().eq('user_id',user.id).eq('article_id',id);if(error)throw error;saved.delete(id);
+      if(wasSaved){
+        const {error}=await client.from('saved_articles').delete().eq('user_id',user.id).eq('article_id',id);
+        if(error)throw error;
+        saved.delete(id);savedRecords.delete(id);
       }else{
-        const {error}=await client.from('saved_articles').insert({user_id:user.id,article_id:id,title:a.title,category:a.category,excerpt:a.excerpt||'',source:a.source||'',url:a.url||'',image:a.image_verified===true?a.image||'':''});if(error)throw error;saved.add(id);
+        const record={user_id:user.id,article_id:id,title:a.title,category:a.category,excerpt:a.excerpt||'',source:a.source||'',url:a.url||'',image:a.image_verified===true?a.image||'':''};
+        const {error}=await client.from('saved_articles').insert(record);
+        if(error)throw error;
+        saved.add(id);savedRecords.set(id,{...record,saved_at:new Date().toISOString()});
       }
-      renderAccount();message(saved.has(id)?'Articolo aggiunto ai preferiti.':'Articolo rimosso dai preferiti.');
+      renderAccount();message(wasSaved?'Articolo rimosso dai preferiti.':'Articolo aggiunto ai preferiti.');
     }catch(e){message(e.message||'Errore durante il salvataggio.',true);}
   }
   async function savePreferences(){
@@ -179,7 +206,7 @@
   async function logout(){
     const {error}=await client.auth.signOut();
     if(error){message(error.message,true);return;}
-    user=null;saved.clear();liked.clear();setLoggedIn(false);renderAccount();message('Hai effettuato la disconnessione.');
+    user=null;saved.clear();savedRecords.clear();liked.clear();setLoggedIn(false);renderAccount();message('Hai effettuato la disconnessione.');
   }
   async function init(){
     mount();
@@ -193,7 +220,7 @@
       loadLikeCounts().catch(error=>console.warn('ATELIER: conteggi Mi piace non disponibili.',error));
       const {data}=await client.auth.getSession();
       if(data.session){user=data.session.user;await loadUserData();}else setLoggedIn(false);
-      client.auth.onAuthStateChange((_event,session)=>{setTimeout(async()=>{try{user=session?.user||null;if(user)await loadUserData();else{saved.clear();liked.clear();setLoggedIn(false);renderAccount();}}catch(e){user=null;saved.clear();setLoggedIn(false);message(e.message||'Impossibile caricare i dati dell’account.',true);}},0);});
+      client.auth.onAuthStateChange((_event,session)=>{setTimeout(async()=>{try{user=session?.user||null;if(user)await loadUserData();else{saved.clear();savedRecords.clear();liked.clear();setLoggedIn(false);renderAccount();}}catch(e){user=null;saved.clear();setLoggedIn(false);message(e.message||'Impossibile caricare i dati dell’account.',true);}},0);});
     }catch(e){setLoggedIn(false);message('Servizio account non raggiungibile. Riprova più tardi.',true);}
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();

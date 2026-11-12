@@ -189,6 +189,10 @@ def generate_editorial_summary(article, source_text):
                     break
                 summary = "\n\n".join(paragraphs)
                 words = _word_count(summary)
+                # Keep a useful 300–400-word text if a model mislabels it as an in-depth feature.
+                if level == "approfondimento" and 300 <= words <= 400:
+                    print("Gemini {}: sintesi riclassificata come standard ({} parole).".format(model, words))
+                    level = "standard"
                 lower, upper = (450, 600) if level == "approfondimento" else (300, 400)
                 if not lower <= words <= upper:
                     print("Gemini {}: sintesi scartata ({} parole).".format(model, words))
@@ -208,17 +212,24 @@ def generate_editorial_summary(article, source_text):
                     ).strip()
                 except (ValueError, AttributeError, TypeError):
                     detail = ""
-                if exc.code == 429 and attempt == 0:
-                    retry_after = exc.headers.get("Retry-After") if exc.headers else None
-                    try:
-                        delay = min(20, max(3, int(retry_after))) if retry_after else 8
-                    except (TypeError, ValueError):
-                        delay = 8
-                    print("Gemini {}: limite richieste (HTTP 429); nuovo tentativo tra {}s.".format(
-                        model, delay
+                if exc.code == 429:
+                    quota_exhausted = any(token in detail.lower() for token in (
+                        "quota", "resource_exhausted", "exceeded your current"
                     ))
-                    time.sleep(delay)
-                    continue
+                    if quota_exhausted:
+                        print("Gemini {}: quota esaurita; passo al modello alternativo senza ripetere la richiesta.".format(model))
+                        break
+                    if attempt == 0:
+                        retry_after = exc.headers.get("Retry-After") if exc.headers else None
+                        try:
+                            delay = min(20, max(3, int(retry_after))) if retry_after else 8
+                        except (TypeError, ValueError):
+                            delay = 8
+                        print("Gemini {}: limite richieste (HTTP 429); nuovo tentativo tra {}s.".format(
+                            model, delay
+                        ))
+                        time.sleep(delay)
+                        continue
                 message = (" — " + detail[:220]) if detail else ""
                 print("Gemini {} non disponibile (HTTP {}){}.".format(
                     model, exc.code, message

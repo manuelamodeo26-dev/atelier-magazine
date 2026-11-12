@@ -82,3 +82,65 @@ drop trigger if exists on_auth_user_created on auth.users;
 create trigger on_auth_user_created
   after insert on auth.users
   for each row execute procedure private.handle_new_user();
+
+
+-- Mi piace: un voto per utente e articolo, con conteggi pubblici.
+create table if not exists public.article_likes (
+  user_id uuid not null references auth.users(id) on delete cascade,
+  article_id text not null,
+  liked_at timestamptz not null default now(),
+  primary key (user_id, article_id)
+);
+create table if not exists public.article_like_counts (
+  article_id text primary key,
+  like_count bigint not null default 0 check (like_count >= 0)
+);
+
+alter table public.article_likes enable row level security;
+alter table public.article_like_counts enable row level security;
+
+drop policy if exists "Users can read their own article likes" on public.article_likes;
+drop policy if exists "Users can like articles as themselves" on public.article_likes;
+drop policy if exists "Users can remove their own article likes" on public.article_likes;
+drop policy if exists "Anyone can read public article like counts" on public.article_like_counts;
+create policy "Users can read their own article likes" on public.article_likes
+  for select to authenticated using ((select auth.uid()) = user_id);
+create policy "Users can like articles as themselves" on public.article_likes
+  for insert to authenticated with check ((select auth.uid()) = user_id);
+create policy "Users can remove their own article likes" on public.article_likes
+  for delete to authenticated using ((select auth.uid()) = user_id);
+create policy "Anyone can read public article like counts" on public.article_like_counts
+  for select to anon, authenticated using (true);
+
+grant select, insert, delete on public.article_likes to authenticated;
+grant select on public.article_like_counts to anon, authenticated;
+
+create or replace function public.maintain_article_like_counts()
+returns trigger
+language plpgsql
+security definer
+set search_path = ''
+as $$
+begin
+  if tg_op = 'INSERT' then
+    insert into public.article_like_counts(article_id, like_count)
+    values (new.article_id, 1)
+    on conflict (article_id) do update
+      set like_count = public.article_like_counts.like_count + 1;
+    return new;
+  elsif tg_op = 'DELETE' then
+    update public.article_like_counts
+      set like_count = greatest(like_count - 1, 0)
+      where article_id = old.article_id;
+    delete from public.article_like_counts
+      where article_id = old.article_id and like_count = 0;
+    return old;
+  end if;
+  return null;
+end;
+$$;
+revoke all on function public.maintain_article_like_counts() from public, anon, authenticated;
+drop trigger if exists article_likes_update_counts on public.article_likes;
+create trigger article_likes_update_counts
+  after insert or delete on public.article_likes
+  for each row execute function public.maintain_article_like_counts();
