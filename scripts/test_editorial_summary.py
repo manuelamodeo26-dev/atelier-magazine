@@ -30,6 +30,14 @@ class EditorialSummaryTests(unittest.TestCase):
             "source": "Fonte di prova",
         }
 
+    def test_summary_format_validator_accepts_only_complete_editorial_summaries(self):
+        valid = "\\n\\n".join([" ".join(["moda"] * 80) for _ in range(4)])
+        self.assertTrue(editorial_summary.is_valid_editorial_summary(valid, "standard"))
+        invalid = "\\n\\n".join([" ".join(["moda"] * 110) for _ in range(3)])
+        self.assertFalse(editorial_summary.is_valid_editorial_summary(invalid, "standard"))
+        self.assertFalse(editorial_summary.is_valid_editorial_summary(valid, "unknown"))
+        self.assertFalse(editorial_summary.is_valid_editorial_summary(valid, "approfondimento"))
+
     def test_uses_groq_chat_completions_and_json_mode(self):
         response = self._response()
         with (
