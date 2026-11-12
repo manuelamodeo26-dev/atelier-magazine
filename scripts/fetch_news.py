@@ -330,9 +330,26 @@ def main():
             raise SystemExit("Archivio vuoto e nessun feed valido: aggiornamento annullato.")
         return
 
+    # Do not re-import or overwrite stories already in the archive.
+    # Normalize every URL before comparing so tracking parameters and URL
+    # variants do not create duplicate entries.
     merged = dict(previous)
+    seen_urls = set(previous)
+    added = 0
+    duplicates = 0
     for article in fresh:
-        merged[article["url"]] = article
+        url = canonical_url(article.get("url"))
+        if not url:
+            continue
+        article["url"] = url
+        article["id"] = url
+        if url in seen_urls:
+            duplicates += 1
+            continue
+        seen_urls.add(url)
+        merged[url] = article
+        added += 1
+    print(f"Nuovi articoli: {added}; già presenti/duplicati ignorati: {duplicates}.")
     cutoff = datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)
     recent = []
     for item in merged.values():
@@ -350,7 +367,12 @@ def main():
     articles = sorted(recent,
                       key=lambda item: item.get("date") or "0000", reverse=True)[:MAX_ARTICLES]
 
-    to_verify = [item for item in articles if item.get("image") and not item.get("image_verified")]
+    # Verify only images belonging to newly imported articles. Existing
+    # archive entries are left untouched and are not downloaded again.
+    new_urls = {canonical_url(item.get("url")) for item in fresh}
+    to_verify = [item for item in articles
+                 if canonical_url(item.get("url")) in new_urls
+                 and item.get("image") and not item.get("image_verified")]
     if to_verify:
         print(f"Verifica fotografica: {len(to_verify)} immagini da controllare.")
         with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
