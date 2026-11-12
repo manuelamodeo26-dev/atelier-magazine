@@ -16,14 +16,14 @@
     Lifestyle:['photo-1490481651871-ab68de25d43d','photo-1515886657613-9f3515b0c78f']
   };
   const labels = {'Fashion':'Moda','Streetwear':'Streetwear','Design':'Design','Art & Culture':'Arte e cultura','Technology':'Tecnologia','Architecture':'Architettura','Business':'Impresa','Lifestyle':'Stili di vita'};
-  let client=null, user=null, saved=new Set(), savedRecords=new Map(), liked=new Set(), likeCounts=new Map(), preferred=categories.slice(), articles=[];
+  let client=null, user=null, avatarUrl='', saved=new Set(), savedRecords=new Map(), liked=new Set(), likeCounts=new Map(), preferred=categories.slice(), articles=[];
   const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const $=(s,r=document)=>r.querySelector(s);
   const safeURL=v=>{try{const raw=String(v||'').trim();if(!raw||raw==='#')return '';const u=new URL(raw,location.href);return ['http:','https:'].includes(u.protocol)?u.href:'';}catch(_){return '';}};
   function mount(){
     const header=$('.site-header');
     if(header && !$('#account-open')){
-      const b=document.createElement('button'); b.id='account-open'; b.className='search-open account-open'; b.type='button'; b.setAttribute('aria-controls','account-dialog'); b.setAttribute('aria-haspopup','dialog'); b.textContent='ACCEDI ↗';
+      const b=document.createElement('button'); b.id='account-open'; b.className='search-open account-open'; b.type='button'; b.setAttribute('aria-controls','account-dialog'); b.setAttribute('aria-haspopup','dialog'); b.setAttribute('aria-label','Accedi'); b.title='Accedi'; b.textContent='ACCEDI ↗';
       header.appendChild(b);
     }
     if(!$('#account-dialog')){
@@ -40,6 +40,8 @@
     $('#profile-manage')?.addEventListener('click',()=>$('#account-dialog').showModal());
     $('#profile-login')?.addEventListener('click',()=>$('#account-dialog').showModal());
     $('#profile-logout')?.addEventListener('click',logout);
+    $('#profile-avatar-input')?.addEventListener('change',uploadAvatar);
+    $('#profile-avatar-remove')?.addEventListener('click',removeAvatar);
     $('#open-account-settings')?.addEventListener('click',()=>$('#account-dialog').showModal());
     $('#account-form')?.addEventListener('submit',handleAuth);
     $('#account-logout')?.addEventListener('click',logout);
@@ -61,13 +63,31 @@
   function status(text){const el=$('#account-status');if(el)el.textContent=text;}
   function setLoggedIn(on){
     const open=$('#account-open');
-    if(open)open.textContent=on?'IL MIO ACCOUNT ↗':'ACCEDI ↗';
+    if(open){
+      if(on){
+        open.classList.add('has-account-avatar');
+        open.setAttribute('aria-label','Apri il profilo personale');
+        open.title='Apri il profilo personale';
+        open.innerHTML=avatarUrl
+          ? '<img class="account-avatar-image" src="'+esc(avatarUrl)+'" alt="">'
+          : '<span class="account-avatar-placeholder" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="3.5"></circle><path d="M4.5 21a7.5 7.5 0 0 1 15 0"></path></svg></span>';
+      }else{
+        open.classList.remove('has-account-avatar');
+        open.setAttribute('aria-label','Accedi');
+        open.title='Accedi';
+        open.textContent='ACCEDI ↗';
+      }
+    }
     const form=$('#account-form'), tools=$('#account-tools'), feed=$('#personal-feed');
     if(form)form.hidden=on;if(tools)tools.hidden=!on;if(feed)feed.hidden=!on;
     if(on)status('Accesso effettuato. Il tuo spazio ATELIER è pronto.');
     const profileAction=$('#profile-manage');if(profileAction)profileAction.hidden=!on;
     const profileGuest=$('#profile-guest');if(profileGuest)profileGuest.hidden=on;
     const profileContent=$('#profile-content');if(profileContent)profileContent.hidden=!on;
+    const avatar=$('#profile-avatar-image'), avatarFallback=$('#profile-avatar-fallback');
+    if(avatar){avatar.hidden=!on||!avatarUrl;if(avatarUrl)avatar.src=avatarUrl;else avatar.removeAttribute('src');}
+    if(avatarFallback)avatarFallback.hidden=!!(on&&avatarUrl);
+    const removeAvatarButton=$('#profile-avatar-remove');if(removeAvatarButton)removeAvatarButton.hidden=!avatarUrl;
     if(on){const nick=user?.user_metadata?.display_name||'Membro ATELIER';const welcome=$('#profile-nickname');if(welcome)welcome.textContent=nick;const since=$('#profile-member-since');if(since&&user?.created_at)since.textContent='MEMBRO DAL '+new Date(user.created_at).toLocaleDateString('it-IT',{month:'long',year:'numeric'}).toUpperCase();}
     else status(configured?'Accedi o crea un account per personalizzare la rivista.':'Configurazione necessaria: collega prima il progetto Supabase.');
   }
@@ -96,9 +116,12 @@
     const [prefs,favs,likes]=await Promise.all([
       client.from('user_preferences').select('categories').eq('user_id',user.id).maybeSingle(),
       client.from('saved_articles').select('article_id,title,category,excerpt,source,url,image,saved_at').eq('user_id',user.id),
-      client.from('article_likes').select('article_id').eq('user_id',user.id)
+      client.from('article_likes').select('article_id').eq('user_id',user.id),
+      client.from('profiles').select('avatar_url,display_name').eq('id',user.id).maybeSingle()
     ]);
     if(prefs.error)throw prefs.error;if(favs.error)throw favs.error;if(likes.error)throw likes.error;
+    if(arguments.length){}
+    avatarUrl=arguments.length?avatarUrl:avatarUrl;
     preferred=Array.isArray(prefs.data?.categories)?prefs.data.categories:categories.slice();
     savedRecords=new Map((favs.data||[]).map(x=>[x.article_id,x]));
     saved=new Set(savedRecords.keys());
@@ -212,6 +235,41 @@
       renderAccount();message(wasSaved?'Articolo rimosso dai preferiti.':'Articolo aggiunto ai preferiti.');
     }catch(e){message(e.message||'Errore durante il salvataggio.',true);}
   }
+  async function uploadAvatar(event){
+    const file=event.target.files?.[0];
+    if(!file)return;
+    event.target.value='';
+    const allowed=['image/jpeg','image/png','image/webp','image/avif'];
+    if(!allowed.includes(file.type)){message('Scegli un’immagine JPG, PNG, WEBP o AVIF.',true);return;}
+    if(file.size>5*1024*1024){message('L’immagine deve pesare al massimo 5 MB.',true);return;}
+    if(!user||!client){message('Accedi per modificare la foto profilo.',true);return;}
+    message('Caricamento della foto…');
+    try{
+      const path=user.id+'/avatar';
+      const {error:uploadError}=await client.storage.from('avatars').upload(path,file,{upsert:true,contentType:file.type,cacheControl:'3600'});
+      if(uploadError)throw uploadError;
+      const {data}=client.storage.from('avatars').getPublicUrl(path);
+      const nextUrl=data.publicUrl+'?v='+Date.now();
+      const {error:profileError}=await client.from('profiles').update({avatar_url:nextUrl}).eq('id',user.id);
+      if(profileError)throw profileError;
+      avatarUrl=nextUrl;
+      setLoggedIn(true);
+      message('Foto profilo aggiornata.');
+    }catch(e){message(e.message||'Non è stato possibile caricare la foto.',true);}
+  }
+  async function removeAvatar(){
+    if(!user||!client||!avatarUrl)return;
+    message('Rimozione della foto…');
+    try{
+      const {error:storageError}=await client.storage.from('avatars').remove([user.id+'/avatar']);
+      if(storageError)throw storageError;
+      const {error:profileError}=await client.from('profiles').update({avatar_url:null}).eq('id',user.id);
+      if(profileError)throw profileError;
+      avatarUrl='';
+      setLoggedIn(true);
+      message('Foto profilo rimossa.');
+    }catch(e){message(e.message||'Non è stato possibile rimuovere la foto.',true);}
+  }
   async function savePreferences(){
     const chosen=[...$('#account-categories').querySelectorAll('input:checked')].map(x=>x.value);
     if(!chosen.length){message('Seleziona almeno un argomento.',true);return;}
@@ -221,7 +279,7 @@
   async function logout(){
     const {error}=await client.auth.signOut();
     if(error){message(error.message,true);return;}
-    user=null;saved.clear();savedRecords.clear();liked.clear();setLoggedIn(false);renderAccount();message('Hai effettuato la disconnessione.');
+    user=null;avatarUrl='';saved.clear();savedRecords.clear();liked.clear();setLoggedIn(false);renderAccount();message('Hai effettuato la disconnessione.');
   }
   async function init(){
     mount();
@@ -236,7 +294,7 @@
       if(data.session){user=data.session.user;await loadUserData();}else{setLoggedIn(false);if(location.pathname.endsWith('/account.html'))$('#account-dialog')?.showModal();}
       if(location.hash==='#account-settings')$('#account-dialog')?.showModal();
       loadLikeCounts().catch(error=>console.warn('ATELIER: conteggi Mi piace non disponibili.',error));
-      client.auth.onAuthStateChange((_event,session)=>{setTimeout(async()=>{try{user=session?.user||null;if(user){await loadUserData();loadLikeCounts().catch(error=>console.warn('ATELIER: conteggi Mi piace non disponibili.',error));}else{saved.clear();savedRecords.clear();liked.clear();setLoggedIn(false);renderAccount();}}catch(e){user=null;saved.clear();setLoggedIn(false);message(e.message||'Impossibile caricare i dati dell’account.',true);}},0);});
+      client.auth.onAuthStateChange((_event,session)=>{setTimeout(async()=>{try{user=session?.user||null;if(user){await loadUserData();loadLikeCounts().catch(error=>console.warn('ATELIER: conteggi Mi piace non disponibili.',error));}else{saved.clear();savedRecords.clear();liked.clear();setLoggedIn(false);renderAccount();}}catch(e){user=null;avatarUrl='';saved.clear();setLoggedIn(false);message(e.message||'Impossibile caricare i dati dell’account.',true);}},0);});
     }catch(e){setLoggedIn(false);message('Servizio account non raggiungibile. Riprova più tardi.',true);}
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
