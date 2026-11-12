@@ -1,13 +1,32 @@
 {
-  "updated_at": "2026-11-12T15:29:57.412161+00:00",
+  "updated_at": "2026-11-12T15:31:35.676625+00:00",
   "feeds_ok": 6,
   "feeds_total": 7,
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 97
+    "verified_count": 98
   },
   "articles": [
+    {
+      "id": "https://www.exibart.com/mostre/mostra-costantinopoli-istanbul-capitale-londra/",
+      "title": "Da Costantinopoli a Istanbul: una grande mostra racconta la città che fu capitale di due imperi",
+      "excerpt": "La vasta collezione del Victoria and Albert Museum di Londra è composta da quasi tre milioni di oggetti, provenienti da ogni angolo del mondo. Ampie sezioni sono dedicate alle grandi civiltà del passato e fra queste non manca una pletora di reperti provenienti da quel luogo fisico e immaginifico che nel VII secolo a.C. iniziò col chiamarsi Bisanzio, per poi trasformarsi in Costantinopoli, fino alla sua mutazione in Istanbul nel secolo scorso. Ogni nome ha rappresentato un percorso politico, religioso e culturale differente, proiettando la sua influenza molto oltre i suoi confini di spazio e tempo. Gilt coffee pot, Turkey, 1800-50. © Victoria and Albert Museum, London Tralasciando i secoli dagli albori fino alla sua trasformazione voluta dall’imperatore Costantino, l’ambiziosa del V&A esplora sedici secoli di vita della città, dal 330 fino alla caduta dell’Impero ottomano nel 1922. Fino al 9 maggio 2027, Constantinople to Istanbul: One City, Two Empires , a cura di Tim Stanley, curatore senior della collezione sul Medio Oriente del V&A, racconta le evoluzioni di una delle massime sorgenti di produzione artistica mondiale, che è stata influenzata da innumerevoli fattori religiosi e politici ma ne ha anche determinato gli sviluppi attraverso la diffusione di stili legati alla sua identità stratificata. Fragment from the Great Palace Mosaic 6th century. Great Palace Mosaic Museum, Inventory Number: 19, Istanbul Hagia Sophia History and Experience Museum Directorate, Republic of Türkiye, Ministry of Culture and Tourism All’inizio del dominio costantiniano la città fu ribattezzata Nova Roma, essendo destinata a divenire la capitale dell’Impero. Come Roma, fu da subito un crocevia di culture che ne hanno modificato usi e costumi, fino alla pianta urbana. La mostra, che presenta oltre duecento oggetti distribuiti in quattro sezioni, prende avvio dall’analisi di questi cambiamenti urbanistici attraverso l’esposizione di reperti provenienti dalla Porta Aurea, dall’Ippodromo con una capienza di centomila spettatori e dal Gran Palazzo. L’aspetto originale di questi luoghi si ricava da alcuni pezzi presenti nella mostra, come l’Avorio di Treviri del V secolo, che raffigura l",
+      "author": "Adolfo Sansolini",
+      "category": "Art & Culture",
+      "source": "exibart.com",
+      "date": "2026-11-12T15:29:15+00:00",
+      "url": "https://www.exibart.com/mostre/mostra-costantinopoli-istanbul-capitale-londra/",
+      "image": "https://www.exibart.com/repository/media/2026/11/Gilt-coffee-pot-Turkey-1800-50.-%C2%A9-Victoria-and-Albert-Museum-London_1-683x1024.jpg",
+      "image_verified": true,
+      "language": "it",
+      "editorial_summary": "La mostra \"Constantinople to Istanbul: One City, Two Empires\" del Victoria and Albert Museum di Londra, aperta fino al 9 maggio 2027, presenta oltre duecento oggetti che coprono sedici secoli di storia della città, dal 330 al 1922. Curata da Tim Stanley, la mostra si concentra su come la città, originariamente Bisanzio, sia stata ribattezzata Nova Roma sotto Costantino, poi Costantinopoli e infine Istanbul, riflettendo trasformazioni politiche, religiose e culturali che hanno influenzato la produzione artistica mondiale.\n\nIl percorso espositivo è suddiviso in quattro sezioni che analizzano i cambiamenti urbanistici e culturali. Vengono mostrati reperti provenienti dalla Porta Aurea, dall’Ippodromo e dal Gran Palazzo, tra cui l’Avorio di Treviri del V secolo che rappresenta la traslazione delle reliquie di Santo Stefano a Costantinopoli. La mostra evidenzia anche l’importanza di infrastrutture come gli acquedotti e le fontane, considerate miracolose, e il ruolo della chiesa di Santa Sofia come centro spirituale e simbolo di potere per mille anni.\n\nUn capitolo dedicato a Santa Sofia mostra la sua evoluzione: costruita nel VI secolo come chiesa, divenne l’edificio più grande del mondo e centro di incoronazioni imperiali. La mostra illustra la crisi iconoclasta tra l’VIII e l’IX secolo e la successiva rinascita della produzione di icone dopo il secondo Concilio di Nicea, con esempi di mosaici, miniature e arazzi. Tra gli arazzi spicca il Pallio di San Lorenzo, realizzato nel XIII secolo a seguito della liberazione di Costantinopoli dalla quarta crociata.\n\nNel 1453 la città cadde nelle mani del sultano ottomano Maometto II, trasformandosi in Istanbul. La mostra mostra come alcune strutture preesistenti, come Santa Sofia, furono adattate (trasformata in moschea), mentre altre furono restaurate e nuovi edifici, tra cui il Palazzo di Topkapi, furono costruiti. Vengono presentati ritratti del sultano, come quello del 1480 di Gentile Bellini, e opere che documentano la vita quotidiana, tra cui il Rotolo della Processione del 1600‑1700.\n\nLa mostra conclude con la continuazione della vita culturale di Istanbul, evidenziando l’arrivo di ebrei sefarditi cacciati da Spagna e Portogallo, i primi a stampare libri in ebraico nella città. La narrazione si chiude con la deposizione dell’ultimo sultano nel 1922, segnata dalla sconfitta ottomana nella Prima Guerra Mondiale. Un appendice mostra come i capolavori esposti abbiano continuato a influenzare l’arte contemporanea e la progettazione di spazi museali, sottolineando l’eredità duratura della città.",
+      "editorial_level": "standard",
+      "editorial_word_count": 383,
+      "image_width": 683,
+      "image_height": 1024,
+      "image_format": "jpeg"
+    },
     {
       "id": "https://www.vogue.it/article/look-back-recensione-film-koreeda",
       "title": "Look Back, la recensione del film di Kore-eda : la grandezza della vita è nella piccolezza dell'infanzia",
@@ -1612,7 +1631,9 @@
       "language": "it",
       "image_width": 4589,
       "image_height": 3134,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_attempted_at": "2026-11-12T15:31:33.218201+00:00",
+      "editorial_retry_after": "2026-11-13T03:31:33.218201+00:00"
     },
     {
       "id": "https://www.ad-italia.it/article/appartamento-piccolo-madrid-48-m2-ex-casa-antiquata-open-space-rosa-blu/",
@@ -1628,7 +1649,9 @@
       "language": "it",
       "image_width": 2000,
       "image_height": 1500,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_attempted_at": "2026-11-12T15:31:34.871525+00:00",
+      "editorial_retry_after": "2026-11-13T03:31:34.871525+00:00"
     },
     {
       "id": "https://www.ad-italia.it/gallery/fiori-autunnali-10-specie-coloratissime-per-portare-energia-positiva-in-casa-feng-shui/",
@@ -1644,7 +1667,9 @@
       "language": "it",
       "image_width": 7952,
       "image_height": 5304,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_attempted_at": "2026-11-12T15:31:34.950682+00:00",
+      "editorial_retry_after": "2026-11-13T03:31:34.950682+00:00"
     },
     {
       "id": "https://www.ad-italia.it/article/dopamine-decor-design-trend-colori-casa-allegra/",
@@ -1660,7 +1685,9 @@
       "language": "it",
       "image_width": 6708,
       "image_height": 4472,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_attempted_at": "2026-11-12T15:31:35.019063+00:00",
+      "editorial_retry_after": "2026-11-13T03:31:35.019063+00:00"
     },
     {
       "id": "https://www.ad-italia.it/article/casa-notting-hill-film-porta-blu-vendita-interni/",
@@ -1676,7 +1703,9 @@
       "language": "it",
       "image_width": 2519,
       "image_height": 1677,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_attempted_at": "2026-11-12T15:31:35.081447+00:00",
+      "editorial_retry_after": "2026-11-13T03:31:35.081447+00:00"
     },
     {
       "id": "https://www.sneakersmagazine.it/2026/11/09/sneakers-magazine-issue-122-2026-2-2/",
