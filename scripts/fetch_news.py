@@ -28,11 +28,52 @@ FEEDS = [
 MAX_PER_FEED = 18
 MAX_ARTICLES = 180
 MAX_AGE_DAYS = 120
+
+# Keep the archive focused on fashion, design and contemporary culture.
+# Exclude recurring general-interest formats that broad publisher feeds can contain.
+EXCLUDED_CONTENT = re.compile(
+    r"oroscop|segno zodiacale|zodiac|horoscope|apnee? del sonno|sleep apnea|"
+    r"come smettere di guardare il telefono|telefono continuamente|"
+    r"abitudini facili|dieta|dimagr|ricett[ae]|cucin[ae]|sintomi|"
+    r"farmac[io]|integrator[ei]|consigli per dormire|routine del sonno",
+    re.IGNORECASE,
+)
 MAX_IMAGE_BYTES = 8 * 1024 * 1024
 MIN_IMAGE_LONG_EDGE = 1000
 MIN_IMAGE_SHORT_EDGE = 500
 USER_AGENT = "ATELIER-Magazine/2.0 (+https://github.com/manuelamodeo26-dev/atelier-magazine)"
 TRACKING_KEYS = {"fbclid", "gclid", "mc_cid", "mc_eid"}
+
+
+def is_relevant(article):
+    title = str(article.get("title") or "")
+    excerpt = str(article.get("excerpt") or "")
+    url = str(article.get("url") or "")
+    text = " ".join((title, excerpt, url))
+    return not EXCLUDED_CONTENT.search(text)
+
+
+def infer_category(title, excerpt, current="Fashion"):
+    text = " ".join((str(title or ""), str(excerpt or ""))).lower()
+    rules = [
+        ("Streetwear", r"streetwear|street style|street-style|sneaker|skateboard|hip.?hop"),
+        ("Business", r"fatturato|ricavi|utile netto|bilancio|acquisizion|quotazione|"
+                     r"margini|vendite|retail|ceo|amministratore delegato|investiment[oi]|"
+                     r"risultati finanziari|trimestre|mercato azionario"),
+        ("Architecture", r"architettur|edificio|edifici|appartamento|villa|palazzo|"
+                         r"interior design|interior|interni|urbanistica"),
+        ("Technology", r"intelligenza artificiale|\bai\b|tecnolog|digitale|"
+                       r"realtà virtuale|realtà aumentata|videogiochi|gaming"),
+        ("Design", r"design|designer|arredamento|arredo|prodotto|oggetto|"
+                   r"progettazione|industrial design|mobili|materiali"),
+        ("Art & Culture", r"arte|artista|mostra|museo|galleria|fotografia|fotografo|"
+                          r"cinema|film|musica|music|libro|romanzo|letteratura|teatro|"
+                          r"cultura|festival|curator|fumett"),
+    ]
+    for category, pattern in rules:
+        if re.search(pattern, text, re.IGNORECASE):
+            return category
+    return current or "Fashion"
 
 
 def local_name(tag):
@@ -269,19 +310,21 @@ def parse_feed(feed_url, category):
                     continue
                 description = best_description(node, "description", "summary", "encoded", "content")
                 author = child_text(node, "creator", "author", "artist")
-                articles.append({
+                article = {
                     "id": link,
                     "title": title[:300],
                     "excerpt": description[:2200],
                     "author": author[:160],
-                    "category": category,
+                    "category": infer_category(title, description, category),
                     "source": host,
                     "date": article_date(node),
                     "url": link,
                     "image": upgrade_image_url(article_image(node)),
                     "image_verified": False,
                     "language": "it",
-                })
+                }
+                if is_relevant(article):
+                    articles.append(article)
             metadata_attempts = 0
             for article in articles:
                 if (not article["image"] or len(article["excerpt"]) < 900 or not article["author"]) and metadata_attempts < 18:
@@ -313,6 +356,9 @@ def load_previous():
         for item in articles:
             if not isinstance(item, dict) or item.get("language") != "it":
                 continue
+            if not is_relevant(item):
+                continue
+            item["category"] = infer_category(item.get("title"), item.get("excerpt"), item.get("category"))
             url = canonical_url(item.get("url"))
             if not url:
                 continue
@@ -360,6 +406,9 @@ def main():
             continue
         article["url"] = url
         article["id"] = url
+        if not is_relevant(article):
+            continue
+        article["category"] = infer_category(article.get("title"), article.get("excerpt"), article.get("category"))
         if url in seen_urls:
             duplicates += 1
             # Keep the existing record and its verified image, but enrich its
