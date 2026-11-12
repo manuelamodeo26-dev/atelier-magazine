@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-11-12T12:59:15.486168+00:00",
+  "updated_at": "2026-11-12T13:01:52.892516+00:00",
   "feeds_ok": 5,
   "feeds_total": 5,
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 78
+    "verified_count": 81
   },
   "articles": [
     {
@@ -20,6 +20,8 @@
       "image": "https://compass-media.vogue.it/photos/6af495870783f5f941be8e99/master/pass/madison-jordan_011.JPG",
       "image_verified": true,
       "language": "it",
+      "editorial_attempted_at": "2026-11-12T13:01:31.618351+00:00",
+      "editorial_retry_after": "2026-11-13T01:01:31.618351+00:00",
       "image_width": 2091,
       "image_height": 2700,
       "image_format": "webp"
@@ -41,6 +43,24 @@
       "image_format": "webp"
     },
     {
+      "id": "https://www.finestresullarte.info/mercato/cy-twombly-opera-di-punta-asta-il-ponte",
+      "title": "Cy Twombly protagonista dell’asta de Il Ponte: un’opera dei suoi Roman Notes stimata fino a 1,5 milioni di euro",
+      "excerpt": "Il 24 e 25 novembre 2026 Il Ponte torna con l’asta di Arte Moderna e Contemporanea, presentando un catalogo che spazia dai grandi maestri del Novecento alle ricerche artistiche internazionali. Al centro della vendita un’opera di Cy Twombly con una stima di 1-1,5 milioni di euro.",
+      "author": "Redazione",
+      "category": "Business",
+      "source": "finestresullarte.info",
+      "date": "2026-11-12T11:58:26+00:00",
+      "url": "https://www.finestresullarte.info/mercato/cy-twombly-opera-di-punta-asta-il-ponte",
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/cy-twombly-untitled-january-1970.jpg",
+      "image_verified": true,
+      "language": "it",
+      "editorial_attempted_at": "2026-11-12T13:01:51.801943+00:00",
+      "editorial_retry_after": "2026-11-13T01:01:51.801943+00:00",
+      "image_width": 2000,
+      "image_height": 1597,
+      "image_format": "jpeg"
+    },
+    {
       "id": "https://www.pambianconews.com/2026/11/12/binello-quadrivio-group-piano-da-2-miliardi-moda-beauty-e-food-nel-mirino-500551/",
       "title": "Binello (Quadrivio Group): “Piano da 2 miliardi”. Moda, beauty e food nel mirino",
       "excerpt": "Il prossimo investimento in arrivo? A margine del 31° Pambianco-PwC Fashion Summit, Alessandro Binello, CEO di Quadrivio Group spiega che la società ha “un piano investimento di circa due miliardi per cui io direi che saranno tra i 10-15 nuovi investimenti. Circa un 30% sarà legato all’apparel, una quota analoga alla cosmetica. Un altro 30% sarà orientato sicuramente al comparto alimentare ed infine un 10% sarà legato a prodotti che sono collegati, design per esempio”. La dimensione, aggiunge, è un criterio importante perché “oggi come oggi noi dobbiamo creare dei gruppi internazionali e quindi questa è la nostra priorità”. Per il CEO di Quadrivio Group, negli ultimi anni nel lusso “è cambiato tutto”. Il consumatore è informato, influenzato dai social e “molto meno disposto a sbagliare”: chiede un prodotto chiaro, con un rapporto qualità-prezzo leggibile e un posizionamento preciso. Per questo comunicazione, filiera produttiva e retail vanno governati insieme. Un esempio è Dondup , che ha affidato la direzione creativa ad Achille Lauro : “Primo effetto, abbiamo fatto più del 20% della campagna vendita e ancora non abbiamo lanciato la nuova produzione”. Ma, avverte Binello, “il prodotto ci deve essere”. Questa complessità richiede competenze. Il team di Quadrivio dedicato ad affiancare gli imprenditori conta oggi una ventina di persone e l’obiettivo è arrivare a 40. “Da solo non ce la fai a reggere questo tipo di richiesta da parte del mercato”, osserva il manager. Sul fronte dei settori più interessanti sotto il profilo degli investimenti, Binello cita il caso della ristorazione. “Noi ci siamo concentrati in questo segmento. Abbiamo comprato Alice Pizza e Osteria da Fortunata , brand che vorremmo portare a livello internazionale perché il nostro obiettivo è veramente quello di riuscire a prendere queste aziende che ormai hanno un fatturato sostanzialmente intorno ai 100 milioni e portarle a un livello superiore”, quindi all’estero. Mercati come Stati Uniti, Cina e Medio Oriente sono ormai saturi: “Si parla di mercato di sostituzione, cioè tu devi arrivare lì con un prodotto migliore, più chiaro”. Oltre alla ristorazione, settore appunto chiave per la società, se",
@@ -50,6 +70,22 @@
       "date": "2026-11-12T11:30:47+00:00",
       "url": "https://www.pambianconews.com/2026/11/12/binello-quadrivio-group-piano-da-2-miliardi-moda-beauty-e-food-nel-mirino-500551/",
       "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/binello-quadrivio-group.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1920,
+      "image_height": 1080,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.pambianconews.com/2026/11/12/benaglia-style-capital-n21-ha-un-ottimo-posizionamento-per-noi-e-unoperazione-di-sistema-500544/",
+      "title": "Benaglia (Style Capital): “N°21 ha un ottimo posizionamento. Per noi è un’operazione di sistema”",
+      "excerpt": "Identità forte e autenticità. Sono questi i criteri che guidano le scelte di Style Capital , come ha spiegato Roberta Benaglia , CEO e founding partner del fondo, intervenendo al 31° Pambianco-PwC Fashion Summit . “Quando guardiamo un nuovo brand da acquisire, cerchiamo brand con una forte identità, autentici, riconoscibili, meglio se hanno anche un prodotto iconico”, ha detto. Contano poi l’organizzazione dell’azienda e la capacità della collezione di sostenere lo sviluppo internazionale e quello del canale diretto, “sia digitale ma anche e soprattutto retail in questo momento di mercato”. È in questa cornice che si inserisce l’acquisizione di N° 21 , il marchio di Alessandro Dell’Acqua , che Benaglia conosce “da tantissimi anni”. Per la manager il brand ha un posizionamento ideale in una fase in cui il lusso soffre: “È proprio un entry to luxury, quindi con l’allure della maison ma con un prezzo ancora interessante”. N° 21 faceva parte del perimetro di Gilmar , gruppo che sta attraversando un momento di difficoltà , e l’operazione è stata per Style Capital “anche un po’ un’operazione di sistema”, con l’obiettivo di salvare il marchio e dare continuità a un progetto ritenuto meritevole. Guardando oltre all’ultima acquisizione, Benaglia, sul palco del Summit, ha offerto anche il suo sguardo sul settore e sulla logica degli investimenti in questo momento particolare. Il fondo ha infatti dovuto rivedere alcune prospettive, a partire dalle geografie. Se cinque anni fa l’Asia e la Cina sembravano l’Eldorado, oggi il paradigma dei consumi in quell’area è cambiato. Da qui la scelta di allargare il raggio d’azione oltre il perimetro verticale di moda e lusso, verso segmenti adiacenti: tra gli ultimi investimenti c’è l’azienda francese di profumi Essential parfums nel cui capitale Style Capital è entrata la scorsa estate con una quota di minoranza. Agli imprenditori, Benaglia suggerisce di non cercare formule già pronte. “Quando mi chiedono qual è la ricetta giusta io rispondo che non c’è una ricetta, ogni azienda ha le sue caratteristiche”, ha osservato. Il punto è capire il sistema valoriale del brand e trasmetterlo in modo autentico a un cliente “molto attento, molto",
+      "author": "Redazione",
+      "category": "Business",
+      "source": "pambianconews.com",
+      "date": "2026-11-12T11:30:41+00:00",
+      "url": "https://www.pambianconews.com/2026/11/12/benaglia-style-capital-n21-ha-un-ottimo-posizionamento-per-noi-e-unoperazione-di-sistema-500544/",
+      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/benaglia-1.jpg",
       "image_verified": true,
       "language": "it",
       "image_width": 1920,
@@ -679,6 +715,22 @@
       "image_width": 1360,
       "image_height": 2048,
       "image_format": "webp"
+    },
+    {
+      "id": "https://www.exibart.com/attualita/sei-picasso-rubati-ritrovati-in-costa-azzurra-erano-nascosti-tra-i-vestiti/",
+      "title": "Sei Picasso rubati ritrovati in Costa Azzurra: erano nascosti tra i vestiti",
+      "excerpt": "Sei incisioni originali di Pablo Picasso , rubate poco più di un mese fa da un ristorante di Mougins, in Costa Azzurra, sono state ritrovate intatte durante un’operazione della Gendarmerie francese. Le opere, per un valore complessivo superiore ai 100mila euro, erano nascoste in una camera, dietro un cumulo di vestiti e cassette degli attrezzi. Sette persone sono state arrestate il 3 novembre 2026. Il furto era avvenuto nella notte tra l’1 e il 2 ottobre al ristorante L’Amandier, nel centro storico di Mougins. Due uomini incappucciati e con i guanti erano entrati nell’edificio mentre un terzo complice li attendeva in automobile. Nel giro di pochi minuti avevano raggiunto il Salon Picasso, sala dedicata all’artista, staccato dalle pareti le sei incisioni ed erano fuggiti. Le indagini della Brigade de recherches di Cannes, coordinate dalla procura di Grasse, sono proseguite per un mese attraverso pedinamenti, sorveglianza e incrocio dei dati. Gli investigatori hanno così individuato non soltanto i tre presunti autori materiali del furto ma anche persone accusate di ricettazione e di aver fornito supporto logistico. Secondo la Gendarmerie, alcuni dei sospettati erano già conosciuti per legami con circuiti della criminalità organizzata e per reati relativi alle armi. © GEND/SIRPA/MAJOR F. BOURDEAU I Picasso nascosti tra vestiti e attrezzi La svolta è arrivata il 3 novembre, quando una vasta operazione in diversi punti del dipartimento ha portato all’arresto di sette persone. Le incisioni sono state individuate durante la perquisizione di una delle abitazioni controllate: erano ancora incorniciate e conservate in perfette condizioni, nonostante fossero state nascoste sommariamente dietro vestiti e materiale da lavoro. I titoli e i dettagli delle sei opere non sono stati resi noti dalla Gendarmerie, che ha quantificato il danno del furto in oltre 100mila euro. Le incisioni sono state restituite, mentre proseguono gli accertamenti sulle responsabilità dei sette fermati e sull’eventuale destinazione prevista per le opere. «Questa operazione dimostra la forte mobilitazione dei gendarmi delle Alpes-Maritimes in un contesto nazionale di crescenti attacchi ai beni culturali",
+      "author": "Redazione",
+      "category": "Art & Culture",
+      "source": "exibart.com",
+      "date": "2026-11-11T15:00:06+00:00",
+      "url": "https://www.exibart.com/attualita/sei-picasso-rubati-ritrovati-in-costa-azzurra-erano-nascosti-tra-i-vestiti/",
+      "image": "https://www.exibart.com/repository/media/2026/11/picasso-ritrovati-francia-2.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1335,
+      "image_height": 890,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.vogue.it/article/look-semplice-non-banale-trend-met-gala-2027",
