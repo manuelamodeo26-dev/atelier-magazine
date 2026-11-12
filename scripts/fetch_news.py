@@ -576,7 +576,7 @@ def main():
     image_backfill_urls = set()
     metadata_backfill_candidates = [
         item for item in articles
-        if (not item.get("image") or len(item.get("excerpt", "")) < 250 or not item.get("author"))
+        if (not item.get("image") or len(item.get("excerpt", "")) < 250)
     ][:MAX_IMAGE_BACKFILLS_PER_RUN]
     if metadata_backfill_candidates:
         with concurrent.futures.ThreadPoolExecutor(max_workers=6) as executor:
