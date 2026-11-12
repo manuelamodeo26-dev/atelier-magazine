@@ -10,7 +10,7 @@ from urllib.parse import quote
 from urllib.request import Request, urlopen
 
 USER_AGENT = "ATELIER-Magazine/2.0 (+https://github.com/manuelamodeo26-dev/atelier-magazine)"
-MODEL = os.getenv("GEMINI_MODEL", "gemini-3.6-flash")
+MODEL = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
 API_KEY = os.getenv("GEMINI_API_KEY", "").strip()
 MAX_SOURCE_CHARS = 12000
 
@@ -106,7 +106,7 @@ def generate_editorial_summary(article, source_text):
         "sottotitoli. Apri con il fatto principale e il suo contesto; sviluppa i dettagli "
         "concreti; spiega la rilevanza per il settore solo se supportata dalla fonte; chiudi "
         "con una conclusione informativa, non promozionale. Se la fonte è troppo povera per "
-        "una sintesi affidabile, restituisci summary vuoto.\n\n"
+        "una sintesi affidabile, restituisci JSON con level 'standard' e paragraphs come array vuoto.\n\n"
         "Rispondi esclusivamente in JSON valido con le chiavi 'level' (standard o approfondimento) "
         "e 'paragraphs' (array di 3-5 paragrafi).\n\n"
         "TITOLO: " + title + "\n"
@@ -121,7 +121,7 @@ def generate_editorial_summary(article, source_text):
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {
             "temperature": 0.25,
-            "maxOutputTokens": 1200,
+            "maxOutputTokens": 1800,
             "responseMimeType": "application/json",
         },
     }
