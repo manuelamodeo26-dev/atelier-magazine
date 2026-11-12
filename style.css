@@ -316,3 +316,13 @@ section[id] { scroll-margin-top: 100px; }
 .story-card .article-image.image-unavailable .image-verified { display: none; }
 
 .like-article{margin-top:15px;margin-right:8px;border:1px solid var(--line);background:transparent;padding:10px 13px;font:10px var(--mono);letter-spacing:.06em;cursor:pointer;transition:background .2s,color .2s,border-color .2s}.like-article:hover,.like-article.is-liked{background:var(--red);border-color:var(--red);color:var(--paper)}.like-article [data-like-count]{font-variant-numeric:tabular-nums}.like-article:focus-visible{outline:2px solid var(--red);outline-offset:4px}
+
+
+/* Accessibilità: varianti di contrasto per testo e superfici rosse. La palette principale resta invariata. */
+:root{--red-text:#b51f1f;--red-surface:#b51f1f;--muted-text:#6a655c}
+.text-link span,.culture-strip b{color:var(--red-text)}
+.hero-art,.newsletter,.placeholder-red{background-color:var(--red-surface)}
+.fashion-visual{background:linear-gradient(135deg,#7b7771,#222 55%,var(--red-surface))}
+.newsletter .eyebrow{color:var(--paper)}
+.story-meta,.detail-muted,.detail-metadata span,.detail-byline,.detail-figure figcaption,.detail-topline,.article-page-top,.empty-state,.section-note,.load-row,.search-result small{color:var(--muted-text)}
+.like-article:hover,.like-article.is-liked{background:var(--red-surface);border-color:var(--red-surface);color:var(--paper)}

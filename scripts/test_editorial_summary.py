@@ -109,5 +109,34 @@ class EditorialSummaryTests(unittest.TestCase):
         self.assertIn("gemini-3.7-flash", mocked.call_args_list[1].args[0].full_url)
 
 
+    def test_quota_exhaustion_stops_repeated_requests_for_the_run(self):
+        error_body = json.dumps({
+            "error": {"message": "You exceeded your current quota", "status": "RESOURCE_EXHAUSTED"}
+        }).encode("utf-8")
+        errors = [
+            HTTPError(
+                "https://example.com", 429, "Too Many Requests", {},
+                io.BytesIO(error_body),
+            )
+            for _ in range(4)
+        ]
+        with (
+            patch.object(editorial_summary, "API_KEY", "unit-test-key"),
+            patch.object(editorial_summary, "MODEL", "primary-test-model"),
+            patch.object(editorial_summary, "QUOTA_EXHAUSTED_FOR_RUN", False),
+            patch.object(editorial_summary, "urlopen", side_effect=errors) as mocked,
+        ):
+            first = editorial_summary.generate_editorial_summary(
+                self._article(), "Testo della fonte " * 100
+            )
+            second = editorial_summary.generate_editorial_summary(
+                self._article(), "Altro testo della fonte " * 100
+            )
+
+        self.assertEqual(first, ("", ""))
+        self.assertEqual(second, ("", ""))
+        self.assertEqual(mocked.call_count, 4)
+
+
 if __name__ == "__main__":
     unittest.main()

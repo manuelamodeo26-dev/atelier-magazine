@@ -13,6 +13,7 @@ USER_AGENT = "ATELIER-Magazine/2.0 (+https://github.com/manuelamodeo26-dev/ateli
 MODEL = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
 API_KEY = os.getenv("GEMINI_API_KEY", "").strip()
 MAX_SOURCE_CHARS = 12000
+QUOTA_EXHAUSTED_FOR_RUN = False
 
 
 class ArticleTextParser(HTMLParser):
@@ -83,8 +84,10 @@ def _word_count(value):
 
 def generate_editorial_summary(article, source_text):
     """Return (summary, level) or empty values when evidence/API is insufficient."""
-    if not API_KEY:
+    global QUOTA_EXHAUSTED_FOR_RUN
+    if not API_KEY or QUOTA_EXHAUSTED_FOR_RUN:
         return "", ""
+    quota_exhausted_during_attempts = False
     excerpt = str(article.get("excerpt") or "").strip()
     title = str(article.get("title") or "").strip()
     combined = "\n\n".join(part for part in (title, excerpt, source_text.strip()) if part)
@@ -217,6 +220,7 @@ def generate_editorial_summary(article, source_text):
                         "quota", "resource_exhausted", "exceeded your current"
                     ))
                     if quota_exhausted:
+                        quota_exhausted_during_attempts = True
                         print("Gemini {}: quota esaurita; passo al modello alternativo senza ripetere la richiesta.".format(model))
                         break
                     if attempt == 0:
@@ -241,5 +245,8 @@ def generate_editorial_summary(article, source_text):
             except (ValueError, KeyError, IndexError, TypeError) as exc:
                 print("Risposta Gemini {} non valida: {}.".format(model, type(exc).__name__))
                 break
+    if quota_exhausted_during_attempts:
+        QUOTA_EXHAUSTED_FOR_RUN = True
+        print("Quota Gemini esaurita: sospendo gli altri tentativi AI per questa esecuzione.")
     print("Sintesi AI non disponibile: esauriti modello principale e modelli alternativi.")
     return "", ""
