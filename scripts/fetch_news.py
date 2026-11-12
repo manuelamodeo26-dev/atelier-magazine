@@ -14,7 +14,7 @@ from email.utils import parsedate_to_datetime
 from urllib.parse import parse_qsl, quote, urlencode, urljoin, urlparse, urlunparse
 from urllib.request import Request, urlopen
 from PIL import Image
-from editorial_summary import fetch_article_text, generate_editorial_summary
+from editorial_summary import fetch_article_text, generate_editorial_summary, is_valid_editorial_summary
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "data", "articles.json")
@@ -426,6 +426,17 @@ def load_previous():
             if not is_relevant(item):
                 continue
             item["category"] = infer_category(item.get("title"), item.get("excerpt"), source_category(item))
+            if item.get("editorial_summary") and not is_valid_editorial_summary(
+                item.get("editorial_summary"), item.get("editorial_level")
+            ):
+                print("Sintesi editoriale non conforme: verrà rigenerata — {}.".format(
+                    str(item.get("title") or "")[:90]
+                ))
+                for key in ("editorial_summary", "editorial_level", "editorial_word_count"):
+                    item.pop(key, None)
+                attempted_at = datetime.now(timezone.utc)
+                item["editorial_attempted_at"] = attempted_at.isoformat()
+                item["editorial_retry_after"] = (attempted_at + timedelta(hours=12)).isoformat()
             url = canonical_url(item.get("url"))
             if not url:
                 continue
