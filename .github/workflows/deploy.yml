@@ -24,6 +24,8 @@ jobs:
         uses: actions/setup-python@v6
         with:
           python-version: "3.12"
+      - name: Install feed image dependency
+        run: python -m pip install --disable-pip-version-check Pillow
       - name: Check Python syntax
         run: python -m compileall -q scripts
       - name: Run editorial and archive tests
