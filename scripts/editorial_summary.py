@@ -102,7 +102,7 @@ def generate_editorial_summary(article, source_text):
         "Valuta prima la rilevanza: usa livello 'approfondimento' soltanto se la fonte contiene "
         "sviluppi sostanziali, più elementi verificabili o un tema di particolare rilievo; in "
         "quel caso scrivi 300-450 parole. Per una notizia ordinaria usa livello 'standard' e "
-        "scrivi 180-250 parole. In entrambi i casi usa 3-5 paragrafi, senza titolo, elenchi o "
+        "scrivi 180-250 parole. Quando produci una sintesi usa 3-5 paragrafi, senza titolo, elenchi o "
         "sottotitoli. Apri con il fatto principale e il suo contesto; sviluppa i dettagli "
         "concreti; spiega la rilevanza per il settore solo se supportata dalla fonte; chiudi "
         "con una conclusione informativa, non promozionale. Se la fonte è troppo povera per "
@@ -135,15 +135,23 @@ def generate_editorial_summary(article, source_text):
         try:
             with urlopen(request, timeout=45) as response:
                 result = json.loads(response.read().decode("utf-8"))
+            if not isinstance(result, dict):
+                print("Sintesi AI non disponibile: risposta API non strutturata.")
+                return "", ""
             candidates = result.get("candidates") or []
             if not candidates:
                 reason = (result.get("promptFeedback") or {}).get("blockReason", "nessun candidato")
                 print("Sintesi AI senza contenuto utilizzabile: {}.".format(reason))
                 return "", ""
             candidate = candidates[0]
+            if not isinstance(candidate, dict):
+                return "", ""
             finish_reason = candidate.get("finishReason", "non indicato")
-            parts = candidate.get("content", {}).get("parts", [])
-            raw = "".join(part.get("text", "") for part in parts).strip()
+            content_data = candidate.get("content") or {}
+            parts = content_data.get("parts", []) if isinstance(content_data, dict) else []
+            if not isinstance(parts, list):
+                parts = []
+            raw = "".join(part.get("text", "") for part in parts if isinstance(part, dict)).strip()
             if raw.startswith(chr(96) * 3):
                 raw = raw.split("\n", 1)[-1]
                 raw = raw.rsplit(chr(96) * 3, 1)[0].strip()
@@ -158,6 +166,8 @@ def generate_editorial_summary(article, source_text):
                 if start_json < 0:
                     raise
                 data, _ = json.JSONDecoder().raw_decode(raw[start_json:])
+            if not isinstance(data, dict):
+                return "", ""
             level = data.get("level")
             paragraphs = data.get("paragraphs")
             if level not in ("standard", "approfondimento") or not isinstance(paragraphs, list):
