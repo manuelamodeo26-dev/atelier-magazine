@@ -30,7 +30,8 @@ FEEDS = [
 MAX_PER_FEED = 18
 MAX_ARTICLES = 180
 MAX_AGE_DAYS = 120
-MAX_SUMMARIES_PER_RUN = 3  # Controlled batch: one fresh story plus two archive backfills.
+MAX_SUMMARIES_PER_RUN = 12  # Editorial rebuild in controlled batches across scheduled runs.
+EDITORIAL_REBUILD_VERSION = "2026-11-12-atelier-editorial-v2"
 MAX_IMAGE_BACKFILLS_PER_RUN = 12
 
 # Keep the archive focused on fashion, design and contemporary culture.
@@ -577,6 +578,21 @@ def load_previous():
 
 def main():
     previous = load_previous()
+    # One-time reset: rebuild every existing article in the new ATELIER editorial voice.
+    try:
+        with open(OUT, encoding="utf-8") as file:
+            prior_payload = json.load(file)
+    except (OSError, ValueError, TypeError):
+        prior_payload = {}
+    if prior_payload.get("editorial_rebuild_version") != EDITORIAL_REBUILD_VERSION:
+        reset_count = 0
+        for article in previous.values():
+            if article.get("editorial_summary"):
+                reset_count += 1
+            for key in ("editorial_summary", "editorial_level", "editorial_word_count",
+                        "editorial_attempted_at", "editorial_retry_after"):
+                article.pop(key, None)
+        print("Revisione editoriale completa avviata: {} testi precedenti da riscrivere.".format(reset_count))
     # Capture an immutable baseline before any in-place enrichment or AI work.
     # Comparing live dictionaries against themselves misses mutations.
     previous_snapshot = json.dumps(
@@ -762,6 +778,7 @@ def main():
         print("Aggiorno soltanto lo stato diagnostico dei feed.")
 
     payload = {
+        "editorial_rebuild_version": EDITORIAL_REBUILD_VERSION,
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "feeds_ok": successful_feeds,
         "feeds_total": len(FEEDS),
