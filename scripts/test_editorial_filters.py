@@ -1,5 +1,10 @@
+import json
+import tempfile
 import unittest
+from datetime import datetime, timezone
+from pathlib import Path
 
+import fetch_news
 from fetch_news import infer_category, is_relevant, source_category
 
 
@@ -15,6 +20,37 @@ class EditorialFilterTests(unittest.TestCase):
         for article in samples:
             with self.subTest(title=article["title"]):
                 self.assertFalse(is_relevant(article))
+
+    def test_unrelated_excerpt_terms_do_not_exclude_a_story(self):
+        self.assertTrue(is_relevant({
+            "title": "La nuova collezione debutta a Milano",
+            "excerpt": "Il testo cita dieta e sintomi soltanto come esempi secondari.",
+        }))
+
+    def test_legacy_archive_is_cleaned_and_saved(self):
+        original_path = fetch_news.OUT
+        with tempfile.TemporaryDirectory() as directory:
+            archive_path = Path(directory) / "articles.json"
+            fetch_news.OUT = str(archive_path)
+            today = datetime.now(timezone.utc).isoformat()
+            archive_path.write_text(json.dumps({
+                "articles": [
+                    {"id": "https://example.com/fashion", "url": "https://example.com/fashion",
+                     "title": "La nuova collezione", "excerpt": "Una notizia di moda.",
+                     "source": "vogue.it", "category": "Fashion", "language": "it", "date": today},
+                    {"id": "https://example.com/oroscopo", "url": "https://example.com/oroscopo",
+                     "title": "Oroscopo della settimana", "excerpt": "Previsioni astrologiche.",
+                     "source": "vogue.it", "category": "Fashion", "language": "it", "date": today},
+                ]
+            }), encoding="utf-8")
+            try:
+                previous = fetch_news.load_previous()
+                saved = json.loads(archive_path.read_text(encoding="utf-8"))
+                self.assertEqual(len(previous), 1)
+                self.assertEqual(len(saved["articles"]), 1)
+                self.assertEqual(saved["articles"][0]["title"], "La nuova collezione")
+            finally:
+                fetch_news.OUT = original_path
 
     def test_keeps_editorial_topics(self):
         samples = [
