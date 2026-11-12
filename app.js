@@ -37,7 +37,8 @@
     const visual=image
       ?'<div class="article-image"><img src="'+escapeHTML(image)+'" alt="Fotografia verificata: '+escapeHTML(article.title||'articolo')+'" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.closest(\'.article-image\').classList.add(\'image-unavailable\');this.remove()"><span class="image-verified">FOTOGRAFIA VERIFICATA</span></div>'
       :'<div class="story-placeholder '+(index%3===0?'placeholder-red':index%3===1?'placeholder-cream':'placeholder-black')+'"><span>'+escapeHTML(categoryLabel(category).toLocaleUpperCase('it'))+'<br>ATELIER</span><b>A/'+String(index+1).padStart(2,'0')+'</b></div>';
-    return '<article class="story-card'+(index===0?' feature-card':'')+'">'+visual+'<div class="story-meta">'+escapeHTML(categoryLabel(category))+' · '+formatDate(article.date)+' · '+escapeHTML(article.source||'Fonte non indicata')+'</div><h3>'+escapeHTML(article.title||'Senza titolo')+'</h3><p>'+escapeHTML(article.excerpt||'')+'</p><button type="button" class="text-link card-link" data-open-article="'+escapeHTML(article.id||article.url||String(index))+'">LEGGI LA SCHEDA ↗</button></article>';
+    const articleId=article.id||article.url||String(index);
+    return '<article class="story-card'+(index===0?' feature-card':'')+'">'+visual+'<div class="story-meta">'+escapeHTML(categoryLabel(category))+' · '+formatDate(article.date)+' · '+escapeHTML(article.source||'Fonte non indicata')+'</div><h3>'+escapeHTML(article.title||'Senza titolo')+'</h3><p>'+escapeHTML(article.excerpt||'')+'</p><a class="text-link card-link" href="./article.html?id='+encodeURIComponent(articleId)+'">APRI ARTICOLO ↗</a></article>';
   }
   function articleDetail(article){
     const image=article.image_verified===true?safeURL(article.image):'';
@@ -111,7 +112,7 @@
     }
     render();
   }
-  grid.addEventListener('click',event=>{\n    const button=event.target.closest('[data-open-article]');\n    if(button)openArticle(button.dataset.openArticle);\n  });\n  filters.addEventListener('click',event=>{
+  filters.addEventListener('click',event=>{
     const button=event.target.closest('[data-filter]');
     if(!button)return;
     activeFilter=button.dataset.filter; showAll=false;
@@ -139,10 +140,10 @@
     const found=articles.filter(a=>[a.title,a.excerpt,a.category,a.source,a.language].join(' ').toLocaleLowerCase('it').includes(q)).slice(0,12);
     searchResults.innerHTML=found.length?found.map(a=>{
       const url=safeURL(a.url);
-      return '<div class="search-result"><small>'+escapeHTML(categoryLabel(a.category))+' · '+formatDate(a.date)+'</small><h4>'+escapeHTML(a.title)+'</h4><button type="button" class="text-link" data-open-search-article="'+escapeHTML(a.id||a.url||'')+'">APRI SCHEDA ↗</button></div>';
+      return '<div class="search-result"><small>'+escapeHTML(categoryLabel(a.category))+' · '+formatDate(a.date)+'</small><h4>'+escapeHTML(a.title)+'</h4><a class="text-link" href="./article.html?id='+encodeURIComponent(a.id||a.url||'')+'">APRI ARTICOLO ↗</a></div>';
     }).join(''):'<p>Nessun risultato trovato.</p>';
   });
-  searchResults.addEventListener('click',event=>{\n    const button=event.target.closest('[data-open-search-article]');\n    if(!button)return;\n    searchDialog.close();\n    openArticle(button.dataset.openSearchArticle);\n  });\n  const today=$('#today-label');
+  const today=$('#today-label');
   if(today)today.textContent=new Date().toLocaleDateString('it-IT',{day:'2-digit',month:'long',year:'numeric'}).toUpperCase()+' · ITALIA';
   loadArticles();
   if('serviceWorker' in navigator && location.protocol==='https:'){
