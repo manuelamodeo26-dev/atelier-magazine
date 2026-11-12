@@ -66,7 +66,7 @@ def canonical_url(value):
             return ""
         query = [(key, val) for key, val in parse_qsl(parsed.query, keep_blank_values=True)
                  if not key.lower().startswith("utm_") and key.lower() not in TRACKING_KEYS]
-        return urlunparse((parsed.scheme, parsed.netloc.lower(), quote(parsed.path, safe="/%:@!return urlunparse((parsed.scheme, parsed.netloc.lower(), parsed.path,'()*+,;=-._~"),
+        return urlunparse((parsed.scheme, parsed.netloc.lower(), quote(parsed.path, safe="/%:@!$&'()*+,;=-._~"),
                            parsed.params, urlencode(query), ""))
     except (TypeError, ValueError):
         return ""
