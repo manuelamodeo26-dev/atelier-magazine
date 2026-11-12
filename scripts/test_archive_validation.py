@@ -38,7 +38,7 @@ class ArchiveValidationTests(unittest.TestCase):
 
     def test_rejects_summary_with_too_few_paragraphs(self):
         payload = self.payload()
-        payload["articles"][0]["editorial_summary"] = "\\n\\n".join([" ".join(["moda"] * 110) for _ in range(3)])
+        payload["articles"][0]["editorial_summary"] = "\n\n".join([" ".join(["moda"] * 110) for _ in range(3)])
         payload["articles"][0]["editorial_level"] = "standard"
         errors, _ = validate_payload(payload)
         self.assertTrue(any("sintesi editoriale fuori standard" in error for error in errors))
