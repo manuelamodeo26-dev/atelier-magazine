@@ -567,3 +567,32 @@ section[id] { scroll-margin-top: 100px; }
 .article-action-bar .like-article,.article-action-bar .save-article{margin:0!important;padding:6px 0!important}
 .article-action-bar .save-bookmark-icon{width:16px!important;height:18px!important}
 @media(max-width:480px){.article-action-bar{gap:10px!important}.article-action-group{gap:14px!important}.article-action-bar .like-article,.article-action-bar .save-article{font-size:10px!important}}
+
+
+/* Rifinitura definitiva dei comandi Mi piace e Salva */
+.story-card-actions{display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:22px!important;width:100%!important;margin:14px 0 0!important;padding:0!important}
+.story-card-actions .like-article,.story-card-actions .save-article{
+  appearance:none!important;-webkit-appearance:none!important;display:inline-flex!important;
+  align-items:center!important;justify-content:flex-start!important;gap:6px!important;
+  width:auto!important;min-width:0!important;height:auto!important;margin:0!important;padding:4px 0!important;
+  border:0!important;border-radius:0!important;box-shadow:none!important;
+  background:transparent!important;color:#B51F1F!important;-webkit-text-fill-color:#B51F1F!important;
+  font:600 11px var(--mono)!important;letter-spacing:.06em!important;line-height:1.4!important;
+}
+.like-heart{display:inline-block!important;color:#B51F1F!important;-webkit-text-fill-color:#B51F1F!important;font-family:Arial,sans-serif!important;font-size:17px!important;font-weight:900!important;line-height:1!important;vertical-align:-1px!important}
+.story-card-actions .like-article:hover,.story-card-actions .like-article.is-liked,
+.story-card-actions .save-article:hover,.story-card-actions .save-article.is-saved{
+  background:transparent!important;border:0!important;box-shadow:none!important;color:#8f1b1b!important;-webkit-text-fill-color:#8f1b1b!important;
+}
+.story-card-actions .save-bookmark-icon{width:15px!important;height:17px!important}
+.article-action-bar{display:flex!important;align-items:center!important;justify-content:space-between!important;width:100%!important;gap:16px!important}
+.article-action-bar .article-inline-back{display:inline-flex!important;align-items:center!important;justify-content:flex-start!important;flex:0 0 42px!important}
+.article-action-group{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:24px!important;margin-left:auto!important;flex-wrap:nowrap!important}
+.article-action-group .like-article,.article-action-group .save-article{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:6px!important;
+  flex:0 0 auto!important;margin:0!important;padding:6px 0!important;min-height:28px!important;
+  font:600 11px var(--mono)!important;line-height:1.4!important;white-space:nowrap!important;
+}
+.article-action-group .like-heart{font-size:18px!important;font-weight:900!important}
+.article-action-group .save-bookmark-icon{width:16px!important;height:18px!important}
+@media(max-width:480px){.story-card-actions{gap:18px!important}.article-action-group{gap:14px!important}.article-action-group .like-article,.article-action-group .save-article{font-size:9px!important;letter-spacing:.025em!important}}
