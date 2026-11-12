@@ -10,7 +10,7 @@ from urllib.parse import quote
 from urllib.request import Request, urlopen
 
 USER_AGENT = "ATELIER-Magazine/2.0 (+https://github.com/manuelamodeo26-dev/atelier-magazine)"
-MODEL = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
+MODEL = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
 API_KEY = os.getenv("GEMINI_API_KEY", "").strip()
 MAX_SOURCE_CHARS = 12000
 QUOTA_EXHAUSTED_FOR_RUN = False
@@ -120,11 +120,11 @@ def generate_editorial_summary(article, source_text):
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {
             "thinkingConfig": {"thinkingLevel": "low"},
-            "maxOutputTokens": 3500,
+            "maxOutputTokens": 1800,
             "responseMimeType": "application/json",
         },
     }
-    fallback_models = ["gemini-3.7-flash", "gemini-3.6-flash", "gemini-3.5-flash-lite"]
+    fallback_models = ["gemini-3.6-flash", "gemini-3.7-flash", "gemini-3.8-flash"]
     models = list(dict.fromkeys([MODEL] + fallback_models))
     for model in models:
         endpoint = (
