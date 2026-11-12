@@ -14,6 +14,7 @@ from email.utils import parsedate_to_datetime
 from urllib.parse import parse_qsl, quote, urlencode, urljoin, urlparse, urlunparse
 from urllib.request import Request, urlopen
 from PIL import Image
+from editorial_summary import fetch_article_text, generate_editorial_summary
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "data", "articles.json")
@@ -41,9 +42,9 @@ def local_name(tag):
 def clean(value):
     value = html.unescape(re.sub(r"<[^>]*>", " ", value or ""))
     # Remove media URLs often embedded at the start of publisher RSS content.
-    value = re.sub(r"https?://\\S+", " ", value, flags=re.I)
-    value = re.sub(r"\\b(?:https?://)?(?:www\\.)?[^\\s]+\\.(?:jpe?g|png|webp|gif)(?:\\?[^\\s]*)?", " ", value, flags=re.I)
-    return re.sub(r"\\s+", " ", value).strip()
+    value = re.sub(r"https?://\S+", " ", value, flags=re.I)
+    value = re.sub(r"\b(?:https?://)?(?:www\.)?[^\s]+\.(?:jpe?g|png|webp|gif)(?:\?[^\s]*)?", " ", value, flags=re.I)
+    return re.sub(r"\s+", " ", value).strip()
 
 
 def child(node, *names):
@@ -388,6 +389,28 @@ def main():
         recent.append(item)
     articles = sorted(recent,
                       key=lambda item: item.get("date") or "0000", reverse=True)[:MAX_ARTICLES]
+
+    # Generate a small batch of source-grounded editorial summaries per run.
+    # The publisher excerpt remains the fallback whenever source text is thin
+    # or the optional AI service is unavailable.
+    if os.getenv("GEMINI_API_KEY", "").strip():
+        candidates = [
+            item for item in articles
+            if canonical_url(item.get("url")) in new_urls
+            and not item.get("editorial_summary")
+        ][:5]
+        for article in candidates:
+            source_text = fetch_article_text(article.get("url", ""))
+            summary, level = generate_editorial_summary(article, source_text)
+            if summary:
+                article["editorial_summary"] = summary
+                article["editorial_level"] = level
+                article["editorial_word_count"] = len(re.findall(r"\b[\wÀ-ÖØ-öø-ÿ’'-]+\b", summary, flags=re.UNICODE))
+                print("Sintesi editoriale generata: {}".format(article.get("title", "")[:90]))
+            else:
+                print("Sintesi editoriale saltata: {}".format(article.get("title", "")[:90]))
+    else:
+        print("GEMINI_API_KEY non configurata: si mantiene il testo originale delle fonti.")
 
     # Verify only images belonging to newly imported articles. Existing
     # archive entries are left untouched and are not downloaded again.
