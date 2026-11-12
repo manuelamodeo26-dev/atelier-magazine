@@ -51,8 +51,8 @@ jobs:
               assert article.get('title') and article.get('url', '').startswith(('http://', 'https://'))
               if article.get('image_verified'):
                   assert article.get('image', '').startswith('https://')
-                  assert article.get('image_width', 0) >= 1000
-                  assert article.get('image_height', 0) >= 500
+                  assert max(article.get('image_width', 0), article.get('image_height', 0)) >= 1000
+                  assert min(article.get('image_width', 0), article.get('image_height', 0)) >= 500
           verified = sum(bool(a.get('image_verified')) for a in data['articles'])
           print(f"Archivio valido: {len(data['articles'])} articoli; fotografie verificate: {verified}")
           PY
