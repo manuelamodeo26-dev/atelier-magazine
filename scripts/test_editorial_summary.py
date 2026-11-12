@@ -72,7 +72,7 @@ class EditorialSummaryTests(unittest.TestCase):
         self.assertEqual(level, "standard")
         self.assertEqual(editorial_summary._word_count(summary), 320)
         self.assertEqual(mocked.call_count, 2)
-        self.assertIn("gemini-3.7-flash", mocked.call_args_list[1].args[0].full_url)
+        self.assertIn("gemini-3.6-flash", mocked.call_args_list[1].args[0].full_url)
         sleep.assert_not_called()
 
     def test_reclassifies_short_in_depth_text_as_standard(self):
@@ -106,7 +106,7 @@ class EditorialSummaryTests(unittest.TestCase):
         self.assertEqual(level, "standard")
         self.assertEqual(editorial_summary._word_count(summary), 320)
         self.assertEqual(mocked.call_count, 2)
-        self.assertIn("gemini-3.7-flash", mocked.call_args_list[1].args[0].full_url)
+        self.assertIn("gemini-3.6-flash", mocked.call_args_list[1].args[0].full_url)
 
 
     def test_quota_exhaustion_stops_repeated_requests_for_the_run(self):
