@@ -1,5 +1,6 @@
 {
-  "updated_at": "2026-11-12T19:19:19.153565+00:00",
+  "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
+  "updated_at": "2026-11-12T21:21:14.318403+00:00",
   "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
@@ -49,9 +50,28 @@
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 112
+    "verified_count": 113
   },
   "articles": [
+    {
+      "id": "https://www.exibart.com/progetti-e-iniziative/correspondences-il-progetto-di-soundwalk-collective-e-patti-smith-alla-triennale-milano/",
+      "title": "Correspondences, il progetto di Soundwalk Collective e Patti Smith alla Triennale Milano",
+      "excerpt": "Dal 26 novembre 2026 al 7 marzo 2027 Triennale Milano e Fondation Cartier pour l’art contemporain presentano Correspondences , progetto multidisciplinare proposto per la prima volta in Italia nella sua versione più completa. Nato dalla collaborazione tra Stephan Crasneanscki e Simone Merli , fondatori di Soundwalk Collective , e Patti Smith , Correspondences si sviluppa tra suono, film, poesia, performance e materiali d’archivio. Il progetto, avviato nel corso di una collaborazione decennale, prende forma a partire da registrazioni sul campo raccolte in luoghi segnati da eventi storici, crisi ambientali e trasformazioni culturali, da Chernobyl a Hiroshima. A Milano il corpus audiovisivo viene presentato insieme a installazioni realizzate nel corso degli anni, materiali provenienti dai luoghi delle registrazioni e nuove opere di Crasneanscki e Smith, costruendo un percorso in cui la dimensione del paesaggio e quella dell’ascolto si sovrappongono. Stephan Crasneanski and Patti Smith, Pasolini | Medea, courtesy of kurimanzutto Rights holders: SWC Dal field recording all’archivio Alla base di Correspondences ci sono le registrazioni realizzate da Crasneanscki in diverse parti del mondo. I suoni provengono da ecosistemi minacciati, territori segnati da disastri e luoghi associati alla vita e all’opera di scrittori e poeti. Il field recording assume così una doppia funzione: documentare e conservare tracce sonore destinate a trasformarsi o scomparire ma anche rielaborarle attraverso la composizione artistica. Negli studi di Berlino, Parigi e New York, Soundwalk Collective ha intrecciato queste registrazioni con la voce e i testi di Patti Smith, costruendo scenari acustici nei quali prendono forma temi ecologici, politici e spirituali. Stephan Crasneanski and Patti Smith, Prince of Anarchy | Cry of the Lost, courtesy of kurimanzutto Rights holders: SWC L’allestimento, progettato da Bunker Arc , non segue un ordine cronologico. Film, installazioni, materiali d’archivio e componimenti poetici sono organizzati per associazioni e corrispondenze, lasciando che siano le relazioni tra immagini, suoni e parole a costruire il percorso. I film vengono presentati in coppia, mette",
+      "author": "Redazione",
+      "category": "Art & Culture",
+      "source": "exibart.com",
+      "date": "2026-11-12T19:30:37+00:00",
+      "url": "https://www.exibart.com/progetti-e-iniziative/correspondences-il-progetto-di-soundwalk-collective-e-patti-smith-alla-triennale-milano/",
+      "image": "https://www.exibart.com/repository/media/2026/11/MBB01336_1_Stephan-Crasneanscki-Patti-Smith_Photo-by-Mathilde-Brandi.jpg",
+      "image_verified": true,
+      "language": "it",
+      "editorial_summary": "Dal 26 novembre 2026 al 7 marzo 2027 la Triennale Milano, in collaborazione con la Fondation Cartier pour l’art contemporain, ospita \"Correspondences\", la versione più completa e mai presentata in Italia di un progetto che unisce suono, film, poesia e materiali d’archivio. La proposta nasce dalla partnership decennale tra Stephan Crasneanscki e Simone Merli, fondatori di Soundwalk Collective, e la leggendaria Patti Smith. Il lavoro si sviluppa a partire da registrazioni sul campo realizzate in luoghi segnati da eventi storici, crisi ambientali e trasformazioni culturali, da Chernobyl a Hiroshima, e si arricchisce di nuove opere create in studio a Berlino, Parigi e New York. In Italia, oltre al corpus audiovisivo, vengono esposte installazioni realizzate nel corso degli anni, materiali provenienti dai siti di registrazione e opere inedite di Crasneanscki e Smith, creando un percorso in cui paesaggio e ascolto si fondono in una dimensione immersiva.\n\nIl cuore di \"Correspondences\" è il field recording: suoni provenienti da ecosistemi minacciati, territori colpiti da disastri e luoghi legati alla vita di scrittori e poeti. Queste tracce, destinate a trasformarsi o scomparire, vengono documentate e conservate, ma anche rielaborate attraverso composizioni artistiche che intrecciano la voce e i testi di Patti Smith. Il risultato è un mosaico acustico che affronta temi ecologici, politici e spirituali, trasformando l’ascolto in un’esperienza di riflessione e memoria collettiva.\n\n**Il progetto si presenta come un archivio di suggestioni, dove film, installazioni, materiali d’archivio e componimenti poetici sono organizzati per associazioni e corrispondenze, lasciando che le relazioni tra immagini, suoni e parole costruiscano il percorso.** Questa struttura non lineare invita il visitatore a muoversi tra livelli di ascolto, a confrontare contenuti diversi e a creare connessioni personali con i luoghi e le storie presentate.\n\nLa mostra amplia il formato originariamente performativo di \"Correspondences\", trasformandolo in un ambiente espositivo articolato. Per la prima presentazione italiana, il progetto si arricchisce di lavori realizzati in situ, legati alla storia di Milano e alla sua eredità culturale, come il Codice Atlantico di Leonardo da Vinci. Questo intervento locale aggiunge un nuovo capitolo al format, dimostrando la sua capacità di adattarsi e trasformarsi in base al contesto in cui viene presentato.\n\nInfine, la tappa alla Triennale si inserisce in un lungo partenariato culturale tra Soundwalk Collective e la Fondation Cartier, che si è sviluppato per quasi vent’anni attraverso mostre, pubblicazioni e performance. La mostra porta per la prima volta in Italia l’insieme più ampio dei materiali prodotti dalla collaborazione tra Soundwalk Collective e Patti Smith, offrendo al pubblico un’esperienza unica che coniuga arte, storia e consapevolezza ambientale.",
+      "editorial_level": "approfondimento",
+      "editorial_word_count": 422,
+      "image_width": 1772,
+      "image_height": 1265,
+      "image_format": "jpeg"
+    },
     {
       "id": "https://www.vogue.it/article/maison-crivelli-24-hours-with-gabrielle-caunesil-hibiscus-mahajad",
       "title": "Maison Crivelli 24 Hours With Gabrielle Caunesil e il suo profumo preferito in 3 versioni, tra fiori, power dressing e gesti d'amore",
@@ -64,9 +84,6 @@
       "image": "https://compass-media.vogue.it/photos/6af60960be9fb7c68c2fb01a/master/pass/maison%20crivelli%20gabrielle%20caunesil%20vogue.png",
       "image_verified": true,
       "language": "it",
-      "editorial_summary": "Maison Crivelli presenta Hibiscus Mahajad, il suo profumo di lancio, in tre declinazioni – eau de parfum, body oil e candela profumata – e lo segue per 24 ore nella vita di Gabrielle Caunesil, influencer e direttrice creativa. La fragranza si caratterizza per un bouquet floreale vivace di ribes nero e rosa di damasco, arricchito da una nota di menta che si fonde con la pelle. Gabrielle la utilizza fin dal mattino, dopo il caffè e la routine familiare, massaggiandola sui polsi e sul collo con la versione body oil, prodotto che ha registrato un rapido sold‑out online per la sua persistenza.\n\nDopo il primo strato, Gabrielle indossa il suo “power outfit”: jeans, stivali lucidi, giacca e occhiali aviator, spiegando che il look deve sostenerla durante gli appuntamenti importanti. **Il punto cruciale è che Hibiscus Mahajad diventa un alleato di stile, accompagnando la creatività e la fiducia di Gabrielle per tutta la giornata**. La scelta di Maison Crivelli e la sua filosofia di semplicità sofisticata trovano eco nella giovane direttrice, che prosegue la mattinata nel suo design studio, accendendo la candela della stessa fragranza per illuminare l’ambiente mentre seleziona materiali per il nuovo ufficio di Forma Poiesis Studio.\n\nNel pomeriggio, Gabrielle ricorda il matrimonio con Riccardo Pozzoli, segnato da un bouquet lime che ha ispirato un gesto d’amore: comprare fiori contenenti l’elemento verde di Hibiscus Mahajad per il marito. Conclude sottolineando l’importanza di sperimentare e credere in sé stessi, un messaggio che trasmette anche ai figli e che si riflette nella sua carriera, dalla moda con La Semaine Paris al nuovo progetto di design.",
-      "editorial_level": "standard",
-      "editorial_word_count": 263,
       "image_width": 1080,
       "image_height": 1920,
       "image_format": "webp"
@@ -83,9 +100,6 @@
       "image": "https://www.exibart.com/repository/media/2026/11/Letizia-Battaglia-684x1024.jpeg",
       "image_verified": true,
       "language": "it",
-      "editorial_summary": "La mostra di Letizia Battaglia, aperta al Centro Italiano per la Fotografia di Torino, è una retrospettiva che raccoglie oltre 200 scatti realizzati tra il 1970 e il 2020. La mostra, che rimarrà in esposizione fino al 7 febbraio 2027, è co‑prodotta da CAMERA e Jeu de Paume e curata da Walter Guadagnini, con la collaborazione dell’Archivio Letizia Battaglia. Il catalogo, pubblicato da Dario Cimorelli Editore, descrive l’opera come una “duplice anima” tra militanza e documentazione, un percorso che segue la fotografa palermitana dalla sua città natale fino a destinazioni come Turchia, Egitto, Russia, Jugoslavia, Stati Uniti, Scozia e Groenlandia.\n\nBattaglia è nota per la sua capacità di catturare la realtà quotidiana con una sensibilità verista siciliana: i suoi scatti spaziano dai piccoli dettagli della vita di tutti i giorni a scene di violenza estrema, documentando e denunciando la mafia con coraggio. La sua fotografia non si limita a registrare eventi drammatici; racconta anche la bellezza, le donne, i bambini e la vita di chi vive in condizioni di povertà. Il curatore sottolinea che la macchina fotografica è stata per lei un’arma di pace, un mezzo per partecipare alla battaglia contro le ingiustizie e per dare voce a chi spesso rimane silenzioso.\n\n**Battaglia ha usato la fotografia come strumento di denuncia e di resistenza, trasformando la sua arte in un atto di resistenza civile.**\n\nLa mostra mette in luce come la fotografia di Battaglia sia un documento storico che supera la mera cronaca: è un frammento di memoria collettiva che mostra una Sicilia complessa, contraddittoria e, nonostante la violenza, ricca di bellezza, forza e dignità. La sua opera è stata riconosciuta a livello internazionale, con il Premio Smith del 1985, e continua a influenzare il modo in cui la fotografia può essere usata per raccontare storie di vita reale e per promuovere il cambiamento sociale.\n\nIn conclusione, la retrospettiva di Letizia Battaglia a Torino offre un’opportunità unica di confrontarsi con la storia della Sicilia e con le sfide universali della giustizia e della dignità umana. La mostra invita il pubblico a riflettere sul potere della fotografia come mezzo di denuncia, memoria e, soprattutto, di resistenza civile.",
-      "editorial_level": "approfondimento",
-      "editorial_word_count": 357,
       "image_width": 684,
       "image_height": 1024,
       "image_format": "jpeg"
@@ -102,8 +116,6 @@
       "image": "https://www.finestresullarte.info/rivista/immagini/2026/3743/punk-met-1.jpg",
       "image_verified": true,
       "language": "it",
-      "editorial_attempted_at": "2026-11-12T19:09:22.074942+00:00",
-      "editorial_retry_after": "2026-11-13T07:09:22.074942+00:00",
       "image_width": 1200,
       "image_height": 616,
       "image_format": "jpeg"
@@ -120,8 +132,6 @@
       "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/Valentino_Cruise2027-Holiday_Logo_16x9_01.jpg",
       "image_verified": true,
       "language": "it",
-      "editorial_attempted_at": "2026-11-12T19:09:24.119682+00:00",
-      "editorial_retry_after": "2026-11-13T07:09:24.119682+00:00",
       "image_width": 2126,
       "image_height": 1092,
       "image_format": "jpeg"
@@ -138,8 +148,6 @@
       "image": "https://www.exibart.com/repository/media/2026/11/CHRISTO-Running-Fence-Project-for-Sonoma-and-Marin-Counties-State-of-California.jpg",
       "image_verified": true,
       "language": "it",
-      "editorial_attempted_at": "2026-11-12T19:09:25.083995+00:00",
-      "editorial_retry_after": "2026-11-13T07:09:25.083995+00:00",
       "image_width": 648,
       "image_height": 1017,
       "image_format": "jpeg"
@@ -156,8 +164,6 @@
       "image": "https://www.exibart.com/repository/media/2026/11/Foto-still-life-prodotto-1-819x1024.jpg",
       "image_verified": true,
       "language": "it",
-      "editorial_attempted_at": "2026-11-12T19:09:25.825717+00:00",
-      "editorial_retry_after": "2026-11-13T07:09:25.825717+00:00",
       "image_width": 819,
       "image_height": 1024,
       "image_format": "jpeg"
@@ -270,8 +276,6 @@
       "image": "",
       "image_verified": false,
       "language": "it",
-      "editorial_attempted_at": "2026-11-12T19:17:07.494256+00:00",
-      "editorial_retry_after": "2026-11-13T07:17:07.494256+00:00",
       "image_width": 0,
       "image_height": 0,
       "image_format": ""
@@ -464,8 +468,6 @@
       "image": "https://compass-media.vogue.it/photos/6af495870783f5f941be8e99/master/pass/madison-jordan_011.JPG",
       "image_verified": true,
       "language": "it",
-      "editorial_attempted_at": "2026-11-12T13:01:31.618351+00:00",
-      "editorial_retry_after": "2026-11-13T01:01:31.618351+00:00",
       "image_width": 2091,
       "image_height": 2700,
       "image_format": "webp"
@@ -498,8 +500,6 @@
       "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/andrea-del-castagno-cenacolo-sant-apollonia-ultima-cena-cover.jpg",
       "image_verified": true,
       "language": "it",
-      "editorial_attempted_at": "2026-11-12T13:35:27.586761+00:00",
-      "editorial_retry_after": "2026-11-13T01:35:27.586761+00:00",
       "image_width": 1200,
       "image_height": 616,
       "image_format": "jpeg"
@@ -516,8 +516,6 @@
       "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/cy-twombly-untitled-january-1970.jpg",
       "image_verified": true,
       "language": "it",
-      "editorial_attempted_at": "2026-11-12T13:01:51.801943+00:00",
-      "editorial_retry_after": "2026-11-13T01:01:51.801943+00:00",
       "image_width": 2000,
       "image_height": 1597,
       "image_format": "jpeg"
@@ -1011,8 +1009,6 @@
       "image": "https://www.sneakersmagazine.it/wp-content/uploads/2026/11/SCYM-S71049-1-091126-F26-270-1024x1024.jpg",
       "image_verified": true,
       "language": "it",
-      "editorial_attempted_at": "2026-11-12T13:35:38.991119+00:00",
-      "editorial_retry_after": "2026-11-13T01:35:38.991119+00:00",
       "image_width": 1024,
       "image_height": 1024,
       "image_format": "jpeg"
@@ -1775,9 +1771,7 @@
       "url": "https://www.finestresullarte.info/opinioni/musei-per-non-vedenti-aggiungere-braille-senza-co-progettare-e-paternalismo",
       "image": "",
       "image_verified": false,
-      "language": "it",
-      "editorial_attempted_at": "2026-11-12T15:44:52.491834+00:00",
-      "editorial_retry_after": "2026-11-13T03:44:52.491834+00:00"
+      "language": "it"
     },
     {
       "id": "https://www.finestresullarte.info/attualita/donatore-anonimo-dona-6-milioni-di-euro-per-salvare-biblioteca-del-castello-chantilly",
@@ -1790,9 +1784,7 @@
       "url": "https://www.finestresullarte.info/attualita/donatore-anonimo-dona-6-milioni-di-euro-per-salvare-biblioteca-del-castello-chantilly",
       "image": "",
       "image_verified": false,
-      "language": "it",
-      "editorial_attempted_at": "2026-11-12T15:44:51.719313+00:00",
-      "editorial_retry_after": "2026-11-13T03:44:51.719313+00:00"
+      "language": "it"
     },
     {
       "id": "https://www.finestresullarte.info/archeologia/catania-riapre-antico-ipogeo-cinque-camere-sepolcrali-tre-metri-sotto-la-citta",
@@ -1837,9 +1829,7 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": "",
-      "editorial_attempted_at": "2026-11-12T15:44:42.790161+00:00",
-      "editorial_retry_after": "2026-11-13T03:44:42.790161+00:00"
+      "image_format": ""
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/piazza-italia-compra-conbipel-in-arrivo-un-piano-di-opening-da-100-nuovi-negozi-500181/",
@@ -1868,9 +1858,7 @@
       "url": "https://www.pambianconews.com/2026/11/10/menswear-italiano-a-doppia-velocita-nei-7-mesi-export-a-09-import-a-65-500143/",
       "image": "",
       "image_verified": false,
-      "language": "it",
-      "editorial_attempted_at": "2026-11-12T15:42:44.815078+00:00",
-      "editorial_retry_after": "2026-11-13T03:42:44.815078+00:00"
+      "language": "it"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/kiton-raddoppia-nel-quadrilatero-nuova-boutique-in-via-montenapoleone-500111/",
@@ -1886,9 +1874,7 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": "",
-      "editorial_attempted_at": "2026-11-12T15:42:43.777505+00:00",
-      "editorial_retry_after": "2026-11-13T03:42:43.777505+00:00"
+      "image_format": ""
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/subdued-da-apac-e-usa-previsti-45-milioni-di-fatturato-nel-2026-500171/",
@@ -1930,10 +1916,7 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": "",
-      "editorial_summary": "Verga 1947 chiude il 2026 definendolo un anno di grande intensità, segnato soprattutto dalla ‘Watch Art Grand Exhibition’ di Patek Philippe a Milano. L’amministratore delegato Fabrizio Noris ha evidenziato che l’edizione milanese è stata la più partecipata di sempre, con oltre 68 000 ingressi, superando persino la mostra di Tokyo nonostante la differenza demografica. L’evento ha attirato collezionisti italiani, considerati un punto di riferimento per l’alta orologeria mondiale, e un pubblico internazionale proveniente da Europa, Asia e America, tutti attratti da pezzi unici lavorati a mano.\n\nNoris ha sottolineato l’importanza della gratuità dell’accesso, affermando che “la scelta di aprire ogni edizione al pubblico gratuitamente fa bene a tutto il mercato, non solo a noi concessionari – alimenta la passione per l’orologeria in generale”. Il team di Verga 1947, guidato da Federico Verga, ha presidiato la mostra per tutti i sedici giorni, offrendo visite guidate e momenti di incontro riservati tra i clienti più importanti e i dirigenti di Patek Philippe, tra cui il presidente Thierry Stern. Questi incontri hanno rappresentato un valore aggiunto notevole per i collezionisti di alto livello.\n\n**Il risultato più significativo è la crescita complessiva del fatturato, che supera i 40 milioni di euro, con un incremento del 13 % rispetto al 2025 e un EBITDA quasi 50 % più alto, segnale di una solidità finanziaria in espansione**.\n\nIl successo economico è stato sostenuto anche da un passaggio generazionale completato: dal 2025 Riccardo e Federico Verga hanno assunto le concessioni di Rolex e Patek Philippe, mentre il fratello minore Filippo gestisce l’area finanziaria. Noris ha attribuito la fluidità del trasferimento alla visione del presidente Umberto Verga e alla separazione chiara dei ruoli, evitando sovrapposizioni e attriti. La passione familiare, radicata fin dalla scuola, ha consolidato la fiducia delle maison, che ha permesso a Verga 1947 di mantenere relazioni personali e durature con i brand di lusso.\n\nGuardando al futuro, l’azienda non si concentra tanto sulle celebrazioni dell’80° anniversario, ma su una strategia di lungo periodo: consolidare la presenza a Milano e a Portofino, far crescere il valore del marchio e preparare la prossima generazione. Noris avverte che la curva di crescita del settore si stabilizzerà, ma ritiene che il brand possa continuare a rafforzarsi, puntando su un equilibrio tra nuovo e usato e su una gestione familiare che valorizza la continuità e l’innovazione.",
-      "editorial_level": "approfondimento",
-      "editorial_word_count": 383
+      "image_format": ""
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/wivian-factory-padova-ampliare-mappa-strategica-498031/",
@@ -1949,9 +1932,7 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": "",
-      "editorial_attempted_at": "2026-11-12T15:42:37.412474+00:00",
-      "editorial_retry_after": "2026-11-13T03:42:37.412474+00:00"
+      "image_format": ""
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/partnership-mango-coin-dopo-catania-aperto-uno-store-a-roma-500121/",
@@ -1967,10 +1948,7 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": "",
-      "editorial_summary": "Mango ha inaugurato a Roma, nel quartiere San Giovanni, un nuovo store di 1.000 m² all’interno del Coin di piazzale Appio, dopo l’apertura a Catania. Lo spazio, dedicato alle collezioni uomo e donna, segue il concept retail “New Med” e rappresenta la prima tappa di un accordo annunciato il 3 giugno, che prevede l’apertura di 22 negozi Mango‑Coin in Italia entro la fine del 2027, tutti concepiti come veri e propri punti vendita Mango. Con questa apertura il marchio supera i dieci punti vendita nel Lazio, consolidando la sua presenza nel mercato italiano dove è attivo dal 2001.\n\nPer Coin la partnership è uno dei pilastri del rilancio: la catena ha chiuso un aumento di capitale fino a 30 milioni di euro e intende trasformare il proprio modello in una piattaforma per brand internazionali. Entro la fine dell’anno sono previste altre dieci aperture in location Coin, tra cui Firenze, Bari e Milano, e nel 2026 il bilancio dovrebbe contare quasi 30 nuovi negozi in Italia. **Il punto più importante è che la rete Mango‑Coin, inserita nel piano strategico 4Es 2024‑2026, mira a espandere la presenza fisica del brand e a potenziare le vendite sia nei punti vendita che online**.\n\nMango, che ha registrato un fatturato di 3,8 miliardi di euro nel 2025 con una crescita del 13 % (16 % a cambi costanti), ha visto i ricavi del primo semestre 2026 aumentare del 7,2 % (10,7 % a cambi costanti). Il giro d’affari italiano è cresciuto del 30 % lo scorso anno, con più di 20 nuove aperture e 6.700 m² di superficie aggiuntiva. Con 120 punti vendita al termine del 2025, il brand celebra 25 anni sul mercato italiano, rafforzando la sua strategia di espansione verso il nord e le isole nei prossimi anni.",
-      "editorial_level": "standard",
-      "editorial_word_count": 298
+      "image_format": ""
     },
     {
       "id": "https://news.google.com/rss/articles/CBMibkFVX3lxTFA1aXIxTVJwVndrM0l0QlNXbWVlcHpyMEhEVkJPOEYwTHB6QUFKdUdZOXJqT01UWWp3Uk5MbS1oWG5FaDYzWFY1LTNsLXRoeHJvSU5vZFVPcFBxbGQ4ZmstZjdHWmNjcW53ZW5TaGhB?oc=5",
@@ -1983,9 +1961,7 @@
       "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFA1aXIxTVJwVndrM0l0QlNXbWVlcHpyMEhEVkJPOEYwTHB6QUFKdUdZOXJqT01UWWp3Uk5MbS1oWG5FaDYzWFY1LTNsLXRoeHJvSU5vZFVPcFBxbGQ4ZmstZjdHWmNjcW53ZW5TaGhB?oc=5",
       "image": "",
       "image_verified": false,
-      "language": "it",
-      "editorial_attempted_at": "2026-11-12T19:19:18.917013+00:00",
-      "editorial_retry_after": "2026-11-13T07:19:18.917013+00:00"
+      "language": "it"
     },
     {
       "id": "https://www.ad-italia.it/article/marva-griffin-casa-milano-talenti-design/",
@@ -2001,9 +1977,7 @@
       "language": "it",
       "image_width": 4402,
       "image_height": 5502,
-      "image_format": "webp",
-      "editorial_attempted_at": "2026-11-12T14:02:45.219804+00:00",
-      "editorial_retry_after": "2026-11-13T02:02:45.219804+00:00"
+      "image_format": "webp"
     },
     {
       "id": "https://www.ad-italia.it/article/ellen-von-unwerth-toiletpaper-calendario-2027-intervista/",
@@ -2019,9 +1993,7 @@
       "language": "it",
       "image_width": 4589,
       "image_height": 3134,
-      "image_format": "webp",
-      "editorial_attempted_at": "2026-11-12T15:31:33.218201+00:00",
-      "editorial_retry_after": "2026-11-13T03:31:33.218201+00:00"
+      "image_format": "webp"
     },
     {
       "id": "https://www.ad-italia.it/article/appartamento-piccolo-madrid-48-m2-ex-casa-antiquata-open-space-rosa-blu/",
@@ -2037,9 +2009,7 @@
       "language": "it",
       "image_width": 2000,
       "image_height": 1500,
-      "image_format": "webp",
-      "editorial_attempted_at": "2026-11-12T15:31:34.871525+00:00",
-      "editorial_retry_after": "2026-11-13T03:31:34.871525+00:00"
+      "image_format": "webp"
     },
     {
       "id": "https://www.ad-italia.it/gallery/fiori-autunnali-10-specie-coloratissime-per-portare-energia-positiva-in-casa-feng-shui/",
@@ -2055,9 +2025,7 @@
       "language": "it",
       "image_width": 7952,
       "image_height": 5304,
-      "image_format": "webp",
-      "editorial_attempted_at": "2026-11-12T15:31:34.950682+00:00",
-      "editorial_retry_after": "2026-11-13T03:31:34.950682+00:00"
+      "image_format": "webp"
     },
     {
       "id": "https://www.ad-italia.it/article/dopamine-decor-design-trend-colori-casa-allegra/",
@@ -2073,9 +2041,7 @@
       "language": "it",
       "image_width": 6708,
       "image_height": 4472,
-      "image_format": "webp",
-      "editorial_attempted_at": "2026-11-12T15:31:35.019063+00:00",
-      "editorial_retry_after": "2026-11-13T03:31:35.019063+00:00"
+      "image_format": "webp"
     },
     {
       "id": "https://www.ad-italia.it/article/casa-notting-hill-film-porta-blu-vendita-interni/",
@@ -2091,9 +2057,7 @@
       "language": "it",
       "image_width": 2519,
       "image_height": 1677,
-      "image_format": "webp",
-      "editorial_attempted_at": "2026-11-12T15:31:35.081447+00:00",
-      "editorial_retry_after": "2026-11-13T03:31:35.081447+00:00"
+      "image_format": "webp"
     },
     {
       "id": "https://www.sneakersmagazine.it/2026/11/09/sneakers-magazine-issue-122-2026-2-2/",
@@ -2107,8 +2071,6 @@
       "image": "https://www.sneakersmagazine.it/wp-content/uploads/2026/11/Screenshot-2026-11-09-alle-16.23.14.png",
       "image_verified": true,
       "language": "it",
-      "editorial_attempted_at": "2026-11-12T13:35:50.401195+00:00",
-      "editorial_retry_after": "2026-11-13T01:35:50.401195+00:00",
       "image_width": 1266,
       "image_height": 1666,
       "image_format": "png"
@@ -2127,10 +2089,7 @@
       "language": "it",
       "image_width": 787,
       "image_height": 1024,
-      "image_format": "png",
-      "editorial_summary": "Sneakers Magazine 123, l’edizione di maggio‑giugno 2026, descrive un mercato delle sneaker in fase di trasformazione, dove innovazione, memoria storica e ricerca estetica si intrecciano. Il filo conduttore è il tema dei riflessi e delle icone: i brand devono reinventarsi senza perdere la propria identità. La copertina è dedicata a North Sails Sailor, una sneaker che trasporta il DNA tecnico e nautico del marchio, nato nel 1957, dal mondo della vela all’urban wear, con una tomaia in mesh traspirante, rinforzi in microfibra e una suola a doppio pezzo pensata per drenare l’acqua.\n\nLe Review aprono il numero con quattro collaborazioni eterogenee. J‑Hope x Louis Vuitton Buttersoft porta il K‑Pop nel lusso delle sneaker, ma la proposta risulta più forte sul valore mediatico che sul prodotto. Ron Herman x Vans Authentic reinterpreta la classica silhouette con una tomaia paisley che fonde riferimenti persiani, cultura hippie e tradizione skate. Space Available x Keen Uneek mette al centro la sostenibilità, usando materiali naturali e riciclati e una costruzione smontabile a fine vita. Engineered Garments x Saucony Shadow Original Velcro affida a Daiki Suzuki una versione essenziale del modello storico, sostituendo i lacci con una doppia chiusura in velcro e creando un contrasto tra mesh e pelle.\n\n**La sneaker North Sails Sailor sintetizza il passaggio dal mare alla città, mantenendo leggerezza, resistenza e funzionalità grazie a una suola semiforata e a rinforzi termoplastici.**\n\nIl numero chiude con la Cover Story su North Sails Sailor, il progetto Spring/Summer 2026 ideato da Dimitri D’Angelo e Nigel Musto, e con gli speciali Golden Moments, tra cui la limited edition Converse Jack Purcell x Jannik Sinner, realizzata in Italia e distribuita esclusivamente online. Questi contenuti mostrano come i brand stiano sperimentando nuove tecnologie e narrazioni per restare rilevanti in un contesto di mercato complesso.",
-      "editorial_level": "standard",
-      "editorial_word_count": 300
+      "image_format": "png"
     },
     {
       "id": "https://www.ad-italia.it/article/marchesi-1824-natale-2026-panettone-cioccolato/",
@@ -2146,9 +2105,7 @@
       "language": "it",
       "image_width": 4500,
       "image_height": 5625,
-      "image_format": "webp",
-      "editorial_attempted_at": "2026-11-12T13:15:58.082640+00:00",
-      "editorial_retry_after": "2026-11-13T01:15:58.082640+00:00"
+      "image_format": "webp"
     },
     {
       "id": "https://www.ad-italia.it/article/lac-lugano-museo-teatro-architetto-ivano-gianola-intervista/",
@@ -2164,9 +2121,7 @@
       "language": "it",
       "image_width": 6720,
       "image_height": 4480,
-      "image_format": "webp",
-      "editorial_attempted_at": "2026-11-12T13:15:33.338986+00:00",
-      "editorial_retry_after": "2026-11-13T01:15:33.338986+00:00"
+      "image_format": "webp"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/09/supereroi-senza-super-poteri-la-crisi-degli-autori-nella-moda-dei-conglomerati-500011/",
@@ -2182,9 +2137,7 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": "",
-      "editorial_attempted_at": "2026-11-12T13:15:05.649223+00:00",
-      "editorial_retry_after": "2026-11-13T01:15:05.649223+00:00"
+      "image_format": ""
     },
     {
       "id": "https://www.pambianconews.com/2026/11/09/milano-le-dedichera-un-luogo-il-ricordo-di-franca-sozzani-a-dieci-anni-dalla-scomparsa-499982/",
@@ -2197,10 +2150,7 @@
       "url": "https://www.pambianconews.com/2026/11/09/milano-le-dedichera-un-luogo-il-ricordo-di-franca-sozzani-a-dieci-anni-dalla-scomparsa-499982/",
       "image": "",
       "image_verified": false,
-      "language": "it",
-      "editorial_summary": "Il Comune di Milano ha annunciato che, a dicembre, la città dedicherà un luogo a Franca Sozzani in occasione del decimo anniversario della sua scomparsa. L’informazione, fornita dall’assessore alla Cultura Tommaso Sacchi in un’intervista a Urbanfile il 1° novembre, sottolinea il legame tra Sozzani e la capitale della moda, nonché il suo contributo al settore editoriale. Al momento non sono stati comunicati né il sito né la data precisa dell’intitolazione, anche se si ipotizza che la cerimonia possa coincidere con il 22 dicembre, giorno della morte della direttrice.\n\nFranca Sozzani, nata a Mantova nel 1950, ha costruito una carriera che ha attraversato diverse testate prima di guidare Vogue Italia dal 1988, aggiungendo L’Uomo Vogue nel 2006 e ricoprendo il ruolo di direttrice editoriale di Condé Nast Italia. La sua influenza è stata riconosciuta anche dopo la morte: nel 2017 la Camera nazionale della moda italiana ha istituito il Franca Sozzani Award per il miglior designer emergente, inserito nei Sustainable Fashion Awards. Due documentari, ‘Franca: Chaos and Creation’ (2016) e ‘Paving the Way – Franca’s Legacy’ (2025), hanno ulteriormente consolidato la sua eredità.\n\n**Il riconoscimento pubblico di Milano vuole trasformare la memoria di Sozzani in un punto di riferimento urbano, affermando il ruolo della moda nella identità della città.** L’assessore Sacchi ha ribadito che è giusto inserire nella toponomastica i nomi di chi ha segnato la storia di Milano e del suo impatto globale, sostenendo che questi protagonisti meritano una presenza permanente nello spazio pubblico.\n\nL’iniziativa, se confermata, potrebbe rafforzare il legame tra la città e il mondo della moda, offrendo ai giovani creativi un simbolo tangibile di eccellenza e innovazione. Inoltre, la scelta di onorare Sozzani con un luogo pubblico potrebbe stimolare ulteriori proposte di intitolazioni, contribuendo a una più ampia valorizzazione culturale dei protagonisti del settore.",
-      "editorial_level": "standard",
-      "editorial_word_count": 296
+      "language": "it"
     },
     {
       "id": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPMEZuSjE5ckJ5ak5KcTl3Z05IUmVBY1dxS2RKZWVRNzZWZ0RrbEJiR05HYmk5NklBVC0tRTg2dXE3c3FVdnpjaFhNb3FnaUVUM3FfZFRwVjFKTlFxYk9NX2NDNnd2Tkt4dEsyNzd2R2tjR0prSW1jazJQVzRtV0R2X25DOTlWV3U4b0E?oc=5",
@@ -2213,9 +2163,7 @@
       "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPMEZuSjE5ckJ5ak5KcTl3Z05IUmVBY1dxS2RKZWVRNzZWZ0RrbEJiR05HYmk5NklBVC0tRTg2dXE3c3FVdnpjaFhNb3FnaUVUM3FfZFRwVjFKTlFxYk9NX2NDNnd2Tkt4dEsyNzd2R2tjR0prSW1jazJQVzRtV0R2X25DOTlWV3U4b0E?oc=5",
       "image": "",
       "image_verified": false,
-      "language": "it",
-      "editorial_attempted_at": "2026-11-12T19:19:18.638309+00:00",
-      "editorial_retry_after": "2026-11-13T07:19:18.638309+00:00"
+      "language": "it"
     },
     {
       "id": "https://www.ad-italia.it/article/casa-piccola-varsavia-25-m2-cubo-rivestito-in-ottone-distribuisce-gli-spazi/",
@@ -2232,8 +2180,8 @@
       "image_width": 2000,
       "image_height": 1334,
       "image_format": "webp",
-      "editorial_attempted_at": "2026-11-12T13:05:31.692699+00:00",
-      "editorial_retry_after": "2026-11-13T01:05:31.692699+00:00"
+      "editorial_attempted_at": "2026-11-12T21:21:12.966807+00:00",
+      "editorial_retry_after": "2026-11-13T09:21:12.966807+00:00"
     },
     {
       "id": "https://www.ad-italia.it/article/piscine-ad-italia-45-anni-evoluzione-design-anni-80-oggi/",
@@ -2250,9 +2198,8 @@
       "image_width": 2500,
       "image_height": 1667,
       "image_format": "webp",
-      "editorial_summary": "Negli ultimi quarantacinque anni le piscine private in Italia hanno compiuto una trasformazione radicale, come documentato da AD Italia. Negli anni ’80 la scena era dominata da vasche rettangolari di cemento armato, rivestite da piastrelle azzurre e bordi ruvidi in graniglia, spesso dotate di trampolini a molla. Queste strutture, limitate a una lunghezza massima di 12,5 metri, erano un simbolo di lusso visibile anche da un aereo, ma poco integrate nel contesto del giardino. L’articolo ricorda anche le forme più eccentriche, come le vasche a “fora di fagiolo”, più scenografiche che funzionali.\n\nA partire dagli anni ’90 è iniziato un cambiamento guidato da una crescente volontà di imitare la natura. Le forme rigide hanno lasciato spazio a curve sinuose, anfratti e rivestimenti color sabbia o verde, capaci di restituire all’acqua riflessi più caldi e naturali. Anche se il kitsch non è scomparso del tutto – con l’introduzione di rocce artificiali e cascate – la tecnologia ha cominciato a influenzare il design: i pannelli prefabbricati in acciaio zincato hanno sostituito il cemento armato, mentre i liner in PVC hanno preso il posto delle piastrelle tradizionali.\n\n**Le piscine a sfioro rappresentano il punto di svolta più significativo, trasformando l’acqua in un’estensione visiva del paesaggio circostante**. Questo tipo di vasca, con l’acqua che arriva al livello del terreno e scompare in una griglia perimetrale, crea un effetto specchio che raddoppia lo spazio e rende la piscina un vero prolungamento del living. I bordi sono ora in legno, marmo, travertino o pietra di Luserna, e l’acqua assume tonalità azzurro chiaro o verde smeraldo grazie a rivestimenti trasparenti.\n\nLe infinite pool, soprattutto nelle abitazioni con vista panoramica, hanno portato il concetto di piscina a un livello quasi cinematografico: un lato della vasca si fonde con l’orizzonte, creando l’illusione di un salto nel vuoto. Le scalette in acciaio sono state sostituite da “spiagge” a pochi centimetri di profondità, dove è possibile sdraiarsi o fare un idromassaggio, rafforzando il dialogo continuo tra casa, acqua e natura.\n\nIn conclusione, la storia delle piscine AD Italia mostra come il settore sia passato da un’esibizione di lusso ostentato a una ricerca di integrazione ambientale, spinta sia da tendenze estetiche sia da innovazioni costruttive. Questa evoluzione non solo ha ampliato le possibilità di design, ma ha anche ridefinito il ruolo della piscina nella vita quotidiana, trasformandola da oggetto di prestigio a spazio di benessere condiviso.",
-      "editorial_level": "approfondimento",
-      "editorial_word_count": 393
+      "editorial_attempted_at": "2026-11-12T21:21:13.264618+00:00",
+      "editorial_retry_after": "2026-11-13T09:21:13.264618+00:00"
     },
     {
       "id": "https://www.ad-italia.it/article/modernariato-5-pezzi-vintage-facili-arredare-casa-consigli/",
@@ -2268,9 +2215,7 @@
       "language": "it",
       "image_width": 6192,
       "image_height": 8256,
-      "image_format": "webp",
-      "editorial_attempted_at": "2026-11-12T13:13:55.669864+00:00",
-      "editorial_retry_after": "2026-11-13T01:13:55.669864+00:00"
+      "image_format": "webp"
     },
     {
       "id": "https://www.ad-italia.it/article/casa-stile-brutalista-colorata-milano/",
@@ -2287,8 +2232,8 @@
       "image_width": 1080,
       "image_height": 1620,
       "image_format": "webp",
-      "editorial_attempted_at": "2026-11-12T15:41:32.955853+00:00",
-      "editorial_retry_after": "2026-11-13T03:41:32.955853+00:00"
+      "editorial_attempted_at": "2026-11-12T21:21:12.936107+00:00",
+      "editorial_retry_after": "2026-11-13T09:21:12.936107+00:00"
     },
     {
       "id": "https://www.sneakersmagazine.it/2026/11/06/saucony-presenta-la-nuova-endorphin-speed-6/",
@@ -2302,11 +2247,11 @@
       "image": "https://www.sneakersmagazine.it/wp-content/uploads/2026/11/S101825-1006_5-1024x1024.jpg",
       "image_verified": true,
       "language": "it",
-      "editorial_attempted_at": "2026-11-12T13:36:08.231004+00:00",
-      "editorial_retry_after": "2026-11-13T01:36:08.231004+00:00",
       "image_width": 1024,
       "image_height": 1024,
-      "image_format": "jpeg"
+      "image_format": "jpeg",
+      "editorial_attempted_at": "2026-11-12T21:21:12.652733+00:00",
+      "editorial_retry_after": "2026-11-13T09:21:12.652733+00:00"
     },
     {
       "id": "https://www.sneakersmagazine.it/2026/11/06/emu-australia-inaugura-una-nuova-era/",
@@ -2320,11 +2265,11 @@
       "image": "https://www.sneakersmagazine.it/wp-content/uploads/2026/11/2026-05-Emu-Australia-W13013-Stinger-Compact-Chestnut-Front-Single-1024x596.jpg",
       "image_verified": true,
       "language": "it",
-      "editorial_attempted_at": "2026-11-12T13:36:19.672447+00:00",
-      "editorial_retry_after": "2026-11-13T01:36:19.672447+00:00",
       "image_width": 1024,
       "image_height": 596,
-      "image_format": "jpeg"
+      "image_format": "jpeg",
+      "editorial_attempted_at": "2026-11-12T21:21:11.013282+00:00",
+      "editorial_retry_after": "2026-11-13T09:21:11.013282+00:00"
     },
     {
       "id": "https://www.sneakersmagazine.it/2026/11/06/foot-locker-presenta-its-giving-le-sneaker-diventano-il-regalo-che-unisce-le-generazioni/",
@@ -2341,8 +2286,8 @@
       "image_width": 0,
       "image_height": 0,
       "image_format": "",
-      "editorial_attempted_at": "2026-11-12T14:02:45.098635+00:00",
-      "editorial_retry_after": "2026-11-13T02:02:45.098635+00:00"
+      "editorial_attempted_at": "2026-11-12T21:21:09.340448+00:00",
+      "editorial_retry_after": "2026-11-13T09:21:09.340448+00:00"
     },
     {
       "id": "https://www.sneakersmagazine.it/2026/10/29/expo-riva-schuh-e-gardabags-il-mercato-di-calzature-e-borse-cambia-volto/",
@@ -2359,8 +2304,8 @@
       "image_width": 1024,
       "image_height": 768,
       "image_format": "jpeg",
-      "editorial_attempted_at": "2026-11-12T14:02:44.034506+00:00",
-      "editorial_retry_after": "2026-11-13T02:02:44.034506+00:00"
+      "editorial_attempted_at": "2026-11-12T21:21:07.688899+00:00",
+      "editorial_retry_after": "2026-11-13T09:21:07.688899+00:00"
     },
     {
       "id": "https://www.sneakersmagazine.it/2026/10/26/new-balance-presenta-la-made-in-usa-990v7/",
@@ -2377,8 +2322,8 @@
       "image_width": 1024,
       "image_height": 544,
       "image_format": "png",
-      "editorial_attempted_at": "2026-11-12T14:02:42.945037+00:00",
-      "editorial_retry_after": "2026-11-13T02:02:42.945037+00:00"
+      "editorial_attempted_at": "2026-11-12T21:21:06.050090+00:00",
+      "editorial_retry_after": "2026-11-13T09:21:06.050090+00:00"
     },
     {
       "id": "https://www.sneakersmagazine.it/2026/10/26/saucony-x-evelynn-escobar-una-nuova-idea-di-mom-shoe-prende-forma-nella-progrid-triumph-4/",
@@ -2395,8 +2340,9 @@
       "image_width": 1024,
       "image_height": 1024,
       "image_format": "jpeg",
-      "editorial_attempted_at": "2026-11-12T14:02:41.993149+00:00",
-      "editorial_retry_after": "2026-11-13T02:02:41.993149+00:00"
+      "editorial_summary": "Saucony ha lanciato la sua prima collaborazione con la creativa americana Evelynn Escobar, presentando la Evelynn World x Saucony ProGrid Triumph 4. La collezione reinterpreta il concetto di “mom shoe”, trasformando una sneaker lifestyle in un omaggio ai gesti quotidiani di cura e sostegno che rafforzano le relazioni e le comunità. Ispirandosi al fenomeno della “dad shoe” nella cultura sneaker, Escobar amplia il significato del termine, rendendolo universale e dedicato a chiunque agisca come punto di riferimento per gli altri. La campagna “For Everyone Who Nurtures” mette in luce azioni spesso invisibili – dal prendersi cura della famiglia al mentore, dal supporto a un amico alla creazione di spazi accoglienti – celebrandone il valore.\n\nDal punto di vista estetico, la ProGrid Triumph 4 conserva la sua identità sportiva e lifestyle, ma aggiunge dettagli esclusivi che raccontano la partnership. La tomaia è realizzata in doppio mesh, con inserti verniciati sul tallone e linguette a doppio branding. Il pannello posteriore è ridisegnato con il logo “E” di Evelynn World, mentre i lacci rotondi bicolore e la soletta asimmetrica personalizzata offrono ulteriori segni distintivi. Il packaging comprende una scatola a cassetto con grafica all‑over dedicata, sottolineando l’aspetto culturale della collaborazione.\n\n**La ProGrid Triumph 4 di Saucony ed Evelynn Escobar celebra la cura quotidiana come nuovo simbolo di appartenenza, spostando il focus dalla performance al valore umano condiviso.** La sneaker è disponibile in taglie unisex dalla US 3.5 alla US 14, al prezzo consigliato di 190 euro, con lancio globale previsto dal 23 ottobre 2026 su Saucony.com e presso rivenditori autorizzati.",
+      "editorial_level": "standard",
+      "editorial_word_count": 258
     },
     {
       "id": "https://www.sneakersmagazine.it/2026/10/16/saucony-x-highsnobiety-performance-e-lifestyle-si-incontrano-in-una-nuova-collaborazione/",
@@ -2413,8 +2359,9 @@
       "image_width": 819,
       "image_height": 1024,
       "image_format": "jpeg",
-      "editorial_attempted_at": "2026-11-12T14:02:41.069887+00:00",
-      "editorial_retry_after": "2026-11-13T02:02:41.069887+00:00"
+      "editorial_summary": "Saucony e Highsnobiety hanno riavviato la loro partnership con una collezione che fonde tecnologia da corsa e design urbano. La proposta si articola su due silhouette: l’Endorphin Pro 5, pensata per gare e allenamenti ad alta velocità, e il ProGrid Paramount, un ritorno a un modello del 2007 reinterpretato per la vita di tutti i giorni. La palette cromatica, ispirata alla transizione autunnale, alterna tonalità terrose, neutre e accenti argentati, creando un equilibrio tra prestazioni e stile quotidiano. La campagna di lancio, ambientata a Parigi, segue due protagonisti che percorrono strade diverse ma si incrociano ripetutamente, sottolineando la dualità tra performance e lifestyle che caratterizza la collezione.\n\nL’Endorphin Pro 5 si distingue per l’uso di schiuma PWRRUN HG e una base PWRRUN PB, che garantiscono ammortizzazione, leggerezza e reattività. La piastra scanalata in fibra di carbonio, abbinata alla tecnologia SPEEDROLL, favorisce una rullata fluida e propulsiva, mentre la suola esterna in gomma PWRTRAC assicura aderenza e resistenza all’usura. La combinazione di colori – Chocolate Brown, Doe, Egret, Spectra Yellow e Tomato – conferisce un aspetto dinamico e moderno, in linea con l’estetica Highsnobiety.\n\n**La collezione dimostra come la tecnologia da corsa possa essere tradotta in un design urbano senza compromessi sulla performance.** Il ProGrid Paramount, invece, si concentra su un design essenziale: il logo laterale è sostituito da un branding discreto sul tallone e sull’etichetta della linguetta, mentre la colorazione in Coconut Milk, Wood Ash e Almond Oil con accenti Ombre Blue e Mars Red conferisce un look pulito e raffinato. Elementi riflettenti nelle fettucce della linguetta e del tallone aggiungono un tocco di modernità, mantenendo la sneaker versatile e adatta a contesti urbani.\n\nLa campagna pubblicitaria, realizzata a Parigi, racconta la storia di Naomi Clement e Laurent Segretier che percorrono percorsi paralleli senza mai incontrarsi. Questo racconto visivo mette in evidenza la complementarità tra la velocità e la reattività dell’Endorphin Pro 5 e la versatilità quotidiana del ProGrid Paramount, evidenziando come la collezione risponda a esigenze diverse ma condivida la stessa visione estetica. La disponibilità è limitata ai siti ufficiali di Saucony e Highsnobiety, con prezzi consigliati di 270 € per l’Endorphin Pro 5 e 190 € per il ProGrid Paramount, consolidando il dialogo tra cultura sneaker, innovazione tecnica e lifestyle.",
+      "editorial_level": "approfondimento",
+      "editorial_word_count": 368
     },
     {
       "id": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5PbG40c0dpYzRlUVk1OVBRak5xNThKeGd5bUdQbnItTC1NTUNiYXpPMW8yMnRWZTRPOFlrNzAyenA4czdTc2FrbVVMRmtWejdrV2lXTGg0eWVKNzQ?oc=5",
@@ -2428,8 +2375,8 @@
       "image": "",
       "image_verified": false,
       "language": "it",
-      "editorial_attempted_at": "2026-11-12T19:19:18.397384+00:00",
-      "editorial_retry_after": "2026-11-13T07:19:18.397384+00:00"
+      "editorial_attempted_at": "2026-11-12T21:20:56.494830+00:00",
+      "editorial_retry_after": "2026-11-13T09:20:56.494830+00:00"
     }
   ]
 }
