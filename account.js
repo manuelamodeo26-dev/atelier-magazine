@@ -32,23 +32,24 @@
     $('#save-preferences')?.addEventListener('click',savePreferences);
     document.addEventListener('atelier:articles-rendered',syncSaveButtons);
     document.addEventListener('click',event=>{
-      const btn=event.target.closest('[data-save-article]');
+      const btn=event.target.closest?.('[data-save-article]');
       if(btn){event.preventDefault();toggleSaved(btn.dataset.saveArticle);}
     });
   }
   function message(text,error=false){const el=$('#account-message');if(el){el.textContent=text;el.classList.toggle('is-error',error);}}
   function status(text){const el=$('#account-status');if(el)el.textContent=text;}
   function setLoggedIn(on){
+    const open=$('#account-open');
+    if(open)open.textContent=on?'IL MIO ACCOUNT ↗':'ACCEDI ↗';
     $('#account-form').hidden=on; $('#account-tools').hidden=!on;
-    $('#account-open').textContent=on?'IL MIO ACCOUNT ↗':'ACCEDI ↗';
     $('#personal-feed').hidden=!on;
     if(on)status('Connesso come '+(user.email||'utente ATELIER'));
     else status(configured?'Accedi o crea un account per personalizzare la rivista.':'Configurazione necessaria: collega prima il progetto Supabase.');
   }
   async function handleAuth(event){
     event.preventDefault();
-    if(!client){message('Il servizio account non è ancora configurato. Segui i passaggi di attivazione indicati. ',true);return;}
-    const submitter=event.submitter, mode=submitter?.dataset.mode||'login';
+    if(!client){message('Il servizio account non è ancora configurato.',true);return;}
+    const mode=event.submitter?.dataset.mode||'login';
     const email=$('#account-email').value.trim(), password=$('#account-password').value, name=$('#account-name').value.trim();
     if(password.length<8){message('La password deve contenere almeno 8 caratteri.',true);return;}
     message('Operazione in corso…');
@@ -75,12 +76,16 @@
     renderAccount();setLoggedIn(true);
   }
   function syncSaveButtons(){
-    syncSaveButtons();
+    document.querySelectorAll('[data-save-article]').forEach(b=>{
+      const active=saved.has(b.dataset.saveArticle);
+      b.classList.toggle('is-saved',active);
+      b.textContent=active?'♥ SALVATO':'♡ SALVA';
+    });
   }
   function renderAccount(){
     const box=$('#account-categories');
     if(box)box.innerHTML=categories.map(c=>'<label class="account-category"><input type="checkbox" value="'+esc(c)+'" '+(preferred.includes(c)?'checked':'')+'> '+esc(labels[c])+'</label>').join('');
-    document.querySelectorAll('[data-save-article]').forEach(b=>{const active=saved.has(b.dataset.saveArticle);b.classList.toggle('is-saved',active);b.textContent=active?'♥ SALVATO':'♡ SALVA';});
+    syncSaveButtons();
     renderPersonal();
   }
   function renderPersonal(){
@@ -115,13 +120,17 @@
     const {error}=await client.from('user_preferences').upsert({user_id:user.id,categories:chosen,updated_at:new Date().toISOString()});
     if(error){message(error.message,true);return;} preferred=chosen;renderPersonal();message('Preferenze aggiornate.');
   }
-  async function logout(){await client.auth.signOut();user=null;saved.clear();setLoggedIn(false);renderAccount();message('Hai effettuato la disconnessione.');}
+  async function logout(){
+    const {error}=await client.auth.signOut();
+    if(error){message(error.message,true);return;}
+    user=null;saved.clear();setLoggedIn(false);renderAccount();message('Hai effettuato la disconnessione.');
+  }
   async function init(){
     mount();
     try{
       const response=await fetch('./data/articles.json',{cache:'no-store'});const data=await response.json();articles=(data.articles||[]).map(a=>({...a,category:a.category||'Fashion'}));
     }catch(_){articles=[];}
-    if(!configured){setLoggedIn(false);message('Per attivare gli account: crea il progetto Supabase, esegui supabase-setup.sql e inserisci URL e chiave pubblica in supabase-config.js.',true);return;}
+    if(!configured){setLoggedIn(false);message('Per attivare gli account: collega il progetto Supabase.',true);return;}
     try{
       const {createClient}=await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm');
       client=createClient(cfg.url,cfg.anonKey);
