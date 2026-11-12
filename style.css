@@ -487,3 +487,10 @@ section[id] { scroll-margin-top: 100px; }
 #account-open.account-open:hover,#account-open.account-open:focus-visible{background:rgba(181,31,31,.07)!important;color:#8f1b1b!important;-webkit-text-fill-color:#8f1b1b!important;border-color:#8f1b1b!important}
 #account-open.account-open.has-account-avatar{border:0!important;border-radius:50%!important;padding:0!important}
 .account-actions .outline-button,#profile-login,.profile-home-link{color:#B51F1F!important;-webkit-text-fill-color:#B51F1F!important}
+
+
+/* Colore testo ACCEDI: rosso ATELIER, anche se ereditato da stili generici */
+#account-open,#account-open.account-open,.account-open,.account-actions button,.account-actions .outline-button,#profile-login{color:#B51F1F!important;-webkit-text-fill-color:#B51F1F!important;text-decoration:none!important}
+#account-open span,#account-open strong,#account-open::first-line{color:#B51F1F!important;-webkit-text-fill-color:#B51F1F!important}
+#account-open{background:transparent!important;background-color:transparent!important;border:1px solid #B51F1F!important}
+#account-open:hover,#account-open:focus-visible{color:#8f1b1b!important;-webkit-text-fill-color:#8f1b1b!important;border-color:#8f1b1b!important;background:rgba(181,31,31,.06)!important}
