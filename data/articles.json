@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T19:12:35.206377+00:00",
+  "updated_at": "2026-11-12T19:14:14.556594+00:00",
   "feeds_ok": 6,
   "feeds_total": 7,
   "feed_status": [
@@ -1888,7 +1888,10 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "editorial_summary": "Mango ha inaugurato a Roma, nel quartiere San Giovanni, un nuovo store di 1.000 m² all’interno del Coin di piazzale Appio, dopo l’apertura a Catania. Lo spazio, dedicato alle collezioni uomo e donna, segue il concept retail “New Med” e rappresenta la prima tappa di un accordo annunciato il 3 giugno, che prevede l’apertura di 22 negozi Mango‑Coin in Italia entro la fine del 2027, tutti concepiti come veri e propri punti vendita Mango. Con questa apertura il marchio supera i dieci punti vendita nel Lazio, consolidando la sua presenza nel mercato italiano dove è attivo dal 2001.\n\nPer Coin la partnership è uno dei pilastri del rilancio: la catena ha chiuso un aumento di capitale fino a 30 milioni di euro e intende trasformare il proprio modello in una piattaforma per brand internazionali. Entro la fine dell’anno sono previste altre dieci aperture in location Coin, tra cui Firenze, Bari e Milano, e nel 2026 il bilancio dovrebbe contare quasi 30 nuovi negozi in Italia. **Il punto più importante è che la rete Mango‑Coin, inserita nel piano strategico 4Es 2024‑2026, mira a espandere la presenza fisica del brand e a potenziare le vendite sia nei punti vendita che online**.\n\nMango, che ha registrato un fatturato di 3,8 miliardi di euro nel 2025 con una crescita del 13 % (16 % a cambi costanti), ha visto i ricavi del primo semestre 2026 aumentare del 7,2 % (10,7 % a cambi costanti). Il giro d’affari italiano è cresciuto del 30 % lo scorso anno, con più di 20 nuove aperture e 6.700 m² di superficie aggiuntiva. Con 120 punti vendita al termine del 2025, il brand celebra 25 anni sul mercato italiano, rafforzando la sua strategia di espansione verso il nord e le isole nei prossimi anni.",
+      "editorial_level": "standard",
+      "editorial_word_count": 298
     },
     {
       "id": "https://www.ad-italia.it/article/marva-griffin-casa-milano-talenti-design/",
@@ -2030,7 +2033,10 @@
       "language": "it",
       "image_width": 787,
       "image_height": 1024,
-      "image_format": "png"
+      "image_format": "png",
+      "editorial_summary": "Sneakers Magazine 123, l’edizione di maggio‑giugno 2026, descrive un mercato delle sneaker in fase di trasformazione, dove innovazione, memoria storica e ricerca estetica si intrecciano. Il filo conduttore è il tema dei riflessi e delle icone: i brand devono reinventarsi senza perdere la propria identità. La copertina è dedicata a North Sails Sailor, una sneaker che trasporta il DNA tecnico e nautico del marchio, nato nel 1957, dal mondo della vela all’urban wear, con una tomaia in mesh traspirante, rinforzi in microfibra e una suola a doppio pezzo pensata per drenare l’acqua.\n\nLe Review aprono il numero con quattro collaborazioni eterogenee. J‑Hope x Louis Vuitton Buttersoft porta il K‑Pop nel lusso delle sneaker, ma la proposta risulta più forte sul valore mediatico che sul prodotto. Ron Herman x Vans Authentic reinterpreta la classica silhouette con una tomaia paisley che fonde riferimenti persiani, cultura hippie e tradizione skate. Space Available x Keen Uneek mette al centro la sostenibilità, usando materiali naturali e riciclati e una costruzione smontabile a fine vita. Engineered Garments x Saucony Shadow Original Velcro affida a Daiki Suzuki una versione essenziale del modello storico, sostituendo i lacci con una doppia chiusura in velcro e creando un contrasto tra mesh e pelle.\n\n**La sneaker North Sails Sailor sintetizza il passaggio dal mare alla città, mantenendo leggerezza, resistenza e funzionalità grazie a una suola semiforata e a rinforzi termoplastici.**\n\nIl numero chiude con la Cover Story su North Sails Sailor, il progetto Spring/Summer 2026 ideato da Dimitri D’Angelo e Nigel Musto, e con gli speciali Golden Moments, tra cui la limited edition Converse Jack Purcell x Jannik Sinner, realizzata in Italia e distribuita esclusivamente online. Questi contenuti mostrano come i brand stiano sperimentando nuove tecnologie e narrazioni per restare rilevanti in un contesto di mercato complesso.",
+      "editorial_level": "standard",
+      "editorial_word_count": 300
     },
     {
       "id": "https://www.ad-italia.it/article/marchesi-1824-natale-2026-panettone-cioccolato/",
