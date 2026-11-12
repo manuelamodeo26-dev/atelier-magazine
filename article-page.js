@@ -10,7 +10,7 @@ function render(a){
 const source=a.source||'Editore non identificato', category=cat(a.category), published=date(a.date), image=a.image_verified===true?url(a.image):'';
 const photo=image?'<figure class="detail-figure"><img src="'+esc(image)+'" alt="Fotografia verificata: '+esc(a.title)+'" referrerpolicy="no-referrer"><figcaption>Immagine verificata · '+esc(String(a.image_width||'')+(a.image_width?' × ':'')+String(a.image_height||''))+' px · '+esc(source)+'</figcaption></figure>':'<div class="detail-no-image">IMMAGINE NON DISPONIBILE O NON VERIFICATA</div>';
 const editorial=String(a.editorial_summary||'').trim();
-const editorialHtml=editorial?'<section class="detail-section editorial-summary"><p class="eyebrow">IL RACCONTO ATELIER · '+(a.editorial_level==='approfondimento'?'APPROFONDIMENTO':'NOTIZIA')+'</p>'+editorial.split(/\\n\\s*\\n/).map(p=>'<p class="detail-excerpt">'+esc(p)+'</p>').join('')+'</section>':'';
+const editorialHtml=editorial?'<section class="detail-section editorial-summary"><p class="eyebrow">IL RACCONTO ATELIER · '+(a.editorial_level==='approfondimento'?'APPROFONDIMENTO':'NOTIZIA')+'</p>'+editorial.split(/\n\s*\n/).map(p=>'<p class="detail-excerpt">'+esc(p)+'</p>').join('')+'</section>':'';
 const sourceSummary=a.excerpt?'<section class="detail-section"><p class="eyebrow">'+(editorial?'DESCRIZIONE DELLA FONTE':'IL RACCONTO DELLA FONTE')+'</p><p class="detail-excerpt">'+esc(a.excerpt)+'</p></section>':'';
 const summary=editorialHtml+sourceSummary||'<section class="detail-section"><p class="eyebrow">SINTESI FORNITA DALLA FONTE</p><p class="detail-muted">La fonte non mette a disposizione una descrizione più ampia. ATELIER non aggiunge dettagli non verificati.</p></section>';
 const sourceUrl=url(a.url);
