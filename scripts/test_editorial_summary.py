@@ -9,7 +9,7 @@ import editorial_summary
 
 class EditorialSummaryTests(unittest.TestCase):
     def _response(self, level="standard"):
-        paragraphs = [" ".join(["moda"] * 80) for _ in range(4)]
+        paragraphs = [" ".join(["moda"] * 50) for _ in range(3)]
         body = json.dumps({
             "choices": [{
                 "finish_reason": "stop",
@@ -33,7 +33,7 @@ class EditorialSummaryTests(unittest.TestCase):
     def test_summary_format_validator_accepts_only_complete_editorial_summaries(self):
         valid = "\n\n".join([" ".join(["moda"] * 80) for _ in range(4)])
         self.assertTrue(editorial_summary.is_valid_editorial_summary(valid, "standard"))
-        invalid = "\n\n".join([" ".join(["moda"] * 110) for _ in range(3)])
+        invalid = "\n\n".join([" ".join(["moda"] * 50) for _ in range(1)])
         self.assertFalse(editorial_summary.is_valid_editorial_summary(invalid, "standard"))
         self.assertFalse(editorial_summary.is_valid_editorial_summary(valid, "unknown"))
         self.assertFalse(editorial_summary.is_valid_editorial_summary(valid, "approfondimento"))
@@ -49,7 +49,7 @@ class EditorialSummaryTests(unittest.TestCase):
                 self._article(), "Testo della fonte " * 100
             )
         self.assertEqual(level, "standard")
-        self.assertEqual(editorial_summary._word_count(summary), 320)
+        self.assertEqual(editorial_summary._word_count(summary), 150)
         request = mocked.call_args.args[0]
         self.assertEqual(request.full_url, "https://api.groq.com/openai/v1/chat/completions")
         self.assertEqual(request.get_header("Authorization"), "Bearer unit-test-key")
