@@ -115,7 +115,7 @@
     document.querySelectorAll('[data-like-count]').forEach(el=>{el.textContent=String(likeCounts.get(el.dataset.likeCount)||0);});
   }
   async function loadLikeCounts(){
-    const ids=[...new Set(articles.map(a=>String(a.id||a.url||'')).filter(Boolean))];
+    const ids=[...new Set([...articles.map(a=>String(a.id||a.url||'')),...savedRecords.keys()].filter(Boolean))];
     if(!client||!ids.length)return;
     const {data,error}=await client.from('article_like_counts').select('article_id,like_count').in('article_id',ids);
     if(error)throw error;
@@ -217,10 +217,10 @@
     try{
       const {createClient}=await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm');
       client=createClient(cfg.url,cfg.anonKey);
-      loadLikeCounts().catch(error=>console.warn('ATELIER: conteggi Mi piace non disponibili.',error));
       const {data}=await client.auth.getSession();
       if(data.session){user=data.session.user;await loadUserData();}else setLoggedIn(false);
-      client.auth.onAuthStateChange((_event,session)=>{setTimeout(async()=>{try{user=session?.user||null;if(user)await loadUserData();else{saved.clear();savedRecords.clear();liked.clear();setLoggedIn(false);renderAccount();}}catch(e){user=null;saved.clear();setLoggedIn(false);message(e.message||'Impossibile caricare i dati dell’account.',true);}},0);});
+      loadLikeCounts().catch(error=>console.warn('ATELIER: conteggi Mi piace non disponibili.',error));
+      client.auth.onAuthStateChange((_event,session)=>{setTimeout(async()=>{try{user=session?.user||null;if(user){await loadUserData();loadLikeCounts().catch(error=>console.warn('ATELIER: conteggi Mi piace non disponibili.',error));}else{saved.clear();savedRecords.clear();liked.clear();setLoggedIn(false);renderAccount();}}catch(e){user=null;saved.clear();setLoggedIn(false);message(e.message||'Impossibile caricare i dati dell’account.',true);}},0);});
     }catch(e){setLoggedIn(false);message('Servizio account non raggiungibile. Riprova più tardi.',true);}
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
