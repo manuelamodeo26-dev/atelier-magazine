@@ -1,7 +1,7 @@
 {
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
   "editorial_api_retry_after": "2026-11-13T21:38:01.357099+00:00",
-  "updated_at": "2026-11-12T23:50:56.126564+00:00",
+  "updated_at": "2026-11-12T23:58:04.262Z",
   "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
@@ -281,7 +281,7 @@
       "image_height": 0,
       "image_format": "",
       "image_attempted_at": "2026-11-12T21:37:49.508241+00:00",
-      "image_retry_after": "2026-11-13T21:37:49.508241+00:00"
+      "image_retry_after": "2026-11-13T09:37:49.508Z"
     },
     {
       "id": "https://www.finestresullarte.info/musei/reggia-di-colorno-nel-2027-riqualificazione-piano-da-quasi-6-milioni-di-euro",
@@ -363,7 +363,7 @@
       "image_height": 0,
       "image_format": "",
       "image_attempted_at": "2026-11-12T21:37:49.508241+00:00",
-      "image_retry_after": "2026-11-13T21:37:49.508241+00:00"
+      "image_retry_after": "2026-11-13T09:37:49.508Z"
     },
     {
       "id": "https://www.finestresullarte.info/musei/cosa-nascondono-depositi-dei-musei-in-eilia-romagna-otto-istituzioni-svelano-loro-collezioni",
@@ -429,7 +429,7 @@
       "image_height": 0,
       "image_format": "",
       "image_attempted_at": "2026-11-12T21:37:49.508241+00:00",
-      "image_retry_after": "2026-11-13T21:37:49.508241+00:00"
+      "image_retry_after": "2026-11-13T09:37:49.508Z"
     },
     {
       "id": "https://www.vogue.it/article/aceto-coreano-per-capelli-chioma-lucida-in-un-solo-lavaggio-benefici",
@@ -540,7 +540,7 @@
       "image_verified": false,
       "language": "it",
       "image_attempted_at": "2026-11-12T21:37:49.508241+00:00",
-      "image_retry_after": "2026-11-13T21:37:49.508241+00:00",
+      "image_retry_after": "2026-11-13T09:37:49.508Z",
       "image_width": 0,
       "image_height": 0,
       "image_format": ""
@@ -1169,7 +1169,7 @@
       "image_height": 0,
       "image_format": "",
       "image_attempted_at": "2026-11-12T21:37:49.508241+00:00",
-      "image_retry_after": "2026-11-13T21:37:49.508241+00:00"
+      "image_retry_after": "2026-11-13T09:37:49.508Z"
     },
     {
       "id": "https://www.finestresullarte.info/arte-antica/bologna-quattro-dipinti-dei-carracci-tornano-palazzo-fava-per-restauro-aperto-al-pubblico",
@@ -1523,7 +1523,7 @@
       "image_height": 0,
       "image_format": "",
       "image_attempted_at": "2026-11-12T21:37:49.508241+00:00",
-      "image_retry_after": "2026-11-13T21:37:49.508241+00:00"
+      "image_retry_after": "2026-11-13T09:37:49.508Z"
     },
     {
       "id": "https://www.exibart.com/danza/l-a-v-a-il-magma-coreografico-di-roberto-zappala-e-ick-dans-amsterdam/",
@@ -1861,7 +1861,7 @@
       "image_height": 0,
       "image_format": "",
       "image_attempted_at": "2026-11-12T22:57:55.504861+00:00",
-      "image_retry_after": "2026-11-13T22:57:55.504861+00:00"
+      "image_retry_after": "2026-11-13T10:57:55.504Z"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/luisaviaroma-resta-a-lvr-nessun-rilancio-sullofferta-da-188-milioni-500187/",
@@ -1879,7 +1879,7 @@
       "image_height": 0,
       "image_format": "",
       "image_attempted_at": "2026-11-12T22:57:55.504861+00:00",
-      "image_retry_after": "2026-11-13T22:57:55.504861+00:00"
+      "image_retry_after": "2026-11-13T10:57:55.504Z"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/piazza-italia-compra-conbipel-in-arrivo-un-piano-di-opening-da-100-nuovi-negozi-500181/",
