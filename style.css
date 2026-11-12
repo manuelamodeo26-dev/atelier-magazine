@@ -339,3 +339,8 @@ section[id] { scroll-margin-top: 100px; }
 
 .story-card-summary{margin-top:10px;padding:10px 12px;border-left:2px solid var(--red-surface);background:#e7e2d8;font-size:12px;line-height:1.5}
 .story-card-summary span{display:block;margin-bottom:5px;color:var(--red-text);font:600 8px var(--mono);letter-spacing:.12em}
+
+
+/* Preferenza di persistenza dell'accesso */
+.auth-remember{display:flex;align-items:center;gap:10px;margin:14px 0 18px;font:11px/1.5 var(--body);letter-spacing:0;color:#625e57;cursor:pointer}
+.auth-remember input{width:16px!important;height:16px;flex:0 0 16px;accent-color:var(--ink);margin:0}
