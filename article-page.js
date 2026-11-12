@@ -60,6 +60,14 @@ if(!id){fail('Apri un articolo dalla homepage o dalla ricerca.');return;}
 try{const r=await fetch('./data/articles.json',{cache:'no-store'});if(!r.ok)throw new Error('Archivio momentaneamente non raggiungibile.');const data=await r.json();const a=(data.articles||[]).find(item=>(item.id||item.url)===id);if(!a)throw new Error('Questo contenuto potrebbe essere stato rimosso o aggiornato.');render(a);}
 catch(e){fail(e.message||'Errore durante il caricamento.');}
 }
-function returnToArticleOrigin(){\n  let origin='';\n  try{origin=sessionStorage.getItem('atelier-article-origin')||'';}catch(_){}\n  const previous=document.referrer;\n  if(previous){try{const ref=new URL(previous);if(ref.origin===location.origin&&history.length>1){history.back();return;}}catch(_){}}\n  if(origin&&origin.startsWith('/')){location.href=origin+'#latest';return;}\n  location.href='./#latest';\n}\nconst backButton=document.getElementById('article-inline-back')||document.getElementById('article-back');\nif(backButton)backButton.addEventListener('click',returnToArticleOrigin);
+function returnToArticleOrigin(){
+  let origin='';
+  try{origin=sessionStorage.getItem('atelier-article-origin')||'';}catch(_){}
+  const previous=document.referrer;
+  if(previous){try{const ref=new URL(previous);if(ref.origin===location.origin&&history.length>1){history.back();return;}}catch(_){}}
+  if(origin&&origin.startsWith('/')){location.href=origin+'#latest';return;}
+  location.href='./#latest';
+}
+document.addEventListener('click',event=>{if(event.target.closest?.('#article-inline-back,#article-back'))returnToArticleOrigin();});
 init();
 })();
