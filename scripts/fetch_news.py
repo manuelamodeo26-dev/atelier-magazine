@@ -373,70 +373,135 @@ def fetch(url, user_agent=USER_AGENT):
         return response.read()
 
 
+def parse_wordpress_posts(raw, category, host):
+    try:
+        posts = json.loads(raw.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError("Risposta REST WordPress non valida") from exc
+    if not isinstance(posts, list):
+        raise ValueError("La REST API WordPress non ha restituito una lista")
+
+    articles = []
+    for post in posts[:MAX_PER_FEED]:
+        title = clean((post.get("title") or {}).get("rendered", ""))
+        excerpt = clean((post.get("excerpt") or {}).get("rendered", ""))
+        link = canonical_url(post.get("link", ""))
+        if not title or not link:
+            continue
+
+        embedded = post.get("_embedded") or {}
+        media = embedded.get("wp:featuredmedia") or []
+        authors = embedded.get("author") or []
+        image = media[0].get("source_url", "") if media and isinstance(media[0], dict) else ""
+        author = authors[0].get("name", "") if authors and isinstance(authors[0], dict) else ""
+        date_raw = post.get("date_gmt") or post.get("date") or ""
+        date_value = ""
+        if date_raw:
+            try:
+                parsed = datetime.fromisoformat(str(date_raw).replace("Z", "+00:00"))
+                if parsed.tzinfo is None:
+                    parsed = parsed.replace(tzinfo=timezone.utc)
+                date_value = parsed.astimezone(timezone.utc).isoformat()
+            except (TypeError, ValueError, OverflowError):
+                pass
+
+        article = {
+            "id": link,
+            "title": title[:300],
+            "excerpt": excerpt[:2200],
+            "author": clean(author)[:160],
+            "category": infer_category(title, excerpt, category),
+            "source": host,
+            "date": date_value,
+            "url": link,
+            "image": upgrade_image_url(image),
+            "image_verified": False,
+            "language": "it",
+        }
+        if is_relevant(article):
+            articles.append(article)
+    return articles
+
+
+def parse_rss_items(raw, category, host, enrich_metadata=True):
+    root = ET.fromstring(raw)
+    nodes = [item for item in root.iter()
+             if local_name(item.tag) in ("item", "entry")]
+    articles = []
+    for node in nodes[:MAX_PER_FEED]:
+        title = child_text(node, "title")
+        link = article_link(node)
+        if not title or not link:
+            continue
+        description = best_description(node, "description", "summary", "encoded", "content")
+        author = child_text(node, "creator", "author", "artist")
+        article = {
+            "id": link,
+            "title": title[:300],
+            "excerpt": description[:2200],
+            "author": author[:160],
+            "category": infer_category(title, description, category),
+            "source": host,
+            "date": article_date(node),
+            "url": link,
+            "image": upgrade_image_url(article_image(node)),
+            "image_verified": False,
+            "language": "it",
+        }
+        if is_relevant(article):
+            articles.append(article)
+
+    if enrich_metadata:
+        metadata_attempts = 0
+        for article in articles:
+            if (not article["image"] or len(article["excerpt"]) < 900 or not article["author"]) and metadata_attempts < 18:
+                metadata_attempts += 1
+                metadata = fetch_page_metadata(article["url"])
+                if not article["image"]:
+                    article["image"] = metadata["image"]
+                if len(metadata["description"]) > len(article["excerpt"]):
+                    article["excerpt"] = metadata["description"][:2200]
+                if not article["author"]:
+                    article["author"] = metadata["author"]
+    return articles
+
+
 def parse_feed(feed_url, category):
     last_error = "Errore non specificato"
     host = urlparse(feed_url).netloc.lower().removeprefix("www.")
     request_user_agent = BROWSER_USER_AGENT if host == "outpump.com" else USER_AGENT
-    feed_candidates = [feed_url]
+    feed_candidates = [("rss", feed_url)]
     if host == "outpump.com":
-        feed_candidates.append(
-            "https://news.google.com/rss/search?q=site%3Aoutpump.com&hl=it&gl=IT&ceid=IT%3Ait"
-        )
+        feed_candidates.extend([
+            ("wordpress", "https://outpump.com/wp-json/wp/v2/posts?per_page=20&_embed=1&_fields=id,date,date_gmt,link,title,excerpt,_embedded"),
+            ("wordpress", "https://outpump.com/?rest_route=/wp/v2/posts&per_page=20&_embed=1"),
+            ("rss", "https://news.google.com/rss/search?q=site%3Aoutpump.com&hl=it&gl=IT&ceid=IT%3Ait"),
+        ])
 
-    for candidate_url in feed_candidates:
-        is_fallback = candidate_url != feed_url
+    for index, (candidate_type, candidate_url) in enumerate(feed_candidates):
+        is_fallback = index > 0
         for attempt in range(2):
             try:
-                user_agent = USER_AGENT if is_fallback else request_user_agent
-                root = ET.fromstring(fetch(candidate_url, user_agent=user_agent))
-                nodes = [item for item in root.iter()
-                         if local_name(item.tag) in ("item", "entry")]
-                articles = []
-                for node in nodes[:MAX_PER_FEED]:
-                    title = child_text(node, "title")
-                    link = article_link(node)
-                    if not title or not link:
-                        continue
-                    description = best_description(node, "description", "summary", "encoded", "content")
-                    author = child_text(node, "creator", "author", "artist")
-                    article = {
-                        "id": link,
-                        "title": title[:300],
-                        "excerpt": description[:2200],
-                        "author": author[:160],
-                        "category": infer_category(title, description, category),
-                        "source": host,
-                        "date": article_date(node),
-                        "url": link,
-                        "image": upgrade_image_url(article_image(node)),
-                        "image_verified": False,
-                        "language": "it",
-                    }
-                    if is_relevant(article):
-                        articles.append(article)
+                user_agent = request_user_agent if host == "outpump.com" and candidate_type != "rss" or not is_fallback else USER_AGENT
+                raw = fetch(candidate_url, user_agent=user_agent)
+                if candidate_type == "wordpress":
+                    articles = parse_wordpress_posts(raw, category, host)
+                else:
+                    articles = parse_rss_items(raw, category, host, enrich_metadata=not is_fallback)
 
-                # Google News already supplies a publisher description and redirects
-                # to the original Outpump story. Avoid making repeated blocked requests
-                # to the publisher for metadata when using this fallback.
-                if not is_fallback:
-                    metadata_attempts = 0
-                    for article in articles:
-                        if (not article["image"] or len(article["excerpt"]) < 900 or not article["author"]) and metadata_attempts < 18:
-                            metadata_attempts += 1
-                            metadata = fetch_page_metadata(article["url"])
-                            if not article["image"]:
-                                article["image"] = metadata["image"]
-                            if len(metadata["description"]) > len(article["excerpt"]):
-                                article["excerpt"] = metadata["description"][:2200]
-                            if not article["author"]:
-                                article["author"] = metadata["author"]
+                if articles:
+                    if is_fallback:
+                        label = "REST WordPress" if candidate_type == "wordpress" else "Google News"
+                        print(f"Outpump: uso {label} come fallback; i link rimandano agli articoli originali")
+                    print(f"{host}: {len(articles)} articoli")
+                    return articles, True, ""
 
-                if not articles and not is_fallback and host == "outpump.com":
-                    raise ValueError("Feed Outpump vuoto; provo la fonte RSS alternativa")
-                if is_fallback:
-                    print("Outpump: uso il feed Google News come fallback; i link rimandano agli articoli originali")
-                print(f"{host}: {len(articles)} articoli")
-                return articles, True, ""
+                if index == 0 and host == "outpump.com":
+                    raise ValueError("Feed Outpump vuoto; provo una fonte alternativa")
+                if is_fallback and index < len(feed_candidates) - 1:
+                    raise ValueError("Fonte alternativa senza articoli")
+                print(f"{host}: 0 articoli")
+                return [], True, ""
             except Exception as exc:
                 last_error = "{}: {}".format(type(exc).__name__, str(exc)[:220])
                 if attempt == 0:
