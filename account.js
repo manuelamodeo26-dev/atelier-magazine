@@ -104,7 +104,7 @@
         if(!/^[A-Za-z0-9_]{3,20}$/.test(name)){message('Scegli un nickname di 3–20 caratteri: lettere, numeri o underscore.',true);return;}
         const {data,error}=await client.auth.signUp({email,password,options:{data:{display_name:name}}});
         if(error)throw error;
-        if(data.session){user=data.user;const profile=await client.from('profiles').upsert({id:user.id,display_name:name},{onConflict:'id'});if(profile.error)throw profile.error;await loadUserData();message('Account creato. Benvenuto in ATELIER.');const dialog=$('#account-dialog');if(dialog?.open)dialog.close();if(location.pathname.endsWith('/account.html'))location.replace('./index.html');}
+        if(data.session){user=data.user;const profile=await client.from('profiles').upsert({id:user.id,display_name:name},{onConflict:'id'});if(profile.error)throw profile.error;await loadUserData();message('Account creato. Benvenuto in ATELIER.');const dialog=$('#account-dialog');if(dialog?.open)dialog.close();location.replace('./index.html');}
         else message('Registrazione avviata. Controlla la tua email per confermare l’indirizzo, poi accedi.');
       }else{
         const {data,error}=await client.auth.signInWithPassword({email,password});
