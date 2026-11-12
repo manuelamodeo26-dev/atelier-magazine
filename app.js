@@ -5,9 +5,9 @@
   const filters=$('#filters'), menuToggle=$('#menu-toggle'), nav=$('#main-nav');
   const searchDialog=$('#search-dialog'), searchInput=$('#search-input'), searchResults=$('#search-results');
   const fallback=[
-    {title:'La moda come spazio di ricerca, non soltanto di tendenza.',category:'Fashion',excerpt:'Un punto di partenza per leggere il presente attraverso forme, materiali e nuove idee.',source:'ATELIER',date:'2026-11-11',url:'#'},
+    {title:'La moda come spazio di ricerca, non soltanto di tendenza.',category:'Moda',excerpt:'Un punto di partenza per leggere il presente attraverso forme, materiali e nuove idee.',source:'ATELIER',date:'2026-11-11',url:'#'},
     {title:'Quando il design incontra la vita quotidiana.',category:'Design',excerpt:'Oggetti, ambienti e dettagli che raccontano il nostro tempo.',source:'ATELIER',date:'2026-11-11',url:'#'},
-    {title:'Le nuove energie creative da tenere d’occhio.',category:'Art & Culture',excerpt:'Una selezione di linguaggi e visioni che attraversano la cultura contemporanea.',source:'ATELIER',date:'2026-11-11',url:'#'}
+    {title:'Le nuove energie creative da tenere d’occhio.',category:'Arte e cultura',excerpt:'Una selezione di linguaggi e visioni che attraversano la cultura contemporanea.',source:'ATELIER',date:'2026-11-11',url:'#'}
   ];
   let articles=[], activeFilter='Tutti', showAll=false;
   const escapeHTML=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -18,10 +18,13 @@
   }
   function categoryOf(value){
     const c=String(value||'').trim().toLowerCase();
-    if(c==='culture'||c==='art'||c==='art & culture'||c==='art and culture') return 'Art & Culture';
-    if(c==='tech'||c==='technology') return 'Technology';
+    if(c==='culture'||c==='art'||c==='art & culture'||c==='art and culture') return 'Arte e cultura';
+    if(c==='tech'||c==='technology') return 'Tecnologia';
     if(c==='architecture'||c==='business'||c==='lifestyle'||c==='streetwear'||c==='fashion'||c==='design') return c.charAt(0).toUpperCase()+c.slice(1);
-    return value||'Journal';
+    return value||'Rivista';
+  }
+  function categoryLabel(value){
+    return ({Fashion:'Moda', 'Art & Culture':'Arte e cultura', Technology:'Tecnologia', Architecture:'Architettura', Business:'Impresa', Lifestyle:'Stili di vita', Design:'Design', Streetwear:'Streetwear', Journal:'Rivista'})[categoryOf(value)] || categoryOf(value);
   }
   function formatDate(value){
     if(!value) return 'DATA NON DISPONIBILE';
@@ -30,11 +33,11 @@
   }
   function card(article,index){
     const url=safeURL(article.url), image=safeURL(article.image), category=categoryOf(article.category);
-    const visual=image?'<a class="article-image" href="'+escapeHTML(url||image)+'" target="_blank" rel="noopener noreferrer"><img src="'+escapeHTML(image)+'" alt="" loading="lazy" referrerpolicy="no-referrer"></a>':
+    const visual=image?'<a class="article-image" href="'+escapeHTML(url||image)+'" target="_blank" rel="noopener noreferrer" aria-label="Apri la fotografia della storia: '+escapeHTML(article.title||'articolo')+'"><img src="'+escapeHTML(image)+'" alt="Fotografia: '+escapeHTML(article.title||'articolo')+'" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.closest(\'.article-image\').classList.add(\'image-unavailable\');this.remove()"></a>':
       '<div class="story-placeholder '+(index%3===0?'placeholder-red':index%3===1?'placeholder-cream':'placeholder-black')+'"><span>'+escapeHTML(String(category).toUpperCase())+'<br>JOURNAL</span><b>A/'+String(index+1).padStart(2,'0')+'</b></div>';
     const language=String(article.language||'').toLowerCase();
     const languageNote=language&&language!=='it'?' · ORIGINALE '+escapeHTML(language.toUpperCase()):'';
-    return '<article class="story-card">'+visual+'<div class="story-meta">'+escapeHTML(category)+' · '+formatDate(article.date)+' · '+escapeHTML(article.source||'ATELIER')+languageNote+'</div><h3>'+escapeHTML(article.title||'Senza titolo')+'</h3><p>'+escapeHTML(article.excerpt||'')+'</p>'+(url?'<a class="text-link card-link" href="'+escapeHTML(url)+'" target="_blank" rel="noopener noreferrer">LEGGI LA FONTE ↗</a>':'')+'</article>';
+    return '<article class="story-card">'+visual+'<div class="story-meta">'+escapeHTML(categoryLabel(category))+' · '+formatDate(article.date)+' · '+escapeHTML(article.source||'ATELIER')+languageNote+'</div><h3>'+escapeHTML(article.title||'Senza titolo')+'</h3><p>'+escapeHTML(article.excerpt||'')+'</p>'+(url?'<a class="text-link card-link" href="'+escapeHTML(url)+'" target="_blank" rel="noopener noreferrer">LEGGI LA FONTE ↗</a>':'')+'</article>';
   }
   function visibleArticles(){
     return articles.filter(a=>activeFilter==='Tutti'||categoryOf(a.category)===activeFilter);
@@ -43,7 +46,7 @@
     const visible=visibleArticles(), list=showAll?visible:visible.slice(0,9);
     grid.innerHTML=list.map(card).join('');
     empty.hidden=list.length!==0;
-    count.textContent=visible.length+' '+(visible.length===1?'ARTICOLO':'ARTICOLI')+' · '+activeFilter.toUpperCase();
+    count.textContent=visible.length+' '+(visible.length===1?'ARTICOLO':'ARTICOLI')+' · '+categoryLabel(activeFilter).toLocaleUpperCase('it');
     $('#show-more').hidden=visible.length<=9;
     $('#show-more').textContent=showAll?'MOSTRA MENO ↑':'MOSTRA TUTTI GLI ARTICOLI ↗';
   }
@@ -89,7 +92,7 @@
     const found=articles.filter(a=>[a.title,a.excerpt,a.category,a.source,a.language].join(' ').toLocaleLowerCase('it').includes(q)).slice(0,12);
     searchResults.innerHTML=found.length?found.map(a=>{
       const url=safeURL(a.url);
-      return '<div class="search-result"><small>'+escapeHTML(categoryOf(a.category))+' · '+formatDate(a.date)+'</small><h4>'+escapeHTML(a.title)+'</h4>'+(url?'<a class="text-link" href="'+escapeHTML(url)+'" target="_blank" rel="noopener noreferrer">APRI FONTE ↗</a>':'')+'</div>';
+      return '<div class="search-result"><small>'+escapeHTML(categoryLabel(a.category))+' · '+formatDate(a.date)+'</small><h4>'+escapeHTML(a.title)+'</h4>'+(url?'<a class="text-link" href="'+escapeHTML(url)+'" target="_blank" rel="noopener noreferrer">APRI FONTE ↗</a>':'')+'</div>';
     }).join(''):'<p>Nessun risultato trovato.</p>';
   });
   const today=$('#today-label');
