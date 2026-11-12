@@ -23,17 +23,17 @@
     'Art & Culture':['photo-1513364776144-60967b0f800f','photo-1518998053901-5348d3961a04'],
     Architecture:['photo-1487958449943-2429e8be8625','photo-1511818966892-d7d671e672a2'],
     Technology:['photo-1518770660439-4636190af475','photo-1519389950473-47ba0277781c'],
-    Business:['photo-1486406146926-c627a92ad1ab','photo-149 años'],
+    Business:['photo-1486406146926-c627a92ad1ab'],
     Lifestyle:['photo-1490481651871-ab68de25d43d','photo-1515886657613-9f3515b0c78f']
   };
   function imageFor(article){
     const original=safeURL(article.image);
-    if(original)return {url:original,verified:article.image_verified===true};
+    if(original)return {url:original,verified:article.image_verified===true,sourceImage:true};
     const category=categoryOf(article.category);
     const choices=fallbackPhotos[category]||fallbackPhotos.Fashion;
     const seed=String(article.title||article.id||'ATELIER').split('').reduce((sum,char)=>sum+char.charCodeAt(0),0);
     const photo=choices[seed%choices.length];
-    return {url:'https://images.unsplash.com/'+photo+'?auto=format&fit=crop&w=1400&q=82',verified:false};
+    return {url:'https://images.unsplash.com/'+photo+'?auto=format&fit=crop&w=1400&q=82',verified:false,sourceImage:false};
   }
   function categoryOf(value){
     const c=String(value||'').trim().toLowerCase();
@@ -54,7 +54,7 @@
     const imageInfo=imageFor(article), image=imageInfo.url;
     const category=categoryOf(article.category);
     const visual=image
-      ?'<div class="article-image"><img src="'+escapeHTML(image)+'" alt="'+escapeHTML(article.title||'Immagine editoriale ATELIER')+'" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.closest(\'.article-image\').classList.add(\'image-unavailable\');this.remove()"><span class="image-verified '+(imageInfo.verified?'':'image-illustrative')+'">'+(imageInfo.verified?'FOTOGRAFIA VERIFICATA':'IMMAGINE ILLUSTRATIVA · NON VERIFICATA')+'</span></div>'
+      ?'<div class="article-image"><img src="'+escapeHTML(image)+'" alt="'+escapeHTML(article.title||'Immagine editoriale ATELIER')+'" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.closest(\'.article-image\').classList.add(\'image-unavailable\');this.remove()"><span class="image-verified '+(imageInfo.verified?'':'image-illustrative')+'">'+(imageInfo.verified?'FOTOGRAFIA VERIFICATA':imageInfo.sourceImage?'IMMAGINE DELLA FONTE · NON VERIFICATA':'IMMAGINE ILLUSTRATIVA')+'</span></div>'
       :'<div class="story-placeholder '+(index%3===0?'placeholder-red':index%3===1?'placeholder-cream':'placeholder-black')+'"><span>'+escapeHTML(categoryLabel(category).toLocaleUpperCase('it'))+'<br>ATELIER</span><b>A/'+String(index+1).padStart(2,'0')+'</b></div>';
     const articleId=article.id||article.url||String(index);
     return '<article class="story-card'+(index===0?' feature-card':'')+'">'+visual+'<div class="story-meta">'+escapeHTML(categoryLabel(category))+' · '+formatDate(article.date)+' · '+escapeHTML(article.source||'Fonte non indicata')+'</div><h3>'+escapeHTML(article.title||'Senza titolo')+'</h3><p>'+escapeHTML(article.excerpt||'')+'</p><a class="text-link card-link" href="./article.html?id='+encodeURIComponent(articleId)+'">APRI ARTICOLO ↗</a><button type="button" class="save-article" data-save-article="'+escapeHTML(articleId)+'" aria-label="Salva articolo nei preferiti">♡ SALVA</button></article>';
@@ -74,7 +74,7 @@
       :'';
     const excerpt=editorialHtml+sourceExcerpt||(editorial?'':'<section class="detail-section"><p class="eyebrow">SINTESI FORNITA DALLA FONTE</p><p class="detail-muted">La fonte non mette a disposizione una descrizione più ampia. ATELIER non aggiunge dettagli non verificati.</p></section>');
     const photo=image
-      ?'<figure class="detail-figure"><img src="'+escapeHTML(image)+'" alt="'+escapeHTML(article.title||'Immagine editoriale ATELIER')+'" referrerpolicy="no-referrer" onerror="this.closest(\'.detail-figure\').classList.add(\'image-unavailable\');this.remove()"><figcaption>'+(imageInfo.verified?'Fotografia verificata · ':'Immagine illustrativa non verificata · ')+escapeHTML(source)+'</figcaption></figure>'
+      ?'<figure class="detail-figure"><img src="'+escapeHTML(image)+'" alt="'+escapeHTML(article.title||'Immagine editoriale ATELIER')+'" referrerpolicy="no-referrer" onerror="this.closest(\'.detail-figure\').classList.add(\'image-unavailable\');this.remove()"><figcaption>'+(imageInfo.verified?'Fotografia verificata · ':imageInfo.sourceImage?'Immagine della fonte, non verificata · ':'Immagine illustrativa · ')+escapeHTML(source)+'</figcaption></figure>'
       :'<div class="detail-no-image">IMMAGINE NON DISPONIBILE O NON VERIFICATA</div>';
     const sourceUrl=safeURL(article.url);
     const sourceBlock='<section class="detail-sources"><p class="eyebrow">FONTI E ATTRIBUZIONI</p><p><strong>'+escapeHTML(source)+'</strong> · Fonte originale del contenuto e delle informazioni riportate in questa scheda.</p>'+(sourceUrl?'<a class="text-link" href="'+escapeHTML(sourceUrl)+'" target="_blank" rel="noopener noreferrer">CONSULTA LA FONTE ORIGINALE ↗</a>':'<p class="detail-muted">Collegamento alla fonte non disponibile.</p>')+'<p class="detail-muted">Le fotografie contrassegnate come verificate provengono dai metadati della fonte e hanno superato i controlli tecnici. Le immagini illustrative sono alternative visive e non documentano necessariamente il fatto narrato.</p></section>';
