@@ -104,11 +104,11 @@
         if(!/^[A-Za-z0-9_]{3,20}$/.test(name)){message('Scegli un nickname di 3–20 caratteri: lettere, numeri o underscore.',true);return;}
         const {data,error}=await client.auth.signUp({email,password,options:{data:{display_name:name}}});
         if(error)throw error;
-        if(data.session){user=data.user;const profile=await client.from('profiles').upsert({id:user.id,display_name:name},{onConflict:'id'});if(profile.error)throw profile.error;await loadUserData();message('Account creato. Benvenuto in ATELIER.'); if(location.pathname.endsWith('/account.html'))location.replace('./index.html');}
+        if(data.session){user=data.user;const profile=await client.from('profiles').upsert({id:user.id,display_name:name},{onConflict:'id'});if(profile.error)throw profile.error;await loadUserData();message('Account creato. Benvenuto in ATELIER.');const dialog=$('#account-dialog');if(dialog?.open)dialog.close();if(location.pathname.endsWith('/account.html'))location.replace('./index.html');}
         else message('Registrazione avviata. Controlla la tua email per confermare l’indirizzo, poi accedi.');
       }else{
         const {data,error}=await client.auth.signInWithPassword({email,password});
-        if(error)throw error; user=data.user; const existing=await client.from('profiles').select('id,display_name').eq('id',user.id).maybeSingle();if(existing.error)throw existing.error;if(!existing.data){const fallback=String(user.user_metadata?.display_name||('Membro_'+user.id.slice(0,6))).replace(/[^A-Za-z0-9_]/g,'').slice(0,20)||('Membro_'+user.id.slice(0,6));const created=await client.from('profiles').insert({id:user.id,display_name:fallback});if(created.error&&created.error.code!=='23505')throw created.error;} await loadUserData(); message('Accesso effettuato.'); if(location.pathname.endsWith('/account.html'))location.replace('./index.html');
+        if(error)throw error; user=data.user; const existing=await client.from('profiles').select('id,display_name').eq('id',user.id).maybeSingle();if(existing.error)throw existing.error;if(!existing.data){const fallback=String(user.user_metadata?.display_name||('Membro_'+user.id.slice(0,6))).replace(/[^A-Za-z0-9_]/g,'').slice(0,20)||('Membro_'+user.id.slice(0,6));const created=await client.from('profiles').insert({id:user.id,display_name:fallback});if(created.error&&created.error.code!=='23505')throw created.error;} await loadUserData(); message('Accesso effettuato.');const dialog=$('#account-dialog');if(dialog?.open)dialog.close();if(location.pathname.endsWith('/account.html'))location.replace('./index.html');
       }
     }catch(e){message(e.message||'Non è stato possibile completare l’operazione.',true);}
   }
