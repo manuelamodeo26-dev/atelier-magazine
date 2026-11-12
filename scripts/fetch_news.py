@@ -401,13 +401,13 @@ def parse_feed(feed_url, category):
                     if not article["author"]:
                         article["author"] = metadata["author"]
             print(f"{host}: {len(articles)} articoli")
-            return articles
+            return articles, True
         except Exception as exc:
             if attempt == 0:
                 time.sleep(1.5)
             else:
                 print(f"Feed non disponibile {feed_url}: {exc}")
-    return []
+    return [], False
 
 
 def load_previous():
@@ -482,16 +482,37 @@ def main():
     )
     fresh = []
     successful_feeds = 0
+    feed_status = []
     for feed_url, category in FEEDS:
-        items = parse_feed(feed_url, category)
-        if items:
+        items, feed_ok = parse_feed(feed_url, category)
+        feed_status.append({
+            "source": urlparse(feed_url).netloc.lower().removeprefix("www."),
+            "ok": feed_ok,
+            "articles": len(items),
+        })
+        if feed_ok:
             successful_feeds += 1
-            fresh.extend(items)
+        fresh.extend(items)
 
     if not fresh:
-        print("Nessun feed disponibile: archivio precedente preservato.")
+        print("Nessun nuovo articolo: archivio precedente preservato.")
         if not previous:
             raise SystemExit("Archivio vuoto e nessun feed valido: aggiornamento annullato.")
+        try:
+            with open(OUT, encoding="utf-8") as file:
+                payload = json.load(file)
+            if payload.get("feed_status") != feed_status or payload.get("feeds_ok") != successful_feeds:
+                payload["updated_at"] = datetime.now(timezone.utc).isoformat()
+                payload["feeds_ok"] = successful_feeds
+                payload["feeds_total"] = len(FEEDS)
+                payload["feed_status"] = feed_status
+                temporary = OUT + ".tmp"
+                with open(temporary, "w", encoding="utf-8") as file:
+                    json.dump(payload, file, ensure_ascii=False, indent=2)
+                    file.write("\\n")
+                os.replace(temporary, OUT)
+        except (OSError, ValueError, TypeError) as exc:
+            print("Stato feed non salvato: {}.".format(type(exc).__name__))
         return
 
     # Do not re-import or overwrite stories already in the archive.
@@ -609,6 +630,7 @@ def main():
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "feeds_ok": successful_feeds,
         "feeds_total": len(FEEDS),
+        "feed_status": feed_status,
         "language": "it",
         "image_verification": {
             "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
