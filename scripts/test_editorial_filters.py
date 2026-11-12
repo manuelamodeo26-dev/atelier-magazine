@@ -5,7 +5,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import fetch_news
-from fetch_news import infer_category, is_relevant, source_category, summary_retry_due
+from fetch_news import infer_category, is_relevant, source_category, summary_retry_due, image_backfill_due
 
 
 class EditorialFilterTests(unittest.TestCase):
@@ -35,6 +35,15 @@ class EditorialFilterTests(unittest.TestCase):
         self.assertTrue(summary_retry_due({
             "editorial_retry_after": (now - timedelta(seconds=1)).isoformat()
         }, now=now))
+
+    def test_image_backfill_respects_retry_window_and_verified_state(self):
+        now = datetime.now(timezone.utc)
+        pending = {"image_retry_after": (now + timedelta(hours=2)).isoformat()}
+        expired = {"image_retry_after": (now - timedelta(seconds=1)).isoformat()}
+        verified = {"image_verified": True}
+        self.assertFalse(image_backfill_due(pending, now=now))
+        self.assertTrue(image_backfill_due(expired, now=now))
+        self.assertFalse(image_backfill_due(verified, now=now))
 
     def test_legacy_archive_is_cleaned_and_saved(self):
         original_path = fetch_news.OUT
