@@ -30,7 +30,7 @@ FEEDS = [
 MAX_PER_FEED = 18
 MAX_ARTICLES = 180
 MAX_AGE_DAYS = 120
-MAX_SUMMARIES_PER_RUN = 6
+MAX_SUMMARIES_PER_RUN = 2
 MAX_IMAGE_BACKFILLS_PER_RUN = 12
 
 # Keep the archive focused on fashion, design and contemporary culture.
@@ -48,6 +48,8 @@ MAX_IMAGE_BYTES = 8 * 1024 * 1024
 MIN_IMAGE_LONG_EDGE = 1000
 MIN_IMAGE_SHORT_EDGE = 500
 USER_AGENT = "ATELIER-Magazine/2.0 (+https://github.com/manuelamodeo26-dev/atelier-magazine)"
+BROWSER_USER_AGENT = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+                      "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36")
 TRACKING_KEYS = {"fbclid", "gclid", "mc_cid", "mc_eid"}
 
 
@@ -351,9 +353,9 @@ def article_date(node):
         return ""
 
 
-def fetch(url):
+def fetch(url, user_agent=USER_AGENT):
     request = Request(url, headers={
-        "User-Agent": USER_AGENT,
+        "User-Agent": user_agent,
         "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml",
     })
     with urlopen(request, timeout=18) as response:
@@ -362,12 +364,13 @@ def fetch(url):
 
 def parse_feed(feed_url, category):
     last_error = "Errore non specificato"
+    host = urlparse(feed_url).netloc.lower().removeprefix("www.")
+    request_user_agent = BROWSER_USER_AGENT if host == "outpump.com" else USER_AGENT
     for attempt in range(2):
         try:
-            root = ET.fromstring(fetch(feed_url))
+            root = ET.fromstring(fetch(feed_url, user_agent=request_user_agent))
             nodes = [item for item in root.iter()
                      if local_name(item.tag) in ("item", "entry")]
-            host = urlparse(feed_url).netloc.lower().removeprefix("www.")
             articles = []
             for node in nodes[:MAX_PER_FEED]:
                 title = child_text(node, "title")
