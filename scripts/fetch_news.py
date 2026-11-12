@@ -59,6 +59,21 @@ def is_relevant(article):
     return not EXCLUDED_CONTENT.search(text)
 
 
+
+
+def summary_retry_due(article, now=None):
+    retry_after = article.get("editorial_retry_after")
+    if not retry_after:
+        return True
+    try:
+        retry_at = datetime.fromisoformat(str(retry_after).replace("Z", "+00:00"))
+        if retry_at.tzinfo is None:
+            retry_at = retry_at.replace(tzinfo=timezone.utc)
+        return retry_at <= (now or datetime.now(timezone.utc))
+    except (TypeError, ValueError):
+        return True
+
+
 def source_category(article):
     source = str(article.get("source") or "").lower().removeprefix("www.")
     if source in ("vogue.it", "pambianconews.com"):
@@ -396,6 +411,7 @@ def load_previous():
         articles = payload.get("articles", [])
         if not isinstance(articles, list):
             return {}
+        original_snapshot = json.dumps(articles, ensure_ascii=False, sort_keys=True)
         previous = {}
         cutoff = datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)
         for item in articles:
@@ -419,9 +435,10 @@ def load_previous():
 
         # Persist archive cleanup even when every RSS feed is temporarily down
         # or no new story arrives. Otherwise excluded legacy stories reappear.
-        if len(previous) != len(articles):
-            cleaned = sorted(previous.values(),
-                             key=lambda item: item.get("date") or "0000", reverse=True)[:MAX_ARTICLES]
+        cleaned = sorted(previous.values(),
+                         key=lambda item: item.get("date") or "0000", reverse=True)[:MAX_ARTICLES]
+        cleaned_snapshot = json.dumps(cleaned, ensure_ascii=False, sort_keys=True)
+        if cleaned_snapshot != original_snapshot:
             payload["updated_at"] = datetime.now(timezone.utc).isoformat()
             payload["articles"] = cleaned
             temporary = OUT + ".tmp"
@@ -439,6 +456,13 @@ def load_previous():
 
 def main():
     previous = load_previous()
+    # Capture an immutable baseline before any in-place enrichment or AI work.
+    # Comparing live dictionaries against themselves misses mutations.
+    previous_snapshot = json.dumps(
+        sorted(previous.values(), key=lambda item: item.get("date") or "0000", reverse=True)[:MAX_ARTICLES],
+        ensure_ascii=False,
+        sort_keys=True,
+    )
     fresh = []
     successful_feeds = 0
     for feed_url, category in FEEDS:
@@ -510,16 +534,19 @@ def main():
         new_candidates = sorted(
             (item for item in articles
              if canonical_url(item.get("url")) in new_article_urls
-             and not item.get("editorial_summary")),
+             and not item.get("editorial_summary")
+             and summary_retry_due(item, now)),
             key=lambda item: item.get("date") or "0000",
             reverse=True,
         )
+        now = datetime.now(timezone.utc)
         older_candidates = sorted(
             (item for item in articles
              if canonical_url(item.get("url")) not in new_article_urls
-             and not item.get("editorial_summary")),
-            key=lambda item: item.get("date") or "0000",
-            reverse=True,
+             and not item.get("editorial_summary")
+             and summary_retry_due(item, now)),
+            key=lambda item: item.get("date") or "9999",
+            reverse=False,
         )
         candidates = (new_candidates + older_candidates)[:MAX_SUMMARIES_PER_RUN]
         print("Sintesi AI in coda: {} (massimo {} per esecuzione).".format(len(candidates), MAX_SUMMARIES_PER_RUN))
@@ -530,9 +557,14 @@ def main():
                 article["editorial_summary"] = summary
                 article["editorial_level"] = level
                 article["editorial_word_count"] = len(re.findall(r"\b[\wÀ-ÖØ-öø-ÿ’'-]+\b", summary, flags=re.UNICODE))
+                article.pop("editorial_retry_after", None)
+                article.pop("editorial_attempted_at", None)
                 print("Sintesi editoriale generata: {}".format(article.get("title", "")[:90]))
             else:
-                print("Sintesi editoriale saltata: {}".format(article.get("title", "")[:90]))
+                attempted_at = datetime.now(timezone.utc)
+                article["editorial_attempted_at"] = attempted_at.isoformat()
+                article["editorial_retry_after"] = (attempted_at + timedelta(hours=12)).isoformat()
+                print("Sintesi editoriale rinviata per 12 ore: {}".format(article.get("title", "")[:90]))
     else:
         print("GEMINI_API_KEY non configurata: si mantiene il testo originale delle fonti.")
 
@@ -551,8 +583,8 @@ def main():
         valid_images = sum(1 for item in articles if item.get("image_verified"))
         print(f"Fotografie verificate: {valid_images}/{len(articles)} articoli.")
 
-    if articles == sorted(previous.values(),
-                          key=lambda item: item.get("date") or "0000", reverse=True)[:MAX_ARTICLES]:
+    current_snapshot = json.dumps(articles, ensure_ascii=False, sort_keys=True)
+    if current_snapshot == previous_snapshot:
         print(f"Nessuna modifica: {len(articles)} articoli già archiviati.")
         return
 
