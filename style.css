@@ -558,3 +558,12 @@ section[id] { scroll-margin-top: 100px; }
 .save-article .save-bookmark-icon{color:#B51F1F!important}
 #article-back.article-back{appearance:none!important;-webkit-appearance:none!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;margin:0!important;cursor:pointer!important}
 #article-back.article-back:hover{background:transparent!important;border:0!important;box-shadow:none!important}
+
+
+/* Barra azioni articolo: freccia a sinistra, Mi piace e Salva in alto a destra */
+.article-action-bar{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:20px!important;width:100%!important;margin:0 0 22px!important;padding:0!important}
+.article-action-group{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:22px!important;margin-left:auto!important}
+.article-action-bar .article-inline-back{flex:0 0 42px!important;margin:0!important;padding:0!important}
+.article-action-bar .like-article,.article-action-bar .save-article{margin:0!important;padding:6px 0!important}
+.article-action-bar .save-bookmark-icon{width:16px!important;height:18px!important}
+@media(max-width:480px){.article-action-bar{gap:10px!important}.article-action-group{gap:14px!important}.article-action-bar .like-article,.article-action-bar .save-article{font-size:10px!important}}
