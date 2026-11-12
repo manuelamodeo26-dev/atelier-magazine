@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-12T19:14:14.556594+00:00",
-  "feeds_ok": 6,
+  "updated_at": "2026-11-12T19:17:10.777755+00:00",
+  "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
     {
@@ -35,9 +35,9 @@
     },
     {
       "source": "outpump.com",
-      "ok": false,
-      "articles": 0,
-      "error": "HTTPError: HTTP Error 403: Forbidden"
+      "ok": true,
+      "articles": 18,
+      "error": ""
     },
     {
       "source": "sneakersmagazine.it",
@@ -259,6 +259,24 @@
       "image_format": "webp"
     },
     {
+      "id": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1MWVdHYlMxbU51b2c3MjU1T3JJS1gtcFdZUWViR05WNmUtUmdwcm82LVloYVZrYkZWUGR4ODVjY2c3cGtUY0hiUU80UGlUWk4tTXh0ZmxraWQ1VnZESHNwamdQUk9POXhPR054R3o0Z2Q?oc=5",
+      "title": "Il Bianchetto di Maison Margiela incontra RIMOWA - Outpump",
+      "excerpt": "Il Bianchetto di Maison Margiela incontra RIMOWA Outpump",
+      "author": "",
+      "category": "Streetwear",
+      "source": "outpump.com",
+      "date": "2026-11-12T15:20:58+00:00",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1MWVdHYlMxbU51b2c3MjU1T3JJS1gtcFdZUWViR05WNmUtUmdwcm82LVloYVZrYkZWUGR4ODVjY2c3cGtUY0hiUU80UGlUWk4tTXh0ZmxraWQ1VnZESHNwamdQUk9POXhPR054R3o0Z2Q?oc=5",
+      "image": "",
+      "image_verified": false,
+      "language": "it",
+      "editorial_attempted_at": "2026-11-12T19:17:07.494256+00:00",
+      "editorial_retry_after": "2026-11-13T07:17:07.494256+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
+    },
+    {
       "id": "https://www.finestresullarte.info/musei/reggia-di-colorno-nel-2027-riqualificazione-piano-da-quasi-6-milioni-di-euro",
       "title": "Reggia di Colorno, nel 2027 la riqualificazione: un piano da quasi 6 milioni",
       "excerpt": "Nel 2027 la Provincia di Parma avvierà i lavori sulla Reggia di Colorno, guidati da un nuovo masterplan per il palazzo e il parco. L’annuncio è arrivato davanti ai direttori di Versailles, Schönbrunn e delle altre residenze reali europee, riuniti a Colorno.",
@@ -323,6 +341,22 @@
       "image_format": "webp"
     },
     {
+      "id": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOWGJIaFl3dllmcHBiYXBLWHhmNUVUbXdhdk5obklMbmR1S25YNFl5UFUxZU9PYS1fVXd1a3hVRXhlMDdtX1UxNFFXY1hlN3VIS043WUo1eWF3SWFQRHJiRWxkVUhZbXFsX3h0VEt4WWVDMEthZ0dDS1cxSHNGdEdEdkxMc0p0UXVMZ2F1ckJqd2NxT1lJ?oc=5",
+      "title": "La nuova collaborazione tra Carhartt WIP e Nike - Outpump",
+      "excerpt": "La nuova collaborazione tra Carhartt WIP e Nike Outpump",
+      "author": "",
+      "category": "Business",
+      "source": "outpump.com",
+      "date": "2026-11-12T15:01:11+00:00",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOWGJIaFl3dllmcHBiYXBLWHhmNUVUbXdhdk5obklMbmR1S25YNFl5UFUxZU9PYS1fVXd1a3hVRXhlMDdtX1UxNFFXY1hlN3VIS043WUo1eWF3SWFQRHJiRWxkVUhZbXFsX3h0VEt4WWVDMEthZ0dDS1cxSHNGdEdEdkxMc0p0UXVMZ2F1ckJqd2NxT1lJ?oc=5",
+      "image": "",
+      "image_verified": false,
+      "language": "it",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
+    },
+    {
       "id": "https://www.finestresullarte.info/musei/cosa-nascondono-depositi-dei-musei-in-eilia-romagna-otto-istituzioni-svelano-loro-collezioni",
       "title": "Cosa nascondono i depositi dei musei? In Emilia-Romagna otto istituzioni svelano le loro collezioni",
       "excerpt": "La rassegna “Depositi Aperti”, promossa dalla rete Depositi e Patrimoni in Rete e finanziata dalla Regione Emilia-Romagna, propone nove appuntamenti gratuiti in otto musei per far conoscere le collezioni conservate nei depositi. Il programma si conclude il 22 gennaio 2027 al Museo del Duomo di Fidenza.",
@@ -369,6 +403,22 @@
       "image_width": 3000,
       "image_height": 2000,
       "image_format": "webp"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0tUDhWV0FJcW85WWNmY2FsYzBNV243RzlmWXRBN2dSWkNoNkhIOWxMYkV4WUxvR3o2cWdnRWg5M2ZsM0Y4MDBKbHRQZXhDdGQyVGtYMEE0U1dwaHZtNXd1UzNMWkZXZ0ZIelZMYjR3M3pfVXc?oc=5",
+      "title": "Le nuove PUMA Suede di A$AP Rocky sono un’ode agli anni ’90 - Outpump",
+      "excerpt": "Le nuove PUMA Suede di A$AP Rocky sono un’ode agli anni ’90 Outpump",
+      "author": "",
+      "category": "Streetwear",
+      "source": "outpump.com",
+      "date": "2026-11-12T14:15:41+00:00",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0tUDhWV0FJcW85WWNmY2FsYzBNV243RzlmWXRBN2dSWkNoNkhIOWxMYkV4WUxvR3o2cWdnRWg5M2ZsM0Y4MDBKbHRQZXhDdGQyVGtYMEE0U1dwaHZtNXd1UzNMWkZXZ0ZIelZMYjR3M3pfVXc?oc=5",
+      "image": "",
+      "image_verified": false,
+      "language": "it",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
     },
     {
       "id": "https://www.vogue.it/article/aceto-coreano-per-capelli-chioma-lucida-in-un-solo-lavaggio-benefici",
@@ -471,6 +521,19 @@
       "image_width": 2000,
       "image_height": 1597,
       "image_format": "jpeg"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9iOFIzZXU3dUZwT3ZqMWJDVlZFMzdrcU9JR2h1azhmS2ZmNFVWb2NoX2dSbDV6alQ4SDdab3Z0Ym1LbkVvTmxTdlRqMzNvblNaUVNWdWtzSHNDV1RvWmhjNThNU0JIalc3X1ItZXdCczFOQWlkdDVWX1lVZlI?oc=5",
+      "title": "ROA e C.P. Company hanno presentato la loro prima collaborazione - Outpump",
+      "excerpt": "ROA e C.P. Company hanno presentato la loro prima collaborazione Outpump",
+      "author": "",
+      "category": "Business",
+      "source": "outpump.com",
+      "date": "2026-11-12T11:48:57+00:00",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9iOFIzZXU3dUZwT3ZqMWJDVlZFMzdrcU9JR2h1azhmS2ZmNFVWb2NoX2dSbDV6alQ4SDdab3Z0Ym1LbkVvTmxTdlRqMzNvblNaUVNWdWtzSHNDV1RvWmhjNThNU0JIalc3X1ItZXdCczFOQWlkdDVWX1lVZlI?oc=5",
+      "image": "",
+      "image_verified": false,
+      "language": "it"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/12/binello-quadrivio-group-piano-da-2-miliardi-moda-beauty-e-food-nel-mirino-500551/",
@@ -1841,6 +1904,19 @@
       "language": "it"
     },
     {
+      "id": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB2N19oZ05aOUJDVE84d2ZtS01hNzY3WW11WV9qVzhEMnJfSFJDcXdaU3NiRzB3dnVFSldhcDZnTFBhMkJJZ0d5ZEVneV9UQ1NIYkhjZUhmUTVONHdkdXhZNXlvYzc4S3ppWFhOT3ducXBxZUl6bFVtUUs2ZnRxVVU?oc=5",
+      "title": "Under Armour racconta le diverse sfaccettature di Tony Effe - Outpump",
+      "excerpt": "Under Armour racconta le diverse sfaccettature di Tony Effe Outpump",
+      "author": "",
+      "category": "Streetwear",
+      "source": "outpump.com",
+      "date": "2026-11-10T09:48:41+00:00",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB2N19oZ05aOUJDVE84d2ZtS01hNzY3WW11WV9qVzhEMnJfSFJDcXdaU3NiRzB3dnVFSldhcDZnTFBhMkJJZ0d5ZEVneV9UQ1NIYkhjZUhmUTVONHdkdXhZNXlvYzc4S3ppWFhOT3ducXBxZUl6bFVtUUs2ZnRxVVU?oc=5",
+      "image": "",
+      "image_verified": false,
+      "language": "it"
+    },
+    {
       "id": "https://www.pambianconews.com/2026/11/10/verga-1947-un-anno-da-protagonista-tra-alta-orologeria-e-nuovi-traguardi-498797/",
       "title": "Verga 1947, un anno da protagonista tra alta orologeria e nuovi traguardi",
       "excerpt": "Lo storico rivenditore milanese di orologi di lusso stima una conclusione del 2026 con ricavi in crescita e margini in aumento. L’AD Fabrizio Noris traccia il bilancio della ‘Watch Art Grand Exhibition’ di Patek Philippe e guarda con serenità al prossimo decennio. Per Verga 1947 il 2026 si può considerare un anno intenso e ricco di traguardi, tra la ‘Watch Art Grand Exhibition’ di Patek Philippe e conti in crescita. Lo racconta Fabrizio Noris , amministratore delegato dello storico rivenditore milanese di orologi di lusso, alla vigilia degli 80 anni di attività dell’azienda. L’AD Fabrizio Noris (©Antinori) Nello specifico, l’esposizione milanese della maison ginevrina, appena conclusa, è stata l’edizione più partecipata di sempre, con oltre 68mila ingressi. Ha superato anche quella di Tokyo, “una città con una popolazione sette volte maggiore di Milano”, sottolinea Noris, che fa i suoi complimenti a Patek Philippe. “Noi ne eravamo già convinti, e credo che la maison ne abbia avuto conferma: i collezionisti italiani restano un punto di riferimento per l’alta orologeria mondiale”. Significativa la presenza di appassionati internazionali, arrivati da Europa, Asia e America. Le creazioni esposte, pezzi unici lavorati a mano, hanno attirato sia i collezionisti più vicini alla maison sia appassionati e curiosi al primo contatto con il brand. “La scelta di aprire ogni edizione al pubblico gratuitamente fa bene a tutto il mercato, non solo a noi concessionari – osserva l’AD –. Alimenta la passione per l’orologeria in generale”. Come concessionario e gestore del monomarca Patek Philippe in città, “abbiamo sentito una responsabilità ancora maggiore nell’accompagnare i nostri clienti”, spiega Noris. Il rivenditore ha quindi presidiato la mostra per tutti i sedici giorni. Federico Verga , responsabile della boutique, è stato presente quotidianamente, affiancato da almeno quattro persone del team, dal marketing al commerciale, per le visite guidate. Pranzi e cene riservati hanno inoltre permesso ai clienti più importanti di incontrare il management italiano e svizzero della maison: “Per un collezionista di questo livello, poter parlare con il presidente Thierry Stern e gli a",
@@ -1854,7 +1930,10 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "editorial_summary": "Verga 1947 chiude il 2026 definendolo un anno di grande intensità, segnato soprattutto dalla ‘Watch Art Grand Exhibition’ di Patek Philippe a Milano. L’amministratore delegato Fabrizio Noris ha evidenziato che l’edizione milanese è stata la più partecipata di sempre, con oltre 68 000 ingressi, superando persino la mostra di Tokyo nonostante la differenza demografica. L’evento ha attirato collezionisti italiani, considerati un punto di riferimento per l’alta orologeria mondiale, e un pubblico internazionale proveniente da Europa, Asia e America, tutti attratti da pezzi unici lavorati a mano.\n\nNoris ha sottolineato l’importanza della gratuità dell’accesso, affermando che “la scelta di aprire ogni edizione al pubblico gratuitamente fa bene a tutto il mercato, non solo a noi concessionari – alimenta la passione per l’orologeria in generale”. Il team di Verga 1947, guidato da Federico Verga, ha presidiato la mostra per tutti i sedici giorni, offrendo visite guidate e momenti di incontro riservati tra i clienti più importanti e i dirigenti di Patek Philippe, tra cui il presidente Thierry Stern. Questi incontri hanno rappresentato un valore aggiunto notevole per i collezionisti di alto livello.\n\n**Il risultato più significativo è la crescita complessiva del fatturato, che supera i 40 milioni di euro, con un incremento del 13 % rispetto al 2025 e un EBITDA quasi 50 % più alto, segnale di una solidità finanziaria in espansione**.\n\nIl successo economico è stato sostenuto anche da un passaggio generazionale completato: dal 2025 Riccardo e Federico Verga hanno assunto le concessioni di Rolex e Patek Philippe, mentre il fratello minore Filippo gestisce l’area finanziaria. Noris ha attribuito la fluidità del trasferimento alla visione del presidente Umberto Verga e alla separazione chiara dei ruoli, evitando sovrapposizioni e attriti. La passione familiare, radicata fin dalla scuola, ha consolidato la fiducia delle maison, che ha permesso a Verga 1947 di mantenere relazioni personali e durature con i brand di lusso.\n\nGuardando al futuro, l’azienda non si concentra tanto sulle celebrazioni dell’80° anniversario, ma su una strategia di lungo periodo: consolidare la presenza a Milano e a Portofino, far crescere il valore del marchio e preparare la prossima generazione. Noris avverte che la curva di crescita del settore si stabilizzerà, ma ritiene che il brand possa continuare a rafforzarsi, puntando su un equilibrio tra nuovo e usato e su una gestione familiare che valorizza la continuità e l’innovazione.",
+      "editorial_level": "approfondimento",
+      "editorial_word_count": 383
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/wivian-factory-padova-ampliare-mappa-strategica-498031/",
@@ -1892,6 +1971,19 @@
       "editorial_summary": "Mango ha inaugurato a Roma, nel quartiere San Giovanni, un nuovo store di 1.000 m² all’interno del Coin di piazzale Appio, dopo l’apertura a Catania. Lo spazio, dedicato alle collezioni uomo e donna, segue il concept retail “New Med” e rappresenta la prima tappa di un accordo annunciato il 3 giugno, che prevede l’apertura di 22 negozi Mango‑Coin in Italia entro la fine del 2027, tutti concepiti come veri e propri punti vendita Mango. Con questa apertura il marchio supera i dieci punti vendita nel Lazio, consolidando la sua presenza nel mercato italiano dove è attivo dal 2001.\n\nPer Coin la partnership è uno dei pilastri del rilancio: la catena ha chiuso un aumento di capitale fino a 30 milioni di euro e intende trasformare il proprio modello in una piattaforma per brand internazionali. Entro la fine dell’anno sono previste altre dieci aperture in location Coin, tra cui Firenze, Bari e Milano, e nel 2026 il bilancio dovrebbe contare quasi 30 nuovi negozi in Italia. **Il punto più importante è che la rete Mango‑Coin, inserita nel piano strategico 4Es 2024‑2026, mira a espandere la presenza fisica del brand e a potenziare le vendite sia nei punti vendita che online**.\n\nMango, che ha registrato un fatturato di 3,8 miliardi di euro nel 2025 con una crescita del 13 % (16 % a cambi costanti), ha visto i ricavi del primo semestre 2026 aumentare del 7,2 % (10,7 % a cambi costanti). Il giro d’affari italiano è cresciuto del 30 % lo scorso anno, con più di 20 nuove aperture e 6.700 m² di superficie aggiuntiva. Con 120 punti vendita al termine del 2025, il brand celebra 25 anni sul mercato italiano, rafforzando la sua strategia di espansione verso il nord e le isole nei prossimi anni.",
       "editorial_level": "standard",
       "editorial_word_count": 298
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMibkFVX3lxTFA1aXIxTVJwVndrM0l0QlNXbWVlcHpyMEhEVkJPOEYwTHB6QUFKdUdZOXJqT01UWWp3Uk5MbS1oWG5FaDYzWFY1LTNsLXRoeHJvSU5vZFVPcFBxbGQ4ZmstZjdHWmNjcW53ZW5TaGhB?oc=5",
+      "title": "Il ritorno della collaborazione tra adidas e Rick Owens - Outpump",
+      "excerpt": "Il ritorno della collaborazione tra adidas e Rick Owens Outpump",
+      "author": "",
+      "category": "Business",
+      "source": "outpump.com",
+      "date": "2026-11-10T08:03:20+00:00",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFA1aXIxTVJwVndrM0l0QlNXbWVlcHpyMEhEVkJPOEYwTHB6QUFKdUdZOXJqT01UWWp3Uk5MbS1oWG5FaDYzWFY1LTNsLXRoeHJvSU5vZFVPcFBxbGQ4ZmstZjdHWmNjcW53ZW5TaGhB?oc=5",
+      "image": "",
+      "image_verified": false,
+      "language": "it"
     },
     {
       "id": "https://www.ad-italia.it/article/marva-griffin-casa-milano-talenti-design/",
@@ -2109,6 +2201,19 @@
       "editorial_word_count": 296
     },
     {
+      "id": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPMEZuSjE5ckJ5ak5KcTl3Z05IUmVBY1dxS2RKZWVRNzZWZ0RrbEJiR05HYmk5NklBVC0tRTg2dXE3c3FVdnpjaFhNb3FnaUVUM3FfZFRwVjFKTlFxYk9NX2NDNnd2Tkt4dEsyNzd2R2tjR0prSW1jazJQVzRtV0R2X25DOTlWV3U4b0E?oc=5",
+      "title": "Come André 3000 ha interpretato la collezione Moncler Re/Icons 2026 - Outpump",
+      "excerpt": "Come André 3000 ha interpretato la collezione Moncler Re/Icons 2026 Outpump",
+      "author": "",
+      "category": "Streetwear",
+      "source": "outpump.com",
+      "date": "2026-11-09T08:01:37+00:00",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPMEZuSjE5ckJ5ak5KcTl3Z05IUmVBY1dxS2RKZWVRNzZWZ0RrbEJiR05HYmk5NklBVC0tRTg2dXE3c3FVdnpjaFhNb3FnaUVUM3FfZFRwVjFKTlFxYk9NX2NDNnd2Tkt4dEsyNzd2R2tjR0prSW1jazJQVzRtV0R2X25DOTlWV3U4b0E?oc=5",
+      "image": "",
+      "image_verified": false,
+      "language": "it"
+    },
+    {
       "id": "https://www.ad-italia.it/article/casa-piccola-varsavia-25-m2-cubo-rivestito-in-ottone-distribuisce-gli-spazi/",
       "title": "Una casa piccola a Varsavia di soli 25 m2 in cui un cubo di ottone cambia tutto",
       "excerpt": "Questa casa piccola a Varsavia ideata da NOWW Studio integra tutte le funzionalità grazie a un elegante e spettacolare cubo metallico.",
@@ -2306,6 +2411,19 @@
       "image_format": "jpeg",
       "editorial_attempted_at": "2026-11-12T14:02:41.069887+00:00",
       "editorial_retry_after": "2026-11-13T02:02:41.069887+00:00"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5PbG40c0dpYzRlUVk1OVBRak5xNThKeGd5bUdQbnItTC1NTUNiYXpPMW8yMnRWZTRPOFlrNzAyenA4czdTc2FrbVVMRmtWejdrV2lXTGg0eWVKNzQ?oc=5",
+      "title": "Outpump Magazine - Store List - Outpump",
+      "excerpt": "Outpump Magazine - Store List Outpump",
+      "author": "",
+      "category": "Streetwear",
+      "source": "outpump.com",
+      "date": "2026-09-29T12:51:08+00:00",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5PbG40c0dpYzRlUVk1OVBRak5xNThKeGd5bUdQbnItTC1NTUNiYXpPMW8yMnRWZTRPOFlrNzAyenA4czdTc2FrbVVMRmtWejdrV2lXTGg0eWVKNzQ?oc=5",
+      "image": "",
+      "image_verified": false,
+      "language": "it"
     }
   ]
 }
