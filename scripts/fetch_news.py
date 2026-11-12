@@ -536,7 +536,7 @@ def main():
     # Generate a small batch of source-grounded editorial summaries per run.
     # The publisher excerpt remains the fallback whenever source text is thin
     # or the optional AI service is unavailable.
-    if os.getenv("GEMINI_API_KEY", "").strip():
+    if os.getenv("GROQ_API_KEY", "").strip():
         now = datetime.now(timezone.utc)
         new_candidates = sorted(
             (item for item in articles
@@ -572,7 +572,7 @@ def main():
                 article["editorial_retry_after"] = (attempted_at + timedelta(hours=12)).isoformat()
                 print("Sintesi editoriale rinviata per 12 ore: {}".format(article.get("title", "")[:90]))
     else:
-        print("GEMINI_API_KEY non configurata: si mantiene il testo originale delle fonti.")
+        print("GROQ_API_KEY non configurata: si mantiene il testo originale delle fonti.")
 
     # Verify only images belonging to newly imported articles. Existing
     # archive entries are left untouched and are not downloaded again.
