@@ -360,6 +360,7 @@ def fetch(url):
 
 
 def parse_feed(feed_url, category):
+    last_error = "Errore non specificato"
     for attempt in range(2):
         try:
             root = ET.fromstring(fetch(feed_url))
@@ -401,13 +402,14 @@ def parse_feed(feed_url, category):
                     if not article["author"]:
                         article["author"] = metadata["author"]
             print(f"{host}: {len(articles)} articoli")
-            return articles, True
+            return articles, True, ""
         except Exception as exc:
+            last_error = "{}: {}".format(type(exc).__name__, str(exc)[:220])
             if attempt == 0:
                 time.sleep(1.5)
             else:
                 print(f"Feed non disponibile {feed_url}: {exc}")
-    return [], False
+    return [], False, last_error
 
 
 def load_previous():
@@ -484,11 +486,12 @@ def main():
     successful_feeds = 0
     feed_status = []
     for feed_url, category in FEEDS:
-        items, feed_ok = parse_feed(feed_url, category)
+        items, feed_ok, feed_error = parse_feed(feed_url, category)
         feed_status.append({
             "source": urlparse(feed_url).netloc.lower().removeprefix("www."),
             "ok": feed_ok,
             "articles": len(items),
+            "error": feed_error,
         })
         if feed_ok:
             successful_feeds += 1
