@@ -1,6 +1,7 @@
 {
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
-  "updated_at": "2026-11-12T21:21:14.318403+00:00",
+  "editorial_api_retry_after": "2026-11-13T21:38:01.357099+00:00",
+  "updated_at": "2026-11-12T21:38:02.569872+00:00",
   "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
@@ -50,7 +51,7 @@
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 113
+    "verified_count": 119
   },
   "articles": [
     {
@@ -278,7 +279,9 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "image_attempted_at": "2026-11-12T21:37:49.508241+00:00",
+      "image_retry_after": "2026-11-13T21:37:49.508241+00:00"
     },
     {
       "id": "https://www.finestresullarte.info/musei/reggia-di-colorno-nel-2027-riqualificazione-piano-da-quasi-6-milioni-di-euro",
@@ -358,7 +361,9 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "image_attempted_at": "2026-11-12T21:37:49.508241+00:00",
+      "image_retry_after": "2026-11-13T21:37:49.508241+00:00"
     },
     {
       "id": "https://www.finestresullarte.info/musei/cosa-nascondono-depositi-dei-musei-in-eilia-romagna-otto-istituzioni-svelano-loro-collezioni",
@@ -422,7 +427,9 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "image_attempted_at": "2026-11-12T21:37:49.508241+00:00",
+      "image_retry_after": "2026-11-13T21:37:49.508241+00:00"
     },
     {
       "id": "https://www.vogue.it/article/aceto-coreano-per-capelli-chioma-lucida-in-un-solo-lavaggio-benefici",
@@ -531,7 +538,12 @@
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9iOFIzZXU3dUZwT3ZqMWJDVlZFMzdrcU9JR2h1azhmS2ZmNFVWb2NoX2dSbDV6alQ4SDdab3Z0Ym1LbkVvTmxTdlRqMzNvblNaUVNWdWtzSHNDV1RvWmhjNThNU0JIalc3X1ItZXdCczFOQWlkdDVWX1lVZlI?oc=5",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "image_attempted_at": "2026-11-12T21:37:49.508241+00:00",
+      "image_retry_after": "2026-11-13T21:37:49.508241+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
     },
     {
       "id": "https://www.pambianconews.com/2026/11/12/binello-quadrivio-group-piano-da-2-miliardi-moda-beauty-e-food-nel-mirino-500551/",
@@ -766,12 +778,12 @@
       "source": "exibart.com",
       "date": "2026-11-12T08:00:50+00:00",
       "url": "https://www.exibart.com/progetti-e-iniziative/la-politica-sui-muri-ce-un-archivio-online-che-raccoglie-oltre-17mila-manifesti/",
-      "image": "",
-      "image_verified": false,
+      "image": "https://www.exibart.com/repository/media/2026/11/Prima-Repubblica-Partito-comunista-italiano-1953.jpg",
+      "image_verified": true,
       "language": "it",
-      "image_width": 0,
-      "image_height": 0,
-      "image_format": ""
+      "image_width": 1006,
+      "image_height": 700,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.vogue.it/article/bestiola-jonathan-bazzi-intervista",
@@ -1155,7 +1167,9 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "image_attempted_at": "2026-11-12T21:37:49.508241+00:00",
+      "image_retry_after": "2026-11-13T21:37:49.508241+00:00"
     },
     {
       "id": "https://www.finestresullarte.info/arte-antica/bologna-quattro-dipinti-dei-carracci-tornano-palazzo-fava-per-restauro-aperto-al-pubblico",
@@ -1246,9 +1260,12 @@
       "source": "finestresullarte.info",
       "date": "2026-11-11T14:44:45+00:00",
       "url": "https://www.finestresullarte.info/mostre/abano-terme-si-ricompone-il-trittico-di-andrea-previtali-mostra-villa-bassi-rathgeb",
-      "image": "",
-      "image_verified": false,
-      "language": "it"
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/allestimenti-mostra-previtali-villa-bassi-rathgeb-1.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 2600,
+      "image_height": 1733,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.vogue.it/gallery/convivio-2026-60-tavoli-cena-gala",
@@ -1339,9 +1356,12 @@
       "source": "finestresullarte.info",
       "date": "2026-11-11T12:00:02+00:00",
       "url": "https://www.finestresullarte.info/attualita/hito-steyerl-ia-distruggera-umanita-no-aggiungera-caos",
-      "image": "",
-      "image_verified": false,
-      "language": "it"
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/hito-steyerl-ph-marta-marinotti-1.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1600,
+      "image_height": 821,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.vogue.it/article/pantaloni-donna-autunno-inverno-modelli-tendenza",
@@ -1368,9 +1388,12 @@
       "source": "finestresullarte.info",
       "date": "2026-11-11T11:26:31+00:00",
       "url": "https://www.finestresullarte.info/mostre/milo-manara-e-i-labirinti-di-borges-eco-fellini-mostra-labirinto-della-masone",
-      "image": "",
-      "image_verified": false,
-      "language": "it"
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/allestimenti-mostra-milo-manara-labirinto-masone-1.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 2500,
+      "image_height": 1667,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.exibart.com/mostre/larcheologia-immaginaria-di-alessandra-pasqua-in-mostra-alla-pipeline-di-londra/",
@@ -1429,12 +1452,12 @@
       "source": "pambianconews.com",
       "date": "2026-11-11T08:44:14+00:00",
       "url": "https://www.pambianconews.com/2026/11/11/canali-porta-a-milano-il-progetto-artistico-under-the-surface-500273/",
-      "image": "",
-      "image_verified": false,
+      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/L1175958.jpg",
+      "image_verified": true,
       "language": "it",
-      "image_width": 0,
-      "image_height": 0,
-      "image_format": ""
+      "image_width": 2048,
+      "image_height": 1363,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/11/multibrand-italiani-ancora-al-palo-nel-2025-la-sfida-passa-dalla-diversificazione-500195/",
@@ -1445,12 +1468,12 @@
       "source": "pambianconews.com",
       "date": "2026-11-11T08:40:46+00:00",
       "url": "https://www.pambianconews.com/2026/11/11/multibrand-italiani-ancora-al-palo-nel-2025-la-sfida-passa-dalla-diversificazione-500195/",
-      "image": "",
-      "image_verified": false,
+      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/pexels-ron-lach-9594095-scaled.jpg",
+      "image_verified": true,
       "language": "it",
-      "image_width": 0,
-      "image_height": 0,
-      "image_format": ""
+      "image_width": 1708,
+      "image_height": 2560,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/11/sita-ricerca-scalda-i-motori-per-levento-al-centergross-sui-numeri-del-fashion-in-italia-500263/",
@@ -1498,7 +1521,9 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "image_attempted_at": "2026-11-12T21:37:49.508241+00:00",
+      "image_retry_after": "2026-11-13T21:37:49.508241+00:00"
     },
     {
       "id": "https://www.exibart.com/danza/l-a-v-a-il-magma-coreografico-di-roberto-zappala-e-ick-dans-amsterdam/",
@@ -2121,7 +2146,9 @@
       "language": "it",
       "image_width": 6720,
       "image_height": 4480,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_attempted_at": "2026-11-12T21:38:01.357099+00:00",
+      "editorial_retry_after": "2026-11-13T21:38:01.357099+00:00"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/09/supereroi-senza-super-poteri-la-crisi-degli-autori-nella-moda-dei-conglomerati-500011/",
@@ -2137,7 +2164,10 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "editorial_summary": "Negli ultimi due anni la rotazione dei direttori creativi nelle grandi maison è stata senza precedenti: Alessandro Michele ha lasciato Valentino, Matthieu Blazy è uscito da Chanel, Maria Grazia Chiuri da Fendi, Pierpaolo Piccioli è stato sostituito a Balenciaga da Martine Rose, Demna da Gucci, Jonathan Anderson da Dior e altri ancora. Durante le fashion week primavera‑estate 2026 di Milano e Parigi si sono registrati ben dodici debutti, un record storico. Questo flusso rapido ha messo in discussione il tradizionale patto tra designer e casa di moda, dove un tempo il creativo doveva adeguarsi al DNA del marchio; ora sembra essere il marchio a piegarsi alla visione dell’autore, trasformando il ruolo da “designer” a “autore”.\n\nIl critico Angelo Flaccavento osserva che l’autorialità non è più sinonimo di coerenza stilistica, ma spesso si traduce in un trasferimento di estetica da una maison all’altra senza una reale decodifica. Esempi concreti includono l’uso del nero da parte di Chiuri per Fendi, che richiama il suo linguaggio a Dior, e le sperimentazioni di Anderson, prima di successo a Loewe, percepite come forzature in Dior. Anche la prima collezione couture di Piccioli per Balenciaga appare come un “copia‑incolla” della sua estetica di Valentino, evidenziando un fenomeno di omologazione tra i brand.\n\n**Il punto cruciale è che la pressione per risultati commerciali immediati sta erodendo la capacità dei creativi di sviluppare un linguaggio distintivo nel tempo**; i manager, guidati da obiettivi trimestrali e dalla volatilità dei mercati azionari, impongono cicli di produzione più rapidi, lasciando poco spazio alla lenta maturazione di un’identità stilistica.\n\nQuesta dinamica ha conseguenze sia per i brand che per i consumatori. Quando un nuovo direttore creativo prende il posto, le collezioni appena presentate rischiano di perdere valore percepito, poiché i clienti si chiedono se investire in un’estetica destinata a cambiare subito. Inoltre, la formazione dei giovani designer, orientata a produrre collezioni di laurea di grande impatto, non prepara a una carriera sostenibile in un contesto che premia la rapidità più della profondità. In sintesi, la crisi degli autori nella moda dei conglomerati è il risultato di un conflitto tra la necessità di innovazione immediata e la mancanza di tempo per coltivare una vera autorità creativa.",
+      "editorial_level": "approfondimento",
+      "editorial_word_count": 365
     },
     {
       "id": "https://www.pambianconews.com/2026/11/09/milano-le-dedichera-un-luogo-il-ricordo-di-franca-sozzani-a-dieci-anni-dalla-scomparsa-499982/",
@@ -2150,7 +2180,9 @@
       "url": "https://www.pambianconews.com/2026/11/09/milano-le-dedichera-un-luogo-il-ricordo-di-franca-sozzani-a-dieci-anni-dalla-scomparsa-499982/",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "editorial_attempted_at": "2026-11-12T21:37:56.956713+00:00",
+      "editorial_retry_after": "2026-11-13T09:37:56.956713+00:00"
     },
     {
       "id": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPMEZuSjE5ckJ5ak5KcTl3Z05IUmVBY1dxS2RKZWVRNzZWZ0RrbEJiR05HYmk5NklBVC0tRTg2dXE3c3FVdnpjaFhNb3FnaUVUM3FfZFRwVjFKTlFxYk9NX2NDNnd2Tkt4dEsyNzd2R2tjR0prSW1jazJQVzRtV0R2X25DOTlWV3U4b0E?oc=5",
@@ -2163,7 +2195,9 @@
       "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPMEZuSjE5ckJ5ak5KcTl3Z05IUmVBY1dxS2RKZWVRNzZWZ0RrbEJiR05HYmk5NklBVC0tRTg2dXE3c3FVdnpjaFhNb3FnaUVUM3FfZFRwVjFKTlFxYk9NX2NDNnd2Tkt4dEsyNzd2R2tjR0prSW1jazJQVzRtV0R2X25DOTlWV3U4b0E?oc=5",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "editorial_attempted_at": "2026-11-12T21:37:53.249795+00:00",
+      "editorial_retry_after": "2026-11-13T09:37:53.249795+00:00"
     },
     {
       "id": "https://www.ad-italia.it/article/casa-piccola-varsavia-25-m2-cubo-rivestito-in-ottone-distribuisce-gli-spazi/",
@@ -2215,7 +2249,10 @@
       "language": "it",
       "image_width": 6192,
       "image_height": 8256,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_summary": "Il modernariato, inteso come produzione di arredi e oggetti dal 1940 al 1990, sta vivendo un vero boom in Italia. La sua estetica “democratica” e funzionale, caratterizzata da forme organiche o geometriche, colori singoli e materiali insoliti, lo distingue sia dall’antiquariato tradizionale sia dal “fast furnishing”. Per capire come inserire questi pezzi in un ambiente contemporaneo, ATELIER ha chiesto a Francesca Buliani, curatrice di SOMO, la mostra‑mercato di Solo Modernariato che si terrà al Superstudio Più di Milano il 14‑15 novembre.\n\nBuliani consiglia di partire da una lampada, citando modelli iconici come la Nesso e la Nessino di Giancarlo Mattioli (Artemide), la Bubble Lamp di George Nelson (Herman Miller), l’Eclisse (Artemide) e l’Atollo di Vico Magistretti (Oluce), oltre alla Lampada Pipistrello di Gae Aulenti (Martinelli Luce). Per i mobili, i sideboard nordici in teak o rovere sono versatili, così come il divano Le Bambole di Mario Bellini, originale del 1972 e rieditato da B&B Italia con polietilene riciclato. Questi elementi, secondo Buliani, si adattano a qualsiasi palette cromatica grazie alla loro neutralità.\n\n**Il punto focale del modernariato è la capacità di coniugare storia e funzionalità in pezzi riconoscibili che arricchiscono qualsiasi spazio senza imporsi**. La poltrona Margherita di Franco Albini, prima sedia senza gambe del design italiano, e la Superleggera di Gio Ponti rappresentano questa sintesi: entrambe sperimentano materiali innovativi – canne di giunco d’India, Malacca e poliuretano per la prima, una struttura leggera per la seconda – e offrono comfort e leggerezza. Anche il tavolino Cicognino di Albini, con la gamba estensibile, dimostra come il design del Novecento continui a influenzare soluzioni pratiche oggi.\n\nSOMO, nata nel 2024, si propone come progetto culturale che raccoglie collezionisti di tutte le età alla ricerca di oggetti “eterni, accessibili, unici”. Dopo le prime edizioni a Bergamo, la fiera si è spostata a Milano nel maggio 2026, attirando un pubblico internazionale e una lunga lista d’attesa di gallerie. Questo interesse crescente suggerisce che il modernariato non è solo una tendenza estetica, ma un vero mercato in espansione, capace di valorizzare il patrimonio di design italiano e di offrire nuove opportunità sia ai collezionisti sia ai produttori.",
+      "editorial_level": "approfondimento",
+      "editorial_word_count": 354
     },
     {
       "id": "https://www.ad-italia.it/article/casa-stile-brutalista-colorata-milano/",
