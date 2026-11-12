@@ -11,7 +11,7 @@ import concurrent.futures
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
-from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse
+from urllib.parse import parse_qsl, quote, urlencode, urljoin, urlparse, urlunparse
 from urllib.request import Request, urlopen
 from PIL import Image
 
@@ -66,7 +66,7 @@ def canonical_url(value):
             return ""
         query = [(key, val) for key, val in parse_qsl(parsed.query, keep_blank_values=True)
                  if not key.lower().startswith("utm_") and key.lower() not in TRACKING_KEYS]
-        return urlunparse((parsed.scheme, parsed.netloc.lower(), parsed.path,
+        return urlunparse((parsed.scheme, parsed.netloc.lower(), quote(parsed.path, safe="/%:@!return urlunparse((parsed.scheme, parsed.netloc.lower(), parsed.path,'()*+,;=-._~"),
                            parsed.params, urlencode(query), ""))
     except (TypeError, ValueError):
         return ""
