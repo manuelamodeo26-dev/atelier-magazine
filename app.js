@@ -48,7 +48,7 @@
     const author=article.author?'<p class="detail-byline">A cura di '+escapeHTML(article.author)+'</p>':'';
     const editorial=String(article.editorial_summary||'').trim();
     const editorialHtml=editorial
-      ?'<section class="detail-section editorial-summary"><p class="eyebrow">IL RACCONTO ATELIER · '+(article.editorial_level==='approfondimento'?'APPROFONDIMENTO':'NOTIZIA')+'</p>'+editorial.split(/\\n\\s*\\n/).map(p=>'<p class="detail-excerpt">'+escapeHTML(p)+'</p>').join('')+'</section>'
+      ?'<section class="detail-section editorial-summary"><p class="eyebrow">IL RACCONTO ATELIER · '+(article.editorial_level==='approfondimento'?'APPROFONDIMENTO':'NOTIZIA')+'</p>'+editorial.split(/\n\s*\n/).map(p=>'<p class="detail-excerpt">'+escapeHTML(p)+'</p>').join('')+'</section>'
       :'';
     const sourceExcerpt=article.excerpt
       ?'<section class="detail-section"><p class="eyebrow">'+(editorial?'DESCRIZIONE DELLA FONTE':'IL RACCONTO DELLA FONTE')+'</p><p class="detail-excerpt">'+escapeHTML(article.excerpt)+'</p></section>'
