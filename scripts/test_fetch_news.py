@@ -19,6 +19,14 @@ class FeedStatusTests(unittest.TestCase):
         self.assertFalse(ok)
         self.assertIn("ValueError", error)
 
+    def test_outpump_uses_browser_user_agent(self):
+        with patch.object(fetch_news, "fetch", return_value=b"<rss><channel></channel></rss>") as mocked:
+            items, ok, error = fetch_news.parse_feed("https://outpump.com/feed/", "Streetwear")
+        self.assertEqual(items, [])
+        self.assertTrue(ok)
+        self.assertEqual(error, "")
+        self.assertEqual(mocked.call_args.kwargs["user_agent"], fetch_news.BROWSER_USER_AGENT)
+
     def test_valid_feed_with_story_returns_items_and_healthy_status(self):
         description = "Dettagli sulla nuova collezione e sul lavoro creativo. " * 25
         xml = (
