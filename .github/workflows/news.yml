@@ -29,17 +29,17 @@ jobs:
       changed: ${{ steps.commit.outputs.changed }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           persist-credentials: true
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.x"
       - name: Install image verification dependency
         run: python -m pip install --disable-pip-version-check Pillow
       - name: Check Python syntax
-        run: python -m py_compile scripts/fetch_news.py scripts/editorial_summary.py
+        run: python -m py_compile scripts/*.py
       - name: Test editorial filtering and categorization
         run: python -m unittest discover -s scripts -p 'test_*.py' -v
       - name: Collect RSS and Atom articles
@@ -115,7 +115,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout latest repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: main
       - name: Configure GitHub Pages
