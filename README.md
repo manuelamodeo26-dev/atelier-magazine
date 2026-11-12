@@ -27,6 +27,18 @@ Fonti configurate in `scripts/fetch_news.py`: Vogue Italia, Pambianco, AD Italia
 
 La raccolta RSS non equivale a una verifica giornalistica: controllare sempre notizie, attribuzioni e diritti di utilizzo prima della pubblicazione.
 
+## Controlli automatici prima della pubblicazione
+
+Ogni pubblicazione tramite GitHub Pages passa prima da una verifica automatica:
+
+- test unitari del generatore delle sintesi editoriali;
+- controllo dell'integrità dell'archivio JSON e dell'assenza di URL duplicati;
+- verifica del formato delle sintesi (4–6 paragrafi e intervalli di parole previsti);
+- controllo dei metadati delle immagini marcate come verificate, con soglie di risoluzione applicate al lato lungo e al lato corto;
+- controllo della sintassi JavaScript prima del deploy.
+
+Se un controllo bloccante fallisce, la pubblicazione non procede. Un feed temporaneamente indisponibile viene invece segnalato come avviso: non blocca la pubblicazione delle notizie già valide.
+
 ## Lettura e verifica editoriale
 
 - Ogni articolo si apre in una scheda interna: titolo, categoria, data, editore, autore quando disponibile e descrizione estesa ricavata dai contenuti RSS/Atom e dai metadati pubblici della fonte. Il raccoglitore privilegia il testo più informativo disponibile e arricchisce anche gli articoli già archiviati quando la fonte pubblica una descrizione migliore.
