@@ -28,7 +28,7 @@
     }
     if(!$('#account-dialog')){
       const d=document.createElement('dialog'); d.id='account-dialog'; d.className='search-dialog account-dialog'; d.setAttribute('aria-labelledby','account-heading'); d.setAttribute('aria-describedby','account-status');
-      d.innerHTML='<form method="dialog"><button class="dialog-close" type="submit" aria-label="Chiudi">×</button></form><p class="eyebrow">ATELIER / ACCOUNT</p><h2 id="account-heading" class="account-heading">Il tuo spazio.</h2><p id="account-status" class="account-status" role="status" aria-live="polite">Accedi o crea un account per personalizzare la rivista.</p><form id="account-form" class="account-form"><label for="account-name">Nickname (visibile nella community)</label><input id="account-name" autocomplete="nickname" minlength="3" maxlength="20" pattern="[A-Za-z0-9_]{3,20}" placeholder="es. Atelier_01"><label for="account-email">Email</label><input id="account-email" type="email" autocomplete="email" required placeholder="nome@email.com"><label for="account-password">Password</label><input id="account-password" type="password" autocomplete="current-password" minlength="8" required placeholder="Almeno 8 caratteri"><label class="auth-remember"><input id="account-remember" type="checkbox"> Resta collegato su questo dispositivo</label><div class="account-actions"><button class="outline-button" type="submit" data-mode="login">ACCEDI</button><button class="outline-button" type="submit" data-mode="signup">REGISTRATI</button></div></form><div id="account-tools" hidden><h3>Il mio feed</h3><p class="account-help">Scegli gli argomenti che vuoi vedere nel tuo feed personale.</p><div id="account-categories" class="account-categories"></div><button id="save-preferences" class="outline-button" type="button">SALVA PREFERENZE</button><button id="account-logout" class="outline-button" type="button">ESCI DALL’ACCOUNT</button></div><p id="account-message" class="account-message" role="status" aria-live="polite"></p>';
+      d.innerHTML='<form method="dialog"><button class="dialog-close" type="submit" aria-label="Chiudi">×</button></form><p class="eyebrow">ATELIER / ACCOUNT</p><h2 id="account-heading" class="account-heading">Il tuo spazio.</h2><p id="account-status" class="account-status" role="status" aria-live="polite">Accedi o crea un account per personalizzare la rivista.</p><form id="account-form" class="account-form"><label for="account-name">Nickname (visibile nella community)</label><input id="account-name" autocomplete="nickname" minlength="3" maxlength="20" pattern="[A-Za-z0-9_]{3,20}" placeholder="es. Atelier_01"><label for="account-email">Email</label><input id="account-email" type="email" autocomplete="email" required placeholder="nome@email.com"><label for="account-password">Password</label><input id="account-password" type="password" autocomplete="current-password" minlength="8" required placeholder="Almeno 8 caratteri"><div class="account-actions"><button class="outline-button" type="submit" data-mode="login">ACCEDI</button><button class="outline-button" type="submit" data-mode="signup">REGISTRATI</button></div></form><div id="account-tools" hidden><div class="account-session-setting"><label for="account-remember-setting"><input id="account-remember-setting" type="checkbox"> Mantieni l’accesso su questo dispositivo</label><p>Se disattivato, uscirai automaticamente quando chiudi il browser.</p></div><h3>Il mio feed</h3><p class="account-help">Scegli gli argomenti che vuoi vedere nel tuo feed personale.</p><div id="account-categories" class="account-categories"></div><button id="save-preferences" class="outline-button" type="button">SALVA PREFERENZE</button><button id="account-logout" class="outline-button" type="button">ESCI DALL’ACCOUNT</button></div><p id="account-message" class="account-message" role="status" aria-live="polite"></p>';
       document.body.appendChild(d);
     }
     if(!$('#personal-feed')){
@@ -40,6 +40,8 @@
     $('#open-account-settings')?.addEventListener('click',()=>$('#account-dialog').showModal());
     $('#account-form')?.addEventListener('submit',handleAuth);
     $('#account-logout')?.addEventListener('click',logout);
+    const rememberSetting=$('#account-remember-setting');
+    if(rememberSetting){rememberSetting.checked=window.ATELIER_GET_REMEMBER?.()===true;rememberSetting.addEventListener('change',()=>{window.ATELIER_SET_REMEMBER?.(rememberSetting.checked);message(rememberSetting.checked?'Accesso persistente attivato su questo dispositivo.':'Uscirai automaticamente quando chiudi il browser.');});}
     $('#save-preferences')?.addEventListener('click',savePreferences);
     document.addEventListener('atelier:articles-rendered',()=>{syncSaveButtons();syncLikeButtons();syncLikeCounts();});
     document.addEventListener('atelier:article-rendered',()=>{syncSaveButtons();syncLikeButtons();syncLikeCounts();});
@@ -66,7 +68,6 @@
     const mode=event.submitter?.dataset.mode||'login';
     const email=$('#account-email').value.trim(), password=$('#account-password').value, name=$('#account-name').value.trim();
     if(password.length<8){message('La password deve contenere almeno 8 caratteri.',true);return;}
-    window.ATELIER_SET_REMEMBER?.($('#account-remember')?.checked===true);
     message('Operazione in corso…');
     try{
       if(mode==='signup'){
@@ -223,6 +224,7 @@
       client=createClient(cfg.url,cfg.anonKey,{auth:{storage:window.ATELIER_AUTH_STORAGE,persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
       const {data}=await client.auth.getSession();
       if(data.session){user=data.session.user;await loadUserData();}else setLoggedIn(false);
+      if(location.hash==='#account-settings')$('#account-dialog')?.showModal();
       loadLikeCounts().catch(error=>console.warn('ATELIER: conteggi Mi piace non disponibili.',error));
       client.auth.onAuthStateChange((_event,session)=>{setTimeout(async()=>{try{user=session?.user||null;if(user){await loadUserData();loadLikeCounts().catch(error=>console.warn('ATELIER: conteggi Mi piace non disponibili.',error));}else{saved.clear();savedRecords.clear();liked.clear();setLoggedIn(false);renderAccount();}}catch(e){user=null;saved.clear();setLoggedIn(false);message(e.message||'Impossibile caricare i dati dell’account.',true);}},0);});
     }catch(e){setLoggedIn(false);message('Servizio account non raggiungibile. Riprova più tardi.',true);}
