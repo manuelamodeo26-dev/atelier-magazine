@@ -33,8 +33,8 @@ MAX_ARTICLES = 180
 MAX_AGE_DAYS = 120
 MAX_SUMMARIES_PER_RUN = 12  # Editorial rebuild in controlled batches across scheduled runs.
 EDITORIAL_REBUILD_VERSION = "2026-11-12-atelier-editorial-v2"
-MAX_IMAGE_BACKFILLS_PER_RUN = 12
-IMAGE_BACKFILL_RETRY_HOURS = 24
+MAX_IMAGE_BACKFILLS_PER_RUN = 18
+IMAGE_BACKFILL_RETRY_HOURS = 12
 EDITORIAL_QUOTA_RETRY_HOURS = 24
 
 # Keep the archive focused on fashion, design and contemporary culture.
