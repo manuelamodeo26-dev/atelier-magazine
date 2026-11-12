@@ -52,7 +52,10 @@ def is_relevant(article):
     title = str(article.get("title") or "")
     excerpt = str(article.get("excerpt") or "")
     url = str(article.get("url") or "")
-    text = " ".join((title, excerpt, url))
+    # Match exclusion rules against the headline and URL only. Publisher
+    # descriptions can mention unrelated terms in passing and should not
+    # disqualify an otherwise relevant fashion/design/culture story.
+    text = " ".join((title, url))
     return not EXCLUDED_CONTENT.search(text)
 
 
@@ -391,6 +394,8 @@ def load_previous():
         with open(OUT, encoding="utf-8") as file:
             payload = json.load(file)
         articles = payload.get("articles", [])
+        if not isinstance(articles, list):
+            return {}
         previous = {}
         cutoff = datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)
         for item in articles:
@@ -411,6 +416,22 @@ def load_previous():
             except (TypeError, ValueError):
                 continue
             previous[url] = item
+
+        # Persist archive cleanup even when every RSS feed is temporarily down
+        # or no new story arrives. Otherwise excluded legacy stories reappear.
+        if len(previous) != len(articles):
+            cleaned = sorted(previous.values(),
+                             key=lambda item: item.get("date") or "0000", reverse=True)[:MAX_ARTICLES]
+            payload["updated_at"] = datetime.now(timezone.utc).isoformat()
+            payload["articles"] = cleaned
+            temporary = OUT + ".tmp"
+            with open(temporary, "w", encoding="utf-8") as file:
+                json.dump(payload, file, ensure_ascii=False, indent=2)
+                file.write("\n")
+            os.replace(temporary, OUT)
+            print("Archivio ripulito: rimossi {} contenuti non pertinenti, non validi o scaduti.".format(
+                len(articles) - len(previous)
+            ))
         return previous
     except (OSError, ValueError, TypeError):
         return {}
