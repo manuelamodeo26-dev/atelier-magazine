@@ -6,7 +6,7 @@ import os
 import re
 import time
 import xml.etree.ElementTree as ET
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
 from urllib.request import Request, urlopen
@@ -14,19 +14,18 @@ from urllib.request import Request, urlopen
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "data", "articles.json")
 FEEDS = [
-    ("https://www.theguardian.com/fashion/rss", "Fashion"),
-    ("https://hypebeast.com/feed", "Streetwear"),
-    ("https://www.wallpaper.com/feeds.xml", "Design"),
-    ("https://www.dezeen.com/feed/", "Design"),
-    ("https://www.designboom.com/architecture/feed/", "Architecture"),
-    ("https://www.theguardian.com/artanddesign/rss", "Art & Culture"),
-    ("https://www.itsnicethat.com/rss", "Art & Culture"),
-    ("https://www.theguardian.com/technology/rss", "Technology"),
-    ("https://www.theguardian.com/business/rss", "Business"),
-    ("https://www.theguardian.com/lifeandstyle/rss", "Lifestyle"),
+    ("https://www.vogue.it/feed/rss", "Fashion"),
+    ("https://www.pambianconews.com/feed/", "Fashion"),
+    ("https://www.fashionnewsmagazine.com/feed/", "Fashion"),
+    ("https://www.ad-italia.it/feed/rss", "Design"),
+    ("https://www.artribune.com/feed-rss/", "Art & Culture"),
+    ("https://www.exibart.com/feed/", "Art & Culture"),
+    ("https://www.finestresullarte.info/finestresullarte.xml", "Art & Culture"),
+    ("https://www.domusweb.it/it/rss.xml", "Design"),
 ]
 MAX_PER_FEED = 18
 MAX_ARTICLES = 180
+MAX_AGE_DAYS = 120
 USER_AGENT = "ATELIER-Magazine/2.0 (+https://github.com/manuelamodeo26-dev/atelier-magazine)"
 TRACKING_KEYS = {"fbclid", "gclid", "mc_cid", "mc_eid"}
 
@@ -102,6 +101,27 @@ def article_image(node):
     return ""
 
 
+def upgrade_image_url(value):
+    value = canonical_url(value)
+    if not value:
+        return ""
+    try:
+        parsed = urlparse(value)
+        query = dict(parse_qsl(parsed.query, keep_blank_values=True))
+        if "width" in query:
+            query["width"] = "1600"
+        if "w" in query:
+            query["w"] = "1600"
+        if "quality" in query:
+            query["quality"] = "88"
+        if "q" in query:
+            query["q"] = "88"
+        return urlunparse((parsed.scheme, parsed.netloc, parsed.path, parsed.params,
+                           urlencode(query), ""))
+    except (TypeError, ValueError):
+        return value
+
+
 def article_date(node):
     raw = child_text(node, "pubDate", "published", "updated", "date", "dateCreated")
     if not raw:
@@ -149,8 +169,8 @@ def parse_feed(feed_url, category):
                     "source": host,
                     "date": article_date(node),
                     "url": link,
-                    "image": article_image(node),
-                    "language": "en",
+                    "image": upgrade_image_url(article_image(node)),
+                    "language": "it",
                 })
             print(f"{host}: {len(articles)} articoli")
             return articles
@@ -168,11 +188,22 @@ def load_previous():
             payload = json.load(file)
         articles = payload.get("articles", [])
         previous = {}
+        cutoff = datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)
         for item in articles:
-            if isinstance(item, dict):
-                url = canonical_url(item.get("url"))
-                if url:
-                    previous[url] = item
+            if not isinstance(item, dict) or item.get("language") != "it":
+                continue
+            url = canonical_url(item.get("url"))
+            if not url:
+                continue
+            try:
+                published = datetime.fromisoformat((item.get("date") or "").replace("Z", "+00:00"))
+                if published.tzinfo is None:
+                    published = published.replace(tzinfo=timezone.utc)
+                if published < cutoff:
+                    continue
+            except (TypeError, ValueError):
+                continue
+            previous[url] = item
         return previous
     except (OSError, ValueError, TypeError):
         return {}
@@ -197,7 +228,21 @@ def main():
     merged = dict(previous)
     for article in fresh:
         merged[article["url"]] = article
-    articles = sorted(merged.values(),
+    cutoff = datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)
+    recent = []
+    for item in merged.values():
+        if item.get("language") != "it":
+            continue
+        try:
+            published = datetime.fromisoformat((item.get("date") or "").replace("Z", "+00:00"))
+            if published.tzinfo is None:
+                published = published.replace(tzinfo=timezone.utc)
+            if published < cutoff:
+                continue
+        except (TypeError, ValueError):
+            continue
+        recent.append(item)
+    articles = sorted(recent,
                       key=lambda item: item.get("date") or "0000", reverse=True)[:MAX_ARTICLES]
 
     if articles == sorted(previous.values(),
@@ -209,6 +254,7 @@ def main():
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "feeds_ok": successful_feeds,
         "feeds_total": len(FEEDS),
+        "language": "it",
         "articles": articles,
     }
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
