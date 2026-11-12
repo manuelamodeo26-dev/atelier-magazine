@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-11-12T00:47:43.863439+00:00",
+  "updated_at": "2026-11-12T01:30:35.203039+00:00",
   "feeds_ok": 5,
   "feeds_total": 5,
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 61
+    "verified_count": 63
   },
   "articles": [
     {
@@ -717,6 +717,38 @@
       "language": "it",
       "image_width": 1331,
       "image_height": 1800,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.vogue.it/article/unghie-mocha-chrome-manicure-calda-ma-luminosa-tendenza-autunno-2026",
+      "title": "Unghie mocha chrome, la manicure dai toni caldi ma luminosi che è il must dell'autunno 2026",
+      "excerpt": "",
+      "author": "María Munsuri",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-11T05:30:00+00:00",
+      "url": "https://www.vogue.it/article/unghie-mocha-chrome-manicure-calda-ma-luminosa-tendenza-autunno-2026",
+      "image": "https://compass-media.vogue.it/photos/6af2f9530fe509022f24c3a3/master/pass/GettyImages-2295022821.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 4000,
+      "image_height": 6000,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.vogue.it/article/avedon-netflix-film-ron-howard-intervista",
+      "title": "Avedon, su Netflix il documentario-gioiello di Ron Howard su un fotografo maniacale e uomo sensibile (alla ricerca di suo padre)",
+      "excerpt": "",
+      "author": "Andrea Giordano",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-11T05:30:00+00:00",
+      "url": "https://www.vogue.it/article/avedon-netflix-film-ron-howard-intervista",
+      "image": "https://compass-media.vogue.it/photos/6af3556c579438cebcc19559/master/pass/Richard%20Avedon,%201994%20(Photo%20by%20Bruce%20Weber).jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 6411,
+      "image_height": 8144,
       "image_format": "webp"
     },
     {
