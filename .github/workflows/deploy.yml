@@ -42,7 +42,8 @@ jobs:
         run: |
           node --check app.js
           node --check article-page.js
-          node --check community.js\n          node --check atelier-hub.js
+          node --check community.js
+          node --check atelier-hub.js
           node --check account.js
           node --check sw.js
       - name: Configure Pages
