@@ -35,7 +35,9 @@ EXCLUDED_CONTENT = re.compile(
     r"oroscop|segno zodiacale|zodiac|horoscope|apnee? del sonno|sleep apnea|"
     r"come smettere di guardare il telefono|telefono continuamente|"
     r"abitudini facili|dieta|dimagr|ricett[ae]|cucin[ae]|sintomi|"
-    r"farmac[io]|integrator[ei]|consigli per dormire|routine del sonno",
+    r"farmac[io]|integrator[ei]|consigli per dormire|routine del sonno|"
+    r"allerg|destinazioni esotiche|paradisi dove fuggire dal freddo|"
+    r"galateo|come posizionare i bicchieri",
     re.IGNORECASE,
 )
 MAX_IMAGE_BYTES = 8 * 1024 * 1024
@@ -54,24 +56,43 @@ def is_relevant(article):
 
 
 def infer_category(title, excerpt, current="Fashion"):
-    text = " ".join((str(title or ""), str(excerpt or ""))).lower()
+    title_text = str(title or "").lower()
+    excerpt_text = str(excerpt or "").lower()
     rules = [
         ("Streetwear", r"streetwear|street style|street-style|sneaker|skateboard|hip.?hop"),
         ("Business", r"fatturato|ricavi|utile netto|bilancio|acquisizion|quotazione|"
-                     r"margini|vendite|retail|ceo|amministratore delegato|investiment[oi]|mln|milion|\bq[1-4]\b|"
-                     r"risultati finanziari|trimestre|mercato azionario"),
+                     r"margini|vendite|retail|ceo|amministratore delegato|investiment[oi]|"
+                     r"mln|milion|\bq[1-4]\b|risultati finanziari|trimestre|"
+                     r"mercato azionario|export|import|asta|boutique|negozi"),
         ("Architecture", r"architettur|edificio|edifici|appartamento|villa|palazzo|"
                          r"interior design|interior|interni|urbanistica"),
-        ("Technology", r"intelligenza artificiale|\bai\b|tecnolog|digitale|"
+        ("Technology", r"intelligenza artificiale|\bia\b|tecnolog|digitale|"
                        r"realtà virtuale|realtà aumentata|videogiochi|gaming"),
-        ("Design", r"design|arredamento|arredo|prodotto|oggetto|"
+        ("Design", r"\bdesign\b|arredamento|arredo|prodotto|oggetto|"
                    r"progettazione|industrial design|mobili|materiali"),
-        ("Art & Culture", r"arte|artista|mostra|museo|galleria|fotografia|fotografo|"
-                          r"cinema|film|musica|music|libro|romanzo|letteratura|teatro|"
-                          r"cultura|festival|curator|fumett"),
+        ("Art & Culture", r"arte|artist[ai]|mostra|museo|galleria|fotografia|fotografo|"
+                          r"cinema|film|musica|music|libr[oi]|romanzo|letteratura|teatro|"
+                          r"cultura|festival|curator|fumett|biennale|documentario|"
+                          r"serie tv|netflix"),
     ]
     for category, pattern in rules:
-        if re.search(pattern, text, re.IGNORECASE):
+        if re.search(pattern, title_text, re.IGNORECASE):
+            return category
+
+    # Keep clearly fashion-led headlines in Fashion even if the excerpt mentions
+    # another subject in passing.
+    fashion_headline = (
+        r"moda|fashion|collezion|sfilat|outfit|look|abiti?|cappotto|blazer|"
+        r"scarpe|sneaker|streetwear|make.?up|skincare|profum|gioiell|anell|"
+        r"orolog|bors[ae]|accessori|tendenz|trend|beauty|designer|brand|maison|"
+        r"tailoring|menswear|womenswear|maglieria|tessut|fashion week|"
+        r"abbinar|indoss|vestire|camicia|pantalon|gonna|giacca|décolleté"
+    )
+    if current == "Fashion" and re.search(fashion_headline, title_text, re.IGNORECASE):
+        return "Fashion"
+
+    for category, pattern in rules:
+        if re.search(pattern, excerpt_text, re.IGNORECASE):
             return category
     return current or "Fashion"
 
