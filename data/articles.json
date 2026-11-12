@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-11-12T13:33:51.396497+00:00",
-  "feeds_ok": 5,
-  "feeds_total": 5,
+  "updated_at": "2026-11-12T13:36:21.713037+00:00",
+  "feeds_ok": 6,
+  "feeds_total": 7,
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 82
+    "verified_count": 91
   },
   "articles": [
     {
@@ -54,9 +54,8 @@
       "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/andrea-del-castagno-cenacolo-sant-apollonia-ultima-cena-cover.jpg",
       "image_verified": true,
       "language": "it",
-      "editorial_summary": "A Firenze riapre al pubblico il Cenacolo di Sant’Apollonia in concomitanza con l'avvio dei lavori di restauro del ciclo pittorico realizzato intorno al 1447 da Andrea del Castagno. L’iniziativa prevede l’allestimento di un ponteggio speciale che, dal 15 novembre 2026 al 26 giugno 2027, permetterà ai visitatori di salire a ridosso delle superfici dipinte. L'opportunità consente di osservare da vicino l’Ultima Cena e le altre scene del complesso monumentale, offrendo uno sguardo diretto sulle caratteristiche tecniche, le soluzioni prospettiche e la storia conservativa dell'opera. Questa modalità di fruizione richiama un'esperienza analoga proposta ad Arezzo per il ciclo della Leggenda della Vera Croce di Piero della Francesca nella Cappella Bacci della Basilica di San Francesco.\n\nIl progetto affronta in modo unitario la conservazione del ciclo monumentale e si avvale di una campagna di indagini scientifiche per studiare materiali, tecniche ed esecuzioni effettuate nei secoli. L’intervento è diretto e coordinato dalla Direzione regionale Musei nazionali Toscana del Ministero della Cultura – Museo di San Marco e Cenacoli, con la collaborazione dell’Opificio delle Pietre Dure per gli aspetti diagnostici e metodologici. Il cantiere vede la partecipazione della Soprintendenza Archeologia, Belle Arti e Paesaggio per la città metropolitana di Firenze e la provincia di Prato, il contributo scientifico del Consiglio nazionale delle ricerche (CNR) e il sostegno della Fondazione Isabel e Balz Baechi, organizzazione privata no profit dedicata alla tutela del patrimonio storico-artistico.\n\nIl ciclo decorativo occupa la parete di fondo dell'antico refettorio del monastero delle benedettine osservanti, fondato nel 1339 e ampliato nel Quattrocento. Andrea del Castagno concepì un programma figurativo unitario incentrato sulla Passione e Resurrezione di Cristo: l’Ultima Cena occupa la fascia inferiore all'interno di una loggia con rigorosa prospettiva e specchiature marmoree, mentre la Crocifissione, la Resurrezione e la Deposizione nel sepolcro occupano la zona superiore. Per secoli la clausura monastica ha impedito la visione di queste pitture, che non vennero menzionate nemmeno da Giorgio Vasari nelle Vite. Soltanto dopo la soppressione dell'ordine nell'Ottocento gli affreschi furono riscoperti, portando poi all'inaugurazione del museo il 1° aprile 1891.\n\nLa storia conservativa del complesso ha visto l'Ultima Cena rimanere sul supporto murario originale, mentre nel 1953 le tre scene superiori vennero distaccate per ragioni di tutela. Tale intervento portò alla luce le sinopie preparatorie dell'artista, a loro volta staccate nel 1961 e oggi esposte sulla parete opposta del refettorio insieme ad altre opere pertinenti, tra cui una lunetta con Cristo in pietà, una Crocifissione dal chiostro di Santa Maria degli Angeli e la sinopia della Visione di San Girolamo. Completa la sala un Crocifisso ligneo policromo attribuito a Raffaello da Montelupo. Il percorso sui ponteggi intende quindi mostrare non solo il valore estetico dell'opera, ma anche la complessità del suo processo creativo e conservativo.\n\nDal 30 ottobre 2026 il Cenacolo è visitabile ordinariamente dal lunedì al sabato e la prima e terza domenica del mese dalle 8.30 alle 13.50, con biglietto a 3 euro (ridotto 2 euro per i giovani tra 18 e 25 anni e gratuito sotto i 18 anni). Le visite sui ponteggi, della durata di 30 minuti al costo di 8 euro (ridotto 4 euro per minori e giovani fino a 25 anni), richiedono la prenotazione consigliata per i singoli e obbligatoria per i gruppi fino a 10 persone. Dal 21 novembre 2026 sono previste anche visite guidate dedicate da 45 minuti al costo di 10 euro (6 euro ridotto). L'accesso alle impalcature è consentito esclusivamente a partire dai 7 anni con obbligo di casco e non risulta accessibile alle persone con difficoltà motorie.",
-      "editorial_level": "approfondimento",
-      "editorial_word_count": 586,
+      "editorial_attempted_at": "2026-11-12T13:35:27.586761+00:00",
+      "editorial_retry_after": "2026-11-13T01:35:27.586761+00:00",
       "image_width": 1200,
       "image_height": 616,
       "image_format": "jpeg"
@@ -541,6 +540,24 @@
       "language": "it",
       "image_width": 1200,
       "image_height": 616,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.sneakersmagazine.it/2026/11/11/saucony-e-afew-presentano-la-progrid-omni-9-ispirata-alla-vespa-tarantola/",
+      "title": "Saucony e AFEW presentano la ProGrid Omni 9 ispirata alla vespa tarantola",
+      "excerpt": "La terza collaborazione tra il brand americano e la sneaker boutique di Düsseldorf reinterpreta la silhouette ProGrid Omni 9 attraverso materiali iridescenti, texture inaspettate e dettagli ispirati al mondo degli insetti. Saucony rinnova la collaborazione con AFEW , sneaker boutique con sede a Düsseldorf, presentando una nuova versione della ProGrid Omni 9 . Il progetto, terzo capitolo della partnership tra i due brand dopo le precedenti Shadow Master 5000 “Goethe” e Shadow 5000 “Time and Space”, prende ispirazione dalla tarantula hawk, una particolare specie di vespa predatrice conosciuta per la sua capacità di cacciare le tarantole. Un concept originale che si traduce in una sneaker dal carattere deciso, dove materiali, colori e lavorazioni richiamano le caratteristiche visive dell’insetto. La tomaia combina infatti mesh in nylon a doppio strato con finiture sfumate e una struttura open mesh, creando profondità e tridimensionalità. Tra gli elementi più distintivi troviamo una cage traslucida con riflessi iridescenti , dettagli in faux-fur sul collarino e sul tallone e un rinforzo posteriore dalla finitura cangiante. Completano il design il branding asimmetrico sulla linguetta e il logo AFEW applicato sul contrafforte. La collaborazione conferma ancora una volta la capacità di AFEW di trasformare riferimenti inaspettati in progetti sneaker dalla forte identità visiva, mantenendo al centro la riconoscibilità delle silhouette Saucony. La AFEW x Saucony ProGrid Omni 9 sarà disponibile a livello globale dal 13 novembre 2026 alle ore 17:00 CET , nelle taglie US 3.5-14, al prezzo retail di 189,99 euro . Il lancio avverrà su Saucony.com e presso una selezione di rivenditori autorizzati. L'articolo Saucony e AFEW presentano la ProGrid Omni 9 ispirata alla vespa tarantola proviene da Sneakers Magazine .",
+      "author": "admin",
+      "category": "Streetwear",
+      "source": "sneakersmagazine.it",
+      "date": "2026-11-11T18:17:03+00:00",
+      "url": "https://www.sneakersmagazine.it/2026/11/11/saucony-e-afew-presentano-la-progrid-omni-9-ispirata-alla-vespa-tarantola/",
+      "image": "https://www.sneakersmagazine.it/wp-content/uploads/2026/11/SCYM-S71049-1-091126-F26-270-1024x1024.jpg",
+      "image_verified": true,
+      "language": "it",
+      "editorial_attempted_at": "2026-11-12T13:35:38.991119+00:00",
+      "editorial_retry_after": "2026-11-13T01:35:38.991119+00:00",
+      "image_width": 1024,
+      "image_height": 1024,
       "image_format": "jpeg"
     },
     {
@@ -1481,9 +1498,7 @@
       "language": "it",
       "image_width": 4402,
       "image_height": 5502,
-      "image_format": "webp",
-      "editorial_attempted_at": "2026-11-12T13:31:38.388326+00:00",
-      "editorial_retry_after": "2026-11-13T01:31:38.388326+00:00"
+      "image_format": "webp"
     },
     {
       "id": "https://www.ad-italia.it/article/ellen-von-unwerth-toiletpaper-calendario-2027-intervista/",
@@ -1499,9 +1514,7 @@
       "language": "it",
       "image_width": 4589,
       "image_height": 3134,
-      "image_format": "webp",
-      "editorial_attempted_at": "2026-11-12T13:32:10.466608+00:00",
-      "editorial_retry_after": "2026-11-13T01:32:10.466608+00:00"
+      "image_format": "webp"
     },
     {
       "id": "https://www.ad-italia.it/article/appartamento-piccolo-madrid-48-m2-ex-casa-antiquata-open-space-rosa-blu/",
@@ -1517,9 +1530,7 @@
       "language": "it",
       "image_width": 2000,
       "image_height": 1500,
-      "image_format": "webp",
-      "editorial_attempted_at": "2026-11-12T13:32:44.241576+00:00",
-      "editorial_retry_after": "2026-11-13T01:32:44.241576+00:00"
+      "image_format": "webp"
     },
     {
       "id": "https://www.ad-italia.it/gallery/fiori-autunnali-10-specie-coloratissime-per-portare-energia-positiva-in-casa-feng-shui/",
@@ -1535,9 +1546,7 @@
       "language": "it",
       "image_width": 7952,
       "image_height": 5304,
-      "image_format": "webp",
-      "editorial_attempted_at": "2026-11-12T13:33:21.243013+00:00",
-      "editorial_retry_after": "2026-11-13T01:33:21.243013+00:00"
+      "image_format": "webp"
     },
     {
       "id": "https://www.ad-italia.it/article/dopamine-decor-design-trend-colori-casa-allegra/",
@@ -1553,9 +1562,7 @@
       "language": "it",
       "image_width": 6708,
       "image_height": 4472,
-      "image_format": "webp",
-      "editorial_attempted_at": "2026-11-12T13:33:50.549559+00:00",
-      "editorial_retry_after": "2026-11-13T01:33:50.549559+00:00"
+      "image_format": "webp"
     },
     {
       "id": "https://www.ad-italia.it/article/casa-notting-hill-film-porta-blu-vendita-interni/",
@@ -1572,6 +1579,43 @@
       "image_width": 2519,
       "image_height": 1677,
       "image_format": "webp"
+    },
+    {
+      "id": "https://www.sneakersmagazine.it/2026/11/09/sneakers-magazine-issue-122-2026-2-2/",
+      "title": "SNEAKERS MAGAZINE ISSUE 124 (2026)",
+      "excerpt": "window.option_df_54262 = {\"outline\":[],\"autoEnableOutline\":\"false\",\"autoEnableThumbnail\":\"false\",\"overwritePDFOutline\":\"false\",\"direction\":\"1\",\"pageSize\":\"0\",\"source\":\"https:\\/\\/www.sneakersmagazine.it\\/wp-content\\/uploads\\/2026\\/11\\/SneakersMagazine_124_04_bassa_singole.pdf\",\"wpOptions\":\"true\"}; if(window.DFLIP && window.DFLIP.parseBooks){window.DFLIP.parseBooks();} Sneakers Magazine 124 – settembre 2026 mette al centro il rapporto tra innovazione, heritage e cultura sneaker, con uno sguardo che attraversa collaborazioni, nuove collezioni, tecnologia e modelli d’archivio. Il filo conduttore di questo numero è racchiuso nell’idea “Sneakers first” : le scarpe tornano al centro del discorso, come punto di partenza per costruire uno stile e raccontare l’evoluzione dei brand. Si parte dalla sezione Review , con quattro collaborazioni che esplorano linguaggi e sensibilità differenti. Beams x Vans Skool Era rielabora due silhouette storiche del marchio californiano, fondendo il profilo delle Era con quello delle Old Skool e aggiungendo una suola Vibram. Hidden.NY x Asics Gel-Kinetic 2.0 porta invece su una sneaker futuristica l’approccio curatoriale della piattaforma newyorkese, diventata un riferimento per la cultura visiva contemporanea. Con Noah x Converse Louie Lopez 2 Pro , la cultura skate incontra una visione più consapevole e responsabile della moda, mentre Kith x New Balance 2011 celebra quindici anni di collaborazione tra Ronnie Fieg e il marchio americano, presentando una silhouette inedita sviluppata attraverso un lungo lavoro di ricerca e progettazione. La Cover Story è dedicata a EA7 Overtime Generation , un progetto che mette in dialogo la storia del brand con il presente, attraverso una nuova evoluzione di due dei suoi modelli più rappresentativi: Pride e Black & White . Le prime vengono reinterpretate con linee più contemporanee, materiali ricercati e una costruzione pensata per comfort e flessibilità. Le seconde riprendono l’iconico DNA retro-running di EA7, aggiornandolo con una tomaia destrutturata, intersuola in Phylon e dettagli tecnici che accompagnano il passaggio dallo sport alla quotidianità. La sezione Focus prosegue con Ecco Receptor XP , n",
+      "author": "admin",
+      "category": "Streetwear",
+      "source": "sneakersmagazine.it",
+      "date": "2026-11-09T15:27:23+00:00",
+      "url": "https://www.sneakersmagazine.it/2026/11/09/sneakers-magazine-issue-122-2026-2-2/",
+      "image": "https://www.sneakersmagazine.it/wp-content/uploads/2026/11/Screenshot-2026-11-09-alle-16.23.14.png",
+      "image_verified": true,
+      "language": "it",
+      "editorial_attempted_at": "2026-11-12T13:35:50.401195+00:00",
+      "editorial_retry_after": "2026-11-13T01:35:50.401195+00:00",
+      "image_width": 1266,
+      "image_height": 1666,
+      "image_format": "png"
+    },
+    {
+      "id": "https://www.sneakersmagazine.it/2026/11/09/sneakers-magazine-issue-122-2026-2/",
+      "title": "SNEAKERS MAGAZINE ISSUE 123 (2026)",
+      "excerpt": "window.option_df_54254 = {\"outline\":[],\"autoEnableOutline\":\"false\",\"autoEnableThumbnail\":\"false\",\"overwritePDFOutline\":\"false\",\"direction\":\"1\",\"pageSize\":\"0\",\"source\":\"https:\\/\\/www.sneakersmagazine.it\\/wp-content\\/uploads\\/2026\\/11\\/SneakersMagazine_123_06_esec_01_singole.pdf\",\"wpOptions\":\"true\"}; if(window.DFLIP && window.DFLIP.parseBooks){window.DFLIP.parseBooks();} Sneakers Magazine 123 è il numero di maggio/giugno 2026 e racconta un mercato in trasformazione, nel quale innovazione, memoria storica e ricerca estetica continuano a convivere. Il filo conduttore è quello dei riflessi e delle icone: in un momento non semplice per il settore, i brand sono chiamati a reinventarsi senza dimenticare la propria identità. La copertina è dedicata a North Sails Sailor , una nuova sneaker che porta nel mondo urbano il DNA tecnico e nautico del marchio, trasformando l’esperienza maturata nella progettazione di vele e attrezzature da regata in un prodotto pensato per la quotidianità. Le Review aprono il numero con quattro collaborazioni molto diverse tra loro. J-Hope x Louis Vuitton Buttersoft porta il fenomeno globale del K-Pop nel mondo delle sneaker di lusso, ma con una proposta che, al di là del peso mediatico dell’artista e del brand, convince meno sul piano del prodotto. Ron Herman x Vans Authentic rilegge una silhouette classica attraverso il linguaggio west coast del retailer californiano, con una tomaia paisley che mescola riferimenti persiani, cultura hippie e tradizione skate. Space Available x Keen Uneek mette al centro la sostenibilità, con una collaborazione che punta su materiali di origine naturale, riciclati e una costruzione progettata per essere facilmente smontata a fine ciclo di vita. Engineered Garments x Saucony Shadow Original Velcro affida invece a Daiki Suzuki una reinterpretazione essenziale dello storico modello running, sostituendo i lacci con una doppia chiusura in velcro e giocando sul contrasto tra mesh e inserti in pelle. Chiude il gruppo Beams Plus x Sperry MIL CVO , una ricostruzione ispirata alle forniture militari americane degli anni Trenta e Quaranta, che unisce heritage nautico, dettagli d’epoca e comfort contemporaneo. La Cover Stor",
+      "author": "admin",
+      "category": "Streetwear",
+      "source": "sneakersmagazine.it",
+      "date": "2026-11-09T15:19:48+00:00",
+      "url": "https://www.sneakersmagazine.it/2026/11/09/sneakers-magazine-issue-122-2026-2/",
+      "image": "https://www.sneakersmagazine.it/wp-content/uploads/2026/11/Screenshot-2026-11-09-alle-16.20.32-787x1024.png",
+      "image_verified": true,
+      "language": "it",
+      "editorial_summary": "Sneakers Magazine presenta il numero di maggio/giugno 2026, il 123esimo della sua pubblicazione, che analizza un mercato in fase di trasformazione in cui innovazione, memoria storica e ricerca estetica convivono costantemente. Il tema centrale ruota attorno ai riflessi e alle icone, ponendo i brand di fronte alla necessità di reinventarsi senza smarrire la propria identità originaria, in un periodo complesso per il comparto. La copertina del numero è riservata alle North Sails Sailor, una nuova calzatura pensata per la dimensione urbana che traduce il DNA tecnico e nautico del marchio.\n\nLa sezione delle Review apre la rivista esaminando cinque differenti collaborazioni. Tra queste figurano la proposta K-Pop di J-Hope x Louis Vuitton Buttersoft, giudicata meno convincente sul piano del prodotto nonostante il peso mediatico, e la rilettura west coast della Vans Authentic firmata Ron Herman con una tomaia paisley. Spiccano inoltre la sostenibilità di Space Available x Keen Uneek con materiali riciclati e smontabili, la versione essenziale e con doppio velcro di Engineered Garments x Saucony Shadow Original firmata da Daiki Suzuki, e la ricostruzione d'ispirazione militare Beams Plus x Sperry MIL CVO.\n\nLa Cover Story approfondisce le North Sails Sailor della collezione Spring/Summer 2026, progetto nato dal marchio fondato da Lowell North nel 1957. Disegnate da Dimitri D'Angelo in collaborazione con Nigel Musto, le sneaker uniscono la ricerca tecnica velica alla vita urbana attraverso una tomaia in mesh traspirante con rinforzi in microfibra, uno stabilizzatore posteriore termoplastico e una suola semiforata biprogrammata per il drenaggio e il grip. La struttura mira a trasferire leggerezza, resistenza e funzionalità dal mare alla città.\n\nAll'interno della rubrica Golden Moments viene presentata la Converse Jack Purcell x Jannik Sinner, un'edizione limitata Made in Italy realizzata dalla linea Converse First String per celebrare il campione italiano. Il modello classico del 1935 con la punta sorridente viene riproposto con materiali di pregio, dettagli tricolore sul tallone, il logo personale JS e un packaging esclusivo, distribuito non nei negozi ma concepito per celebrare l'atleta e accompagnare il ritorno della silhouette sul mercato.\n\nLa sezione Focus amplia l'analisi con tre approfondimenti dedicati alle collezioni e alle iniziative dei brand. EA7 Spring/Summer 2026 contrappone le Crusher Sonic Mesh 2.0 per la corsa alle Heritage d'ispirazione skate. New Balance Grey Days 2026 racconta l'evoluzione dell'appuntamento nato nel 2018, coinvolgendo ambassador come Aminé, Sydney McLaughlin-Levrone e Andrew Reynolds attraverso una vasta selezione di modelli tra lifestyle, performance e skate. Infine, W6YZ Spring/Summer 2026 presenta una gamma che spazia dalle Samoa alle Breeze e Next, unendo heritage, running tecnico e stile lifestyle.\n\nIl panorama tracciato dal numero 123 della rivista restituisce dunque una panoramica dettagliata sulle tendenze estetiche e tecnologiche del settore calzaturiero per la stagione estiva 2026. Attraverso recensioni di collaborazioni trasversali, analisi di collezioni di punta ed edizioni speciali legate a personalità dello sport e della musica, la pubblicazione documenta come i marchi stiano rispondendo alle sfide del mercato contemporaneo puntando sulla commistione tra eredità storica e innovazione funzionale.",
+      "editorial_level": "approfondimento",
+      "editorial_word_count": 495,
+      "image_width": 787,
+      "image_height": 1024,
+      "image_format": "png"
     },
     {
       "id": "https://www.ad-italia.it/article/marchesi-1824-natale-2026-panettone-cioccolato/",
@@ -1676,9 +1720,9 @@
       "image_width": 2500,
       "image_height": 1667,
       "image_format": "webp",
-      "editorial_summary": "La rivista AD Italia ha tracciato un bilancio dell'evoluzione delle piscine private nel corso di quarantacinque anni, documentando il passaggio estetico e strutturale dai modelli diffusi negli anni Ottanta fino alle soluzioni contemporanee. Secondo quanto emerge dall'analisi storica pubblicata dalla testata, nei decenni passati la piscina privata rappresentava un elemento di forte ostentazione riservato a pochi, la cui presenza poteva persino determinare la classificazione dell'immobile come bene di lusso ai fini fiscali.\n\nNel dettaglio, le vasche degli anni Ottanta erano caratterizzate da forme geometriche rigide come rettangoli azzurro shocking in cemento armato e piastrelline, oppure da configurazioni eccentriche a forma di fagiolo con dimensioni limitate che rendevano difficile il nuoto. Erano dotate di trampolini con la molla e bordi ruvidi in graniglia grezza antiscivolo, mentre la scelta cromatica puntava a un azzurro intenso e visibile anche a grande distanza dagli aerei, in netto contrasto con il verde dei giardini.\n\nA partire dagli anni Novanta, l'approccio progettuale documentato da AD Italia si è spostato dall'ostentazione alla ricerca della mimesi con la natura, rispondendo all'esigenza di integrare gli spazi d'acqua nei contesti verdi imitando paesaggi esotici o naturali. Le forme geometriche nette hanno ceduto il passo a linee sinuose, curve e anfratti simili a laghetti, mentre le piastrelle azzurre sono state sostituite da rivestimenti color sabbia o verde capaci di restituire riflessi più caldi e naturali.\n\nQuesta fase di transizione ha visto l'introduzione di elementi decorativi come rocce artificiali, cascate e trampolini in vetroresina, presto superati grazie all'evoluzione delle tecnologie costruttive. L'impiego di pannelli prefabbricati in acciaio zincato e di rivestimenti in PVC al posto del cemento armato e delle piastrelle ha ridefinito il mercato, aprendo la strada alla diffusione delle piscine a sfioro.\n\nNel panorama contemporaneo, le piscine si sono trasformate in un prolungamento degli spazi interni ed esterni della casa, caratterizzate da bordi in legno o pietra naturale come marmo, travertino e pietra di Luserna. Le soluzioni attuali includono le infinity pool, che creano continuità visiva con il paesaggio circostante, e l'introduzione di 'spiagge' d'ingresso con acqua bassa al posto delle tradizionali scalette in acciaio, consolidando un dialogo continuo tra architettura residenziale e natura.",
+      "editorial_summary": "La rivista AD Italia ha tracciato un bilancio dell'evoluzione delle piscine private nel corso di quarantacinque anni, documentando il passaggio estetico e strutturale dai modelli diffusi negli anni Ottanta fino alle soluzioni contemporanee. Secondo quanto emerge dall'analisi storica pubblicata dalla testata, nei decenni passati la piscina privata rappresentava un elemento di forte ostentazione riservato a pochi, una piscina di grandi dimensioni poteva persino far rientrare l'abitazione nella categoria dei beni di lusso ai fini fiscali.\n\nNel dettaglio, le vasche degli anni Ottanta erano caratterizzate da forme geometriche rigide come rettangoli azzurro shocking in cemento armato e piastrelline, oppure da configurazioni eccentriche a forma di fagiolo con dimensioni limitate che rendevano difficile il nuoto. Erano dotate di trampolini con la molla e bordi ruvidi in graniglia grezza antiscivolo, mentre la scelta cromatica puntava a un azzurro intenso e visibile anche a grande distanza dagli aerei, in netto contrasto con il verde dei giardini.\n\nA partire dagli anni Novanta, l'approccio progettuale documentato da AD Italia si è spostato dall'ostentazione alla ricerca della mimesi con la natura, rispondendo all'esigenza di integrare gli spazi d'acqua nei contesti verdi imitando paesaggi esotici o naturali. Le forme geometriche nette hanno ceduto il passo a linee sinuose, curve e anfratti simili a laghetti, mentre le piastrelle azzurre sono state sostituite da rivestimenti color sabbia o verde capaci di restituire riflessi più caldi e naturali.\n\nQuesta fase di transizione ha visto l'introduzione di elementi decorativi come rocce artificiali, cascate e trampolini in vetroresina, presto superati grazie all'evoluzione delle tecnologie costruttive. L'impiego di pannelli prefabbricati in acciaio zincato e di rivestimenti in PVC al posto del cemento armato e delle piastrelle ha ridefinito il mercato, aprendo la strada alla diffusione delle piscine a sfioro.\n\nNel panorama contemporaneo, le piscine si sono trasformate in un prolungamento degli spazi interni ed esterni della casa, caratterizzate da bordi in legno o pietra naturale come marmo, travertino e pietra di Luserna. Le soluzioni attuali includono le infinity pool, che creano continuità visiva con il paesaggio circostante, e l'introduzione di 'spiagge' d'ingresso con acqua bassa al posto delle tradizionali scalette in acciaio, consolidando un dialogo continuo tra architettura residenziale e natura.",
       "editorial_level": "standard",
-      "editorial_word_count": 354
+      "editorial_word_count": 356
     },
     {
       "id": "https://www.ad-italia.it/article/modernariato-5-pezzi-vintage-facili-arredare-casa-consigli/",
@@ -1716,6 +1760,122 @@
       "editorial_summary": "A Lurano, i fondatori dello Studio Modoo, gli interior designer Davide Defendi e Roberta Rovaris, hanno realizzato la propria abitazione familiare di 130 metri quadrati proponendo un'interpretazione personale dell'architettura brutalista. L'edificio si presenta all'esterno come un volume parallelepipedo sollevato da terra e sostenuto da soli sei plinti, offrendo un'illusione di sospensione nel paesaggio circostante. La struttura adotta elementi prefabbricati industriali in cemento, un'opzione poco diffusa nell'ambito residenziale che lascia la materia prima a vista. L'imponenza del cemento viene mitigata dall'apertura verso il giardino mediante grandi vetrate orientate a sud e a ovest, oltre a tagli orizzontali nella zona notte e lucernari sul tetto.\n\nL'ispirazione per l'opera deriva direttamente dallo studio del brutalismo brasiliano e dalla scuola paulista, con riferimenti a figure come Paulo Mendes da Rocha e Vilanova Artigas. Un viaggio d'istruzione a San Paolo ha consentito ai progettisti di analizzare sul campo edifici storici come la Facoltà di Architettura, Casa Butantã e Casa Gerassi. Dall'osservazione diretta di quest'ultima sono stati tratti spunti concreti inseriti nell'abitazione italiana, tra cui l'uso di cementine decorate e dettagli in ferro. Sul piano tecnico, l'impossibilità di forare i pannelli prefabbricati in cemento per gli impianti ha spinto i designer a lasciare a vista le tubazioni nere sulla parete verde, convertendo un vincolo costruttivo in elemento grafico integrato.\n\nGli spazi interni bilanciano il rigore della struttura con una ricca gamma cromatica composta da verde, giallo, azzurro, blu, terracotta e rosa antico. La palette, organizzata secondo la regola di proporzione 60-30-10 per mantenere una saturazione uniforme, trae origine dalla miscela di graniglie di marmo dei pavimenti ed è stata aggiornata nel tempo. L'arredamento su misura riflette diverse influenze e ricordi di viaggio: la camera delle bambine impiega cerchi, quadrati e triangoli richiamando le teorie di Bruno Munari, mentre nel bagno di servizio è stata installata una turca colorata progettata ad hoc sulla scorta di quanto osservato in India. Il progetto testimonia una sintesi tra monumentalità architettonica, funzionalità ed esigenze della vita quotidiana.",
       "editorial_level": "approfondimento",
       "editorial_word_count": 326
+    },
+    {
+      "id": "https://www.sneakersmagazine.it/2026/11/06/saucony-presenta-la-nuova-endorphin-speed-6/",
+      "title": "Saucony® presenta la nuova Endorphin Speed 6",
+      "excerpt": "La nuova arrivata della famiglia Endorphin combina l’intersuola PWRRUN PBX, una piastra in nylon riprogettata e la tecnologia SpeedRoll perfezionata, per offrire prestazioni ancora più dinamiche. Saucony amplia la propria famiglia di calzature performance con la nuova Endorphin Speed 6 , l’ultima evoluzione di una delle linee più apprezzate del brand, progettata per accompagnare i runner negli allenamenti veloci, nelle sessioni ad alta intensità e nelle competizioni. Il nuovo modello introduce importanti aggiornamenti tecnologici, con l’obiettivo di migliorare reattività, ammortizzazione ed efficienza della corsa. Tra le principali novità spicca la nuova intersuola PWRRUN PBX , una superfoam esclusiva a base di PEBA con struttura a perle, sviluppata per garantire un ritorno di energia elevato e una sensazione di corsa ancora più dinamica. A questa innovazione si aggiungono 2 mm di schiuma in più sotto il piede, che aumentano l’ammortizzazione e l’elasticità senza rinunciare alla leggerezza. Una nuova piastra in nylon per una rullata più fluida Tra gli aggiornamenti più significativi della Endorphin Speed 6 troviamo anche una piastra in nylon completamente riprogettata , studiata per valorizzare ulteriormente la tecnologia SpeedRoll. La nuova geometria favorisce una maggiore propulsione e transizioni più rapide e scorrevoli, accompagnando il movimento naturale del piede e rendendo la rullata più fluida ed efficiente. Come sottolineato da Brian Moore, Chief Product Officer di Saucony, il rinnovamento della famiglia Endorphin punta a rendere la corsa veloce più semplice e piacevole, attraverso una combinazione di leggerezza, ammortizzazione e dinamismo. La famiglia Saucony Endorphin si rinnova Endorphin Speed 6 entra a far parte di una collezione che comprende anche Endorphin Elite 3, Endorphin Pro 5 ed Endorphin Azura , quattro modelli sviluppati per rispondere alle diverse esigenze dei runner, dalla competizione agli allenamenti quotidiani. Versatile e adatta a un’ampia varietà di sessioni, Endorphin Speed 6 si posiziona tra la scarpa da allenamento e quella da gara, proponendosi come una soluzione ideale per chi cerca una calzatura capace di affrontare ritmi sos",
+      "author": "admin",
+      "category": "Streetwear",
+      "source": "sneakersmagazine.it",
+      "date": "2026-11-06T14:29:13+00:00",
+      "url": "https://www.sneakersmagazine.it/2026/11/06/saucony-presenta-la-nuova-endorphin-speed-6/",
+      "image": "https://www.sneakersmagazine.it/wp-content/uploads/2026/11/S101825-1006_5-1024x1024.jpg",
+      "image_verified": true,
+      "language": "it",
+      "editorial_attempted_at": "2026-11-12T13:36:08.231004+00:00",
+      "editorial_retry_after": "2026-11-13T01:36:08.231004+00:00",
+      "image_width": 1024,
+      "image_height": 1024,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.sneakersmagazine.it/2026/11/06/emu-australia-inaugura-una-nuova-era/",
+      "title": "EMU Australia inaugura una nuova era",
+      "excerpt": "La campagna Autunno/Inverno 2026 inaugura un nuovo capitolo per il brand, tra artigianalità, funzionalità e fashion. Protagonisti della collezione alcuni nuovi modelli, tra cui Stinger Compact, Kirra Nest e Sandrine. EMU Australia apre un nuovo capitolo della propria storia con BE MORE , la campagna dedicata alla collezione Autunno/Inverno 2026. Un progetto che rinnova l’identità del brand senza rinunciare alle proprie origini australiane, trasformando il legame con la natura, i materiali e l’artigianalità in una visione contemporanea, dove funzionalità e ricerca estetica convivono. Ispirata ai contrasti dell’Australia, tra paesaggi incontaminati, grandi città e scenari naturali, la campagna racconta un’idea di lusso legata all’autenticità e alla qualità. Al centro della narrazione una donna che attraversa ambienti e identità differenti, accompagnata dalla presenza simbolica di un emù, richiamo alle radici del marchio. Anche la palette cromatica riprende le tonalità del territorio australiano, con verdi profondi, grigi minerali e colori della terra. La collezione FW26: le novità per il mercato italiano Per la stagione Autunno/Inverno 2026, EMU Australia propone una selezione di modelli pensati per accompagnare la quotidianità, combinando comfort, calore e versatilità. Tra le principali novità spicca Stinger Compact , una reinterpretazione del classico boot EMU Australia caratterizzata da una silhouette essenziale e da un comfort avvolgente. Una proposta versatile, pensata per affrontare la stagione fredda e completare facilmente gli outfit quotidiani. Il prezzo al pubblico è di 139 euro . La selezione comprende anche Kirra Nest , disponibile a 109 euro , che punta su materiali morbidi, calore e praticità, e Sandrine , un mocassino dalla costruzione slip-on, con fodera calda e una calzata confortevole. Il modello interpreta lo stile cosy con un’estetica essenziale e femminile. Il prezzo è di 99 euro . Per il mercato italiano arriva inoltre Hayley PL , una Special Make-Up dedicata alla linea Sharky. Il modello propone una versione più pulita e lineare della Hayley, senza la caratteristica finitura teddy, mantenendo una calzata calda e confortevole. Una soluzione v",
+      "author": "admin",
+      "category": "Streetwear",
+      "source": "sneakersmagazine.it",
+      "date": "2026-11-06T14:19:58+00:00",
+      "url": "https://www.sneakersmagazine.it/2026/11/06/emu-australia-inaugura-una-nuova-era/",
+      "image": "https://www.sneakersmagazine.it/wp-content/uploads/2026/11/2026-05-Emu-Australia-W13013-Stinger-Compact-Chestnut-Front-Single-1024x596.jpg",
+      "image_verified": true,
+      "language": "it",
+      "editorial_attempted_at": "2026-11-12T13:36:19.672447+00:00",
+      "editorial_retry_after": "2026-11-13T01:36:19.672447+00:00",
+      "image_width": 1024,
+      "image_height": 596,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.sneakersmagazine.it/2026/11/06/foot-locker-presenta-its-giving-le-sneaker-diventano-il-regalo-che-unisce-le-generazioni/",
+      "title": "Foot Locker presenta “IT’S GIVING”: le sneaker diventano il regalo che unisce le generazioni",
+      "excerpt": "Tradizioni natalizie, modelli iconici e nuove community creative: Foot Locker celebra il legame tra sneaker culture e festività con una nuova campagna e la Holiday Gift Guide. Il Natale è fatto di tradizioni, ricordi e piccoli rituali che si tramandano di generazione in generazione. Tra questi, per gli appassionati di sneaker, c’è anche il piacere di desiderare, scegliere e finalmente ricevere il paio di scarpe tanto atteso. È proprio da questa passione condivisa che nasce “IT’S GIVING” , la nuova campagna natalizia di Foot Locker , sviluppata attorno al concept Then. Now. Always. La campagna racconta il ruolo delle sneaker nei momenti di condivisione, attraversando epoche e generazioni con uno sguardo ironico e spontaneo. Il video mette in scena situazioni familiari e quotidiane: dalle coppie che si regalano inconsapevolmente lo stesso modello agli amici impegnati nel Secret Santa, fino agli immancabili Stripers di Foot Locker, alle prese con la ricerca della taglia perfetta tra montagne di scatole. Un racconto che celebra non soltanto le silhouette più desiderate, ma anche i ricordi e le connessioni che nascono intorno alla cultura sneaker. Come sottolineato da Slavka Jancikova, Marketing VP EMEA di Foot Locker, il brand continua da generazioni a trasformare i propri store in punti di riferimento culturali, contribuendo a creare ricordi legati al primo paio di scarpe e ai modelli diventati iconici. La Holiday Catalogue: torna il fascino della wish list Tra le iniziative della campagna trova spazio anche l’ Holiday Catalogue , un omaggio alle tradizionali liste dei desideri natalizie. Un ritorno alla carta e al piacere di cerchiare il modello preferito, lasciando indizi più o meno espliciti ad amici e familiari sul regalo da trovare sotto l’albero. Disponibile dal 1° dicembre online e nei negozi Foot Locker , il catalogo raccoglierà una selezione di sneaker e capi apparel per uomo, donna e bambino, includendo anche alcune esclusive del retailer. Tra queste spiccano le Nike Air Max Tuned 1 nelle colorazioni grigio e blu e le New Balance 740 in marrone, caratterizzate da lacci rosa a contrasto. Novità anche per gli iscritti al programma fedeltà FLX : dal 9 novemb",
+      "author": "admin",
+      "category": "Streetwear",
+      "source": "sneakersmagazine.it",
+      "date": "2026-11-06T14:03:03+00:00",
+      "url": "https://www.sneakersmagazine.it/2026/11/06/foot-locker-presenta-its-giving-le-sneaker-diventano-il-regalo-che-unisce-le-generazioni/",
+      "image": "",
+      "image_verified": false,
+      "language": "it",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
+    },
+    {
+      "id": "https://www.sneakersmagazine.it/2026/10/29/expo-riva-schuh-e-gardabags-il-mercato-di-calzature-e-borse-cambia-volto/",
+      "title": "Expo Riva Schuh e Gardabags: il mercato di calzature e borse cambia volto",
+      "excerpt": "La produzione mondiale di calzature si mantiene stabile a 24,6 miliardi di paia, mentre il prezzo medio delle esportazioni italiane di calzature in pelle supera i 100 dollari per paio. Intanto, la Cambogia supera la Cina nelle esportazioni verso gli Stati Uniti. Il mercato internazionale delle calzature e delle borse sta attraversando una fase di trasformazione, caratterizzata da nuovi equilibri produttivi, un aumento dei prezzi e una crescente polarizzazione del settore. A delineare questo scenario sono i dati relativi alla produzione globale e ai flussi commerciali, che evidenziano cambiamenti significativi nelle dinamiche dell’industria. La produzione mondiale di calzature rimane sostanzialmente stabile, attestandosi a 24,6 miliardi di paia. Parallelamente, il prezzo medio delle esportazioni italiane di calzature in pelle supera la soglia dei 100 dollari per paio, confermando il peso del valore aggiunto e del posizionamento qualitativo nel comparto. Sul fronte internazionale, emerge anche il cambiamento degli equilibri produttivi: la Cambogia ha superato la Cina nelle esportazioni di calzature verso gli Stati Uniti, segnalando una progressiva evoluzione delle strategie di approvvigionamento e delle catene globali di fornitura. In un contesto sempre più complesso, comprendere queste dinamiche diventa fondamentale per le aziende che operano nel settore. Expo Riva Schuh e Gardabags si confermano piattaforme di riferimento per interpretare i cambiamenti dei mercati internazionali, individuare nuove opportunità commerciali e anticipare le tendenze che influenzeranno il futuro dell’industria. I dati offrono quindi una chiave di lettura importante per comprendere un mercato in cui la competizione non si gioca soltanto sui volumi, ma sempre più sulla capacità di adattarsi ai cambiamenti, valorizzare il prodotto e intercettare le nuove esigenze della distribuzione. L'articolo Expo Riva Schuh e Gardabags: il mercato di calzature e borse cambia volto proviene da Sneakers Magazine .",
+      "author": "admin",
+      "category": "Streetwear",
+      "source": "sneakersmagazine.it",
+      "date": "2026-10-29T14:17:00+00:00",
+      "url": "https://www.sneakersmagazine.it/2026/10/29/expo-riva-schuh-e-gardabags-il-mercato-di-calzature-e-borse-cambia-volto/",
+      "image": "https://www.sneakersmagazine.it/wp-content/uploads/2026/10/Expo-Riva-Schuh-Around-the-World_Chengdu-1024x768.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1024,
+      "image_height": 768,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.sneakersmagazine.it/2026/10/26/new-balance-presenta-la-made-in-usa-990v7/",
+      "title": "New Balance presenta la Made in USA 990v7",
+      "excerpt": "Dopo oltre quarant’anni di storia, la 990 inaugura un nuovo capitolo con la settima generazione. La New Balance Made in USA 990v7 rinnova il design originale attraverso proporzioni aggiornate, materiali premium e una versione più morbida della tecnologia FuelCell. Ci sono sneaker capaci di superare le tendenze e trasformarsi in autentiche icone culturali. La New Balance 990 è una di queste. Nata come scarpa da running premium, nel corso degli anni ha conquistato un posto di rilievo nella sneaker culture, diventando un punto di riferimento per atleti, creativi e appassionati di stile. Oggi il brand presenta la Made in USA 990v7 , settima generazione di un modello che continua a evolversi senza rinunciare alla propria identità. Lanciata nel 1982 dopo quattro anni di ricerca e sviluppo, la 990 ha ridefinito gli standard del running premium, diventando la prima scarpa da corsa a superare il prezzo di 100 dollari. Da allora, ogni nuova versione ha rappresentato un equilibrio tra innovazione e rispetto dell’heritage, aggiornando tecnologie e costruzione senza perdere i tratti distintivi che hanno reso celebre la silhouette. Con la 990v7, New Balance prosegue questo percorso attraverso una filosofia progettuale che il brand definisce «memories from the future» : un approccio che combina elementi familiari e soluzioni contemporanee per reinterpretare un classico in chiave attuale. Le proporzioni, le sovrapposizioni dei materiali e la costruzione sono state riviste per dare vita a una silhouette più slanciata ed essenziale, mantenendo il carattere che contraddistingue la famiglia 990. «L’emblema della qualità e della maestria artigianale, la 990v7 è stata evoluta, aggiornata e reinterpretata con attenzione per il consumatore di oggi», afferma Chris Davis, Brand President e Chief Marketing Officer di New Balance. Il dirigente sottolinea inoltre come il modello abbia superato da tempo la propria funzione originaria, conquistando pubblici diversi grazie alla combinazione di autenticità, praticità e qualità duratura. Materiali premium e tecnologia FuelCell Realizzata negli Stati Uniti, la New Balance Made in USA 990v7 combina una tomaia in suede di pelle di maiale e mesh tra",
+      "author": "admin",
+      "category": "Streetwear",
+      "source": "sneakersmagazine.it",
+      "date": "2026-10-26T15:13:39+00:00",
+      "url": "https://www.sneakersmagazine.it/2026/10/26/new-balance-presenta-la-made-in-usa-990v7/",
+      "image": "https://www.sneakersmagazine.it/wp-content/uploads/2026/10/4-1024x544.png",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1024,
+      "image_height": 544,
+      "image_format": "png"
+    },
+    {
+      "id": "https://www.sneakersmagazine.it/2026/10/26/saucony-x-evelynn-escobar-una-nuova-idea-di-mom-shoe-prende-forma-nella-progrid-triumph-4/",
+      "title": "Saucony x Evelynn Escobar: una nuova idea di «mom shoe» prende forma nella ProGrid Triumph 4",
+      "excerpt": "La prima collaborazione tra il brand e la creativa americana reinterpreta il concetto di «mom shoe», trasformando una sneaker lifestyle in un omaggio ai piccoli gesti quotidiani che costruiscono relazioni e rafforzano le comunità. Saucony ed Evelynn Escobar presentano la Evelynn World x Saucony ProGrid Triumph 4 , una collaborazione che mette al centro il valore della cura, del sostegno reciproco e del senso di appartenenza. Direttrice creativa multidisciplinare, scrittrice e fondatrice di Hike Clerb, Escobar rilegge una delle silhouette lifestyle più riconoscibili del brand attraverso una nuova prospettiva: quella della «mom shoe». Ispirandosi al successo della cosiddetta «dad shoe» nella sneaker culture, la creativa amplia il concetto, superando gli stereotipi legati ai ruoli familiari. La mom shoe diventa così un simbolo universale, dedicato a chiunque si prenda cura degli altri, contribuisca alla loro crescita e rappresenti un punto di riferimento nella vita quotidiana L’idea prende forma nella campagna «For Everyone Who Nurtures» , che sposta l’attenzione dai tradizionali simboli di successo ai gesti spesso invisibili che tengono unite le persone. Prendersi cura della propria famiglia, sostenere un amico, fare da mentore o creare spazi in cui gli altri possano sentirsi accolti: sono queste le azioni che la collaborazione vuole celebrare, riconoscendo loro il valore che meritano. Il progetto si inserisce nel percorso creativo di Evelynn Escobar, da sempre attenta ai temi dell’identità, dell’inclusione e della solidarietà. Nel 2017 ha fondato Hike Clerb, organizzazione non profit e piattaforma culturale che promuove la rappresentazione e il senso di appartenenza delle donne nere, indigene e di altre comunità razzializzate nelle attività all’aperto. La collaborazione con Saucony estende questa visione al mondo delle sneaker, intrecciando design, storytelling e cultura contemporanea. Dal punto di vista estetico, la ProGrid Triumph 4 mantiene la propria identità sportiva e lifestyle, arricchendosi di dettagli esclusivi che raccontano la collaborazione. La sneaker presenta una tomaia in doppio mesh , inserti verniciati sul tallone e linguette con doppio branding.",
+      "author": "admin",
+      "category": "Streetwear",
+      "source": "sneakersmagazine.it",
+      "date": "2026-10-26T14:57:02+00:00",
+      "url": "https://www.sneakersmagazine.it/2026/10/26/saucony-x-evelynn-escobar-una-nuova-idea-di-mom-shoe-prende-forma-nella-progrid-triumph-4/",
+      "image": "https://www.sneakersmagazine.it/wp-content/uploads/2026/10/S102153-1001_2-1024x1024.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1024,
+      "image_height": 1024,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.sneakersmagazine.it/2026/10/16/saucony-x-highsnobiety-performance-e-lifestyle-si-incontrano-in-una-nuova-collaborazione/",
+      "title": "Saucony x Highsnobiety: performance e lifestyle si incontrano in una nuova collaborazione",
+      "excerpt": "Saucony e Highsnobiety tornano a collaborare con una nuova collezione che unisce innovazione tecnica e ricerca estetica. Protagoniste del progetto sono Endorphin Pro 5 e ProGrid Paramount, due silhouette che interpretano in modo diverso il rapporto tra performance sportiva e stile urbano. La collaborazione si sviluppa attraverso una palette cromatica ispirata alla transizione verso l’autunno, tra tonalità terrose, sfumature neutre, dettagli argentati e accenti di colore più audaci. Un equilibrio che riflette le due anime del progetto: da una parte la ricerca delle massime prestazioni, dall’altra un’estetica pensata per la quotidianità. Saucony Endorphin Pro 5: tecnologia al servizio della performance Pensata per le competizioni e gli allenamenti ad alta velocità, Endorphin Pro 5 si distingue per una combinazione cromatica che abbina Chocolate Brown, Doe ed Egret a dettagli argentati e tocchi di Spectra Yellow e Tomato. Sotto la tomaia, la scarpa integra la schiuma PWRRUN HG con una base in PWRRUN PB, una configurazione progettata per offrire ammortizzazione, leggerezza e reattività. La piastra scanalata in fibra di carbonio lavora insieme alla tecnologia SPEEDROLL per favorire una rullata fluida e propulsiva, mentre la suola esterna in gomma PWRTRAC contribuisce a garantire aderenza e resistenza all’usura. Una silhouette che mantiene al centro la performance, reinterpretandola attraverso il linguaggio estetico della collaborazione con Highsnobiety. Saucony ProGrid Paramount: il ritorno di una silhouette del 2007 Con ProGrid Paramount , il progetto guarda invece all’archivio del brand, riportando sotto i riflettori una silhouette originariamente lanciata nel 2007. Il modello si distingue per un approccio stilistico essenziale, che si allontana dai codici più riconoscibili di Saucony. Il tradizionale logo laterale lascia spazio a un branding discreto sul tallone e sull’etichetta della linguetta, dando vita a un design pulito e ricercato. La colorazione combina Coconut Milk, Wood Ash e Almond Oil con dettagli argentati e accenti Ombre Blue e Mars Red. A completare il progetto intervengono elementi riflettenti inseriti nelle fettucce della linguetta e del tallone, o",
+      "author": "admin",
+      "category": "Business",
+      "source": "sneakersmagazine.it",
+      "date": "2026-10-16T11:22:19+00:00",
+      "url": "https://www.sneakersmagazine.it/2026/10/16/saucony-x-highsnobiety-performance-e-lifestyle-si-incontrano-in-una-nuova-collaborazione/",
+      "image": "https://www.sneakersmagazine.it/wp-content/uploads/2026/10/saucony_beige_03-819x1024.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 819,
+      "image_height": 1024,
+      "image_format": "jpeg"
     }
   ]
 }
