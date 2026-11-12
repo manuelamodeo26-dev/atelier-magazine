@@ -16,7 +16,7 @@
     Lifestyle:['photo-1490481651871-ab68de25d43d','photo-1515886657613-9f3515b0c78f']
   };
   const labels = {'Fashion':'Moda','Streetwear':'Streetwear','Design':'Design','Art & Culture':'Arte e cultura','Technology':'Tecnologia','Architecture':'Architettura','Business':'Impresa','Lifestyle':'Stili di vita'};
-  let client=null, user=null, saved=new Set(), preferred=categories.slice(), articles=[];
+  let client=null, user=null, saved=new Set(), liked=new Set(), likeCounts=new Map(), preferred=categories.slice(), articles=[];
   const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const $=(s,r=document)=>r.querySelector(s);
   function mount(){
@@ -40,10 +40,12 @@
     $('#account-form')?.addEventListener('submit',handleAuth);
     $('#account-logout')?.addEventListener('click',logout);
     $('#save-preferences')?.addEventListener('click',savePreferences);
-    document.addEventListener('atelier:articles-rendered',syncSaveButtons);
+    document.addEventListener('atelier:articles-rendered',()=>{syncSaveButtons();syncLikeButtons();syncLikeCounts();});
     document.addEventListener('click',event=>{
       const btn=event.target.closest?.('[data-save-article]');
-      if(btn){event.preventDefault();toggleSaved(btn.dataset.saveArticle);}
+      if(btn){event.preventDefault();event.stopPropagation();toggleSaved(btn.dataset.saveArticle);}
+      const like=event.target.closest?.('[data-like-article]');
+      if(like){event.preventDefault();event.stopPropagation();toggleLiked(like.dataset.likeArticle);}
     });
   }
   function message(text,error=false){const el=$('#account-message');if(el){el.textContent=text;el.classList.toggle('is-error',error);}}
@@ -76,13 +78,15 @@
     }catch(e){message(e.message||'Non è stato possibile completare l’operazione.',true);}
   }
   async function loadUserData(){
-    const [prefs,favs]=await Promise.all([
+    const [prefs,favs,likes]=await Promise.all([
       client.from('user_preferences').select('categories').eq('user_id',user.id).maybeSingle(),
-      client.from('saved_articles').select('article_id').eq('user_id',user.id)
+      client.from('saved_articles').select('article_id').eq('user_id',user.id),
+      client.from('article_likes').select('article_id').eq('user_id',user.id)
     ]);
-    if(prefs.error)throw prefs.error;if(favs.error)throw favs.error;
+    if(prefs.error)throw prefs.error;if(favs.error)throw favs.error;if(likes.error)throw likes.error;
     preferred=Array.isArray(prefs.data?.categories)?prefs.data.categories:categories.slice();
     saved=new Set((favs.data||[]).map(x=>x.article_id));
+    liked=new Set((likes.data||[]).map(x=>x.article_id));
     renderAccount();setLoggedIn(true);
   }
   function syncSaveButtons(){
@@ -92,10 +96,45 @@
       b.textContent=active?'♥ SALVATO':'♡ SALVA';
     });
   }
+  function syncLikeButtons(){
+    document.querySelectorAll('[data-like-article]').forEach(b=>{
+      const active=liked.has(b.dataset.likeArticle);
+      b.classList.toggle('is-liked',active);
+      b.setAttribute('aria-pressed',String(active));
+      const count=b.querySelector('[data-like-count]');
+      if(count)count.textContent=String(likeCounts.get(b.dataset.likeArticle)||0);
+    });
+  }
+  function syncLikeCounts(){
+    document.querySelectorAll('[data-like-count]').forEach(el=>{el.textContent=String(likeCounts.get(el.dataset.likeCount)||0);});
+  }
+  async function loadLikeCounts(){
+    const ids=[...new Set(articles.map(a=>String(a.id||a.url||'')).filter(Boolean))];
+    if(!client||!ids.length)return;
+    const {data,error}=await client.rpc('get_article_like_counts',{article_ids:ids});
+    if(error)throw error;
+    likeCounts=new Map((data||[]).map(row=>[row.article_id,Number(row.like_count)||0]));
+    syncLikeButtons();syncLikeCounts();
+  }
+  async function toggleLiked(id){
+    if(!user){$('#account-dialog').showModal();message('Accedi per mettere Mi piace alle notizie.');return;}
+    const wasLiked=liked.has(id);
+    message('Aggiornamento Mi piace…');
+    try{
+      if(wasLiked){
+        const {error}=await client.from('article_likes').delete().eq('user_id',user.id).eq('article_id',id);
+        if(error)throw error;liked.delete(id);likeCounts.set(id,Math.max(0,(likeCounts.get(id)||0)-1));
+      }else{
+        const {error}=await client.from('article_likes').insert({user_id:user.id,article_id:id});
+        if(error)throw error;liked.add(id);likeCounts.set(id,(likeCounts.get(id)||0)+1);
+      }
+      syncLikeButtons();syncLikeCounts();message(wasLiked?'Mi piace rimosso.':'Hai messo Mi piace.');
+    }catch(e){message(e.message||'Errore durante l’aggiornamento del Mi piace.',true);}
+  }
   function renderAccount(){
     const box=$('#account-categories');
     if(box)box.innerHTML=categories.map(c=>'<label class="account-category"><input type="checkbox" value="'+esc(c)+'" '+(preferred.includes(c)?'checked':'')+'> '+esc(labels[c])+'</label>').join('');
-    syncSaveButtons();
+    syncSaveButtons();syncLikeButtons();syncLikeCounts();
     renderPersonal();
   }
   function renderPersonal(){
@@ -115,7 +154,7 @@
     const image=original||('https://images.unsplash.com/'+choices[seed%choices.length]+'?auto=format&fit=crop&w=1200&q=82');
     const imageLabel=a.image_verified===true?'IMMAGINE VERIFICATA TECNICAMENTE':original?'IMMAGINE DELLA FONTE · NON VERIFICATA':'IMMAGINE ILLUSTRATIVA';
     const visual='<div class="article-image"><img loading="lazy" decoding="async" src="'+esc(image)+'" alt="'+esc(a.title||'Immagine editoriale ATELIER')+'" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add(\'image-unavailable\');this.remove()"><span class="image-verified '+(a.image_verified===true?'':'image-illustrative')+'">'+imageLabel+'</span></div>';
-    return '<article class="story-card">'+visual+'<div class="story-meta">'+esc(labels[a.category]||a.category||'ATELIER')+' · '+esc(a.source||'')+'</div><h3>'+esc(a.title)+'</h3><p>'+esc(a.excerpt||'')+'</p><a class="text-link card-link" href="./article.html?id='+encodeURIComponent(id)+'">APRI ARTICOLO ↗</a><button type="button" class="save-article '+(saved.has(id)?'is-saved':'')+'" data-save-article="'+esc(id)+'">'+(saved.has(id)?'♥ SALVATO':'♡ SALVA')+'</button></article>';
+    return '<article class="story-card">'+visual+'<div class="story-meta">'+esc(labels[a.category]||a.category||'ATELIER')+' · '+esc(a.source||'')+'</div><h3>'+esc(a.title)+'</h3><p>'+esc(a.excerpt||'')+'</p><a class="text-link card-link" href="./article.html?id='+encodeURIComponent(id)+'">APRI ARTICOLO ↗</a><button type="button" class="like-article '+(liked.has(id)?'is-liked':'')+'" data-like-article="'+esc(id)+'" aria-pressed="'+String(liked.has(id))+'">♡ <span data-like-count="'+esc(id)+'">'+(likeCounts.get(id)||0)+'</span></button><button type="button" class="save-article '+(saved.has(id)?'is-saved':'')+'" data-save-article="'+esc(id)+'">'+(saved.has(id)?'♥ SALVATO':'♡ SALVA')+'</button></article>';
   }
   async function toggleSaved(id){
     if(!user){$('#account-dialog').showModal();message('Accedi per salvare i tuoi articoli.');return;}
@@ -139,7 +178,7 @@
   async function logout(){
     const {error}=await client.auth.signOut();
     if(error){message(error.message,true);return;}
-    user=null;saved.clear();setLoggedIn(false);renderAccount();message('Hai effettuato la disconnessione.');
+    user=null;saved.clear();liked.clear();setLoggedIn(false);renderAccount();message('Hai effettuato la disconnessione.');
   }
   async function init(){
     mount();
@@ -150,9 +189,10 @@
     try{
       const {createClient}=await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm');
       client=createClient(cfg.url,cfg.anonKey);
+      await loadLikeCounts();
       const {data}=await client.auth.getSession();
       if(data.session){user=data.session.user;await loadUserData();}else setLoggedIn(false);
-      client.auth.onAuthStateChange((_event,session)=>{setTimeout(async()=>{try{user=session?.user||null;if(user)await loadUserData();else{saved.clear();setLoggedIn(false);}}catch(e){user=null;saved.clear();setLoggedIn(false);message(e.message||'Impossibile caricare i dati dell’account.',true);}},0);});
+      client.auth.onAuthStateChange((_event,session)=>{setTimeout(async()=>{try{user=session?.user||null;if(user)await loadUserData();else{saved.clear();liked.clear();setLoggedIn(false);renderAccount();}}catch(e){user=null;saved.clear();setLoggedIn(false);message(e.message||'Impossibile caricare i dati dell’account.',true);}},0);});
     }catch(e){setLoggedIn(false);message('Servizio account non raggiungibile. Riprova più tardi.',true);}
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
