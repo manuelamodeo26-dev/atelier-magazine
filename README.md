@@ -27,11 +27,19 @@ Fonti configurate in `scripts/fetch_news.py`: Vogue Italia, Pambianco, AD Italia
 
 La raccolta RSS non equivale a una verifica giornalistica: controllare sempre notizie, attribuzioni e diritti di utilizzo prima della pubblicazione.
 
+## Lettura e verifica editoriale
+
+- Ogni articolo si apre in una scheda interna: titolo, categoria, data, editore, autore quando disponibile e sintesi fornita dall'editore.
+- Le fonti sono raccolte in fondo alla scheda. Il collegamento esterno è facoltativo e viene aperto solo se il lettore lo seleziona.
+- ATELIER non ripubblica integralmente articoli protetti o contenuti paywall: mostra le informazioni e le sintesi effettivamente disponibili nei feed e nei metadati pubblici, senza inventare dettagli.
+- Le fotografie vengono verificate prima della pubblicazione: risposta HTTP, tipo MIME, formato immagine reale, dimensioni minime 1000 px sul lato lungo e 500 px sul lato corto. Le immagini non conformi vengono escluse.
+- Le immagini restano attribuite agli editori originali; la verifica tecnica non equivale a una licenza di riutilizzo.
+
 ## Funzioni
 
 - Ricerca e filtri per categoria.
-- Schede editoriali con immagini responsive e caricamento differito.
-- Collegamenti alle fonti originali.
+- Schede editoriali interne con immagini responsive e caricamento differito.
+- Fonti e attribuzioni alla fine di ogni scheda, senza reindirizzamento automatico.
 - Cache PWA e supporto offline.
 - Newsletter non attiva: il sito non raccoglie indirizzi email.
 
