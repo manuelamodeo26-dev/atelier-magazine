@@ -106,6 +106,14 @@ In **Authentication → Providers → Email**, abilita Email. Per maggiore sicur
 Gli account permettono registrazione e accesso con email e password, feed personale per argomenti, preferiti persistenti e Mi piace con conteggi condivisi. I preferiti restano visibili anche quando un articolo esce dall'archivio corrente di 120 giorni, conservando la scheda salvata e il collegamento alla fonte. Il primo accesso crea automaticamente profilo e preferenze predefinite.
 
 
+## ATELIER Ghost
+
+La funzione Edge `atelier-ghost` è pubblicata su Supabase e richiede una sessione valida. Nella coda di moderazione della community, gli amministratori possono usare **ANALIZZA CON GHOST** per ottenere una valutazione AI di una segnalazione e del contenuto associato.
+
+Ghost restituisce rischio, riepilogo, elementi rilevati e indicazioni. **Non modifica il database, non rimuove contenuti e non prende decisioni di moderazione**: la valutazione e ogni azione restano responsabilità del moderatore umano.
+
+Per attivare l'analisi occorre configurare il secret `GROQ_API_KEY` nelle **Secrets della Edge Function Supabase**. Il secret omonimo di GitHub Actions è separato e non viene copiato automaticamente in Supabase. Se manca, Ghost risponde con un errore di configurazione senza eseguire l'analisi.
+
 ## ATELIER Community
 
 La community è disponibile in `community.html` e usa lo stesso progetto Supabase degli account del magazine.
