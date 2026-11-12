@@ -197,10 +197,32 @@ def generate_editorial_summary(article, source_text):
                     print("Sintesi generata con modello alternativo {}.".format(model))
                 return summary, level
             except HTTPError as exc:
+                # Respect Google's rate-limit window instead of hammering
+                # every model immediately with the same project quota.
+                detail = ""
+                try:
+                    error_body = exc.read().decode("utf-8", errors="replace")
+                    error_data = json.loads(error_body) if error_body else {}
+                    detail = str(
+                        ((error_data.get("error") or {}).get("message")) or ""
+                    ).strip()
+                except (ValueError, AttributeError, TypeError):
+                    detail = ""
                 if exc.code == 429 and attempt == 0:
-                    time.sleep(3)
+                    retry_after = exc.headers.get("Retry-After") if exc.headers else None
+                    try:
+                        delay = min(20, max(3, int(retry_after))) if retry_after else 8
+                    except (TypeError, ValueError):
+                        delay = 8
+                    print("Gemini {}: limite richieste (HTTP 429); nuovo tentativo tra {}s.".format(
+                        model, delay
+                    ))
+                    time.sleep(delay)
                     continue
-                print("Gemini {} non disponibile (HTTP {}).".format(model, exc.code))
+                message = (" — " + detail[:220]) if detail else ""
+                print("Gemini {} non disponibile (HTTP {}){}.".format(
+                    model, exc.code, message
+                ))
                 break
             except (URLError, TimeoutError, OSError) as exc:
                 print("Gemini {} non disponibile: {}.".format(model, type(exc).__name__))
