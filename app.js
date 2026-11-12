@@ -141,7 +141,15 @@
     }
     render();
   }
-  document.addEventListener('click',event=>{\n    const link=event.target.closest?.('.story-card-link[href*="article.html"]');\n    if(!link)return;\n    try{sessionStorage.setItem('atelier-article-origin',location.pathname+location.search+location.hash);sessionStorage.setItem('atelier-article-scroll',String(window.scrollY));}catch(_){}\n  },true);\n  filters.addEventListener('click',event=>{
+  document.addEventListener('click',event=>{
+    const link=event.target.closest?.('.story-card-link[href*="article.html"]');
+    if(!link)return;
+    try{
+      sessionStorage.setItem('atelier-article-origin',location.pathname+location.search+location.hash);
+      sessionStorage.setItem('atelier-article-scroll',String(window.scrollY));
+    }catch(_){}
+  },true);
+  filters.addEventListener('click',event=>{
     const button=event.target.closest('[data-filter]');
     if(!button)return;
     activeFilter=button.dataset.filter; showAll=false;
