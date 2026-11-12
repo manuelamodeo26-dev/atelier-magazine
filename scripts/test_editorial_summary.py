@@ -25,9 +25,9 @@ class EditorialSummaryTests(unittest.TestCase):
             {"Retry-After": "7"}, None,
         )
 
-        with patch.object(editorial_summary, "API_KEY", "unit-test-key"), \\
-             patch.object(editorial_summary, "MODEL", "primary-test-model"), \\
-             patch.object(editorial_summary, "urlopen", side_effect=[rate_limit, response]), \\
+        with patch.object(editorial_summary, "API_KEY", "unit-test-key"), \
+             patch.object(editorial_summary, "MODEL", "primary-test-model"), \
+             patch.object(editorial_summary, "urlopen", side_effect=[rate_limit, response]), \
              patch.object(editorial_summary.time, "sleep") as sleep:
             summary, level = editorial_summary.generate_editorial_summary(
                 {"title": "Una nuova collezione", "excerpt": "Contesto editoriale " * 40,
