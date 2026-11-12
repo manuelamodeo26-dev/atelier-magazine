@@ -36,6 +36,7 @@ content.innerHTML='<button type="button" class="like-article" data-like-article=
 document.title=(a.title||'Articolo')+' — ATELIER';
 document.querySelector('meta[name="description"]').content=(a.excerpt||a.title||'Articolo ATELIER').slice(0,155);
 document.getElementById('article-number').textContent=category.toLocaleUpperCase('it');
+document.dispatchEvent(new Event('atelier:article-rendered'));
 }
 async function init(){
 const id=new URLSearchParams(location.search).get('id');
