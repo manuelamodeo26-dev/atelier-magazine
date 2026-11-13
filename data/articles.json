@@ -1,14 +1,14 @@
 {
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
   "editorial_api_retry_after": "2026-11-13T21:38:01.357099+00:00",
-  "updated_at": "2026-11-13T05:11:21.832471+00:00",
+  "updated_at": "2026-11-13T06:12:25.311280+00:00",
   "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
     {
       "source": "vogue.it",
       "ok": true,
-      "articles": 15,
+      "articles": 6,
       "error": ""
     },
     {
@@ -51,9 +51,57 @@
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 139
+    "verified_count": 142
   },
   "articles": [
+    {
+      "id": "https://www.vogue.it/article/mangiare-kiwi-prima-di-dormire-benefici-abbassa-cortisolo-e-favorisce-relax-sonno",
+      "title": "Mangiare due kiwi prima di dormire, l'abitudine che abbassa il cortisolo",
+      "excerpt": "Mangiare due kiwi prima di dormire fa bene, favorisce il relax e migliora il sonno, perché abbassa il cortisolo e aumenta la melatonina. Lo dimostra uno studio",
+      "author": "Veronica Cristino",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-13T05:30:00+00:00",
+      "url": "https://www.vogue.it/article/mangiare-kiwi-prima-di-dormire-benefici-abbassa-cortisolo-e-favorisce-relax-sonno",
+      "image": "https://compass-media.vogue.it/photos/68e90f5a9bdb8d9fdb8bd563/16:9/w_1280,c_limit/GettyImages-1346537438.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.vogue.it/article/cenare-presto-benefici-mangiare-prima-effetti-salute-consigli",
+      "title": "Cenare presto è una scelta di salute, culturale e sociale. E sempre più persone lo fanno",
+      "excerpt": "Il fenomeno Early dinner arriva anche in Italia: vogliamo cenare presto e non fare tardi la sera. I benefici della cena alle 18-19 per salute e benessere",
+      "author": "Veronica Cristino",
+      "category": "Art & Culture",
+      "source": "vogue.it",
+      "date": "2026-11-13T05:30:00+00:00",
+      "url": "https://www.vogue.it/article/cenare-presto-benefici-mangiare-prima-effetti-salute-consigli",
+      "image": "https://compass-media.vogue.it/photos/6af5f0e3ec8520b3cfdc0674/16:9/w_1280,c_limit/GettyImages-2206953634.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.vogue.it/article/miglior-correttore-occhiaie",
+      "title": "Miglior correttore per occhiaie: come scegliere quello giusto e quali utilizzare",
+      "excerpt": "Per ogni tipologia di occhiaia esiste il correttore perfetto per coprirla. Abbiamo selezionato i migliori per ogni problema, per dimenticare per sempre stanchezza e notti brave (almeno all'apparenza)",
+      "author": "Valentina Bottoni, Beatrice Zocchi",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-13T05:30:00+00:00",
+      "url": "https://www.vogue.it/article/miglior-correttore-occhiaie",
+      "image": "https://compass-media.vogue.it/photos/6af5a3efb35f45dcfc4daaaf/16:9/w_1280,c_limit/KNWLS%20bks%20S27%20058.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
     {
       "id": "https://www.ad-italia.it/article/casa-triangolare-architetta-francese-basso-budget-autocostruzione-elizabeth-faure/",
       "title": "Una casa triangolare ideata da un’architetta francese che ci si può montare da soli senza spendere troppo",
