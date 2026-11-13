@@ -8,7 +8,7 @@ class GhostIntegrationTests(unittest.TestCase):
     def test_ghost_panel_is_inside_the_admin_area(self):
         html = (ROOT / "atelier-hub.html").read_text(encoding="utf-8")
         admin_start = html.index('id="hub-admin"')
-        admin_end = html.index("</section>", html.index('id="hub-admin"'))
+        admin_end = html.index("</div></section>", admin_start)
         admin_markup = html[admin_start:admin_end]
         self.assertIn('class="hub-ghost-panel"', admin_markup)
         for element_id in (
