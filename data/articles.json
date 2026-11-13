@@ -1,7 +1,7 @@
 {
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
   "editorial_api_retry_after": "2026-11-13T21:38:01.357099+00:00",
-  "updated_at": "2026-11-13T06:12:25.311280+00:00",
+  "updated_at": "2026-11-13T07:30:18.500360+00:00",
   "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
@@ -51,9 +51,25 @@
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 142
+    "verified_count": 143
   },
   "articles": [
+    {
+      "id": "https://www.ad-italia.it/article/maldive-nilaa-coral-island-ville-resort-vacanze/",
+      "title": "Alle Maldive apre Nilaa Coral Island: sette ville e una nuova idea di ospitalità tutta italiana",
+      "excerpt": "Privacy, dimensioni contenute e personalizzazione dell’esperienza. Apre Nilaa Coral Island, sette ville fronte oceano, servizio di personal butler e la possibilità di riservare l’intera isola.",
+      "author": "Alessandra Pellegrino",
+      "category": "Lifestyle",
+      "source": "ad-italia.it",
+      "date": "2026-11-13T06:19:51+00:00",
+      "url": "https://www.ad-italia.it/article/maldive-nilaa-coral-island-ville-resort-vacanze/",
+      "image": "https://media-assets.ad-italia.it/photos/6aeb3e6afdef53574a761d82/16:9/w_1280,c_limit/VILLA_7_NILAA_MALDIVES_25875_%C2%A9valentinasommariva_LOW.jpeg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
     {
       "id": "https://www.vogue.it/article/mangiare-kiwi-prima-di-dormire-benefici-abbassa-cortisolo-e-favorisce-relax-sonno",
       "title": "Mangiare due kiwi prima di dormire, l'abitudine che abbassa il cortisolo",
@@ -121,7 +137,7 @@
     {
       "id": "https://www.ad-italia.it/article/studio-portaluppi-milano-riapertura-restauro/",
       "title": "Lo studio Piero Portaluppi riapre grazie con la firma del pronipote del grande architetto",
-      "excerpt": "Tra riappropriazione affettiva e passaggio di testimone (ri)apre lo studio di Piero Portaluppi. Ristrutturato dal pronipote del grande architetto",
+      "excerpt": "Tra riappropriazione affettiva e passaggio di testimone (ri)apre lo studio di Piero Portaluppi. Ristrutturato dal pronipote del grande architetto.",
       "author": "Elena Dallorso",
       "category": "Design",
       "source": "ad-italia.it",
@@ -2613,24 +2629,6 @@
       "editorial_retry_after": "2026-11-13T09:20:56.494830+00:00",
       "image_attempted_at": "2026-11-12T23:50:52.799031+00:00",
       "image_retry_after": "2026-11-13T11:50:52.799031+00:00",
-      "image_width": 0,
-      "image_height": 0,
-      "image_format": ""
-    },
-    {
-      "id": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1aRHI5U1hPaXpSRUw3ZGoxWWljbDFYWlUtaDFLNFR3QUs3cEpyTjktdTRZbU9nSVJBei1DaFZfYlY4allCcWtJaUZ4YmVhU29TY29PUDg2YmpYZ21BM216ZXE4Sm9kcHU3VEdfbktFMGZtdUFxaGE4WEQwNnMyZHM?oc=5",
-      "title": "Il nuovo orologio di OMEGA e Swatch celebra il primo sbarco sulla Luna - Outpump",
-      "excerpt": "Il nuovo orologio di OMEGA e Swatch celebra il primo sbarco sulla Luna Outpump",
-      "author": "",
-      "category": "Streetwear",
-      "source": "outpump.com",
-      "date": "2026-07-16T07:00:00+00:00",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1aRHI5U1hPaXpSRUw3ZGoxWWljbDFYWlUtaDFLNFR3QUs3cEpyTjktdTRZbU9nSVJBei1DaFZfYlY4allCcWtJaUZ4YmVhU29TY29PUDg2YmpYZ21BM216ZXE4Sm9kcHU3VEdfbktFMGZtdUFxaGE4WEQwNnMyZHM?oc=5",
-      "image": "",
-      "image_verified": false,
-      "language": "it",
-      "image_attempted_at": "2026-11-13T01:23:37.759253+00:00",
-      "image_retry_after": "2026-11-13T13:23:37.759253+00:00",
       "image_width": 0,
       "image_height": 0,
       "image_format": ""
