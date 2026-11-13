@@ -1,14 +1,14 @@
 {
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
   "editorial_api_retry_after": "2026-11-13T21:38:01.357099+00:00",
-  "updated_at": "2026-11-13T12:05:48.919437+00:00",
+  "updated_at": "2026-11-13T13:23:45.343774+00:00",
   "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
     {
       "source": "vogue.it",
       "ok": true,
-      "articles": 11,
+      "articles": 12,
       "error": ""
     },
     {
@@ -54,6 +54,40 @@
     "verified_count": 164
   },
   "articles": [
+    {
+      "id": "https://www.exibart.com/mostre/in-toscana-un-circolo-si-apre-all-arte-contemporanea-mostra-cch/",
+      "title": "In Toscana, uno storico Circolo si apre all’arte contemporanea, con la mostra di CCH",
+      "excerpt": "Ha aperto negli spazi del Circolo Angiolo Cheli di San Miniato , Prova d’esistenza , il progetto espositivo di CCH , artista presentato dalla Galleria Niccoli , con un intervento site specific di Michela Nosiglia . Curata da Sabrina Drigo e Massimo Belli , la mostra è visitabile fino al 29 gennaio 2027 e inaugura una nuova stagione del Circolo, che apre i propri ambienti a una programmazione stabile dedicata all’arte contemporanea. Pensato specificamente per questo luogo, il progetto si inserisce nella quotidianità del Circolo senza interromperla, mettendo in relazione la dimensione collettiva della socialità con quella più intima della memoria individuale. Sculture, installazioni e oggetti sottratti alla loro funzione originaria costruiscono un percorso attorno a ciò che resta quando nomi, appartenenze e contesti iniziano a perdersi. Una fotografia lasciata fuori campo Il punto di partenza della mostra è una vecchia fotografia di famiglia che, significativamente, non viene esposta. Da quell’immagine nasce Prova d’esistenza , opera-manifesto del progetto: una lastra di marmo nero sulla quale CCH incide la frase «Non ho cercato una famiglia dentro una fotografia. Ho cercato il momento preciso in cui un’immagine smette di appartenere a qualcuno e diventa soltanto una prova della nostra temporanea esistenza». CCH, marmo grigio di terrasanta – Bardiglio Nero su nero, il testo emerge soltanto modificando il punto di vista e attendendo che la luce lo renda leggibile. La stessa frase compare sul poster collocato all’esterno dell’edificio, diventando una sorta di soglia per l’intera mostra. La memoria viene così affrontata non come deposito stabile, ma come qualcosa che richiede distanza, attenzione e continui aggiustamenti dello sguardo. Le opere si distribuiscono negli ambienti che un tempo costituivano il foyer del Teatro Verdi, distrutto durante la Seconda guerra mondiale, attivando un confronto diretto con la storia del luogo. Opere tra attesa, isolamento e percezione Nella Sala Chini, Waiting in the garden (2015), realizzata in ferro e cemento, entra in contrasto con la volta decorata da motivi floreali e sinuosi di matrice Liberty. Una maniglia arancione sembra s",
+      "author": "Redazione",
+      "category": "Art & Culture",
+      "source": "exibart.com",
+      "date": "2026-11-13T13:00:28+00:00",
+      "url": "https://www.exibart.com/mostre/in-toscana-un-circolo-si-apre-all-arte-contemporanea-mostra-cch/",
+      "image": "",
+      "image_verified": false,
+      "language": "it",
+      "image_attempted_at": "2026-11-13T13:23:44.708572+00:00",
+      "image_retry_after": "2026-11-14T01:23:44.708572+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
+    },
+    {
+      "id": "https://www.vogue.it/article/pina-bausch-al-teatro-alla-scala-spettacolo-danza",
+      "title": "Pina Bausch arriva al Teatro alla Scala: con lei danziamo fino all'ultimo respiro, a piedi nudi sulla terra",
+      "excerpt": "Con Pina Bausch al Teatro Alla Scala, il corpo di ballo debutta nello storico Sacre du printemps. Dietro le quinte con Josephine Ann Endicott e la prima Eletta, Benedetta Montefiore: «Una liberazione da tutù, specchi e punte per tornare alla verità del corpo».",
+      "author": "Valentina Bonelli",
+      "category": "Art & Culture",
+      "source": "vogue.it",
+      "date": "2026-11-13T12:14:28+00:00",
+      "url": "https://www.vogue.it/article/pina-bausch-al-teatro-alla-scala-spettacolo-danza",
+      "image": "https://compass-media.vogue.it/photos/6af6fdc0b087777466871253/master/pass/1%20LE%20SACRE%20DU%20PRINTEMPS%20%20ph%20Brescia%20e%20Amisano%20%C2%A9%20Teatro%20alla%20Scala%20%20(1).jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 8084,
+      "image_height": 4855,
+      "image_format": "webp"
+    },
     {
       "id": "https://www.vogue.it/article/come-indossare-foulard",
       "title": "Come indossare il foulard in 8 idee styling di tendenza nel 2026",
@@ -2954,44 +2988,6 @@
       "image_format": "jpeg",
       "editorial_attempted_at": "2026-11-12T21:21:12.652733+00:00",
       "editorial_retry_after": "2026-11-13T09:21:12.652733+00:00"
-    },
-    {
-      "id": "https://www.sneakersmagazine.it/2026/11/06/emu-australia-inaugura-una-nuova-era/",
-      "title": "EMU Australia inaugura una nuova era",
-      "excerpt": "La campagna Autunno/Inverno 2026 inaugura un nuovo capitolo per il brand, tra artigianalità, funzionalità e fashion. Protagonisti della collezione alcuni nuovi modelli, tra cui Stinger Compact, Kirra Nest e Sandrine. EMU Australia apre un nuovo capitolo della propria storia con BE MORE , la campagna dedicata alla collezione Autunno/Inverno 2026. Un progetto che rinnova l’identità del brand senza rinunciare alle proprie origini australiane, trasformando il legame con la natura, i materiali e l’artigianalità in una visione contemporanea, dove funzionalità e ricerca estetica convivono. Ispirata ai contrasti dell’Australia, tra paesaggi incontaminati, grandi città e scenari naturali, la campagna racconta un’idea di lusso legata all’autenticità e alla qualità. Al centro della narrazione una donna che attraversa ambienti e identità differenti, accompagnata dalla presenza simbolica di un emù, richiamo alle radici del marchio. Anche la palette cromatica riprende le tonalità del territorio australiano, con verdi profondi, grigi minerali e colori della terra. La collezione FW26: le novità per il mercato italiano Per la stagione Autunno/Inverno 2026, EMU Australia propone una selezione di modelli pensati per accompagnare la quotidianità, combinando comfort, calore e versatilità. Tra le principali novità spicca Stinger Compact , una reinterpretazione del classico boot EMU Australia caratterizzata da una silhouette essenziale e da un comfort avvolgente. Una proposta versatile, pensata per affrontare la stagione fredda e completare facilmente gli outfit quotidiani. Il prezzo al pubblico è di 139 euro . La selezione comprende anche Kirra Nest , disponibile a 109 euro , che punta su materiali morbidi, calore e praticità, e Sandrine , un mocassino dalla costruzione slip-on, con fodera calda e una calzata confortevole. Il modello interpreta lo stile cosy con un’estetica essenziale e femminile. Il prezzo è di 99 euro . Per il mercato italiano arriva inoltre Hayley PL , una Special Make-Up dedicata alla linea Sharky. Il modello propone una versione più pulita e lineare della Hayley, senza la caratteristica finitura teddy, mantenendo una calzata calda e confortevole. Una soluzione v",
-      "author": "admin",
-      "category": "Streetwear",
-      "source": "sneakersmagazine.it",
-      "date": "2026-11-06T14:19:58+00:00",
-      "url": "https://www.sneakersmagazine.it/2026/11/06/emu-australia-inaugura-una-nuova-era/",
-      "image": "https://www.sneakersmagazine.it/wp-content/uploads/2026/11/2026-05-Emu-Australia-W13013-Stinger-Compact-Chestnut-Front-Single-1024x596.jpg",
-      "image_verified": true,
-      "language": "it",
-      "image_width": 1024,
-      "image_height": 596,
-      "image_format": "jpeg",
-      "editorial_attempted_at": "2026-11-12T21:21:11.013282+00:00",
-      "editorial_retry_after": "2026-11-13T09:21:11.013282+00:00"
-    },
-    {
-      "id": "https://www.sneakersmagazine.it/2026/11/06/foot-locker-presenta-its-giving-le-sneaker-diventano-il-regalo-che-unisce-le-generazioni/",
-      "title": "Foot Locker presenta “IT’S GIVING”: le sneaker diventano il regalo che unisce le generazioni",
-      "excerpt": "Tradizioni natalizie, modelli iconici e nuove community creative: Foot Locker celebra il legame tra sneaker culture e festività con una nuova campagna e la Holiday Gift Guide. Il Natale è fatto di tradizioni, ricordi e piccoli rituali che si tramandano di generazione in generazione. Tra questi, per gli appassionati di sneaker, c’è anche il piacere di desiderare, scegliere e finalmente ricevere il paio di scarpe tanto atteso. È proprio da questa passione condivisa che nasce “IT’S GIVING” , la nuova campagna natalizia di Foot Locker , sviluppata attorno al concept Then. Now. Always. La campagna racconta il ruolo delle sneaker nei momenti di condivisione, attraversando epoche e generazioni con uno sguardo ironico e spontaneo. Il video mette in scena situazioni familiari e quotidiane: dalle coppie che si regalano inconsapevolmente lo stesso modello agli amici impegnati nel Secret Santa, fino agli immancabili Stripers di Foot Locker, alle prese con la ricerca della taglia perfetta tra montagne di scatole. Un racconto che celebra non soltanto le silhouette più desiderate, ma anche i ricordi e le connessioni che nascono intorno alla cultura sneaker. Come sottolineato da Slavka Jancikova, Marketing VP EMEA di Foot Locker, il brand continua da generazioni a trasformare i propri store in punti di riferimento culturali, contribuendo a creare ricordi legati al primo paio di scarpe e ai modelli diventati iconici. La Holiday Catalogue: torna il fascino della wish list Tra le iniziative della campagna trova spazio anche l’ Holiday Catalogue , un omaggio alle tradizionali liste dei desideri natalizie. Un ritorno alla carta e al piacere di cerchiare il modello preferito, lasciando indizi più o meno espliciti ad amici e familiari sul regalo da trovare sotto l’albero. Disponibile dal 1° dicembre online e nei negozi Foot Locker , il catalogo raccoglierà una selezione di sneaker e capi apparel per uomo, donna e bambino, includendo anche alcune esclusive del retailer. Tra queste spiccano le Nike Air Max Tuned 1 nelle colorazioni grigio e blu e le New Balance 740 in marrone, caratterizzate da lacci rosa a contrasto. Novità anche per gli iscritti al programma fedeltà FLX : dal 9 novemb",
-      "author": "admin",
-      "category": "Streetwear",
-      "source": "sneakersmagazine.it",
-      "date": "2026-11-06T14:03:03+00:00",
-      "url": "https://www.sneakersmagazine.it/2026/11/06/foot-locker-presenta-its-giving-le-sneaker-diventano-il-regalo-che-unisce-le-generazioni/",
-      "image": "",
-      "image_verified": false,
-      "language": "it",
-      "image_width": 0,
-      "image_height": 0,
-      "image_format": "",
-      "editorial_attempted_at": "2026-11-12T21:21:09.340448+00:00",
-      "editorial_retry_after": "2026-11-13T09:21:09.340448+00:00",
-      "image_attempted_at": "2026-11-13T12:05:46.402538+00:00",
-      "image_retry_after": "2026-11-14T00:05:46.402538+00:00"
     }
   ]
 }
