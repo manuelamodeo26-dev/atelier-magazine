@@ -1,14 +1,14 @@
 {
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
   "editorial_api_retry_after": "2026-11-13T21:38:01.357099+00:00",
-  "updated_at": "2026-11-13T09:11:40.811037+00:00",
+  "updated_at": "2026-11-13T10:12:55.196466+00:00",
   "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
     {
       "source": "vogue.it",
       "ok": true,
-      "articles": 6,
+      "articles": 7,
       "error": ""
     },
     {
@@ -51,9 +51,125 @@
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 154
+    "verified_count": 161
   },
   "articles": [
+    {
+      "id": "https://www.vogue.it/article/sfilata-ferrari-primavera-estate-2027-new-york",
+      "title": "La sfilata Ferrari a New York dà nuova forma alla velocità",
+      "excerpt": "Rosso Corsa e Nero Purosangue, ma anche Giallo Modena e l'animalier appena introdotto. Ferrari fa sfilare a New York la primavera estate 2027, a conferma che moda e motori corrono ugualmente veloci",
+      "author": "Alice Abbiadati",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-13T10:08:47+00:00",
+      "url": "https://www.vogue.it/article/sfilata-ferrari-primavera-estate-2027-new-york",
+      "image": "https://compass-media.vogue.it/photos/6af6d97c20e81e23d958d014/16:9/w_1280,c_limit/GettyImages-2304311466.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.vogue.it/bellezza/article/principessa-sissi-maschera-viso-fragole-shampoo-cognac",
+      "title": "Principessa Sissi i segreti beauty tra fragole e cognac",
+      "excerpt": "L'imperatrice d'Austria torna sul piccolo schermo con nuove, inedite, sfumature. Tra le più amate resta però la passione per i rimedi naturali di bellezza. Da replicare per capelli indistuttubili e pelle di porcellana",
+      "author": "Alice Abbiadati",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-13T10:00:00+00:00",
+      "url": "https://www.vogue.it/bellezza/article/principessa-sissi-maschera-viso-fragole-shampoo-cognac",
+      "image": "https://compass-media.vogue.it/photos/63492352ec8e0e53aa8ee052/16:9/w_1280,c_limit/GettyImages-607401792.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.vogue.it/article/chi-e-cz-guest-socialite-biografia-completa",
+      "title": "C.Z. Guest: cigno di Capote, musa di Dalí e uno stile così inconfondibile da venire celebrato in una mostra",
+      "excerpt": "La socialite, simbolo intramontabile dello stile americano, viene oggi celebrata con una mostra presentata da Max Mara allo SCAD FASH Museum of Fashion + Film di Atlanta, negli Stati Uniti",
+      "author": "Valentina Abate",
+      "category": "Art & Culture",
+      "source": "vogue.it",
+      "date": "2026-11-13T09:48:32+00:00",
+      "url": "https://www.vogue.it/article/chi-e-cz-guest-socialite-biografia-completa",
+      "image": "https://compass-media.vogue.it/photos/6af5e194e29ebc58b23c99f8/16:9/w_1280,c_limit/GettyImages-3230605.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE03Y0xRdGFmeEROeFVXSnQtekxaaGVRLUtwV2V6NE1ITUFWaVpHOEQxYmR4aXJjOXhvSlF4Q1lkb0U0UlJVTmtwajVNcmE2Zw?oc=5",
+      "title": "Un’ode alla sagra - Outpump",
+      "excerpt": "Un’ode alla sagra Outpump",
+      "author": "",
+      "category": "Streetwear",
+      "source": "outpump.com",
+      "date": "2026-11-13T09:45:00+00:00",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE03Y0xRdGFmeEROeFVXSnQtekxaaGVRLUtwV2V6NE1ITUFWaVpHOEQxYmR4aXJjOXhvSlF4Q1lkb0U0UlJVTmtwajVNcmE2Zw?oc=5",
+      "image": "",
+      "image_verified": false,
+      "language": "it",
+      "image_attempted_at": "2026-11-13T10:12:52.388761+00:00",
+      "image_retry_after": "2026-11-13T22:12:52.388761+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
+    },
+    {
+      "id": "https://www.vogue.it/article/dentro-beauty-case-editor-vogue-prodotti-must-have-autunno-inverno",
+      "title": "Dentro i beauty case delle editor di Vogue Italia: quali sono i loro prodotti must-have per affrontare l'autunno e l'inverno?",
+      "excerpt": "Dai mai più senza ai prodotti del cuore, sbirciamo nelle trousse del team beauty di Vogue Italia per scoprire gli alleati da avere sempre con sé durante la stagione fredda.",
+      "author": "Vittoria Fassola",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-13T09:21:01+00:00",
+      "url": "https://www.vogue.it/article/dentro-beauty-case-editor-vogue-prodotti-must-have-autunno-inverno",
+      "image": "https://compass-media.vogue.it/photos/6ad740332853978dbfadec6c/16:9/w_1280,c_limit/MCDTHGO_EC054.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBSVWVQQTM0bVB2NC1EZkhrc1laVkdQQXVGWFJhRTNKdW9oQl9vTUF2NlJScV9oSjhmSjNsZ0YxNnBaNkRnUGtoS3R6TUFyZkViZWpoVUdNVjVXTnZMeTl6bUcxdnZFNmp1T3JZQS1EVmo?oc=5",
+      "title": "Aimé Leon Dore e UGG sanno come sorprenderci - Outpump",
+      "excerpt": "Aimé Leon Dore e UGG sanno come sorprenderci Outpump",
+      "author": "",
+      "category": "Streetwear",
+      "source": "outpump.com",
+      "date": "2026-11-13T09:19:39+00:00",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBSVWVQQTM0bVB2NC1EZkhrc1laVkdQQXVGWFJhRTNKdW9oQl9vTUF2NlJScV9oSjhmSjNsZ0YxNnBaNkRnUGtoS3R6TUFyZkViZWpoVUdNVjVXTnZMeTl6bUcxdnZFNmp1T3JZQS1EVmo?oc=5",
+      "image": "",
+      "image_verified": false,
+      "language": "it",
+      "image_attempted_at": "2026-11-13T10:12:52.388761+00:00",
+      "image_retry_after": "2026-11-13T22:12:52.388761+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
+    },
+    {
+      "id": "https://www.pambianconews.com/2026/11/13/pavanello-macron-in-borsa-quando-varremo-almeno-un-miliardo-500538/",
+      "title": "Pavanello (Macron): “In Borsa quando varremo almeno un miliardo”",
+      "excerpt": "Macron vale oggi “sui 600-700 milioni”, secondo il suo CEO Gianluca Pavanello , e la strategia per i prossimi anni parte (anche) da qui. Intervenuto al del 31° Pambianco-PwC Fashion Summit, il manager ha indicato negli Stati Uniti il fronte su cui l’azienda bolognese punta a “crescere tantissimo” nei prossimi cinque anni. Nel frattempo allarga l’offerta alla moda con la linea Macron O.N.E , senza però correre il rischio di snaturarsi: “Lo sport deve rimanere il principale driver di crescita dell’azienda”, tiene a precisare Pavanello, forte già di una strategia che ha permesso alla Macron di crescere in modo costante da diverse stagioni. Il 2026 non sarà infatti da meno: l’anno corrente si chiuderà con ricavi intorno ai 270 milioni di euro, dopo un primo semestre archiviato a quota 17,5 milioni (+9,8%) e un 2025 chiuso con un fatturato record di 245 milioni e un ebitda di 50 milioni. Il percorso è stato interamente organico. Nata a Bologna nel 1971 come negozio di articoli sportivi, la società fatturava 10 milioni quando, nel 2004, il fondatore la cedette a un nuovo investitore e Pavanello arrivò in azienda. Da allora lo sviluppo è stato autofinanziato, con una marginalità migliorata anno dopo anno. Oggi l’80% del fatturato si concentra in Europa, che il gruppo considera il proprio mercato domestico e dove il Regno Unito è il primo paese. Gli Stati Uniti pesano tra il 5 e il 7%, ma, come anticipato, è dove convergeranno le energie negli anni a venire: “Se pensiamo alle università, ai college, alle high school, in America è un mercato enorme e crediamo di avere un ottimo fit”. Pavanello non nasconde comunque le difficoltà: “Non sarà facile perché non è che stanno aspettando noi. Si tratta di portare via quota di mercato ad altri player”. In questo contesto di crescita continua, la Borsa resta nell’orizzonte, ma con una soglia ben precisa. “Pensiamo che sia un obiettivo da mettere a terra nel momento in cui l’azienda arriva a valere almeno un miliardo, perché altrimenti non c’è quella liquidità che dà un senso al fatto di essere quotati”, ha spiegato. Non è una questione di risorse, ha precisato: “Siamo un’azienda che produce cassa, non abbiamo bisogno di raccoglie",
+      "author": "Redazione",
+      "category": "Business",
+      "source": "pambianconews.com",
+      "date": "2026-11-13T09:13:53+00:00",
+      "url": "https://www.pambianconews.com/2026/11/13/pavanello-macron-in-borsa-quando-varremo-almeno-un-miliardo-500538/",
+      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/macron-pavanello.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1920,
+      "image_height": 1080,
+      "image_format": "jpeg"
+    },
     {
       "id": "https://www.pambianconews.com/2026/11/13/norbert-stumpfl-e-il-primo-direttore-creativo-di-pal-zileri-in-7-anni-500659/",
       "title": "Norbert Stumpfl è il primo direttore creativo di Pal Zileri in 7 anni",
@@ -119,6 +235,22 @@
       "image_format": "jpeg"
     },
     {
+      "id": "https://www.pambianconews.com/2026/11/13/marangoni-style3d-srl-cina-polo-di-innovazione-tecnologica-italia-nuova-base-di-espansione-500374/",
+      "title": "Marangoni (Style3D): “Cina polo di innovazione tech”. Italia nuova base di espansione",
+      "excerpt": "Guardare alla Cina non più solo come a una potenza manifatturiera, ma come a un polo di innovazione tecnologica. È l’invito di Andrea Marangoni , general manager di Style3D Srl , intervenuto al 31° Pambianco-PwC Fashion Summit , andato in scena mercoledì scorso a Palazzo Mezzanotte, sede di Borsa Italiana. “In questo momento dobbiamo cominciare ad approcciare e valutare la Cina per l’aspetto di innovazione tecnologica”, ha spiegato il manager. Il Paese, ha ricordato, è sempre stato visto soprattutto come un grande sistema produttivo, ma ora l’approccio va cambiato “perché stanno investendo e stanno generando molti laboratori di sviluppo e di ricerca”. Style3D, ha ricordato Marangoni, nasce proprio da questo connubio, cioè dall’unione tra l’esperienza storica dei processi industriali tradizionali del fashion e l’innovazione tecnologica. Un know-how che l’azienda porta ora in Europa, al servizio delle imprese, “nel rispetto dell’identità dei brand” e con l’obiettivo di facilitare lo sviluppo e la gestione delle collezioni. Adottare queste tecnologie, ha aggiunto, permette alle aziende di dotarsi di processi innovativi che rendano il proprio lavoro il più competitivo possibile. Per il manager, la Cina va considerata un punto di riferimento anche per la portata degli investimenti e delle energie messe in campo per rispondere alle esigenze dell’industria. Sul fronte delle richieste, Marangoni ha spiegato che il mercato italiano e le aziende del lusso in particolare hanno bisogno di mantenere l’identità del brand, il fitting, lo stile e l’altissima qualità di costruzione delle collezioni. Le soluzioni integrate di intelligenza artificiale 3D e di CAD bidimensionale servono a supportarle su questi pilastri. “Siamo un team dedicato che cerca di capire le necessità delle aziende e connette la nostra R&D per allineare le nostre soluzioni a questi pilastri dei brand”, ha detto. La struttura di Style3D è sempre più worldwide e l’orizzonte è quello della quotazione in Borsa. In questo percorso l’Italia ha un ruolo preciso: nella fase di espansione, ha spiegato Marangoni, si è scelto di creare una base solida nel Paese per entrare in contatto con le aziende manifatturiere e c",
+      "author": "Redazione",
+      "category": "Business",
+      "source": "pambianconews.com",
+      "date": "2026-11-13T09:00:13+00:00",
+      "url": "https://www.pambianconews.com/2026/11/13/marangoni-style3d-srl-cina-polo-di-innovazione-tecnologica-italia-nuova-base-di-espansione-500374/",
+      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/12.-INTV.-12-ANDREA-MARANGONI-scaled.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 2560,
+      "image_height": 1440,
+      "image_format": "jpeg"
+    },
+    {
       "id": "https://www.pambianconews.com/2026/11/13/piarulli-autry-gli-stati-uniti-sono-una-delle-nostre-priorita-500486/",
       "title": "Piarulli (Autry): “Gli Stati Uniti sono una delle nostre priorità”",
       "excerpt": "Più negozi diretti e una crescita internazionale che parte dagli Stati Uniti. Sono le priorità indicate da Danilo Piarulli , CEO di Autry, a margine del 31° Pambianco-PwC Fashion Summit. Il manager è da settembre alla guida del marchio di sneaker controllato, dal 2024 da Style Capital . “L’apertura di nuovi punti vendita, e quindi lo sviluppo retail, fa parte della strategia di crescita per i prossimi 3-5 anni”, ha spiegato. “Puntare su uno sviluppo direct-to-consumer significa iniziare ad aprire con una capacità di almeno 5-10 negozi” nell’arco di questo periodo. Lo sviluppo seguirà un timing preciso a livello geografico. “Gli Stati Uniti sono una delle nostre priorità essenziali, un mercato nel quale ancora non siamo radicati e che offre grandissime opportunità”. In parallelo crescono i mercati asiatici, dove Autry ha già aperto alcuni punti vendita a Seoul e a Tokyo. L’Europa resta il mercato maturo del marchio, “su cui c’è ancora molto spazio”, mentre Medio Oriente e America Latina seguiranno “in rapida sequenza”. In un segmento competitivo come quello delle sneakers premium, secondo Piarulli, Autry si distingue su due fronti. Il primo è il prodotto, con un’azienda “assolutamente dinamica dal punto di vista dell’innovazione”, partita dalla ‘Medalist’ e arrivata rapidamente a proporre nuove silhouette, accolte molto bene dal pubblico. Il secondo è quello comunicativo ed esperienziale, su cui il marchio vuole costruire un senso di appartenenza. “La comunità deve essere il nostro punto di aggregazione fondamentale”, ha detto il manager, per favorire la partecipazione attiva alle iniziative nei negozi, sostenute da “una comunicazione digitale molto fresca” e da canali digitali “che ci permettono di distribuire molto velocemente questo senso di esperienza”.",
@@ -148,6 +280,22 @@
       "language": "it",
       "image_width": 1920,
       "image_height": 1080,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.finestresullarte.info/mostre/sedici-opere-etrusche-raccontano-influenza-civilta-sulla-scultura-arturo-martini",
+      "title": "Savona, sedici opere etrusche raccontano l’influenza della civiltà sulla scultura di Arturo Martini",
+      "excerpt": "Dal 14 novembre 2026 al 18 aprile 2027, Villa Groppallo a Vado Ligure (Savona) ospita Arturo Martini. Io sono il vero etrusco: sedici opere etrusche provenienti da musei italiani si confrontano con le sculture dell’artista, indagando una delle radici fondamentali della sua ricerca.",
+      "author": "Redazione",
+      "category": "Art & Culture",
+      "source": "finestresullarte.info",
+      "date": "2026-11-13T08:15:00+00:00",
+      "url": "https://www.finestresullarte.info/mostre/sedici-opere-etrusche-raccontano-influenza-civilta-sulla-scultura-arturo-martini",
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/arturo-martini-gessi-preparatori-per-monum-caduti-cover.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1200,
+      "image_height": 616,
       "image_format": "jpeg"
     },
     {
@@ -602,8 +750,8 @@
       "image_width": 0,
       "image_height": 0,
       "image_format": "",
-      "image_attempted_at": "2026-11-12T21:37:49.508241+00:00",
-      "image_retry_after": "2026-11-13T09:37:49.508Z"
+      "image_attempted_at": "2026-11-13T10:12:52.388761+00:00",
+      "image_retry_after": "2026-11-13T22:12:52.388761+00:00"
     },
     {
       "id": "https://www.finestresullarte.info/musei/reggia-di-colorno-nel-2027-riqualificazione-piano-da-quasi-6-milioni-di-euro",
@@ -684,8 +832,8 @@
       "image_width": 0,
       "image_height": 0,
       "image_format": "",
-      "image_attempted_at": "2026-11-12T21:37:49.508241+00:00",
-      "image_retry_after": "2026-11-13T09:37:49.508Z"
+      "image_attempted_at": "2026-11-13T10:12:52.388761+00:00",
+      "image_retry_after": "2026-11-13T22:12:52.388761+00:00"
     },
     {
       "id": "https://www.finestresullarte.info/musei/cosa-nascondono-depositi-dei-musei-in-eilia-romagna-otto-istituzioni-svelano-loro-collezioni",
@@ -750,8 +898,8 @@
       "image_width": 0,
       "image_height": 0,
       "image_format": "",
-      "image_attempted_at": "2026-11-12T21:37:49.508241+00:00",
-      "image_retry_after": "2026-11-13T09:37:49.508Z"
+      "image_attempted_at": "2026-11-13T10:12:52.388761+00:00",
+      "image_retry_after": "2026-11-13T22:12:52.388761+00:00"
     },
     {
       "id": "https://www.vogue.it/article/aceto-coreano-per-capelli-chioma-lucida-in-un-solo-lavaggio-benefici",
@@ -861,8 +1009,8 @@
       "image": "",
       "image_verified": false,
       "language": "it",
-      "image_attempted_at": "2026-11-12T21:37:49.508241+00:00",
-      "image_retry_after": "2026-11-13T09:37:49.508Z",
+      "image_attempted_at": "2026-11-13T10:12:52.388761+00:00",
+      "image_retry_after": "2026-11-13T22:12:52.388761+00:00",
       "image_width": 0,
       "image_height": 0,
       "image_format": ""
@@ -1506,8 +1654,8 @@
       "image_width": 0,
       "image_height": 0,
       "image_format": "",
-      "image_attempted_at": "2026-11-12T21:37:49.508241+00:00",
-      "image_retry_after": "2026-11-13T09:37:49.508Z"
+      "image_attempted_at": "2026-11-13T10:12:52.388761+00:00",
+      "image_retry_after": "2026-11-13T22:12:52.388761+00:00"
     },
     {
       "id": "https://www.finestresullarte.info/arte-antica/bologna-quattro-dipinti-dei-carracci-tornano-palazzo-fava-per-restauro-aperto-al-pubblico",
@@ -1860,8 +2008,8 @@
       "image_width": 0,
       "image_height": 0,
       "image_format": "",
-      "image_attempted_at": "2026-11-12T21:37:49.508241+00:00",
-      "image_retry_after": "2026-11-13T09:37:49.508Z"
+      "image_attempted_at": "2026-11-13T10:12:52.388761+00:00",
+      "image_retry_after": "2026-11-13T22:12:52.388761+00:00"
     },
     {
       "id": "https://www.exibart.com/danza/l-a-v-a-il-magma-coreografico-di-roberto-zappala-e-ick-dans-amsterdam/",
