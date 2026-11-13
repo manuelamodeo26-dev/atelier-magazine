@@ -1,14 +1,14 @@
 {
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
   "editorial_api_retry_after": "2026-11-13T21:38:01.357099+00:00",
-  "updated_at": "2026-11-13T10:12:55.196466+00:00",
+  "updated_at": "2026-11-13T11:12:19.731751+00:00",
   "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
     {
       "source": "vogue.it",
       "ok": true,
-      "articles": 7,
+      "articles": 10,
       "error": ""
     },
     {
@@ -51,9 +51,89 @@
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 161
+    "verified_count": 165
   },
   "articles": [
+    {
+      "id": "https://www.vogue.it/article/come-indossare-stivaletti-autunno-inverno-idee-outfit",
+      "title": "Come indossare gli stivaletti nell'inverno 2026: 8 outfit di tendenza",
+      "excerpt": "Dai jeans baggy alle gonne sottoveste, passando per i pantaloni sartoriali: ecco gli abbinamenti da provare per indossare gli stivaletti di tendenza nell'autunno inverno 2026 2027",
+      "author": "Augustine Hammond",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-13T11:06:09+00:00",
+      "url": "https://www.vogue.it/article/come-indossare-stivaletti-autunno-inverno-idee-outfit",
+      "image": "https://compass-media.vogue.it/photos/6af5bc8d8b02579577ccb235/16:9/w_1280,c_limit/Babbo.jpeg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.pambianconews.com/2026/11/13/i-gioielli-fanno-brillare-ancora-i-conti-di-richemont-primo-semestre-a-123-miliardi-16-500775/",
+      "title": "I gioielli fanno brillare (ancora) i conti di Richemont. Primo semestre a 12,3 miliardi (+16%)",
+      "excerpt": "Richemont chiude i sei mesi al 30 settembre 2026 col segno più. I ricavi del colosso francese sono stati pari a 12,3 miliardi di euro, in crescita del 16% a cambi correnti (+17% a cambi costanti) rispetto ai 10,6 miliardi dello stesso periodo dell’anno precedente. Il secondo trimestre ha segnato un +14% a cambi correnti (+13% a cambi costanti) a 5,9 miliardi, dopo un primo trimestre a 6,3 miliardi, in aumento del 17% (+20% a cambi costanti). Il gruppo ginevrino, a cui fanno capo tra gli altri Cartier , Van Cleef & Arpels , Buccellati , Vacheron Constantin e Alaïa , ha registrato una crescita a doppia cifra in tutte le aree geografiche, a eccezione di Medio Oriente e Africa. E a far brillare i conti di Richemont sono state ancora una volta le maison di gioielleria, che con 9,2 miliardi di ricavi (+18% a cambi correnti, +19% a cambi costanti) hanno messo a segno un risultato operativo di 3,2 miliardi, superiore all’utile operativo dell’intero gruppo. E a proposito di utile operativo, questo si è attestato a 3,1 miliardi di euro, in progressione del 33% a cambi correnti (+38% a cambi costanti), con un margine operativo del 25,5%, in aumento di 330 punti base. Il risultato include 229 milioni di euro di componenti positive una tantum legate ai dazi: al netto di queste, l’utile operativo è stato pari a 2,9 miliardi e il margine al 23,6%, con un miglioramento di 140 punti base. Il margine lordo è salito al 66,5% (+120 punti base), ma – come si legge nella nota dei conti – senza le partite straordinarie risulterebbe in calo di 70 punti base, per effetto dell’aumento dei costi delle materie prime, oro in primis, compensato in gran parte dai rialzi di prezzo e da un mix favorevole. L’utile del periodo ha raggiunto i 2,5 miliardi di euro (+39%) e l’utile per azione diluito si porta a 4,3 euro, contro i 3,08 euro dell’anno prima. Con una lente sulle aree geografiche, le Americhe sono cresciute del 23% sia a cambi correnti sia a cambi costanti, a 3,2 miliardi, con il secondo trimestre a +19%, l’undicesimo consecutivo a doppia cifra. Il Giappone, con 1,2 miliardi, è avanzato del 18% (+30% a cambi costanti) ed è il mercato più dinamico. L’Asia Pacifico ha segnato invece un +1",
+      "author": "Redazione",
+      "category": "Business",
+      "source": "pambianconews.com",
+      "date": "2026-11-13T10:43:58+00:00",
+      "url": "https://www.pambianconews.com/2026/11/13/i-gioielli-fanno-brillare-ancora-i-conti-di-richemont-primo-semestre-a-123-miliardi-16-500775/",
+      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/1_HP_Holiday_1.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1920,
+      "image_height": 1080,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.pambianconews.com/2026/11/13/gatti-bestsecret-group-in-italia-crescita-a-doppia-cifra-senza-investimenti-in-marketing-500687/",
+      "title": "Gatti (BestSecret Group): “In Italia crescita a doppia cifra, senza investimenti in marketing”",
+      "excerpt": "Una piattaforma riservata, a cui si accede solo su invito, per tutelare il valore dei marchi. È questa, secondo Chiara Eleonora Gatti , vice president luxury di BestSecret Group , la carta con cui il retailer online si distingue in un’offerta off-price sempre più affollata. “BestSecret è uno dei player leader in Europa. Il nostro posizionamento principale è essere un player discreto”, ha spiegato la manager, intervenuta al 31° Pambianco-PwC Fashion Summit. “Noi proteggiamo la brand equity dei nostri brand”. Il gruppo, che conta circa duemila persone e spedisce in 27 Paesi europei, ha chiuso il 2025 con un fatturato di oltre 1,5 miliardi e un ebitda al 14 per cento. La Germania pesa ancora poco meno della metà delle vendite. Per accedere all’assortimento serve l’invito di un cliente esistente, e ogni membro ne ha dieci a disposizione. “Se siamo chiusi, come un members club, non sai quello che succede davvero dentro se non ci sei”, ha spiegato Gatti. Non ci sono crawling del sito né listing su Google, e il prodotto si trova solo sulla piattaforma: “In un mercato online estremamente aperto, questo è un vero valore aggiunto per i nostri brand”, soprattutto sul fronte del prezzo. Partendo da un dato di fatto, cioè che “sovrapprodurre economicamente costa meno che perdere vendite”, la piattaforma si propone ai marchi come partner per smaltire l’overstock senza intaccarne l’immagine. Oltre il 70% dei brand presenti appartiene alla fascia premium e luxury, e la sovrapposizione tra i clienti BestSecret e quelli dei canali online diretti dei marchi è inferiore al 3 per cento. “Sono clienti diversi, con occasioni di acquisto diverse, e questo genera incrementalità per i nostri brand”. Una clientela molto fedele: il 10% dei top client genera il 50% delle vendite e i più assidui visitano la piattaforma più volte al giorno, interagendo con fino a 400 articoli. “È uno shopping di intrattenimento”, ha detto Gatti, paragonando l’esperienza a quella dei social media o di Netflix, sostenuta da un algoritmo di matchmaking che personalizza l’offerta. Tra i bacini su cui il gruppo punta di più c’è l’Italia, insieme alla Francia. “È un mercato ancora relativamente piccolo, ma dove ved",
+      "author": "Redazione",
+      "category": "Business",
+      "source": "pambianconews.com",
+      "date": "2026-11-13T10:37:10+00:00",
+      "url": "https://www.pambianconews.com/2026/11/13/gatti-bestsecret-group-in-italia-crescita-a-doppia-cifra-senza-investimenti-in-marketing-500687/",
+      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/gatti-bozza-con-video.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1920,
+      "image_height": 1080,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.vogue.it/article/migliori-maschere-viso-sposa",
+      "title": "Maschere viso per la sposa: quali scegliere, quando usarle",
+      "excerpt": "Le maschere viso per la sposa conquistano un posto d’onore nella skincare pre-matrimoniale e diventano protagoniste di una timeline strategica: agiscono su più fronti e restano preziose alleate fino alla vigilia delle nozze",
+      "author": "Nadine Solano",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-13T10:32:17+00:00",
+      "url": "https://www.vogue.it/article/migliori-maschere-viso-sposa",
+      "image": "https://compass-media.vogue.it/photos/695b970f6e3f78c54517f9d8/16:9/w_1280,c_limit/SophiaLeonardo_MatteoRossiFotogr.png",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1056,
+      "image_height": 594,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.vogue.it/article/valentina-callegher-made-in-piemonte-nuove-collezioni",
+      "title": "Gioielleria, vino e cioccolato: definirsi Made in Piemonte, per Valentina Callegher, significa dare forma a opere preziose che custodiscono le radici di casa",
+      "excerpt": "Come il viaggio dall’atelier di Valenza ai luoghi più familiari del Piemonte riesce a trasformarsi in un racconto prezioso, e a dare vita a tre nuove collezioni firmate dal brand",
+      "author": "Eleonora Giordani",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-13T10:15:30+00:00",
+      "url": "https://www.vogue.it/article/valentina-callegher-made-in-piemonte-nuove-collezioni",
+      "image": "https://compass-media.vogue.it/photos/6af19a745801a3eba699bd3d/16:9/w_1280,c_limit/8072026%20Valentina%20Calleghar15145.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
     {
       "id": "https://www.vogue.it/article/sfilata-ferrari-primavera-estate-2027-new-york",
       "title": "La sfilata Ferrari a New York dà nuova forma alla velocità",
@@ -2346,8 +2426,8 @@
       "image_width": 0,
       "image_height": 0,
       "image_format": "",
-      "image_attempted_at": "2026-11-12T22:57:55.504861+00:00",
-      "image_retry_after": "2026-11-13T10:57:55.504Z"
+      "image_attempted_at": "2026-11-13T11:12:17.640002+00:00",
+      "image_retry_after": "2026-11-13T23:12:17.640002+00:00"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/luisaviaroma-resta-a-lvr-nessun-rilancio-sullofferta-da-188-milioni-500187/",
@@ -2364,8 +2444,8 @@
       "image_width": 0,
       "image_height": 0,
       "image_format": "",
-      "image_attempted_at": "2026-11-12T22:57:55.504861+00:00",
-      "image_retry_after": "2026-11-13T10:57:55.504Z"
+      "image_attempted_at": "2026-11-13T11:12:17.640002+00:00",
+      "image_retry_after": "2026-11-13T23:12:17.640002+00:00"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/piazza-italia-compra-conbipel-in-arrivo-un-piano-di-opening-da-100-nuovi-negozi-500181/",
@@ -2917,45 +2997,6 @@
       "editorial_summary": "Saucony ha lanciato la sua prima collaborazione con la creativa americana Evelynn Escobar, presentando la Evelynn World x Saucony ProGrid Triumph 4. La collezione reinterpreta il concetto di “mom shoe”, trasformando una sneaker lifestyle in un omaggio ai gesti quotidiani di cura e sostegno che rafforzano le relazioni e le comunità. Ispirandosi al fenomeno della “dad shoe” nella cultura sneaker, Escobar amplia il significato del termine, rendendolo universale e dedicato a chiunque agisca come punto di riferimento per gli altri. La campagna “For Everyone Who Nurtures” mette in luce azioni spesso invisibili – dal prendersi cura della famiglia al mentore, dal supporto a un amico alla creazione di spazi accoglienti – celebrandone il valore.\n\nDal punto di vista estetico, la ProGrid Triumph 4 conserva la sua identità sportiva e lifestyle, ma aggiunge dettagli esclusivi che raccontano la partnership. La tomaia è realizzata in doppio mesh, con inserti verniciati sul tallone e linguette a doppio branding. Il pannello posteriore è ridisegnato con il logo “E” di Evelynn World, mentre i lacci rotondi bicolore e la soletta asimmetrica personalizzata offrono ulteriori segni distintivi. Il packaging comprende una scatola a cassetto con grafica all‑over dedicata, sottolineando l’aspetto culturale della collaborazione.\n\n**La ProGrid Triumph 4 di Saucony ed Evelynn Escobar celebra la cura quotidiana come nuovo simbolo di appartenenza, spostando il focus dalla performance al valore umano condiviso.** La sneaker è disponibile in taglie unisex dalla US 3.5 alla US 14, al prezzo consigliato di 190 euro, con lancio globale previsto dal 23 ottobre 2026 su Saucony.com e presso rivenditori autorizzati.",
       "editorial_level": "standard",
       "editorial_word_count": 258
-    },
-    {
-      "id": "https://www.sneakersmagazine.it/2026/10/16/saucony-x-highsnobiety-performance-e-lifestyle-si-incontrano-in-una-nuova-collaborazione/",
-      "title": "Saucony x Highsnobiety: performance e lifestyle si incontrano in una nuova collaborazione",
-      "excerpt": "Saucony e Highsnobiety tornano a collaborare con una nuova collezione che unisce innovazione tecnica e ricerca estetica. Protagoniste del progetto sono Endorphin Pro 5 e ProGrid Paramount, due silhouette che interpretano in modo diverso il rapporto tra performance sportiva e stile urbano. La collaborazione si sviluppa attraverso una palette cromatica ispirata alla transizione verso l’autunno, tra tonalità terrose, sfumature neutre, dettagli argentati e accenti di colore più audaci. Un equilibrio che riflette le due anime del progetto: da una parte la ricerca delle massime prestazioni, dall’altra un’estetica pensata per la quotidianità. Saucony Endorphin Pro 5: tecnologia al servizio della performance Pensata per le competizioni e gli allenamenti ad alta velocità, Endorphin Pro 5 si distingue per una combinazione cromatica che abbina Chocolate Brown, Doe ed Egret a dettagli argentati e tocchi di Spectra Yellow e Tomato. Sotto la tomaia, la scarpa integra la schiuma PWRRUN HG con una base in PWRRUN PB, una configurazione progettata per offrire ammortizzazione, leggerezza e reattività. La piastra scanalata in fibra di carbonio lavora insieme alla tecnologia SPEEDROLL per favorire una rullata fluida e propulsiva, mentre la suola esterna in gomma PWRTRAC contribuisce a garantire aderenza e resistenza all’usura. Una silhouette che mantiene al centro la performance, reinterpretandola attraverso il linguaggio estetico della collaborazione con Highsnobiety. Saucony ProGrid Paramount: il ritorno di una silhouette del 2007 Con ProGrid Paramount , il progetto guarda invece all’archivio del brand, riportando sotto i riflettori una silhouette originariamente lanciata nel 2007. Il modello si distingue per un approccio stilistico essenziale, che si allontana dai codici più riconoscibili di Saucony. Il tradizionale logo laterale lascia spazio a un branding discreto sul tallone e sull’etichetta della linguetta, dando vita a un design pulito e ricercato. La colorazione combina Coconut Milk, Wood Ash e Almond Oil con dettagli argentati e accenti Ombre Blue e Mars Red. A completare il progetto intervengono elementi riflettenti inseriti nelle fettucce della linguetta e del tallone, o",
-      "author": "admin",
-      "category": "Business",
-      "source": "sneakersmagazine.it",
-      "date": "2026-10-16T11:22:19+00:00",
-      "url": "https://www.sneakersmagazine.it/2026/10/16/saucony-x-highsnobiety-performance-e-lifestyle-si-incontrano-in-una-nuova-collaborazione/",
-      "image": "https://www.sneakersmagazine.it/wp-content/uploads/2026/10/saucony_beige_03-819x1024.jpg",
-      "image_verified": true,
-      "language": "it",
-      "image_width": 819,
-      "image_height": 1024,
-      "image_format": "jpeg",
-      "editorial_summary": "Saucony e Highsnobiety hanno riavviato la loro partnership con una collezione che fonde tecnologia da corsa e design urbano. La proposta si articola su due silhouette: l’Endorphin Pro 5, pensata per gare e allenamenti ad alta velocità, e il ProGrid Paramount, un ritorno a un modello del 2007 reinterpretato per la vita di tutti i giorni. La palette cromatica, ispirata alla transizione autunnale, alterna tonalità terrose, neutre e accenti argentati, creando un equilibrio tra prestazioni e stile quotidiano. La campagna di lancio, ambientata a Parigi, segue due protagonisti che percorrono strade diverse ma si incrociano ripetutamente, sottolineando la dualità tra performance e lifestyle che caratterizza la collezione.\n\nL’Endorphin Pro 5 si distingue per l’uso di schiuma PWRRUN HG e una base PWRRUN PB, che garantiscono ammortizzazione, leggerezza e reattività. La piastra scanalata in fibra di carbonio, abbinata alla tecnologia SPEEDROLL, favorisce una rullata fluida e propulsiva, mentre la suola esterna in gomma PWRTRAC assicura aderenza e resistenza all’usura. La combinazione di colori – Chocolate Brown, Doe, Egret, Spectra Yellow e Tomato – conferisce un aspetto dinamico e moderno, in linea con l’estetica Highsnobiety.\n\n**La collezione dimostra come la tecnologia da corsa possa essere tradotta in un design urbano senza compromessi sulla performance.** Il ProGrid Paramount, invece, si concentra su un design essenziale: il logo laterale è sostituito da un branding discreto sul tallone e sull’etichetta della linguetta, mentre la colorazione in Coconut Milk, Wood Ash e Almond Oil con accenti Ombre Blue e Mars Red conferisce un look pulito e raffinato. Elementi riflettenti nelle fettucce della linguetta e del tallone aggiungono un tocco di modernità, mantenendo la sneaker versatile e adatta a contesti urbani.\n\nLa campagna pubblicitaria, realizzata a Parigi, racconta la storia di Naomi Clement e Laurent Segretier che percorrono percorsi paralleli senza mai incontrarsi. Questo racconto visivo mette in evidenza la complementarità tra la velocità e la reattività dell’Endorphin Pro 5 e la versatilità quotidiana del ProGrid Paramount, evidenziando come la collezione risponda a esigenze diverse ma condivida la stessa visione estetica. La disponibilità è limitata ai siti ufficiali di Saucony e Highsnobiety, con prezzi consigliati di 270 € per l’Endorphin Pro 5 e 190 € per il ProGrid Paramount, consolidando il dialogo tra cultura sneaker, innovazione tecnica e lifestyle.",
-      "editorial_level": "approfondimento",
-      "editorial_word_count": 368
-    },
-    {
-      "id": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5PbG40c0dpYzRlUVk1OVBRak5xNThKeGd5bUdQbnItTC1NTUNiYXpPMW8yMnRWZTRPOFlrNzAyenA4czdTc2FrbVVMRmtWejdrV2lXTGg0eWVKNzQ?oc=5",
-      "title": "Outpump Magazine - Store List - Outpump",
-      "excerpt": "Outpump Magazine - Store List Outpump",
-      "author": "",
-      "category": "Streetwear",
-      "source": "outpump.com",
-      "date": "2026-09-29T12:51:08+00:00",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5PbG40c0dpYzRlUVk1OVBRak5xNThKeGd5bUdQbnItTC1NTUNiYXpPMW8yMnRWZTRPOFlrNzAyenA4czdTc2FrbVVMRmtWejdrV2lXTGg0eWVKNzQ?oc=5",
-      "image": "",
-      "image_verified": false,
-      "language": "it",
-      "editorial_attempted_at": "2026-11-12T21:20:56.494830+00:00",
-      "editorial_retry_after": "2026-11-13T09:20:56.494830+00:00",
-      "image_attempted_at": "2026-11-12T23:50:52.799031+00:00",
-      "image_retry_after": "2026-11-13T11:50:52.799031+00:00",
-      "image_width": 0,
-      "image_height": 0,
-      "image_format": ""
     }
   ]
 }
