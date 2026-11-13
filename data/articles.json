@@ -1,7 +1,7 @@
 {
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
   "editorial_api_retry_after": "2026-11-13T21:38:01.357099+00:00",
-  "updated_at": "2026-11-13T19:07:32.838215+00:00",
+  "updated_at": "2026-11-13T20:33:24.560799+00:00",
   "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
@@ -51,9 +51,25 @@
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 163
+    "verified_count": 164
   },
   "articles": [
+    {
+      "id": "https://www.vogue.it/article/regali-di-natale-per-lui-idee",
+      "title": "35 regali di Natale per lui 2025, dal nonno al fidanzato",
+      "excerpt": "Niente di più complicato che trovare un regalo al maschile. Spaziando tra moda, beauty e lifestyle, 35 proposte originali consigliate da Vogue Italia",
+      "author": "Giacomo Aricò",
+      "category": "Lifestyle",
+      "source": "vogue.it",
+      "date": "2026-11-13T19:53:04+00:00",
+      "url": "https://www.vogue.it/article/regali-di-natale-per-lui-idee",
+      "image": "https://compass-media.vogue.it/photos/6920694001f6d13452643c5a/16:9/w_1280,c_limit/TSDSATH_VC033.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
     {
       "id": "https://www.vogue.it/article/chi-e-ludovica-barbarito-attrice-intervista",
       "title": "Chi è Ludovica Barbarito, intervista alla Silvia che nella serie sugli 883 ruba il cuore di Max Pezzali (e pure il nostro)",
@@ -69,6 +85,38 @@
       "image_width": 1280,
       "image_height": 720,
       "image_format": "webp"
+    },
+    {
+      "id": "https://www.finestresullarte.info/turismo/polonia-che-non-tutti-conoscono-citta-d-arte-meno-note-nel-turismo-2027",
+      "title": "La Polonia che non tutti conoscono: le città d’arte meno note per il turismo 2027",
+      "excerpt": "Il turismo culturale polacco continua a evolversi: oltre a Varsavia, Cracovia e Danzica, la Polonia invita a scoprire città d’arte meno note, come Gdynia, il cui centro modernista è diventato il diciottesimo sito UNESCO del Paese.",
+      "author": "Redazione",
+      "category": "Art & Culture",
+      "source": "finestresullarte.info",
+      "date": "2026-11-13T18:12:28+00:00",
+      "url": "https://www.finestresullarte.info/turismo/polonia-che-non-tutti-conoscono-citta-d-arte-meno-note-nel-turismo-2027",
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/skyline-varsavia-cover.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1200,
+      "image_height": 616,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.finestresullarte.info/musei/modena-antico-ospedale-diventa-polo-culturale-di-22mila-metri-quadrati",
+      "title": "A Modena un antico ospedale diventa un polo culturale di 22mila metri quadrati",
+      "excerpt": "Dall’11 dicembre 2026 apre al pubblico AGO, il nuovo polo culturale di Modena ricavato nell’ex Ospedale Sant’Agostino. Il progetto di recupero, firmato da CRA–Carlo Ratti Associati e Italo Rota con Politecnica, ospita una mostra con oltre cento opere e un percorso permanente dedicato alla storia dell’antico Spedale.",
+      "author": "Redazione",
+      "category": "Art & Culture",
+      "source": "finestresullarte.info",
+      "date": "2026-11-13T18:12:04+00:00",
+      "url": "https://www.finestresullarte.info/musei/modena-antico-ospedale-diventa-polo-culturale-di-22mila-metri-quadrati",
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/polo-culturale-ago-cover2.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1200,
+      "image_height": 616,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.exibart.com/mercato/paris-photo-2026-imparare-a-guardare-attraverso-gli-occhi-degli-altri/",
@@ -100,6 +148,22 @@
       "language": "it",
       "image_width": 767,
       "image_height": 1024,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.exibart.com/arte-contemporanea/nedda-guidi-una-storia-da-riscrivere-nella-scultura-italiana-la-mostra-a-milano/",
+      "title": "Nedda Guidi, una storia da riscrivere nella scultura italiana: la mostra a Milano",
+      "excerpt": "Tanti sono i dimenticati nell’arte, in tutti i tempi. Articolate, complesse, finanche strutturali, sono le cause che ne hanno determinato – e ne determinano – l’oblio. Per molti di loro il processo appare irreversibile, non scalfito da singole iniziative che, seppur lodevoli, si rivelano spesso insufficienti a determinare una reale riemersione nell’interesse del pubblico. Per alcuni più di altri, però, operare nel senso della riscoperta è quanto mai necessario. Artisti di rara qualità, che la storia rischia di lasciare indietro se non opportunamente sostenuti con serie e sistematiche operazioni di studio e valorizzazione. Nedda Guidi merita di essere tra questi. È dunque operazione meritoria la nuova retrospettiva Memoria lineare che la galleria Scaramouche di Milano le dedica, riconsegnando, fino al 9 gennaio 2027, pubblica visibilità a una delle esperienze più significative nell’ambito della scultura italiana del secondo Novecento. Nedda Guidi, Memoria lineare, veduta della mostra, Scaramouche Art Gallery, Milano Una mostra ariosa, con una buona selezione di lavori e connotata da un approccio quasi installativo, che esalta la natura plastica dei lavori, consentendo di girarci intorno, di viverli. Non si potrebbe chiedere di più a uno spazio privato, che con questa esposizione sopperisce in parte a una mancanza di cui qualche istituzione pubblica dovrebbe farsi carico, per Guidi come per altri artisti. Collocata a pochi passi da Fondazione Prada, la galleria raccoglie circa 30 lavori, tra progetti, rilievi e sculture, delineando un suggestivo percorso di scoperta e rivelando l’intima coerenza con la quale l’artista si è mossa tra anni Sessanta e Novanta. Coerenza che si manifesta nella scelta delle forme e ancor più in quella del materiale. Nedda Guidi, Memoria lineare, veduta della mostra, Scaramouche Art Gallery, Milano L’esposizione riporta al centro della scena una ricerca che ha attraversato ceramica, scultura, geometria, colore e pensiero, mettendo in discussione una volta di più il confine tra arte e artigianato. Il progetto si lega, inoltre, alla storia milanese dell’artista, che già nel 1977 aveva presentato in città un nucleo significativo della propr",
+      "author": "Carmelo Cipriani",
+      "category": "Art & Culture",
+      "source": "exibart.com",
+      "date": "2026-11-13T17:30:15+00:00",
+      "url": "https://www.exibart.com/arte-contemporanea/nedda-guidi-una-storia-da-riscrivere-nella-scultura-italiana-la-mostra-a-milano/",
+      "image": "https://www.exibart.com/repository/media/2026/11/Installation-views_5.jpeg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1536,
+      "image_height": 2048,
       "image_format": "jpeg"
     },
     {
@@ -2903,72 +2967,6 @@
       "language": "it",
       "image_width": 2000,
       "image_height": 1050,
-      "image_format": "jpeg"
-    },
-    {
-      "id": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB2N19oZ05aOUJDVE84d2ZtS01hNzY3WW11WV9qVzhEMnJfSFJDcXdaU3NiRzB3dnVFSldhcDZnTFBhMkJJZ0d5ZEVneV9UQ1NIYkhjZUhmUTVONHdkdXhZNXlvYzc4S3ppWFhOT3ducXBxZUl6bFVtUUs2ZnRxVVU?oc=5",
-      "title": "Under Armour racconta le diverse sfaccettature di Tony Effe - Outpump",
-      "excerpt": "Under Armour racconta le diverse sfaccettature di Tony Effe Outpump",
-      "author": "",
-      "category": "Streetwear",
-      "source": "outpump.com",
-      "date": "2026-11-10T09:48:41+00:00",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB2N19oZ05aOUJDVE84d2ZtS01hNzY3WW11WV9qVzhEMnJfSFJDcXdaU3NiRzB3dnVFSldhcDZnTFBhMkJJZ0d5ZEVneV9UQ1NIYkhjZUhmUTVONHdkdXhZNXlvYzc4S3ppWFhOT3ducXBxZUl6bFVtUUs2ZnRxVVU?oc=5",
-      "image": "",
-      "image_verified": false,
-      "language": "it",
-      "image_attempted_at": "2026-11-13T12:05:46.402538+00:00",
-      "image_retry_after": "2026-11-14T00:05:46.402538+00:00",
-      "image_width": 0,
-      "image_height": 0,
-      "image_format": ""
-    },
-    {
-      "id": "https://www.pambianconews.com/2026/11/10/verga-1947-un-anno-da-protagonista-tra-alta-orologeria-e-nuovi-traguardi-498797/",
-      "title": "Verga 1947, un anno da protagonista tra alta orologeria e nuovi traguardi",
-      "excerpt": "Lo storico rivenditore milanese di orologi di lusso stima una conclusione del 2026 con ricavi in crescita e margini in aumento. L’AD Fabrizio Noris traccia il bilancio della ‘Watch Art Grand Exhibition’ di Patek Philippe e guarda con serenità al prossimo decennio. Per Verga 1947 il 2026 si può considerare un anno intenso e ricco di traguardi, tra la ‘Watch Art Grand Exhibition’ di Patek Philippe e conti in crescita. Lo racconta Fabrizio Noris , amministratore delegato dello storico rivenditore milanese di orologi di lusso, alla vigilia degli 80 anni di attività dell’azienda. L’AD Fabrizio Noris (©Antinori) Nello specifico, l’esposizione milanese della maison ginevrina, appena conclusa, è stata l’edizione più partecipata di sempre, con oltre 68mila ingressi. Ha superato anche quella di Tokyo, “una città con una popolazione sette volte maggiore di Milano”, sottolinea Noris, che fa i suoi complimenti a Patek Philippe. “Noi ne eravamo già convinti, e credo che la maison ne abbia avuto conferma: i collezionisti italiani restano un punto di riferimento per l’alta orologeria mondiale”. Significativa la presenza di appassionati internazionali, arrivati da Europa, Asia e America. Le creazioni esposte, pezzi unici lavorati a mano, hanno attirato sia i collezionisti più vicini alla maison sia appassionati e curiosi al primo contatto con il brand. “La scelta di aprire ogni edizione al pubblico gratuitamente fa bene a tutto il mercato, non solo a noi concessionari – osserva l’AD –. Alimenta la passione per l’orologeria in generale”. Come concessionario e gestore del monomarca Patek Philippe in città, “abbiamo sentito una responsabilità ancora maggiore nell’accompagnare i nostri clienti”, spiega Noris. Il rivenditore ha quindi presidiato la mostra per tutti i sedici giorni. Federico Verga , responsabile della boutique, è stato presente quotidianamente, affiancato da almeno quattro persone del team, dal marketing al commerciale, per le visite guidate. Pranzi e cene riservati hanno inoltre permesso ai clienti più importanti di incontrare il management italiano e svizzero della maison: “Per un collezionista di questo livello, poter parlare con il presidente Thierry Stern e gli a",
-      "author": "PambiancoNews",
-      "category": "Fashion",
-      "source": "pambianconews.com",
-      "date": "2026-11-10T08:30:15+00:00",
-      "url": "https://www.pambianconews.com/2026/11/10/verga-1947-un-anno-da-protagonista-tra-alta-orologeria-e-nuovi-traguardi-498797/",
-      "image": "https://www.pambianconews.com/wp-content/uploads/2026/10/DD_8451-HDR.jpg",
-      "image_verified": true,
-      "language": "it",
-      "image_width": 2000,
-      "image_height": 1334,
-      "image_format": "jpeg"
-    },
-    {
-      "id": "https://www.pambianconews.com/2026/11/10/wivian-factory-padova-ampliare-mappa-strategica-498031/",
-      "title": "Wivian’s Factory sceglie Padova per ampliare la propria mappa strategica",
-      "excerpt": "La società di rappresentanza e distribuzione ha inaugurato un nuovo spazio nel padovano. Gestito con Gianni Dalla Mora, senior partner per l’area, il progetto è costruito sulla condivisione di valori e scommette sulle nuove generazioni. Wivian’s Factory allarga i propri confini e fa del Triveneto il secondo pilastro della sua strategia territoriale. La società di rappresentanza e distribuzione nella fashion industry fondata e guidata da Wivian Bodini , oggi affiancato dalla seconda generazione, i figli Mattia e Alessia Margherita , ha inaugurato la propria sede veneta a Vigonza, nella prima cintura urbana di Padova: 2.500 metri quadri di proprietà, acquistati e completamente ristrutturati con richiami cromatici alle strutture milanesi, a cui si aggiunge un parcheggio da circa 30 posti auto. Lo spazio è gestito in partnership con Gianni Dalla Mora , senior partner di Wivian’s Factory, che porta in dote quarant’anni di esperienza nel mercato del Triveneto e oltre. Wivian Bodini e Gianni Dalla Mora L’operazione si inserisce nel percorso di crescita di un gruppo che ha chiuso il 2025 con un fatturato consolidato di 152 milioni di euro, in aumento del 4,8% sull’anno precedente, e che conta quasi cento professionisti. Un modello che affianca alla vendita un’attività di consulenza strategica per brand e negozi, dalla pianificazione territoriale al monitoraggio di sell-in e sell-out, fino all’assistenza post-vendita. “Come Milano è il nostro punto di riferimento per il Nord-Ovest, Padova lo è per il Triveneto”, spiega a Pambianconews Wivian Bodini, founder e CEO. “Il futuro della nostra realtà non poteva limitarsi al Nord-Ovest e alla Sardegna: doveva avere un respiro più ampio, quantomeno a livello di Nord Italia. Siamo convinti che il mercato tenderà sempre più a organizzarsi in tre grandi aree, Nord, Centro e Sud, e vogliamo garantire alla nostra struttura e a tutti i nostri partner una visione di respiro nazionale”. Il progetto nasce nel 2022 e si consolida nell’estate del 2025, con la conclusione dei lavori nella nuova sede. Prima ancora del luogo, la scelta decisiva è stata quella del partner. “La priorità era trovare una persona allineata con le nostre visioni e ",
-      "author": "PambiancoNews",
-      "category": "Business",
-      "source": "pambianconews.com",
-      "date": "2026-11-10T08:15:44+00:00",
-      "url": "https://www.pambianconews.com/2026/11/10/wivian-factory-padova-ampliare-mappa-strategica-498031/",
-      "image": "https://www.pambianconews.com/wp-content/uploads/2026/10/Wivians_Factory_Sede_Padova_6-e1793089468546.jpg",
-      "image_verified": true,
-      "language": "it",
-      "image_width": 2000,
-      "image_height": 1017,
-      "image_format": "jpeg"
-    },
-    {
-      "id": "https://www.pambianconews.com/2026/11/10/partnership-mango-coin-dopo-catania-aperto-uno-store-a-roma-500121/",
-      "title": "Partnership Mango-Coin, dopo Catania aperto uno store a Roma",
-      "excerpt": "Mango porta a Roma la partnership con Coin . Dopo Catania, il colosso spagnolo ha aperto un nuovo store da 1.000 metri quadrati all’interno del Coin di piazzale Appio, nel quartiere San Giovanni. Lo spazio ospita le collezioni uomo e donna, segue il concept retail ‘New Med’ e fa parte dell’accordo annunciato lo scorso 3 giugno. L’intesa prevede 22 store tra 400 e 1.000 metri quadrati in altrettante location della catena italiana, da aprire entro la fine del 2027, “tutti concepiti come veri e propri negozi Mango”, sottolinea una nota. Con Roma, il marchio supera i dieci punti vendita nel Lazio. Per Coin, l’alleanza con Mango è uno dei tasselli del rilancio. In parallelo, la catena – secondo quanto comunicato lo scorso giugno – ha chiuso un aumento di capitale fino a 30 milioni di euro . Sono due operazioni del piano industriale con cui punta a trasformare il proprio modello di business e a diventare una piattaforma per brand internazionali. La nuova apertura di Mango – Coin a Roma Entro fine anno toccherà quindi ad altre dieci location Coin circa, tra cui Firenze, Bari e Milano. Sommate alle 20 aperture già in calendario in Italia, porteranno il bilancio del 2026 a quasi 30 nuovi negozi. Nel 2027 la partnership salirà al nord, con Genova, Como e Trieste, e rafforzerà la presenza del brand in Sicilia e Sardegna. Lo sviluppo della rete rientra nel piano strategico 4Es 2024-2026, che punta sull’espansione e sulla crescita delle vendite nei negozi esistenti e online. Nel 2025 Mango ha fatturato 3,8 miliardi di euro, in crescita del 13% (+16% a cambi costanti). Nel primo semestre 2026 i ricavi si sono attestati a 1,852 miliardi, in aumento del 7,2% (+10,7% a cambi costanti). Lo scorso anno il giro d’affari italiano è salito del 30%, con oltre 20 nuove aperture e circa 6.700 metri quadrati di superficie in più. Presente nel nostro Paese dal 2001, il gruppo festeggia quest’anno i 25 anni sul mercato. Ha chiuso il 2025 con 120 punti vendita, per oltre 40mila metri quadrati, a cui si aggiungono l’e-commerce mango.com e altri marketplace.",
-      "author": "Redazione",
-      "category": "Business",
-      "source": "pambianconews.com",
-      "date": "2026-11-10T08:04:31+00:00",
-      "url": "https://www.pambianconews.com/2026/11/10/partnership-mango-coin-dopo-catania-aperto-uno-store-a-roma-500121/",
-      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/MANGO-COIN-Roma-San-Giovanni-.jpeg",
-      "image_verified": true,
-      "language": "it",
-      "image_width": 1086,
-      "image_height": 913,
       "image_format": "jpeg"
     }
   ]
