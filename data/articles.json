@@ -1,7 +1,7 @@
 {
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
   "editorial_api_retry_after": "2026-11-13T21:38:01.357099+00:00",
-  "updated_at": "2026-11-13T17:59:55.844374+00:00",
+  "updated_at": "2026-11-13T19:07:32.838215+00:00",
   "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
@@ -51,9 +51,25 @@
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 162
+    "verified_count": 163
   },
   "articles": [
+    {
+      "id": "https://www.vogue.it/article/chi-e-ludovica-barbarito-attrice-intervista",
+      "title": "Chi è Ludovica Barbarito, intervista alla Silvia che nella serie sugli 883 ruba il cuore di Max Pezzali (e pure il nostro)",
+      "excerpt": "Classe 2002, la giovane attrice ravennate interpreta Silvia, la ragazza protagonista della serie che, rapendo il cuore di Max Pezzali, ha ispirato le prime canzoni degli 883",
+      "author": "Giacomo Aricò",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-13T18:42:02+00:00",
+      "url": "https://www.vogue.it/article/chi-e-ludovica-barbarito-attrice-intervista",
+      "image": "https://compass-media.vogue.it/photos/6af75898239184d219ad0f1a/16:9/w_1280,c_limit/Ludovica%20Barbarito.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
     {
       "id": "https://www.exibart.com/mercato/paris-photo-2026-imparare-a-guardare-attraverso-gli-occhi-degli-altri/",
       "title": "Paris Photo 2026: imparare a guardare attraverso gli occhi degli altri",
@@ -2954,24 +2970,6 @@
       "image_width": 1086,
       "image_height": 913,
       "image_format": "jpeg"
-    },
-    {
-      "id": "https://news.google.com/rss/articles/CBMibkFVX3lxTFA1aXIxTVJwVndrM0l0QlNXbWVlcHpyMEhEVkJPOEYwTHB6QUFKdUdZOXJqT01UWWp3Uk5MbS1oWG5FaDYzWFY1LTNsLXRoeHJvSU5vZFVPcFBxbGQ4ZmstZjdHWmNjcW53ZW5TaGhB?oc=5",
-      "title": "Il ritorno della collaborazione tra adidas e Rick Owens - Outpump",
-      "excerpt": "Il ritorno della collaborazione tra adidas e Rick Owens Outpump",
-      "author": "",
-      "category": "Business",
-      "source": "outpump.com",
-      "date": "2026-11-10T08:03:20+00:00",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFA1aXIxTVJwVndrM0l0QlNXbWVlcHpyMEhEVkJPOEYwTHB6QUFKdUdZOXJqT01UWWp3Uk5MbS1oWG5FaDYzWFY1LTNsLXRoeHJvSU5vZFVPcFBxbGQ4ZmstZjdHWmNjcW53ZW5TaGhB?oc=5",
-      "image": "",
-      "image_verified": false,
-      "language": "it",
-      "image_attempted_at": "2026-11-13T12:05:46.402538+00:00",
-      "image_retry_after": "2026-11-14T00:05:46.402538+00:00",
-      "image_width": 0,
-      "image_height": 0,
-      "image_format": ""
     }
   ]
 }
