@@ -1,7 +1,7 @@
 {
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
   "editorial_api_retry_after": "2026-11-14T22:25:23.162378+00:00",
-  "updated_at": "2026-11-13T22:25:23.947586+00:00",
+  "updated_at": "2026-11-13T23:23:09.907386+00:00",
   "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
@@ -2900,8 +2900,8 @@
       "image_width": 0,
       "image_height": 0,
       "image_format": "",
-      "image_attempted_at": "2026-11-13T11:12:17.640002+00:00",
-      "image_retry_after": "2026-11-13T23:12:17.640002+00:00"
+      "image_attempted_at": "2026-11-13T23:23:08.159963+00:00",
+      "image_retry_after": "2026-11-14T11:23:08.159963+00:00"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/luisaviaroma-resta-a-lvr-nessun-rilancio-sullofferta-da-188-milioni-500187/",
@@ -2918,8 +2918,8 @@
       "image_width": 0,
       "image_height": 0,
       "image_format": "",
-      "image_attempted_at": "2026-11-13T11:12:17.640002+00:00",
-      "image_retry_after": "2026-11-13T23:12:17.640002+00:00"
+      "image_attempted_at": "2026-11-13T23:23:08.159963+00:00",
+      "image_retry_after": "2026-11-14T11:23:08.159963+00:00"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/piazza-italia-compra-conbipel-in-arrivo-un-piano-di-opening-da-100-nuovi-negozi-500181/",
