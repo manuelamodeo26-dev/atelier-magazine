@@ -1,7 +1,7 @@
 {
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
   "editorial_api_retry_after": "2026-11-13T21:38:01.357099+00:00",
-  "updated_at": "2026-11-13T20:33:24.560799+00:00",
+  "updated_at": "2026-11-13T21:30:03.292487+00:00",
   "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
@@ -54,6 +54,22 @@
     "verified_count": 164
   },
   "articles": [
+    {
+      "id": "https://www.exibart.com/musei/un-ospedale-di-250-anni-si-trasforma-a-modena-apre-ago-nuovo-spazio-per-la-cultura/",
+      "title": "Un ospedale di 250 anni si trasforma: a Modena apre AGO, nuovo spazio per la cultura",
+      "excerpt": "L’11 dicembre 2026 apre al pubblico AGO , il nuovo polo culturale di Modena che prende forma negli spazi dell’ex Ospedale Sant’Agostino, complesso monumentale settecentesco destinato per oltre due secoli e mezzo alla cura e all’assistenza. Promosso da Fondazione di Modena , il progetto restituisce alla città una parte significativa del suo patrimonio architettonico, trasformandola in un luogo di incontro tra arte, scienza, storia, ricerca e innovazione. La prima apertura interessa circa 10mila metri quadrati, mentre il completamento dell’intero intervento porterà la superficie del complesso a circa 22mila metri quadrati. L’intervento architettonico è firmato da CRA–Carlo Ratti Associati e Italo Rota , con Politecnica Building for Humans , e si inserisce in un più ampio progetto di rigenerazione urbana e culturale. L’obiettivo è costruire un’infrastruttura pubblica capace di mettere in relazione le diverse istituzioni e collezioni del territorio, superando la tradizionale separazione tra discipline e ambiti della conoscenza. Ferruccio Sorgato, Piazza Sant’Agostino con la porta omonima. A destra l’ospedale Sant’Agostino e a sinistra il palazzo dei musei (nato come albergo dei poveri). Doppi binari per tram a cavalli, 1911, Fondazione Ago – Fondazione di Modena, Fondo Resta Non si tratta – nelle intenzioni del progetto – di un museo inteso come contenitore di raccolte distinte, né di una semplice successione di spazi espositivi, ma piuttosto di uno spazio che mira a costruire un sistema di relazioni tra patrimoni artistici, testimonianze storiche, collezioni scientifiche, ricerca universitaria e linguaggi contemporanei, correndo parallelo anche alle premesse legate alla storia di Modena, città attraversata dalla via Emilia e da sempre interessata da scambi di persone, merci e idee. Il il nuovo polo si propone dunque di rendere maggiormente accessibili risorse culturali già presenti sul territorio, favorendo il dialogo tra istituzioni e pubblici differenti. «Col progetto AGO restituiamo a Modena un patrimonio architettonico straordinario e investiamo nella capacità della città di produrre cultura, conoscenza e nuove opportunità per le generazioni future», ha spiegat",
+      "author": "redazione",
+      "category": "Art & Culture",
+      "source": "exibart.com",
+      "date": "2026-11-13T21:00:00+00:00",
+      "url": "https://www.exibart.com/musei/un-ospedale-di-250-anni-si-trasforma-a-modena-apre-ago-nuovo-spazio-per-la-cultura/",
+      "image": "https://www.exibart.com/repository/media/2026/11/FT0000055545-1024x732.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1024,
+      "image_height": 732,
+      "image_format": "jpeg"
+    },
     {
       "id": "https://www.vogue.it/article/regali-di-natale-per-lui-idee",
       "title": "35 regali di Natale per lui 2025, dal nonno al fidanzato",
@@ -2951,22 +2967,6 @@
       "language": "it",
       "image_width": 1590,
       "image_height": 822,
-      "image_format": "jpeg"
-    },
-    {
-      "id": "https://www.pambianconews.com/2026/11/10/subdued-da-apac-e-usa-previsti-45-milioni-di-fatturato-nel-2026-500171/",
-      "title": "Subdued, da Apac e Usa previsti 45 milioni di fatturato nel 2026",
-      "excerpt": "Subdued spinge sull’internazionalizzazione, con Asia-Pacific e Stati Uniti come direttrici di crescita. Osit Impresa , la società romana che controlla il marchio teen fashion, prevede infatti nell’area Apac un fatturato di circa 30 milioni di euro per l’esercizio 2026, con un ebitda positivo che segna una tappa nel consolidamento della redditività delle attività asiatiche. Per gli Stati Uniti, indicati come la prima priorità geografica dell’espansione , il giro d’affari atteso quest’anno è invece di circa 15 milioni. Nell’Asia-Pacific, il brand ha accelerato negli ultimi 24 mesi con una presenza diretta in Cina, Hong Kong e Corea del Sud e in partnership in Thailandia, Singapore, Indonesia e Malesia. Il progetto integra negozi fisici ed e-commerce e adatta il modello alle specificità dei singoli Paesi. Si sviluppa anche grazie alla collaborazione con Nuo , holding di investimento milanese guidata da Tommaso Paoli , entrata nel capitale di Subdued con il 30% nel 2024. Dopo le aperture di Shanghai nel 2024 e di Guangzhou e Hong Kong nel 2025 , nel 2026 è arrivato il pop-up store di Shenzhen. In Corea del Sud il pop-up di Seoul, inaugurato a inizio anno, è stato trasformato in punto vendita permanente dopo soli quattro mesi. Entro il 2027 sono previste cinque nuove aperture: due a Hong Kong, la prima a Pechino, una in Corea del Sud e il debutto a Tokyo. Nel Sud-Est asiatico, più nello specifico in Thailandia , sono stati aperti in partnership due negozi a Bangkok, che si aggiungono a quello di Pattaya inaugurato nel 2025. A Singapore è invece stato aperto il secondo store, dopo il primo di inizio 2026. Entro fine anno è atteso il debutto di Subdued in Indonesia con un negozio a Bali, mentre per il 2027 sono previste aperture a Giacarta e Kuala Lumpur. Sul fronte americano, il percorso ha portato alle prime due aperture a New York, a Roosevelt Field e Broadway . Dal 24 ottobre si è aggiunto anche un nuovo punto vendita nel Flatiron District, sulla Fifth Avenue. Entro fine 2026 sono attese due aperture a Miami, ad Aventura Mall e Lincoln Road, mentre per il 2027 il piano include due nuovi store in California. A sostegno della rete fisica, il brand sta accelerando anc",
-      "author": "Redazione",
-      "category": "Business",
-      "source": "pambianconews.com",
-      "date": "2026-11-10T09:49:44+00:00",
-      "url": "https://www.pambianconews.com/2026/11/10/subdued-da-apac-e-usa-previsti-45-milioni-di-fatturato-nel-2026-500171/",
-      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/Subdued_Store-Flatiron-New-York-e1794301344832.jpg",
-      "image_verified": true,
-      "language": "it",
-      "image_width": 2000,
-      "image_height": 1050,
       "image_format": "jpeg"
     }
   ]
