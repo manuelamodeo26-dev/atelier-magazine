@@ -2,7 +2,9 @@ import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "https://manuelamodeo26-dev.github.io",
-  "Access-Control-Allow-Headers": "authorization, apikey, content-type",
+  "Access-Control-Allow-Headers": "authorization, apikey, content-type, x-client-info, x-supabase-api-version",
+  "Access-Control-Max-Age": "86400",
+  "Vary": "Origin",
   "Access-Control-Allow-Methods": "POST, OPTIONS",
   "Content-Type": "application/json; charset=utf-8",
 };
@@ -10,7 +12,7 @@ const json = (status: number, body: Record<string, unknown>) =>
   new Response(JSON.stringify(body), { status, headers: corsHeaders });
 
 Deno.serve(async (req: Request) => {
-  if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
+  if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: corsHeaders });
   if (req.method !== "POST") return json(405, { error: "Metodo non consentito." });
 
   const supabaseUrl = Deno.env.get("SUPABASE_URL");
@@ -35,11 +37,17 @@ Deno.serve(async (req: Request) => {
     setup_required: true,
   });
 
-  const length = Number(req.headers.get("content-length") || 0);
-  if (length > 20000) return json(413, { error: "Richiesta troppo grande." });
-  let input: { task?: string; content?: string; context?: string };
-  try { input = await req.json(); } catch { return json(400, { error: "JSON non valido." }); }
-
+  let rawBody = "";
+  try { rawBody = await req.text(); } catch { return json(400, { error: "Corpo della richiesta non leggibile." }); }
+  if (new TextEncoder().encode(rawBody).byteLength > 20000) {
+    return json(413, { error: "Richiesta troppo grande." });
+  }
+  let parsed: unknown;
+  try { parsed = JSON.parse(rawBody); } catch { return json(400, { error: "JSON non valido." }); }
+  if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+    return json(400, { error: "Formato della richiesta non valido." });
+  }
+  const input = parsed as { task?: unknown; content?: unknown; context?: unknown };
   const task = typeof input.task === "string" ? input.task : "";
   const content = typeof input.content === "string" ? input.content : "";
   const context = typeof input.context === "string" ? input.context : "";
