@@ -1,14 +1,14 @@
 {
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
   "editorial_api_retry_after": "2026-11-13T21:38:01.357099+00:00",
-  "updated_at": "2026-11-13T11:12:19.731751+00:00",
+  "updated_at": "2026-11-13T12:05:48.919437+00:00",
   "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
     {
       "source": "vogue.it",
       "ok": true,
-      "articles": 10,
+      "articles": 11,
       "error": ""
     },
     {
@@ -51,9 +51,59 @@
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 165
+    "verified_count": 164
   },
   "articles": [
+    {
+      "id": "https://www.vogue.it/article/come-indossare-foulard",
+      "title": "Come indossare il foulard in 8 idee styling di tendenza nel 2026",
+      "excerpt": "Non 1 ma 8 modi su come indossare il foulard: annodato al collo, per decorare i capelli o per proteggersi dal vento, ma moda reinventa l'accessorio più classico",
+      "author": "Selene Oliva",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-13T11:45:16+00:00",
+      "url": "https://www.vogue.it/article/come-indossare-foulard",
+      "image": "https://compass-media.vogue.it/photos/6af6de29d5bb4a160d70e3bd/16:9/w_1280,c_limit/come%20indossare%20foulard%20GettyImages-2256267443.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.vogue.it/article/collezione-louis-vuitton-keith-haring-storia-maison-e-artista",
+      "title": "Louis Vuitton e Keith Haring: la collezione della Maison che parte da una lunga storia d'amore",
+      "excerpt": "La scoperta di una valigia Louis Vuitton degli anni Trenta, dipinta a mano dall’artista nel 1984, ha rivelato il legame tra Haring e la Maison",
+      "author": "Giulio Solfrizzi",
+      "category": "Art & Culture",
+      "source": "vogue.it",
+      "date": "2026-11-13T11:18:55+00:00",
+      "url": "https://www.vogue.it/article/collezione-louis-vuitton-keith-haring-storia-maison-e-artista",
+      "image": "https://compass-media.vogue.it/photos/6af6e745fe5a477a47e49cf6/16:9/w_1280,c_limit/LOUIS%20VUITTON%20THE%20KEITH%20HARING%20COLLECTION%20-%20DIGITAL%20CAMPAIGN%20-%206.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.pambianconews.com/2026/11/13/hugo-boss-il-ceo-grieder-lascia-nominato-lex-frasers-david-epstein-500822/",
+      "title": "Hugo Boss, il CEO Grieder lascia. Nominato l’ex Frasers David Epstein",
+      "excerpt": "Parte ufficialmente l’era di Hugo Boss sotto Frasers Group . Dopo aver assunto il controllo di maggioranza della società in ottobre , aumentando la propria partecipazione oltre il 50%, ora la casa di moda ha comunicato che il CEO Daniel Grieder si dimetterà dalla carica e lascerà l’azienda “su sua richiesta”, dal 31 dicembre. Al suo posto è stato nominato David Epstein , che assumerà il ruolo di CEO dal primo gennaio 2027. Si tratta di un avvicendamento strategico perché Epstein arriva in Hugo Boss direttamente da Frasers Group, dove ha ricoperto il ruolo di chief brand partnerships officer dal 2024, supervisionando le partnership con i brand nei settori sport, premium e luxury. Con l’avanzata di Frasers Group, che aveva lanciato anche un’Opa poi non andata in porto, sono stati diversi gli avvicendamenti in seno al marchio tedesco. A ottobre è stata la volta di Stephan Sturm , che ha lasciato la presidenza del consiglio di sorveglianza. Inoltre, come ricorda Reuters , il direttore finanziario Yves Müller ha lasciato l’azienda ed è stato sostituito da Ivica Maric a ottobre, mentre il direttore vendite Oliver Timm è in procinto di andarsene alla fine di novembre. Da quando ha assunto l’incarico nel giugno 2021, Daniel Grieder ha guidato la trasformazione di Hugo Boss secondo la strategia ‘Claim 5’, ricorda l’azienda. Il rilancio ha puntato verso un pubblico più giovane e ampio. Parallelamente a questi cambiamenti, ha potenziato la propria rete di distribuzione e di partner e ha creato una piattaforma omnicanale che collega i negozi fisici con il business digitale.",
+      "author": "Redazione",
+      "category": "Business",
+      "source": "pambianconews.com",
+      "date": "2026-11-13T11:17:00+00:00",
+      "url": "https://www.pambianconews.com/2026/11/13/hugo-boss-il-ceo-grieder-lascia-nominato-lex-frasers-david-epstein-500822/",
+      "image": "",
+      "image_verified": false,
+      "language": "it",
+      "image_attempted_at": "2026-11-13T12:05:46.402538+00:00",
+      "image_retry_after": "2026-11-14T00:05:46.402538+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
+    },
     {
       "id": "https://www.vogue.it/article/come-indossare-stivaletti-autunno-inverno-idee-outfit",
       "title": "Come indossare gli stivaletti nell'inverno 2026: 8 outfit di tendenza",
@@ -2523,8 +2573,8 @@
       "image": "",
       "image_verified": false,
       "language": "it",
-      "image_attempted_at": "2026-11-12T23:50:52.799031+00:00",
-      "image_retry_after": "2026-11-13T11:50:52.799031+00:00",
+      "image_attempted_at": "2026-11-13T12:05:46.402538+00:00",
+      "image_retry_after": "2026-11-14T00:05:46.402538+00:00",
       "image_width": 0,
       "image_height": 0,
       "image_format": ""
@@ -2589,8 +2639,8 @@
       "image": "",
       "image_verified": false,
       "language": "it",
-      "image_attempted_at": "2026-11-12T23:50:52.799031+00:00",
-      "image_retry_after": "2026-11-13T11:50:52.799031+00:00",
+      "image_attempted_at": "2026-11-13T12:05:46.402538+00:00",
+      "image_retry_after": "2026-11-14T00:05:46.402538+00:00",
       "image_width": 0,
       "image_height": 0,
       "image_format": ""
@@ -2808,8 +2858,8 @@
       "language": "it",
       "editorial_attempted_at": "2026-11-12T21:37:53.249795+00:00",
       "editorial_retry_after": "2026-11-13T09:37:53.249795+00:00",
-      "image_attempted_at": "2026-11-12T23:50:52.799031+00:00",
-      "image_retry_after": "2026-11-13T11:50:52.799031+00:00",
+      "image_attempted_at": "2026-11-13T12:05:46.402538+00:00",
+      "image_retry_after": "2026-11-14T00:05:46.402538+00:00",
       "image_width": 0,
       "image_height": 0,
       "image_format": ""
@@ -2940,63 +2990,8 @@
       "image_format": "",
       "editorial_attempted_at": "2026-11-12T21:21:09.340448+00:00",
       "editorial_retry_after": "2026-11-13T09:21:09.340448+00:00",
-      "image_attempted_at": "2026-11-12T23:50:52.799031+00:00",
-      "image_retry_after": "2026-11-13T11:50:52.799031+00:00"
-    },
-    {
-      "id": "https://www.sneakersmagazine.it/2026/10/29/expo-riva-schuh-e-gardabags-il-mercato-di-calzature-e-borse-cambia-volto/",
-      "title": "Expo Riva Schuh e Gardabags: il mercato di calzature e borse cambia volto",
-      "excerpt": "La produzione mondiale di calzature si mantiene stabile a 24,6 miliardi di paia, mentre il prezzo medio delle esportazioni italiane di calzature in pelle supera i 100 dollari per paio. Intanto, la Cambogia supera la Cina nelle esportazioni verso gli Stati Uniti. Il mercato internazionale delle calzature e delle borse sta attraversando una fase di trasformazione, caratterizzata da nuovi equilibri produttivi, un aumento dei prezzi e una crescente polarizzazione del settore. A delineare questo scenario sono i dati relativi alla produzione globale e ai flussi commerciali, che evidenziano cambiamenti significativi nelle dinamiche dell’industria. La produzione mondiale di calzature rimane sostanzialmente stabile, attestandosi a 24,6 miliardi di paia. Parallelamente, il prezzo medio delle esportazioni italiane di calzature in pelle supera la soglia dei 100 dollari per paio, confermando il peso del valore aggiunto e del posizionamento qualitativo nel comparto. Sul fronte internazionale, emerge anche il cambiamento degli equilibri produttivi: la Cambogia ha superato la Cina nelle esportazioni di calzature verso gli Stati Uniti, segnalando una progressiva evoluzione delle strategie di approvvigionamento e delle catene globali di fornitura. In un contesto sempre più complesso, comprendere queste dinamiche diventa fondamentale per le aziende che operano nel settore. Expo Riva Schuh e Gardabags si confermano piattaforme di riferimento per interpretare i cambiamenti dei mercati internazionali, individuare nuove opportunità commerciali e anticipare le tendenze che influenzeranno il futuro dell’industria. I dati offrono quindi una chiave di lettura importante per comprendere un mercato in cui la competizione non si gioca soltanto sui volumi, ma sempre più sulla capacità di adattarsi ai cambiamenti, valorizzare il prodotto e intercettare le nuove esigenze della distribuzione. L'articolo Expo Riva Schuh e Gardabags: il mercato di calzature e borse cambia volto proviene da Sneakers Magazine .",
-      "author": "admin",
-      "category": "Streetwear",
-      "source": "sneakersmagazine.it",
-      "date": "2026-10-29T14:17:00+00:00",
-      "url": "https://www.sneakersmagazine.it/2026/10/29/expo-riva-schuh-e-gardabags-il-mercato-di-calzature-e-borse-cambia-volto/",
-      "image": "https://www.sneakersmagazine.it/wp-content/uploads/2026/10/Expo-Riva-Schuh-Around-the-World_Chengdu-1024x768.jpg",
-      "image_verified": true,
-      "language": "it",
-      "image_width": 1024,
-      "image_height": 768,
-      "image_format": "jpeg",
-      "editorial_attempted_at": "2026-11-12T21:21:07.688899+00:00",
-      "editorial_retry_after": "2026-11-13T09:21:07.688899+00:00"
-    },
-    {
-      "id": "https://www.sneakersmagazine.it/2026/10/26/new-balance-presenta-la-made-in-usa-990v7/",
-      "title": "New Balance presenta la Made in USA 990v7",
-      "excerpt": "Dopo oltre quarant’anni di storia, la 990 inaugura un nuovo capitolo con la settima generazione. La New Balance Made in USA 990v7 rinnova il design originale attraverso proporzioni aggiornate, materiali premium e una versione più morbida della tecnologia FuelCell. Ci sono sneaker capaci di superare le tendenze e trasformarsi in autentiche icone culturali. La New Balance 990 è una di queste. Nata come scarpa da running premium, nel corso degli anni ha conquistato un posto di rilievo nella sneaker culture, diventando un punto di riferimento per atleti, creativi e appassionati di stile. Oggi il brand presenta la Made in USA 990v7 , settima generazione di un modello che continua a evolversi senza rinunciare alla propria identità. Lanciata nel 1982 dopo quattro anni di ricerca e sviluppo, la 990 ha ridefinito gli standard del running premium, diventando la prima scarpa da corsa a superare il prezzo di 100 dollari. Da allora, ogni nuova versione ha rappresentato un equilibrio tra innovazione e rispetto dell’heritage, aggiornando tecnologie e costruzione senza perdere i tratti distintivi che hanno reso celebre la silhouette. Con la 990v7, New Balance prosegue questo percorso attraverso una filosofia progettuale che il brand definisce «memories from the future» : un approccio che combina elementi familiari e soluzioni contemporanee per reinterpretare un classico in chiave attuale. Le proporzioni, le sovrapposizioni dei materiali e la costruzione sono state riviste per dare vita a una silhouette più slanciata ed essenziale, mantenendo il carattere che contraddistingue la famiglia 990. «L’emblema della qualità e della maestria artigianale, la 990v7 è stata evoluta, aggiornata e reinterpretata con attenzione per il consumatore di oggi», afferma Chris Davis, Brand President e Chief Marketing Officer di New Balance. Il dirigente sottolinea inoltre come il modello abbia superato da tempo la propria funzione originaria, conquistando pubblici diversi grazie alla combinazione di autenticità, praticità e qualità duratura. Materiali premium e tecnologia FuelCell Realizzata negli Stati Uniti, la New Balance Made in USA 990v7 combina una tomaia in suede di pelle di maiale e mesh tra",
-      "author": "admin",
-      "category": "Streetwear",
-      "source": "sneakersmagazine.it",
-      "date": "2026-10-26T15:13:39+00:00",
-      "url": "https://www.sneakersmagazine.it/2026/10/26/new-balance-presenta-la-made-in-usa-990v7/",
-      "image": "https://www.sneakersmagazine.it/wp-content/uploads/2026/10/4-1024x544.png",
-      "image_verified": true,
-      "language": "it",
-      "image_width": 1024,
-      "image_height": 544,
-      "image_format": "png",
-      "editorial_attempted_at": "2026-11-12T21:21:06.050090+00:00",
-      "editorial_retry_after": "2026-11-13T09:21:06.050090+00:00"
-    },
-    {
-      "id": "https://www.sneakersmagazine.it/2026/10/26/saucony-x-evelynn-escobar-una-nuova-idea-di-mom-shoe-prende-forma-nella-progrid-triumph-4/",
-      "title": "Saucony x Evelynn Escobar: una nuova idea di «mom shoe» prende forma nella ProGrid Triumph 4",
-      "excerpt": "La prima collaborazione tra il brand e la creativa americana reinterpreta il concetto di «mom shoe», trasformando una sneaker lifestyle in un omaggio ai piccoli gesti quotidiani che costruiscono relazioni e rafforzano le comunità. Saucony ed Evelynn Escobar presentano la Evelynn World x Saucony ProGrid Triumph 4 , una collaborazione che mette al centro il valore della cura, del sostegno reciproco e del senso di appartenenza. Direttrice creativa multidisciplinare, scrittrice e fondatrice di Hike Clerb, Escobar rilegge una delle silhouette lifestyle più riconoscibili del brand attraverso una nuova prospettiva: quella della «mom shoe». Ispirandosi al successo della cosiddetta «dad shoe» nella sneaker culture, la creativa amplia il concetto, superando gli stereotipi legati ai ruoli familiari. La mom shoe diventa così un simbolo universale, dedicato a chiunque si prenda cura degli altri, contribuisca alla loro crescita e rappresenti un punto di riferimento nella vita quotidiana L’idea prende forma nella campagna «For Everyone Who Nurtures» , che sposta l’attenzione dai tradizionali simboli di successo ai gesti spesso invisibili che tengono unite le persone. Prendersi cura della propria famiglia, sostenere un amico, fare da mentore o creare spazi in cui gli altri possano sentirsi accolti: sono queste le azioni che la collaborazione vuole celebrare, riconoscendo loro il valore che meritano. Il progetto si inserisce nel percorso creativo di Evelynn Escobar, da sempre attenta ai temi dell’identità, dell’inclusione e della solidarietà. Nel 2017 ha fondato Hike Clerb, organizzazione non profit e piattaforma culturale che promuove la rappresentazione e il senso di appartenenza delle donne nere, indigene e di altre comunità razzializzate nelle attività all’aperto. La collaborazione con Saucony estende questa visione al mondo delle sneaker, intrecciando design, storytelling e cultura contemporanea. Dal punto di vista estetico, la ProGrid Triumph 4 mantiene la propria identità sportiva e lifestyle, arricchendosi di dettagli esclusivi che raccontano la collaborazione. La sneaker presenta una tomaia in doppio mesh , inserti verniciati sul tallone e linguette con doppio branding.",
-      "author": "admin",
-      "category": "Streetwear",
-      "source": "sneakersmagazine.it",
-      "date": "2026-10-26T14:57:02+00:00",
-      "url": "https://www.sneakersmagazine.it/2026/10/26/saucony-x-evelynn-escobar-una-nuova-idea-di-mom-shoe-prende-forma-nella-progrid-triumph-4/",
-      "image": "https://www.sneakersmagazine.it/wp-content/uploads/2026/10/S102153-1001_2-1024x1024.jpg",
-      "image_verified": true,
-      "language": "it",
-      "image_width": 1024,
-      "image_height": 1024,
-      "image_format": "jpeg",
-      "editorial_summary": "Saucony ha lanciato la sua prima collaborazione con la creativa americana Evelynn Escobar, presentando la Evelynn World x Saucony ProGrid Triumph 4. La collezione reinterpreta il concetto di “mom shoe”, trasformando una sneaker lifestyle in un omaggio ai gesti quotidiani di cura e sostegno che rafforzano le relazioni e le comunità. Ispirandosi al fenomeno della “dad shoe” nella cultura sneaker, Escobar amplia il significato del termine, rendendolo universale e dedicato a chiunque agisca come punto di riferimento per gli altri. La campagna “For Everyone Who Nurtures” mette in luce azioni spesso invisibili – dal prendersi cura della famiglia al mentore, dal supporto a un amico alla creazione di spazi accoglienti – celebrandone il valore.\n\nDal punto di vista estetico, la ProGrid Triumph 4 conserva la sua identità sportiva e lifestyle, ma aggiunge dettagli esclusivi che raccontano la partnership. La tomaia è realizzata in doppio mesh, con inserti verniciati sul tallone e linguette a doppio branding. Il pannello posteriore è ridisegnato con il logo “E” di Evelynn World, mentre i lacci rotondi bicolore e la soletta asimmetrica personalizzata offrono ulteriori segni distintivi. Il packaging comprende una scatola a cassetto con grafica all‑over dedicata, sottolineando l’aspetto culturale della collaborazione.\n\n**La ProGrid Triumph 4 di Saucony ed Evelynn Escobar celebra la cura quotidiana come nuovo simbolo di appartenenza, spostando il focus dalla performance al valore umano condiviso.** La sneaker è disponibile in taglie unisex dalla US 3.5 alla US 14, al prezzo consigliato di 190 euro, con lancio globale previsto dal 23 ottobre 2026 su Saucony.com e presso rivenditori autorizzati.",
-      "editorial_level": "standard",
-      "editorial_word_count": 258
+      "image_attempted_at": "2026-11-13T12:05:46.402538+00:00",
+      "image_retry_after": "2026-11-14T00:05:46.402538+00:00"
     }
   ]
 }
