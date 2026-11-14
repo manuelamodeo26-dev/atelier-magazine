@@ -2,7 +2,7 @@
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
   "editorial_api_retry_after": "2026-11-15T00:05:44.859508+00:00",
   "archive_status": "maintenance",
-  "updated_at": "2026-11-14T13:08:34.698063+00:00",
+  "updated_at": "2026-11-14T18:58:01.720298+00:00",
   "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
@@ -52,9 +52,169 @@
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 74
+    "verified_count": 86
   },
   "articles": [
+    {
+      "id": "https://www.exibart.com/mercato/van-ham-mette-in-vendita-cinque-secoli-di-pittura-tra-capolavori-e-riscoperte/",
+      "title": "Van Ham mette in vendita cinque secoli di pittura, tra capolavori e riscoperte",
+      "excerpt": "Non è soltanto una questione di nomi, ma di storie attributive, passaggi collezionistici e opere che tornano a interrogare la storia dell’arte. L’asta autunnale di Van Ham , in programma il 20 novembre, si costruisce attorno a una selezione che attraversa cinque secoli di pittura europea, mettendo in dialogo maestri antichi, paesaggisti ottocenteschi e protagonisti del primo Novecento. Tra i protagonisti spicca la Madonna con Bambino di Dosso Dossi , databile intorno al 1516, in cui il velo bianco retto dalla Vergine assume un significato che va oltre la scena della Natività, anticipando simbolicamente il sudario della Passione. Un dipinto di grande suggestione, nel quale la sensibilità luministica dell’artista ferrarese incontra suggestioni raffaellesche e veneziane. Non meno interessante è il raro Paesaggio di villaggio in inverno di Joos de Momper , già appartenuto alla collezione di Herbert Girardet e rimasto esposto alla Gemäldegalerie di Berlino dal 1998 al 2026. La raccolta Girardet, dedicata soprattutto alla pittura olandese e fiamminga del Seicento, porta in asta anche opere di Philips Wouwerman, Jan van Goyen e Cornelis van Poelenburch. Joos de Momper (1564–1635) Paesaggio di villaggio in inverno Olio su tavola | 46 × 75 cm Stima: € 70.000–120.000 Tra le riscoperte più significative, da Van Ham, figura Cristo in cammino verso Emmaus di Herri met de Bles : una tavola ovale riconosciuta come originale dallo specialista Luc Serck, impreziosita da una particolarità costruttiva insolita, ovvero la cornice lignea ricavata dallo stesso blocco di legno del dipinto. A catturare l’attenzione degli studiosi è anche Coppia elegante in visita ai pastori di Michiel Sweerts , databile intorno al 1650. Individuata nel contesto della mostra monografica dedicata all’artista all’Accademia Nazionale di San Luca tra il 2024 e il 2025, la tela è stata riconosciuta come prototipo di un gruppo di repliche, assumendo così un ruolo importante nella ricostruzione del catalogo del pittore. Herri met de Bles (ca. 1510–dopo il 1560) Cristo in cammino verso Emmaus Olio su tavola | Formato ovale, 26,5 cm Stima: € 70.000–100.000 Il percorso di Van Ham prosegue nell’Ottocento con la mo",
+      "author": "Stefano Boltraffio",
+      "category": "Art & Culture",
+      "source": "exibart.com",
+      "date": "2026-11-14T18:32:05+00:00",
+      "url": "https://www.exibart.com/mercato/van-ham-mette-in-vendita-cinque-secoli-di-pittura-tra-capolavori-e-riscoperte/",
+      "image": "https://www.exibart.com/repository/media/2026/11/500198-2-1024x618.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1024,
+      "image_height": 618,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.exibart.com/attualita/lia-puo-diventare-una-specie-compagna-la-tesi-di-w-j-t-mitchell/",
+      "title": "L’IA può diventare una specie compagna: la tesi di W. J. T. Mitchell",
+      "excerpt": "Sono sempre più preoccupanti le voci che escono dai laboratori dell’intelligenza artificiale: dalle proteste contro l’impiego militare a Gaza delle tecnologie di Google e DeepMind (i cui dipendenti denunciano una deriva «Tech for Apartheid» e persino un possibile coinvolgimento nella kill chain , il processo di selezione e distruzione degli obiettivi umani) fino al timore che entro la fine del decennio l’I.A. possa «Ucciderci tutti», come ha dichiarato il ricercatore di Anthropic Jacob Coxon , rassegnando le dimissioni. Ciononostante il futuro dell’intelligenza artificiale sembra tutt’altro che scontato, soprattutto se si allarga lo sguardo oltre l’irriducibile antropocentrismo dell’uomo moderno. È quello che prova a fare in questa intervista W. J. T. Mitchell, pioniere dei visual studies e autore del fondamentale Cosa vogliono le immagini?, che già vent’anni fa metteva al centro del dibattito una forma di agency dell’immagine: una capacità di agire in modo autonomo, una “quasi soggettività” dell’icona che oltrepassa il suo contenuto e la stessa intenzione dell’autore. Un’idea che oggi si rivela preziosa nel pensare fino in fondo una possibile agency dell’inorganico (a voler scomodare Perniola ) e dell’intelligenza artificiale. Jean-Léon Gérôme, Pigmalione e Galatea, 1890 «Abbiamo sempre parlato agli oggetti inanimati, e loro ci hanno sempre parlato di rimando», spiega Mitchell. Artefatti visuali e oggetti mediali sono, oggi più che mai, oggetti transizionali per adulti, ponti tra la psiche umana e la realtà esterna. L’adulto, come il bambino, sa (o forse sapeva) che un’immagine è solo una rappresentazione e mai la realtà, eppure lascia a schermi e icone pop un enorme potere reale. Secondo Mitchell, l’I.A. e l’I-Bot (da lui definito come «La macchina che dice “Io”») rappresentano il punto di arrivo di questa funzione: l’oggetto transizionale invade letteralmente la vita adulta e la società, offrendo rassicurazione continua e dipendenza emotiva. Per lo studioso, l’I.A. “parla” con noi come hanno fatto le bambole, gli dei, forse gli alieni. Ma cosa accadrebbe se, invece di restare uno strumento di propaganda, sorveglianza e dominio nelle mani di pochi, l’I.A. dive",
+      "author": "Alessandro Paolo Lombardo",
+      "category": "Technology",
+      "source": "exibart.com",
+      "date": "2026-11-14T18:00:03+00:00",
+      "url": "https://www.exibart.com/attualita/lia-puo-diventare-una-specie-compagna-la-tesi-di-w-j-t-mitchell/",
+      "image": "https://www.exibart.com/repository/media/2026/11/Pygmalion_and_Galatea_MET_DT1969.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 2938,
+      "image_height": 3722,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.exibart.com/mostre/desiderio-ed-eccedenza-la-digestione-come-processo-artistico-in-una-mostra-a-venezia/",
+      "title": "Desiderio ed eccedenza: la digestione come processo artistico in una mostra a Venezia",
+      "excerpt": "As if Se salissi correndo Le scale del mio intestino L’amore penzolante dal soffitto Sarai vivo o sarai morto? […] Impresse sul muro con una matita, all’ingresso della mostra TROPPA , a Venezia, le parole di Dora Fiammetta Perini sembrano provenire da un sogno febbrile, da una concatenazione di immagini e associazioni imprevedibili, cortocircuiti anatomici e derive affettive. Si sale dentro un intestino, si inciampa nell’amore e si precipita nell’esperienza della morte. La logica è quella di un corpo che ha smesso di rispettare le proprie coordinate, in cui gli organi diventano architetture, i sentimenti oggetti sospesi e lo spazio una prosecuzione viscerale della materia organica. Prima ancora di mostrarsi, TROPPA introduce così il visitatore in un immaginario intestinale, dove il confine tra interno ed esterno, organismo e ambiente, nutrimento e scarto comincia a disfarsi. TROPPA, Dora Fiammetta Perini, SPARC – Spazio Arte Contemporanea, Venezia, foto Nico Covre Districata tra gli spazi domestici dello SPARC* – Spazio Arte Contemporanea di Venezia , la mostra TROPPA di Dora Fiammetta Perini, curata da Luca Berta e Francesca Giubilei , interroga il rapporto tra il corpo, il consumo alimentare e le logiche di eccesso che attraversano la contemporaneità. Lo spazio espositivo si trasforma così in un epicentro di riflessione sulla digestione, intesa come processo tanto biologico quanto culturale. Il processo digestivo diviene una lente artistica e biopolitica attraverso cui Perini indaga il rapporto tra corpo e sistema economico, assimilazione e rigetto, eccedenza e residuo: un modello di trasformazione della materia che incorpora ed espelle, un’attività insieme generativa e distruttrice. In questa prospettiva, l’artista irrompe nello spazio con un assemblage metabolico e organico, composto da media e tecniche differenti che sconfinano costantemente le une nelle altre, dando forma a una geografia intuitiva in cui la materia sembra obbedire a una logica altra. Il digestivo diviene poetico: la pratica installativa di Perini sembra ingerire frammenti della realtà, scomporli dalla propria identità originaria e metabolizzarli in una nuova forma. È lo spazio espositivo s",
+      "author": "Niccolò Freri",
+      "category": "Art & Culture",
+      "source": "exibart.com",
+      "date": "2026-11-14T17:30:27+00:00",
+      "url": "https://www.exibart.com/mostre/desiderio-ed-eccedenza-la-digestione-come-processo-artistico-in-una-mostra-a-venezia/",
+      "image": "https://www.exibart.com/repository/media/2026/11/48_TROPPA-Dora-Fiammetta-Perini_SPARC-Spazio-Arte-Contemporanea-Venezia_foto-Nico-Covre-768x1024.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 768,
+      "image_height": 1024,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.vogue.it/article/come-abbinare-jeans-e-scarpe-animalier-outfit",
+      "title": "Come abbinare jeans e scarpe animalier, la combo più cool e facile dell'autunno 2026",
+      "excerpt": "Basta un dettaglio particolare per elevare anche il look più basic. Ecco 5 abbinamenti street style di tendenza da copiare per l'autunno inverno 2026 2027",
+      "author": "Emma Bocchi",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-14T17:30:00+00:00",
+      "url": "https://www.vogue.it/article/come-abbinare-jeans-e-scarpe-animalier-outfit",
+      "image": "https://compass-media.vogue.it/photos/6af6f5ada74d801fe35e7ca8/16:9/w_1280,c_limit/58FBC21F-20C4-4294-A14C-B4B359E3167B.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.exibart.com/arte-antica/giorgio-gandini-nove-dipinti-per-ricostruire-le-vicende-di-un-artista-dimenticato/",
+      "title": "Giorgio Gandini, nove dipinti per ricostruire le vicende di un artista dimenticato",
+      "excerpt": "Nel 1854, davanti a una piccola Madonna con il Bambino e due angeli che una collezione londinese esibiva come Correggio , Gustav Friedrich Waagen annotò che il colore, caldo e trasparente, era certo all’altezza del maestro, ma che la testa della Vergine era disegnata con troppa approssimazione per essere sua. Lo studioso tedesco, al quale David Ekserdjian riconosce una memoria visiva «da elefante», propose il nome di Giorgio Gandini e invitò i lettori a cercarne i quadri a Parma . L’indicazione restò inascoltata: solo nel 1970 Konrad Oberhuber , che ignorava quelle pagine, arrivò per altra via alla stessa conclusione, avviando la ricostruzione del catalogo del pittore. Non era un caso isolato. Gandini non firmò mai i suoi dipinti, Vasari non lo nomina e l’unica grande commissione che ricevette non andò oltre i disegni preparatori, così che le sue opere finirono una dopo l’altra sotto nomi più illustri. Il Riposo durante la fuga in Egitto oggi a Helsinki apparteneva a Joshua Reynolds , che a quanto pare lo teneva costantemente sul cavalletto, e nel 1795 andò all’asta da Christie’s come Correggio. Anche sui disegni, tra Sei e Settecento, collezionisti e proprietari hanno lasciato dieci antiche attribuzioni: sette rimandano a Correggio, due a Parmigianino e una, inaspettatamente, a Tiziano . Giorgio Gandini Del Grano, Madonna con il Bambino e i santi Giuseppe, Geminiano e Michele arcangelo che sconfigge il demonio e salva le anime, circa 1530, olio su tavola centinata, cm 251 x 151, Parma, Galleria Nazionale, Complesso monumentale della Pilotta La mostra , curata da Stefano L’Occaso e Denis Ton con la collaborazione di Stefania Girometti , nasce dall’acquisto nel 2024 di La Città di Parma presentata alla Vergine e riunisce nella Galleria Nazionale nove dei dieci dipinti oggi assegnati al pittore. Alle opere parmensi, raccolte per l’occasione in un’unica sala, si affiancano i prestiti di Palazzo Pitti, dell’Accademia Albertina di Torino, del museo Sinebrychoff di Helsinki e di collezioni private inglesi, insieme a una selezione di disegni giunti dal Louvre, dagli Uffizi, dall’Albertina di Vienna e dalle Gallerie dell’Accademia di Venezia. Le ricerche d’archivio di C",
+      "author": "Francesca Grignaffini",
+      "category": "Art & Culture",
+      "source": "exibart.com",
+      "date": "2026-11-14T17:00:02+00:00",
+      "url": "https://www.exibart.com/arte-antica/giorgio-gandini-nove-dipinti-per-ricostruire-le-vicende-di-un-artista-dimenticato/",
+      "image": "https://www.exibart.com/repository/media/2026/11/01_Giorgio-Gandini-del-Grano.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 2400,
+      "image_height": 4016,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.exibart.com/arte-contemporanea/la-pittura-di-joseph-yaeger-e-le-immagini-senza-memoria-la-prima-mostra-istituzionale-in-italia/",
+      "title": "La pittura misteriosa di Joseph Yaeger e le immagini senza memoria",
+      "excerpt": "Che cosa rimane di un’immagine quando viene separata dalla storia che l’ha prodotta? Nei dipinti di Joseph Yaeger il frammento visivo conserva l’apparenza della testimonianza, pur avendo perduto le coordinate necessarie a verificarla. Volti, gesti e situazioni affiorano da una narrazione inaccessibile, come tracce di una memoria dalla provenienza incerta. Point of Return è una delle cinque mostre inaugurate dalla Fondazione Sandretto Re Rebaudengo, in corso fino al 28 marzo 2027. Il programma riunisce i progetti di Andrea Bowers , Nan Goldin , Aziza Kadyri e Louis Morlæ , attraversando temi quali le lotte sociali e femministe, la memoria autobiografica, il rapporto tra immagine e realtà, le identità e le trasformazioni tecnologiche. La personale di Yaeger indaga la precarietà delle immagini e il loro rapporto con la costruzione della memoria. Joseph Yaeger, Point of Return. Ph Sebastiano Pellion di Persano Nato a Helena, nel Montana, nel 1986, e residente a Londra, Yaeger presenta la sua prima mostra personale in un’istituzione italiana, riunendo opere di anni diversi e nuove produzioni. Le immagini provengono da film, documentari e video trovati. Attraverso il ritaglio e l’isolamento dell’inquadratura, l’artista interrompe la continuità del racconto e concentra l’attenzione su un istante. La fonte rimane riconoscibile, mentre il significato si sottrae alla ricostruzione: ciò che appare familiare acquista una qualità perturbante. Il riferimento al punctum di Roland Barthes aiuta a comprendere questa esperienza: quel dettaglio che ferisce lo sguardo e suscita una reazione intima, eccedendo la lettura razionale dell’immagine. In The underside of how (2025), una donna reclina la testa e porta un oggetto sottile verso la bocca; il gesto, separato dal suo prima e dal suo dopo, oscilla tra intimità e inquietudine. In Blind sight is description (2025), un contagocce accostato alla zona inferiore dell’occhio introduce una tensione tra percezione e intervento sul corpo. In My determinant (2024), il volto femminile capovolto disorienta i consueti riferimenti dell’identificazione. Le figure sembrano custodire qualcosa che lo sguardo intuisce senza riuscire a decifrare. Jos",
+      "author": "Margherita Artoni",
+      "category": "Art & Culture",
+      "source": "exibart.com",
+      "date": "2026-11-14T16:00:54+00:00",
+      "url": "https://www.exibart.com/arte-contemporanea/la-pittura-di-joseph-yaeger-e-le-immagini-senza-memoria-la-prima-mostra-istituzionale-in-italia/",
+      "image": "https://www.exibart.com/repository/media/2026/11/0G7A3131-1024x682.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1024,
+      "image_height": 682,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.exibart.com/arte-contemporanea/mario-carlo-iusi-appartamenti-segreti-doria-pamphilj-roma-mito/",
+      "title": "Negli Appartamenti Segreti Doria Pamphilj a Roma il mito rispecchia le inquietudini del presente",
+      "excerpt": "Il peccato di Atteone non fu desiderare Diana, ma averla vista. E forse il vero scandalo del mito ovidiano risiede proprio qui: nella sproporzione tra conoscenza e castigo. Con Exitus , progetto in mostra negli Appartamenti Segreti Doria Pamphilj di Roma fino al 13 dicembre 2026, Mario Carlo Iusi trasforma la vicenda narrata nelle Metamorfosi in un’indagine sul potere dello sguardo, sulla responsabilità della conoscenza e sulla violenza implicita in ogni trasformazione. Curata da Cristian Moriconi , con un testo critico di Caterina Pacenti , la mostra prende avvio dal dipinto ottocentesco Diana e Atteone di Filippo Vittori , conservato nella volta del Bagno di Diana, per svilupparsi attraverso cinque ambienti del palazzo. Disegni, installazioni, oggetti e dispositivi luminosi costruiscono una drammaturgia nella quale il mito smette di appartenere all’antichità e diventa una questione contemporanea. Roma, Palazzo Doria Pamphilj, Appartamenti Segreti. Veduta dell’allestimento della mostra EXITUS di Mario Carlo Iusi, a cura di Cristian Moriconi. Foto: Giorgio Benni Dalla teoria Semeion , una grammatica del tempo elaborata a partire da un seme di zucca, alle ventuno frecce che interrogano il rapporto tra destino e tecnologia, fino all’installazione conclusiva nel Bagno di Diana, dove l’acqua si tinge di rosso, Iusi sembra suggerire che ogni conoscenza comporti una perdita d’innocenza. E che la morte, prima ancora di essere una fine, possa rappresentare l’ultima, irreversibile trasformazione. Ne abbiamo parlato con l’artista , attraversando alcune delle contraddizioni più affascinanti della sua ricerca. Per Bataille, la trasgressione non abolisce il divieto, ma lo completa. Nel mito di Atteone, chi è davvero colpevole: chi guarda, chi si mostra o chi decide ciò che non deve essere visto? «Ovidio su questo è sorprendentemente chiaro: “ Fortunae crimen in illo, non scelus invenies; quod enim scelus error habebat? ”. In Atteone c’è una colpa della sorte, non un delitto. Diana si stava facendo un bagno con le sue ninfe, certa che nessuno potesse vederla; Atteone era a caccia con i suoi cani e vi si imbatte per errore. Non c’era alcuna volontà di guardare un corpo nudo, t",
+      "author": "Davide Oliviero",
+      "category": "Art & Culture",
+      "source": "exibart.com",
+      "date": "2026-11-14T15:00:03+00:00",
+      "url": "https://www.exibart.com/arte-contemporanea/mario-carlo-iusi-appartamenti-segreti-doria-pamphilj-roma-mito/",
+      "image": "https://www.exibart.com/repository/media/2026/11/GBE2402-1024x682.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1024,
+      "image_height": 682,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.finestresullarte.info/attualita/reggia-di-caserta-cerca-mecenati-per-restaurare-ritratto-di-elisabetta-farnese",
+      "title": "La Reggia di Caserta cerca mecenati per restaurare il ritratto di Elisabetta Farnese",
+      "excerpt": "Con un investimento di 10mila euro, il museo avvia una raccolta fondi attraverso l’Art Bonus per il restauro del dipinto del 1714, attribuito alla bottega di Giovanni Maria Delle Piane. L’intervento sarà realizzato negli Appartamenti Reali con un cantiere aperto ai visitatori.",
+      "author": "Redazione",
+      "category": "Art & Culture",
+      "source": "finestresullarte.info",
+      "date": "2026-11-14T14:31:22+00:00",
+      "url": "https://www.finestresullarte.info/attualita/reggia-di-caserta-cerca-mecenati-per-restaurare-ritratto-di-elisabetta-farnese",
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/ritratto-di-elisabetta-farnese-molinaretto-2.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1200,
+      "image_height": 616,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.exibart.com/fotografia/1240418/",
+      "title": "EXPOSED 2027, a Torino la fotografia racconta la bellezza dell’alterità",
+      "excerpt": "Dal rapporto tra bellezza e alterità alle trasformazioni dell’immagine nell’epoca dell’intelligenza artificiale. Dal 15 aprile al 6 giugno 2027 torna EXPOSED Torino Photo Festival che, per la sua quarta edizione, sceglie come titolo La bella e la bestia . Curato e realizzato da CAMERA Torino, sotto la direzione artistica di Walter Guadagnini , il festival è stato presentato all’Istituto Italiano di Cultura di Parigi, nell’ambito di Paris Photo 2026 , e coinvolgerà una ventina di sedi tra spazi espositivi torinesi indoor e outdoor, concentrando gran parte del programma lungo il cosiddetto Miglio della Fotografia. Il tema prende spunto dalla famosa fiaba e, in particolare, dal film La Belle et la Bête di Jean Cocteau del 1946. Si sviluppa così una riflessione sul concetto di bellezza, sulla sua natura storica e culturale e sul rapporto con ciò che viene percepito come estraneo, anomalo o fuori norma. Il discorso si estende anche alla natura, all’identità e alla produzione contemporanea delle immagini, trasformata dalla diffusione degli smartphone e dall’intelligenza artificiale. La bella e la bestia, dall’Ottocento alla fotografia contemporanea Il nucleo centrale di EXPOSED 2027 a Torino sarà la grande mostra La bella e la bestia , costruita attraverso un percorso tematico e cronologico che attraverserà la storia della fotografia dall’Ottocento alla contemporaneità. Immagini nate con finalità scientifiche e antropologiche saranno messe a confronto con lavori di ricerca artistica, interrogando i criteri attraverso cui le diverse epoche e culture hanno definito ciò che è bello e ciò che non lo è. Il percorso comprenderà opere di grandi maestri della fotografia storica e contemporanea, accostamenti meno consueti e un omaggio a Jean Cocteau, attraverso immagini realizzate sul set di La Belle et la Bête e materiali legati ad altri momenti della sua produzione cinematografica. Magnum Photos compie 80 anni Un secondo progetto tematico nascerà dalla collaborazione con Magnum Photos, che nel 2027 celebrerà gli ottant’anni dalla fondazione. La mostra attraverserà quasi un secolo di storia attraverso le fotografie degli autori e delle autrici dell’agenzia, alternando grandi ",
+      "author": "Redazione",
+      "category": "Art & Culture",
+      "source": "exibart.com",
+      "date": "2026-11-14T14:00:06+00:00",
+      "url": "https://www.exibart.com/fotografia/1240418/",
+      "image": "https://www.exibart.com/repository/media/2026/11/exposed.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 2362,
+      "image_height": 1575,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.finestresullarte.info/turismo/livorno-turista-vive-citta-come-vero-livornese-proposta-per-turismo-2027",
+      "title": "A Livorno il turista vive la città come un vero livornese: la proposta per il turismo 2027",
+      "excerpt": "Blu Livorno, la biennale del mare, e la nuova candidatura a capitale europea del mare aprono la proposta turistica 2027 di Livorno, che accanto agli eventi offre festival urbani gratuiti, street art e un appuntamento enogastronomico a fine anno, per vivere la città come veri i livornesi.",
+      "author": "Redazione",
+      "category": "Art & Culture",
+      "source": "finestresullarte.info",
+      "date": "2026-11-14T12:21:31+00:00",
+      "url": "https://www.finestresullarte.info/turismo/livorno-turista-vive-citta-come-vero-livornese-proposta-per-turismo-2027",
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/livorno-veduta-cover.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1200,
+      "image_height": 616,
+      "image_format": "jpeg"
+    },
     {
       "id": "https://www.finestresullarte.info/attualita/ex-edificio-sailem-diventa-polo-per-cultura-innovazione-nel-porto-di-palermo",
       "title": "A Palermo l’ex edificio Sailem si trasforma in un polo dedicato alla cultura e all’innovazione",
@@ -420,7 +580,12 @@
       "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFA5QjJ4WTlyYkNCVWpuM2R6cEg2aldEeGFWM3RHX2Q2ZjFYQUxMR29fOFluZU9HU1o5UEhaaDVxbzFqOHNQb3FSRWxRSFptVlBtYmFxTGZ0bFhDak9GLW9DakVDaW9SNGlwR2FN?oc=5",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "image_attempted_at": "2026-11-14T18:57:56.732207+00:00",
+      "image_retry_after": "2026-11-15T06:57:56.732207+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
     },
     {
       "id": "https://www.exibart.com/mostre/al-mambo-di-bologna-si-cammina-tra-le-nuvole-di-cuoghi-corsello/",
@@ -463,12 +628,12 @@
       "source": "pambianconews.com",
       "date": "2026-11-13T15:23:31+00:00",
       "url": "https://www.pambianconews.com/2026/11/13/ferrari-vola-a-ny-iannone-sembravamo-una-cellula-impazzita-ma-la-nostra-intuizione-era-corretta-500129/",
-      "image": "",
-      "image_verified": false,
+      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/Ferrari-NY-Flagship-facade-1-e1794583563219.jpg",
+      "image_verified": true,
       "language": "it",
-      "image_width": 0,
-      "image_height": 0,
-      "image_format": ""
+      "image_width": 2000,
+      "image_height": 1263,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.exibart.com/mostre/una-certa-idea-di-sguardo-di-alberto-garutti-in-mostra-da-massimo-minini/",
@@ -513,7 +678,12 @@
       "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE10SUc4a1hWYnZ2NTMyQlQtWmJXdDdOTWJpSW40TUFPQXlSXzg2YW9GWFFuYlFINlBWSGdCcmhlNmlLem1jUkVfQW1IYXMzdHYwNjR5OWx1bzBSQ2MzeXlIRg?oc=5",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "image_attempted_at": "2026-11-14T18:57:56.732207+00:00",
+      "image_retry_after": "2026-11-15T06:57:56.732207+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
     },
     {
       "id": "https://www.exibart.com/mostre/in-toscana-un-circolo-si-apre-all-arte-contemporanea-mostra-cch/",
@@ -524,12 +694,12 @@
       "source": "exibart.com",
       "date": "2026-11-13T13:00:28+00:00",
       "url": "https://www.exibart.com/mostre/in-toscana-un-circolo-si-apre-all-arte-contemporanea-mostra-cch/",
-      "image": "",
-      "image_verified": false,
+      "image": "https://www.exibart.com/repository/media/2026/11/3_Borromini-e1794560877157.jpg",
+      "image_verified": true,
       "language": "it",
-      "image_width": 0,
-      "image_height": 0,
-      "image_format": ""
+      "image_width": 1170,
+      "image_height": 1254,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.finestresullarte.info/mostre/milano-idee-dei-grandi-pittori-prendono-forma-sulla-carta-in-mostra-disegni-dal-cinquecento-al-settecento",
@@ -577,7 +747,9 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "image_attempted_at": "2026-11-14T18:57:56.732207+00:00",
+      "image_retry_after": "2026-11-15T06:57:56.732207+00:00"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/13/i-gioielli-fanno-brillare-ancora-i-conti-di-richemont-primo-semestre-a-123-miliardi-16-500775/",
@@ -622,7 +794,12 @@
       "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE03Y0xRdGFmeEROeFVXSnQtekxaaGVRLUtwV2V6NE1ITUFWaVpHOEQxYmR4aXJjOXhvSlF4Q1lkb0U0UlJVTmtwajVNcmE2Zw?oc=5",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "image_attempted_at": "2026-11-14T18:57:56.732207+00:00",
+      "image_retry_after": "2026-11-15T06:57:56.732207+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
     },
     {
       "id": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBSVWVQQTM0bVB2NC1EZkhrc1laVkdQQXVGWFJhRTNKdW9oQl9vTUF2NlJScV9oSjhmSjNsZ0YxNnBaNkRnUGtoS3R6TUFyZkViZWpoVUdNVjVXTnZMeTl6bUcxdnZFNmp1T3JZQS1EVmo?oc=5",
@@ -635,7 +812,12 @@
       "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBSVWVQQTM0bVB2NC1EZkhrc1laVkdQQXVGWFJhRTNKdW9oQl9vTUF2NlJScV9oSjhmSjNsZ0YxNnBaNkRnUGtoS3R6TUFyZkViZWpoVUdNVjVXTnZMeTl6bUcxdnZFNmp1T3JZQS1EVmo?oc=5",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "image_attempted_at": "2026-11-14T18:57:56.732207+00:00",
+      "image_retry_after": "2026-11-15T06:57:56.732207+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
     },
     {
       "id": "https://www.pambianconews.com/2026/11/13/pavanello-macron-in-borsa-quando-varremo-almeno-un-miliardo-500538/",
@@ -955,7 +1137,9 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "image_attempted_at": "2026-11-14T18:57:56.732207+00:00",
+      "image_retry_after": "2026-11-15T06:57:56.732207+00:00"
     },
     {
       "id": "https://www.finestresullarte.info/opinioni/il-critico-ribelle-e-il-nuovo-conformista",
@@ -1440,6 +1624,19 @@
       "source": "outpump.com",
       "date": "2026-09-29T12:51:08+00:00",
       "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5PbG40c0dpYzRlUVk1OVBRak5xNThKeGd5bUdQbnItTC1NTUNiYXpPMW8yMnRWZTRPOFlrNzAyenA4czdTc2FrbVVMRmtWejdrV2lXTGg0eWVKNzQ?oc=5",
+      "image": "",
+      "image_verified": false,
+      "language": "it"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMibkFVX3lxTE44aURPYjluVU5tZW1IVHJjU0VKNExuVzE1cmtSVnE4cFN2amMxeGJMZDh2LTdYR2ZtTzQ3UGg2TU1mejJwbTFMRW5fcmIzdVFaamFQa29IYXVQcDhUc29DX010RFZHY0xrMVlyc0dn?oc=5",
+      "title": "Abbiamo bisogno dei bar non performativi - Outpump",
+      "excerpt": "Abbiamo bisogno dei bar non performativi Outpump",
+      "author": "",
+      "category": "Streetwear",
+      "source": "outpump.com",
+      "date": "2026-08-13T07:00:00+00:00",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE44aURPYjluVU5tZW1IVHJjU0VKNExuVzE1cmtSVnE4cFN2amMxeGJMZDh2LTdYR2ZtTzQ3UGg2TU1mejJwbTFMRW5fcmIzdVFaamFQa29IYXVQcDhUc29DX010RFZHY0xrMVlyc0dn?oc=5",
       "image": "",
       "image_verified": false,
       "language": "it"
