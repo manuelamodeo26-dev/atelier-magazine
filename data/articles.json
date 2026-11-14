@@ -1,7 +1,7 @@
 {
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
   "editorial_api_retry_after": "2026-11-15T00:05:44.859508+00:00",
-  "updated_at": "2026-11-14T00:05:45.773881+00:00",
+  "updated_at": "2026-11-14T00:15:22.259573+00:00",
   "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
@@ -557,8 +557,8 @@
       "image": "",
       "image_verified": false,
       "language": "it",
-      "image_attempted_at": "2026-11-13T12:05:46.402538+00:00",
-      "image_retry_after": "2026-11-14T00:05:46.402538+00:00",
+      "image_attempted_at": "2026-11-14T00:10:35.596042+00:00",
+      "image_retry_after": "2026-11-14T12:10:35.596042+00:00",
       "image_width": 0,
       "image_height": 0,
       "image_format": ""
@@ -2710,7 +2710,9 @@
       "language": "it",
       "image_width": 3000,
       "image_height": 2000,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_attempted_at": "2026-11-14T00:15:15.088004+00:00",
+      "editorial_retry_after": "2026-11-14T12:15:15.088004+00:00"
     },
     {
       "id": "https://www.ad-italia.it/article/gunter-sachs-vita-miliardario-marito-brigitte-bardot-foto-epoca/",
@@ -2726,7 +2728,9 @@
       "language": "it",
       "image_width": 3909,
       "image_height": 2603,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_attempted_at": "2026-11-14T00:15:18.128303+00:00",
+      "editorial_retry_after": "2026-11-14T12:15:18.128303+00:00"
     },
     {
       "id": "https://www.ad-italia.it/article/villa-santa-margherita-ligure-pietra-piscina-vista-mare/",
@@ -2742,7 +2746,10 @@
       "language": "it",
       "image_width": 5190,
       "image_height": 7266,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_summary": "La nuova villa di Santa Margherita Ligure, realizzata da Moitié Studio in collaborazione con APC Design, si presenta come un eremo contemporaneo in pietra e ferro che sembra scolpito nella roccia. Il progetto, concepito per una famiglia caprese che si è trasferita a Milano, sfrutta la verticalità del litorale ligure, dove il mare è l’orizzonte e il paesaggio è composto da ulivi, limonaie e ville arroccate. La casa, costruita con pietra locale e grandi vetrate incorniciate da portali in lamiera, offre una piscina panoramica che si affaccia sul mare, trasformando l’orizzonte in elemento progettuale.\n\nIl design interno è caratterizzato da una palette austera in cui il legno Okumè e il rosso Pompei dominano. Il legno, spazzolato e consumato dal tempo, ricorda i tronchi levigati dal mare, mentre il rosso corallo e le tonalità della ruggine si diffondono in tessili, arredi e pareti, creando un filo narrativo che attraversa gli spazi. La cucina, con la sua penisola scultorea, evidenzia il legno come materia principale, mentre la zona notte ospita una sauna in rovere, che introduce tonalità più morbide e pacate.\n\n**La villa fonde la pietra e il vetro con il rosso Pompei e il legno Okumè, creando un dialogo tra rigore architettonico e memoria emotiva, che si riflette nella piscina panoramica e nel paesaggio circostante.** Questo equilibrio tra materiali autentici e design contemporaneo rende la casa un punto di riferimento per chi cerca un rifugio mediterraneo che unisca tradizione e modernità.\n\nIl progetto si ispira alla sequenza verticale del litorale di Levante, dove la scala di terrazzamenti e scogliere si intreccia con il mare. La villa, con la sua forma compatta e le grandi vetrate, si integra armoniosamente nel paesaggio, offrendo una vista spettacolare sul mare e un ambiente interno che celebra la luce e il colore. La scelta di materiali genuini e la cura dei dettagli conferiscono alla casa un carattere unico, in cui la tradizione locale si fonde con un approccio contemporaneo e sostenibile.\n\nLa villa di Santa Margherita Ligure rappresenta un esempio di come l’architettura contemporanea possa dialogare con il territorio, rispettando la sua storia e valorizzandone la bellezza. La combinazione di pietra, vetro, legno e metallo, insieme a una palette cromatica sobria, crea un ambiente accogliente e raffinato, ideale per chi desidera un rifugio mediterraneo che unisca comfort, stile e rispetto per l’ambiente circostante.",
+      "editorial_level": "approfondimento",
+      "editorial_word_count": 387
     },
     {
       "id": "https://www.pambianconews.com/2026/11/11/safilo-torna-a-crescere-nel-q3-3-trainato-da-usa-e-cina-500317/",
@@ -2758,7 +2765,9 @@
       "language": "it",
       "image_width": 1666,
       "image_height": 802,
-      "image_format": "jpeg"
+      "image_format": "jpeg",
+      "editorial_attempted_at": "2026-11-14T00:15:12.110241+00:00",
+      "editorial_retry_after": "2026-11-14T12:15:12.110241+00:00"
     },
     {
       "id": "https://www.finestresullarte.info/eventi/a-milano-si-puo-entrare-nel-cantiere-del-museo-della-resistenza-visite",
@@ -2774,7 +2783,10 @@
       "language": "it",
       "image_width": 2057,
       "image_height": 1056,
-      "image_format": "jpeg"
+      "image_format": "jpeg",
+      "editorial_summary": "Il 15 novembre la Soprintendenza di Milano ha aperto al pubblico il cantiere dei Bastioni di Porta Volta, dove si sta costruendo il futuro Museo nazionale della Resistenza. L’iniziativa, promossa dal Ministero della Cultura e dal Comune di Milano, prevede visite guidate di circa quaranta minuti condotte dai tecnici responsabili del progetto, che illustreranno sia l’aspetto architettonico sia quello museale dell’edificio ancora in fase di realizzazione.\n\nLe visite, gratuite ma prenotabili, si svolgono in tre turni alle 10, 11 e 12, con gruppi limitati a quindici persone per garantire la sicurezza sul sito attivo. I partecipanti devono firmare una manleva, indossare elmetti forniti dal personale e rispettare le indicazioni di sicurezza, poiché il cantiere non è ancora uno spazio espositivo. Per chi non riesce a prenotare, sono disponibili pannelli informativi, una finestra di osservazione e un totem interattivo lungo il perimetro, che consentono di seguire l’avanzamento dei lavori dall’esterno.\n\n**Il punto più importante è che la Soprintendenza, già sperimentata nel 2025, offre al pubblico la possibilità di conoscere un museo nazionale prima della sua apertura, osservando le strutture in costruzione.** Questa formula permette di creare un legame anticipato tra la cittadinanza e il futuro patrimonio culturale, trasformando la curiosità in partecipazione attiva.\n\nL’iniziativa si inserisce in un più ampio contesto di valorizzazione della memoria della Resistenza, con aggiornamenti costanti sul sito museonazionaleresistenza.it e sui canali social del museo. Per i giovani, l’accesso al cantiere rappresenta un’occasione rara di avvicinarsi al processo di progettazione museale, stimolando interesse per la storia, l’architettura e la gestione dei beni culturali.",
+      "editorial_level": "standard",
+      "editorial_word_count": 257
     },
     {
       "id": "https://www.finestresullarte.info/arte-contemporanea/in-danimarca-un-museo-ha-affidato-a-olafur-eliasson-un-progetto-che-va-oltre-mostra",
@@ -2790,7 +2802,9 @@
       "language": "it",
       "image_width": 1605,
       "image_height": 824,
-      "image_format": "jpeg"
+      "image_format": "jpeg",
+      "editorial_attempted_at": "2026-11-14T00:15:06.229888+00:00",
+      "editorial_retry_after": "2026-11-14T12:15:06.229888+00:00"
     },
     {
       "id": "https://www.finestresullarte.info/arte-antica/caravaggio-dipinse-ritratto-musicista-mai-trovato-ci-sono-novita",
@@ -2806,7 +2820,9 @@
       "language": "it",
       "image_width": 1280,
       "image_height": 657,
-      "image_format": "jpeg"
+      "image_format": "jpeg",
+      "editorial_attempted_at": "2026-11-14T00:15:02.109597+00:00",
+      "editorial_retry_after": "2026-11-14T12:15:02.109597+00:00"
     },
     {
       "id": "https://www.exibart.com/mercato/old-masters-litalia-protagonista-da-lempertz-da-fede-galizia-a-tiepolo/",
@@ -2822,7 +2838,10 @@
       "language": "it",
       "image_width": 807,
       "image_height": 1024,
-      "image_format": "jpeg"
+      "image_format": "jpeg",
+      "editorial_summary": "L’asta di Old Masters di Lempertz, prevista per il 21 novembre a Colonia, propone un viaggio di cinque secoli di pittura italiana, con 277 opere che spaziano dal Rinascimento al Barocco fino al vedutismo ottocentesco. Il catalogo mette in evidenza la tradizione lombarda, la scuola ferrarese, il fiorentino e il veneziano, oltre a paesaggi italiani realizzati da artisti stranieri. La selezione è particolarmente ricca di pezzi che illustrano come l’Italia sia stata oggetto di studio e ammirazione per secoli, con un focus speciale sulla pittura italiana, che rappresenta il cuore del catalogo.\n\nTra i lotti più attesi troviamo il “Cesto di vimini con pesche e gelsomini” di Fede Galizia, valutato tra gli 80.000 e i 100.000 euro. L’opera è un esempio della capacità dell’artista di fondere la tradizione lombarda con una rappresentazione estremamente dettagliata degli oggetti, dove la luce esalta frutti e fiori sullo sfondo scuro. Altri pezzi di rilievo includono la “Madonna col Bambino incoronati insieme a San Nicola da Tolentino e San Sebastiano”, attribuita al Maestro della Maddalena Assunta, e il “Ritratto di Alessandro de’ Medici” di Carlo Portelli, una versione successiva del celebre dipinto di Giorgio Vasari. Queste opere non solo mostrano le tecniche pittoriche dell’epoca, ma anche simbolismi legati alla potenza e alla storia dei Medici.\n\n**Il punto più importante è che l’asta di Lempertz non è solo una mostra di opere d’arte, ma un vero e proprio studio di come l’Italia sia stata interpretata e rappresentata da artisti europei nel corso dei secoli.** Questa prospettiva trasversale offre ai collezionisti e agli appassionati una comprensione più profonda delle influenze culturali e artistiche che hanno modellato il panorama italiano, evidenziando la continuità e la trasformazione delle tecniche e dei temi artistici.\n\nIl catalogo include anche una copia della celebre “Monna Lisa” di Leonardo, proveniente dalla Lyversberg Collection, e una serie di vedute veneziane di Friedrich Nery e Carlo Grubacs, che mostrano la città da prospettive diverse e con dettagli architettonici accurati. Tra le opere più recenti, la “Veduta di Piazza San Marco” di Grubacs e il “Paesaggio dei Monti Albani con vista su Castel Gandolfo” di Franz Knebel, dimostrano come l’arte del XIX secolo abbia continuato a celebrare la bellezza paesaggistica italiana con un occhio critico e realistico.\n\nIn conclusione, l’asta di Lempertz offre un’opportunità unica di esplorare la ricca eredità artistica italiana attraverso una lente internazionale. La varietà di stili, periodi e soggetti presenti nel catalogo non solo arricchisce il panorama delle collezioni private, ma fornisce anche un punto di riferimento per studiosi e appassionati che desiderano comprendere meglio l’evoluzione della rappresentazione artistica dell’Italia.",
+      "editorial_level": "approfondimento",
+      "editorial_word_count": 430
     },
     {
       "id": "https://www.exibart.com/cinema/lo-schermo-dellarte-2026-a-firenze-le-nuove-geografie-del-cinema-dartista/",
@@ -2838,7 +2857,10 @@
       "language": "it",
       "image_width": 1024,
       "image_height": 512,
-      "image_format": "jpeg"
+      "image_format": "jpeg",
+      "editorial_summary": "La 19ª edizione de Lo schermo dell’arte, diretta da Silvia Lucchesi, si apre a Firenze dall’11 al 15 novembre, con proiezioni, mostre e incontri che collegano le moving images alle arti visive. Il festival si svolge al Cinema La Compagnia e in sedi come Palazzo Strozzi, il Museo di Geologia e Paleontologia dell’Università di Firenze, NYU Florence e l’European University Institute, e offre una selezione in streaming su MYmovies ONE dal 11 al 22 novembre. Gli artisti partecipanti affrontano temi di guerra, migrazioni, crisi ecologica, memoria e trasformazioni tecnologiche, creando un dialogo tra esperienze personali e questioni collettive.\n\nTra gli appuntamenti più rilevanti spicca la mostra \"Scénarios et les cinq cahiers de Scénario\" di Jean‑Luc Godard, organizzata con ICA Milano e la Fondazione Palazzo Strozzi. Dal 11 al 15 novembre nella Strozzina saranno esposti cinque taccuini con disegni e collage, insieme ai cortometraggi \"Scénarios\" ed \"Exposé du film annonce du film ‘Scénario’\" del 2024, quest’ultimo completato il giorno prima della morte del regista. Il 13 novembre Philippe‑Alain Michaud, direttore del dipartimento di cinema sperimentale del Centre Pompidou, dialogherà con Rossella Catanese di NYU Florence, offrendo un confronto tra cinema d’avanguardia e ricerca accademica.\n\n**Il punto focale dell’edizione è la presenza di Saodat Ismailova, artista uzbeka che, attraverso film, suono e arti visive, collega la sua esperienza personale alle trasformazioni politiche e culturali dell’Asia centrale, alla memoria collettiva e alla rappresentazione della femminilità**. Il suo programma comprende cinque film realizzati tra il 2017 e il 2026 e una lecture il 12 novembre, proponendo una prospettiva unica su identità e mutamento in un contesto post‑sovietico.\n\nIl festival presenta anche opere che indagano conflitti attuali e crisi ambientali: \"The Sentinel\" (Ali Cherri) esplora il trauma militare, \"Homecoming\" (Yarema Malashchuk e Roman Khimei) ricostruisce il ritorno virtuale in una terra segnata dalla guerra, mentre \"The Last Responders\" di Forensic Architecture ricostruisce l’uccisione di operatori di soccorso a Gaza. Sul fronte ecologico, \"In the Veins\" (Camille Henrot) e \"The Wind, One Brilliant Day\" (Ben Rivers) interrogano il rapporto tra uomo e natura, e \"Borderland\" (Melik Ohanian) immagina un tetto di Brooklyn trasformato in spazio di confine per migranti.\n\nInfine, la quindicesima edizione di VISIO – European Programme on Artists’ Moving Images – mette in luce le nuove generazioni, con 140 candidature da 53 Paesi e due produzioni finanziate dal VISIO Production Fund: \"like moths to light\" (Gala Hernández López) e \"The City and the City\" (Rafik Greiss). Il festival si chiude con performance dal vivo, installazioni come \"Un mare molto piccolo\" dei duo Zeroscena, e iniziative per scuole e famiglie, oltre al Premio del pubblico Under 30 sostenuto da Gucci, che garantisce l’accesso gratuito ai giovani spettatori.",
+      "editorial_level": "approfondimento",
+      "editorial_word_count": 443
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/matteo-tamburini-lascia-la-direzione-creativa-di-tods-500310/",
@@ -2854,7 +2876,9 @@
       "language": "it",
       "image_width": 1504,
       "image_height": 706,
-      "image_format": "jpeg"
+      "image_format": "jpeg",
+      "editorial_attempted_at": "2026-11-14T00:14:49.582649+00:00",
+      "editorial_retry_after": "2026-11-14T12:14:49.582649+00:00"
     },
     {
       "id": "https://www.finestresullarte.info/arte-antica/getty-avvia-progetto-per-salvare-una-chiesa-barocca-del-peru-sue-opere",
@@ -2870,7 +2894,10 @@
       "language": "it",
       "image_width": 1200,
       "image_height": 616,
-      "image_format": "jpeg"
+      "image_format": "jpeg",
+      "editorial_summary": "Nel cuore delle Ande peruviane, nella regione di Cusco, il Getty Conservation Institute ha lanciato il progetto pluriennale “Sacred Heritage in the Andes”, volto a consolidare antisismicamente la chiesa barocca di Santo Tomás de Aquino, nota localmente come chiesa di Rondocan, e a conservare più di 300 beni culturali custoditi al suo interno. L’intervento, realizzato in collaborazione con la Dirección Desconcentrada de Cultura – Cusco (DDC‑C) e il Ministero della Cultura del Perù, prevede il rinforzo strutturale dell’edificio in terra cruda, l’installazione di sistemi di monitoraggio ambientale e la definizione di un piano di manutenzione a lungo termine, con l’obiettivo di proteggere un luogo di culto ancora centrale nella vita della comunità locale.\n\nTra i tesori della chiesa spicca una serie di otto dipinti del gesuita italiano Bernardo Bitti, pittore attivo nel Seicento che si trasferì in Sudamerica e contribuì alla nascita della scuola cusqueña. Il ciclo, intitolato “Principales Misterios de la Vida y Muerte de Cristo Nuestro Salvador y de la Virgen Santísima”, fu realizzato a Cusco probabilmente tra il 1595 e il 1599 e, fino a poco tempo fa, era ritenuto perduto dalla maggior parte degli storici dell’arte. Uno dei dipinti, “La Oración en el huerto”, sarà trasferito temporaneamente al Getty Museum nel 2027 per essere sottoposto a analisi scientifiche e a un intervento conservativo.\n\n**Il ritrovamento e la conservazione di questi otto dipinti di Bernardo Bitti rappresentano una scoperta unica per la storia dell’arte delle Americhe, poiché permettono di studiare direttamente le tecniche e i materiali di un artista che ha plasmato la pittura coloniale sudamericana.**\n\nIl progetto non si limita al restauro tecnico: coinvolge attivamente gli abitanti di Rondocan, raccogliendo le loro percezioni sul valore del sito e formando professionisti locali su metodologie sostenibili. Le testimonianze dei responsabili del Getty Conservation Institute sottolineano l’importanza di preservare sia l’edificio che la collezione, che rimane in uso liturgico, offrendo così un raro caso di dialogo tra conservazione museale e pratiche religiose viventi. Se l’intervento avrà successo, potrà diventare modello per la tutela di altri edifici in terra cruda vulnerabili ai terremoti, garantendo la continuità culturale e spirituale di comunità isolate.",
+      "editorial_level": "approfondimento",
+      "editorial_word_count": 353
     },
     {
       "id": "https://www.finestresullarte.info/opinioni/musei-per-non-vedenti-aggiungere-braille-senza-co-progettare-e-paternalismo",
@@ -2886,7 +2913,10 @@
       "language": "it",
       "image_width": 1280,
       "image_height": 657,
-      "image_format": "jpeg"
+      "image_format": "jpeg",
+      "editorial_summary": "Negli ultimi anni i musei hanno iniziato a inserire pannelli Braille, audioguide e repliche tattili per i visitatori non vedenti, ma questi interventi restano spesso un’aggiunta postuma a percorsi già concepiti per il pubblico vedente. Federica Schneck descrive la situazione tipica: una stanza marginale, illuminata diversamente, dove le opere sono riprodotte in rilievo e un cartello invita a toccare. Questa “saletta per gli altri” è la metafora più chiara di un modello di inclusione che parte da una mostra già definita e vi sovrappone un layer di accessibilità, senza coinvolgere chi ne ha realmente bisogno nella fase di progettazione.\n\nSecondo l’autrice, la differenza tra un’opera pensata fin dall’inizio per il tatto, il suono e la percezione spaziale e una semplice riproduzione tattile è strutturale: la prima nasce come territorio, la seconda è una mappa disegnata da chi lo vede. Il risultato è un’esperienza ridotta a quello che un curatore decide sia rilevante tradurre, trasformando il non vedente in destinatario di un prodotto già definito. Schneck denuncia un paternalismo di buona intenzione, dove la decisione su cosa sia “meglio” per l’utente viene presa senza il suo coinvolgimento, e dove la co‑progettazione con persone non vedenti è più l’eccezione che la regola.\n\n**Il pannello Braille, pur visibile, è spesso più simbolo di un gesto di inclusività che reale strumento di accesso per i non vedenti.** Questo elemento, fotografabile per i report annuali, non aiuta chi si orienta con bastone o cane guida e non sostituisce un percorso progettato per essere percepito attraverso tutti i sensi. Schneck sottolinea che l’autentica inclusione richiede tempo, risorse e, soprattutto, immaginazione: creare installazioni sonore autonome, sculture tattili non protette da teche e spazi la cui topografia sia leggibile senza la vista.\n\nIl problema non è solo finanziario. Molti musei che hanno integrato l’accessibilità fin dalla fase di ideazione lo hanno fatto senza budget straordinari, dimostrando che la mancanza di fondi è spesso una scusa per priorità sbagliate. L’ostacolo principale è la visione di un “visitatore tipo” – un individuo vedente, di media statura e senza limitazioni motorie – che guida le scelte di altezza dei pannelli, dimensione dei caratteri e sequenza del percorso. Finché questo modello rimane dominante, l’accessibilità resterà un’aggiunta, non una condizione intrinseca del progetto.\n\nPer superare questo paradigma, i musei devono abbandonare l’idea dell’inclusione come gesto simbolico e considerarla una responsabilità progettuale. Ciò implica coinvolgere le persone non vedenti fin dalle prime fasi, ascoltare le loro esigenze e accettare di rivedere le scelte fatte per il pubblico vedente. Solo così l’esperienza museale potrà diventare realmente pluralistica, capace di accogliere una varietà di percezioni senza relegare la diversità a un’eccezione da gestire.",
+      "editorial_level": "approfondimento",
+      "editorial_word_count": 436
     },
     {
       "id": "https://www.finestresullarte.info/attualita/donatore-anonimo-dona-6-milioni-di-euro-per-salvare-biblioteca-del-castello-chantilly",
