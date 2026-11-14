@@ -8,6 +8,10 @@ import editorial_summary
 
 
 class EditorialSummaryTests(unittest.TestCase):
+    def setUp(self):
+        editorial_summary.QUOTA_EXHAUSTED_FOR_RUN = False
+        editorial_summary.AI_PROVIDER_UNAVAILABLE_FOR_RUN = False
+
     def _response(self, level="standard"):
         count = 4 if level == "approfondimento" else 3
         paragraphs = [" ".join(["moda"] * 90) for _ in range(count)]
