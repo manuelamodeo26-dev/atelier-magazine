@@ -20,7 +20,7 @@ def validate_payload(payload):
         return ["Il campo articles deve essere un array."], warnings
     maintenance = payload.get("archive_status") == "maintenance"
     if not articles and not maintenance:
-        errors.append("Archivio vuoto: pubblicazione bloccata.")
+        warnings.append("Archivio editoriale vuoto: il sito può essere pubblicato senza articoli mentre la nuova selezione viene preparata.")
     if maintenance and articles:
         errors.append("La modalità manutenzione deve avere un archivio vuoto.")
     if len(articles) > 180:
