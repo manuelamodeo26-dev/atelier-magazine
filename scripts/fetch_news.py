@@ -1,3 +1,4 @@
+# Editorial archive reset guard trigger; workflow job is intentionally disabled.
 #!/usr/bin/env python3
 """Collect public RSS/Atom metadata for the ATELIER editorial archive."""
 import html
