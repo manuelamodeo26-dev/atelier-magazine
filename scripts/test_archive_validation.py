@@ -25,10 +25,19 @@ class ArchiveValidationTests(unittest.TestCase):
         self.assertEqual(errors, [])
         self.assertEqual(warnings, [])
 
-    def test_rejects_empty_archive_without_maintenance(self):
-        payload = {"feeds_ok": 7, "feeds_total": 7, "feed_status": [], "articles": []}
-        errors, _ = validate_payload(payload)
-        self.assertTrue(any("Archivio vuoto" in error for error in errors))
+    def test_accepts_empty_archive_for_clean_public_launch(self):
+        payload = {"archive_status": "active", "feeds_ok": 7, "feeds_total": 7, "feed_status": [
+            {"source": "one.example", "ok": True, "articles": 1},
+            {"source": "two.example", "ok": True, "articles": 1},
+            {"source": "three.example", "ok": True, "articles": 1},
+            {"source": "four.example", "ok": True, "articles": 1},
+            {"source": "five.example", "ok": True, "articles": 1},
+            {"source": "six.example", "ok": True, "articles": 1},
+            {"source": "seven.example", "ok": True, "articles": 1},
+        ], "articles": []}
+        errors, warnings = validate_payload(payload)
+        self.assertEqual(errors, [])
+        self.assertTrue(any("Archivio editoriale vuoto" in warning for warning in warnings))
 
     def test_rejects_incomplete_feed_diagnostics(self):
         payload = self.payload()
