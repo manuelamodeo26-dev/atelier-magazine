@@ -99,7 +99,7 @@
     const visible=visibleArticles(), list=showAll?visible:visible.slice(0,9);
     grid.innerHTML=list.map(card).join('');
     empty.hidden=list.length!==0;
-    empty.textContent=loadFailed?'Archivio temporaneamente non disponibile. Riprova tra poco.':'Nessun articolo in questa sezione. Prova un altro filtro.';
+    empty.textContent=loadFailed?'Archivio temporaneamente non disponibile. Riprova tra poco.':'La nuova selezione editoriale è in preparazione. Le prime storie arriveranno presto.';
     count.textContent=loadFailed?'ARCHIVIO TEMPORANEAMENTE NON DISPONIBILE':visible.length+' '+(visible.length===1?'ARTICOLO':'ARTICOLI')+' · '+categoryLabel(activeFilter).toLocaleUpperCase('it');
     $('#show-more').hidden=visible.length<=9;
     $('#show-more').textContent=showAll?'MOSTRA MENO ↑':'MOSTRA TUTTI GLI ARTICOLI ↗';
