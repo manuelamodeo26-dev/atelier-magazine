@@ -759,8 +759,10 @@ def main():
     # The publisher excerpt remains the fallback whenever source text is thin
     # or the optional AI service is unavailable.
     editorial_api_retry_after = prior_payload.get("editorial_api_retry_after")
-    editorial_api_ready = retry_window_open(editorial_api_retry_after)
-    if os.getenv("GROQ_API_KEY", "").strip() and editorial_api_ready:
+    has_ai_provider = bool(os.getenv("GROQ_API_KEY", "").strip() or os.getenv("GEMINI_API_KEY", "").strip())
+    # A cooldown caused by Groq must not block the independent Gemini fallback.
+    editorial_api_ready = retry_window_open(editorial_api_retry_after) or bool(os.getenv("GEMINI_API_KEY", "").strip())
+    if has_ai_provider and editorial_api_ready:
         now = datetime.now(timezone.utc)
         new_candidates = sorted(
             (item for item in articles
@@ -800,10 +802,10 @@ def main():
                     break
                 article["editorial_retry_after"] = (attempted_at + timedelta(hours=12)).isoformat()
                 print("Sintesi editoriale rinviata per 12 ore: {}".format(article.get("title", "")[:90]))
-    elif os.getenv("GROQ_API_KEY", "").strip() and not editorial_api_ready:
+    elif has_ai_provider and not editorial_api_ready:
         print("Quota AI in pausa fino a {}: evito richieste inutili.".format(editorial_api_retry_after))
     else:
-        print("GROQ_API_KEY non configurata: si mantiene il testo originale delle fonti.")
+        print("Nessun provider AI configurato: si mantiene il testo originale delle fonti.")
 
     # Verify images for new articles and the bounded archive backfill batch.
     new_urls = {canonical_url(item.get("url")) for item in fresh}
