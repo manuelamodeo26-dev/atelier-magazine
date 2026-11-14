@@ -1,6 +1,8 @@
 name: Update ATELIER news
 
 on:
+  schedule:
+    - cron: '17 */6 * * *'
   push:
     branches: [main]
     paths:
@@ -19,7 +21,6 @@ concurrency:
 
 jobs:
   update-news:
-    if: false # temporarily disabled during editorial archive reset
     runs-on: ubuntu-latest
     timeout-minutes: 25
     outputs:
