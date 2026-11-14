@@ -33,8 +33,8 @@ Deno.serve(async (req: Request) => {
   if (user?.app_metadata?.role !== "admin") {
     return json(403, { error: "Accesso riservato all'amministratore ATELIER." });
   }
-  if (!groqKey && !geminiKey) return json(503, {
-    error: "Agente non ancora attivato: configura GROQ_API_KEY oppure GEMINI_API_KEY nelle Edge Function Secrets.",
+  if (!groqKey) return json(503, {
+    error: "ATELIER Ghost richiede GROQ_API_KEY. Configura questo secret nelle Edge Function Secrets.",
     setup_required: true,
   });
   let rawBody = "";
