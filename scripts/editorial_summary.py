@@ -250,7 +250,6 @@ def generate_editorial_summary(article, source_text):
         gemini_payload = {
             "contents": [{"role": "user", "parts": [{"text": prompt}]}],
             "generationConfig": {
-                "temperature": 0.2,
                 "maxOutputTokens": 2400,
                 "responseMimeType": "application/json",
             },
