@@ -24,6 +24,21 @@ class EditorialSummaryTests(unittest.TestCase):
         response.__enter__.return_value.read.return_value = body
         return response
 
+    def _gemini_response(self, level="standard"):
+        count = 4 if level == "approfondimento" else 3
+        paragraphs = [" ".join(["moda"] * 90) for _ in range(count)]
+        body = json.dumps({
+            "candidates": [{
+                "content": {"parts": [{"text": json.dumps({
+                    "level": level,
+                    "paragraphs": paragraphs,
+                })}]}
+            }]
+        }).encode("utf-8")
+        response = MagicMock()
+        response.__enter__.return_value.read.return_value = body
+        return response
+
     def _article(self):
         return {
             "title": "Una nuova collezione",
@@ -119,6 +134,49 @@ class EditorialSummaryTests(unittest.TestCase):
             )
         self.assertEqual(level, "approfondimento")
         self.assertEqual(editorial_summary._word_count(summary), 360)
+
+    def test_falls_back_to_gemini_when_both_groq_models_exhaust_quota(self):
+        def quota_error():
+            error_body = json.dumps({
+                "error": {"message": "Rate limit reached for requests per day", "type": "requests"}
+            }).encode("utf-8")
+            return HTTPError(
+                "https://api.groq.com", 429, "Too Many Requests", {}, io.BytesIO(error_body)
+            )
+        gemini_response = self._gemini_response()
+        with (
+            patch.object(editorial_summary, "API_KEY", "groq-unit-test-key"),
+            patch.object(editorial_summary, "GEMINI_API_KEY", "gemini-unit-test-key"),
+            patch.object(editorial_summary, "MODEL", "openai/gpt-oss-120b"),
+            patch.object(editorial_summary, "QUOTA_EXHAUSTED_FOR_RUN", False),
+            patch.object(editorial_summary, "urlopen", side_effect=[
+                quota_error(), quota_error(), gemini_response
+            ]) as mocked,
+        ):
+            summary, level = editorial_summary.generate_editorial_summary(
+                self._article(), "Testo della fonte " * 100
+            )
+        self.assertEqual(level, "standard")
+        self.assertEqual(editorial_summary._word_count(summary), 270)
+        self.assertEqual(mocked.call_count, 3)
+        gemini_request = mocked.call_args_list[2].args[0]
+        self.assertIn("gemini-3.8-flash:generateContent", gemini_request.full_url)
+        self.assertEqual(gemini_request.get_header("X-goog-api-key"), "gemini-unit-test-key")
+        self.assertFalse(editorial_summary.QUOTA_EXHAUSTED_FOR_RUN)
+
+    def test_uses_gemini_when_groq_key_is_not_configured(self):
+        response = self._gemini_response()
+        with (
+            patch.object(editorial_summary, "API_KEY", ""),
+            patch.object(editorial_summary, "GEMINI_API_KEY", "gemini-unit-test-key"),
+            patch.object(editorial_summary, "QUOTA_EXHAUSTED_FOR_RUN", False),
+            patch.object(editorial_summary, "urlopen", return_value=response) as mocked,
+        ):
+            summary, level = editorial_summary.generate_editorial_summary(
+                self._article(), "Testo della fonte " * 100
+            )
+        self.assertEqual(level, "standard")
+        self.assertEqual(mocked.call_count, 1)
 
     def test_quota_exhaustion_stops_repeated_requests_for_the_run(self):
         error_body = json.dumps({
