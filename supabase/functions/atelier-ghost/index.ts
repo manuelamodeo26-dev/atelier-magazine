@@ -18,8 +18,9 @@ Deno.serve(async (req: Request) => {
   const supabaseUrl = Deno.env.get("SUPABASE_URL");
   const anonKey = Deno.env.get("SUPABASE_ANON_KEY");
   const groqKey = Deno.env.get("GROQ_API_KEY");
+  const geminiKey = Deno.env.get("GEMINI_API_KEY");
+  const geminiModel = Deno.env.get("GEMINI_MODEL") || "gemini-3.8-flash";
   if (!supabaseUrl || !anonKey) return json(503, { error: "Configurazione Supabase mancante." });
-
   const authHeader = req.headers.get("Authorization") || "";
   const token = authHeader.startsWith("Bearer ") ? authHeader.slice(7) : "";
   if (!token) return json(401, { error: "Autenticazione richiesta." });
@@ -32,11 +33,10 @@ Deno.serve(async (req: Request) => {
   if (user?.app_metadata?.role !== "admin") {
     return json(403, { error: "Accesso riservato all'amministratore ATELIER." });
   }
-  if (!groqKey) return json(503, {
-    error: "Agente non ancora attivato: manca il segreto GROQ_API_KEY nelle Edge Function Secrets.",
+  if (!groqKey && !geminiKey) return json(503, {
+    error: "Agente non ancora attivato: configura GROQ_API_KEY oppure GEMINI_API_KEY nelle Edge Function Secrets.",
     setup_required: true,
   });
-
   let rawBody = "";
   try { rawBody = await req.text(); } catch { return json(400, { error: "Corpo della richiesta non leggibile." }); }
   if (new TextEncoder().encode(rawBody).byteLength > 20000) {
@@ -67,27 +67,74 @@ Deno.serve(async (req: Request) => {
     'Rispondi in italiano con JSON: {"risk":"low|medium|high","summary":"...","findings":["..."],"recommendation":"...","requires_human_review":true}.',
   ].join(" ");
 
-  const groqResponse = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-    method: "POST",
-    headers: { Authorization: `Bearer ${groqKey}`, "Content-Type": "application/json" },
-    body: JSON.stringify({
-      model: Deno.env.get("GROQ_MODEL") || "openai/gpt-oss-120b",
-      temperature: 0.2,
-      response_format: { type: "json_object" },
-      messages: [
-        { role: "system", content: system },
-        { role: "user", content: JSON.stringify({ task, context, content }) },
-      ],
-    }),
-  });
-  if (!groqResponse.ok) {
-    const detail = await groqResponse.text();
-    console.error("Groq request failed:", groqResponse.status, detail.slice(0, 500));
-    return json(502, { error: "Il servizio AI non ha completato l'analisi. Riprova più tardi." });
+  let answer = "";
+  if (groqKey) {
+    try {
+      const groqResponse = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+        method: "POST",
+        headers: { Authorization: `Bearer ${groqKey}`, "Content-Type": "application/json" },
+        signal: AbortSignal.timeout(45000),
+        body: JSON.stringify({
+          model: Deno.env.get("GROQ_MODEL") || "openai/gpt-oss-120b",
+          temperature: 0.2,
+          response_format: { type: "json_object" },
+          messages: [
+            { role: "system", content: system },
+            { role: "user", content: JSON.stringify({ task, context, content }) },
+          ],
+        }),
+      });
+      if (groqResponse.ok) {
+        const result = await groqResponse.json();
+        const candidate = result?.choices?.[0]?.message?.content;
+        if (typeof candidate === "string") {
+          try {
+            JSON.parse(candidate);
+            answer = candidate;
+          } catch {
+            console.warn("Groq returned invalid JSON; trying Gemini fallback.");
+          }
+        }
+      } else {
+        const detail = await groqResponse.text();
+        console.error("Groq request failed; trying Gemini fallback:", groqResponse.status, detail.slice(0, 300));
+      }
+    } catch (error) {
+      console.error("Groq request failed; trying Gemini fallback:", error);
+    }
   }
-  const result = await groqResponse.json();
-  const answer = result?.choices?.[0]?.message?.content;
-  if (typeof answer !== "string") return json(502, { error: "Risposta AI non valida." });
+
+  if (!answer && geminiKey) {
+    try {
+      const geminiResponse = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(geminiModel)}:generateContent`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "x-goog-api-key": geminiKey },
+          signal: AbortSignal.timeout(90000),
+          body: JSON.stringify({
+            contents: [{
+              role: "user",
+              parts: [{ text: system + "\n\n" + JSON.stringify({ task, context, content }) }],
+            }],
+            generationConfig: { temperature: 0.2, responseMimeType: "application/json" },
+          }),
+        },
+      );
+      if (geminiResponse.ok) {
+        const result = await geminiResponse.json();
+        const parts = result?.candidates?.[0]?.content?.parts || [];
+        answer = parts.map((part: { text?: string }) => part.text || "").join("\n").trim();
+      } else {
+        const detail = await geminiResponse.text();
+        console.error("Gemini request failed:", geminiResponse.status, detail.slice(0, 300));
+      }
+    } catch (error) {
+      console.error("Gemini request failed:", error);
+    }
+  }
+
+  if (!answer) return json(502, { error: "Il servizio AI non ha completato l'analisi. Riprova più tardi." });
   try {
     return json(200, { assistant: "ATELIER Ghost", analysis: JSON.parse(answer) });
   } catch {
