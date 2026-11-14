@@ -15,10 +15,11 @@ permissions:
 
 concurrency:
   group: update-atelier-news
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   update-news:
+    if: false # temporarily disabled during editorial archive reset
     runs-on: ubuntu-latest
     timeout-minutes: 25
     outputs:
