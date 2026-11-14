@@ -1,7 +1,7 @@
 {
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
-  "editorial_api_retry_after": "2026-11-14T22:25:23.162378+00:00",
-  "updated_at": "2026-11-13T23:23:09.907386+00:00",
+  "editorial_api_retry_after": "2026-11-15T00:05:44.859508+00:00",
+  "updated_at": "2026-11-14T00:05:45.773881+00:00",
   "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
@@ -54,6 +54,41 @@
     "verified_count": 164
   },
   "articles": [
+    {
+      "id": "https://www.finestresullarte.info/attualita/germania-rubata-scultura-hans-arp-fiera-colonia-art-cologne",
+      "title": "Germania, rubata un'opera di Hans Arp alla fiera Art Cologne",
+      "excerpt": "Domenica 8 novembre, tra le 16.55 e le 17.10, qualcuno ha portato via dallo stand della galleria Ludorff S’élevant, bronzo dorato di Hans Arp del 1962 alto poco meno di 30 centimetri e valutato 135mila euro. La galleria e la polizia chiedono aiuto per ritrovarlo.",
+      "author": "Redazione",
+      "category": "Art & Culture",
+      "source": "finestresullarte.info",
+      "date": "2026-11-13T22:43:26+00:00",
+      "url": "https://www.finestresullarte.info/attualita/germania-rubata-scultura-hans-arp-fiera-colonia-art-cologne",
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/stand-ludorff-art-cologne-2026-1.jpg",
+      "image_verified": true,
+      "language": "it",
+      "editorial_summary": "Domenica 8 novembre, nella cornice internazionale della fiera Art Cologne, è avvenuto un furto che ha colto di sorpresa galleristi e visitatori: una scultura in bronzo dorato del 1962 di Hans Arp, intitolata *S’élevant* (in francese “che si innalza”), è sparita dallo stand C‑121 della galleria Ludorff di Düsseldorf. L’opera, alta poco meno di trenta centimetri, è valutata 135 000 euro, ma il suo valore non risiede nel metallo, bensì nella rarità e nella importanza storica per l’ultima fase dell’artista, caratterizzata da forme organiche che si slanciano verso l’alto.\n\nIl furto è stato registrato in un intervallo di quindici minuti, tra le 16:55 e le 17:10, nei padiglioni del quartiere di Deutz, dove la scultura era esposta su un piedistallo. La polizia di Colonia ha subito diffuso una fotografia dell’opera per facilitarne il riconoscimento, mentre la galleria ha presentato denuncia e lanciato un appello a collezionisti, colleghi e al pubblico affinché segnalino eventuali offerte o avvistamenti. L’interesse non sembra essere il valore del bronzo, ma la riconoscibilità dell’oggetto, che potrebbe riemergere sul mercato dell’arte contemporanea.\n\n**Il punto cruciale è che la riconoscibilità della forma organica di *S’élevant* è l’unico indizio concreto per ritrovarla, perché il valore materiale è trascurabile rispetto al suo significato artistico.**\n\nPer il mondo dell’arte, il caso sottolinea la vulnerabilità delle esposizioni anche nei contesti più prestigiosi e la necessità di misure di sicurezza più stringenti. La speranza della Ludorff è che l’opera venga recuperata intatta, evitando che un gesto criminale possa cancellare un pezzo significativo della produzione di Arp e compromettere la reputazione di una fiera che, fino a quel momento, aveva registrato un’edizione di grande successo.",
+      "editorial_level": "standard",
+      "editorial_word_count": 274,
+      "image_width": 1200,
+      "image_height": 616,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.finestresullarte.info/musei/bergamo-ex-edificio-industriale-del-1887-diventa-nuovo-spazio-per-arti-dal-vivo",
+      "title": "A Bergamo un ex edificio industriale del 1887 diventa un nuovo spazio per le arti dal vivo",
+      "excerpt": "Con gres+, gres art 671 amplia i propri spazi con un nuovo padiglione di oltre 1.500 metri quadrati dedicato a musica, danza, teatro, cinema e incontri. L’inaugurazione è in programma il 13 e 14 novembre 2026 con OPEN ALL, due giornate di appuntamenti gratuiti.",
+      "author": "Redazione",
+      "category": "Architecture",
+      "source": "finestresullarte.info",
+      "date": "2026-11-13T22:12:32+00:00",
+      "url": "https://www.finestresullarte.info/musei/bergamo-ex-edificio-industriale-del-1887-diventa-nuovo-spazio-per-arti-dal-vivo",
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/gres-bergamo-cover.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1200,
+      "image_height": 616,
+      "image_format": "jpeg"
+    },
     {
       "id": "https://www.exibart.com/musei/un-ospedale-di-250-anni-si-trasforma-a-modena-apre-ago-nuovo-spazio-per-la-cultura/",
       "title": "Un ospedale di 250 anni si trasforma: a Modena apre AGO, nuovo spazio per la cultura",
@@ -2867,7 +2902,9 @@
       "language": "it",
       "image_width": 1200,
       "image_height": 616,
-      "image_format": "jpeg"
+      "image_format": "jpeg",
+      "editorial_attempted_at": "2026-11-14T00:05:44.859508+00:00",
+      "editorial_retry_after": "2026-11-15T00:05:44.859508+00:00"
     },
     {
       "id": "https://www.finestresullarte.info/archeologia/catania-riapre-antico-ipogeo-cinque-camere-sepolcrali-tre-metri-sotto-la-citta",
@@ -2883,7 +2920,10 @@
       "language": "it",
       "image_width": 1200,
       "image_height": 616,
-      "image_format": "jpeg"
+      "image_format": "jpeg",
+      "editorial_summary": "Lunedì 9 novembre l’Antico Ipogeo della chiesa di Sant’Agostino, oggi Santuario di Santa Rita a Catania, è stato riaperto al pubblico dopo un accurato restauro. Situato a tre metri e mezzo sotto il centro storico, il complesso sotterraneo comprende cinque camere sepolcrali collegate da corridoi e scale, con volte a botte e a crociera, pavimenti in cotto, nicchie e ossari. L’inaugurazione ha visto la partecipazione dell’arcivescovo Luigi Renna, del sindaco Enrico Trantino e di rappresentanti accademici, sottolineando l’importanza culturale del sito.\n\nLe camere documentano le pratiche funerarie diffuse tra il XVIII e il XIX secolo, includendo i cosiddetti colatoi, spazi destinati al trattamento delle salme prima della deposizione definitiva. Durante la cerimonia è stato proiettato un video realizzato dall’Accademia di Belle Arti di Catania, che, grazie all’intelligenza artificiale, ricostruisce le diverse fasi storiche dell’ipogeo, dalle testimonianze romane alle funzioni antiaeree della Seconda Guerra mondiale. Il percorso di restauro è stato illustrato dagli ingegneri e architetti responsabili, evidenziando le difficoltà tecniche legate alla conservazione di strutture sotterranee.\n\n**L’ingresso dell’ipogeo nel circuito Pulcherrima amplia l’offerta culturale di Catania, consentendo ai visitatori di accedere, con un unico biglietto, a sei luoghi storici e religiosi della città.** Il nuovo itinerario collega l’ipogeo a monumenti barocchi come la Badia di Sant’Agata e la chiesa di San Giuseppe al Duomo, proponendo una lettura integrata del patrimonio architettonico e spirituale catanese. Da dicembre il percorso includerà anche una mostra sull’artista Salvatore Incorpora, arricchendo ulteriormente l’esperienza per residenti e turisti.\n\nL’ipogeo sarà aperto al pubblico lunedì, mercoledì, venerdì e sabato dalle 15:00 alle 18:00 e la domenica dalle 9:30 alle 12:30, offrendo così nuove opportunità di scoperta per i giovani interessati alla storia, all’arte e alle tradizioni funerarie della loro città.",
+      "editorial_level": "standard",
+      "editorial_word_count": 287
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/il-botswana-raddoppiera-la-sua-quota-in-de-beers-si-avvicina-la-vendita-500253/",
@@ -2901,7 +2941,10 @@
       "image_height": 0,
       "image_format": "",
       "image_attempted_at": "2026-11-13T23:23:08.159963+00:00",
-      "image_retry_after": "2026-11-14T11:23:08.159963+00:00"
+      "image_retry_after": "2026-11-14T11:23:08.159963+00:00",
+      "editorial_summary": "Il Botswana ha annunciato che raddoppierà la sua quota in De Beers, passando dal 15 % al 30 %, diventando così il maggior azionista singolo della società di diamanti. Questa mossa è parte di un piano più ampio per accelerare l’uscita di Anglo American, che da due anni sta cercando di vendere la sua partecipazione nella compagnia. Il Paese detiene il diritto di prelazione sulla quota di Anglo American, motivo per cui il suo supporto è cruciale per la riuscita della cessione.\n\nA luglio Anglo American aveva indicato il Global Diamond Consortium (GDC) come offerente preferenziale. Il GDC è guidato da Gareth Penny, ex amministratore delegato di De Beers, e comprende i governi di Namibia e Angola, oltre a importanti commercianti di diamanti. Secondo la fonte Rapaport, tra i partner del consortium ci sono dirigenti di Diarough e Pluczenik, con sede ad Anversa, e il governo dell’Oman. Richemont è in trattative per aderire al gruppo. Il Botswana ha inoltre comunicato che Namibia e Angola, dove De Beers opera, acquisiranno quote nella società.\n\n**Il raddoppio della quota del Botswana in De Beers rappresenta un passo strategico per diversificare la sua economia, riducendo la dipendenza dai diamanti naturali e aprendo l’accesso a tecnologie avanzate tramite la divisione di diamanti sintetici Element Six.**\n\nCon circa il 70 % dei diamanti prodotti da De Beers, il Botswana potrà sfruttare la crescita della domanda di diamanti sintetici, destinati all’uso in calcolo ad alte prestazioni, all’espansione dell’intelligenza artificiale e dei data center su larga scala. Questa evoluzione potrebbe trasformare il Paese da semplice esportatore di materie prime a player tecnologico nel settore dei materiali di precisione.",
+      "editorial_level": "standard",
+      "editorial_word_count": 267
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/luisaviaroma-resta-a-lvr-nessun-rilancio-sullofferta-da-188-milioni-500187/",
@@ -2919,7 +2962,10 @@
       "image_height": 0,
       "image_format": "",
       "image_attempted_at": "2026-11-13T23:23:08.159963+00:00",
-      "image_retry_after": "2026-11-14T11:23:08.159963+00:00"
+      "image_retry_after": "2026-11-14T11:23:08.159963+00:00",
+      "editorial_summary": "Il tribunale di Firenze ha chiuso la procedura di concordato semplificato liquidatorio per LuisaViaRoma senza ricevere offerte concorrenti entro l'8 novembre. Di conseguenza, la cordata guidata da Paolo Corinaldesi e Tommaso Andorlini ha aggiudicato l'intero perimetro dell'e‑tailer fiorentino per 18,8 milioni di euro, cifra corrispondente alla propria offerta vincolante posta come base d'asta. Le pratiche per il trasferimento di proprietà dovranno concludersi entro la fine del mese, secondo quanto riportato da T24‑Economia.\n\nLa holding Ato, che controlla la società operativa Lvr srl, gestiva LuisaViaRoma in affitto di ramo d'azienda da luglio. Oltre a Corinaldesi, ex responsabile di Woolrich, e Andorlini, amministratore delegato, nella cordata fanno parte la famiglia Marzotto, Gian Luca Sghedoni di Litokol, Ettore Riello del gruppo Riello e Luca Poggi di Poggi & Associati. L'acquisizione comprende l'e‑commerce, che rappresenta circa il 90 % del fatturato, i negozi fisici di Firenze, Prato e Forte dei Marmi, la piattaforma tecnologica e i marchi, mentre il punto vendita di New York è stato chiuso.\n\n**Il nuovo assetto prevede che l’online rimanga il cuore dell’attività, mentre il flagship di via Roma diventerà una piattaforma culturale dedicata alla selezione, interpretazione e comunicazione di progetti.** I dipendenti sono scesi a 157 rispetto ai 181 presenti al momento del passaggio di luglio, per dimissioni, ma il contratto con la società di logistica, che impiega circa un centinaio di persone, resta in vigore.\n\nPer il settore della moda digitale, la conclusione di questa operazione conferma la centralità del canale online nella strategia di crescita di brand storici. La trasformazione del flagship in spazio culturale potrebbe aprire nuove opportunità di collaborazione tra moda, design e arte, rafforzando il ruolo di LuisaViaRoma come punto di riferimento per un pubblico giovane e attento alle tendenze.",
+      "editorial_level": "standard",
+      "editorial_word_count": 288
     },
     {
       "id": "https://www.pambianconews.com/2026/11/10/piazza-italia-compra-conbipel-in-arrivo-un-piano-di-opening-da-100-nuovi-negozi-500181/",
@@ -2938,44 +2984,6 @@
       "image_format": "jpeg",
       "editorial_attempted_at": "2026-11-13T22:25:23.162378+00:00",
       "editorial_retry_after": "2026-11-14T22:25:23.162378+00:00"
-    },
-    {
-      "id": "https://www.pambianconews.com/2026/11/10/menswear-italiano-a-doppia-velocita-nei-7-mesi-export-a-09-import-a-65-500143/",
-      "title": "Menswear italiano a doppia velocità nei 7 mesi: export a +0,9%, import a -6,5%",
-      "excerpt": "L’export del menswear italiano ritorna a fatica in territorio positivo, registrando un +0,9% nei primi sette mesi del 2026. Secondo quanto indicato dai dati Istat , le vendite estere relative al periodo gennaio-luglio hanno raggiunto i 5,4 miliardi di euro. Le cifre sono state comunicate durante la consueta conferenza stampa dedicata alla prossima edizione di Pitti Immagine Uomo , in calendario dal 12 al 15 gennaio 2027 presso la Fortezza da Basso di Firenze. Dal punto di vista geografico, emerge un incremento delle esportazioni di moda maschile italiana verso entrambe le macroaree ma più marcato in Europa. Le vendite dirette ai Paesi dell’Unione europea hanno registrato una crescita dell’1,7%, mentre quelle verso i mercati extra-Ue contengono l’aumento al +0,2%, assorbendo il 51,8% dell’export complessivo, contro il 48,2% riconducibile al mercato comunitario. Secondo la nota a cura dell’Ufficio Studi Economici e Statistici di Confindustria Moda , la Francia mantiene il primato tra i mercati di sbocco; le esportazioni raggiungono i 753 milioni di euro, con un incremento del +5,5% e un’incidenza del 14% sul totale. Seguono gli Stati Uniti con un valore di 580 milioni di euro, pari al 10,8% dell’export complessivo, in crescita del +3,4 per cento. La Germania, al contrario, registra una flessione del 4,3% e si colloca in terza posizione; il valore delle sue esportazioni è pari a 504 milioni di euro, corrispondente ad una quota del 9,4 per cento. La Cina, quarta, rileva una crescita del 6,7%, sale così a 387 milioni di euro, pari al 7,2% circa delle esportazioni totali. Segue la Spagna che, a seguito di un incremento del 5,4%, raggiunge 329 milioni di euro. La Svizzera si posiziona al sesto posto, con 229 milioni di euro (+0,3%); il mercato elvetico mantiene così un ruolo significativo anche in virtù della sua funzione di hub logistico-commerciale per numerose griffe del settore. Il Giappone si colloca subito dopo, con esportazioni pari a 228 milioni di euro (-1,9% e una quota del 4,2 per cento). Seguono il Regno Unito con 220 milioni di euro (-8,4%), la Polonia, con 192 milioni di euro (+5,3%), Hong Kong, che si attesta a 187 milioni di euro, con un incremento del ",
-      "author": "Redazione",
-      "category": "Business",
-      "source": "pambianconews.com",
-      "date": "2026-11-10T11:00:08+00:00",
-      "url": "https://www.pambianconews.com/2026/11/10/menswear-italiano-a-doppia-velocita-nei-7-mesi-export-a-09-import-a-65-500143/",
-      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/Final_Files8.jpg",
-      "image_verified": true,
-      "language": "it",
-      "image_width": 1320,
-      "image_height": 1100,
-      "image_format": "jpeg",
-      "editorial_summary": "L’export del menswear italiano è tornato in territorio positivo nei primi sette mesi del 2026, registrando un incremento dell’0,9 % e raggiungendo 5,4 miliardi di euro di vendite all’estero, secondo i dati Istat presentati alla conferenza stampa di Pitti Immagine Uomo. L’aumento è più marcato in Europa, dove le esportazioni verso i Paesi dell’Unione europea sono cresciute dell’1,7 %, rispetto al +0,2 % dei mercati extra‑UE, che insieme rappresentano il 51,8 % dell’export totale.\n\nTra i principali mercati di sbocco, la Francia resta al primo posto con 753 milioni di euro (+5,5 %) e una quota del 14 % sul totale, seguita dagli Stati Uniti (580 milioni di euro, +3,4 %) e dalla Germania, che invece registra una flessione del 4,3 % a 504 milioni di euro. La Cina mostra la crescita più alta tra i paesi extra‑UE (+6,7 % a 387 milioni di euro), mentre il Regno Unito e il Giappone segnano le maggiori contrazioni, rispettivamente -8,4 % e -1,9 %.\n\n**Il punto più rilevante è la forte crescita dell’abbigliamento in pelle, con un +25,1 % di export, che conferma il comparto come il più dinamico del menswear italiano all’estero.** Questo trend suggerisce che i brand stanno puntando su prodotti di alta qualità e valore aggiunto per compensare la debolezza della domanda globale.\n\nSul fronte delle importazioni, il menswear made in Italy è sceso del 6,5 % a 3,5 miliardi di euro, con cali sia nei paesi comunitari (-5,2 %) che in quelli extra‑UE (-7,5 %). Il Bangladesh rimane il principale fornitore (430 milioni di euro, -15,6 %), seguito dalla Cina (420 milioni di euro, -8 %). Le tensioni geopolitiche e l’instabilità delle politiche commerciali, evidenziate nella nota di Confindustria Moda, continuano a frenare gli acquisti, mentre l’aumento dei costi energetici pesa sulle imprese del settore.",
-      "editorial_level": "standard",
-      "editorial_word_count": 300
-    },
-    {
-      "id": "https://www.pambianconews.com/2026/11/10/kiton-raddoppia-nel-quadrilatero-nuova-boutique-in-via-montenapoleone-500111/",
-      "title": "Kiton raddoppia nel Quadrilatero: nuova boutique in via Montenapoleone",
-      "excerpt": "Kiton raddoppia la propria presenza nel Quadrilatero. La maison napoletana ha inaugurato il nuovo flagship di 270 metri quadrati in via Montenapoleone, interamente dedicato all’abbigliamento maschile. Parallelamente, lo storico negozio di via Sant’Andrea di 240 metri quadrati viene riservato esclusivamente alle collezioni femminili. “Arrivare in una delle location più importanti al mondo, via Montenapoleone, rappresenta per noi un nuovo punto di partenza – ha dichiarato in una nota Antonio De Matteis , amministratore delegato del Gruppo Kiton -. Milano è oggi uno dei grandi centri di riferimento internazionali della moda e dello stile. Vogliamo rafforzare la nostra presenza portando in questa città ciò che ci distingue da sempre: la nostra cultura del fare, il valore delle relazioni e quel senso di accoglienza profondamente napoletano che appartiene alla nostra identità”. Il progetto del flagship maschile è firmato dall’architetto Michele Bonan e farà da modello per le prossime aperture del marchio. L’impostazione è quella di un’abitazione privata. Pannellature, legni dai toni caldi, superfici chiare e arredi di taglio residenziale definiscono ambienti raccolti. Una scala dalle linee curve collega i diversi spazi, dove i salotti si alternano alle aree espositive. “Volevamo creare un negozio che fosse una casa – ha spiegato De Matteis -. Un luogo in cui il cliente possa sedersi, sentirsi a proprio agio, parlare con noi ed essere ascoltato”. Nuova boutique Kiton in via Montenapoleone; Ph. courtesy of Kiton Il fulcro della boutique è l’area dedicata al custom e al su misura. È un ambiente separato dal resto del negozio, ispirato al caveau dei tessuti dell’atelier di Arzano, il polo produttivo sartoriale dell’azienda. Qui il cliente può scegliere direttamente i materiali, seguire la personalizzazione dei capi e provarli in totale privacy. Su via Sant’Andrea il gruppo punta invece a dare autonomia alla linea donna, cresciuta negli ultimi anni. “La collezione donna Kiton è cresciuta negli anni seguendo una visione precisa e ampliando progressivamente il proprio linguaggio, rimanendo fedele alla nostra identità sartoriale”, ha affermato Maria Giovanna Paone , president",
-      "author": "Redazione",
-      "category": "Business",
-      "source": "pambianconews.com",
-      "date": "2026-11-10T10:46:03+00:00",
-      "url": "https://www.pambianconews.com/2026/11/10/kiton-raddoppia-nel-quadrilatero-nuova-boutique-in-via-montenapoleone-500111/",
-      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/Kiton_1.jpg",
-      "image_verified": true,
-      "language": "it",
-      "image_width": 1590,
-      "image_height": 822,
-      "image_format": "jpeg",
-      "editorial_summary": "Kiton ha deciso di raddoppiare la propria presenza nel Quadrilatero di Milano, aprendo un nuovo flagship di 270 m² in via Montenapoleone dedicato esclusivamente all’abbigliamento maschile. Parallelamente, lo storico negozio di 240 m² in via Sant’Andrea è stato ristrutturato per ospitare solo le collezioni femminili. La scelta di Milano, uno dei centri di riferimento internazionale della moda, è stata motivata dalla volontà di portare in città la “cultura del fare” napoletana, il valore delle relazioni e un’accoglienza tipicamente napoletana, secondo Antonio De Matteis, amministratore delegato del Gruppo Kiton.\n\nIl progetto del flagship maschile è stato realizzato dall’architetto Michele Bonan e si ispira a un’abitazione privata: pannellature, legni caldi, superfici chiare e arredi di taglio residenziale creano ambienti raccolti. Una scala dalle linee curve collega i diversi spazi, dove salotti e aree espositive si alternano. De Matteis ha spiegato che l’obiettivo era “creare un negozio che fosse una casa”, un luogo dove il cliente possa sedersi, sentirsi a proprio agio, parlare con noi ed essere ascoltato. Il fulcro della boutique è l’area dedicata al custom e al su misura, ispirata al caveau dei tessuti dell’atelier di Arzano. Qui il cliente può scegliere i materiali, seguire la personalizzazione dei capi e provarli in totale privacy.\n\n**Il nuovo flagship di Kiton a Montenapoleone rappresenta un modello di boutique che unisce l’arte sartoriale a un’esperienza di shopping immersiva e personalizzata.**\n\nNel negozio di via Sant’Andrea, il gruppo punta a dare autonomia alla linea donna, che è cresciuta negli ultimi anni mantenendo la propria identità sartoriale. Maria Giovanna Paone, presidente del Gruppo e direttrice creativa della linea femminile, ha sottolineato che la boutique consente di raccontare il percorso della collezione, dalle creazioni sartoriali all’alta gioielleria, ora disponibile anche in Italia. Il contesto è volutamente discreto, con ambienti riservati per le prove e la consulenza, per soddisfare un pubblico internazionale che valorizza il servizio, il tempo dedicato all’acquisto e la qualità del prodotto.\n\nCon l’aggiunta di Palazzo Kiton in via Pontaccio, il gruppo dispone di un headquarter con ampi spazi per appuntamenti privati, incontri con stampa e buyer, soprattutto durante la Milano Fashion Week. Questa espansione strategica rafforza la presenza di Kiton nel cuore della moda europea, offrendo un’esperienza di shopping che va oltre il semplice acquisto e si trasforma in un incontro di cultura, artigianato e stile.",
-      "editorial_level": "approfondimento",
-      "editorial_word_count": 382
     }
   ]
 }
