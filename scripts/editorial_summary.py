@@ -264,34 +264,45 @@ def generate_editorial_summary(article, source_text):
             },
             method="POST",
         )
-        try:
-            with urlopen(gemini_request, timeout=60) as response:
-                result = json.loads(response.read().decode("utf-8"))
-            candidates = result.get("candidates") or [] if isinstance(result, dict) else []
-            parts = ((candidates[0].get("content") or {}).get("parts") or []) if candidates else []
-            raw = "\n".join(str(part.get("text") or "") for part in parts if isinstance(part, dict)).strip()
-            if raw:
-                summary, level = parse_summary(raw, "Gemini")
-                if summary:
-                    print("Sintesi generata con Gemini ({}).".format(GEMINI_MODEL))
-                    return summary, level
-            print("Gemini ha restituito una risposta non utilizzabile.")
-        except HTTPError as exc:
-            detail = ""
+        for attempt in range(2):
             try:
-                error_body = exc.read().decode("utf-8", errors="replace")
-                error_data = json.loads(error_body) if error_body else {}
-                detail = str(error_data.get("error", {}).get("message") or "").strip()
-            except (ValueError, AttributeError, TypeError):
-                pass
-            gemini_quota_exhausted = exc.code == 429
-            print("Gemini non disponibile (HTTP {}){}.".format(
-                exc.code, (" — " + detail[:180]) if detail else ""
-            ))
-        except (URLError, TimeoutError, OSError, ValueError, KeyError, IndexError, TypeError) as exc:
-            print("Gemini non disponibile: {}.".format(type(exc).__name__))
+                # Gemini can take longer on long editorial prompts; retry one
+                # transient network failure before deferring this article.
+                with urlopen(gemini_request, timeout=120) as response:
+                    result = json.loads(response.read().decode("utf-8"))
+                candidates = result.get("candidates") or [] if isinstance(result, dict) else []
+                parts = ((candidates[0].get("content") or {}).get("parts") or []) if candidates else []
+                raw = "\n".join(str(part.get("text") or "") for part in parts if isinstance(part, dict)).strip()
+                if raw:
+                    summary, level = parse_summary(raw, "Gemini")
+                    if summary:
+                        print("Sintesi generata con Gemini ({}).".format(GEMINI_MODEL))
+                        return summary, level
+                print("Gemini ha restituito una risposta non utilizzabile.")
+                break
+            except HTTPError as exc:
+                detail = ""
+                try:
+                    error_body = exc.read().decode("utf-8", errors="replace")
+                    error_data = json.loads(error_body) if error_body else {}
+                    detail = str(error_data.get("error", {}).get("message") or "").strip()
+                except (ValueError, AttributeError, TypeError):
+                    pass
+                gemini_quota_exhausted = exc.code == 429
+                print("Gemini non disponibile (HTTP {}){}.".format(
+                    exc.code, (" — " + detail[:180]) if detail else ""
+                ))
+                break
+            except (URLError, TimeoutError, OSError, ValueError, KeyError, IndexError, TypeError) as exc:
+                if attempt == 0:
+                    print("Gemini: errore temporaneo {}; nuovo tentativo tra 5s.".format(type(exc).__name__))
+                    time.sleep(5)
+                    continue
+                print("Gemini non disponibile: {}.".format(type(exc).__name__))
 
-    if quota_exhausted_during_attempts or gemini_quota_exhausted:
+    # Groq quota exhaustion alone must not start a 24-hour cooldown when
+    # Gemini is configured but only encountered a transient error.
+    if gemini_quota_exhausted or (quota_exhausted_during_attempts and not GEMINI_API_KEY):
         QUOTA_EXHAUSTED_FOR_RUN = True
         print("Quote AI esaurite: sospendo gli altri tentativi per questa esecuzione.")
     print("Sintesi AI non disponibile: Groq e Gemini non hanno prodotto un risultato valido.")
