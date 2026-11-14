@@ -18,12 +18,18 @@ def validate_payload(payload):
     articles = payload.get("articles")
     if not isinstance(articles, list):
         return ["Il campo articles deve essere un array."], warnings
-    if not articles:
+    maintenance = payload.get("archive_status") == "maintenance"
+    if not articles and not maintenance:
         errors.append("Archivio vuoto: pubblicazione bloccata.")
+    if maintenance and articles:
+        errors.append("La modalità manutenzione deve avere un archivio vuoto.")
     if len(articles) > 180:
         errors.append("Archivio oltre il limite di 180 articoli.")
     total, ok = payload.get("feeds_total"), payload.get("feeds_ok")
-    if not isinstance(total, int) or not isinstance(ok, int) or total < 1 or not 0 <= ok <= total:
+    if maintenance:
+        if total != 0 or ok != 0 or payload.get("feed_status") != []:
+            errors.append("Metadati feed non validi per la modalità manutenzione.")
+    elif not isinstance(total, int) or not isinstance(ok, int) or total < 1 or not 0 <= ok <= total:
         errors.append("Metadati dei feed non validi.")
     elif ok < total:
         warnings.append("Feed disponibili: {}/{}.".format(ok, total))
