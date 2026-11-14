@@ -801,6 +801,9 @@ def main():
                     print("Quota AI esaurita: sospendo la coda editoriale per 24 ore.")
                     break
                 article["editorial_retry_after"] = (attempted_at + timedelta(hours=12)).isoformat()
+                if editorial_summary.AI_PROVIDER_UNAVAILABLE_FOR_RUN:
+                    print("Provider AI temporaneamente non disponibile: sospendo la coda per questa esecuzione.")
+                    break
                 print("Sintesi editoriale rinviata per 12 ore: {}".format(article.get("title", "")[:90]))
     elif has_ai_provider and not editorial_api_ready:
         print("Quota AI in pausa fino a {}: evito richieste inutili.".format(editorial_api_retry_after))
