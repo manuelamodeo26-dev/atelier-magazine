@@ -154,9 +154,9 @@ def generate_editorial_summary(article, source_text):
         if level not in ("standard", "approfondimento") or not isinstance(paragraphs, list):
             print("{}: struttura della sintesi non valida.".format(provider))
             return "", ""
-        paragraphs = [re.sub(r"\\s+", " ", str(p)).strip() for p in paragraphs]
+        paragraphs = [re.sub(r"\s+", " ", str(p)).strip() for p in paragraphs]
         paragraphs = [p for p in paragraphs if p]
-        summary = "\\n\\n".join(paragraphs)
+        summary = "\n\n".join(paragraphs)
         words = _word_count(summary)
         min_paragraphs, max_paragraphs = (4, 5) if level == "approfondimento" else (3, 4)
         min_words, max_words = (350, 450) if level == "approfondimento" else (250, 300)
@@ -269,7 +269,7 @@ def generate_editorial_summary(article, source_text):
                 result = json.loads(response.read().decode("utf-8"))
             candidates = result.get("candidates") or [] if isinstance(result, dict) else []
             parts = ((candidates[0].get("content") or {}).get("parts") or []) if candidates else []
-            raw = "\\n".join(str(part.get("text") or "") for part in parts if isinstance(part, dict)).strip()
+            raw = "\n".join(str(part.get("text") or "") for part in parts if isinstance(part, dict)).strip()
             if raw:
                 summary, level = parse_summary(raw, "Gemini")
                 if summary:
