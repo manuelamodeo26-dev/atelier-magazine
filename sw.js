@@ -1,4 +1,4 @@
-const CACHE = 'atelier-v12';
+const CACHE = 'atelier-v13';
 const CORE = ['./', './index.html', './style.css', './app.js', './account.js', './supabase-config.js', './article.html', './article-page.js', './data/articles.json', './manifest.webmanifest', './favicon.svg', './community.html', './community.css', './community.js', './atelier-hub.html', './atelier-hub.css', './atelier-hub.js'];
 
 self.addEventListener('install', event => {

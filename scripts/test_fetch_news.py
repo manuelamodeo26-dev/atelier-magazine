@@ -1,8 +1,38 @@
 import json
 import unittest
+from datetime import datetime, timezone
 from unittest.mock import patch
 
 import fetch_news
+
+
+class EditorialSafetyStateTests(unittest.TestCase):
+    def test_global_ai_cooldown_blocks_all_providers_until_expiry(self):
+        now = datetime(2026, 11, 14, 12, 56, tzinfo=timezone.utc)
+        self.assertFalse(fetch_news.editorial_ai_ready(
+            "2026-11-15T00:05:44.859508+00:00", now
+        ))
+
+    def test_expired_global_ai_cooldown_allows_generation(self):
+        now = datetime(2026, 11, 14, 12, 56, tzinfo=timezone.utc)
+        self.assertTrue(fetch_news.editorial_ai_ready(
+            "2026-11-14T12:55:00+00:00", now
+        ))
+
+    def test_missing_archive_status_defaults_to_maintenance(self):
+        self.assertEqual(fetch_news.archive_status_from_previous({}), "maintenance")
+
+    def test_maintenance_status_survives_news_refresh(self):
+        self.assertEqual(
+            fetch_news.archive_status_from_previous({"archive_status": "maintenance"}),
+            "maintenance",
+        )
+
+    def test_only_explicit_active_status_opens_homepage(self):
+        self.assertEqual(
+            fetch_news.archive_status_from_previous({"archive_status": "active"}),
+            "active",
+        )
 
 
 class FeedStatusTests(unittest.TestCase):

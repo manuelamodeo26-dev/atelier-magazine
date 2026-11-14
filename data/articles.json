@@ -1,9 +1,10 @@
 {
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
-  "updated_at": "2026-11-14T00:22:32.987Z",
+  "updated_at": "2026-11-14T12:56:13+00:00",
   "feeds_ok": 0,
   "feeds_total": 0,
   "feed_status": [],
   "articles": [],
-  "archive_status": "maintenance"
+  "archive_status": "maintenance",
+  "editorial_api_retry_after": "2026-11-15T00:05:44.859508+00:00"
 }

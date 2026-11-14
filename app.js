@@ -106,18 +106,38 @@
     $('#show-more').setAttribute('aria-expanded',String(showAll));
     document.dispatchEvent(new Event('atelier:articles-rendered'));
   }
+  function setMaintenanceMode(enabled){
+    const screen=document.getElementById('maintenance-screen');
+    if(!screen)return;
+    screen.hidden=!enabled;
+    document.body.classList.toggle('is-maintenance',enabled);
+    Array.from(document.body.children).forEach(child=>{
+      if(child===screen)return;
+      if(enabled)child.setAttribute('inert','');
+      else child.removeAttribute('inert');
+    });
+  }
   async function loadArticles(){
     try{
       const response=await fetch('./data/articles.json',{cache:'no-store'});
       if(!response.ok) throw new Error('Archivio non disponibile ('+response.status+')');
       const data=await response.json();
       if(!data||!Array.isArray(data.articles)) throw new Error('Formato archivio non valido');
+      if(data.archive_status!=='active'){
+        articles=[];
+        loadFailed=false;
+        setMaintenanceMode(true);
+        return;
+      }
+      setMaintenanceMode(false);
       articles=data.articles.filter(a=>a&&typeof a.title==='string'&&a.title.trim()).map(a=>({...a,category:categoryOf(a.category)}));
       loadFailed=false;
     }catch(error){
       console.warn('ATELIER: impossibile caricare le notizie.',error);
       articles=[];
       loadFailed=true;
+      setMaintenanceMode(true);
+      return;
     }
     const heroImage=articles[0]&&articles[0].image_verified===true&&safeURL(articles[0].image)?articles[0]:null;
     if(heroImage){

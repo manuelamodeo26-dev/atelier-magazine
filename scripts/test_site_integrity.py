@@ -68,7 +68,12 @@ def main():
                 f"{page.name}: riferimento locale non trovato: {reference}"
             )
             checked += 1
-    print(f"Integrità sito OK: {len(pages)} pagine HTML, {checked} riferimenti locali verificati.")
+    home = (ROOT / "index.html").read_text(encoding="utf-8")
+    app = (ROOT / "app.js").read_text(encoding="utf-8")
+    assert 'id="maintenance-screen"' in home, "Homepage: schermata manutenzione assente"
+    assert "data.archive_status!=='active'" in app, "Homepage: manca il blocco fail-closed"
+    assert "setMaintenanceMode(true)" in app, "Homepage: la modalità manutenzione non viene applicata"
+    print(f"Integrità sito OK: {len(pages)} pagine HTML, {checked} riferimenti locali verificati; manutenzione fail-closed verificata.")
 
 
 if __name__ == "__main__":

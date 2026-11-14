@@ -126,6 +126,18 @@ def retry_window_open(timestamp, now=None):
         return True
 
 
+def editorial_ai_ready(retry_after, now=None):
+    """Honor a persisted global cooldown for every AI provider."""
+    return retry_window_open(retry_after, now)
+
+
+def archive_status_from_previous(prior_payload):
+    """Keep the homepage closed unless an explicit active status is stored."""
+    if isinstance(prior_payload, dict) and prior_payload.get("archive_status") == "active":
+        return "active"
+    return "maintenance"
+
+
 def source_category(article):
     source = str(article.get("source") or "").lower().removeprefix("www.")
     if source in ("vogue.it", "pambianconews.com"):
@@ -761,8 +773,9 @@ def main():
     # or the optional AI service is unavailable.
     editorial_api_retry_after = prior_payload.get("editorial_api_retry_after")
     has_ai_provider = bool(os.getenv("GROQ_API_KEY", "").strip() or os.getenv("GEMINI_API_KEY", "").strip())
-    # A cooldown caused by Groq must not block the independent Gemini fallback.
-    editorial_api_ready = retry_window_open(editorial_api_retry_after) or bool(os.getenv("GEMINI_API_KEY", "").strip())
+    # Gemini fallback is attempted within one generation attempt. A persisted
+    # global cooldown means every configured provider has already been exhausted.
+    editorial_api_ready = editorial_ai_ready(editorial_api_retry_after)
     if has_ai_provider and editorial_api_ready:
         now = datetime.now(timezone.utc)
         new_candidates = sorted(
@@ -841,6 +854,7 @@ def main():
     payload = {
         "editorial_rebuild_version": EDITORIAL_REBUILD_VERSION,
         "editorial_api_retry_after": prior_payload.get("editorial_api_retry_after", ""),
+        "archive_status": archive_status_from_previous(prior_payload),
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "feeds_ok": successful_feeds,
         "feeds_total": len(FEEDS),
