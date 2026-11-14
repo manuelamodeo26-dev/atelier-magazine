@@ -182,6 +182,26 @@ class EditorialSummaryTests(unittest.TestCase):
         self.assertEqual(mocked.call_args_list[0].kwargs["timeout"], 120)
         sleep.assert_called_once_with(5)
 
+    def test_stops_repeating_gemini_after_repeated_transient_failures(self):
+        with (
+            patch.object(editorial_summary, "API_KEY", ""),
+            patch.object(editorial_summary, "GEMINI_API_KEY", "gemini-unit-test-key"),
+            patch.object(editorial_summary, "QUOTA_EXHAUSTED_FOR_RUN", False),
+            patch.object(editorial_summary, "AI_PROVIDER_UNAVAILABLE_FOR_RUN", False),
+            patch.object(editorial_summary, "urlopen", side_effect=[TimeoutError(), TimeoutError()]) as mocked,
+            patch.object(editorial_summary.time, "sleep"),
+        ):
+            first = editorial_summary.generate_editorial_summary(
+                self._article(), "Testo della fonte " * 100
+            )
+            second = editorial_summary.generate_editorial_summary(
+                self._article(), "Altro testo della fonte " * 100
+            )
+        self.assertEqual(first, ("", ""))
+        self.assertEqual(second, ("", ""))
+        self.assertEqual(mocked.call_count, 2)
+        self.assertTrue(editorial_summary.AI_PROVIDER_UNAVAILABLE_FOR_RUN)
+
     def test_groq_quota_and_gemini_timeout_do_not_trigger_daily_cooldown(self):
         def quota_error():
             error_body = json.dumps({
