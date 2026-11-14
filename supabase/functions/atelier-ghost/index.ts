@@ -21,11 +21,6 @@ Deno.serve(async (req: Request) => {
   const geminiKey = Deno.env.get("GEMINI_API_KEY");
   const geminiModel = Deno.env.get("GEMINI_MODEL") || "gemini-3.8-flash";
   if (!supabaseUrl || !anonKey) return json(503, { error: "Configurazione Supabase mancante." });
-  if (!groqKey && !geminiKey) return json(503, {
-    error: "Agente non ancora attivato: configura GROQ_API_KEY oppure GEMINI_API_KEY nelle Edge Function Secrets.",
-    setup_required: true,
-  });
-
   const authHeader = req.headers.get("Authorization") || "";
   const token = authHeader.startsWith("Bearer ") ? authHeader.slice(7) : "";
   if (!token) return json(401, { error: "Autenticazione richiesta." });
@@ -38,6 +33,10 @@ Deno.serve(async (req: Request) => {
   if (user?.app_metadata?.role !== "admin") {
     return json(403, { error: "Accesso riservato all'amministratore ATELIER." });
   }
+  if (!groqKey && !geminiKey) return json(503, {
+    error: "Agente non ancora attivato: configura GROQ_API_KEY oppure GEMINI_API_KEY nelle Edge Function Secrets.",
+    setup_required: true,
+  });
   let rawBody = "";
   try { rawBody = await req.text(); } catch { return json(400, { error: "Corpo della richiesta non leggibile." }); }
   if (new TextEncoder().encode(rawBody).byteLength > 20000) {
@@ -88,7 +87,14 @@ Deno.serve(async (req: Request) => {
       if (groqResponse.ok) {
         const result = await groqResponse.json();
         const candidate = result?.choices?.[0]?.message?.content;
-        if (typeof candidate === "string") answer = candidate;
+        if (typeof candidate === "string") {
+          try {
+            JSON.parse(candidate);
+            answer = candidate;
+          } catch {
+            console.warn("Groq returned invalid JSON; trying Gemini fallback.");
+          }
+        }
       } else {
         const detail = await groqResponse.text();
         console.error("Groq request failed; trying Gemini fallback:", groqResponse.status, detail.slice(0, 300));
@@ -109,7 +115,7 @@ Deno.serve(async (req: Request) => {
           body: JSON.stringify({
             contents: [{
               role: "user",
-              parts: [{ text: system + "\\n\\n" + JSON.stringify({ task, context, content }) }],
+              parts: [{ text: system + "\n\n" + JSON.stringify({ task, context, content }) }],
             }],
             generationConfig: { temperature: 0.2, responseMimeType: "application/json" },
           }),
@@ -118,7 +124,7 @@ Deno.serve(async (req: Request) => {
       if (geminiResponse.ok) {
         const result = await geminiResponse.json();
         const parts = result?.candidates?.[0]?.content?.parts || [];
-        answer = parts.map((part: { text?: string }) => part.text || "").join("\\n").trim();
+        answer = parts.map((part: { text?: string }) => part.text || "").join("\n").trim();
       } else {
         const detail = await geminiResponse.text();
         console.error("Gemini request failed:", geminiResponse.status, detail.slice(0, 300));
