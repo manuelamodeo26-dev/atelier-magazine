@@ -2,7 +2,8 @@
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
   "updated_at": "2026-11-14T00:22:32.987Z",
   "feeds_ok": 0,
-  "feeds_total": 7,
+  "feeds_total": 0,
   "feed_status": [],
-  "articles": []
+  "articles": [],
+  "archive_status": "maintenance"
 }
