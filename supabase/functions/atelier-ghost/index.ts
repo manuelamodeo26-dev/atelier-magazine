@@ -117,7 +117,7 @@ Deno.serve(async (req: Request) => {
               role: "user",
               parts: [{ text: system + "\n\n" + JSON.stringify({ task, context, content }) }],
             }],
-            generationConfig: { temperature: 0.2, responseMimeType: "application/json" },
+            generationConfig: { responseMimeType: "application/json" },
           }),
         },
       );
