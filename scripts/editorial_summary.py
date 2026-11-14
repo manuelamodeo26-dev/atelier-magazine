@@ -17,6 +17,7 @@ GEMINI_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models/{}:ge
 API_ENDPOINT = "https://api.groq.com/openai/v1/chat/completions"
 MAX_SOURCE_CHARS = 12000
 QUOTA_EXHAUSTED_FOR_RUN = False
+AI_PROVIDER_UNAVAILABLE_FOR_RUN = False
 
 
 class ArticleTextParser(HTMLParser):
@@ -98,8 +99,8 @@ def is_valid_editorial_summary(summary, level):
 
 def generate_editorial_summary(article, source_text):
     """Return (summary, level) or empty values when evidence/API is insufficient."""
-    global QUOTA_EXHAUSTED_FOR_RUN
-    if (not API_KEY and not GEMINI_API_KEY) or QUOTA_EXHAUSTED_FOR_RUN:
+    global QUOTA_EXHAUSTED_FOR_RUN, AI_PROVIDER_UNAVAILABLE_FOR_RUN
+    if (not API_KEY and not GEMINI_API_KEY) or QUOTA_EXHAUSTED_FOR_RUN or AI_PROVIDER_UNAVAILABLE_FOR_RUN:
         return "", ""
     quota_exhausted_during_attempts = False
     excerpt = str(article.get("excerpt") or "").strip()
@@ -299,6 +300,7 @@ def generate_editorial_summary(article, source_text):
                     time.sleep(5)
                     continue
                 print("Gemini non disponibile: {}.".format(type(exc).__name__))
+                AI_PROVIDER_UNAVAILABLE_FOR_RUN = True
 
     # Groq quota exhaustion alone must not start a 24-hour cooldown when
     # Gemini is configured but only encountered a transient error.
