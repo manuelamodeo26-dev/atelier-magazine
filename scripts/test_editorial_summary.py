@@ -243,6 +243,10 @@ class EditorialSummaryTests(unittest.TestCase):
             )
         self.assertEqual(level, "standard")
         self.assertEqual(mocked.call_count, 1)
+        request = mocked.call_args.args[0]
+        payload = json.loads(request.data.decode("utf-8"))
+        self.assertEqual(payload["generationConfig"]["responseMimeType"], "application/json")
+        self.assertNotIn("temperature", payload["generationConfig"])
 
     def test_quota_exhaustion_stops_repeated_requests_for_the_run(self):
         error_body = json.dumps({
