@@ -164,6 +164,48 @@ class EditorialSummaryTests(unittest.TestCase):
         self.assertEqual(gemini_request.get_header("X-goog-api-key"), "gemini-unit-test-key")
         self.assertFalse(editorial_summary.QUOTA_EXHAUSTED_FOR_RUN)
 
+    def test_retries_gemini_after_a_transient_timeout(self):
+        response = self._gemini_response()
+        with (
+            patch.object(editorial_summary, "API_KEY", ""),
+            patch.object(editorial_summary, "GEMINI_API_KEY", "gemini-unit-test-key"),
+            patch.object(editorial_summary, "QUOTA_EXHAUSTED_FOR_RUN", False),
+            patch.object(editorial_summary, "urlopen", side_effect=[TimeoutError(), response]) as mocked,
+            patch.object(editorial_summary.time, "sleep") as sleep,
+        ):
+            summary, level = editorial_summary.generate_editorial_summary(
+                self._article(), "Testo della fonte " * 100
+            )
+        self.assertEqual(level, "standard")
+        self.assertEqual(editorial_summary._word_count(summary), 270)
+        self.assertEqual(mocked.call_count, 2)
+        self.assertEqual(mocked.call_args_list[0].kwargs["timeout"], 120)
+        sleep.assert_called_once_with(5)
+
+    def test_groq_quota_and_gemini_timeout_do_not_trigger_daily_cooldown(self):
+        def quota_error():
+            error_body = json.dumps({
+                "error": {"message": "Rate limit reached for requests per day", "type": "requests"}
+            }).encode("utf-8")
+            return HTTPError(
+                "https://api.groq.com", 429, "Too Many Requests", {}, io.BytesIO(error_body)
+            )
+        with (
+            patch.object(editorial_summary, "API_KEY", "groq-unit-test-key"),
+            patch.object(editorial_summary, "GEMINI_API_KEY", "gemini-unit-test-key"),
+            patch.object(editorial_summary, "MODEL", "openai/gpt-oss-120b"),
+            patch.object(editorial_summary, "QUOTA_EXHAUSTED_FOR_RUN", False),
+            patch.object(editorial_summary, "urlopen", side_effect=[
+                quota_error(), quota_error(), TimeoutError(), TimeoutError()
+            ]),
+            patch.object(editorial_summary.time, "sleep"),
+        ):
+            result = editorial_summary.generate_editorial_summary(
+                self._article(), "Testo della fonte " * 100
+            )
+        self.assertEqual(result, ("", ""))
+        self.assertFalse(editorial_summary.QUOTA_EXHAUSTED_FOR_RUN)
+
     def test_uses_gemini_when_groq_key_is_not_configured(self):
         response = self._gemini_response()
         with (
