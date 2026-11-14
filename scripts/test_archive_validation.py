@@ -19,6 +19,17 @@ class ArchiveValidationTests(unittest.TestCase):
     def payload(self):
         return {"feeds_ok": 7, "feeds_total": 7, "articles": [self.article()]}
 
+    def test_accepts_empty_archive_only_in_maintenance(self):
+        payload = {"archive_status": "maintenance", "feeds_ok": 0, "feeds_total": 0, "feed_status": [], "articles": []}
+        errors, warnings = validate_payload(payload)
+        self.assertEqual(errors, [])
+        self.assertEqual(warnings, [])
+
+    def test_rejects_empty_archive_without_maintenance(self):
+        payload = {"feeds_ok": 7, "feeds_total": 7, "feed_status": [], "articles": []}
+        errors, _ = validate_payload(payload)
+        self.assertTrue(any("Archivio vuoto" in error for error in errors))
+
     def test_rejects_incomplete_feed_diagnostics(self):
         payload = self.payload()
         payload["feed_status"] = [{"source": "example.com", "ok": True, "articles": 1}]
