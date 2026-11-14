@@ -201,10 +201,10 @@ class EditorialSummaryTests(unittest.TestCase):
             second = editorial_summary.generate_editorial_summary(
                 self._article(), "Altro testo della fonte " * 100
             )
+            self.assertTrue(editorial_summary.AI_PROVIDER_UNAVAILABLE_FOR_RUN)
         self.assertEqual(first, ("", ""))
         self.assertEqual(second, ("", ""))
         self.assertEqual(mocked.call_count, 2)
-        self.assertTrue(editorial_summary.AI_PROVIDER_UNAVAILABLE_FOR_RUN)
 
     def test_groq_quota_and_gemini_timeout_do_not_trigger_daily_cooldown(self):
         def quota_error():
