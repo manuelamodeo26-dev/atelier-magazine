@@ -37,6 +37,8 @@
       const manifesto=$('.manifesto'); if(manifesto) manifesto.before(host);
     }
     $('#account-open')?.addEventListener('click',()=>{if(user){location.href='./account.html';}else $('#account-dialog').showModal();});
+    $('#maintenance-admin-login')?.addEventListener('click',()=>{const dialog=$('#account-dialog');if(!dialog)return;dialog.removeAttribute('inert');if(!dialog.open)dialog.showModal();});
+    $('#account-dialog')?.addEventListener('close',()=>{if(document.body.classList.contains('is-maintenance'))$('#account-dialog')?.setAttribute('inert','');});
     $('#profile-manage')?.addEventListener('click',()=>$('#account-dialog').showModal());
     $('#profile-login')?.addEventListener('click',()=>$('#account-dialog').showModal());
     $('#profile-logout')?.addEventListener('click',logout);
