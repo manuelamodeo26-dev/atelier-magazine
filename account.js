@@ -64,6 +64,14 @@
     });
   }
   function publishAdminAccess(){document.dispatchEvent(new CustomEvent('atelier:admin-access',{detail:{isAdmin:user?.app_metadata?.role==='admin'}}));}
+  async function verifyCurrentUser(){
+    if(!client)return null;
+    const {data,error}=await client.auth.getUser();
+    if(error)throw error;
+    user=data.user||null;
+    publishAdminAccess();
+    return user;
+  }
   function message(text,error=false){const el=$('#account-message');if(el){el.textContent=text;el.classList.toggle('is-error',error);}}
   function status(text){const el=$('#account-status');if(el)el.textContent=text;}
   function setLoggedIn(on){
@@ -118,7 +126,7 @@
         user=data.user;
         const refreshed=await client.auth.refreshSession();
         if(!refreshed.error&&refreshed.data.session?.user)user=refreshed.data.session.user;
-        publishAdminAccess();
+        await verifyCurrentUser();
         const existing=await client.from('profiles').select('id,display_name').eq('id',user.id).maybeSingle();
         if(existing.error)throw existing.error;
         if(!existing.data){const fallback=String(user.user_metadata?.display_name||('Membro_'+user.id.slice(0,6))).replace(/[^A-Za-z0-9_]/g,'').slice(0,20)||('Membro_'+user.id.slice(0,6));const created=await client.from('profiles').insert({id:user.id,display_name:fallback});if(created.error&&created.error.code!=='23505')throw created.error;}
@@ -311,11 +319,11 @@
         if(!refreshed.error&&refreshed.data.session)activeSession=refreshed.data.session;
       }
       user=activeSession?.user||null;
-      publishAdminAccess();
+      if(user) await verifyCurrentUser(); else publishAdminAccess();
       if(user){await loadUserData();}else{setLoggedIn(false);if(location.pathname.endsWith('/account.html'))$('#account-dialog')?.showModal();}
       if(location.hash==='#account-settings')$('#account-dialog')?.showModal();
       loadLikeCounts().catch(error=>console.warn('ATELIER: conteggi Mi piace non disponibili.',error));
-      client.auth.onAuthStateChange((_event,session)=>{setTimeout(async()=>{try{user=session?.user||null;publishAdminAccess();if(user){await loadUserData();loadLikeCounts().catch(error=>console.warn('ATELIER: conteggi Mi piace non disponibili.',error));}else{saved.clear();savedRecords.clear();liked.clear();setLoggedIn(false);renderAccount();}}catch(e){user=null;publishAdminAccess();avatarUrl='';saved.clear();setLoggedIn(false);message(e.message||'Impossibile caricare i dati dell’account.',true);}},0);});
+      client.auth.onAuthStateChange((_event,session)=>{setTimeout(async()=>{try{user=session?.user||null;if(user)await verifyCurrentUser();else publishAdminAccess();if(user){await loadUserData();loadLikeCounts().catch(error=>console.warn('ATELIER: conteggi Mi piace non disponibili.',error));}else{saved.clear();savedRecords.clear();liked.clear();setLoggedIn(false);renderAccount();}}catch(e){user=null;publishAdminAccess();avatarUrl='';saved.clear();setLoggedIn(false);message(e.message||'Impossibile caricare i dati dell’account.',true);}},0);});
     }catch(e){setLoggedIn(false);message('Servizio account non raggiungibile. Riprova più tardi.',true);}
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
