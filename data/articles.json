@@ -8,7 +8,7 @@
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 85
+    "verified_count": 0
   },
   "articles": []
 }
