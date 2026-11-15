@@ -106,17 +106,27 @@
     $('#show-more').setAttribute('aria-expanded',String(showAll));
     document.dispatchEvent(new Event('atelier:articles-rendered'));
   }
-  function setMaintenanceMode(enabled){
+  let maintenanceEnabled=false,adminMaintenanceAccess=false;
+  function applyMaintenanceVisibility(){
     const screen=document.getElementById('maintenance-screen');
     if(!screen)return;
-    screen.hidden=!enabled;
-    document.body.classList.toggle('is-maintenance',enabled);
+    const visible=maintenanceEnabled&&!adminMaintenanceAccess;
+    screen.hidden=!visible;
+    document.body.classList.toggle('is-maintenance',visible);
     Array.from(document.body.children).forEach(child=>{
       if(child===screen)return;
-      if(enabled)child.setAttribute('inert','');
+      if(visible)child.setAttribute('inert','');
       else child.removeAttribute('inert');
     });
   }
+  function setMaintenanceMode(enabled){
+    maintenanceEnabled=Boolean(enabled);
+    applyMaintenanceVisibility();
+  }
+  document.addEventListener('atelier:admin-access',event=>{
+    adminMaintenanceAccess=event.detail?.isAdmin===true;
+    applyMaintenanceVisibility();
+  });
   async function loadArticles(){
     try{
       const response=await fetch('./data/articles.json',{cache:'no-store'});
