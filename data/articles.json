@@ -2,14 +2,14 @@
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
   "editorial_api_retry_after": "2026-11-15T00:05:44.859508+00:00",
   "archive_status": "active",
-  "updated_at": "2026-11-15T01:29:19.963641+00:00",
+  "updated_at": "2026-11-15T07:24:23.836587+00:00",
   "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
     {
       "source": "vogue.it",
       "ok": true,
-      "articles": 7,
+      "articles": 6,
       "error": ""
     },
     {
@@ -21,7 +21,7 @@
     {
       "source": "ad-italia.it",
       "ok": true,
-      "articles": 17,
+      "articles": 18,
       "error": ""
     },
     {
@@ -52,9 +52,108 @@
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 77
+    "verified_count": 85
   },
   "articles": [
+    {
+      "id": "https://www.vogue.it/article/canto-di-natale-charles-dickens-trama-libro-film",
+      "title": "Canto di Natale, tutti i segreti del capolavoro “impossibile” ma immortale di Charles Dickens",
+      "excerpt": "183 anni fa usciva nelle librerie il libro con cui lo scrittore britannico raddrizzò la sua carriera e cambiò per sempre il nostro modo di festeggiare il Natale",
+      "author": "Giacomo Aricò",
+      "category": "Art & Culture",
+      "source": "vogue.it",
+      "date": "2026-11-15T05:30:00+00:00",
+      "url": "https://www.vogue.it/article/canto-di-natale-charles-dickens-trama-libro-film",
+      "image": "https://compass-media.vogue.it/photos/6af74158884b3a9011fe7b6a/16:9/w_1280,c_limit/Canto%20di%20Natale.jpg",
+      "image_verified": true,
+      "language": "it",
+      "editorial_summary": "Il 19 dicembre 1843 Charles Dickens pubblicò *Canto di Natale*, un racconto che, in sole sei settimane, trasformò la sua carriera e rimane oggi uno dei libri più regalati a Natale. La trama, incentrata su Ebenezer Scrooge, un avaro che, dopo aver incontrato i tre spiriti del Natale, scopre il vero significato della festa, è stata ripresa in numerose pellicole, dal cortometraggio muto del 1901 al musical animato di Netflix del 2022, fino alla più recente versione di 2026 con Robert Zemeckis e Jim Carrey. Queste reinterpretazioni hanno mantenuto vivo l’appeal del racconto, dimostrando che la sua morale è ancora attuale.\n\nIl racconto non è solo una storia di redenzione: riflette la tensione tra materialismo e umanità che caratterizza il nostro tempo. Dickens, che l’aveva scritto in un’epoca in cui la società industriale stava cambiando radicalmente, descrive Scrooge come un uomo che ha scelto il denaro al posto della famiglia, un tema che risuona con la frenesia consumistica e lo stress che accompagnano le festività odierne. La narrazione, con i suoi flashback del passato, la visione del presente e la premonizione del futuro, mostra come la ricerca del profitto possa portare alla solitudine e alla perdita di valori più profondi.\n\n**Il messaggio più importante è che la vera magia del Natale risiede nella generosità e nella connessione umana, non nella quantità di regali o nella ricchezza materiale.** Questa frase, che riassume l’essenza del racconto, è stata scelta per essere evidenziata sul sito, perché cattura l’idea che la trasformazione di Scrooge è un invito a riflettere sul nostro stesso comportamento.\n\nLa pubblicazione di *Canto di Natale* ha avuto ripercussioni anche sul cinema, ispirando decine di adattamenti in diversi generi e formati. Dal musical con Albert Finney al film di Frank Capra *La vita è meravigliosa*, passando per le versioni italiane del 1953 e del 2022, la storia ha dimostrato di essere un modello di narrazione universale. Oggi, con la nuova versione di 2026, il racconto continua a essere un punto di riferimento per chi cerca un messaggio di speranza e di solidarietà durante le festività.\n\nIn conclusione, *Canto di Natale* non è solo un classico letterario: è un invito permanente a mettere al centro le relazioni umane e la generosità. La sua capacità di adattarsi a nuove forme artistiche e di parlare a generazioni diverse lo rende un vero e proprio patrimonio culturale, capace di ricordarci che, anche in un mondo sempre più digitalizzato, il calore umano resta la vera essenza del Natale.",
+      "editorial_level": "approfondimento",
+      "editorial_word_count": 412,
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.vogue.it/article/lagos-fashion-week-2026-brand-da-conoscere",
+      "title": "Alla Lagos Fashion Week 2026 l'artigianato si conferma un sapere vivo, e non solo eredità",
+      "excerpt": "Con CRAFTED: Heritage. Innovation. Circular Futures., la Lagos Fashion Week 2026 porta al centro il ruolo della creatività africana nel ripensamento dei modelli produttivi globali; tra savoir-faire artigianale, sostenibilità e una nuova visione di ownership",
+      "author": "Sennait Ghebreab",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-15T05:30:00+00:00",
+      "url": "https://www.vogue.it/article/lagos-fashion-week-2026-brand-da-conoscere",
+      "image": "https://compass-media.vogue.it/photos/6aea18ee8004519519c133d1/master/pass/IMG_5262.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 2607,
+      "image_height": 3799,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.vogue.it/article/come-vestirsi-per-correre-in-inverno-quando-fa-freddo-capi-sneakers-consigli",
+      "title": "Come vestirsi per correre in inverno con il freddo? 5 must-have, consigli pratici",
+      "excerpt": "Con le basse temperature le prestazioni sono migliori, ecco allora come vestirsi per correre in inverno con il freddo, dai leggings al gilet imbottito",
+      "author": "Emma Bocchi",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-15T05:30:00+00:00",
+      "url": "https://www.vogue.it/article/come-vestirsi-per-correre-in-inverno-quando-fa-freddo-capi-sneakers-consigli",
+      "image": "https://compass-media.vogue.it/photos/6af749119d479cf6f0af36a4/16:9/w_1280,c_limit/come%20vestirsi%20per%20correre%20in%20inverno%20%20copy.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.vogue.it/article/felpa-con-cappuccio-sotto-la-giacca-invernale-outfit-2026",
+      "title": "Felpa con cappuccio sotto la giacca invernale: 7 combo di tendenza",
+      "excerpt": "Dal piumino al cappotto di lana, ecco come abbinare la felpa con cappuccio ai capispalla di stagione. Ispirandosi allo stile off-duty delle modelle",
+      "author": "Alexandre Marain",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-15T05:30:00+00:00",
+      "url": "https://www.vogue.it/article/felpa-con-cappuccio-sotto-la-giacca-invernale-outfit-2026",
+      "image": "https://compass-media.vogue.it/photos/6af70b099138004592c99eb3/16:9/w_1280,c_limit/Kaiona.jpeg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.ad-italia.it/article/christian-pellizzari-designer-storia-intervista/",
+      "title": "Christian Pellizzari in un'intervista sul valore di una creatività lenta e libera",
+      "excerpt": "Ex stilista, oggi designer di sculture luminose ispirate alla natura: Christian Pellizzari ci racconta la sua poetica.",
+      "author": "Valentina Lonati",
+      "category": "Design",
+      "source": "ad-italia.it",
+      "date": "2026-11-15T05:00:00+00:00",
+      "url": "https://www.ad-italia.it/article/christian-pellizzari-designer-storia-intervista/",
+      "image": "https://media-assets.ad-italia.it/photos/6ae88f1664eb3dd95758f8f5/16:9/w_1280,c_limit/IMG_5837.jpeg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.ad-italia.it/article/case-roma-belle-idee-foto/",
+      "title": "Case a Roma: 28 appartamenti bellissimi e idee di arredamento",
+      "excerpt": "Da attici lussuosi, con viste mozzafiato sui monumenti della città, fino ai piccoli spazi moderni e giocosi, queste case sono piene di carattere in puro stile romano.",
+      "author": "Giada Storelli",
+      "category": "Design",
+      "source": "ad-italia.it",
+      "date": "2026-11-15T05:00:00+00:00",
+      "url": "https://www.ad-italia.it/article/case-roma-belle-idee-foto/",
+      "image": "https://media-assets.ad-italia.it/photos/6952adc466261bd862d49fc5/16:9/w_1280,c_limit/AD%20ITA%20-%20RAMDANE%20TOUHAMI0874%201.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
     {
       "id": "https://www.exibart.com/arte-contemporanea/25-studi-dartista-annunciati-i-vincitori-del-programma-2026-2027-di-bevilacqua-la-masa-e-muve/",
       "title": "25 studi d’artista: annunciati i vincitori del programma 2026-2027 di Bevilacqua La Masa e MUVE",
@@ -613,12 +712,12 @@
       "source": "pambianconews.com",
       "date": "2026-11-13T15:23:31+00:00",
       "url": "https://www.pambianconews.com/2026/11/13/ferrari-vola-a-ny-iannone-sembravamo-una-cellula-impazzita-ma-la-nostra-intuizione-era-corretta-500129/",
-      "image": "",
-      "image_verified": false,
+      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/Ferrari-NY-Flagship-facade-1-e1794583563219.jpg",
+      "image_verified": true,
       "language": "it",
-      "image_width": 0,
-      "image_height": 0,
-      "image_format": ""
+      "image_width": 2000,
+      "image_height": 1263,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.finestresullarte.info/mostre/milano-idee-dei-grandi-pittori-prendono-forma-sulla-carta-in-mostra-disegni-dal-cinquecento-al-settecento",
@@ -666,7 +765,9 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "image_attempted_at": "2026-11-15T07:19:53.144572+00:00",
+      "image_retry_after": "2026-11-15T19:19:53.144572+00:00"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/13/i-gioielli-fanno-brillare-ancora-i-conti-di-richemont-primo-semestre-a-123-miliardi-16-500775/",
@@ -986,7 +1087,9 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "image_attempted_at": "2026-11-15T07:19:53.144572+00:00",
+      "image_retry_after": "2026-11-15T19:19:53.144572+00:00"
     },
     {
       "id": "https://www.finestresullarte.info/opinioni/il-critico-ribelle-e-il-nuovo-conformista",
@@ -1013,12 +1116,12 @@
       "source": "pambianconews.com",
       "date": "2026-11-12T17:16:23+00:00",
       "url": "https://www.pambianconews.com/2026/11/12/alessandro-michele-racconta-il-lato-unconvention-delle-feste-per-valentino-500667/",
-      "image": "",
-      "image_verified": false,
+      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/Valentino_Cruise2027-Holiday_Logo_16x9_01.jpg",
+      "image_verified": true,
       "language": "it",
-      "image_width": 0,
-      "image_height": 0,
-      "image_format": ""
+      "image_width": 2126,
+      "image_height": 1092,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/12/binello-quadrivio-group-piano-da-2-miliardi-moda-beauty-e-food-nel-mirino-500551/",
@@ -1207,7 +1310,12 @@
       "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNaV84d0xUOWVCSXVna09UVzJiYl9nbkk5MDgyYl9vTUdkU2RJRjFZdE1LRm52T3ZYTDJsX3RuM2FaZ0U0bnZ4VHotTHE0MVVUV3F2N3RTQ3pFVXdqR19qdmt4bmxpT05oWUhNQ1N3OXhDa3g3QnNCdHZfLTZkdHh3TmZBYw?oc=5",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "image_attempted_at": "2026-11-15T07:19:53.144572+00:00",
+      "image_retry_after": "2026-11-15T19:19:53.144572+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
     },
     {
       "id": "https://www.ad-italia.it/article/case-piccole-in-stile-japandi-15-spazi-in-cui-ogni-angolo-ha-una-storia-da-raccontare/",
@@ -1268,7 +1376,12 @@
       "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFA1aXIxTVJwVndrM0l0QlNXbWVlcHpyMEhEVkJPOEYwTHB6QUFKdUdZOXJqT01UWWp3Uk5MbS1oWG5FaDYzWFY1LTNsLXRoeHJvSU5vZFVPcFBxbGQ4ZmstZjdHWmNjcW53ZW5TaGhB?oc=5",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "image_attempted_at": "2026-11-15T07:19:53.144572+00:00",
+      "image_retry_after": "2026-11-15T19:19:53.144572+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
     },
     {
       "id": "https://www.sneakersmagazine.it/2026/11/09/sneakers-magazine-issue-122-2026-2-2/",
@@ -1348,7 +1461,11 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "image_attempted_at": "2026-11-15T07:19:53.144572+00:00",
+      "image_retry_after": "2026-11-15T19:19:53.144572+00:00",
+      "editorial_attempted_at": "2026-11-15T07:24:21.854080+00:00",
+      "editorial_retry_after": "2026-11-15T19:24:21.854080+00:00"
     },
     {
       "id": "https://www.sneakersmagazine.it/2026/10/29/expo-riva-schuh-e-gardabags-il-mercato-di-calzature-e-borse-cambia-volto/",
@@ -1364,7 +1481,10 @@
       "language": "it",
       "image_width": 1024,
       "image_height": 768,
-      "image_format": "jpeg"
+      "image_format": "jpeg",
+      "editorial_summary": "Il mercato globale di calzature e borse sta vivendo una fase di trasformazione, evidenziata dai dati recenti presentati all'Expo Riva Schuh e Gardabags. La produzione mondiale di scarpe rimane stabile a 24,6 miliardi di paia, ma il valore medio delle esportazioni italiane di calzature in pelle ha superato i 100 dollari per paio, segnalando un posizionamento di alta qualità per il Made in Italy. Parallelamente, la Cambogia ha superato la Cina nelle esportazioni di calzature verso gli Stati Uniti, indicando un nuovo assetto nelle catene di approvvigionamento internazionali.\n\nQuesti dati mostrano due tendenze principali: da un lato la stabilità della produzione globale, dall'altro un aumento dei prezzi che riflette una crescente polarizzazione del settore. L'Italia, con il suo focus sul valore aggiunto, si distingue in un mercato dove la competizione non è più solo basata sui volumi, ma sulla capacità di offrire prodotti premium. Allo stesso tempo, la crescita della Cambogia suggerisce che i produttori stanno diversificando le proprie fonti per rispondere a esigenze di costo e velocità di consegna richieste dal mercato statunitense.\n\n**Il punto cruciale è che la competizione si sta spostando dal semplice volume alla capacità di adattarsi ai cambiamenti, valorizzare il prodotto e intercettare le nuove esigenze della distribuzione.** Questo spostamento richiede alle aziende di rivedere le proprie strategie di produzione, branding e logistica per rimanere rilevanti.\n\nPer i giovani professionisti del design e del fashion business, questi mutamenti rappresentano sia una sfida che un'opportunità: comprendere le dinamiche dei nuovi equilibri produttivi e dei prezzi più alti può aprire la strada a collaborazioni innovative, a modelli di business più sostenibili e a una maggiore presenza nei mercati emergenti.",
+      "editorial_level": "standard",
+      "editorial_word_count": 273
     },
     {
       "id": "https://www.sneakersmagazine.it/2026/10/26/new-balance-presenta-la-made-in-usa-990v7/",
@@ -1380,7 +1500,10 @@
       "language": "it",
       "image_width": 1024,
       "image_height": 544,
-      "image_format": "png"
+      "image_format": "png",
+      "editorial_summary": "New Balance ha lanciato la settima generazione della sua iconica 990, la Made in USA 990v7, con un aggiornamento che mantiene l’essenza del modello ma lo rende più slanciato e moderno. La silhouette, nata nel 1982 come scarpa da running premium, è stata rivisitata con proporzioni più essenziali, una tomaia in suede di pelle di maiale e mesh traspirante e dettagli in pelle e suede sintetico. La tecnologia FuelCell, già presente nella 990v6, è stata resa più morbida per aumentare l’ammortizzazione e il ritorno di energia, mentre l’ENCAP, il dispositivo CR e un nuovo elemento in TPU nella zona mediale contribuiscono a stabilità e supporto. L’intera costruzione è realizzata negli Stati Uniti, con almeno il 70 % di valore domestico, e il modello è stato presentato con una campagna globale che coinvolge quattro ambassador: Rosalía, Josh Allen, Cooper Flagg e IU, simbolo della capacità della 990 di attraversare sport, musica, intrattenimento e moda.\n\nIl brand ha definito la filosofia progettuale della 990v7 come «memories from the future», un approccio che fonde elementi familiari con soluzioni contemporanee per reinterpretare un classico in chiave attuale. Chris Davis, Brand President e Chief Marketing Officer, ha sottolineato che la 990v7 è stata evoluta, aggiornata e reinterpretata con attenzione per il consumatore di oggi, mantenendo la qualità e la maestria artigianale che hanno reso celebre la silhouette. Il modello ha superato la sua funzione originaria, conquistando pubblici diversi grazie alla combinazione di autenticità, praticità e qualità duratura.\n\n**La 990v7 dimostra che una sneaker può evolversi senza perdere il suo DNA, combinando comfort, funzionalità e design in un’unica proposta di stile.**\n\nLa nuova generazione sarà disponibile a partire dal 6 novembre 2026 su NewBalance.com e in una selezione di rivenditori internazionali, al prezzo consigliato di 200 dollari. La collezione Made in USA rappresenta una quota limitata delle vendite complessive del brand negli Stati Uniti, evidenziando l’importanza della produzione locale e del valore aggiunto che la 990v7 porta alla sneaker culture contemporanea.\n\nCon la 990v7, New Balance conferma la sua posizione di riferimento non solo nel mondo del running, ma anche nel lifestyle, offrendo una sneaker che unisce tradizione e innovazione, pronta a soddisfare le esigenze di un pubblico giovane e dinamico che cerca autenticità e qualità in ogni passo.",
+      "editorial_level": "approfondimento",
+      "editorial_word_count": 373
     },
     {
       "id": "https://www.sneakersmagazine.it/2026/10/26/saucony-x-evelynn-escobar-una-nuova-idea-di-mom-shoe-prende-forma-nella-progrid-triumph-4/",
@@ -1396,7 +1519,9 @@
       "language": "it",
       "image_width": 1024,
       "image_height": 1024,
-      "image_format": "jpeg"
+      "image_format": "jpeg",
+      "editorial_attempted_at": "2026-11-15T07:20:08.754262+00:00",
+      "editorial_retry_after": "2026-11-15T19:20:08.754262+00:00"
     },
     {
       "id": "https://www.sneakersmagazine.it/2026/10/16/saucony-x-highsnobiety-performance-e-lifestyle-si-incontrano-in-una-nuova-collaborazione/",
@@ -1412,7 +1537,10 @@
       "language": "it",
       "image_width": 819,
       "image_height": 1024,
-      "image_format": "jpeg"
+      "image_format": "jpeg",
+      "editorial_summary": "Saucony e Highsnobiety hanno lanciato una nuova collezione che unisce due silhouette: la Endorphin Pro 5, pensata per gare e allenamenti ad alta velocità, e la ProGrid Paramount, un modello archivio del 2007 rivisitato per l’uso quotidiano. Entrambe le scarpe condividono una palette autunnale fatta di tonalità terrose, neutre, dettagli argentati e accenti più vivaci, un equilibrio che vuole tradurre la ricerca di massime prestazioni in un’estetica urbana. La Endorphin Pro 5 incorpora la schiuma PWRRUN HG con una base PWRRUN PB, una piastra in fibra di carbonio scanalata e la tecnologia SPEEDROLL per garantire ammortizzazione, leggerezza, reattività e una rullata fluida, mentre la suola PWRTRAC assicura aderenza e resistenza all’usura.\n\nLa ProGrid Paramount, invece, punta su un design essenziale: il tradizionale logo laterale è sostituito da un branding discreto sul tallone e sull’etichetta della linguetta, mentre la colorazione combina Coconut Milk, Wood Ash e Almond Oil con dettagli argentati e accenti Ombre Blue e Mars Red. Elementi riflettenti sono inseriti nelle fettucce della linguetta, del tallone e nel rinforzo posteriore, conferendo alla sneaker un tocco di modernità pur mantenendo la sua identità di modello storico. La campagna di lancio, ambientata a Parigi, segue i percorsi paralleli di Naomi Clement e Laurent Segretier, creando un parallelo visivo tra la velocità della Endorphin Pro 5 e la versatilità urbana della ProGrid Paramount.\n\n**La collaborazione dimostra che performance tecnica e lifestyle possono coesistere in una singola visione estetica, offrendo sia ai runner che agli appassionati di street‑wear soluzioni adatte a contesti diversi.** I prezzi consigliati sono 270 euro per la Endorphin Pro 5 e 190 euro per la ProGrid Paramount, con disponibilità sui siti ufficiali di Saucony e Highsnobiety e in alcuni rivenditori selezionati.",
+      "editorial_level": "standard",
+      "editorial_word_count": 283
     },
     {
       "id": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5PbG40c0dpYzRlUVk1OVBRak5xNThKeGd5bUdQbnItTC1NTUNiYXpPMW8yMnRWZTRPOFlrNzAyenA4czdTc2FrbVVMRmtWejdrV2lXTGg0eWVKNzQ?oc=5",
@@ -1425,7 +1553,14 @@
       "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5PbG40c0dpYzRlUVk1OVBRak5xNThKeGd5bUdQbnItTC1NTUNiYXpPMW8yMnRWZTRPOFlrNzAyenA4czdTc2FrbVVMRmtWejdrV2lXTGg0eWVKNzQ?oc=5",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "image_attempted_at": "2026-11-15T07:19:53.144572+00:00",
+      "image_retry_after": "2026-11-15T19:19:53.144572+00:00",
+      "editorial_attempted_at": "2026-11-15T07:19:58.601382+00:00",
+      "editorial_retry_after": "2026-11-15T19:19:58.601382+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
     },
     {
       "id": "https://news.google.com/rss/articles/CBMibkFVX3lxTE44aURPYjluVU5tZW1IVHJjU0VKNExuVzE1cmtSVnE4cFN2amMxeGJMZDh2LTdYR2ZtTzQ3UGg2TU1mejJwbTFMRW5fcmIzdVFaamFQa29IYXVQcDhUc29DX010RFZHY0xrMVlyc0dn?oc=5",
@@ -1438,7 +1573,14 @@
       "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE44aURPYjluVU5tZW1IVHJjU0VKNExuVzE1cmtSVnE4cFN2amMxeGJMZDh2LTdYR2ZtTzQ3UGg2TU1mejJwbTFMRW5fcmIzdVFaamFQa29IYXVQcDhUc29DX010RFZHY0xrMVlyc0dn?oc=5",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "image_attempted_at": "2026-11-15T07:19:53.144572+00:00",
+      "image_retry_after": "2026-11-15T19:19:53.144572+00:00",
+      "editorial_attempted_at": "2026-11-15T07:19:58.476800+00:00",
+      "editorial_retry_after": "2026-11-15T19:19:58.476800+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
     }
   ]
 }
