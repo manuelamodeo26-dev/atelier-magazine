@@ -47,3 +47,5 @@
 .atelier-lab-form-bottom button{min-height:44px}
 .writer-counter,.writer-helper{user-select:none}
 @media(max-width:600px){.writer-prompts{gap:6px}.writer-prompts>span{width:100%;margin-bottom:2px}.writer-prompts button{font-size:9px;padding:8px 10px}.writer-helper{font-size:9px}.community-dialog{padding:22px}.community-form textarea{min-height:170px}}
+
+@media(max-width:760px){.community-header .menu-toggle{margin-left:auto;margin-right:0}.community-header-actions{gap:0}.community-header-actions a{display:none}.community-header-actions .search-open{font-size:9px;white-space:nowrap}}
