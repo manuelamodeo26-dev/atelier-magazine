@@ -28,7 +28,7 @@
     }
     if(!$('#account-dialog')){
       const d=document.createElement('dialog'); d.id='account-dialog'; d.className='search-dialog account-dialog'; d.setAttribute('aria-labelledby','account-heading'); d.setAttribute('aria-describedby','account-status');
-      d.innerHTML='<form method="dialog"><button class="dialog-close" type="submit" aria-label="Chiudi">×</button></form><p class="eyebrow">ATELIER / ACCOUNT</p><h2 id="account-heading" class="account-heading">Il tuo spazio.</h2><p id="account-status" class="account-status" role="status" aria-live="polite">Accedi o crea un account per personalizzare la rivista.</p><form id="account-form" class="account-form"><label for="account-email">Email</label><input id="account-email" type="email" autocomplete="email" required placeholder="nome@email.com"><label for="account-password">Password</label><input id="account-password" type="password" autocomplete="current-password" minlength="8" required placeholder="Almeno 8 caratteri"><label class="auth-remember"><input id="account-remember" type="checkbox"> Ricordami su questo dispositivo</label><div class="account-actions"><button class="outline-button" type="submit" data-mode="login">ACCEDI</button><button class="outline-button" type="submit" data-mode="signup">REGISTRATI</button></div></form><div id="account-tools" hidden><div class="account-session-setting"><label for="account-remember-setting"><input id="account-remember-setting" type="checkbox"> Mantieni l’accesso su questo dispositivo</label><p>Se disattivato, l’accesso termina quando chiudi la scheda o la finestra del browser.</p></div><h3>Il mio feed</h3><p class="account-help">Scegli gli argomenti che vuoi vedere nel tuo feed personale.</p><div id="account-categories" class="account-categories"></div><button id="save-preferences" class="outline-button" type="button">SALVA PREFERENZE</button><button id="account-logout" class="outline-button" type="button">ESCI DALL’ACCOUNT</button></div><p id="account-message" class="account-message" role="status" aria-live="polite"></p>';
+      d.innerHTML='<form method="dialog"><button class="dialog-close" type="submit" aria-label="Chiudi">×</button></form><p class="eyebrow">ATELIER / ACCOUNT</p><h2 id="account-heading" class="account-heading">Il tuo spazio.</h2><div class="hub-auth-switch"><button type="button" class="outline-button is-active" data-account-view="login">ACCEDI</button><button type="button" class="outline-button" data-account-view="signup">REGISTRATI</button></div><p id="account-status" class="account-status" role="status" aria-live="polite">Accedi con email e password.</p><form id="account-login-form" class="account-form"><label for="account-login-email">Email</label><input id="account-login-email" type="email" autocomplete="email" required placeholder="nome@email.com"><label for="account-login-password">Password</label><input id="account-login-password" type="password" autocomplete="current-password" minlength="8" required placeholder="Almeno 8 caratteri"><label class="auth-remember"><input id="account-remember" type="checkbox"> Ricordami su questo dispositivo</label><button class="outline-button" type="submit">ACCEDI</button></form><form id="account-signup-form" class="account-form" hidden><label for="account-signup-nickname">Nickname</label><input id="account-signup-nickname" type="text" minlength="3" maxlength="20" pattern="[A-Za-z0-9_]{3,20}" autocomplete="nickname" required placeholder="Es. Atelier_01"><label for="account-signup-email">Email</label><input id="account-signup-email" type="email" autocomplete="email" required placeholder="nome@email.com"><label for="account-signup-password">Password</label><input id="account-signup-password" type="password" autocomplete="new-password" minlength="8" required placeholder="Almeno 8 caratteri"><button class="outline-button" type="submit">CREA ACCOUNT</button></form><div id="account-tools" hidden><div class="account-session-setting"><label for="account-remember-setting"><input id="account-remember-setting" type="checkbox"> Mantieni l’accesso su questo dispositivo</label><p>Se disattivato, l’accesso termina quando chiudi la scheda o la finestra del browser.</p></div><h3>Il mio feed</h3><p class="account-help">Scegli gli argomenti che vuoi vedere nel tuo feed personale.</p><div id="account-categories" class="account-categories"></div><button id="save-preferences" class="outline-button" type="button">SALVA PREFERENZE</button><button id="account-logout" class="outline-button" type="button">ESCI DALL’ACCOUNT</button></div><p id="account-message" class="account-message" role="status" aria-live="polite"></p>';
       document.body.appendChild(d);
     }
     if(!$('#personal-feed')){
@@ -43,7 +43,9 @@
     $('#profile-avatar-input')?.addEventListener('change',uploadAvatar);
     $('#profile-avatar-remove')?.addEventListener('click',removeAvatar);
     $('#open-account-settings')?.addEventListener('click',()=>$('#account-dialog').showModal());
-    $('#account-form')?.addEventListener('submit',handleAuth);
+    $('#account-login-form')?.addEventListener('submit',event=>handleAuth(event,'login'));
+    $('#account-signup-form')?.addEventListener('submit',event=>handleAuth(event,'signup'));
+    document.querySelectorAll('[data-account-view]').forEach(btn=>btn.addEventListener('click',()=>{const view=btn.dataset.accountView;document.querySelectorAll('[data-account-view]').forEach(x=>x.classList.toggle('is-active',x===btn));$('#account-login-form').hidden=view!=='login';$('#account-signup-form').hidden=view!=='signup';status(view==='login'?'Accedi con email e password.':'Crea il tuo account: scegli un nickname, poi inserisci email e password.');message('');}));
     $('#account-logout')?.addEventListener('click',logout);
     const rememberLogin=$('#account-remember');
     if(rememberLogin)rememberLogin.checked=window.ATELIER_GET_REMEMBER?.()===true;
@@ -91,24 +93,29 @@
     if(on){const nick=user?.user_metadata?.display_name||'Membro ATELIER';const welcome=$('#profile-nickname');if(welcome)welcome.textContent=nick;const since=$('#profile-member-since');if(since&&user?.created_at)since.textContent='MEMBRO DAL '+new Date(user.created_at).toLocaleDateString('it-IT',{month:'long',year:'numeric'}).toUpperCase();}
     else status(configured?'Accedi o crea un account per personalizzare la rivista.':'Configurazione necessaria: collega prima il progetto Supabase.');
   }
-  async function handleAuth(event){
+  async function handleAuth(event,mode){
     event.preventDefault();
     if(!client){message('Il servizio account non è ancora configurato.',true);return;}
-    const mode=event.submitter?.dataset.mode||'login';
-    const email=$('#account-email').value.trim(), password=$('#account-password').value;
+    const prefix=mode==='signup'?'account-signup':'account-login';
+    const email=$('#'+prefix+'-email').value.trim(), password=$('#'+prefix+'-password').value;
+    const nickname=mode==='signup'?$('#account-signup-nickname').value.trim():'';
     window.ATELIER_SET_REMEMBER?.($('#account-remember')?.checked===true);
     if(password.length<8){message('La password deve contenere almeno 8 caratteri.',true);return;}
+    if(mode==='signup'&&!/^[A-Za-z0-9_]{3,20}$/.test(nickname)){message('Il nickname deve avere 3–20 caratteri: lettere, numeri o underscore.',true);return;}
     message('Operazione in corso…');
     try{
       if(mode==='signup'){
-        
-        const {data,error}=await client.auth.signUp({email,password});
+        const {data,error}=await client.auth.signUp({email,password,options:{data:{display_name:nickname}}});
         if(error)throw error;
         if(data.session){user=data.user;await loadUserData();message('Account creato. Benvenuto in ATELIER.');const dialog=$('#account-dialog');if(dialog?.open)dialog.close();location.replace('./index.html');}
         else message('Registrazione avviata. Controlla la tua email per confermare l’indirizzo, poi accedi.');
       }else{
         const {data,error}=await client.auth.signInWithPassword({email,password});
-        if(error)throw error; user=data.user; const existing=await client.from('profiles').select('id,display_name').eq('id',user.id).maybeSingle();if(existing.error)throw existing.error;if(!existing.data){const fallback=String(user.user_metadata?.display_name||('Membro_'+user.id.slice(0,6))).replace(/[^A-Za-z0-9_]/g,'').slice(0,20)||('Membro_'+user.id.slice(0,6));const created=await client.from('profiles').insert({id:user.id,display_name:fallback});if(created.error&&created.error.code!=='23505')throw created.error;} await loadUserData(); message('Accesso effettuato.');const dialog=$('#account-dialog');if(dialog?.open)dialog.close();if(location.pathname.endsWith('/account.html'))location.replace('./index.html');
+        if(error)throw error;user=data.user;
+        const existing=await client.from('profiles').select('id,display_name').eq('id',user.id).maybeSingle();
+        if(existing.error)throw existing.error;
+        if(!existing.data){const fallback=String(user.user_metadata?.display_name||('Membro_'+user.id.slice(0,6))).replace(/[^A-Za-z0-9_]/g,'').slice(0,20)||('Membro_'+user.id.slice(0,6));const created=await client.from('profiles').insert({id:user.id,display_name:fallback});if(created.error&&created.error.code!=='23505')throw created.error;}
+        await loadUserData();message('Accesso effettuato.');const dialog=$('#account-dialog');if(dialog?.open)dialog.close();if(location.pathname.endsWith('/account.html'))location.replace('./index.html');
       }
     }catch(e){message(e.message||'Non è stato possibile completare l’operazione.',true);}
   }
