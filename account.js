@@ -80,8 +80,8 @@
         open.textContent='ACCEDI ↗';
       }
     }
-    const form=$('#account-form'), tools=$('#account-tools'), feed=$('#personal-feed');
-    if(form)form.hidden=on;if(tools)tools.hidden=!on;if(feed)feed.hidden=!on;
+    const loginForm=$('#account-login-form'), signupForm=$('#account-signup-form'), tools=$('#account-tools'), feed=$('#personal-feed');
+    if(loginForm)loginForm.hidden=on;if(signupForm)signupForm.hidden=true;if(tools)tools.hidden=!on;if(feed)feed.hidden=!on;
     if(on)status('Accesso effettuato. Il tuo spazio ATELIER è pronto.');
     const profileAction=$('#profile-manage');if(profileAction)profileAction.hidden=!on;
     const profileGuest=$('#profile-guest');if(profileGuest)profileGuest.hidden=on;
