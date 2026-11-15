@@ -1,129 +1,17 @@
-name: Update ATELIER news
+name: ATELIER news automation (DISABLED)
 
+# The former scheduled news collector is intentionally disarmed.
+# Keep this manual-only, with its job skipped, until new editorial instructions arrive.
 on:
-  schedule:
-    - cron: '17 */6 * * *'
-  push:
-    branches: [main]
-    paths:
-      - 'scripts/fetch_news.py'
-      - 'scripts/editorial_summary.py'
   workflow_dispatch:
 
 permissions:
-  contents: write
-  pages: write
-  id-token: write
-
-concurrency:
-  group: update-atelier-news
-  cancel-in-progress: true
+  contents: read
 
 jobs:
-  update-news:
+  disabled:
+    if: ${{ false }}
     runs-on: ubuntu-latest
-    timeout-minutes: 25
-    outputs:
-      changed: ${{ steps.commit.outputs.changed }}
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
-        with:
-          persist-credentials: true
-      - name: Set up Python
-        uses: actions/setup-python@v6
-        with:
-          python-version: "3.x"
-      - name: Install image verification dependency
-        run: python -m pip install --disable-pip-version-check Pillow
-      - name: Check Python syntax
-        run: python -m py_compile scripts/*.py
-      - name: Test editorial filtering and categorization
-        run: python -m unittest discover -s scripts -p 'test_*.py' -v
-      - name: Collect RSS and Atom articles
-        env:
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          GROQ_MODEL: openai/gpt-oss-120b
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: gemini-3.8-flash
-        run: python scripts/fetch_news.py
-      - name: Validate generated archive
-        run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          path = Path('data/articles.json')
-          data = json.loads(path.read_text(encoding='utf-8'))
-          assert isinstance(data.get('articles'), list), 'articles deve essere una lista'
-          assert data['articles'], 'L’archivio non contiene articoli: non pubblicare un archivio vuoto'
-          for article in data['articles']:
-              assert article.get('title') and article.get('url', '').startswith(('http://', 'https://'))
-              if article.get('image_verified'):
-                  assert article.get('image', '').startswith('https://')
-                  assert max(article.get('image_width', 0), article.get('image_height', 0)) >= 1000
-                  assert min(article.get('image_width', 0), article.get('image_height', 0)) >= 500
-          verified = sum(bool(a.get('image_verified')) for a in data['articles'])
-          print(f"Archivio valido: {len(data['articles'])} articoli; fotografie verificate: {verified}")
-          PY
-      - name: Commit updated archive
-        id: commit
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # Keep the freshly generated archive outside the checkout while syncing
-          # the latest main branch. This prevents stale workflow checkouts from
-          # rebasing competing edits to data/articles.json.
-          cp data/articles.json /tmp/atelier-articles-generated.json
-          changed=false
-          for attempt in 1 2 3; do
-            git fetch origin main
-            git reset --hard origin/main
-            cp /tmp/atelier-articles-generated.json data/articles.json
-            git add data/articles.json
-            if git diff --cached --quiet; then
-              echo "No archive changes."
-              changed=false
-              break
-            fi
-            git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "chore: update ATELIER news"
-            if git push origin HEAD:main; then
-              changed=true
-              break
-            fi
-            echo "Push attempt $attempt failed because main moved; retrying from latest main."
-          done
-          if [ "$changed" = true ]; then
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          elif git diff --quiet && git diff --cached --quiet; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "Unable to publish archive after 3 attempts." >&2
-            exit 1
-          fi
-
-  deploy-updated-news:
-    needs: update-news
-    if: needs.update-news.outputs.changed == 'true'
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Checkout latest repository
-        uses: actions/checkout@v5
-        with:
-          ref: main
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
-      - name: Upload site
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
-      - name: Deploy updated site and news
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Editorial automation is disabled
+        run: echo "ATELIER news automation remains disabled pending new editorial instructions."
