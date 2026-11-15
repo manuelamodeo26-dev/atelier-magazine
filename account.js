@@ -63,6 +63,7 @@
       if(like){event.preventDefault();event.stopPropagation();toggleLiked(like.dataset.likeArticle);}
     });
   }
+  function publishAdminAccess(){document.dispatchEvent(new CustomEvent('atelier:admin-access',{detail:{isAdmin:user?.app_metadata?.role==='admin'}}));}
   function message(text,error=false){const el=$('#account-message');if(el){el.textContent=text;el.classList.toggle('is-error',error);}}
   function status(text){const el=$('#account-status');if(el)el.textContent=text;}
   function setLoggedIn(on){
@@ -113,7 +114,11 @@
         else message('Registrazione avviata. Controlla la tua email per confermare l’indirizzo, poi accedi.');
       }else{
         const {data,error}=await client.auth.signInWithPassword({email,password});
-        if(error)throw error;user=data.user;
+        if(error)throw error;
+        user=data.user;
+        const refreshed=await client.auth.refreshSession();
+        if(!refreshed.error&&refreshed.data.session?.user)user=refreshed.data.session.user;
+        publishAdminAccess();
         const existing=await client.from('profiles').select('id,display_name').eq('id',user.id).maybeSingle();
         if(existing.error)throw existing.error;
         if(!existing.data){const fallback=String(user.user_metadata?.display_name||('Membro_'+user.id.slice(0,6))).replace(/[^A-Za-z0-9_]/g,'').slice(0,20)||('Membro_'+user.id.slice(0,6));const created=await client.from('profiles').insert({id:user.id,display_name:fallback});if(created.error&&created.error.code!=='23505')throw created.error;}
@@ -306,11 +311,11 @@
         if(!refreshed.error&&refreshed.data.session)activeSession=refreshed.data.session;
       }
       user=activeSession?.user||null;
-      document.dispatchEvent(new CustomEvent('atelier:admin-access',{detail:{isAdmin:user?.app_metadata?.role==='admin'}}));
+      publishAdminAccess();
       if(user){await loadUserData();}else{setLoggedIn(false);if(location.pathname.endsWith('/account.html'))$('#account-dialog')?.showModal();}
       if(location.hash==='#account-settings')$('#account-dialog')?.showModal();
       loadLikeCounts().catch(error=>console.warn('ATELIER: conteggi Mi piace non disponibili.',error));
-      client.auth.onAuthStateChange((_event,session)=>{setTimeout(async()=>{try{user=session?.user||null;document.dispatchEvent(new CustomEvent('atelier:admin-access',{detail:{isAdmin:user?.app_metadata?.role==='admin'}}));if(user){await loadUserData();loadLikeCounts().catch(error=>console.warn('ATELIER: conteggi Mi piace non disponibili.',error));}else{saved.clear();savedRecords.clear();liked.clear();setLoggedIn(false);renderAccount();}}catch(e){user=null;document.dispatchEvent(new CustomEvent('atelier:admin-access',{detail:{isAdmin:false}}));avatarUrl='';saved.clear();setLoggedIn(false);message(e.message||'Impossibile caricare i dati dell’account.',true);}},0);});
+      client.auth.onAuthStateChange((_event,session)=>{setTimeout(async()=>{try{user=session?.user||null;publishAdminAccess();if(user){await loadUserData();loadLikeCounts().catch(error=>console.warn('ATELIER: conteggi Mi piace non disponibili.',error));}else{saved.clear();savedRecords.clear();liked.clear();setLoggedIn(false);renderAccount();}}catch(e){user=null;publishAdminAccess();avatarUrl='';saved.clear();setLoggedIn(false);message(e.message||'Impossibile caricare i dati dell’account.',true);}},0);});
     }catch(e){setLoggedIn(false);message('Servizio account non raggiungibile. Riprova più tardi.',true);}
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
