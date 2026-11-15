@@ -50,6 +50,19 @@ def validate_payload(payload):
                     errors.append("Stato o conteggio articoli del feed non valido.")
                 if "error" in feed and not isinstance(feed["error"], str):
                     errors.append("Dettaglio errore del feed non valido.")
+    image_verification = payload.get("image_verification")
+    if image_verification is not None:
+        if not isinstance(image_verification, dict):
+            errors.append("Metadati di verifica immagini non validi.")
+        else:
+            verified_count = image_verification.get("verified_count")
+            actual_verified_count = sum(
+                1 for article in articles
+                if isinstance(article, dict) and article.get("image_verified") is True
+            )
+            if type(verified_count) is not int or verified_count != actual_verified_count:
+                errors.append("Conteggio immagini verificate non coerente con l'archivio.")
+
     seen = set()
     for number, article in enumerate(articles, 1):
         label = "Articolo {}: ".format(number)
