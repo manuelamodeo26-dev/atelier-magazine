@@ -297,11 +297,18 @@
     try{
       const {createClient}=await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm');
       client=createClient(cfg.url,cfg.anonKey,{auth:{storage:window.ATELIER_AUTH_STORAGE,persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
-      const {data}=await client.auth.getSession();
-      if(data.session){user=data.session.user;await loadUserData();}else{setLoggedIn(false);if(location.pathname.endsWith('/account.html'))$('#account-dialog')?.showModal();}
+      const {data:sessionData}=await client.auth.getSession();
+      let activeSession=sessionData.session;
+      if(activeSession){
+        const refreshed=await client.auth.refreshSession();
+        if(!refreshed.error&&refreshed.data.session)activeSession=refreshed.data.session;
+      }
+      user=activeSession?.user||null;
+      document.dispatchEvent(new CustomEvent('atelier:admin-access',{detail:{isAdmin:user?.app_metadata?.role==='admin'}}));
+      if(user){await loadUserData();}else{setLoggedIn(false);if(location.pathname.endsWith('/account.html'))$('#account-dialog')?.showModal();}
       if(location.hash==='#account-settings')$('#account-dialog')?.showModal();
       loadLikeCounts().catch(error=>console.warn('ATELIER: conteggi Mi piace non disponibili.',error));
-      client.auth.onAuthStateChange((_event,session)=>{setTimeout(async()=>{try{user=session?.user||null;if(user){await loadUserData();loadLikeCounts().catch(error=>console.warn('ATELIER: conteggi Mi piace non disponibili.',error));}else{saved.clear();savedRecords.clear();liked.clear();setLoggedIn(false);renderAccount();}}catch(e){user=null;avatarUrl='';saved.clear();setLoggedIn(false);message(e.message||'Impossibile caricare i dati dell’account.',true);}},0);});
+      client.auth.onAuthStateChange((_event,session)=>{setTimeout(async()=>{try{user=session?.user||null;document.dispatchEvent(new CustomEvent('atelier:admin-access',{detail:{isAdmin:user?.app_metadata?.role==='admin'}}));if(user){await loadUserData();loadLikeCounts().catch(error=>console.warn('ATELIER: conteggi Mi piace non disponibili.',error));}else{saved.clear();savedRecords.clear();liked.clear();setLoggedIn(false);renderAccount();}}catch(e){user=null;document.dispatchEvent(new CustomEvent('atelier:admin-access',{detail:{isAdmin:false}}));avatarUrl='';saved.clear();setLoggedIn(false);message(e.message||'Impossibile caricare i dati dell’account.',true);}},0);});
     }catch(e){setLoggedIn(false);message('Servizio account non raggiungibile. Riprova più tardi.',true);}
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
