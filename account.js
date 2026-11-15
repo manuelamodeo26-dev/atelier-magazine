@@ -36,7 +36,7 @@
       host.innerHTML='<div class="section-heading"><div><p class="eyebrow">ATELIER / PER TE</p><h2>Il tuo <em>feed.</em></h2></div><button type="button" class="text-link" id="open-account-settings">GESTISCI PREFERENZE ↗</button></div><div class="story-grid" id="personal-feed-grid"></div><p id="personal-feed-empty" class="empty-state" hidden>Non ci sono ancora articoli nei tuoi argomenti preferiti.</p><div class="section-heading saved-heading"><div><p class="eyebrow">ATELIER / COLLEZIONE PERSONALE</p><h2>I tuoi <em>preferiti.</em></h2></div></div><div class="story-grid" id="saved-grid"></div><p id="saved-empty" class="empty-state">Accedi per conservare gli articoli che vuoi ritrovare.</p></section>';
       const manifesto=$('.manifesto'); if(manifesto) manifesto.before(host);
     }
-    $('#account-open')?.addEventListener('click',()=>{if(user){location.href='./account.html';}else $('#account-dialog').showModal();});
+    $('#account-open')?.addEventListener('click',()=>{if(user?.app_metadata?.role==='admin'){if(location.pathname.endsWith('/account.html')){location.replace('./index.html');return;}$('#account-dialog').showModal();return;}if(user){location.href='./account.html';}else $('#account-dialog').showModal();});
     $('#maintenance-admin-login')?.addEventListener('click',()=>{const dialog=$('#account-dialog');if(!dialog)return;dialog.removeAttribute('inert');if(!dialog.open)dialog.showModal();});
     $('#account-dialog')?.addEventListener('close',()=>{if(document.body.classList.contains('is-maintenance'))$('#account-dialog')?.setAttribute('inert','');});
     $('#profile-manage')?.addEventListener('click',()=>$('#account-dialog').showModal());
