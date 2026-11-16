@@ -2,6 +2,7 @@
 """Static integrity checks for ATELIER's GitHub Pages site."""
 from html.parser import HTMLParser
 from pathlib import Path
+import json
 import re
 from urllib.parse import unquote, urlsplit
 
@@ -86,6 +87,14 @@ def main():
     service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
     assert "'./account.html'" in service_worker, (
         "Service worker: la pagina account non è inclusa nella cache iniziale"
+    )
+    manifest = json.loads((ROOT / "manifest.webmanifest").read_text(encoding="utf-8"))
+    assert manifest.get("name") and manifest.get("start_url"), (
+        "Manifest PWA: nome o start_url mancante"
+    )
+    icons = manifest.get("icons", [])
+    assert icons and all((ROOT / icon["src"]).is_file() for icon in icons), (
+        "Manifest PWA: icone mancanti o file non trovato"
     )
     assert 'id="maintenance-screen"' in home, "Homepage: schermata manutenzione assente"
     assert "data.archive_status!=='active'" in app, "Homepage: manca il blocco fail-closed"
