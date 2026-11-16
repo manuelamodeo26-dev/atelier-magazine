@@ -699,4 +699,4 @@ input,textarea,select,button{max-width:100%}
 .hub-auth-switch{display:flex;gap:10px;margin:18px 0 14px}.hub-auth-switch button{flex:1;opacity:.65}.hub-auth-switch button.is-active{opacity:1;background:var(--ink,#171717);color:var(--paper,#f1eee6)}#account-login-form[hidden],#account-signup-form[hidden]{display:none!important}.account-form{display:grid;gap:10px}
 
 /* ATELIER design system: palette condivisa per tutte le sezioni */
-:root{--paper:#f1eee6;--ink:#111111;--red:#b51f1f;--red-hover:#8f1b1b;--cement:#d7d3cb;--surface:#e7e3da;--surface-2:#ded9d0;--muted:#625e57;--muted-soft:#777168;--line:rgba(17,17,17,.17);--red-text:#8f1b1b;--muted-text:var(--muted);--red-soft:rgba(181,31,31,.08)}
+:root{--paper:#f1eee6;--ink:#111111;--red:#b51f1f;--red-hover:#8f1b1b;--cement:#d7d3cb;--surface:#e7e3da;--surface-2:#ded9d0;--muted:#625e57;--muted-soft:#777168;--muted-light:#b9b4aa;--line:rgba(17,17,17,.17);--red-text:#8f1b1b;--muted-text:var(--muted);--red-soft:rgba(181,31,31,.08)}
