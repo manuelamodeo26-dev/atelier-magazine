@@ -9,7 +9,7 @@ const fmt=v=>new Date(v).toLocaleString('it-IT',{day:'2-digit',month:'short',yea
 let db=null,user=null,all=[],profiles=new Map(),active='Tutte',sort='new',reportTarget=null,expanded=new Set(),reactions=new Set();
 function status(t){$('#community-status').textContent=t}
 function signed(){return !!user}
-function isAdmin(){return String(user?.email||'').trim().toLowerCase()==='atelierverse26@gmail.com'||user?.app_metadata?.role==='admin'}
+function isAdmin(){return user?.app_metadata?.role==='admin'}
 function requireLogin(){if(signed())return true;status('Per partecipare devi prima accedere al tuo account ATELIER.');$('#community-auth-dialog').showModal();return false}
 function author(id){const p=profiles.get(id);const nickname=p?.display_name||'Membro ATELIER';return id===user?.id?nickname+(isAdmin()?' · ADMIN':' · TU'):nickname;}
 async function loadProfiles(ids){const unique=[...new Set((ids||[]).filter(Boolean))];if(!unique.length)return;const {data,error}=await db.from('profiles').select('id,display_name').in('id',unique);if(error)throw error;(data||[]).forEach(p=>profiles.set(p.id,p));}
