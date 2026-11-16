@@ -153,7 +153,11 @@
       setMaintenanceMode(true);
       return;
     }
-    const heroImage=articles[0]&&articles[0].image_verified===true&&safeURL(articles[0].image)?articles[0]:null;
+    const latestArticle=[...articles].sort((a,b)=>new Date(b.date||0)-new Date(a.date||0))[0];
+    const latestImage=latestArticle&&safeURL(latestArticle.image);
+    const heroLetter=$('.hero-art-letter');
+    if(heroLetter&&latestImage){
+      heroLetter.style.setProperty('--hero-letter-image','url("'+latestImage.replace(/["\\]/g,'\\    const heroImage=articles[0]&&articles[0].image_verified===true&&safeURL(articles[0].image)?articles[0]:null;
     if(heroImage){
       const heroArt=$('.hero-art');
       if(heroArt&&!heroArt.querySelector('.hero-photo')){
@@ -172,6 +176,9 @@
         heroArt.appendChild(credit);
         heroArt.classList.add('has-photo');
       }
+    }')+'")');
+      heroLetter.classList.add('has-latest-image');
+      heroLetter.setAttribute('aria-label','A con immagine dell’ultimo articolo: '+(latestArticle.title||''));
     }
     render();
   }
