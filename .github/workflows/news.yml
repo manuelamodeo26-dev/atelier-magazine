@@ -47,6 +47,8 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: gemini-3.8-flash
         run: python scripts/fetch_news.py
+      - name: Generate XML sitemap
+        run: python scripts/generate_sitemap.py
       - name: Validate generated archive
         run: |
           python - <<'PY'
@@ -74,12 +76,14 @@ jobs:
           # the latest main branch. This prevents stale workflow checkouts from
           # rebasing competing edits to data/articles.json.
           cp data/articles.json /tmp/atelier-articles-generated.json
+          cp sitemap.xml /tmp/atelier-sitemap-generated.xml
           changed=false
           for attempt in 1 2 3; do
             git fetch origin main
             git reset --hard origin/main
             cp /tmp/atelier-articles-generated.json data/articles.json
-            git add data/articles.json
+            cp /tmp/atelier-sitemap-generated.xml sitemap.xml
+            git add data/articles.json sitemap.xml
             if git diff --cached --quiet; then
               echo "No archive changes."
               changed=false
