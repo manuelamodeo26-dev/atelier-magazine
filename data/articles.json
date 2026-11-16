@@ -1,7 +1,7 @@
 {
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
   "editorial_api_retry_after": "2026-11-15T00:05:44.859508+00:00",
-  "archive_status": "active",
+  "archive_status": "quality_hold",
   "updated_at": "2026-11-16T21:25:07.404521+00:00",
   "feeds_ok": 7,
   "feeds_total": 7,
@@ -2744,5 +2744,7 @@
       "image_height": 0,
       "image_format": ""
     }
-  ]
+  ],
+  "quality_hold_reason": "Revisione editoriale completa richiesta: nessun contenuto deve essere pubblicato finché verifica delle fonti, accuratezza, sintesi 300-400 parole in almeno 4 paragrafi, classificazione, immagini e metadati non superano i controlli.",
+  "quality_hold_started_at": "2026-11-16T22:13:43.327Z"
 }
