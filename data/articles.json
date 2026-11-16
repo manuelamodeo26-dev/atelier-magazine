@@ -2,7 +2,7 @@
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
   "editorial_api_retry_after": "2026-11-15T00:05:44.859508+00:00",
   "archive_status": "active",
-  "updated_at": "2026-11-16T19:07:49.147670+00:00",
+  "updated_at": "2026-11-16T21:25:07.404521+00:00",
   "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
@@ -52,9 +52,27 @@
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 140
+    "verified_count": 141
   },
   "articles": [
+    {
+      "id": "https://www.exibart.com/architettura/il-paisley-museum-rinasce-con-al_a-vetro-rosso-e-nuovi-spazi-per-la-citta-scozzese/",
+      "title": "Il Paisley Museum rinasce con AL_A: vetro rosso e nuovi spazi per la città scozzese",
+      "excerpt": "Il Paisley Museum si prepara a riaprire le proprie porte al pubblico all’inizio del 2027, dopo una trasformazione costata 68,7 milioni di sterline e firmata da AL_A , lo studio londinese fondato nel 2009 dall’architetta Amanda Levete . Vincitrice del RIBA Stirling Prize, l’architetta ha ripensato il museo attraverso un intervento capace di mettere in relazione il patrimonio storico con nuovi spazi espositivi e luoghi di incontro. L’intervento, promosso dal Renfrewshire Council in collaborazione con OneRen, rappresenta il primo grande ripensamento del museo nei suoi circa 150 anni di storia e costituisce una parte centrale del programma di rigenerazione culturale ed economica di Paisley e del territorio circostante; adesso, un ingresso rivestito di vetro rosso e un ampliamento panoramico modificano la presenza dell’istituzione lungo la High Street e ne ridefiniscono il rapporto con il tessuto urbano. Il museo, vanterà inoltre gallerie modernizzate su ogni piano e disporrà del doppio dello spazio per esporre le sue collezioni, insieme a uno spazio didattico, un centro per la valorizzazione del patrimonio culturale, un ristorante e un negozio. «Il Paisley Museum ha sviluppato un modo completamente nuovo di concepire le responsabilità di un museo e l’architettura ne è l’espressione e la conferma; modifiche radicali ispirate alla resilienza e alla capacità di reinventarsi di Paisley, spazi luminosi per la comunità nella nuova ala e un ingresso rosso scenografico che esprime lo spirito rivoluzionario della città», ha affermato Amanda Levete. Il progetto per il Museo Il progetto architettonico di AL_A interessa un complesso di circa 4.400 metri quadrati e coinvolge il corpo principale del museo, gli spazi delle gallerie e gli edifici storici che compongono il campus culturale, tra cui il Coats Observatory, la più antica struttura pubblica di osservazione astronomica ancora esistente in Scozia . Il nucleo originario del Paisley Museum and Art Galleries, che fu donato alla città nel 1871 dall’industriale Peter Coats , esponente di una famiglia che aveva contribuito allo sviluppo dell’industria tessile locale, fu progettato insieme all’osservatorio dall’architetto John Ho",
+      "author": "redazione",
+      "category": "Art & Culture",
+      "source": "exibart.com",
+      "date": "2026-11-16T21:05:26+00:00",
+      "url": "https://www.exibart.com/architettura/il-paisley-museum-rinasce-con-al_a-vetro-rosso-e-nuovi-spazi-per-la-citta-scozzese/",
+      "image": "https://www.exibart.com/repository/media/2026/11/2.-Paisley-Museum-%C2%A9-Hufton-Crow-878x1024.jpg",
+      "image_verified": true,
+      "language": "it",
+      "editorial_attempted_at": "2026-11-16T21:25:06.414553+00:00",
+      "editorial_retry_after": "2026-11-17T09:25:06.414553+00:00",
+      "image_width": 878,
+      "image_height": 1024,
+      "image_format": "jpeg"
+    },
     {
       "id": "https://www.vogue.it/article/mariana-di-girolamo-spiega-wild-horse-nine-intervista-foto",
       "title": "Mariana di Girolamo di Wild Horse Nine parla dell’importanza politica del film: «Anche l'arte fa parte della rivoluzione»",
@@ -1767,6 +1785,21 @@
       "image_format": "jpeg"
     },
     {
+      "id": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE10SUc4a1hWYnZ2NTMyQlQtWmJXdDdOTWJpSW40TUFPQXlSXzg2YW9GWFFuYlFINlBWSGdCcmhlNmlLem1jUkVfQW1IYXMzdHYwNjR5OWx1bzBSQ2MzeXlIRg?oc=5",
+      "title": "BAPE ha collaborato con Billie Eilish - Outpump",
+      "excerpt": "BAPE ha collaborato con Billie Eilish Outpump",
+      "author": "",
+      "category": "Streetwear",
+      "source": "outpump.com",
+      "date": "2026-11-13T13:45:35+00:00",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE10SUc4a1hWYnZ2NTMyQlQtWmJXdDdOTWJpSW40TUFPQXlSXzg2YW9GWFFuYlFINlBWSGdCcmhlNmlLem1jUkVfQW1IYXMzdHYwNjR5OWx1bzBSQ2MzeXlIRg?oc=5",
+      "image": "",
+      "image_verified": false,
+      "language": "it",
+      "image_attempted_at": "2026-11-16T21:20:55.751638+00:00",
+      "image_retry_after": "2026-11-17T09:20:55.751638+00:00"
+    },
+    {
       "id": "https://www.finestresullarte.info/mostre/milano-idee-dei-grandi-pittori-prendono-forma-sulla-carta-in-mostra-disegni-dal-cinquecento-al-settecento",
       "title": "A Milano le idee dei grandi pittori prendono forma sulla carta: in mostra disegni dal Cinquecento al Settecento",
       "excerpt": "Dall’11 novembre al 31 gennaio 2027, la galleria Matteo Salamon Old Masters presenta a Palazzo Cicogna, a Milano, Dialoghi di carta. Disegni lombardi e maestri d’altrove, una mostra a cura di Francesco Ceretti dedicata al disegno antico, con opere di Morazzone, Tanzio da Varallo, Carlo Francesco Nuvolone e Francesco Guardi.",
@@ -2463,6 +2496,21 @@
       "editorial_summary": "In una zona dove il litorale ligure si snoda tra ulivi, limonaie e ville storiche, Moitié Studio, in collaborazione con APC Design, ha realizzato una villa che sembra scolpita nella roccia di Santa Margherita Ligure. Il progetto, concepito come eremo contemporaneo, utilizza pietra locale e metallo per creare un volume razionalista che si fonde con il paesaggio verticale della costa. La casa, destinata a una famiglia caprese che si è trasferita a Milano per motivi professionali, è stata progettata per offrire un rifugio mediterraneo dove ritrovare la luce del mare e un ritmo di vita più lento e naturale. La villa si apre su una piscina panoramica che, grazie a grandi vetrate incorniciate da portali in lamiera, offre una vista sul mare che diventa parte integrante del progetto architettonico.\n\nIl design interno si basa su una palette austera ma ricca di dettagli: il legno Okumè, scelto per la maggior parte degli arredi custom, e il rosso Pompei, tinta dominante, creano un contrasto di tonalità profonde e neutre. Il legno, spazzolato e consumato dal tempo, richiama le superfici levigate dal mare, mentre il rosso corallo e le tonalità di ruggine si diffondono in tessili, arredi e pareti, tessendo un filo narrativo che attraversa gli spazi. La cucina, con la sua penisola scultorea, enfatizza il legno come materia principale, mentre la zona notte ospita una sauna in rovere, dove i toni più morbidi e pacati si fondono con l'ambiente circostante.\n\n**La villa è un dialogo tra rigore architettonico e memoria materiale, dove pietra, vetro, legno e metallo si combinano per raccontare la storia di chi vi abita e del paesaggio che la circonda.** Questa frase sintetizza il cuore del progetto: la tensione tra materiali veri e la loro capacità di evocare il tempo passato e presente.\n\nIl risultato è una sequenza di ambienti che, grazie alla luce naturale e ai colori scelti, trasformano la casa in una cornice ideale per il paesaggio ligure. Il mare, spettatore silenzioso, si integra con la struttura, creando un'atmosfera di armonia tra l'architettura contemporanea e la tradizione locale. La villa dimostra come la progettazione possa rispettare il contesto naturale, offrendo al contempo spazi di comfort e riflessione per chi cerca un equilibrio tra modernità e radici mediterranee.",
       "editorial_level": "approfondimento",
       "editorial_word_count": 370
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBxSEhSMU5feTlMOXVSdjFjNHNEVmRVeGVwa3Ezazd0S2NZSDRBY0UxTWt3dEZTVzE1eDR1X3hjamVmeFlJSlpVYjQ0OTdjbXI4cFo0djhucnUyTEQ4bmtzcw?oc=5",
+      "title": "La fissa del CEO di Nvidia per le giacche in pelle - Outpump",
+      "excerpt": "La fissa del CEO di Nvidia per le giacche in pelle Outpump",
+      "author": "",
+      "category": "Business",
+      "source": "outpump.com",
+      "date": "2026-11-10T11:34:04+00:00",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBxSEhSMU5feTlMOXVSdjFjNHNEVmRVeGVwa3Ezazd0S2NZSDRBY0UxTWt3dEZTVzE1eDR1X3hjamVmeFlJSlpVYjQ0OTdjbXI4cFo0djhucnUyTEQ4bmtzcw?oc=5",
+      "image": "",
+      "image_verified": false,
+      "language": "it",
+      "image_attempted_at": "2026-11-16T21:20:55.751638+00:00",
+      "image_retry_after": "2026-11-17T09:20:55.751638+00:00"
     },
     {
       "id": "https://news.google.com/rss/articles/CBMibkFVX3lxTFA1aXIxTVJwVndrM0l0QlNXbWVlcHpyMEhEVkJPOEYwTHB6QUFKdUdZOXJqT01UWWp3Uk5MbS1oWG5FaDYzWFY1LTNsLXRoeHJvSU5vZFVPcFBxbGQ4ZmstZjdHWmNjcW53ZW5TaGhB?oc=5",
