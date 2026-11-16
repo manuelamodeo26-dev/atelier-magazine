@@ -63,10 +63,10 @@ ATELIER prova prima l'API Chat Completions di Groq con `openai/gpt-oss-120b` e, 
 
 ### Configurazione facoltativa dell'AI
 
-1. Crea un account gratuito su [GroqCloud](https://console.groq.com/) e genera una API key.
+1. Crea un account su [GroqCloud](https://console.groq.com/) e/o [Google AI Studio](https://aistudio.google.com/) e genera la relativa API key.
 2. Nel repository GitHub apri **Settings → Secrets and variables → Actions → New repository secret**.
-3. Inserisci come nome `GROQ_API_KEY` e incolla il valore della chiave nel campo secret.
-4. Salva. La chiave viene letta soltanto da GitHub Actions e non viene inserita nel sito o nel repository.
+3. Aggiungi `GROQ_API_KEY` e/o `GEMINI_API_KEY` con i rispettivi valori.
+4. Salva. Le chiavi vengono lette soltanto da GitHub Actions e non vengono inserite nel sito o nel repository.
 
 Senza entrambi i secret il sito e la raccolta RSS continuano a funzionare normalmente, ma le sintesi editoriali AI non vengono generate. Verifica quote e condizioni dei piani gratuiti nelle dashboard dei provider. Non inserire mai le chiavi in un file del progetto o in una chat.
 
