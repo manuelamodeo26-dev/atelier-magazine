@@ -705,3 +705,20 @@ input,textarea,select,button{max-width:100%}
 /* Public ATELIER administrator badge */
 .admin-badge{display:inline-flex;align-items:center;vertical-align:middle;margin-left:8px;padding:3px 7px;border:1px solid rgba(153,43,39,.34);border-radius:999px;background:rgba(153,43,39,.08);color:var(--red-text);font:700 9px/1 var(--mono);letter-spacing:.1em;white-space:nowrap}
 .member-self-badge{display:inline-flex;align-items:center;vertical-align:middle;margin-left:6px;padding:3px 6px;border:1px solid var(--line);border-radius:999px;color:#625e57;font:600 8px/1 var(--mono);letter-spacing:.08em}
+
+
+/* La lettera principale della home usa l'immagine dell'articolo più recente */
+.hero-art-letter.has-latest-image{
+  background-image:var(--hero-letter-image);
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-clip:text;
+  -webkit-background-clip:text;
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+  mix-blend-mode:normal;
+  opacity:1;
+  text-shadow:none;
+  filter:drop-shadow(0 2px 12px rgba(0,0,0,.2));
+}
