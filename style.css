@@ -700,3 +700,8 @@ input,textarea,select,button{max-width:100%}
 
 /* ATELIER design system: palette condivisa per tutte le sezioni */
 :root{--paper:#f1eee6;--ink:#111111;--red:#b51f1f;--red-hover:#8f1b1b;--cement:#d7d3cb;--surface:#e7e3da;--surface-2:#ded9d0;--muted:#625e57;--muted-soft:#777168;--muted-light:#b9b4aa;--line:rgba(17,17,17,.17);--red-text:#8f1b1b;--muted-text:var(--muted);--red-soft:rgba(181,31,31,.08)}
+
+
+/* Public ATELIER administrator badge */
+.admin-badge{display:inline-flex;align-items:center;vertical-align:middle;margin-left:8px;padding:3px 7px;border:1px solid rgba(153,43,39,.34);border-radius:999px;background:rgba(153,43,39,.08);color:var(--red-text);font:700 9px/1 var(--mono);letter-spacing:.1em;white-space:nowrap}
+.member-self-badge{display:inline-flex;align-items:center;vertical-align:middle;margin-left:6px;padding:3px 6px;border:1px solid var(--line);border-radius:999px;color:#625e57;font:600 8px/1 var(--mono);letter-spacing:.08em}
