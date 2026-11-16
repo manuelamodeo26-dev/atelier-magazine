@@ -70,14 +70,14 @@ def main():
             )
             checked += 1
     css_files = sorted(ROOT.glob("*.css"))
-    css = "\\n".join(path.read_text(encoding="utf-8") for path in css_files)
-    defined_variables = set(re.findall(r"(--[\\w-]+)\\s*:", css))
-    referenced_variables = set(re.findall(r"var\\(\\s*(--[\\w-]+)", css))
+    css = "\n".join(path.read_text(encoding="utf-8") for path in css_files)
+    defined_variables = set(re.findall(r"(--[\w-]+)\s*:", css))
+    referenced_variables = set(re.findall(r"var\(\s*(--[\w-]+)", css))
     missing_variables = referenced_variables - defined_variables
     assert not missing_variables, (
         "Variabili CSS non definite: " + ", ".join(sorted(missing_variables))
     )
-    assert not re.search(r"var\\(\\s*--[\\w-]+\\s*\\)[A-Za-z0-9#_-]", css), (
+    assert not re.search(r"var\(\s*--[\w-]+\s*\)[A-Za-z0-9#_-]", css), (
         "Possibile suffisso CSS non valido dopo una variabile var()"
     )
 
