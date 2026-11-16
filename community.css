@@ -54,3 +54,6 @@
 /* Ruolo amministratore: badge visibile accanto al nome nella Community. */
 .admin-badge{display:inline-flex;align-items:center;justify-content:center;margin-left:.45rem;padding:.16rem .42rem;border:1px solid #b99a5b;border-radius:2px;background:#171717;color:#e4c783;font-size:.58rem;font-weight:800;letter-spacing:.12em;line-height:1.35;vertical-align:middle;white-space:nowrap}
 .member-self-badge{display:inline-flex;align-items:center;margin-left:.4rem;padding:.12rem .35rem;border:1px solid currentColor;border-radius:2px;font-size:.56rem;font-weight:700;letter-spacing:.1em;vertical-align:middle;white-space:nowrap}
+
+/* Admin comment moderation desk */
+.admin-badge{display:inline-flex;align-items:center;justify-content:center;margin-left:8px;padding:4px 7px;border:1px solid var(--red);color:var(--red);font:9px var(--mono);letter-spacing:.08em;vertical-align:middle}.comment-moderation-item .moderation-comment-body{max-width:760px;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--ink);font-size:12px;line-height:1.6}.comment-moderation-item>div:last-child{min-width:130px}.community-moderation{scroll-margin-top:90px}
