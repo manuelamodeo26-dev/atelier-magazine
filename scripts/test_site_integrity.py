@@ -132,6 +132,7 @@ EXPECTED_MIGRATIONS = {
     "20261116220535_grant_public_profile_fields_to_anon.sql",
     "20261116222725_ghost_registered_users_access_and_rate_limits.sql",
     "20261116223138_ghost_global_concurrency_slots.sql",
+    "20261116223546_ghost_quota_rpc_service_role_only.sql",
 }
 
 
