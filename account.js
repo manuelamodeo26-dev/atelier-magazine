@@ -64,7 +64,7 @@
     });
   }
   function isAdminAccount(){return user?.app_metadata?.role==='admin';}
-  function publishAdminAccess(){document.dispatchEvent(new CustomEvent('atelier:admin-access',{detail:{isAdmin:isAdminAccount()}}));}
+  function publishAdminAccess(){const isAdmin=isAdminAccount();window.ATELIER_ADMIN_ACCESS=isAdmin;window.ATELIER_SET_ADMIN_ACCESS?.(isAdmin);document.dispatchEvent(new CustomEvent('atelier:admin-access',{detail:{isAdmin}}));}
   async function verifyCurrentUser(){
     if(!client)return null;
     const {data,error}=await client.auth.getUser();
@@ -321,10 +321,10 @@
       }
       user=activeSession?.user||null;
       if(user) await verifyCurrentUser(); else publishAdminAccess();
-      if(user){await loadUserData();}else{setLoggedIn(false);if(location.pathname.endsWith('/account.html'))$('#account-dialog')?.showModal();}
+      if(user){await loadUserData();}else{setLoggedIn(false);if(location.pathname.endsWith('/account.html'))$('#account-dialog')?.showModal();}publishAdminAccess();
       if(location.hash==='#account-settings')$('#account-dialog')?.showModal();
       loadLikeCounts().catch(error=>console.warn('ATELIER: conteggi Mi piace non disponibili.',error));
-      client.auth.onAuthStateChange((_event,session)=>{setTimeout(async()=>{try{user=session?.user||null;if(user)await verifyCurrentUser();else publishAdminAccess();if(user){await loadUserData();loadLikeCounts().catch(error=>console.warn('ATELIER: conteggi Mi piace non disponibili.',error));}else{saved.clear();savedRecords.clear();liked.clear();setLoggedIn(false);renderAccount();}}catch(e){user=null;publishAdminAccess();avatarUrl='';saved.clear();setLoggedIn(false);message(e.message||'Impossibile caricare i dati dell’account.',true);}},0);});
+      client.auth.onAuthStateChange((_event,session)=>{setTimeout(async()=>{try{user=session?.user||null;if(user)await verifyCurrentUser();else publishAdminAccess();if(user){await loadUserData();publishAdminAccess();loadLikeCounts().catch(error=>console.warn('ATELIER: conteggi Mi piace non disponibili.',error));}else{saved.clear();savedRecords.clear();liked.clear();setLoggedIn(false);renderAccount();publishAdminAccess();}}catch(e){user=null;publishAdminAccess();avatarUrl='';saved.clear();setLoggedIn(false);message(e.message||'Impossibile caricare i dati dell’account.',true);}},0);});
     }catch(e){setLoggedIn(false);message('Servizio account non raggiungibile. Riprova più tardi.',true);}
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
