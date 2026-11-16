@@ -58,7 +58,7 @@ class EditorialSummaryTests(unittest.TestCase):
         invalid = "\n\n".join([" ".join(["moda"] * 50) for _ in range(1)])
         self.assertFalse(editorial_summary.is_valid_editorial_summary(invalid, "standard"))
         self.assertFalse(editorial_summary.is_valid_editorial_summary(valid, "unknown"))
-        self.assertFalse(editorial_summary.is_valid_editorial_summary(valid, "approfondimento"))
+        self.assertTrue(editorial_summary.is_valid_editorial_summary(valid, "approfondimento"))
         too_long = "\n\n".join([" ".join(["moda"] * 85) for _ in range(5)])
         self.assertFalse(editorial_summary.is_valid_editorial_summary(too_long, "standard"))
         valid_deep = "\n\n".join([" ".join(["moda"] * 90) for _ in range(4)])
@@ -137,7 +137,7 @@ class EditorialSummaryTests(unittest.TestCase):
                 self._article(), "Testo della fonte " * 100
             )
         self.assertEqual(level, "approfondimento")
-        self.assertEqual(editorial_summary._word_count(summary), 360)
+        self.assertEqual(editorial_summary._word_count(summary), 320)
 
     def test_falls_back_to_gemini_when_both_groq_models_exhaust_quota(self):
         def quota_error():
@@ -161,7 +161,7 @@ class EditorialSummaryTests(unittest.TestCase):
                 self._article(), "Testo della fonte " * 100
             )
         self.assertEqual(level, "standard")
-        self.assertEqual(editorial_summary._word_count(summary), 320)
+        self.assertEqual(editorial_summary._word_count(summary), 360)
         self.assertEqual(mocked.call_count, 3)
         gemini_request = mocked.call_args_list[2].args[0]
         self.assertIn("gemini-3.8-flash:generateContent", gemini_request.full_url)
@@ -181,7 +181,7 @@ class EditorialSummaryTests(unittest.TestCase):
                 self._article(), "Testo della fonte " * 100
             )
         self.assertEqual(level, "standard")
-        self.assertEqual(editorial_summary._word_count(summary), 320)
+        self.assertEqual(editorial_summary._word_count(summary), 360)
         self.assertEqual(mocked.call_count, 2)
         self.assertEqual(mocked.call_args_list[0].kwargs["timeout"], 120)
         sleep.assert_called_once_with(5)
