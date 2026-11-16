@@ -3,7 +3,7 @@
 const cfg=window.ATELIER_SUPABASE||{},$=s=>document.querySelector(s);
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const hideEmails=v=>String(v??'').replace(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi,'[email nascosta]');
-const admin=()=>String(user?.email||'').trim().toLowerCase()==='atelierverse26@gmail.com'||user?.app_metadata?.role==='admin';
+const admin=()=>user?.app_metadata?.role==='admin';
 let db=null,user=null,articles=[],collections=[],selectedCollection=null,saved=[],votes=new Map();
 function note(el,text,error=false){if(el){el.textContent=text;el.classList.toggle('is-error',error)}}
 function safeUrl(value){try{const u=new URL(value);return ['https:','http:'].includes(u.protocol)?u.href:''}catch(_){return ''}}
