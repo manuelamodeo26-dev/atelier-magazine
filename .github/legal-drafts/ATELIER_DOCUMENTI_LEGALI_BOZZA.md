@@ -54,7 +54,7 @@ Dall'architettura del progetto risultano i seguenti servizi o collegamenti ester
 - **Google Fonts:** caricamento di caratteri tipografici da infrastruttura Google.
 - **Editori e CDN delle immagini:** il sito carica collegamenti a immagini e contenuti distribuiti dalle fonti editoriali originali.
 
-I fornitori possono trattare dati tecnici secondo i propri ruoli, accordi e informative. Prima della pubblicazione occorre verificare i contratti/accordi sul trattamento, i ruoli privacy, i sub-responsabili, i trasferimenti internazionali e le garanzie applicabili. Non è stata ancora confermata la regione di hosting del progetto Supabase né la configurazione effettiva dei provider AI.
+I fornitori possono trattare dati tecnici secondo i propri ruoli, accordi e informative. Prima della pubblicazione occorre verificare i contratti/accordi sul trattamento, i ruoli privacy, i sub-responsabili, i trasferimenti internazionali e le garanzie applicabili. La regione del progetto Supabase è stata verificata come **eu-west-1 (Irlanda)**. Il piano dell'organizzazione è Free. La configurazione effettiva dei provider AI non è stata verificata: i secret non sono leggibili tramite gli strumenti disponibili e non devono essere esposti.
 
 ## 1.5 Funzioni di intelligenza artificiale
 
@@ -84,7 +84,7 @@ Le richieste possono essere inviate a **atelierverse26@gmail.com**. Prima della 
 
 Il progetto utilizza funzionalità tecniche del browser per sessioni di autenticazione, preferenze di accesso e cache del sito/PWA. Il codice include inoltre il caricamento di Google Fonts e contenuti/immagini da domini esterni.
 
-**Punto bloccante:** prima della pubblicazione occorre eseguire una verifica tecnica del sito distribuito per identificare tutti i cookie, local storage, session storage, service worker, richieste a terze parti e strumenti di misurazione eventualmente presenti. Solo dopo questa verifica si potrà stabilire se e quale banner o gestione del consenso sia necessario. Non dichiarare «nessun cookie» senza un test effettivo.
+**Verifica statica parziale (16 novembre 2026):** sono stati analizzati 12 file HTML/JavaScript del repository. Il codice contiene uso di localStorage/sessionStorage per preferenze di sessione e navigazione, service worker/PWA e caricamento di Google Fonts da domini Google. Nella scansione dei file esaminati non sono emersi riferimenti a Google Analytics, Meta Pixel, Hotjar o Microsoft Clarity. Questa scansione non rileva necessariamente cookie impostati a runtime dai provider, richieste indirette, header HTTP o comportamenti del browser. **Punto bloccante:** eseguire un'ispezione runtime su browser pulito, prima e dopo login, e verificare cookie, storage, richieste di rete e provider. Solo allora si potrà stabilire se e quale banner o gestione del consenso sia necessario. Non dichiarare «nessun cookie» sulla base della sola scansione statica.
 
 ## 1.10 Minori
 
@@ -155,11 +155,13 @@ Per questioni relative alla community o ai contenuti è possibile utilizzare gli
 # 3. Checklist obbligatoria prima della pubblicazione
 
 - [ ] Identificare correttamente il titolare del trattamento e la sua forma giuridica. «ATELIER» può restare la denominazione pubblica, ma non va presentata come soggetto giuridico se non lo è.
-- [ ] Confermare paese/regione del database Supabase, hosting, sub-responsabili e accordi sul trattamento.
+- [x] Regione Supabase verificata: eu-west-1 (Irlanda).
+- [ ] Confermare hosting, sub-responsabili e accordi sul trattamento.
 - [ ] Verificare quali secret AI sono effettivamente configurati in GitHub e Supabase; registrare i provider realmente utilizzati.
 - [ ] Definire basi giuridiche per ogni finalità.
 - [ ] Definire periodi di conservazione e procedura di cancellazione per ogni categoria di dati.
-- [ ] Verificare cookie, storage locale, service worker, font e richieste di terze parti su sito live.
+- [x] Scansione statica iniziale di 12 file HTML/JS: Google Fonts e storage locale/sessione rilevati; nessun riferimento ai tracker elencati nella scansione.
+- [ ] Verificare cookie, storage, service worker e richieste di terze parti in browser reale.
 - [ ] Definire regole per utenti minorenni.
 - [ ] Definire licenza dei contenuti community, procedura di moderazione e ricorso.
 - [ ] Verificare licenze/permessi per immagini e altri materiali editoriali.
@@ -173,3 +175,18 @@ Per questioni relative alla community o ai contenuti è possibile utilizzare gli
 - Funzione Supabase `atelier-ghost` rilevata come attiva (versione 9); ciò non dimostra che le chiavi dei provider AI siano configurate o che l'analisi sia operativa.
 - Advisor Supabase: avviso sulla protezione password compromesse disattivata; 13 indici inutilizzati segnalati come informazioni di performance. Nessuna modifica a pagamento è stata effettuata.
 - Nessun test manuale completo su browser reale è stato eseguito in questa sessione.
+
+
+---
+
+# 5. Appendice tecnica — controlli effettuati il 16 novembre 2026
+
+- **Supabase:** progetto in stato ACTIVE_HEALTHY, regione eu-west-1 (Irlanda), PostgreSQL 17.11, organizzazione su piano Free.
+- **Ghost:** Edge Function atelier-ghost attiva, versione 9, verify_jwt=true; il codice verifica anche app_metadata.role === "admin", accetta Groq e Gemini come provider alternativi e restituisce un errore esplicito se entrambi i secret mancano.
+- **Ghost non collaudato end-to-end:** non è stato possibile leggere i valori/segnali di configurazione dei secret né invocare la funzione con una sessione admin valida. Nessun log della Edge Function è risultato nella finestra di log consultata. La presenza della funzione non dimostra che i provider AI siano configurati.
+- **Migrazioni:** il database registra 25 migrazioni, mentre nel repository sono presenti soltanto 5 file SQL di migrazione. Le altre 20 non risultano nemmeno nella cronologia GitHub interrogata per i rispettivi percorsi. Il database è operativo, ma il repository non costituisce una cronologia riproducibile completa. Non ricostruire le migrazioni mancanti a posteriori senza SQL originale e revisione.
+- **Advisor sicurezza:** un avviso, protezione password compromesse disattivata. Non è stato eseguito alcun upgrade.
+- **Advisor prestazioni:** 13 indici segnalati come mai usati; nessuno rimosso perché i dati di utilizzo possono essere incompleti su un progetto giovane e alcuni indici servono a query future o vincoli.
+- **Advisor health:** nessun avviso restituito.
+- **Accessibilità del sito live:** i tentativi di apertura automatica delle pagine pubbliche non sono riusciti; il deploy GitHub Actions è riuscito, ma non è stato eseguito un collaudo visivo/browser.
+- **Diritti immagini:** nessuna licenza o autorizzazione di riutilizzo è stata verificata. La verifica tecnica del caricamento delle immagini non prova il diritto di pubblicazione.
