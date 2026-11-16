@@ -29,7 +29,7 @@ class EditorialSummaryTests(unittest.TestCase):
         return response
 
     def _gemini_response(self, level="standard"):
-        count = 4 if level == "approfondimento" else 3
+        count = 4
         paragraphs = [" ".join(["moda"] * 90) for _ in range(count)]
         body = json.dumps({
             "candidates": [{
@@ -59,7 +59,7 @@ class EditorialSummaryTests(unittest.TestCase):
         self.assertFalse(editorial_summary.is_valid_editorial_summary(invalid, "standard"))
         self.assertFalse(editorial_summary.is_valid_editorial_summary(valid, "unknown"))
         self.assertFalse(editorial_summary.is_valid_editorial_summary(valid, "approfondimento"))
-        too_long = "\n\n".join([" ".join(["moda"] * 80) for _ in range(4)])
+        too_long = "\n\n".join([" ".join(["moda"] * 85) for _ in range(5)])
         self.assertFalse(editorial_summary.is_valid_editorial_summary(too_long, "standard"))
         valid_deep = "\n\n".join([" ".join(["moda"] * 90) for _ in range(4)])
         self.assertTrue(editorial_summary.is_valid_editorial_summary(valid_deep, "approfondimento"))
@@ -99,7 +99,7 @@ class EditorialSummaryTests(unittest.TestCase):
                 self._article(), "Testo della fonte " * 100
             )
         self.assertEqual(level, "standard")
-        self.assertEqual(editorial_summary._word_count(summary), 270)
+        self.assertEqual(editorial_summary._word_count(summary), 320)
         sleep.assert_called_once_with(7)
 
     def test_falls_back_to_smaller_model_on_quota_exhaustion(self):
