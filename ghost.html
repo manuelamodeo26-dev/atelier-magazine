@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f1eee6"><meta name="description" content="ATELIER Ghost — assistente AI per gli iscritti."><meta name="robots" content="noindex,nofollow">
+<title>ATELIER Ghost — Assistente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Syne:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css?v=20261116-design-system"><link rel="stylesheet" href="./ghost.css">
+</head>
+<body>
+<div class="topline"><span>RIVISTA INDIPENDENTE</span><span>ATELIER / AI ASSISTANT</span><span>MEMBERS AREA</span></div>
+<header class="site-header"><a class="brand" href="./index.html"><span class="brand-mark">A<span>.</span></span><span class="brand-name">THE ATELIER VERSE</span></a><nav class="main-nav"><a href="./index.html">RIVISTA</a><a href="./community.html">COMMUNITY</a><a href="./atelier-hub.html">ATELIER CLUB</a><a href="./settings.html">IMPOSTAZIONI</a></nav><a class="search-open" href="./account.html">IL MIO PROFILO ↗</a></header>
+<main class="ghost-page">
+<section class="ghost-intro"><p class="eyebrow">ATELIER / INTELLIGENCE</p><h1>Meet <em>Ghost.</em></h1><p>Un assistente per analizzare testi, idee e contenuti legati alla moda, al design e alla cultura. Le risposte sono un supporto: verifica sempre le informazioni importanti.</p></section>
+<section id="ghost-auth-required" class="ghost-panel" hidden><p class="eyebrow">ACCESSO RISERVATO AGLI ISCRITTI</p><h2>Entra nel tuo spazio.</h2><p>Ghost è disponibile esclusivamente per gli utenti registrati e autenticati.</p><a class="outline-button" href="./atelier-hub.html#login">ACCEDI / REGISTRATI ↗</a></section>
+<section id="ghost-workspace" class="ghost-panel" hidden>
+<div class="ghost-panel-head"><div><p class="eyebrow">ATELIER / GHOST</p><h2>Una seconda <em>prospettiva.</em></h2></div><p id="ghost-role" class="ghost-role"></p></div>
+<form id="ghost-form" class="ghost-form">
+<label for="ghost-task">TIPO DI ANALISI</label>
+<select id="ghost-task" required><option value="review_content">Analisi e revisione di un contenuto</option><option value="review_report" data-admin-only hidden>Revisione di una segnalazione</option><option value="site_diagnostic" data-admin-only hidden>Diagnosi tecnica del sito</option></select>
+<label for="ghost-context">CONTESTO (FACOLTATIVO · MAX 4.000 CARATTERI)</label><textarea id="ghost-context" rows="3" maxlength="4000" placeholder="Aggiungi il contesto strettamente necessario. Non inserire dati personali."></textarea>
+<label for="ghost-content">TESTO DA ANALIZZARE (MAX 12.000 CARATTERI)</label><textarea id="ghost-content" rows="9" maxlength="12000" required placeholder="Incolla qui il testo, la bozza o il contenuto da esaminare…"></textarea>
+<div class="ghost-submit-row"><span>8 richieste ogni 5 minuti · 60 al giorno per account. Limite globale di sicurezza attivo.</span><button id="ghost-submit" class="outline-button" type="submit">ANALIZZA CON GHOST ↗</button></div>
+<p id="ghost-status" class="ghost-status" role="status" aria-live="polite"></p>
+</form>
+<div id="ghost-result" class="ghost-result" hidden aria-live="polite"><p id="ghost-risk" class="eyebrow"></p><h3>SINTESI</h3><p id="ghost-summary"></p><h3>RILIEVI</h3><ul id="ghost-findings"></ul><h3>RACCOMANDAZIONE</h3><p id="ghost-recommendation"></p><p id="ghost-review" class="ghost-status"></p></div>
+<p class="ghost-disclaimer">Ghost può commettere errori e non sostituisce la verifica editoriale o il giudizio umano. Non inserire password, token, email o informazioni sensibili. Nessuna risposta applica modifiche automatiche al sito.</p>
+</section>
+</main>
+<footer class="site-footer"><div class="footer-top"><a class="brand footer-brand" href="./index.html"><span class="brand-mark">A<span>.</span></span><span class="brand-name">THE ATELIER VERSE</span></a><p>RIVISTA INDIPENDENTE DI<br>MODA, DESIGN E CULTURA.</p><a class="back-top" href="#">TORNA SU ↑</a></div><div class="footer-bottom"><span>© THE ATELIER VERSE 2026</span><span>UNO SGUARDO SU CIÒ CHE VERRÀ.</span><span>EDIZIONE ITALIANA</span></div></footer>
+<script src="./supabase-config.js"></script><script src="./ghost.js"></script>
+</body></html>
