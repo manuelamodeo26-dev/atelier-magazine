@@ -8,6 +8,7 @@ on:
     paths:
       - 'scripts/fetch_news.py'
       - 'scripts/editorial_summary.py'
+      - 'scripts/generate_sitemap.py'
   workflow_dispatch:
 
 permissions:
