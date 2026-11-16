@@ -1,0 +1,1 @@
+alter table public.community_comments drop constraint if exists community_comments_status_check; alter table public.community_comments add constraint community_comments_status_check check (status = any (array['published'::text,'hidden'::text,'removed'::text,'archived'::text]));
