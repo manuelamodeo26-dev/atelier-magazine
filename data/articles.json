@@ -2,14 +2,14 @@
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
   "editorial_api_retry_after": "2026-11-15T00:05:44.859508+00:00",
   "archive_status": "active",
-  "updated_at": "2026-11-16T18:23:33.988697+00:00",
+  "updated_at": "2026-11-16T19:07:49.147670+00:00",
   "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
     {
       "source": "vogue.it",
       "ok": true,
-      "articles": 16,
+      "articles": 17,
       "error": ""
     },
     {
@@ -52,9 +52,28 @@
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 139
+    "verified_count": 140
   },
   "articles": [
+    {
+      "id": "https://www.vogue.it/article/mariana-di-girolamo-spiega-wild-horse-nine-intervista-foto",
+      "title": "Mariana di Girolamo di Wild Horse Nine parla dell’importanza politica del film: «Anche l'arte fa parte della rivoluzione»",
+      "excerpt": "Protagonista di Wild Horse Nine, ambientato alla vigilia del colpo di stato in Cile, l’attrice Mariana Di Girolamo racconta perché questo film è importante.",
+      "author": "Fernanda Pérez Sánchez",
+      "category": "Business",
+      "source": "vogue.it",
+      "date": "2026-11-16T18:55:10+00:00",
+      "url": "https://www.vogue.it/article/mariana-di-girolamo-spiega-wild-horse-nine-intervista-foto",
+      "image": "https://compass-media.vogue.it/photos/6afb25d30a8faaf4811916cf/16:9/w_1280,c_limit/Mariana%20Vogue%20Mexico%201724b.jpg",
+      "image_verified": true,
+      "language": "it",
+      "editorial_summary": "Mariana Di Girolamo, nota per la serie messicana *Nessuno ci ha visti partire*, è stata scelta da Martin McDonagh per il ruolo di Monica in *Wild Horse Nine*, il suo debutto in un film hollywoodiano in lingua inglese. L’opportunità è arrivata mentre l’attrice si trovava in Sudafrica: dopo un primo provino e un colloquio su Zoom con il regista e la direttrice del casting, ha ottenuto il ruolo di una studentessa che sostiene il progetto socialista di Salvador Allende, ambientato nei mesi precedenti il colpo di Stato del 1973 in Cile. Il film, ambientato nella drammatica fase pre‑dittatura, si propone di mantenere viva la memoria di una delle pagine più dolorose della storia latinoamericana.\n\nDi Girolamo proviene da una famiglia legata al teatro cileno: è nipote di Claudio Di Girolamo, fondatore del Teatro Ictus, e di Claudia Di Girolamo, attrice di rilievo. Dopo un breve percorso di studi in ostetricia, ha scelto la recitazione, collaborando con registi come Pablo Larraín, Lucía Puenzo e Luis Ortega. In *Wild Horse Nine* la sua esperienza personale si intreccia con la storia familiare, poiché sua nonna ha lavorato per la Vicaría de la Solidaridad, un’organizzazione di difesa dei diritti umani durante la dittatura di Pinochet.\n\n**Il film vuole impedire che la memoria della dittatura cilena venga cancellata, mostrando come l’arte possa diventare parte della rivoluzione.** Questa affermazione, pronunciata dall’attrice, riassume il nucleo politico del progetto: la narrazione non è solo un ricordo storico, ma un invito a riflettere sul presente latinoamericano, dove governi di destra stanno guadagnando terreno e la memoria delle repressioni passate è nuovamente al centro del dibattito culturale.\n\nLa presentazione a Venezia 2026, dove John Malkovich ha vinto la Coppa Volpi, ha già spinto *Wild Horse Nine* verso la stagione dei premi, con Variety e la BBC che lo indicano tra i possibili contendenti agli Oscar 2027. L’attrice, madre di una bambina di sette mesi, spera che il film possa educare anche le nuove generazioni, affermando la necessità di solidarietà e di una comunità attiva in America Latina.\n\nMariana Di Girolamo affronta il salto verso Hollywood senza trascurare la vita privata, cercando un equilibrio tra carriera e famiglia. La sua dichiarazione finale – che preferisce concentrarsi sul presente e promuovere il film senza ansie per i premi – sottolinea una visione pragmatica ma impegnata, che potrebbe ispirare altri giovani artisti a usare la propria voce per raccontare storie di resistenza e speranza.",
+      "editorial_level": "approfondimento",
+      "editorial_word_count": 400,
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
     {
       "id": "https://www.exibart.com/progetti-e-iniziative/metamorfosi-il-podcast-di-isia-roma-che-racconta-il-design-dove-non-si-vede/",
       "title": "Metamorfosi, il podcast di ISIA Roma che racconta il design dove non si vede",
@@ -382,7 +401,12 @@
       "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE00NkplOW9SV0ZHYUFwcXo1TW1wZTRfZmFGMXQwS1NwVHcxV0NwbGdFWklQc2RKUi1LeE8xUUNyWkl0TmJ5OTREamJDaEoybWtLRXBZTktNOA?oc=5",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "image_attempted_at": "2026-11-16T19:05:20.322228+00:00",
+      "image_retry_after": "2026-11-17T07:05:20.322228+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
     },
     {
       "id": "https://www.finestresullarte.info/attualita/che-cosa-lega-gli-etruschi-isola-dell-egeo-siena-un-ciclo-di-incontri-sull-archeologia",
@@ -443,7 +467,12 @@
       "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1ZYlRNMnRjb1dQZzZEMllKTmlSc1NNZENDbnNjbTlEcGhwVWhBeFV2YnhvX25CWjVYcHZiMGVjQ25UdkVTZWhxRFJONWtfbUJtODFMdnFxRHptb0Z5Z3Z3cW1HMDJiaWdBTkpfN3ZoZFh0VVFlWDlFbmR3?oc=5",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "image_attempted_at": "2026-11-16T19:05:20.322228+00:00",
+      "image_retry_after": "2026-11-17T07:05:20.322228+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
     },
     {
       "id": "https://www.vogue.it/article/the-golden-spoon-luxury-catering-convivio-2026",
@@ -731,7 +760,9 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "image_attempted_at": "2026-11-16T19:05:20.322228+00:00",
+      "image_retry_after": "2026-11-17T07:05:20.322228+00:00"
     },
     {
       "id": "https://www.exibart.com/mercato/sothebys-milano-il-collezionismo-italiano-non-e-mai-stato-una-faccenda-soltanto-italiana/",
@@ -808,7 +839,12 @@
       "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE8tNHoyd29VY01lTGt3d0hLOVhCM0dOc19sOGxiZUdHLUpQV3BUREY1MExieTYxbVYzWnEzX2VQclUwRzNES0xiUW5lbGc4MGstSHR1d3RrQ1hIdnVyMkJVM3g1OA?oc=5",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "image_attempted_at": "2026-11-16T19:05:20.322228+00:00",
+      "image_retry_after": "2026-11-17T07:05:20.322228+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
     },
     {
       "id": "https://www.exibart.com/mercato/van-gogh-il-capolavoro-da-180-milioni-finisce-al-centro-di-una-disputa/",
@@ -1777,8 +1813,8 @@
       "image_width": 0,
       "image_height": 0,
       "image_format": "",
-      "image_attempted_at": "2026-11-15T07:19:53.144572+00:00",
-      "image_retry_after": "2026-11-15T19:19:53.144572+00:00"
+      "image_attempted_at": "2026-11-16T19:05:20.322228+00:00",
+      "image_retry_after": "2026-11-17T07:05:20.322228+00:00"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/13/i-gioielli-fanno-brillare-ancora-i-conti-di-richemont-primo-semestre-a-123-miliardi-16-500775/",
@@ -2099,8 +2135,8 @@
       "image_width": 0,
       "image_height": 0,
       "image_format": "",
-      "image_attempted_at": "2026-11-15T07:19:53.144572+00:00",
-      "image_retry_after": "2026-11-15T19:19:53.144572+00:00"
+      "image_attempted_at": "2026-11-16T19:05:20.322228+00:00",
+      "image_retry_after": "2026-11-17T07:05:20.322228+00:00"
     },
     {
       "id": "https://www.finestresullarte.info/opinioni/il-critico-ribelle-e-il-nuovo-conformista",
@@ -2145,7 +2181,12 @@
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9iOFIzZXU3dUZwT3ZqMWJDVlZFMzdrcU9JR2h1azhmS2ZmNFVWb2NoX2dSbDV6alQ4SDdab3Z0Ym1LbkVvTmxTdlRqMzNvblNaUVNWdWtzSHNDV1RvWmhjNThNU0JIalc3X1ItZXdCczFOQWlkdDVWX1lVZlI?oc=5",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "image_attempted_at": "2026-11-16T19:05:20.322228+00:00",
+      "image_retry_after": "2026-11-17T07:05:20.322228+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
     },
     {
       "id": "https://www.pambianconews.com/2026/11/12/binello-quadrivio-group-piano-da-2-miliardi-moda-beauty-e-food-nel-mirino-500551/",
@@ -2193,7 +2234,10 @@
       "language": "it",
       "image_width": 1500,
       "image_height": 718,
-      "image_format": "jpeg"
+      "image_format": "jpeg",
+      "editorial_summary": "Burberry ha chiuso il secondo trimestre del 2027 con una crescita delle vendite comparabili del 4 %, superando l’aspettativa di +3 % degli analisti. È il quinto trimestre consecutivo di crescita, dopo un primo trimestre accolto con freddezza dal mercato. Il risultato ha spinto il titolo a Londra a guadagnare oltre il 9 % nelle prime contrattazioni, dopo un’apertura in calo del 2 % a luglio.\n\nNel semestre le entrate sono salite a 1,1 miliardi di sterline (circa 1,32 miliardi di euro), in aumento del 6 % sia a cambi correnti sia a cambi costanti. L’utile operativo rettificato è arrivato a 62 milioni di sterline, rispetto ai 19 milioni dello stesso periodo dell’anno precedente e ai 44 milioni attesi dagli analisti, con un margine operativo del 5,7 % (+380 punti base). Il CEO Joshua Schulman ha sottolineato che la strategia “Burberry Forward”, lanciata due anni fa, sta dando risultati concreti, con cinque trimestri di crescita e una qualità delle vendite in miglioramento.\n\n**Le Americhe, la Greater China e l’Asia Pacifico sono i principali motori di crescita, con vendite comparabili in aumento dell’11 % e del 12 % rispettivamente, mentre l’area Emeia registra un calo dello 2 % a causa del minor flusso turistico e del rallentamento del traffico negli outlet.** Il canale retail ha generato 896 milioni di sterline (+5 %), mentre il wholesale è cresciuto del 18 % a 174 milioni, superando le previsioni. Tutte le categorie – donna, uomo, bambino e accessori – sono in crescita, con il capospalla a doppia cifra e un’accelerazione della pelletteria.\n\nIl margine lordo si è attestato al 68,3 %, in aumento di 40 punti base a cambi costanti, mentre i costi operativi sono rimasti stabili. Per l’intero esercizio Burberry conferma la previsione di ulteriori progressi, con una crescita dei ricavi e un’espansione dei margini, pur restando “attenta all’incertezza del contesto esterno”. Il wholesale è previsto in crescita tra il 10 % e il 12 %, mentre il capex è ora stimato intorno ai 100 milioni di sterline, rispetto ai 120 milioni a luglio. Il gruppo prevede di presentare un Capital Markets Day a Londra a marzo 2027.\n\nIn sintesi, Burberry continua a consolidare la sua posizione sul mercato globale, dimostrando che la strategia di crescita e di rafforzamento del marchio sta funzionando. La performance positiva nei mercati chiave e la robusta crescita del wholesale indicano una solida base per il futuro, anche se il gruppo rimane vigilante di fronte alle incertezze macro‑economiche.",
+      "editorial_level": "approfondimento",
+      "editorial_word_count": 399
     },
     {
       "id": "https://www.pambianconews.com/2026/11/12/suwarso-il-lifestyle-sta-raggiungendo-la-quota-dei-diritti-tv-oggi-il-nostro-appeal-e-il-lago-di-como-500380/",
@@ -2209,7 +2253,10 @@
       "language": "it",
       "image_width": 1920,
       "image_height": 1080,
-      "image_format": "jpeg"
+      "image_format": "jpeg",
+      "editorial_summary": "Il Como 1907, club di Serie A con 83.000 abitanti e stadio di 13.000 posti, ha trasformato il proprio lifestyle in un vero e proprio business, arrivando a 40 milioni di euro di ricavi quest’anno. Questa cifra si avvicina a quella che il club incassa dai diritti televisivi della Serie A, dimostrando che il merchandising può diventare un pilastro economico. Il presidente Mirwan Suwarso ha spiegato che, quando ha assunto la direzione nel 2019, l’87 % delle vendite di prodotti era in Italia; oggi il mercato domestico rappresenta solo il 17‑18 % dei ricavi, mentre il 40 % proviene dagli Stati Uniti, segno di una strategia di espansione internazionale che sfrutta la notorietà del Lago di Como e la cultura del lifestyle globale.\n\nIl percorso ha avuto inizio con un accordo con Adidas, che ha permesso al club di personalizzare i prodotti senza pagare royalties. In quel periodo, una t‑shirt acquistata a 8 € veniva rivenduta a 60 €, mentre una giacca a 18 € veniva venduta a 275 €. Questa esperienza ha insegnato al Como che il valore del brand è più importante del prezzo di produzione. Oggi il calcio costituisce il 38 % del merchandising, mentre le collezioni “Lago di Como” (hiking, running, padel, tennis) rappresentano il resto, con l’obiettivo di trasformare il club in un vero marchio lifestyle.\n\n**Il punto più importante è che il Como ha costruito un ecosistema di brand che si rivolge a diversi segmenti di pubblico, sfruttando la propria identità e la posizione geografica per creare prodotti che vanno oltre il calcio.** Questa strategia ha permesso al club di raggiungere mercati che vanno oltre il vecchio continente, con il 40 % delle vendite provenienti dagli Stati Uniti e l’espansione in città come Londra, Parigi e Milano. Il club controlla l’intera filiera, dal design alla produzione, e ha già aperto sei negozi a Como, con piani di apertura in altre capitali europee.\n\nIl futuro prevede la creazione di una linea propria di maglie in joint venture con un marchio italiano, in collaborazione con la linea Curva. Il debutto è previsto per giugno e coinvolgerà anche altri club. Suwarso ha sottolineato che, sebbene il club non si consideri un “fashion house”, il business parallelo è fondamentale per raggiungere il pareggio di bilancio entro due anni, nonostante la perdita di 132 milioni di euro registrata a giugno 2025. Il valore della rosa è stimato tra 535 e 640 milioni di euro, evidenziando la rapidità con cui il calcio può generare ritorni economici, soprattutto quando si raggiunge la Serie A e la Champions League.",
+      "editorial_level": "approfondimento",
+      "editorial_word_count": 422
     },
     {
       "id": "https://www.pambianconews.com/2026/11/12/golden-marquee-brands-nel-rallentamento-del-lusso-il-modello-asset-light-e-vincente-500387/",
@@ -2225,7 +2272,9 @@
       "language": "it",
       "image_width": 1500,
       "image_height": 844,
-      "image_format": "jpeg"
+      "image_format": "jpeg",
+      "editorial_attempted_at": "2026-11-16T19:07:36.437585+00:00",
+      "editorial_retry_after": "2026-11-17T07:07:36.437585+00:00"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/12/basei-pandora-il-2026-e-un-anno-di-transizione-asia-grande-potenziale-italia-da-consolidare-500349/",
@@ -2241,7 +2290,9 @@
       "language": "it",
       "image_width": 2560,
       "image_height": 1270,
-      "image_format": "jpeg"
+      "image_format": "jpeg",
+      "editorial_attempted_at": "2026-11-16T19:07:30.835166+00:00",
+      "editorial_retry_after": "2026-11-17T07:07:30.835166+00:00"
     },
     {
       "id": "https://www.ad-italia.it/article/pauline-de-rothschild-hotel-particulier-parigi-ville-e-castelli-in-francia/",
@@ -2257,7 +2308,10 @@
       "language": "it",
       "image_width": 1024,
       "image_height": 689,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_summary": "Pauline de Rothschild, nata Pauline Potter il 31 dicembre 1908 a Parigi, era figlia di un banchiere newyorkese e di una nobildonna della Virginia. Crescendo tra la Francia e gli Stati Uniti, sviluppò un gusto raffinato che la portò a sposare nel 1954 il barone Philippe de Rothschild, proprietario del celebre Château Mouton Rothschild. Da allora, la baronessa divenne una figura di spicco nei salotti mondani di New York e Parigi, circondata da personalità come Elsa Schiaparelli, Cecil Beaton, Truman Capote e Coco Chanel. Morì a Parigi l’8 marzo 1976, all’età di 67 anni, e fu sepolta al castello Mouton Rothschild accanto al marito.\n\nIl suo stile non si limitava al vestire: Pauline era anche una maestra nell’arte dell’interior design. Il suo appartamento in rue Méchain, nel XIV arrondissement di Parigi, fu pubblicato su Vogue nel giugno 1969, fotografato da Horst P. Horst. L’interno era un dialogo tra epoche, con una carta da parati cinese del XVIII secolo accostata a un letto in acciaio e ottone rivestito di seta, e paraventi ispirati a un pezzo di Maria Antonietta. Il piccolo giardino privato, con erba volutamente non falciata, rose e una scultura a forma di sfinge del XVII secolo, completava l’atmosfera e rifletteva la sua passione per il mix & match.\n\n**Pauline de Rothschild incarnò l’eleganza senza tempo, trasformando ogni spazio in un’ode al buon gusto e alla creatività.** Questa frase sintetizza il suo contributo: la baronessa non solo indossava la moda, ma la creava, integrando elementi storici e contemporanei in un’unica visione estetica. La sua influenza si è estesa anche alle proprietà familiari, come il Château Mouton Rothschild, dove il suo stile si rifletteva nei saloni adornati da sculture di Brâncuși, Giacometti e altri artisti di fama mondiale.\n\nLa famiglia Rothschild possedeva numerose proprietà in Francia, tra cui l’Haras de Meautry, il Château Brane-Mouton e la Villa Ephrussi de Rothschild sulla Costa Azzurra. Ogni luogo era curato con attenzione al dettaglio: l’Haras de Meautry, con i suoi prati verdi e il portale monumentale, ospitò personalità come la regina Elisabetta II; il Château Brane-Mouton divenne il cuore della produzione vinicola con la Grand Chai; la Villa Ephrussi, con i suoi nove giardini e la collezione di porcellane e arazzi, rappresentava un vero e proprio museo di arte e design. Pauline, con la sua visione estetica, contribuì a mantenere viva la tradizione di eccellenza e raffinatezza che caratterizza la dinastia, lasciando un’eredità che continua a ispirare designer e appassionati di cultura e moda.",
+      "editorial_level": "approfondimento",
+      "editorial_word_count": 410
     },
     {
       "id": "https://www.ad-italia.it/article/appartamento-piccolo-nel-marais-progettato-come-una-barca-per-due-sorelle-viaggiatrici/",
@@ -2273,7 +2327,10 @@
       "language": "it",
       "image_width": 1600,
       "image_height": 1200,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_summary": "Nel cuore del Marais, uno dei quartieri più antichi di Parigi, Atelier Leymarie ha trasformato un piccolo appartamento del 1800 in un ambiente che richiama la forma di una barca. L’immobile, situato al primo piano di un condominio storico, conserva le caratteristiche originarie di un soffitto basso con travi a vista e finestre semicircolari, ma è stato ristrutturato con un approccio contemporaneo che ottimizza i 67 m² disponibili. L’intervento, ideato da Chloé Leymarie per due sorelle viaggiatrici, ha puntato a creare un pied‑à‑terre accogliente, sfruttando il legno di rovere e okoumé per dare coerenza estetica e funzionale a tutti gli spazi.\n\nPer contrastare la sensazione di oppressione data dalle travi, l’architetto ha dipinto le strutture in bianco e ha mantenuto un’altezza libera sopra i mobili, creando l’illusione di un volume più alto. Il rivestimento interno alterna rovere per la struttura portante e okoumé per le impiallacciature, generando un contrasto di venature che richiama lo stile degli anni Settanta. Il pavimento in larice, con una singola doga di pino per stanza, si distingue dalla palette cromatica del legno, mentre le travi bianche si fondono con il soffitto, contribuendo a una percezione di leggerezza.\n\n**Il corridoio, avvolto da un involucro in legno curvo, funge da nucleo luminoso da cui si diramano tutte le stanze, evocando lo scafo di una barca retrò senza mai chiudere lo spazio**. Le porte curve e le aperture sopra di esse permettono alla luce di diffondersi uniformemente, mentre il salotto e la camera da letto ospitano arredi su misura in rovere, elementi vintage e pezzi contemporanei, come la lampada da terra in acetato riciclato che ricorda la lava fusa. I bagni, ispirati ai cottage inglesi, presentano boiserie écru a mezza altezza, piastrelle a righe verdi e rubinetteria sofisticata.\n\nLa cucina completa il progetto con zellige gialli, elettrodomestici color crema e tessuti a quadri, conferendo un tocco di vivacità al contesto altrimenti dominato dal legno. L’intera ristrutturazione dimostra come, anche in spazi ridotti e storicamente vincolati, sia possibile con ingegno e scelte materiali consapevoli creare ambienti che coniugano nostalgia e modernità, offrendo una nuova interpretazione del vivere urbano per una generazione di giovani attenti al design.",
+      "editorial_level": "approfondimento",
+      "editorial_word_count": 359
     },
     {
       "id": "https://www.ad-italia.it/article/palazzo-quattrocento-venezia-famiglia-micheluzzi/",
@@ -2289,7 +2346,9 @@
       "language": "it",
       "image_width": 1575,
       "image_height": 2362,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_attempted_at": "2026-11-16T19:06:10.502684+00:00",
+      "editorial_retry_after": "2026-11-17T07:06:10.502684+00:00"
     },
     {
       "id": "https://www.ad-italia.it/article/villa-deserto-utah-richard-serra-land-art/",
@@ -2305,7 +2364,10 @@
       "language": "it",
       "image_width": 5950,
       "image_height": 3347,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_summary": "Ai piedi di una mesa che si erge per più di 365 metri sopra il deserto dello Utah, lo studio californiano Woods + Dangaran ha realizzato Moccasin Flats, una villa moderna che si integra con il paesaggio come un’opera di Land Art. L’edificio, ispirato alle sculture minimaliste di Richard Serra, appare solo gradualmente quando si avvicina al cortile d’ingresso, dove una scala invita a entrare. La forma è astratta, priva di riferimenti riconoscibili, e si fonde con il terreno rosa‑polvere, creando un dialogo silenzioso con la roccia circostante.\n\nGli architetti Joseph Dangaran e Brett Woods hanno voluto che la casa rimanesse in secondo piano rispetto alla maestosità della mesa, evitando volumi imponenti e scegliendo una progressione naturale lungo il pendio. I proprietari, Anish Bhatia e Dallin Jolley di Hidden Rock, hanno scelto il sito per la sua luce mutevole, il silenzio e la sensazione di libertà che il deserto offre, rispondendo a una crescente domanda di spazi che permettano di sfuggire al ritmo urbano. La collaborazione tra gli studi è nata da un’amicizia consolidata, che ha permesso di curare ogni dettaglio, dal design degli interni alla scelta delle texture.\n\n**Moccasin Flats dimostra che l’architettura può diventare parte integrante del paesaggio, senza sovrastarlo, ma valorizzandone la monumentalità attraverso forme intime e materiali naturali.**\n\nGli interni, curati da Erika Montes, contrastano la ruvidità esterna con una palette di toni caldi e terrosi, rivestimenti in shearling e una media room accogliente, creando un rifugio morbido all’interno della durezza rocciosa. Le superfici esterne, intonacate con sabbia, cambiano colore con la luce, mentre la suite padronale e la terrazza della seconda suite offrono viste spettacolari sulla mesa al sorgere e al tramonto. La villa, inoltre, si ispira alla Land Art di Michael Heizer e al romanzo “Dune” di Frank Herbert, enfatizzando un rapporto di rispetto e fusione con l’ambiente desertico.\n\nIl risultato è una residenza che invita a vivere il deserto in modo sensoriale: dal fuoco del braciere alla notte accanto al camino di roccia, passando per passeggiate nei sentieri protetti. Per i giovani lettori di ATELIER, Moccasin Flats rappresenta un modello di architettura sostenibile e poetica, dove la natura non è solo sfondo ma protagonista, e dove la ricerca di spazi autentici può trovare risposta in forme che rispettano e celebrano il territorio.",
+      "editorial_level": "approfondimento",
+      "editorial_word_count": 379
     },
     {
       "id": "https://www.sneakersmagazine.it/2026/11/11/saucony-e-afew-presentano-la-progrid-omni-9-ispirata-alla-vespa-tarantola/",
@@ -2321,7 +2383,10 @@
       "language": "it",
       "image_width": 1024,
       "image_height": 1024,
-      "image_format": "jpeg"
+      "image_format": "jpeg",
+      "editorial_summary": "Saucony e la boutique tedesca AFEW hanno lanciato la terza edizione della loro collaborazione, una reinterpretazione della silhouette ProGrid Omni 9 ispirata alla tarantula hawk, una vespa predatrice che caccia le tarantole. Il progetto segue le precedenti Shadow Master 5000 “Goethe” e Shadow 5000 “Time and Space”, confermando un dialogo creativo tra il marchio americano e la boutique di Düsseldorf. La novità sarà disponibile a livello globale dal 13 novembre 2026, alle 17:00 CET, su Saucony.com e nei rivenditori autorizzati, con taglie US 3.5‑14 e prezzo di 189,99 euro.\n\nLa tomaia della ProGrid Omni 9 combina mesh in nylon a doppio strato, finiture sfumate e una struttura open‑mesh che crea profondità e tridimensionalità. Tra gli elementi più distintivi spiccano una cage traslucida con riflessi iridescenti, dettagli in faux‑fur sul collarino e sul tallone, e un rinforzo posteriore dalla finitura cangiante. Il branding è asimmetrico sulla linguetta e il logo AFEW è applicato sul contrafforte, mantenendo la riconoscibilità della silhouette originale di Saucony.\n\n**Il punto focale della scarpa è la cage traslucida iridescente, che traduce visivamente l’aspetto metallizzato della vespa tarantola.** Questo elemento non solo conferisce un carattere deciso al design, ma dimostra come AFEW riesca a trasformare un riferimento biologico in un linguaggio estetico contemporaneo.\n\nLa collaborazione dimostra la capacità di AFEW di reinterpretare temi inaspettati senza perdere l’identità di base di Saucony, offrendo una sneaker che si distingue per texture e colori insoliti. Per i giovani appassionati di street‑wear, la ProGrid Omni 9 rappresenta un’opportunità di possedere un pezzo unico che unisce innovazione materiale e storytelling naturalistico.",
+      "editorial_level": "standard",
+      "editorial_word_count": 266
     },
     {
       "id": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNaV84d0xUOWVCSXVna09UVzJiYl9nbkk5MDgyYl9vTUdkU2RJRjFZdE1LRm52T3ZYTDJsX3RuM2FaZ0U0bnZ4VHotTHE0MVVUV3F2N3RTQ3pFVXdqR19qdmt4bmxpT05oWUhNQ1N3OXhDa3g3QnNCdHZfLTZkdHh3TmZBYw?oc=5",
@@ -2335,11 +2400,13 @@
       "image": "",
       "image_verified": false,
       "language": "it",
-      "image_attempted_at": "2026-11-15T07:19:53.144572+00:00",
-      "image_retry_after": "2026-11-15T19:19:53.144572+00:00",
+      "image_attempted_at": "2026-11-16T19:05:20.322228+00:00",
+      "image_retry_after": "2026-11-17T07:05:20.322228+00:00",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "editorial_attempted_at": "2026-11-16T19:05:28.010529+00:00",
+      "editorial_retry_after": "2026-11-17T07:05:28.010529+00:00"
     },
     {
       "id": "https://www.ad-italia.it/article/case-piccole-in-stile-japandi-15-spazi-in-cui-ogni-angolo-ha-una-storia-da-raccontare/",
@@ -2392,7 +2459,10 @@
       "language": "it",
       "image_width": 5190,
       "image_height": 7266,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_summary": "In una zona dove il litorale ligure si snoda tra ulivi, limonaie e ville storiche, Moitié Studio, in collaborazione con APC Design, ha realizzato una villa che sembra scolpita nella roccia di Santa Margherita Ligure. Il progetto, concepito come eremo contemporaneo, utilizza pietra locale e metallo per creare un volume razionalista che si fonde con il paesaggio verticale della costa. La casa, destinata a una famiglia caprese che si è trasferita a Milano per motivi professionali, è stata progettata per offrire un rifugio mediterraneo dove ritrovare la luce del mare e un ritmo di vita più lento e naturale. La villa si apre su una piscina panoramica che, grazie a grandi vetrate incorniciate da portali in lamiera, offre una vista sul mare che diventa parte integrante del progetto architettonico.\n\nIl design interno si basa su una palette austera ma ricca di dettagli: il legno Okumè, scelto per la maggior parte degli arredi custom, e il rosso Pompei, tinta dominante, creano un contrasto di tonalità profonde e neutre. Il legno, spazzolato e consumato dal tempo, richiama le superfici levigate dal mare, mentre il rosso corallo e le tonalità di ruggine si diffondono in tessili, arredi e pareti, tessendo un filo narrativo che attraversa gli spazi. La cucina, con la sua penisola scultorea, enfatizza il legno come materia principale, mentre la zona notte ospita una sauna in rovere, dove i toni più morbidi e pacati si fondono con l'ambiente circostante.\n\n**La villa è un dialogo tra rigore architettonico e memoria materiale, dove pietra, vetro, legno e metallo si combinano per raccontare la storia di chi vi abita e del paesaggio che la circonda.** Questa frase sintetizza il cuore del progetto: la tensione tra materiali veri e la loro capacità di evocare il tempo passato e presente.\n\nIl risultato è una sequenza di ambienti che, grazie alla luce naturale e ai colori scelti, trasformano la casa in una cornice ideale per il paesaggio ligure. Il mare, spettatore silenzioso, si integra con la struttura, creando un'atmosfera di armonia tra l'architettura contemporanea e la tradizione locale. La villa dimostra come la progettazione possa rispettare il contesto naturale, offrendo al contempo spazi di comfort e riflessione per chi cerca un equilibrio tra modernità e radici mediterranee.",
+      "editorial_level": "approfondimento",
+      "editorial_word_count": 370
     },
     {
       "id": "https://news.google.com/rss/articles/CBMibkFVX3lxTFA1aXIxTVJwVndrM0l0QlNXbWVlcHpyMEhEVkJPOEYwTHB6QUFKdUdZOXJqT01UWWp3Uk5MbS1oWG5FaDYzWFY1LTNsLXRoeHJvSU5vZFVPcFBxbGQ4ZmstZjdHWmNjcW53ZW5TaGhB?oc=5",
@@ -2406,8 +2476,8 @@
       "image": "",
       "image_verified": false,
       "language": "it",
-      "image_attempted_at": "2026-11-15T07:19:53.144572+00:00",
-      "image_retry_after": "2026-11-15T19:19:53.144572+00:00",
+      "image_attempted_at": "2026-11-16T19:05:20.322228+00:00",
+      "image_retry_after": "2026-11-17T07:05:20.322228+00:00",
       "image_width": 0,
       "image_height": 0,
       "image_format": "",
@@ -2504,8 +2574,8 @@
       "image_width": 0,
       "image_height": 0,
       "image_format": "",
-      "image_attempted_at": "2026-11-15T07:19:53.144572+00:00",
-      "image_retry_after": "2026-11-15T19:19:53.144572+00:00",
+      "image_attempted_at": "2026-11-16T19:05:20.322228+00:00",
+      "image_retry_after": "2026-11-17T07:05:20.322228+00:00",
       "editorial_summary": "Foot Locker ha lanciato “IT’S GIVING”, la nuova campagna natalizia che mette al centro la sneaker come regalo capace di legare le generazioni. Il concept “Then. Now. Always.” si sviluppa in un video che mostra scene quotidiane – coppie che si scambiano lo stesso modello, amici al Secret Santa, e i famosi Stripers alle prese con montagne di scatole – per sottolineare come le scarpe da ginnastica siano parte integrante dei rituali festivi e dei ricordi familiari. La campagna vuole quindi trasformare il semplice atto di scegliere una scarpa in un momento di condivisione emotiva, collegando il passato della cultura sneaker al presente dei giovani consumatori.\n\nParallelamente, Foot Locker ha pubblicato l’Holiday Catalogue, un omaggio alla tradizionale wish list cartacea. Disponibile dal 1° dicembre sia online che nei negozi, il catalogo raccoglie una selezione di sneaker e capi apparel per uomo, donna e bambino, includendo esclusive come le Nike Air Max Tuned 1 in grigio e blu e le New Balance 740 in marrone con lacci rosa. **Il catalogo funge da ponte tra la nostalgia della lista cartacea e la modernità dell’e‑commerce, offrendo spunti concreti per regali che attraversano le età**. Inoltre, i membri del programma fedeltà FLX potranno, a partire dal 9 novembre, accedere a kit ASICS, merchandise Space Jam, esperienze di private shopping e biglietti per gli NBA Europe Games.\n\nLa campagna si estende anche al territorio creativo con la quarta edizione di “Be Kind This Winter”, in collaborazione con la piattaforma Sondr. L’iniziativa, che si espande da Londra a Milano e Parigi, prevede workshop, donazioni di calzature e 24 incarichi retribuiti per fotografi, registi e creator emergenti. A Milano, il 5 dicembre, i partecipanti potranno sviluppare competenze pratiche, realizzare progetti per il proprio portfolio e contribuire a raccolte solidali, mentre le attività rimarranno gratuite ma richiederanno registrazione anticipata.\n\nSecondo Slavka Jancikova, Marketing VP EMEA di Foot Locker, l’obiettivo è consolidare i punti vendita come hub culturali capaci di generare ricordi legati al primo paio di scarpe e ai modelli iconici. In questo modo, la campagna non solo celebra il valore emotivo delle sneaker, ma investe anche nelle nuove generazioni creative, creando opportunità concrete e rafforzando il legame tra brand, consumatori e community durante le festività.",
       "editorial_level": "approfondimento",
       "editorial_word_count": 367
@@ -2598,8 +2668,8 @@
       "image": "",
       "image_verified": false,
       "language": "it",
-      "image_attempted_at": "2026-11-15T07:19:53.144572+00:00",
-      "image_retry_after": "2026-11-15T19:19:53.144572+00:00",
+      "image_attempted_at": "2026-11-16T19:05:20.322228+00:00",
+      "image_retry_after": "2026-11-17T07:05:20.322228+00:00",
       "editorial_attempted_at": "2026-11-16T18:22:41.228056+00:00",
       "editorial_retry_after": "2026-11-17T06:22:41.228056+00:00",
       "image_width": 0,
@@ -2618,8 +2688,8 @@
       "image": "",
       "image_verified": false,
       "language": "it",
-      "image_attempted_at": "2026-11-15T07:19:53.144572+00:00",
-      "image_retry_after": "2026-11-15T19:19:53.144572+00:00",
+      "image_attempted_at": "2026-11-16T19:05:20.322228+00:00",
+      "image_retry_after": "2026-11-17T07:05:20.322228+00:00",
       "editorial_attempted_at": "2026-11-16T18:22:40.722924+00:00",
       "editorial_retry_after": "2026-11-17T06:22:40.722924+00:00",
       "image_width": 0,
