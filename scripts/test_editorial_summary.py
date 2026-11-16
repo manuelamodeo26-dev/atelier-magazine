@@ -120,7 +120,7 @@ class EditorialSummaryTests(unittest.TestCase):
                 self._article(), "Testo della fonte " * 100
             )
         self.assertEqual(level, "standard")
-        self.assertEqual(editorial_summary._word_count(summary), 270)
+        self.assertEqual(editorial_summary._word_count(summary), 320)
         self.assertEqual(mocked.call_count, 2)
         second_payload = json.loads(mocked.call_args_list[1].args[0].data.decode("utf-8"))
         self.assertEqual(second_payload["model"], "openai/gpt-oss-20b")
@@ -161,7 +161,7 @@ class EditorialSummaryTests(unittest.TestCase):
                 self._article(), "Testo della fonte " * 100
             )
         self.assertEqual(level, "standard")
-        self.assertEqual(editorial_summary._word_count(summary), 270)
+        self.assertEqual(editorial_summary._word_count(summary), 320)
         self.assertEqual(mocked.call_count, 3)
         gemini_request = mocked.call_args_list[2].args[0]
         self.assertIn("gemini-3.8-flash:generateContent", gemini_request.full_url)
@@ -181,7 +181,7 @@ class EditorialSummaryTests(unittest.TestCase):
                 self._article(), "Testo della fonte " * 100
             )
         self.assertEqual(level, "standard")
-        self.assertEqual(editorial_summary._word_count(summary), 270)
+        self.assertEqual(editorial_summary._word_count(summary), 320)
         self.assertEqual(mocked.call_count, 2)
         self.assertEqual(mocked.call_args_list[0].kwargs["timeout"], 120)
         sleep.assert_called_once_with(5)
