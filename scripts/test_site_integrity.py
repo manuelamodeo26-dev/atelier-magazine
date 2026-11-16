@@ -141,7 +141,7 @@ class MigrationRepositoryTests(unittest.TestCase):
     def test_migration_files_are_non_empty_and_versioned(self):
         directory = ROOT / "supabase" / "migrations"
         for path in directory.glob("*.sql"):
-            self.assertRegex(path.name, r"^\\d{14}_[a-z0-9_]+\\.sql$")
+            self.assertRegex(path.name, r"^\d{14}_[a-z0-9_]+\.sql$")
             self.assertTrue(path.read_text(encoding="utf-8").strip(), path.name)
 
 
