@@ -83,6 +83,10 @@ def main():
 
     home = (ROOT / "index.html").read_text(encoding="utf-8")
     app = (ROOT / "app.js").read_text(encoding="utf-8")
+    service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
+    assert "'./account.html'" in service_worker, (
+        "Service worker: la pagina account non è inclusa nella cache iniziale"
+    )
     assert 'id="maintenance-screen"' in home, "Homepage: schermata manutenzione assente"
     assert "data.archive_status!=='active'" in app, "Homepage: manca il blocco fail-closed"
     assert "setMaintenanceMode(true)" in app, "Homepage: la modalità manutenzione non viene applicata"
