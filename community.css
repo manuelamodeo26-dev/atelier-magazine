@@ -57,3 +57,11 @@
 
 /* Admin comment moderation desk */
 .admin-badge{display:inline-flex;align-items:center;justify-content:center;margin-left:8px;padding:4px 7px;border:1px solid var(--red);color:var(--red);font:9px var(--mono);letter-spacing:.08em;vertical-align:middle}.comment-moderation-item .moderation-comment-body{max-width:760px;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--ink);font-size:12px;line-height:1.6}.comment-moderation-item>div:last-child{min-width:130px}.community-moderation{scroll-margin-top:90px}
+
+/* Threaded replies and profile settings */
+.comment-reply{margin-left:clamp(14px,4vw,38px);padding-left:14px;border-left:2px solid var(--surface-2)}
+.comment-meta{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+#community-profile-open[hidden]{display:none}
+#community-profile-open{border:0;background:transparent;color:var(--ink);cursor:pointer;font:9px var(--mono);letter-spacing:.06em}
+#community-profile-open:hover{color:var(--red)}
+@media(max-width:760px){#community-profile-open{display:block!important;font-size:8px}#community-profile-open[hidden]{display:none!important}}
