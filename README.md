@@ -113,7 +113,7 @@ La funzione Edge `atelier-ghost` è pubblicata su Supabase e richiede una sessio
 
 Ghost restituisce rischio, riepilogo, elementi rilevati e indicazioni. **Non modifica il database, non rimuove contenuti e non prende decisioni di moderazione**: la valutazione e ogni azione restano responsabilità del moderatore umano.
 
-Per attivare l'analisi occorre configurare il secret `GROQ_API_KEY` nelle **Secrets della Edge Function Supabase**. Il secret omonimo di GitHub Actions è separato e non viene copiato automaticamente in Supabase. Se manca, Ghost risponde con un errore di configurazione senza eseguire l'analisi.
+Per attivare l'analisi occorre configurare almeno uno tra `GROQ_API_KEY` e `GEMINI_API_KEY` nelle **Secrets della Edge Function Supabase**. I secret di GitHub Actions sono separati e non vengono copiati automaticamente in Supabase. Per usare un modello Gemini diverso da quello predefinito, configura anche `GEMINI_MODEL`. Se manca ogni provider, Ghost risponde con un errore di configurazione senza eseguire l'analisi.
 
 ## ATELIER Community
 
