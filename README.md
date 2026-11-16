@@ -20,7 +20,7 @@ Fonti configurate in `scripts/fetch_news.py`: Vogue Italia, Pambianco, AD Italia
 
 ## Aggiornamento e pubblicazione
 
-- **Update ATELIER news**: esecuzione programmata ogni ora e avvio manuale da GitHub Actions.
+- **Update ATELIER news**: esecuzione programmata ogni sei ore e avvio manuale da GitHub Actions.
 - Il processo conserva l'archivio se le fonti non rispondono, elimina i contenuti non italiani e quelli più vecchi di 120 giorni e rimuove i duplicati tramite URL.
 - Ogni aggiornamento registra per ciascun feed lo stato di risposta, il numero di articoli letti e, in caso di errore, il messaggio tecnico essenziale. È così possibile distinguere una fonte non raggiungibile da un feed valido senza nuove notizie e diagnosticare il problema.
 - **Deploy ATELIER to GitHub Pages**: pubblicazione del sito statico.
@@ -50,9 +50,9 @@ Se un controllo bloccante fallisce, la pubblicazione non procede. Un feed tempor
 
 ## Redazione e sintesi editoriali ATELIER
 
-Quando è configurato il secret GitHub Actions `GROQ_API_KEY`, il raccoglitore può creare una sintesi originale in italiano a partire dal titolo, dal testo disponibile nel feed e dal testo leggibile della pagina pubblica della fonte.
+Quando è configurato almeno uno dei secret GitHub Actions `GROQ_API_KEY` o `GEMINI_API_KEY`, il raccoglitore può creare una sintesi originale in italiano a partire dal titolo, dal testo disponibile nel feed e dal testo leggibile della pagina pubblica della fonte.
 
-ATELIER usa l'API Chat Completions di Groq con il modello `openai/gpt-oss-120b`; se il modello raggiunge un limite temporaneo o di utilizzo, prova `openai/gpt-oss-20b`. Le richieste usano la modalità JSON e la risposta viene validata prima di essere salvata. I limiti del piano gratuito sono stabiliti da Groq, possono cambiare e si applicano per modello e per finestra temporale: consulta la dashboard del tuo account. Il piano gratuito non garantisce disponibilità illimitata.
+ATELIER prova prima l'API Chat Completions di Groq con `openai/gpt-oss-120b` e, in caso di limite o indisponibilità, il modello `openai/gpt-oss-20b`. Se Groq non è configurato o non produce una risposta valida, può usare Gemini tramite `GEMINI_API_KEY` (modello configurato in `GEMINI_MODEL`, predefinito `gemini-3.8-flash`). Le richieste e le risposte vengono validate prima del salvataggio. I piani gratuiti e le relative quote possono cambiare e non garantiscono disponibilità illimitata: consulta le dashboard dei provider.
 
 - Notizie standard: 250–300 parole, in 3–4 paragrafi.
 - Approfondimenti: 350–450 parole, in 4–5 paragrafi, soltanto quando il materiale contiene dettagli sufficienti.
@@ -68,7 +68,7 @@ ATELIER usa l'API Chat Completions di Groq con il modello `openai/gpt-oss-120b`;
 3. Inserisci come nome `GROQ_API_KEY` e incolla il valore della chiave nel campo secret.
 4. Salva. La chiave viene letta soltanto da GitHub Actions e non viene inserita nel sito o nel repository.
 
-Senza il secret il sito e la raccolta RSS continuano a funzionare normalmente, ma le sintesi editoriali AI non vengono generate. Verifica quote e condizioni del piano gratuito nel tuo account Groq. Non inserire mai la chiave in un file del progetto o in una chat.
+Senza entrambi i secret il sito e la raccolta RSS continuano a funzionare normalmente, ma le sintesi editoriali AI non vengono generate. Verifica quote e condizioni dei piani gratuiti nelle dashboard dei provider. Non inserire mai le chiavi in un file del progetto o in una chat.
 
 ## Funzioni
 
