@@ -46,7 +46,7 @@ def build_sitemap(archive: dict) -> str:
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ]
     for loc, lastmod in entries:
-        lines.extend(("  <url>", f"    <loc>{html.escape(loc, quote=True)}</loc>"))
+        lines.extend(("  <url>", f"    <loc>{html.escape(loc, quote=False)}</loc>"))
         if lastmod:
             lines.append(f"    <lastmod>{lastmod}</lastmod>")
         lines.append("  </url>")
