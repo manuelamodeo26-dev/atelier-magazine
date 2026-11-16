@@ -130,6 +130,8 @@ EXPECTED_MIGRATIONS = {
     "20261116211618_community_nested_reply_parent_validation.sql",
     "20261116212723_remove_redundant_profile_nickname_index.sql",
     "20261116220535_grant_public_profile_fields_to_anon.sql",
+    "20261116222725_ghost_registered_users_access_and_rate_limits.sql",
+    "20261116223138_ghost_global_concurrency_slots.sql",
 }
 
 
