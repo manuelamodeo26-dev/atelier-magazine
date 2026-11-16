@@ -4,6 +4,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 import json
 import re
+import unittest
 from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -100,6 +101,48 @@ def main():
     assert "data.archive_status!=='active'" in app, "Homepage: manca il blocco fail-closed"
     assert "setMaintenanceMode(true)" in app, "Homepage: la modalità manutenzione non viene applicata"
     print(f"Integrità sito OK: {len(pages)} pagine HTML, {checked} riferimenti locali verificati; manutenzione fail-closed verificata.")
+
+
+EXPECTED_MIGRATIONS = {
+    "20261112160628_create_atelier_community.sql",
+    "20261112160637_community_rate_limits_and_report_guard.sql",
+    "20261112160813_secure_community_rate_limit_function.sql",
+    "20261112165421_create_atelier_lab_shared_writing_space.sql",
+    "20261112180739_hide_emails_in_community_content.sql",
+    "20261112180753_make_email_redaction_trigger_self_contained.sql",
+    "20261112181009_community_nicknames_and_public_profiles.sql",
+    "20261112182027_atelier_hub_features.sql",
+    "20261112182127_atelier_hub_validation.sql",
+    "20261112182224_atelier_hub_performance_indexes.sql",
+    "20261112182238_atelier_hub_rls_initplan_tuning.sql",
+    "20261112184158_fix_email_redaction_regex.sql",
+    "20261112190531_atelier_performance_and_rls_hardening.sql",
+    "20261112192729_add_user_profile_avatars.sql",
+    "20261115154046_fix_new_user_profile_display_name.sql",
+    "20261115213608_fix_duplicate_profile_display_name.sql",
+    "20261116143742_public_admin_badges.sql",
+    "20261116181442_admin_comment_moderation.sql",
+    "20261116190307_community_comment_archived_status.sql",
+    "20261116190433_community_replies_and_richer_profiles.sql",
+    "20261116190527_secure_community_reply_targets.sql",
+    "20261116191048_community_nickname_rules.sql",
+    "20261116211525_secure_profile_trigger_and_comment_reply_policy.sql",
+    "20261116211618_community_nested_reply_parent_validation.sql",
+    "20261116212723_remove_redundant_profile_nickname_index.sql",
+}
+
+
+class MigrationRepositoryTests(unittest.TestCase):
+    def test_all_applied_migrations_are_versioned_in_repository(self):
+        directory = ROOT / "supabase" / "migrations"
+        actual = {path.name for path in directory.glob("*.sql")}
+        self.assertEqual(actual, EXPECTED_MIGRATIONS)
+
+    def test_migration_files_are_non_empty_and_versioned(self):
+        directory = ROOT / "supabase" / "migrations"
+        for path in directory.glob("*.sql"):
+            self.assertRegex(path.name, r"^\\d{14}_[a-z0-9_]+\\.sql$")
+            self.assertTrue(path.read_text(encoding="utf-8").strip(), path.name)
 
 
 if __name__ == "__main__":
