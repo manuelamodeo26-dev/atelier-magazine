@@ -156,7 +156,13 @@ class AdminAuthorizationTests(unittest.TestCase):
         function = (ROOT / "supabase" / "functions" / "atelier-ghost" / "index.ts")
         self.assertTrue(function.is_file(), "ATELIER Ghost: file funzione non trovata")
         source = function.read_text(encoding="utf-8")
-        self.assertIn('user?.app_metadata?.role !== "admin"', source)
+        self.assertIn('const isAdmin = user?.app_metadata?.role === "admin";', source)
+        self.assertIn("const allowedTasks = isAdmin", source)
+        self.assertIn('["review_content"]', source)
+        self.assertIn('"review_report", "site_diagnostic"', source)
+        self.assertIn("consume_ghost_quota", source)
+        self.assertIn("acquire_ghost_slot", source)
+        self.assertIn("release_ghost_slot", source)
         self.assertNotIn("user?.user_metadata?.role", source)
 
 
