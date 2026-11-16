@@ -125,6 +125,7 @@
         const {data,error}=await client.auth.signInWithPassword({email,password});
         if(error)throw error;
         user=data.user;
+        publishAdminAccess();
         const refreshed=await client.auth.refreshSession();
         if(!refreshed.error&&refreshed.data.session?.user)user=refreshed.data.session.user;
         await verifyCurrentUser();
@@ -320,11 +321,12 @@
         if(!refreshed.error&&refreshed.data.session)activeSession=refreshed.data.session;
       }
       user=activeSession?.user||null;
+      publishAdminAccess();
       if(user) await verifyCurrentUser(); else publishAdminAccess();
       if(user){await loadUserData();}else{setLoggedIn(false);if(location.pathname.endsWith('/account.html'))$('#account-dialog')?.showModal();}publishAdminAccess();
       if(location.hash==='#account-settings')$('#account-dialog')?.showModal();
       loadLikeCounts().catch(error=>console.warn('ATELIER: conteggi Mi piace non disponibili.',error));
-      client.auth.onAuthStateChange((_event,session)=>{setTimeout(async()=>{try{user=session?.user||null;if(user)await verifyCurrentUser();else publishAdminAccess();if(user){await loadUserData();publishAdminAccess();loadLikeCounts().catch(error=>console.warn('ATELIER: conteggi Mi piace non disponibili.',error));}else{saved.clear();savedRecords.clear();liked.clear();setLoggedIn(false);renderAccount();publishAdminAccess();}}catch(e){user=null;publishAdminAccess();avatarUrl='';saved.clear();setLoggedIn(false);message(e.message||'Impossibile caricare i dati dell’account.',true);}},0);});
+      client.auth.onAuthStateChange((_event,session)=>{setTimeout(async()=>{try{user=session?.user||null;publishAdminAccess();if(user)await verifyCurrentUser();else publishAdminAccess();if(user){await loadUserData();publishAdminAccess();loadLikeCounts().catch(error=>console.warn('ATELIER: conteggi Mi piace non disponibili.',error));}else{saved.clear();savedRecords.clear();liked.clear();setLoggedIn(false);renderAccount();publishAdminAccess();}}catch(e){user=null;publishAdminAccess();avatarUrl='';saved.clear();setLoggedIn(false);message(e.message||'Impossibile caricare i dati dell’account.',true);}},0);});
     }catch(e){setLoggedIn(false);message('Servizio account non raggiungibile. Riprova più tardi.',true);}
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
