@@ -39,7 +39,7 @@
     $('#account-open')?.addEventListener('click',()=>{if(isAdminAccount()){if(location.pathname.endsWith('/account.html')){location.replace('./index.html');return;}$('#account-dialog').showModal();return;}if(user){location.href='./account.html';}else $('#account-dialog').showModal();});
     $('#maintenance-admin-login')?.addEventListener('click',()=>{const dialog=$('#account-dialog');if(!dialog)return;dialog.removeAttribute('inert');if(!dialog.open)dialog.showModal();});
     $('#account-dialog')?.addEventListener('close',()=>{if(document.body.classList.contains('is-maintenance'))$('#account-dialog')?.setAttribute('inert','');});
-    $('#profile-manage')?.addEventListener('click',()=>$('#account-dialog').showModal());
+    $('#profile-manage')?.addEventListener('click',()=>{location.href='./settings.html';});
     $('#profile-login')?.addEventListener('click',()=>$('#account-dialog').showModal());
     $('#profile-logout')?.addEventListener('click',logout);
     $('#profile-avatar-input')?.addEventListener('change',uploadAvatar);
