@@ -5,5 +5,21 @@
   "display": "standalone",
   "background_color": "#f1eee6",
   "theme_color": "#f1eee6",
-  "description": "Rivista indipendente italiana di moda, design, arte e cultura contemporanea."
+  "description": "Rivista indipendente italiana di moda, design, arte e cultura contemporanea.",
+  "id": "./",
+  "scope": "./",
+  "lang": "it",
+  "categories": [
+    "news",
+    "lifestyle",
+    "design"
+  ],
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
 }
