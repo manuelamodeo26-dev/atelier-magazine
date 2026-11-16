@@ -129,6 +129,7 @@ EXPECTED_MIGRATIONS = {
     "20261116211525_secure_profile_trigger_and_comment_reply_policy.sql",
     "20261116211618_community_nested_reply_parent_validation.sql",
     "20261116212723_remove_redundant_profile_nickname_index.sql",
+    "20261116220535_grant_public_profile_fields_to_anon.sql",
 }
 
 
