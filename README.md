@@ -23,7 +23,8 @@ Fonti configurate in `scripts/fetch_news.py`: Vogue Italia, Pambianco, AD Italia
 - **Update ATELIER news**: esecuzione programmata ogni sei ore e avvio manuale da GitHub Actions.
 - Il processo conserva l'archivio se le fonti non rispondono, elimina i contenuti non italiani e quelli più vecchi di 120 giorni e rimuove i duplicati tramite URL.
 - Ogni aggiornamento registra per ciascun feed lo stato di risposta, il numero di articoli letti e, in caso di errore, il messaggio tecnico essenziale. È così possibile distinguere una fonte non raggiungibile da un feed valido senza nuove notizie e diagnosticare il problema.
-- Il workflow genera e mantiene sincronizzati `sitemap.xml` e `robots.txt` con le pagine pubbliche e le schede articolo dell'archivio.\n- **Deploy ATELIER to GitHub Pages**: pubblicazione del sito statico.
+- Il workflow genera e aggiorna `sitemap.xml` con le pagine pubbliche e le schede articolo dell'archivio; `robots.txt` indica ai crawler dove trovarla.
+- **Deploy ATELIER to GitHub Pages**: pubblicazione del sito statico.
 - In **Settings → Pages**, la sorgente deve essere **GitHub Actions**.
 
 La raccolta RSS non equivale a una verifica giornalistica: controllare sempre notizie, attribuzioni e diritti di utilizzo prima della pubblicazione.
