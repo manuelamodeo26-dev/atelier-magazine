@@ -17,6 +17,7 @@ Deno.serve(async (req: Request) => {
 
   const supabaseUrl = Deno.env.get("SUPABASE_URL");
   const anonKey = Deno.env.get("SUPABASE_ANON_KEY");
+  const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
   const groqKey = Deno.env.get("GROQ_API_KEY");
   const geminiKey = Deno.env.get("GEMINI_API_KEY");
   const geminiModel = Deno.env.get("GEMINI_MODEL") || "gemini-3.8-flash";
@@ -31,6 +32,7 @@ Deno.serve(async (req: Request) => {
   if (!authResponse.ok) return json(401, { error: "Sessione non valida. Accedi di nuovo." });
   const user = await authResponse.json();
   const isAdmin = user?.app_metadata?.role === "admin";
+  if (!serviceRoleKey) return json(503, { error: "Servizio Ghost temporaneamente non configurato." });
   if (!groqKey && !geminiKey) return json(503, {
     error: "ATELIER Ghost richiede almeno un provider AI. Configura GROQ_API_KEY oppure GEMINI_API_KEY nelle Edge Function Secrets.",
     setup_required: true,
@@ -61,8 +63,8 @@ Deno.serve(async (req: Request) => {
 
   const quotaResponse = await fetch(`${supabaseUrl}/rest/v1/rpc/consume_ghost_quota`, {
     method: "POST",
-    headers: { apikey: anonKey, Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
-    body: "{}",
+    headers: { apikey: serviceRoleKey, Authorization: `Bearer ${serviceRoleKey}`, "Content-Type": "application/json" },
+    body: JSON.stringify({ p_user_id: user.id, p_is_admin: isAdmin }),
   });
   if (!quotaResponse.ok) return json(503, { error: "Controllo dei limiti temporaneamente non disponibile. Riprova più tardi." });
   const quota = await quotaResponse.json();
@@ -81,8 +83,8 @@ Deno.serve(async (req: Request) => {
   const requestId = crypto.randomUUID();
   const slotResponse = await fetch(`${supabaseUrl}/rest/v1/rpc/acquire_ghost_slot`, {
     method: "POST",
-    headers: { apikey: anonKey, Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ p_request_id: requestId }),
+    headers: { apikey: serviceRoleKey, Authorization: `Bearer ${serviceRoleKey}`, "Content-Type": "application/json" },
+    body: JSON.stringify({ p_request_id: requestId, p_user_id: user.id }),
   });
   if (!slotResponse.ok) return json(503, { error: "Controllo delle richieste simultanee non disponibile. Riprova." });
   const slot = await slotResponse.json();
@@ -182,8 +184,8 @@ Deno.serve(async (req: Request) => {
     try {
       await fetch(`${supabaseUrl}/rest/v1/rpc/release_ghost_slot`, {
         method: "POST",
-        headers: { apikey: anonKey, Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
-        body: JSON.stringify({ p_request_id: requestId }),
+        headers: { apikey: serviceRoleKey, Authorization: `Bearer ${serviceRoleKey}`, "Content-Type": "application/json" },
+        body: JSON.stringify({ p_request_id: requestId, p_user_id: user.id }),
       });
     } catch (error) {
       console.error("Ghost slot release failed:", error);
