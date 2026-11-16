@@ -106,7 +106,7 @@
     $('#show-more').setAttribute('aria-expanded',String(showAll));
     document.dispatchEvent(new Event('atelier:articles-rendered'));
   }
-  let maintenanceEnabled=false,adminMaintenanceAccess=false;
+  let maintenanceEnabled=false,adminMaintenanceAccess=window.ATELIER_ADMIN_ACCESS===true;
   function applyMaintenanceVisibility(){
     const screen=document.getElementById('maintenance-screen');
     if(!screen)return;
@@ -123,9 +123,13 @@
     maintenanceEnabled=Boolean(enabled);
     applyMaintenanceVisibility();
   }
-  document.addEventListener('atelier:admin-access',event=>{
-    adminMaintenanceAccess=event.detail?.isAdmin===true;
+  window.ATELIER_SET_ADMIN_ACCESS=isAdmin=>{
+    adminMaintenanceAccess=isAdmin===true;
+    window.ATELIER_ADMIN_ACCESS=adminMaintenanceAccess;
     applyMaintenanceVisibility();
+  };
+  document.addEventListener('atelier:admin-access',event=>{
+    window.ATELIER_SET_ADMIN_ACCESS?.(event.detail?.isAdmin===true);
   });
   async function loadArticles(){
     try{
