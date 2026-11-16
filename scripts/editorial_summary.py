@@ -87,14 +87,12 @@ def _word_count(value):
 
 
 def is_valid_editorial_summary(summary, level):
-    """Check that a stored summary meets ATELIER's editorial format."""
+    """Enforce the mandatory THE ATELIER VERSE editorial format."""
     if level not in ("standard", "approfondimento") or not isinstance(summary, str):
         return False
     paragraphs = [part.strip() for part in re.split(r"\n\s*\n", summary) if part.strip()]
     words = _word_count(summary)
-    if level == "standard":
-        return 3 <= len(paragraphs) <= 4 and 250 <= words <= 300
-    return 4 <= len(paragraphs) <= 5 and 350 <= words <= 450
+    return 4 <= len(paragraphs) <= 5 and 300 <= words <= 400
 
 
 def generate_editorial_summary(article, source_text):
@@ -111,15 +109,14 @@ def generate_editorial_summary(article, source_text):
         return "", ""
 
     prompt = (
-        "Sei un redattore di ATELIER, rivista digitale italiana indipendente dedicata a moda, "
+        "Sei un redattore di THE ATELIER VERSE, rivista digitale italiana indipendente dedicata a moda, "
         "design, arte e cultura. Scrivi una sintesi editoriale originale in italiano basata "
         "ESCLUSIVAMENTE sul materiale della fonte qui sotto. Non copiare frasi estese, non "
         "inventare fatti, date, numeri, citazioni, intenzioni o conseguenze. Se un dettaglio "
         "non è presente, omettilo. Distingui chiaramente fatti e interpretazioni. Non aggiungere "
         "commenti generici per raggiungere la lunghezza.\n\n"
         "Scrivi un articolo editoriale completo ma scorrevole, pensato per un pubblico giovane. "
-        "Per una notizia standard usa 250-300 parole in 3-4 paragrafi; per un vero approfondimento "
-        "usa 350-450 parole in 4-5 paragrafi. Non allungare artificialmente il testo e non ripetere "
+        "Per ogni contenuto usa obbligatoriamente 300-400 parole in 4-5 paragrafi. Non allungare artificialmente il testo e non ripetere "
         "concetti. Usa un italiano naturale, contemporaneo e preciso, senza gergo inutile e senza "
         "tono scolastico o pubblicitario. Apri spiegando chiaramente che cosa è successo e perché "
         "è interessante; sviluppa i fatti, il contesto e i dettagli concreti; spiega le possibili "
@@ -159,8 +156,8 @@ def generate_editorial_summary(article, source_text):
         paragraphs = [p for p in paragraphs if p]
         summary = "\n\n".join(paragraphs)
         words = _word_count(summary)
-        min_paragraphs, max_paragraphs = (4, 5) if level == "approfondimento" else (3, 4)
-        min_words, max_words = (350, 450) if level == "approfondimento" else (250, 300)
+        min_paragraphs, max_paragraphs = 4, 5
+        min_words, max_words = 300, 400
         if not min_paragraphs <= len(paragraphs) <= max_paragraphs:
             print("{}: numero di paragrafi non valido.".format(provider))
             return "", ""
