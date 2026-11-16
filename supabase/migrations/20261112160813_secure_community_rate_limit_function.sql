@@ -1,0 +1,1 @@
+alter function public.enforce_community_post_rate_limit() set search_path = public, pg_temp;
