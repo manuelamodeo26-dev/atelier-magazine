@@ -49,3 +49,8 @@
 @media(max-width:600px){.writer-prompts{gap:6px}.writer-prompts>span{width:100%;margin-bottom:2px}.writer-prompts button{font-size:9px;padding:8px 10px}.writer-helper{font-size:9px}.community-dialog{padding:22px}.community-form textarea{min-height:170px}}
 
 @media(max-width:760px){.community-header .menu-toggle{margin-left:auto;margin-right:0}.community-header-actions{gap:0}.community-header-actions a{display:none}.community-header-actions .search-open{font-size:9px;white-space:nowrap}}
+
+
+/* Ruolo amministratore: badge visibile accanto al nome nella Community. */
+.admin-badge{display:inline-flex;align-items:center;justify-content:center;margin-left:.45rem;padding:.16rem .42rem;border:1px solid #b99a5b;border-radius:2px;background:#171717;color:#e4c783;font-size:.58rem;font-weight:800;letter-spacing:.12em;line-height:1.35;vertical-align:middle;white-space:nowrap}
+.member-self-badge{display:inline-flex;align-items:center;margin-left:.4rem;padding:.12rem .35rem;border:1px solid currentColor;border-radius:2px;font-size:.56rem;font-weight:700;letter-spacing:.1em;vertical-align:middle;white-space:nowrap}
