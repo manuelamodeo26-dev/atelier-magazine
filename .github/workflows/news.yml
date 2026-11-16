@@ -1,14 +1,7 @@
 name: Update ATELIER news
 
 on:
-  schedule:
-    - cron: '17 */6 * * *'
-  push:
-    branches: [main]
-    paths:
-      - 'scripts/fetch_news.py'
-      - 'scripts/editorial_summary.py'
-      - 'scripts/generate_sitemap.py'
+  # News collection is deliberately manual while the archive is under editorial review.
   workflow_dispatch:
 
 permissions:
@@ -31,6 +24,15 @@ jobs:
         uses: actions/checkout@v5
         with:
           persist-credentials: true
+      - name: Refuse collection while editorial quality hold is active
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('data/articles.json').read_text(encoding='utf-8'))
+          if data.get('archive_status') == 'quality_hold':
+              raise SystemExit('Raccolta bloccata: rimuovere il quality hold solo dopo aver approvato il nuovo processo editoriale.')
+          PY
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
