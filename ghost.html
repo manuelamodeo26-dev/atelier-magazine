@@ -21,7 +21,7 @@
 <select id="ghost-task" required><option value="review_content">Analisi e revisione di un contenuto</option><option value="review_report" data-admin-only hidden>Revisione di una segnalazione</option><option value="site_diagnostic" data-admin-only hidden>Diagnosi tecnica del sito</option></select>
 <label for="ghost-context">CONTESTO (FACOLTATIVO · MAX 4.000 CARATTERI)</label><textarea id="ghost-context" rows="3" maxlength="4000" placeholder="Aggiungi il contesto strettamente necessario. Non inserire dati personali."></textarea>
 <label for="ghost-content">TESTO DA ANALIZZARE (MAX 12.000 CARATTERI)</label><textarea id="ghost-content" rows="9" maxlength="12000" required placeholder="Incolla qui il testo, la bozza o il contenuto da esaminare…"></textarea>
-<div class="ghost-submit-row"><span>8 richieste ogni 5 minuti · 60 al giorno per account. Limite globale di sicurezza attivo.</span><button id="ghost-submit" class="outline-button" type="submit">ANALIZZA CON GHOST ↗</button></div>
+<div class="ghost-submit-row"><span>8 richieste ogni 5 minuti · 60 al giorno per account · massimo 5 richieste simultanee globali.</span><button id="ghost-submit" class="outline-button" type="submit">ANALIZZA CON GHOST ↗</button></div>
 <p id="ghost-status" class="ghost-status" role="status" aria-live="polite"></p>
 </form>
 <div id="ghost-result" class="ghost-result" hidden aria-live="polite"><p id="ghost-risk" class="eyebrow"></p><h3>SINTESI</h3><p id="ghost-summary"></p><h3>RILIEVI</h3><ul id="ghost-findings"></ul><h3>RACCOMANDAZIONE</h3><p id="ghost-recommendation"></p><p id="ghost-review" class="ghost-status"></p></div>
