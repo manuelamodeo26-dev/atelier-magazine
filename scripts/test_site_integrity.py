@@ -133,6 +133,32 @@ EXPECTED_MIGRATIONS = {
 }
 
 
+class AdminAuthorizationTests(unittest.TestCase):
+    def test_browser_admin_checks_use_trusted_app_metadata(self):
+        account = (ROOT / "account.js").read_text(encoding="utf-8")
+        community = (ROOT / "community.js").read_text(encoding="utf-8")
+        hub = (ROOT / "atelier-hub.js").read_text(encoding="utf-8")
+        self.assertIn("user?.app_metadata?.role==='admin'", account)
+        self.assertIn("user?.app_metadata?.role==='admin'", community)
+        self.assertIn("user?.app_metadata?.role==='admin'", hub)
+        self.assertNotIn("user?.user_metadata?.role", account + community + hub)
+
+    def test_maintenance_bypass_requires_admin_access_event(self):
+        app = (ROOT / "app.js").read_text(encoding="utf-8")
+        account = (ROOT / "account.js").read_text(encoding="utf-8")
+        self.assertIn("event.detail?.isAdmin===true", app)
+        self.assertIn("window.ATELIER_SET_ADMIN_ACCESS?.(isAdmin)", account)
+        self.assertIn("adminMaintenanceAccess=isAdmin===true", app)
+
+    def test_ghost_rechecks_admin_role_on_server(self):
+        function = (ROOT / "supabase" / "functions" / "atelier-ghost" / "index.ts")
+        self.assertTrue(function.is_file(), "ATELIER Ghost: file funzione non trovata")
+        source = function.read_text(encoding="utf-8")
+        self.assertIn('user?.app_metadata?.role !== "admin"', source)
+        self.assertNotIn("user?.user_metadata?.role", source)
+
+
+
 class MigrationRepositoryTests(unittest.TestCase):
     def test_all_applied_migrations_are_versioned_in_repository(self):
         directory = ROOT / "supabase" / "migrations"
