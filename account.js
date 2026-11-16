@@ -316,12 +316,18 @@
       client=createClient(cfg.url,cfg.anonKey,{auth:{storage:window.ATELIER_AUTH_STORAGE,persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
       const {data:sessionData}=await client.auth.getSession();
       let activeSession=sessionData.session;
-      if(activeSession){
-        const refreshed=await client.auth.refreshSession();
-        if(!refreshed.error&&refreshed.data.session)activeSession=refreshed.data.session;
-      }
+      // Riconosci subito il ruolo dalla sessione già presente: il rinnovo token
+      // non deve tenere bloccata la navigazione dell'amministratore.
       user=activeSession?.user||null;
       publishAdminAccess();
+      if(activeSession){
+        const refreshed=await client.auth.refreshSession();
+        if(!refreshed.error&&refreshed.data.session){
+          activeSession=refreshed.data.session;
+          user=activeSession.user||user;
+          publishAdminAccess();
+        }
+      }
       if(user) await verifyCurrentUser(); else publishAdminAccess();
       if(user){await loadUserData();}else{setLoggedIn(false);if(location.pathname.endsWith('/account.html'))$('#account-dialog')?.showModal();}publishAdminAccess();
       if(location.hash==='#account-settings')$('#account-dialog')?.showModal();
