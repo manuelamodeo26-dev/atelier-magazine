@@ -1,6 +1,12 @@
 name: Update ATELIER news
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/news.yml"
+      - "scripts/fetch_news.py"
+      - "scripts/test_fetch_news.py"
   schedule:
     - cron: "13 */6 * * *"
   workflow_dispatch:
