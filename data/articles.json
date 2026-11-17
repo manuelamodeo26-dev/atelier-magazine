@@ -1,15 +1,15 @@
 {
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
-  "editorial_api_retry_after": "2026-11-15T00:05:44.859508+00:00",
+  "editorial_api_retry_after": "2026-11-18T07:40:15.065379+00:00",
   "archive_status": "active",
-  "updated_at": "2026-11-17T01:39:08.299582+00:00",
-  "feeds_ok": 7,
+  "updated_at": "2026-11-17T07:40:16.240074+00:00",
+  "feeds_ok": 6,
   "feeds_total": 7,
   "feed_status": [
     {
       "source": "vogue.it",
       "ok": true,
-      "articles": 17,
+      "articles": 6,
       "error": ""
     },
     {
@@ -38,9 +38,9 @@
     },
     {
       "source": "outpump.com",
-      "ok": true,
-      "articles": 18,
-      "error": ""
+      "ok": false,
+      "articles": 0,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
     },
     {
       "source": "sneakersmagazine.it",
@@ -52,9 +52,203 @@
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 87
+    "verified_count": 99
   },
   "articles": [
+    {
+      "id": "https://www.exibart.com/mercato/sothebys-e-record-mondiale-per-yayoi-kusama/",
+      "title": "Sotheby’s, è record mondiale per Yayoi Kusama",
+      "excerpt": "In No. 3P.B. , Yayoi Kusama è già interamente se stessa. Radicale, ipnotica, implacabile nella propria ossessione. Non c’è un solo punto, nella tela, in cui lo sguardo possa davvero concedersi tregua; lo trattiene, lo disorienta, lo trascina in una trama che sembra propagarsi oltre i confini del quadro. È il 1960. Non è ancora il tempo dell’iconografia pop delle zucche, degli ambienti immersivi che ne consacreranno la fama planetaria, eppure Kusama è già l’artefice di un intero universo visivo. Una pittura febbrile e rigorosamente meditata, insieme, dove la ripetizione non è ornamento, ma necessità quasi compulsiva. Da Sotheby’s, a New York, la sua grammatica dell’infinito ha fissato stanotte un nuovo record d’asta mondiale per 15,1 milioni di dollari (spese incluse, e con garanzia e irrevocable bid a prova di flop). Con tanti saluti al precedente primato di 10,5 milioni. Gli anni sono quelli immediatamente successivi al trasferimento a New York, nel 1958. Kusama sviluppa il proprio vocabolario pittorico attraverso la reiterazione ossessiva di forme e segni, in una ricerca che intercetta le avanguardie americane del dopoguerra, senza mai lasciarsi assorbire . «Un giorno, dopo aver contemplato un motivo di fiori rossi sulla tovaglia, alzai lo sguardo e vidi che il soffitto, le finestre e le colonne sembravano essere tappezzati con lo stesso motivo floreale rosso», scriverà più avanti, nella sua autobiografia. «Vidi l’intera stanza, tutto il mio corpo e l’intero universo ricoperti di fiori rossi, e in quell’istante la mia anima fu annientata e io fui rigenerato, riportato all’infinito, al tempo eterno e allo spazio assoluto. Non era un’illusione, ma la realtà stessa. Rimasi sconvolto nel vedere le profondità della mia anima. E il mio corpo era intrappolato in quella terrificante Rete dell’Infinito». Yayoi Kusama, No. 3P.B., 1960. Courtesy di Sotheby’s Anche il pedigree espositivo è all’altezza. No. 3P.B. f u presentata nel 1961 alla Whitney Museum of American Art, nell’ambito dell’Annual Exhibition: Contemporary American Painting : «Espose accanto ad artiste del calibro di Joan Mitchell, Helen Frankenthaler e Georgia O’Keeffe», ricorda Sotheby’s. «Ciascuna artista",
+      "author": "Erica Roccella",
+      "category": "Art & Culture",
+      "source": "exibart.com",
+      "date": "2026-11-17T07:28:03+00:00",
+      "url": "https://www.exibart.com/mercato/sothebys-e-record-mondiale-per-yayoi-kusama/",
+      "image": "https://www.exibart.com/repository/media/2026/11/3-kusama-919x1024.jpg",
+      "image_verified": true,
+      "language": "it",
+      "editorial_attempted_at": "2026-11-17T07:39:33.442228+00:00",
+      "editorial_retry_after": "2026-11-17T19:39:33.442228+00:00",
+      "image_width": 919,
+      "image_height": 1024,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.vogue.it/article/emotional-training-come-funziona-benefici-cosa-sapere",
+      "title": "Emotional Training come funziona e benefici",
+      "excerpt": "Dopo un periodo difficile e un percorso di medicina tradizionale cinese, Antonella Capasso scopre l'Emotional Training. Ecco come può aiutarci a cambiare prospettiva. Davvero",
+      "author": "Sofia Viganò",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-17T05:30:00+00:00",
+      "url": "https://www.vogue.it/article/emotional-training-come-funziona-benefici-cosa-sapere",
+      "image": "https://compass-media.vogue.it/photos/6af6e67a151977932a57b8c2/16:9/w_1280,c_limit/DSC_1730%20(1).jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.vogue.it/article/eddie-stern-maestro-yoga-intervista",
+      "title": "Eddie Stern parla dello Yoga Sangraha e di quando insegnava yoga a Madonna",
+      "excerpt": "Ma parla anche del suo incontro con David Bowie, di Moby e di Gwyneth Paltrow che pratica regolarmente con lui. Un grande maestro che in una conversazione senza filtri riflette sul mondo dello yoga, la ricerca spirituale e sulle domande non negoziabili da farsi: chi sono io e qual è il mio scopo in questo mondo?",
+      "author": "Alice Rosati",
+      "category": "Business",
+      "source": "vogue.it",
+      "date": "2026-11-17T05:30:00+00:00",
+      "url": "https://www.vogue.it/article/eddie-stern-maestro-yoga-intervista",
+      "image": "https://compass-media.vogue.it/photos/6ac65b71c425224ab15177bb/master/pass/Half%20lotus%20red%20background.jpeg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 853,
+      "image_height": 1280,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.vogue.it/article/jeans-neri-modelli-tendenza",
+      "title": "I jeans neri salvano l'outfit: 25 modelli di tendenza 2027",
+      "excerpt": "Base per costruire numerosi look, dal più elegante a quello casual street. Ecco 25 jeans neri di tendenza nel 2027 consigliati da Vogue",
+      "author": "Selene Oliva, Emma Bocchi",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-17T05:30:00+00:00",
+      "url": "https://www.vogue.it/article/jeans-neri-modelli-tendenza",
+      "image": "https://compass-media.vogue.it/photos/69823416eddcafd9f4449934/16:9/w_1280,c_limit/Milano%20str%20F25%200578.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.vogue.it/article/make-up-seppia-tendenza-inverno-come-indossarlo-errori-da-evitare",
+      "title": "Make-up seppia, il nuovo nude inverno 2026: come indossarlo, errori da evitare",
+      "excerpt": "Né marrone, né tortora, né bronzo: il seppia è la tonalità calda e vellutata che sta detronizzando il beige nelle tendenze maquillage di questa stagione. Per un nude look più intenso, luminoso e sofisticato",
+      "author": "Mélanie Defouilloy",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-17T05:30:00+00:00",
+      "url": "https://www.vogue.it/article/make-up-seppia-tendenza-inverno-come-indossarlo-errori-da-evitare",
+      "image": "https://compass-media.vogue.it/photos/6afb03ac5bce519df9ec117c/16:9/w_1280,c_limit/Etro%20bks%20S27%20070.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.vogue.it/article/stevie-cut-taglio-spettinato-ispirato-a-stevie-nicks-a-chi-sta-bene-come-portarlo",
+      "title": "Stevie Cut, il taglio spettinato anni 70 ispirato a Stevie Nicks",
+      "excerpt": "Nato negli anni 70 e diventato iconico grazie alla frontwoman dei Fleetwood Mac, questo taglio scalato e volutamente spettinato torna a ispirare le tendenze capelli. Perché dona volume, consistenza e personalità",
+      "author": "Elle Turner",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-17T05:30:00+00:00",
+      "url": "https://www.vogue.it/article/stevie-cut-taglio-spettinato-ispirato-a-stevie-nicks-a-chi-sta-bene-come-portarlo",
+      "image": "https://compass-media.vogue.it/photos/6afae6c04c0b32e7dc2e1e33/16:9/w_1280,c_limit/GettyImages-109322753.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.vogue.it/article/laura-mattarella-premio-stellare-fondazione-sandretto-re-rebaudengo-torino",
+      "title": "Laura Mattarella e il premio StellaRe: la figlia del Presidente della Repubblica premiata a Torino",
+      "excerpt": "Nato 20 anni fa grazie a Patrizia Sandretto Re Rebaudengo, il riconoscimento ha visto quest'anno come protagonisti Laura Mattarella e il suo premio StellaRe",
+      "author": "Mattia Boffi Valagussa",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-17T05:30:00+00:00",
+      "url": "https://www.vogue.it/article/laura-mattarella-premio-stellare-fondazione-sandretto-re-rebaudengo-torino",
+      "image": "https://compass-media.vogue.it/photos/6afb80adb02ee589846fbb12/16:9/w_1280,c_limit/foto%20a%20cui%20ci%20tiene4.JPG",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.ad-italia.it/article/come-essere-piu-felici-in-casa-in-10-semplici-mosse-consigli/",
+      "title": "Come essere più felici in casa: 18 semplici mosse che vi cambieranno la vita",
+      "excerpt": "Non uscire di casa senza aver rifatto il letto, cambiare la disposizione dei mobili o comprare quella lampada che desiderate da mesi... La felicità domestica è più semplice di quanto sembri.",
+      "author": "Marta Sader, Alessandra Pellegrino",
+      "category": "Design",
+      "source": "ad-italia.it",
+      "date": "2026-11-17T05:00:00+00:00",
+      "url": "https://www.ad-italia.it/article/come-essere-piu-felici-in-casa-in-10-semplici-mosse-consigli/",
+      "image": "https://media-assets.ad-italia.it/photos/64bfb715b2e475c5568d8442/16:9/w_1280,c_limit/Milesi%20_%20RDO%20_%20Torre%20Boldone%202022%20(19).jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.ad-italia.it/article/riorganizzare-i-mobili-e-liberarsi-del-superfluo-lautunno-e-il-momento-migliore-feng-shui-consigli/",
+      "title": "Riorganizzare i mobili, l’autunno è il momento migliore per il Feng Shui",
+      "excerpt": "Cambiare la disposizione dei mobili per un nuovo inizio porta più benefici alla vostra casa di quanto pensiate: fatelo in autunno e vedrete la differenza.",
+      "author": "Corina Mendoza",
+      "category": "Design",
+      "source": "ad-italia.it",
+      "date": "2026-11-17T05:00:00+00:00",
+      "url": "https://www.ad-italia.it/article/riorganizzare-i-mobili-e-liberarsi-del-superfluo-lautunno-e-il-momento-migliore-feng-shui-consigli/",
+      "image": "https://media-assets.ad-italia.it/photos/69e12d4dd55871464f47fd43/16:9/w_1280,c_limit/V1000534_f.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.ad-italia.it/article/aldea-nizuc-progetto-di-architettura-organica-ispirato-alla-natura-dei-caraibi-messicani/",
+      "title": "Aldea Nizuc si ispira alla natura dei Caraibi messicani",
+      "excerpt": "E se visitare un edificio fosse come esplorare una scultura? Tra curve e forme organiche, Aldea Nizuc sta dando vita a un concept architettonico molto originale in Messico.",
+      "author": "Kate Nateras",
+      "category": "Design",
+      "source": "ad-italia.it",
+      "date": "2026-11-17T05:00:00+00:00",
+      "url": "https://www.ad-italia.it/article/aldea-nizuc-progetto-di-architettura-organica-ispirato-alla-natura-dei-caraibi-messicani/",
+      "image": "https://media-assets.ad-italia.it/photos/6af177ccb86faa26c8a8d9f2/16:9/w_1280,c_limit/aldea-nizuc-proyecto-cancun.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.ad-italia.it/article/casa-napoli-80-mq-mattoni-a-vista-arco-studio-archielle/",
+      "title": "Mattoni a vista in casa: un appartamento di 80 mq a Napoli da cui prendere ispirazione",
+      "excerpt": "Un grande arco in mattoni, superfici materiche e dettagli architettonici recuperati: Lia Chiaiese e Debora Regio di Studio Archielle reinterpretano questo appartamento lasciando che siano le tracce del passato a definirne il carattere.",
+      "author": "Ludovica Stevan",
+      "category": "Architecture",
+      "source": "ad-italia.it",
+      "date": "2026-11-17T05:00:00+00:00",
+      "url": "https://www.ad-italia.it/article/casa-napoli-80-mq-mattoni-a-vista-arco-studio-archielle/",
+      "image": "https://media-assets.ad-italia.it/photos/6ae88a0d60ffb96902b28189/16:9/w_1280,c_limit/15%20I%20Casa%20Librai%20I%20Napoli%20I%202026%20I%20%C2%A9CarloOriente2026.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.ad-italia.it/article/corona-di-cristo-la-pianta-che-secondo-il-feng-shui-potrebbe-prosciugare-tutte-le-vostre-energie/",
+      "title": "Corona di Cristo, la pianta che, secondo il Feng Shui, potrebbe prosciugare le vostre energie",
+      "excerpt": "La corona di Cristo è una succulenta molto particolare per il suo aspetto, ma quanto sappiamo della sua storia e della sua energia?",
+      "author": "Corina Mendoza",
+      "category": "Design",
+      "source": "ad-italia.it",
+      "date": "2026-11-17T05:00:00+00:00",
+      "url": "https://www.ad-italia.it/article/corona-di-cristo-la-pianta-che-secondo-il-feng-shui-potrebbe-prosciugare-tutte-le-vostre-energie/",
+      "image": "https://media-assets.ad-italia.it/photos/6af178aedbf237dac958552b/16:9/w_1280,c_limit/ajoy-das-OH4in6P7loI-unsplash.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
     {
       "id": "https://www.exibart.com/architettura/il-paisley-museum-rinasce-con-al_a-vetro-rosso-e-nuovi-spazi-per-la-citta-scozzese/",
       "title": "Il Paisley Museum rinasce con AL_A: vetro rosso e nuovi spazi per la città scozzese",
@@ -1396,7 +1590,9 @@
       "language": "it",
       "image_width": 2448,
       "image_height": 3264,
-      "image_format": "webp"
+      "image_format": "webp",
+      "editorial_attempted_at": "2026-11-17T07:40:15.065379+00:00",
+      "editorial_retry_after": "2026-11-18T07:40:15.065379+00:00"
     },
     {
       "id": "https://www.ad-italia.it/article/villa-minimalista-los-angeles-hollywood-hills-arte-design/",
@@ -1494,7 +1690,9 @@
       "language": "it",
       "image_width": 2126,
       "image_height": 1092,
-      "image_format": "jpeg"
+      "image_format": "jpeg",
+      "editorial_attempted_at": "2026-11-17T07:40:11.078355+00:00",
+      "editorial_retry_after": "2026-11-17T19:40:11.078355+00:00"
     },
     {
       "id": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9iOFIzZXU3dUZwT3ZqMWJDVlZFMzdrcU9JR2h1azhmS2ZmNFVWb2NoX2dSbDV6alQ4SDdab3Z0Ym1LbkVvTmxTdlRqMzNvblNaUVNWdWtzSHNDV1RvWmhjNThNU0JIalc3X1ItZXdCczFOQWlkdDVWX1lVZlI?oc=5",
@@ -1512,7 +1710,9 @@
       "image_retry_after": "2026-11-17T13:30:04.631681+00:00",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "editorial_attempted_at": "2026-11-17T07:40:01.217851+00:00",
+      "editorial_retry_after": "2026-11-17T19:40:01.217851+00:00"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/12/binello-quadrivio-group-piano-da-2-miliardi-moda-beauty-e-food-nel-mirino-500551/",
@@ -1528,7 +1728,9 @@
       "language": "it",
       "image_width": 1920,
       "image_height": 1080,
-      "image_format": "jpeg"
+      "image_format": "jpeg",
+      "editorial_attempted_at": "2026-11-17T07:40:00.612647+00:00",
+      "editorial_retry_after": "2026-11-17T19:40:00.612647+00:00"
     },
     {
       "id": "https://www.sneakersmagazine.it/2026/11/11/saucony-e-afew-presentano-la-progrid-omni-9-ispirata-alla-vespa-tarantola/",
