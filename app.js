@@ -155,7 +155,8 @@
       console.warn('ATELIER: impossibile caricare le notizie.',error);
       articles=[];
       loadFailed=true;
-      setMaintenanceMode(true);
+      setMaintenanceMode(false);
+      render();
       return;
     }
     const latestArticle=[...articles].sort((a,b)=>new Date(b.date||0)-new Date(a.date||0))[0];
