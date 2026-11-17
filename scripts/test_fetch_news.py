@@ -22,15 +22,21 @@ class EditorialSafetyStateTests(unittest.TestCase):
     def test_missing_archive_status_defaults_to_maintenance(self):
         self.assertEqual(fetch_news.archive_status_from_previous({}), "maintenance")
 
-    def test_maintenance_status_survives_news_refresh(self):
+    def test_maintenance_stays_closed_without_articles_or_healthy_feeds(self):
         self.assertEqual(
-            fetch_news.archive_status_from_previous({"archive_status": "maintenance"}),
+            fetch_news.archive_status_from_previous({"archive_status": "maintenance"}, 0, 0),
             "maintenance",
         )
 
-    def test_only_explicit_active_status_opens_homepage(self):
+    def test_first_valid_feed_with_articles_opens_archive(self):
         self.assertEqual(
-            fetch_news.archive_status_from_previous({"archive_status": "active"}),
+            fetch_news.archive_status_from_previous({"archive_status": "maintenance"}, 1, 1),
+            "active",
+        )
+
+    def test_archive_remains_open_when_previously_active(self):
+        self.assertEqual(
+            fetch_news.archive_status_from_previous({"archive_status": "active"}, 0, 0),
             "active",
         )
 
