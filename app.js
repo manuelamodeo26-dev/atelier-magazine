@@ -140,7 +140,12 @@
       if(data.archive_status!=='active'){
         articles=[];
         loadFailed=false;
-        setMaintenanceMode(true);
+        if(data.archive_status==='quality_hold'){
+          setMaintenanceMode(false);
+          render();
+        }else{
+          setMaintenanceMode(true);
+        }
         return;
       }
       setMaintenanceMode(false);
