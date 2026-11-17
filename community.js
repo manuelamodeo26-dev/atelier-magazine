@@ -14,8 +14,8 @@ const reservedNicknames=new Set(['admin','administrator','moderator','moderatore
 function nicknameError(value){if(!/^[A-Za-z0-9_]{3,20}$/.test(value))return 'Il nickname deve contenere 3–20 caratteri: solo lettere inglesi, numeri e underscore (_).';if(reservedNicknames.has(value.toLowerCase()))return 'Questo nickname è riservato e non può essere utilizzato.';return '';}
 function requireLogin(){if(signed())return true;status('Per partecipare devi prima accedere al tuo account ATELIER.');$('#community-auth-dialog').showModal();return false}
 function author(id){return profiles.get(id)?.display_name||'Membro ATELIER';}
-function authorLocation(id){const p=profiles.get(id);return p?.location?' · '+esc(p.location):'';}
-function authorBio(id){const p=profiles.get(id);return p?.bio?'<p class="comment-author-bio">'+esc(p.bio)+'</p>':'';}
+function authorLocation(id){const p=profiles.get(id);return p?.location?' · '+esc(hideEmails(p.location)):'';}
+function authorBio(id){const p=profiles.get(id);return p?.bio?'<p class="comment-author-bio">'+esc(hideEmails(p.bio))+'</p>':'';}
 function authorBadge(id){return profiles.get(id)?.is_admin===true?'<span class="admin-badge" aria-label="Amministratore ATELIER">ADMIN</span>':id===user?.id?'<span class="member-self-badge">TU</span>':'';}
 async function loadProfiles(ids){const unique=[...new Set((ids||[]).filter(Boolean))];if(!unique.length)return;const {data,error}=await db.from('profiles').select('id,display_name,is_admin,bio,location,website,instagram,avatar_url').in('id',unique);if(error)throw error;(data||[]).forEach(p=>profiles.set(p.id,p));}
 function filtered(){let rows=all.filter(x=>active==='Tutte'||x.category===active);if(sort==='popular')rows.sort((a,b)=>(b.likes||0)-(a.likes||0)||new Date(b.created_at)-new Date(a.created_at));return rows}

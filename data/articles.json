@@ -10,5 +10,6 @@
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
     "verified_count": 0
   },
-  "articles": []
+  "articles": [],
+  "editorial_api_retry_after": "2026-11-18T07:40:15.065379+00:00"
 }
