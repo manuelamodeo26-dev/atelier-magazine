@@ -131,10 +131,9 @@ def editorial_ai_ready(retry_after, now=None):
 
 
 def archive_status_from_previous(prior_payload, article_count=0, successful_feeds=0):
-    """Open the archive when it contains articles and at least one source is healthy."""
-    if isinstance(prior_payload, dict) and prior_payload.get("archive_status") == "active":
-        return "active"
-    if article_count > 0 and successful_feeds > 0:
+    """Keep the homepage closed when empty; open it only with usable archived content."""
+    was_active = isinstance(prior_payload, dict) and prior_payload.get("archive_status") == "active"
+    if article_count > 0 and (successful_feeds > 0 or was_active):
         return "active"
     return "maintenance"
 
@@ -505,17 +504,22 @@ def parse_rss_items(raw, category, host, enrich_metadata=True):
             articles.append(article)
 
     if enrich_metadata:
-        metadata_attempts = 0
-        for article in articles:
-            if (not article["image"] or len(article["excerpt"]) < 900 or not article["author"]) and metadata_attempts < 18:
-                metadata_attempts += 1
-                metadata = fetch_page_metadata(article["url"])
-                if not article["image"]:
-                    article["image"] = metadata["image"]
-                if len(metadata["description"]) > len(article["excerpt"]):
-                    article["excerpt"] = metadata["description"][:2200]
-                if not article["author"]:
-                    article["author"] = metadata["author"]
+        metadata_candidates = [
+            article for article in articles
+            if not article["image"] or len(article["excerpt"]) < 900 or not article["author"]
+        ][:18]
+        with concurrent.futures.ThreadPoolExecutor(max_workers=6) as executor:
+            metadata_rows = list(executor.map(
+                fetch_page_metadata,
+                [article["url"] for article in metadata_candidates],
+            ))
+        for article, metadata in zip(metadata_candidates, metadata_rows):
+            if not article["image"]:
+                article["image"] = metadata["image"]
+            if len(metadata["description"]) > len(article["excerpt"]):
+                article["excerpt"] = metadata["description"][:2200]
+            if not article["author"]:
+                article["author"] = metadata["author"]
     return articles
 
 
@@ -671,8 +675,12 @@ def main():
         try:
             with open(OUT, encoding="utf-8") as file:
                 payload = json.load(file)
-            if payload.get("feed_status") != feed_status or payload.get("feeds_ok") != successful_feeds:
+            archive_status = archive_status_from_previous(payload, len(previous), successful_feeds)
+            if (payload.get("feed_status") != feed_status
+                    or payload.get("feeds_ok") != successful_feeds
+                    or payload.get("archive_status") != archive_status):
                 payload["updated_at"] = datetime.now(timezone.utc).isoformat()
+                payload["archive_status"] = archive_status
                 payload["feeds_ok"] = successful_feeds
                 payload["feeds_total"] = len(FEEDS)
                 payload["feed_status"] = feed_status
