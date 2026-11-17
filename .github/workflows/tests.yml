@@ -16,6 +16,9 @@ on:
   pull_request:
     paths:
       - 'scripts/test_*.py'
+      - 'community.js'
+      - 'supabase/migrations/**'
+      - 'supabase/tests/**'
       - '.github/workflows/news.yml'
       - '.github/workflows/tests.yml'
   workflow_dispatch:
