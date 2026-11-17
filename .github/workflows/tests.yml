@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths:
       - 'scripts/test_*.py'
+      - 'community.js'
+      - 'supabase/migrations/**'
+      - 'supabase/tests/**'
       - 'scripts/fetch_news.py'
       - 'scripts/editorial_summary.py'
       - 'scripts/validate_archive.py'
