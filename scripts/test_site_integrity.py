@@ -133,6 +133,7 @@ EXPECTED_MIGRATIONS = {
     "20261116222725_ghost_registered_users_access_and_rate_limits.sql",
     "20261116223138_ghost_global_concurrency_slots.sql",
     "20261116223546_ghost_quota_rpc_service_role_only.sql",
+    "20261117125404_redact_emails_in_public_profiles.sql",
 }
 
 
