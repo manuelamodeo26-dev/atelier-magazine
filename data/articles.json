@@ -1,8 +1,8 @@
 {
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
   "editorial_api_retry_after": "2026-11-15T00:05:44.859508+00:00",
-  "archive_status": "quality_hold",
-  "updated_at": "2026-11-16T22:16:54.737Z",
+  "archive_status": "active",
+  "updated_at": "2026-11-17T00:00:00.000Z",
   "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
@@ -54,7 +54,5 @@
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
     "verified_count": 0
   },
-  "articles": [],
-  "quality_hold_reason": "Archivio azzerato su richiesta dell’amministratore. Nessun articolo può essere pubblicato o rigenerato finché ogni contenuto non supera verifica delle fonti, controllo fattuale e standard editoriali THE ATELIER VERSE.",
-  "quality_hold_started_at": "2026-11-16T22:16:54.733Z"
+  "articles": []
 }
