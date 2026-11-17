@@ -34,10 +34,16 @@ class EditorialSafetyStateTests(unittest.TestCase):
             "active",
         )
 
-    def test_archive_remains_open_when_previously_active(self):
+    def test_previously_active_archive_stays_open_with_articles(self):
+        self.assertEqual(
+            fetch_news.archive_status_from_previous({"archive_status": "active"}, 3, 0),
+            "active",
+        )
+
+    def test_empty_archive_stays_closed_even_if_previously_active(self):
         self.assertEqual(
             fetch_news.archive_status_from_previous({"archive_status": "active"}, 0, 0),
-            "active",
+            "maintenance",
         )
 
 
