@@ -1,4 +1,3 @@
-# Editorial archive reset guard trigger; workflow job is intentionally disabled.
 #!/usr/bin/env python3
 """Collect public RSS/Atom metadata for the ATELIER editorial archive."""
 import html
@@ -131,9 +130,11 @@ def editorial_ai_ready(retry_after, now=None):
     return retry_window_open(retry_after, now)
 
 
-def archive_status_from_previous(prior_payload):
-    """Keep the homepage closed unless an explicit active status is stored."""
+def archive_status_from_previous(prior_payload, article_count=0, successful_feeds=0):
+    """Open the archive when it contains articles and at least one source is healthy."""
     if isinstance(prior_payload, dict) and prior_payload.get("archive_status") == "active":
+        return "active"
+    if article_count > 0 and successful_feeds > 0:
         return "active"
     return "maintenance"
 
@@ -854,7 +855,7 @@ def main():
     payload = {
         "editorial_rebuild_version": EDITORIAL_REBUILD_VERSION,
         "editorial_api_retry_after": prior_payload.get("editorial_api_retry_after", ""),
-        "archive_status": archive_status_from_previous(prior_payload),
+        "archive_status": archive_status_from_previous(prior_payload, len(articles), successful_feeds),
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "feeds_ok": successful_feeds,
         "feeds_total": len(FEEDS),
