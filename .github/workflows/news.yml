@@ -1,15 +1,46 @@
-name: ATELIER news automation disabled
+name: Update ATELIER news
 
 on:
+  schedule:
+    - cron: "13 */6 * * *"
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
+
+concurrency:
+  group: atelier-news
+  cancel-in-progress: false
 
 jobs:
-  disabled:
-    if: ${{ false }}
+  update-archive:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
-      - name: Confirm automation is disabled
-        run: echo "Automazione editoriale disattivata su richiesta."
+      - name: Checkout repository
+        uses: actions/checkout@v5
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install image verification dependency
+        run: python -m pip install --disable-pip-version-check Pillow
+      - name: Collect and validate editorial archive
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+        run: |
+          python scripts/fetch_news.py
+          python scripts/validate_archive.py
+      - name: Commit updated archive
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/articles.json
+          if git diff --cached --quiet; then
+            echo "Archivio invariato: nessun commit necessario."
+          else
+            git commit -m "Aggiorna archivio editoriale ATELIER"
+            git push
+          fi
