@@ -144,7 +144,7 @@ def editorial_global_retry_after(attempted_at):
 
 def archive_status_from_previous(prior_payload, article_count=0, successful_feeds=0):
     """Preserve the explicit publication gate; healthy feeds must never reopen the homepage."""
-    if isinstance(prior_payload, dict) and prior_payload.get("archive_status") == "active":
+    if article_count > 0 and isinstance(prior_payload, dict) and prior_payload.get("archive_status") == "active":
         return "active"
     return "maintenance"
 
