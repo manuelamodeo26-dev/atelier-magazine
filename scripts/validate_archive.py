@@ -102,6 +102,21 @@ def validate_payload(payload):
                 errors.append(label + "risoluzione immagine verificata inferiore a 1000x500.")
             if article.get("image_format") not in ("jpeg", "png", "webp"):
                 errors.append(label + "formato immagine verificata non supportato.")
+    if articles:
+        missing_summaries = sum(
+            1 for article in articles
+            if not isinstance(article, dict)
+            or not isinstance(article.get("editorial_summary"), str)
+            or not article["editorial_summary"].strip()
+        )
+        unverified_images = sum(
+            1 for article in articles
+            if not isinstance(article, dict) or article.get("image_verified") is not True
+        )
+        if missing_summaries:
+            warnings.append("Sintesi editoriali mancanti: {}/{}.".format(missing_summaries, len(articles)))
+        if unverified_images:
+            warnings.append("Immagini non verificate: {}/{}.".format(unverified_images, len(articles)))
     return errors, warnings
 
 def main():
@@ -118,7 +133,11 @@ def main():
     if errors:
         print("Controllo archivio fallito: {} errori.".format(len(errors)), file=sys.stderr)
         return 1
-    print("Archivio valido: {} articoli; sintesi e immagini conformi.".format(len(payload["articles"])))
+    articles = payload["articles"]
+    total = len(articles)
+    summaries = sum(1 for article in articles if isinstance(article, dict) and isinstance(article.get("editorial_summary"), str) and article["editorial_summary"].strip())
+    images = sum(1 for article in articles if isinstance(article, dict) and article.get("image_verified") is True)
+    print("Archivio valido: {} articoli; sintesi editoriali {}/{}; immagini verificate {}/{}.".format(total, summaries, total, images, total))
     return 0
 
 if __name__ == "__main__":

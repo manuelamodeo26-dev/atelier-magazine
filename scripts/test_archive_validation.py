@@ -43,7 +43,8 @@ class ArchiveValidationTests(unittest.TestCase):
         }
         errors, warnings = validate_payload(payload)
         self.assertEqual(errors, [])
-        self.assertEqual(warnings, [])
+        self.assertTrue(any("Sintesi editoriali mancanti: 1/1" in warning for warning in warnings))
+        self.assertTrue(any("Immagini non verificate: 1/1" in warning for warning in warnings))
 
     def test_accepts_empty_archive_for_clean_public_launch(self):
         payload = {"archive_status": "active", "feeds_ok": 7, "feeds_total": 7, "feed_status": [
@@ -77,10 +78,11 @@ class ArchiveValidationTests(unittest.TestCase):
         errors, _ = validate_payload(payload)
         self.assertTrue(any("Conteggio immagini verificate" in error for error in errors))
 
-    def test_accepts_valid_archive(self):
+    def test_accepts_archive_with_completeness_warnings(self):
         errors, warnings = validate_payload(self.payload())
         self.assertEqual(errors, [])
-        self.assertEqual(warnings, [])
+        self.assertTrue(any("Sintesi editoriali mancanti: 1/1" in warning for warning in warnings))
+        self.assertTrue(any("Immagini non verificate: 1/1" in warning for warning in warnings))
 
     def test_rejects_duplicate_urls(self):
         payload = self.payload()
