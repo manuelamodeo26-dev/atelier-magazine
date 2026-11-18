@@ -223,9 +223,6 @@ class EditorialSummaryTests(unittest.TestCase):
             patch.object(editorial_summary, "API_KEY", "groq-unit-test-key"),
             patch.object(editorial_summary, "GEMINI_API_KEY", "gemini-unit-test-key"),
             patch.object(editorial_summary, "MODEL", "openai/gpt-oss-120b"),
-            patch.object(editorial_summary, "QUOTA_EXHAUSTED_FOR_RUN", False),
-            patch.object(editorial_summary, "AI_PROVIDER_UNAVAILABLE_FOR_RUN", False),
-            patch.object(editorial_summary, "AI_PROVIDER_PERMANENTLY_UNAVAILABLE_FOR_RUN", False),
             patch.object(editorial_summary, "urlopen", side_effect=[quota_error(), quota_error(), not_found]) as mocked,
         ):
             first = editorial_summary.generate_editorial_summary(
@@ -248,8 +245,6 @@ class EditorialSummaryTests(unittest.TestCase):
         with (
             patch.object(editorial_summary, "API_KEY", ""),
             patch.object(editorial_summary, "GEMINI_API_KEY", "gemini-unit-test-key"),
-            patch.object(editorial_summary, "AI_PROVIDER_UNAVAILABLE_FOR_RUN", False),
-            patch.object(editorial_summary, "AI_PROVIDER_PERMANENTLY_UNAVAILABLE_FOR_RUN", False),
             patch.object(editorial_summary, "urlopen", side_effect=[not_found]) as mocked,
         ):
             first = editorial_summary.generate_editorial_summary(
