@@ -2,7 +2,7 @@
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
   "editorial_api_retry_after": "2026-11-19T07:27:43.957220+00:00",
   "archive_status": "maintenance",
-  "updated_at": "2026-11-18T13:07:57.481730+00:00",
+  "updated_at": "2026-11-18T13:09:33.938210+00:00",
   "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
@@ -52,7 +52,7 @@
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 116
+    "verified_count": 118
   },
   "articles": [
     {
@@ -358,12 +358,12 @@
       "source": "pambianconews.com",
       "date": "2026-11-18T09:30:45+00:00",
       "url": "https://www.pambianconews.com/2026/11/18/veronica-etro-torna-con-il-nuovo-fashion-brand-off-the-menu-499771/",
-      "image": "",
-      "image_verified": false,
+      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/etro-1.jpg",
+      "image_verified": true,
       "language": "it",
-      "image_width": 0,
-      "image_height": 0,
-      "image_format": ""
+      "image_width": 1410,
+      "image_height": 694,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.exibart.com/fotografia/carlo-mollino-e-le-polaroid-la-segreta-ossessione-di-un-architetto-fotografo/",
@@ -390,9 +390,12 @@
       "source": "pambianconews.com",
       "date": "2026-11-18T08:59:43+00:00",
       "url": "https://www.pambianconews.com/2026/11/18/misto-holdings-fila-super-i-2-mld-e-nei-nove-mesi-82-501225/",
-      "image": "",
-      "image_verified": false,
-      "language": "it"
+      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/Ph.-fila.de_.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1746,
+      "image_height": 816,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/18/inditex-investe-fino-a-50-milioni-di-dollari-nel-fondo-d-tafs-per-decarbonizzare-le-filiere-tessili-501163/",
@@ -437,7 +440,12 @@
       "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1VYkRuUUFIU1QxYjY0bDFZdTMyNHZGTk9vR1QzcWFNWmdhTnVseWVranpVdkJldHcwOU1XYlBOd3E5MjBxSTdSdktKek1WdWxEUHZpQ0RmZHZDR1hjcUw2cFlxUjlHZTBuS29zMXBOLVZDMzJUaGs1eUtuWQ?oc=5",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "image_attempted_at": "2026-11-18T13:09:30.955182+00:00",
+      "image_retry_after": "2026-11-19T01:09:30.955182+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
     },
     {
       "id": "https://www.pambianconews.com/2026/11/18/affide-lancia-la-custodia-gratuita-dei-preziosi-e-apre-anche-alle-borse-di-lusso-500949/",
@@ -2341,7 +2349,12 @@
       "image_verified": false,
       "language": "it",
       "editorial_attempted_at": "2026-11-18T01:25:30.175617+00:00",
-      "editorial_retry_after": "2026-11-18T13:25:30.175617+00:00"
+      "editorial_retry_after": "2026-11-18T13:25:30.175617+00:00",
+      "image_attempted_at": "2026-11-18T13:09:30.955182+00:00",
+      "image_retry_after": "2026-11-19T01:09:30.955182+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
     },
     {
       "id": "https://www.sneakersmagazine.it/2026/11/11/saucony-e-afew-presentano-la-progrid-omni-9-ispirata-alla-vespa-tarantola/",
@@ -2372,7 +2385,12 @@
       "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFA1aXIxTVJwVndrM0l0QlNXbWVlcHpyMEhEVkJPOEYwTHB6QUFKdUdZOXJqT01UWWp3Uk5MbS1oWG5FaDYzWFY1LTNsLXRoeHJvSU5vZFVPcFBxbGQ4ZmstZjdHWmNjcW53ZW5TaGhB?oc=5",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "image_attempted_at": "2026-11-18T13:09:30.955182+00:00",
+      "image_retry_after": "2026-11-19T01:09:30.955182+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
     },
     {
       "id": "https://www.sneakersmagazine.it/2026/11/09/sneakers-magazine-issue-122-2026-2-2/",
@@ -2462,7 +2480,9 @@
       "image_height": 0,
       "image_format": "",
       "editorial_attempted_at": "2026-11-18T01:25:19.669240+00:00",
-      "editorial_retry_after": "2026-11-18T13:25:19.669240+00:00"
+      "editorial_retry_after": "2026-11-18T13:25:19.669240+00:00",
+      "image_attempted_at": "2026-11-18T13:09:30.955182+00:00",
+      "image_retry_after": "2026-11-19T01:09:30.955182+00:00"
     },
     {
       "id": "https://www.sneakersmagazine.it/2026/10/29/expo-riva-schuh-e-gardabags-il-mercato-di-calzature-e-borse-cambia-volto/",
@@ -2547,7 +2567,12 @@
       "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5PbG40c0dpYzRlUVk1OVBRak5xNThKeGd5bUdQbnItTC1NTUNiYXpPMW8yMnRWZTRPOFlrNzAyenA4czdTc2FrbVVMRmtWejdrV2lXTGg0eWVKNzQ?oc=5",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "image_attempted_at": "2026-11-18T13:09:30.955182+00:00",
+      "image_retry_after": "2026-11-19T01:09:30.955182+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
     }
   ]
 }
