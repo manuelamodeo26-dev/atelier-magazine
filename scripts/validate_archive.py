@@ -21,17 +21,14 @@ def validate_payload(payload):
     maintenance = payload.get("archive_status") == "maintenance"
     if not articles and not maintenance:
         warnings.append("Archivio editoriale vuoto: il sito può essere pubblicato senza articoli mentre la nuova selezione viene preparata.")
-    if maintenance and articles:
-        errors.append("La modalità manutenzione deve avere un archivio vuoto.")
     if len(articles) > 180:
         errors.append("Archivio oltre il limite di 180 articoli.")
     total, ok = payload.get("feeds_total"), payload.get("feeds_ok")
-    if maintenance:
-        if total != 0 or ok != 0 or payload.get("feed_status") != []:
-            errors.append("Metadati feed non validi per la modalità manutenzione.")
-    elif not isinstance(total, int) or not isinstance(ok, int) or total < 1 or not 0 <= ok <= total:
+    minimum_total = 0 if maintenance else 1
+    if (not isinstance(total, int) or not isinstance(ok, int)
+            or total < minimum_total or not 0 <= ok <= total):
         errors.append("Metadati dei feed non validi.")
-    elif ok < total:
+    elif total > 0 and ok < total:
         warnings.append("Feed disponibili: {}/{}.".format(ok, total))
     feed_status = payload.get("feed_status")
     if feed_status is not None:

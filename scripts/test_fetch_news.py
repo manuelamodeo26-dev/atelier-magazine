@@ -19,19 +19,41 @@ class EditorialSafetyStateTests(unittest.TestCase):
             "2026-11-14T12:55:00+00:00", now
         ))
 
+    def test_provider_unavailability_persists_twelve_hour_global_cooldown(self):
+        now = datetime(2026, 11, 18, 7, 27, tzinfo=timezone.utc)
+        with (
+            patch.object(fetch_news.editorial_summary, "QUOTA_EXHAUSTED_FOR_RUN", False),
+            patch.object(fetch_news.editorial_summary, "AI_PROVIDER_UNAVAILABLE_FOR_RUN", True),
+        ):
+            self.assertEqual(
+                fetch_news.editorial_global_retry_after(now),
+                "2026-11-18T19:27:00+00:00",
+            )
+
+    def test_provider_quota_exhaustion_persists_twenty_four_hour_global_cooldown(self):
+        now = datetime(2026, 11, 18, 7, 27, tzinfo=timezone.utc)
+        with (
+            patch.object(fetch_news.editorial_summary, "QUOTA_EXHAUSTED_FOR_RUN", True),
+            patch.object(fetch_news.editorial_summary, "AI_PROVIDER_UNAVAILABLE_FOR_RUN", True),
+        ):
+            self.assertEqual(
+                fetch_news.editorial_global_retry_after(now),
+                "2026-11-19T07:27:00+00:00",
+            )
+
     def test_missing_archive_status_defaults_to_maintenance(self):
         self.assertEqual(fetch_news.archive_status_from_previous({}), "maintenance")
 
-    def test_maintenance_stays_closed_without_articles_or_healthy_feeds(self):
+    def test_maintenance_stays_closed_when_new_articles_and_healthy_feeds_arrive(self):
         self.assertEqual(
-            fetch_news.archive_status_from_previous({"archive_status": "maintenance"}, 0, 0),
+            fetch_news.archive_status_from_previous({"archive_status": "maintenance"}, 3, 7),
             "maintenance",
         )
 
-    def test_first_valid_feed_with_articles_opens_archive(self):
+    def test_first_valid_feed_with_articles_does_not_open_archive_automatically(self):
         self.assertEqual(
             fetch_news.archive_status_from_previous({"archive_status": "maintenance"}, 1, 1),
-            "active",
+            "maintenance",
         )
 
     def test_previously_active_archive_stays_open_with_articles(self):

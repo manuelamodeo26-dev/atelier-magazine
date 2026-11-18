@@ -18,6 +18,7 @@ API_ENDPOINT = "https://api.groq.com/openai/v1/chat/completions"
 MAX_SOURCE_CHARS = 12000
 QUOTA_EXHAUSTED_FOR_RUN = False
 AI_PROVIDER_UNAVAILABLE_FOR_RUN = False
+AI_PROVIDER_PERMANENTLY_UNAVAILABLE_FOR_RUN = False
 
 
 class ArticleTextParser(HTMLParser):
@@ -286,6 +287,10 @@ def generate_editorial_summary(article, source_text):
                 except (ValueError, AttributeError, TypeError):
                     pass
                 gemini_quota_exhausted = exc.code == 429
+                if exc.code in (400, 401, 403, 404, 408) or exc.code >= 500:
+                    AI_PROVIDER_UNAVAILABLE_FOR_RUN = True
+                if exc.code in (401, 403, 404):
+                    AI_PROVIDER_PERMANENTLY_UNAVAILABLE_FOR_RUN = True
                 print("Gemini non disponibile (HTTP {}){}.".format(
                     exc.code, (" — " + detail[:180]) if detail else ""
                 ))
@@ -300,7 +305,10 @@ def generate_editorial_summary(article, source_text):
 
     # Groq quota exhaustion alone must not start a 24-hour cooldown when
     # Gemini is configured but only encountered a transient error.
-    if gemini_quota_exhausted or (quota_exhausted_during_attempts and not GEMINI_API_KEY):
+    if gemini_quota_exhausted or (
+        quota_exhausted_during_attempts
+        and (not GEMINI_API_KEY or AI_PROVIDER_PERMANENTLY_UNAVAILABLE_FOR_RUN)
+    ):
         QUOTA_EXHAUSTED_FOR_RUN = True
         print("Quote AI esaurite: sospendo gli altri tentativi per questa esecuzione.")
     print("Sintesi AI non disponibile: Groq e Gemini non hanno prodotto un risultato valido.")

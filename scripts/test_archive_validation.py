@@ -29,6 +29,22 @@ class ArchiveValidationTests(unittest.TestCase):
         self.assertEqual(errors, [])
         self.assertEqual(warnings, [])
 
+    def test_accepts_archived_articles_while_publication_gate_is_closed(self):
+        payload = {
+            "archive_status": "maintenance",
+            "feeds_ok": 7,
+            "feeds_total": 7,
+            "feed_status": [
+                {"source": "feed{}.example".format(index), "ok": True, "articles": 1}
+                for index in range(7)
+            ],
+            "image_verification": {"method": "test", "verified_count": 0},
+            "articles": [self.article()],
+        }
+        errors, warnings = validate_payload(payload)
+        self.assertEqual(errors, [])
+        self.assertEqual(warnings, [])
+
     def test_accepts_empty_archive_for_clean_public_launch(self):
         payload = {"archive_status": "active", "feeds_ok": 7, "feeds_total": 7, "feed_status": [
             {"source": "one.example", "ok": True, "articles": 1},

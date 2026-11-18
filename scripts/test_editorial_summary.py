@@ -11,6 +11,7 @@ class EditorialSummaryTests(unittest.TestCase):
     def setUp(self):
         editorial_summary.QUOTA_EXHAUSTED_FOR_RUN = False
         editorial_summary.AI_PROVIDER_UNAVAILABLE_FOR_RUN = False
+        editorial_summary.AI_PROVIDER_PERMANENTLY_UNAVAILABLE_FOR_RUN = False
 
     def _response(self, level="standard"):
         count = 4
@@ -205,6 +206,63 @@ class EditorialSummaryTests(unittest.TestCase):
         self.assertEqual(first, ("", ""))
         self.assertEqual(second, ("", ""))
         self.assertEqual(mocked.call_count, 2)
+
+    def test_groq_quota_and_gemini_404_trigger_global_quota_cooldown(self):
+        def quota_error():
+            error_body = json.dumps({
+                "error": {"message": "Rate limit reached for requests per day", "type": "requests"}
+            }).encode("utf-8")
+            return HTTPError(
+                "https://api.groq.com", 429, "Too Many Requests", {}, io.BytesIO(error_body)
+            )
+        not_found = HTTPError(
+            "https://generativelanguage.googleapis.com", 404, "Not Found", {},
+            io.BytesIO(b'{"error":{"message":"model not found"}}'),
+        )
+        with (
+            patch.object(editorial_summary, "API_KEY", "groq-unit-test-key"),
+            patch.object(editorial_summary, "GEMINI_API_KEY", "gemini-unit-test-key"),
+            patch.object(editorial_summary, "MODEL", "openai/gpt-oss-120b"),
+            patch.object(editorial_summary, "QUOTA_EXHAUSTED_FOR_RUN", False),
+            patch.object(editorial_summary, "AI_PROVIDER_UNAVAILABLE_FOR_RUN", False),
+            patch.object(editorial_summary, "AI_PROVIDER_PERMANENTLY_UNAVAILABLE_FOR_RUN", False),
+            patch.object(editorial_summary, "urlopen", side_effect=[quota_error(), quota_error(), not_found]) as mocked,
+        ):
+            first = editorial_summary.generate_editorial_summary(
+                self._article(), "Testo della fonte " * 100
+            )
+            second = editorial_summary.generate_editorial_summary(
+                self._article(), "Altro testo della fonte " * 100
+            )
+        self.assertEqual(first, ("", ""))
+        self.assertEqual(second, ("", ""))
+        self.assertTrue(editorial_summary.QUOTA_EXHAUSTED_FOR_RUN)
+        self.assertTrue(editorial_summary.AI_PROVIDER_PERMANENTLY_UNAVAILABLE_FOR_RUN)
+        self.assertEqual(mocked.call_count, 3)
+
+    def test_gemini_404_stops_repeated_provider_requests_for_the_run(self):
+        not_found = HTTPError(
+            "https://generativelanguage.googleapis.com", 404, "Not Found", {},
+            io.BytesIO(b'{"error":{"message":"model not found"}}'),
+        )
+        with (
+            patch.object(editorial_summary, "API_KEY", ""),
+            patch.object(editorial_summary, "GEMINI_API_KEY", "gemini-unit-test-key"),
+            patch.object(editorial_summary, "AI_PROVIDER_UNAVAILABLE_FOR_RUN", False),
+            patch.object(editorial_summary, "AI_PROVIDER_PERMANENTLY_UNAVAILABLE_FOR_RUN", False),
+            patch.object(editorial_summary, "urlopen", side_effect=[not_found]) as mocked,
+        ):
+            first = editorial_summary.generate_editorial_summary(
+                self._article(), "Testo della fonte " * 100
+            )
+            second = editorial_summary.generate_editorial_summary(
+                self._article(), "Altro testo della fonte " * 100
+            )
+        self.assertEqual(first, ("", ""))
+        self.assertEqual(second, ("", ""))
+        self.assertTrue(editorial_summary.AI_PROVIDER_UNAVAILABLE_FOR_RUN)
+        self.assertTrue(editorial_summary.AI_PROVIDER_PERMANENTLY_UNAVAILABLE_FOR_RUN)
+        self.assertEqual(mocked.call_count, 1)
 
     def test_groq_quota_and_gemini_timeout_do_not_trigger_daily_cooldown(self):
         def quota_error():

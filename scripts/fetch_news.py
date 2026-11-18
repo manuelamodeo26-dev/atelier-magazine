@@ -36,6 +36,7 @@ EDITORIAL_REBUILD_VERSION = "2026-11-12-atelier-editorial-v2"
 MAX_IMAGE_BACKFILLS_PER_RUN = 18
 IMAGE_BACKFILL_RETRY_HOURS = 12
 EDITORIAL_QUOTA_RETRY_HOURS = 24
+EDITORIAL_PROVIDER_RETRY_HOURS = 12
 
 # Keep the archive focused on fashion, design and contemporary culture.
 # Exclude recurring general-interest formats that broad publisher feeds can contain.
@@ -130,10 +131,20 @@ def editorial_ai_ready(retry_after, now=None):
     return retry_window_open(retry_after, now)
 
 
+def editorial_global_retry_after(attempted_at):
+    """Persist a shared cooldown when quota is exhausted or a provider is unavailable."""
+    if editorial_summary.QUOTA_EXHAUSTED_FOR_RUN:
+        hours = EDITORIAL_QUOTA_RETRY_HOURS
+    elif editorial_summary.AI_PROVIDER_UNAVAILABLE_FOR_RUN:
+        hours = EDITORIAL_PROVIDER_RETRY_HOURS
+    else:
+        return ""
+    return (attempted_at + timedelta(hours=hours)).isoformat()
+
+
 def archive_status_from_previous(prior_payload, article_count=0, successful_feeds=0):
-    """Keep the homepage closed when empty; open it only with usable archived content."""
-    was_active = isinstance(prior_payload, dict) and prior_payload.get("archive_status") == "active"
-    if article_count > 0 and (successful_feeds > 0 or was_active):
+    """Preserve the explicit publication gate; healthy feeds must never reopen the homepage."""
+    if isinstance(prior_payload, dict) and prior_payload.get("archive_status") == "active":
         return "active"
     return "maintenance"
 
@@ -818,14 +829,16 @@ def main():
             else:
                 attempted_at = datetime.now(timezone.utc)
                 article["editorial_attempted_at"] = attempted_at.isoformat()
+                global_retry_after = editorial_global_retry_after(attempted_at)
                 if editorial_summary.QUOTA_EXHAUSTED_FOR_RUN:
-                    article["editorial_retry_after"] = (attempted_at + timedelta(hours=EDITORIAL_QUOTA_RETRY_HOURS)).isoformat()
-                    prior_payload["editorial_api_retry_after"] = article["editorial_retry_after"]
+                    article["editorial_retry_after"] = global_retry_after
+                    prior_payload["editorial_api_retry_after"] = global_retry_after
                     print("Quota AI esaurita: sospendo la coda editoriale per 24 ore.")
                     break
-                article["editorial_retry_after"] = (attempted_at + timedelta(hours=12)).isoformat()
+                article["editorial_retry_after"] = (attempted_at + timedelta(hours=EDITORIAL_PROVIDER_RETRY_HOURS)).isoformat()
                 if editorial_summary.AI_PROVIDER_UNAVAILABLE_FOR_RUN:
-                    print("Provider AI temporaneamente non disponibile: sospendo la coda per questa esecuzione.")
+                    prior_payload["editorial_api_retry_after"] = global_retry_after
+                    print("Provider AI non disponibile: sospendo la coda editoriale per 12 ore.")
                     break
                 print("Sintesi editoriale rinviata per 12 ore: {}".format(article.get("title", "")[:90]))
     elif has_ai_provider and not editorial_api_ready:

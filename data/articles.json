@@ -1,8 +1,8 @@
 {
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
-  "editorial_api_retry_after": "",
-  "archive_status": "active",
-  "updated_at": "2026-11-18T07:27:45.236158+00:00",
+  "editorial_api_retry_after": "2026-11-19T07:27:43.957220+00:00",
+  "archive_status": "maintenance",
+  "updated_at": "2026-11-18T12:55:57+00:00",
   "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
