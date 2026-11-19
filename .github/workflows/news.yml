@@ -3,61 +3,26 @@ name: Update ATELIER news
 on:
   push:
     branches: [main]
-    paths:
-      - ".github/workflows/news.yml"
-      - "scripts/fetch_news.py"
-      - "scripts/test_fetch_news.py"
-      - "scripts/validate_archive.py"
-      - "scripts/generate_sitemap.py"
-  schedule:
-    - cron: "13 */6 * * *"
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
 concurrency:
-  group: atelier-news
-  cancel-in-progress: false
+  group: atelier-pages
+  cancel-in-progress: true
 
 jobs:
   update-archive:
+    if: ${{ false }}
     runs-on: ubuntu-latest
-    timeout-minutes: 30
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
-      - name: Set up Python
-        uses: actions/setup-python@v6
-        with:
-          python-version: "3.12"
-      - name: Install image verification dependency
-        run: python -m pip install --disable-pip-version-check Pillow
-      - name: Collect and validate editorial archive
-        env:
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
-        run: |
-          python scripts/fetch_news.py
-          python scripts/validate_archive.py
-          python scripts/generate_sitemap.py
-      - name: Commit updated archive
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/articles.json sitemap.xml
-          if git diff --cached --quiet; then
-            echo "Archivio invariato: nessun commit necessario."
-          else
-            git commit -m "Aggiorna archivio editoriale ATELIER"
-            git push
-          fi
+      - name: Confirm editorial automation is disabled
+        run: echo "Automazione editoriale disattivata."
 
   publish:
-    needs: update-archive
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -67,7 +32,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout updated site
+      - name: Checkout site
         uses: actions/checkout@v5
       - name: Configure Pages
         uses: actions/configure-pages@v5
@@ -75,6 +40,6 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
-      - name: Deploy updated archive
+      - name: Deploy site
         id: deployment
         uses: actions/deploy-pages@v4
