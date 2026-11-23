@@ -1,7 +1,7 @@
 {
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
   "archive_status": "active",
-  "updated_at": "2026-11-19T00:06:00+00:00",
+  "updated_at": "2026-11-23T19:00:00+01:00",
   "feeds_ok": 0,
   "feeds_total": 0,
   "feed_status": [],
@@ -10,5 +10,21 @@
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
     "verified_count": 0
   },
-  "articles": []
+  "articles": [
+    {
+      "id": "https://www.maisonmargiela.com/it-it/mm-brand-show-artisanal-24.html",
+      "title": "Maison Margiela Artisanal 2024: John Galliano trasforma la couture in un racconto notturno",
+      "url": "https://www.maisonmargiela.com/it-it/mm-brand-show-artisanal-24.html",
+      "date": "2024-01-25T00:00:00+01:00",
+      "category": "Fashion",
+      "source": "Maison Margiela",
+      "language": "it",
+      "excerpt": "La collezione Artisanal 2024 di John Galliano esplora il rituale del vestirsi attraverso l'immaginario della Parigi notturna, la fotografia di Brassaï e nuove sperimentazioni di haute couture.",
+      "editorial_level": "approfondimento",
+      "editorial_word_count": 315,
+      "editorial_summary": "Il 25 gennaio 2024, sotto il Pont Alexandre III a Parigi, John Galliano ha presentato la collezione Artisanal 2024 di Maison Margiela. La sfilata ha trasformato la passerella in una scena notturna, tra pioggia, luce lunare e figure provenienti dai margini della città. Il riferimento dichiarato era la fotografia di Brassaï, che raccontava una Parigi meno monumentale e più intima. Il progetto metteva al centro il modo in cui gli abiti costruiscono e rivelano un’identità.\n\nLa collezione partiva da una domanda: quanto del nostro carattere passa attraverso il modo in cui ci vestiamo? Maison Margiela descrive il corpo come una tela e il vestirsi come un rituale composto anche da gesti automatici. Galliano ha tradotto questa idea in silhouette modellate da corsetti, fasce contenitive e protesi, accanto a capi che sembravano segnati dall’uso e dagli agenti atmosferici. Un bavero sollevato o un cappotto tirato sopra la testa diventavano spunti per costruire forme e proporzioni.\n\nIl punto più interessante è il rapporto tra apparenza e costruzione: alcuni capi sembravano pesanti, ma erano realizzati con strati di materiali leggerissimi. La tecnica “milletrage” combinava organza, feltro e crêpe di lana, con superfici stampate per evocare tessuti tradizionali e velate da tulle. L’effetto era quello di un indumento consumato dal tempo, ottenuto attraverso un lavoro sartoriale controllato. La collezione impiegava quindici tecniche, otto introdotte per la prima volta in questo progetto, secondo la documentazione della maison.\n\nAnche la presentazione contribuiva al significato degli abiti. Il preludio cinematografico e la scenografia piovosa estendevano il racconto dalla passerella allo spazio urbano immaginato da Galliano. Il trucco, con volti dall’aspetto quasi artificiale, accentuava la distanza tra persona e personaggio. A distanza di tempo, Artisanal 2024 resta un caso utile per leggere la couture contemporanea: la teatralità non era semplice spettacolo, ma trovava sostegno in un progetto tecnico preciso e in un’idea coerente. L’immagine attirava l’attenzione; la lavorazione degli abiti dava sostanza alla visione.",
+      "image": "",
+      "image_verified": false
+    }
+  ]
 }
