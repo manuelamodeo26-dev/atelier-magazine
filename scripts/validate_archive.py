@@ -24,7 +24,8 @@ def validate_payload(payload):
     if len(articles) > 180:
         errors.append("Archivio oltre il limite di 180 articoli.")
     total, ok = payload.get("feeds_total"), payload.get("feeds_ok")
-    minimum_total = 0 if maintenance else 1
+    # A manually curated archive can be published without RSS feeds; automated feed collection is optional when editorial content is already present.
+    minimum_total = 0 if maintenance or articles else 1
     if (not isinstance(total, int) or not isinstance(ok, int)
             or total < minimum_total or not 0 <= ok <= total):
         errors.append("Metadati dei feed non validi.")
