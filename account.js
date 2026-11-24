@@ -63,7 +63,7 @@
       if(like){event.preventDefault();event.stopPropagation();toggleLiked(like.dataset.likeArticle);}
     });
   }
-  function isAdminAccount(){return user?.app_metadata?.role==='admin';}
+  function isAdminAccount(){return user?.id==='9edafb88-2507-4a83-847e-9bae0b027dc6';}
   function publishAdminAccess(){const isAdmin=isAdminAccount();window.ATELIER_ADMIN_ACCESS=isAdmin;window.ATELIER_SET_ADMIN_ACCESS?.(isAdmin);document.dispatchEvent(new CustomEvent('atelier:admin-access',{detail:{isAdmin}}));}
   async function verifyCurrentUser(){
     if(!client)return null;
