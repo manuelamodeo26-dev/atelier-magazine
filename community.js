@@ -9,7 +9,7 @@ const fmt=v=>new Date(v).toLocaleString('it-IT',{day:'2-digit',month:'short',yea
 let db=null,user=null,all=[],profiles=new Map(),active='Tutte',sort='new',reportTarget=null,expanded=new Set(),reactions=new Set();
 function status(t){$('#community-status').textContent=t}
 function signed(){return !!user}
-function isAdmin(){return user?.app_metadata?.role==='admin'}
+function isAdmin(){return user?.id==='9edafb88-2507-4a83-847e-9bae0b027dc6'}
 const reservedNicknames=new Set(['admin','administrator','moderator','moderatore','support','assistenza']);
 function nicknameError(value){if(!/^[A-Za-z0-9_]{3,20}$/.test(value))return 'Il nickname deve contenere 3–20 caratteri: solo lettere inglesi, numeri e underscore (_).';if(reservedNicknames.has(value.toLowerCase()))return 'Questo nickname è riservato e non può essere utilizzato.';return '';}
 function requireLogin(){if(signed())return true;status('Per partecipare devi prima accedere al tuo account ATELIER.');$('#community-auth-dialog').showModal();return false}
