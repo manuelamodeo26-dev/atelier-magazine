@@ -2,7 +2,7 @@
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
   "editorial_api_retry_after": "2026-11-24T07:16:26.514432+00:00",
   "archive_status": "active",
-  "updated_at": "2026-11-23T19:16:34.874503+00:00",
+  "updated_at": "2026-11-24T01:24:09.683686+00:00",
   "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
@@ -52,9 +52,121 @@
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 82
+    "verified_count": 93
   },
   "articles": [
+    {
+      "id": "https://www.vogue.it/article/calendario-avvento-beauty-2026-makeup-skincare-profumi",
+      "title": "Calendario Avvento Beauty 2026, i migliori con make up, skincare, fragranze e non solo",
+      "excerpt": "Non serve aspettare il Natale per scegliere il Calendario dell'Avvento (beauty): tra skincare, make-up, fragranze e bodycare, quali sono i migliori e perché",
+      "author": "Veronica Cristino, Lucrezia Malavolta",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-23T22:19:05+00:00",
+      "url": "https://www.vogue.it/article/calendario-avvento-beauty-2026-makeup-skincare-profumi",
+      "image": "https://compass-media.vogue.it/photos/6acfc2c9f18e9ccf8a9cfa07/16:9/w_1280,c_limit/GettyImages-1430785969.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.exibart.com/musei/un-piccolo-vaso-predinastico-e-sei-pareti-digitali-il-museo-egizio-inaugura-la-sua-sala-immersiva/",
+      "title": "Un piccolo vaso predinastico e sei pareti digitali: il Museo Egizio inaugura la sua sala immersiva",
+      "excerpt": "A Torino , il Museo Egizio inaugura una nuova sala immersiva, concepita per raccontare le trasformazioni del paesaggio egiziano unendo archeologia e tecnologie digitali. ECO. Paesaggi in trasformazione è il nome del progetto che apre al pubblico il nuovo spazio, un dispositivo narrativo che prova a ricomporre le relazioni tra gli oggetti conservati nelle collezioni e i territori dai quali provengono situato nel piano ipogeo del museo, parte del più ampio intervento di rinnovamento architettonico e museografico avviato in occasione del bicentenario dell’istituzione, celebrato nel 2024. Museo Egizio, Restyling. Logo, courtesy of Migliore+Servetto Il punto di partenza è un piccolo vaso predinastico rinvenuto nel sito archeologico di Hammamiya e collocato in una vetrina al centro della sala, attorno al quale si sviluppa un racconto che coinvolge sei ledwall – ciascuno lungo cinque metri – per un totale di trenta metri lineari di superfici digitali, accompagnati da un sistema di sound design spazializzato e da proiezioni a 360 gradi. Le immagini si muovono sulle pareti, mettendo in relazione tempi e luoghi differenti, mentre il vaso rimane al centro dell’esperienza. © Museo Egizio ECO. Paesaggi in trasformazione Il progetto prende le mosse da una questione che riguarda da vicino il lavoro dei musei archeologici: che cosa succede quando un reperto viene separato dal proprio contesto di origine? Il trasferimento di un oggetto in una collezione museale interrompe una parte della sua storia, allontanandolo dal paesaggio, dalle comunità e dalle pratiche quotidiane che ne hanno accompagnato la produzione e l’utilizzo, e se da un lato la vetrina permette di conservarlo e renderlo accessibile, non può restituire tutto ciò che lo circondava. ECO interviene proprio su questa distanza, provando a ricostruire le relazioni che si sono perse attraverso lo studio delle testimonianze archeologiche e l’elaborazione di dati scientifici. © Museo Egizio Il progetto ECO porta la firma di un gruppo scientifico interdisciplinare del Museo Egizio, coordinato da Enrico Ferraris e composto da Johannes Auenmüller , Paolo Del Vesco , Federica Facchetti , Cédric Gobeil , Martina Terzoli , Federi",
+      "author": "redazione",
+      "category": "Art & Culture",
+      "source": "exibart.com",
+      "date": "2026-11-23T21:07:20+00:00",
+      "url": "https://www.exibart.com/musei/un-piccolo-vaso-predinastico-e-sei-pareti-digitali-il-museo-egizio-inaugura-la-sua-sala-immersiva/",
+      "image": "https://www.exibart.com/repository/media/2026/11/MuseoEgizio_RestylingLogo-courtesy-of-MiglioreServetto_12-1024x576.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1024,
+      "image_height": 576,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.ad-italia.it/article/experimental-roma-hotel-rodolphe-parente-foto/",
+      "title": "Experimental Roma: tutto quello che c’è da sapere sul nuovo hotel firmato Rodolphe Parente",
+      "excerpt": "Un’ex banca in via Veneto diventa un hotel che coniuga design italiano, accenti francesi, cocktail d'autore e una piscina panoramica. Lo firma il designer Rodolphe Parente, che ci racconta la sua interpretazione di Roma, lontana dalla nostalgia e dai cliché.",
+      "author": "Alessandra Pellegrino",
+      "category": "Lifestyle",
+      "source": "ad-italia.it",
+      "date": "2026-11-23T20:21:08+00:00",
+      "url": "https://www.ad-italia.it/article/experimental-roma-hotel-rodolphe-parente-foto/",
+      "image": "https://media-assets.ad-italia.it/photos/6adc4646f61b19728ec90674/master/pass/EXPERIMENTAL_JUNE262299.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 2400,
+      "image_height": 3600,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.finestresullarte.info/archeologia/oltre-meta-degli-archeologi-lavora-partita-iva-ana-chiede-misure-per-giovani",
+      "title": "Oltre metà degli archeologi lavora a partita IVA: ANA chiede misure per i giovani",
+      "excerpt": "L’Associazione Nazionale Archeologi interviene sul disegno di Legge di Bilancio 2027 e chiede misure fiscali più eque, una no tax area per gli under 35, maggiori sostegni alla maternità delle libere professioniste e pari accesso agli incentivi per la transizione digitale.",
+      "author": "Redazione",
+      "category": "Art & Culture",
+      "source": "finestresullarte.info",
+      "date": "2026-11-23T20:01:48+00:00",
+      "url": "https://www.finestresullarte.info/archeologia/oltre-meta-degli-archeologi-lavora-partita-iva-ana-chiede-misure-per-giovani",
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/archeologa-ana-cover.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1200,
+      "image_height": 616,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.finestresullarte.info/attualita/inghilterra-organo-di-un-ex-manicomio-diventa-una-scultura-quando-patrimonio-si-trasforma-in-arte-contemporanea",
+      "title": "In Inghilterra l'organo di un ex manicomio diventa una scultura",
+      "excerpt": "A Epsom, in Inghilterra, l’artista Glynis Lamond ha trasformato le parti recuperate dell’organo della cappella dell’ex ospedale psichiatrico di Horton in una scultura monumentale. L’opera, intitolata The Music of Life, restituisce visibilità a una storia legata alle prime esperienze europee di musicoterapia.",
+      "author": "Redazione",
+      "category": "Art & Culture",
+      "source": "finestresullarte.info",
+      "date": "2026-11-23T20:01:39+00:00",
+      "url": "https://www.finestresullarte.info/attualita/inghilterra-organo-di-un-ex-manicomio-diventa-una-scultura-quando-patrimonio-si-trasforma-in-arte-contemporanea",
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/organo-the-music-of-life-cover-2.jpeg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1200,
+      "image_height": 616,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.finestresullarte.info/mostre/sebastiano-ricci-sua-belluno-tre-grandi-cicli-decorativi-ricostruiti-palazzo-fulcis",
+      "title": "Sebastiano Ricci e la sua Belluno: tre grandi cicli decorativi ricostruiti a Palazzo Fulcis",
+      "excerpt": "Dal 19 dicembre 2026 al 14 marzo 2027, Palazzo Fulcis a Belluno ospita una mostra dedicata al rapporto tra Sebastiano Ricci e la sua città d’origine. In esposizione 21 opere, prestiti dagli Uffizi e dalle Gallerie dell’Accademia di Venezia e un ritratto presentato per la prima volta al pubblico italiano.",
+      "author": "Redazione",
+      "category": "Architecture",
+      "source": "finestresullarte.info",
+      "date": "2026-11-23T20:01:22+00:00",
+      "url": "https://www.finestresullarte.info/mostre/sebastiano-ricci-sua-belluno-tre-grandi-cicli-decorativi-ricostruiti-palazzo-fulcis",
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/sebastiano-ricci-caduta-di-fetonte-cover.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1200,
+      "image_height": 616,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.vogue.it/article/come-indossare-la-lingerie-a-vista-tendenza-outfit-inverno",
+      "title": "Come indossare la lingerie a vista in inverno: 7 idee outfit boudoir, Natale e Capodanno",
+      "excerpt": "Lingerie a vista, tra trasparenze e leggerezze. Dopo aver visto il look super cool di Rooney Mara abbiamo pensato che fosse l'idea giusta per i party di fine anno",
+      "author": "Selene Oliva",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-23T19:15:58+00:00",
+      "url": "https://www.vogue.it/article/come-indossare-la-lingerie-a-vista-tendenza-outfit-inverno",
+      "image": "https://compass-media.vogue.it/photos/6b048fa346bd5a7b394b201c/16:9/w_1280,c_limit/come%20indossare%20la%20lingerie%20a%20vista%20in%20inverno.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
     {
       "id": "https://www.vogue.it/article/chiara-mastroianni-marrakech-film-festival-2026-look-chanel",
       "title": "Chiara Mastroianni al Marrakech Film Festival 2026 veste il cappotto-abito di Chanel in tweed con gonna piumata",
@@ -152,6 +264,22 @@
       "image_width": 732,
       "image_height": 1024,
       "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.vogue.it/article/bookcity-2026-guida-agli-appuntamenti-secondo-vogue",
+      "title": "Bookcity 2026: se ti piace leggere, questi sono gli appuntamenti che non ti puoi perdere al festival della lettura di Milano",
+      "excerpt": "Dall'incontro con Sheila Heti a quello con Samantha Harvey, fino agli appuntamenti dedicati a Oriana Fallaci a vent'anni dalla scomparsa: la guida di Vogue agli eventi da non perdere a BookCity Milano 2026 dal 23 al 29 novembre",
+      "author": "Francesca Faccani",
+      "category": "Art & Culture",
+      "source": "vogue.it",
+      "date": "2026-11-23T17:30:00+00:00",
+      "url": "https://www.vogue.it/article/bookcity-2026-guida-agli-appuntamenti-secondo-vogue",
+      "image": "https://compass-media.vogue.it/photos/6b0456621aef994fe53e629e/16:9/w_1280,c_limit/Oriana%20Fallaci%20(8).jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
     },
     {
       "id": "https://www.vogue.it/article/novita-moda-autunno-inverno-2026-2027",
@@ -268,6 +396,24 @@
       "image_width": 1730,
       "image_height": 780,
       "image_format": "jpeg"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOWUc0aE9MOTY2T0h5U3JzbFU4TGt5N0d1d0F1dHRQMGtVTE9TZDF6RFRsSXJLdEppUmZiVy0tcGc4X2ZvLVFOWUVyeWk3SjdCRXppWVNFNldHSlJhMW42UXMzMzdCbnlnc1lGV0JVbUpTeWp2UVhJVUNvTG0ySEg1RkR4SlJXbmppcFE?oc=5",
+      "title": "La Gradiva racconta la complessità dell’adolescenza - Outpump",
+      "excerpt": "La Gradiva racconta la complessità dell’adolescenza Outpump",
+      "author": "",
+      "category": "Streetwear",
+      "source": "outpump.com",
+      "date": "2026-11-23T16:23:48+00:00",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOWUc0aE9MOTY2T0h5U3JzbFU4TGt5N0d1d0F1dHRQMGtVTE9TZDF6RFRsSXJLdEppUmZiVy0tcGc4X2ZvLVFOWUVyeWk3SjdCRXppWVNFNldHSlJhMW42UXMzMzdCbnlnc1lGV0JVbUpTeWp2UVhJVUNvTG0ySEg1RkR4SlJXbmppcFE?oc=5",
+      "image": "",
+      "image_verified": false,
+      "language": "it",
+      "image_attempted_at": "2026-11-24T01:24:06.828494+00:00",
+      "image_retry_after": "2026-11-24T13:24:06.828494+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
     },
     {
       "id": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9YSU00TmVuX3JuYmVGR0p4aU5rWmRwRG5BWVhoTENiLVF2TWItTjhQMzBfSEdIQzhoX2lqcGQ3eHZiMmFiUFFJdEJjTXFZeHFxbXRHVjduaVpudTZuR2Zhc2lrNEV5UExPalJ4Ql93?oc=5",
@@ -430,7 +576,12 @@
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE0yaE5VZ1hONUozTmF4R19CaHZ0dFlzZDJ0dEItRmdCb0dxNy1GZDl1VVV4RjBYXzNGMExXQ202aW02SXBMNEZ6bFVZUGNPSTN1YVhkbUJWSXJueXI5OWFJNVFxTVZSNnZhLUcxRWp1ZElqa1VW?oc=5",
       "image": "",
       "image_verified": false,
-      "language": "it"
+      "language": "it",
+      "image_attempted_at": "2026-11-24T01:24:06.828494+00:00",
+      "image_retry_after": "2026-11-24T13:24:06.828494+00:00",
+      "image_width": 0,
+      "image_height": 0,
+      "image_format": ""
     },
     {
       "id": "https://www.vogue.it/article/allenamento-della-forza-per-principianti-benefici-come-dove-quando-praticarlo",
@@ -478,7 +629,9 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "image_attempted_at": "2026-11-24T01:24:06.828494+00:00",
+      "image_retry_after": "2026-11-24T13:24:06.828494+00:00"
     },
     {
       "id": "https://www.ad-italia.it/article/junkers-a50-icon-eis-aereo-design-st-moritz/",
@@ -745,12 +898,12 @@
       "source": "pambianconews.com",
       "date": "2026-11-23T10:05:53+00:00",
       "url": "https://www.pambianconews.com/2026/11/23/lestero-spinge-la-crescita-double-digit-di-filippo-de-laurentiis-501628/",
-      "image": "",
-      "image_verified": false,
+      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/fdl1.jpg",
+      "image_verified": true,
       "language": "it",
-      "image_width": 0,
-      "image_height": 0,
-      "image_format": ""
+      "image_width": 1856,
+      "image_height": 1026,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/23/raffaella-curiel-si-e-spenta-a-83-anni-lintellettuale-della-moda-italiana-501655/",
@@ -766,7 +919,9 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "image_attempted_at": "2026-11-24T01:24:06.828494+00:00",
+      "image_retry_after": "2026-11-24T13:24:06.828494+00:00"
     },
     {
       "id": "https://www.finestresullarte.info/arte-e-artisti/murale-kote-a-laviano-ricorda-con-volto-di-giovane-donna-paese-quasi-distrutto-sisma-irpinia",
@@ -862,7 +1017,9 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "image_attempted_at": "2026-11-24T01:24:06.828494+00:00",
+      "image_retry_after": "2026-11-24T13:24:06.828494+00:00"
     },
     {
       "id": "https://www.ad-italia.it/article/regali-di-natale-2026-per-il-salotto-design-beauty-moda/",
@@ -878,7 +1035,9 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "image_attempted_at": "2026-11-24T01:24:06.828494+00:00",
+      "image_retry_after": "2026-11-24T13:24:06.828494+00:00"
     },
     {
       "id": "https://www.ad-italia.it/article/microcemento-in-casa-vantaggi-svantaggi-consigli-cosa-sapere/",
@@ -937,12 +1096,12 @@
       "source": "ad-italia.it",
       "date": "2026-11-23T02:00:00+00:00",
       "url": "https://www.ad-italia.it/article/lago-di-como-indirizzi-segreti-travel-curator-barbara-pelandini/",
-      "image": "",
-      "image_verified": false,
+      "image": "https://media-assets.ad-italia.it/photos/6491560575563d986e2d4752/16:9/w_1280,c_limit/10%20-%20Entrance%20frescos.jpg",
+      "image_verified": true,
       "language": "it",
-      "image_width": 0,
-      "image_height": 0,
-      "image_format": ""
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
     },
     {
       "id": "https://www.finestresullarte.info/mercato/piccolo-quadro-di-hilma-af-klint-venduto-per-11-5-milioni-di-euro-record",
@@ -1310,7 +1469,9 @@
       "language": "it",
       "image_width": 0,
       "image_height": 0,
-      "image_format": ""
+      "image_format": "",
+      "image_attempted_at": "2026-11-24T01:24:06.828494+00:00",
+      "image_retry_after": "2026-11-24T13:24:06.828494+00:00"
     },
     {
       "id": "https://www.pambianconews.com/2026/11/20/christies-porta-allasta-il-look-4-di-platos-atlantis-di-alexander-mcqueen-501531/",
@@ -1321,12 +1482,12 @@
       "source": "pambianconews.com",
       "date": "2026-11-20T09:37:59+00:00",
       "url": "https://www.pambianconews.com/2026/11/20/christies-porta-allasta-il-look-4-di-platos-atlantis-di-alexander-mcqueen-501531/",
-      "image": "",
-      "image_verified": false,
+      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/Newsletter-4.jpg",
+      "image_verified": true,
       "language": "it",
-      "image_width": 0,
-      "image_height": 0,
-      "image_format": ""
+      "image_width": 2240,
+      "image_height": 1260,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.ad-italia.it/article/james-bond-attori-a-casa-loro-fotografie-vintage/",
@@ -1592,6 +1753,58 @@
       "image_format": ""
     },
     {
+      "id": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBLMjhscDlXNy1iaGhEOVo1b2tpck92WTQzTTYwVHlQRFM1dnV0eHBRMHE3SHh4cXI2LWJPOURqT2pXelhTQ242TjNreEc5cUx2QlNGYVJTYlltRmxkQzFQQ0t2SVY?oc=5",
+      "title": "Recapiti - Outpump",
+      "excerpt": "Recapiti Outpump",
+      "author": "",
+      "category": "Streetwear",
+      "source": "outpump.com",
+      "date": "2026-11-06T05:05:51+00:00",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBLMjhscDlXNy1iaGhEOVo1b2tpck92WTQzTTYwVHlQRFM1dnV0eHBRMHE3SHh4cXI2LWJPOURqT2pXelhTQ242TjNreEc5cUx2QlNGYVJTYlltRmxkQzFQQ0t2SVY?oc=5",
+      "image": "",
+      "image_verified": false,
+      "language": "it"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOcTlPWXduWmI5U3dxQkZSX3lENXdsLWcxZUZGWkpSRy1MUFlpRnIxUzhSRGxySjFhRTJ6RWQyaHBvNVNCZmtsb3E4N1ZJYzhlOFR4TkhnLW4xVlJRSVJIdzNKWUo2TnJjVjVpczE5OEJnY3pQbkJFWGgtczRUSGxoNg?oc=5",
+      "title": "Geolier firma una versione speciale del Timberland 6-Inch Boot - Outpump",
+      "excerpt": "Geolier firma una versione speciale del Timberland 6-Inch Boot Outpump",
+      "author": "",
+      "category": "Streetwear",
+      "source": "outpump.com",
+      "date": "2026-11-04T08:00:00+00:00",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOcTlPWXduWmI5U3dxQkZSX3lENXdsLWcxZUZGWkpSRy1MUFlpRnIxUzhSRGxySjFhRTJ6RWQyaHBvNVNCZmtsb3E4N1ZJYzhlOFR4TkhnLW4xVlJRSVJIdzNKWUo2TnJjVjVpczE5OEJnY3pQbkJFWGgtczRUSGxoNg?oc=5",
+      "image": "",
+      "image_verified": false,
+      "language": "it"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBrTXlrTHA4b2ZQNTYzVnhvY09FSklQWFZNMjZsazkyenVRLUNBbExkVmNaR3hFb2NCYjczQThHR0FzcVh5Y09CTFEzdkkzbHQ3OFBqTzlaRVJ3SUpJamN0Z1IxcXd0dEYxaHdUVnZqcWQtX1E?oc=5",
+      "title": "Fashion Graduate Italia ci ha mostrato la moda del domani - Outpump",
+      "excerpt": "Fashion Graduate Italia ci ha mostrato la moda del domani Outpump",
+      "author": "",
+      "category": "Art & Culture",
+      "source": "outpump.com",
+      "date": "2026-11-02T15:35:17+00:00",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBrTXlrTHA4b2ZQNTYzVnhvY09FSklQWFZNMjZsazkyenVRLUNBbExkVmNaR3hFb2NCYjczQThHR0FzcVh5Y09CTFEzdkkzbHQ3OFBqTzlaRVJ3SUpJamN0Z1IxcXd0dEYxaHdUVnZqcWQtX1E?oc=5",
+      "image": "",
+      "image_verified": false,
+      "language": "it"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOU3Q5YmNfLXFzUmZTNkVLOVJScVI5cXp2YkV0Q29nSEhaY3JKWDVRbTM0SUFJcjJSM00wc3k2amV6QjNIZmxyR1pPNExEdHlrY1dPeV95c3RMZGtOam5qOUE4d3VJblJHMGJtRXZpQUNla2J2RmkxWVVFcWcwY1czX2Q4aG4?oc=5",
+      "title": "A Milano nasce Spazio Cinna, un nuovo luogo dedicato alla creatività - Outpump",
+      "excerpt": "A Milano nasce Spazio Cinna, un nuovo luogo dedicato alla creatività Outpump",
+      "author": "",
+      "category": "Streetwear",
+      "source": "outpump.com",
+      "date": "2026-11-01T13:04:35+00:00",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOU3Q5YmNfLXFzUmZTNkVLOVJScVI5cXp2YkV0Q29nSEhaY3JKWDVRbTM0SUFJcjJSM00wc3k2amV6QjNIZmxyR1pPNExEdHlrY1dPeV95c3RMZGtOam5qOUE4d3VJblJHMGJtRXZpQUNla2J2RmkxWVVFcWcwY1czX2Q4aG4?oc=5",
+      "image": "",
+      "image_verified": false,
+      "language": "it"
+    },
+    {
       "id": "https://www.sneakersmagazine.it/2026/10/29/expo-riva-schuh-e-gardabags-il-mercato-di-calzature-e-borse-cambia-volto/",
       "title": "Expo Riva Schuh e Gardabags: il mercato di calzature e borse cambia volto",
       "excerpt": "La produzione mondiale di calzature si mantiene stabile a 24,6 miliardi di paia, mentre il prezzo medio delle esportazioni italiane di calzature in pelle supera i 100 dollari per paio. Intanto, la Cambogia supera la Cina nelle esportazioni verso gli Stati Uniti. Il mercato internazionale delle calzature e delle borse sta attraversando una fase di trasformazione, caratterizzata da nuovi equilibri produttivi, un aumento dei prezzi e una crescente polarizzazione del settore. A delineare questo scenario sono i dati relativi alla produzione globale e ai flussi commerciali, che evidenziano cambiamenti significativi nelle dinamiche dell’industria. La produzione mondiale di calzature rimane sostanzialmente stabile, attestandosi a 24,6 miliardi di paia. Parallelamente, il prezzo medio delle esportazioni italiane di calzature in pelle supera la soglia dei 100 dollari per paio, confermando il peso del valore aggiunto e del posizionamento qualitativo nel comparto. Sul fronte internazionale, emerge anche il cambiamento degli equilibri produttivi: la Cambogia ha superato la Cina nelle esportazioni di calzature verso gli Stati Uniti, segnalando una progressiva evoluzione delle strategie di approvvigionamento e delle catene globali di fornitura. In un contesto sempre più complesso, comprendere queste dinamiche diventa fondamentale per le aziende che operano nel settore. Expo Riva Schuh e Gardabags si confermano piattaforme di riferimento per interpretare i cambiamenti dei mercati internazionali, individuare nuove opportunità commerciali e anticipare le tendenze che influenzeranno il futuro dell’industria. I dati offrono quindi una chiave di lettura importante per comprendere un mercato in cui la competizione non si gioca soltanto sui volumi, ma sempre più sulla capacità di adattarsi ai cambiamenti, valorizzare il prodotto e intercettare le nuove esigenze della distribuzione. L'articolo Expo Riva Schuh e Gardabags: il mercato di calzature e borse cambia volto proviene da Sneakers Magazine .",
@@ -1638,6 +1851,32 @@
       "image_width": 1024,
       "image_height": 1024,
       "image_format": "jpeg"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5vdnNHcktyN1I3N1ppLVZiX3o0SEFmcjlHSFFfU1RSaVdFY1hUR29LcDVEaDlnQS0tbmtfZFVZZV9UNGhPYkQtaWxMVDZMYmRaUjRDOExCeDBpLW1RaUl1OVV6Q0hBM242bHlIM2V4OA?oc=5",
+      "title": "Miu Miu racconta le festività con una nuova campagna - Outpump",
+      "excerpt": "Miu Miu racconta le festività con una nuova campagna Outpump",
+      "author": "",
+      "category": "Streetwear",
+      "source": "outpump.com",
+      "date": "2026-10-26T07:00:00+00:00",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5vdnNHcktyN1I3N1ppLVZiX3o0SEFmcjlHSFFfU1RSaVdFY1hUR29LcDVEaDlnQS0tbmtfZFVZZV9UNGhPYkQtaWxMVDZMYmRaUjRDOExCeDBpLW1RaUl1OVV6Q0hBM242bHlIM2V4OA?oc=5",
+      "image": "",
+      "image_verified": false,
+      "language": "it"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5Xc244ZU52R2RwZ2ZMWktJVkhmMk1MYTRIUXdFMi1SSXlEdkIxeFpYbS1nYmlwVnZzdFlEd3VKMUQybUhMc1lUTk9HYnZDVXB5ZFA5R3hTZUo4UHk0VGZJdl9LalhQR0k?oc=5",
+      "title": "Bottega Veneta avrà il suo francobollo - Outpump",
+      "excerpt": "Bottega Veneta avrà il suo francobollo Outpump",
+      "author": "",
+      "category": "Streetwear",
+      "source": "outpump.com",
+      "date": "2026-10-26T07:00:00+00:00",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5Xc244ZU52R2RwZ2ZMWktJVkhmMk1MYTRIUXdFMi1SSXlEdkIxeFpYbS1nYmlwVnZzdFlEd3VKMUQybUhMc1lUTk9HYnZDVXB5ZFA5R3hTZUo4UHk0VGZJdl9LalhQR0k?oc=5",
+      "image": "",
+      "image_verified": false,
+      "language": "it"
     },
     {
       "id": "https://www.sneakersmagazine.it/2026/10/16/saucony-x-highsnobiety-performance-e-lifestyle-si-incontrano-in-una-nuova-collaborazione/",
