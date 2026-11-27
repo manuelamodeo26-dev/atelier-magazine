@@ -1,8 +1,8 @@
 {
   "editorial_rebuild_version": "2026-11-12-atelier-editorial-v2",
-  "editorial_api_retry_after": "2026-11-26T19:33:55.473885+00:00",
+  "editorial_api_retry_after": "2026-11-27T13:30:51.285627+00:00",
   "archive_status": "active",
-  "updated_at": "2026-11-26T19:11:18.880999+00:00",
+  "updated_at": "2026-11-27T01:30:53.556215+00:00",
   "feeds_ok": 7,
   "feeds_total": 7,
   "feed_status": [
@@ -52,9 +52,75 @@
   "language": "it",
   "image_verification": {
     "method": "HTTP, MIME, formato reale e risoluzione minima 1000x500",
-    "verified_count": 160
+    "verified_count": 162
   },
   "articles": [
+    {
+      "id": "https://www.finestresullarte.info/mercato/presepe-corallo-piatto-napoleone-tavolo-zeri-genova-asta-wannenes",
+      "title": "Un presepe di corallo, un piatto di Napoleone e il tavolo di Zeri: a Genova l'asta Wannenes",
+      "excerpt": "Il 1° dicembre 2026 Villa Carrega Cataldi a Genova ospita la vendita di Wannenes dedicata ad arredi, sculture e oggetti d’arte: dal tavolo di Federico Zeri al piatto del Service particulier di Napoleone, dalle commode di Criaerd e Maggiolini ai marmi romani notificati.",
+      "author": "Redazione",
+      "category": "Business",
+      "source": "finestresullarte.info",
+      "date": "2026-11-26T23:59:43+00:00",
+      "url": "https://www.finestresullarte.info/mercato/presepe-corallo-piatto-napoleone-tavolo-zeri-genova-asta-wannenes",
+      "image": "https://www.finestresullarte.info/rivista/immagini/2026/fn/piatto-service-particulier-de-l-empereur-cover.jpg",
+      "image_verified": true,
+      "language": "it",
+      "editorial_attempted_at": "2026-11-27T01:30:51.285627+00:00",
+      "editorial_retry_after": "2026-11-27T13:30:51.285627+00:00",
+      "image_width": 1200,
+      "image_height": 616,
+      "image_format": "jpeg"
+    },
+    {
+      "id": "https://www.vogue.it/article/skincare-coreana-black-friday-2026-migliori-prodotti-k-beauty",
+      "title": "Skincare coreana al Black Friday 2026: i 10 migliori prodotti scontati da non perdere per chi ama la K-beauty (o la vuole provare)",
+      "excerpt": "Una crema viso e una per il contorno occhi, un balsamo rimpolpante e uno stick dagli effetti quasi miracolosi: questa shopping list a tema Black Friday raccoglie tutto ciò che potresti desiderare per la tua pelle",
+      "author": "Beatrice Zocchi",
+      "category": "Fashion",
+      "source": "vogue.it",
+      "date": "2026-11-26T22:11:27+00:00",
+      "url": "https://www.vogue.it/article/skincare-coreana-black-friday-2026-migliori-prodotti-k-beauty",
+      "image": "https://compass-media.vogue.it/photos/6b02b652c7d09b4c1987b1b9/16:9/w_1280,c_limit/prodotti%20coreani%20black%20friday%202026%20.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.vogue.it/article/siero-esosomi-viso-the-inkey-list-black-friday-2026",
+      "title": "Il siero agli esosomi The Inkey List che aumenta la produzione di collagene del 300%, solo ora scontato su Amazon al Black Friday 2026",
+      "excerpt": "Idrata e illumina la pelle. Scopri come usare il siero viso agli esosomi di The Inkey List, in sconto al Black Friday 2026, per ringiovanire in 14 giorni",
+      "author": "Laura Sandroni",
+      "category": "Lifestyle",
+      "source": "vogue.it",
+      "date": "2026-11-26T21:18:13+00:00",
+      "url": "https://www.vogue.it/article/siero-esosomi-viso-the-inkey-list-black-friday-2026",
+      "image": "https://compass-media.vogue.it/photos/69b8193c26467c7e8b22b425/16:9/w_1280,c_limit/Siero%20viso.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_format": "webp"
+    },
+    {
+      "id": "https://www.exibart.com/mostre/la-pittura-di-domenico-ruccia-e-la-bianca-esperienza-indicibile/",
+      "title": "La pittura di Domenico Ruccia rappresenta la bianca esperienza dell’indicibile",
+      "excerpt": "La mostra di Domenico Ruccia La sera non finisce mai uguale è visibile alla Galleria Alessandro Albanese di Milano su appuntamento. Ciò che mi colpisce di più è la sintesi che in questi anni l’artista, nato nel 1986 a Bari, ha fatto nel suo lavoro. Ricordiamo le sue icone pop, come ricordiamo la serie – bellissima – Paolo Uccello’s Outtakes , in cui si ipotizza un immaginifico Paolo Uccello alle prese con un possibile e una possibilità. La serie che ci troviamo davanti, Feral, è come se fosse l’unione di queste due serie, non tanto per la continuità strutturale delle opere ma per aver unito opere immaginifiche a una pittura che tende al bianco come nelle icone pop. Le serie si mischiano, maturano in Ruccia, esplodono in opere solo all’apparenza simili alla ricerca su Uccello. The good nanna, 2026, olio e pastelli su lino, 130×185 cm È il bianco a fare la differenza. Quel bianco ripetuto in pennellate non gestuali ma composite, raffinate, depensate in un pensamento di sé: dimenticate, insomma. Un automatismo ormai fattosi corpo, tratto. Si va oltre l’immaginario, oltre la storia, oltre il riconoscibile. Siamo in un campo nuovo, inesplorato. L’artista è come se ci chiedesse di mettere un bagaglio culturale da parte per addentrarci nei boschi, nudi di anima, nudi nell’idea. L’attraversamento è principio primo, nell’azione di Ruccia dell’assemblare insieme periodi diversi, nel fruitore che si spoglia per fare un’esperienza nuova, a mio avviso fatta di silenzio, in cui forse risuona soltanto Aion dei Dead Can Dance, o forse Rakim . Quelle di Ruccia sono opere raffinate, di memoria sgretolata, di immersione e di sensibilità. Non è una pittura per tutti: attenzione, non è una pittura per i colti – non voglio certo dire questo – ma una pittura per un certo tipo di sensibilità, che sa guardare quel bianco come all’etereo, all’indicibile in cui siamo noi a mettere quella parol dove si deve, dove si può. L’annuncio (last night you promised the sun would rise), 2026, olio e pastelli su lino, 130×185 cm Le figure si presentano quindi come icone pop all’interno della storicità: gli diamo in nome, un volo, seppur evanescente. Mi colpiscono gli angeli, mi colpiscono gli sfondi ",
+      "author": "Marta Acciaro",
+      "category": "Art & Culture",
+      "source": "exibart.com",
+      "date": "2026-11-26T20:00:11+00:00",
+      "url": "https://www.exibart.com/mostre/la-pittura-di-domenico-ruccia-e-la-bianca-esperienza-indicibile/",
+      "image": "https://www.exibart.com/repository/media/2026/11/The-good-nanna-2026-olio-e-pastelli-su-lino-130%C3%97185-cm.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 8256,
+      "image_height": 6192,
+      "image_format": "jpeg"
+    },
     {
       "id": "https://www.exibart.com/danza/preghiera-di-virgilio-sieni-la-danza-di-fronte-allorrore-della-guerra/",
       "title": "Preghiera di Virgilio Sieni, la danza di fronte all’orrore della guerra",
@@ -394,12 +460,12 @@
       "source": "exibart.com",
       "date": "2026-11-26T15:00:52+00:00",
       "url": "https://www.exibart.com/design/caccia-al-vintage-gli-appuntamenti-da-segnare-in-agenda-per-il-28-e-29-novembre/",
-      "image": "",
-      "image_verified": false,
+      "image": "https://www.exibart.com/repository/media/2026/11/vintage.jpg",
+      "image_verified": true,
       "language": "it",
-      "image_width": 0,
-      "image_height": 0,
-      "image_format": ""
+      "image_width": 4592,
+      "image_height": 3448,
+      "image_format": "jpeg"
     },
     {
       "id": "https://www.vogue.it/article/crema-viso-antirughe-black-friday-2026",
@@ -724,6 +790,22 @@
       "image_format": "jpeg"
     },
     {
+      "id": "https://www.exibart.com/arte-contemporanea/biennale-arte-2028-hoor-al-qasimi-e-la-nuova-curatrice-della-62a-edizione/",
+      "title": "Biennale Arte 2028: Hoor Al Qasimi è stata nominata curatrice della 62ª edizione",
+      "excerpt": "La fondatrice della Sharjah Art Foundation è stata nominata Direttrice del Settore Arti Visive dalla Biennale di Venezia , con l’incarico di curare la 62ª Esposizione Internazionale d’Arte. Hoor Al Qasimi alla guida della Biennale Arte 2028 Sarà Hoor Al Qasimi a curare la 62ª Esposizione Internazionale d’Arte della Biennale di Venezia , in programma dall’8 aprile al 26 novembre 2028, con pre-apertura dal 5 al 7 aprile. La nomina è stata deliberata dal Consiglio di Amministrazione della Fondazione il 20 novembre, su proposta del presidente Pietrangelo Buttafuoco , che ha affidato alla curatrice anche la direzione del Settore Arti Visive. Una scelta che porta a Venezia una figura da tempo attiva nella costruzione di reti culturali internazionali, soprattutto attraverso il lavoro svolto negli Emirati Arabi Uniti. «La Biennale di Venezia è un luogo in cui il mondo si salda all’arte con le sue molteplici visioni. Hoor Al Qasimi ha saputo costruire, nel corso del suo percorso, il caravanserraglio delle geografie e dell’Universale, restituendo voce a storie e sensibilità affinate nella ricerca e nell’inattese. Nel suo lavoro convivono una profonda attenzione alla memoria del profondo e alle sue eredità, uno sguardo aperto sui viluppi del presente e una rara capacità di ascolto dei luoghi e delle genti. Vi riconosco anche una qualità di misura e di compostezza, ovvero la vibrante presenza di mīzān (armonia interiore) che trova nella relazione la propria forza. Sono qualità che sentiamo particolarmente vicine alla vocazione della Biennale. Le affidiamo la 62. Esposizione Internazionale d’Arte con grande fiducia e con la curiosità di scoprire il tesoro di viva conoscenza che saprà portare a Venezia», ha dichiarato il Presidente della Biennale. Dalla Sharjah Biennial alla fondazione di un’istituzione internazionale Curatrice emiratina, Hoor Al Qasimi è Presidentessa e Direttrice della Sharjah Art Foundation, istituzione pubblica indipendente che ha fondato nel 2009 con l’obiettivo di promuovere l’arte contemporanea e lo scambio culturale a Sharjah, negli Emirati Arabi Uniti, e a livello internazionale. Il suo rapporto con la scena artistica della regione risale però a qual",
+      "author": "redazione",
+      "category": "Art & Culture",
+      "source": "exibart.com",
+      "date": "2026-11-26T10:44:09+00:00",
+      "url": "https://www.exibart.com/arte-contemporanea/biennale-arte-2028-hoor-al-qasimi-e-la-nuova-curatrice-della-62a-edizione/",
+      "image": "https://www.exibart.com/repository/media/2026/11/1-Hoor-Al-Qasimi-683x1024.jpg",
+      "image_verified": true,
+      "language": "it",
+      "image_width": 683,
+      "image_height": 1024,
+      "image_format": "jpeg"
+    },
+    {
       "id": "https://news.google.com/rss/articles/CBMia0FVX3lxTE94ckZ1ZkZKVUxFdzF2aFVfcm85YkFZVnJXV05ueF9RMzdUOU9vR2RVdmxXSVZodm5vVDRzX1VvNGFqUy1oTUtLdU9MbEpmRGJLcFRVQm5FZEhianJZeExYR0xUQlp1U2xPRXNJ?oc=5",
       "title": "Finalmente JW Anderson ha le sue sneakers - Outpump",
       "excerpt": "Finalmente JW Anderson ha le sue sneakers Outpump",
@@ -995,8 +1077,8 @@
       "image": "",
       "image_verified": false,
       "language": "it",
-      "image_attempted_at": "2026-11-26T07:33:50.961076+00:00",
-      "image_retry_after": "2026-11-26T19:33:50.961076+00:00",
+      "image_attempted_at": "2026-11-27T01:30:43.310903+00:00",
+      "image_retry_after": "2026-11-27T13:30:43.310903+00:00",
       "image_width": 0,
       "image_height": 0,
       "image_format": ""
@@ -1317,8 +1399,8 @@
       "image": "",
       "image_verified": false,
       "language": "it",
-      "image_attempted_at": "2026-11-26T07:33:50.961076+00:00",
-      "image_retry_after": "2026-11-26T19:33:50.961076+00:00",
+      "image_attempted_at": "2026-11-27T01:30:43.310903+00:00",
+      "image_retry_after": "2026-11-27T13:30:43.310903+00:00",
       "image_width": 0,
       "image_height": 0,
       "image_format": ""
@@ -1769,8 +1851,8 @@
       "image": "",
       "image_verified": false,
       "language": "it",
-      "image_attempted_at": "2026-11-26T07:33:50.961076+00:00",
-      "image_retry_after": "2026-11-26T19:33:50.961076+00:00",
+      "image_attempted_at": "2026-11-27T01:30:43.310903+00:00",
+      "image_retry_after": "2026-11-27T13:30:43.310903+00:00",
       "image_width": 0,
       "image_height": 0,
       "image_format": ""
@@ -1867,8 +1949,8 @@
       "image": "",
       "image_verified": false,
       "language": "it",
-      "image_attempted_at": "2026-11-26T01:28:21.114889+00:00",
-      "image_retry_after": "2026-11-26T13:28:21.114889+00:00",
+      "image_attempted_at": "2026-11-27T01:30:43.310903+00:00",
+      "image_retry_after": "2026-11-27T13:30:43.310903+00:00",
       "image_width": 0,
       "image_height": 0,
       "image_format": ""
@@ -1888,8 +1970,8 @@
       "image_width": 0,
       "image_height": 0,
       "image_format": "",
-      "image_attempted_at": "2026-11-26T01:28:21.114889+00:00",
-      "image_retry_after": "2026-11-26T13:28:21.114889+00:00"
+      "image_attempted_at": "2026-11-27T01:30:43.310903+00:00",
+      "image_retry_after": "2026-11-27T13:30:43.310903+00:00"
     },
     {
       "id": "https://www.vogue.it/article/maschere-led-viso-black-friday-2026",
@@ -1935,8 +2017,8 @@
       "image": "",
       "image_verified": false,
       "language": "it",
-      "image_attempted_at": "2026-11-26T01:28:21.114889+00:00",
-      "image_retry_after": "2026-11-26T13:28:21.114889+00:00",
+      "image_attempted_at": "2026-11-27T01:30:43.310903+00:00",
+      "image_retry_after": "2026-11-27T13:30:43.310903+00:00",
       "image_width": 0,
       "image_height": 0,
       "image_format": ""
@@ -2163,8 +2245,8 @@
       "image": "",
       "image_verified": false,
       "language": "it",
-      "image_attempted_at": "2026-11-26T01:28:21.114889+00:00",
-      "image_retry_after": "2026-11-26T13:28:21.114889+00:00",
+      "image_attempted_at": "2026-11-27T01:30:43.310903+00:00",
+      "image_retry_after": "2026-11-27T13:30:43.310903+00:00",
       "image_width": 0,
       "image_height": 0,
       "image_format": ""
@@ -2293,8 +2375,8 @@
       "image": "",
       "image_verified": false,
       "language": "it",
-      "image_attempted_at": "2026-11-26T01:28:21.114889+00:00",
-      "image_retry_after": "2026-11-26T13:28:21.114889+00:00",
+      "image_attempted_at": "2026-11-27T01:30:43.310903+00:00",
+      "image_retry_after": "2026-11-27T13:30:43.310903+00:00",
       "image_width": 0,
       "image_height": 0,
       "image_format": ""
@@ -2391,8 +2473,8 @@
       "image": "",
       "image_verified": false,
       "language": "it",
-      "image_attempted_at": "2026-11-26T01:28:21.114889+00:00",
-      "image_retry_after": "2026-11-26T13:28:21.114889+00:00",
+      "image_attempted_at": "2026-11-27T01:30:43.310903+00:00",
+      "image_retry_after": "2026-11-27T13:30:43.310903+00:00",
       "image_width": 0,
       "image_height": 0,
       "image_format": ""
@@ -2540,8 +2622,8 @@
       "image_width": 0,
       "image_height": 0,
       "image_format": "",
-      "image_attempted_at": "2026-11-26T01:28:21.114889+00:00",
-      "image_retry_after": "2026-11-26T13:28:21.114889+00:00"
+      "image_attempted_at": "2026-11-27T01:30:43.310903+00:00",
+      "image_retry_after": "2026-11-27T13:30:43.310903+00:00"
     },
     {
       "id": "https://www.vogue.it/article/migliori-acconciature-da-sposa-per-capelli-lunghi",
@@ -2715,8 +2797,8 @@
       "image": "",
       "image_verified": false,
       "language": "it",
-      "image_attempted_at": "2026-11-26T01:28:21.114889+00:00",
-      "image_retry_after": "2026-11-26T13:28:21.114889+00:00",
+      "image_attempted_at": "2026-11-27T01:30:43.310903+00:00",
+      "image_retry_after": "2026-11-27T13:30:43.310903+00:00",
       "image_width": 0,
       "image_height": 0,
       "image_format": ""
@@ -2896,88 +2978,6 @@
       "image_width": 1500,
       "image_height": 855,
       "image_format": "png"
-    },
-    {
-      "id": "https://www.vogue.it/article/otb-foundation-venti-anni-renzo-rosso-arianna-alessi-raccontano-storia-fondazione",
-      "title": "OTB Foundation, vent'anni di “brave actions”: Renzo Rosso e Arianna Alessi raccontano la loro idea di filantropia che inizia dall'emergenza e continua anche «quando i riflettori si spengono»",
-      "excerpt": "Era il 2006 quando Renzo Rosso parlava di filantropia con il Dalai Lama a bordo di un aereo. Da allora, OTB Foundation ha preso la forma di progetti, persone e storie, dall’Afghanistan alle nuove generazioni.",
-      "author": "Vittoria Fassola",
-      "category": "Fashion",
-      "source": "vogue.it",
-      "date": "2026-11-24T09:12:46+00:00",
-      "url": "https://www.vogue.it/article/otb-foundation-venti-anni-renzo-rosso-arianna-alessi-raccontano-storia-fondazione",
-      "image": "https://compass-media.vogue.it/photos/6aff0344768c21f49d060fcd/16:9/w_1280,c_limit/249d09c5-1244-44e6-be7c-63c875c3825d.JPG",
-      "image_verified": true,
-      "language": "it",
-      "image_width": 1280,
-      "image_height": 720,
-      "image_format": "webp"
-    },
-    {
-      "id": "https://www.exibart.com/arte-contemporanea/a-napoli-quattro-anni-di-casa-di-marino-come-cambia-il-ruolo-della-galleria/",
-      "title": "A Napoli, quattro anni di Casa Di Marino: come cambia il ruolo della galleria",
-      "excerpt": "La galleria sembra rimanere uno dei punti privilegiati da cui osservare le trasformazioni dell’arte. Non soltanto perché, nonostante tutto, continua a essere uno dei luoghi più specializzati in cui le opere vengono allestite, mostrate, vendute e diffuse – dunque messe in relazione – ma anche perché il suo stesso modello è sottoposto a una revisione forse non veloce ma continua, perseverante, in una crescente ricerca di esperienze più dirette e meno standardizzate, tra fiere, piattaforme digitali ma anche localizzate e territoriali, nuovi formati espositivi, collaborazioni, opportunità. Quattro anni fa Umberto Di Marino ha spostato la propria galleria napoletana da via Alabardieri a via Monte di Dio, costruendo uno spazio dalla natura volutamente ambigua. Da una parte le sale più vicine alla tradizione del white cube, dall’altra Casa Di Marino , dove opere, oggetti personali e vita quotidiana convivono nello stesso ambiente. Una configurazione che recupera una dimensione domestica presente fin dalle origini della galleria e diventata sempre più centrale nel progetto. Casa Di Marino, veduta degli ambienti domestici, Napoli, ph. Danilo Donzelli Il pretesto per questa conversazione è allora proprio quello di tirare le somme di questo esperimento: capire cosa succede quando l’organizzazione dell’arte entra in quella di una casa, come cambia il comportamento di chi produce e di chi guarda, quale posizionamento può ricoprire, in un sistema sempre più gassoso, uno spazio fisico e identificato e quali responsabilità appartengono ancora alla gestione progettuale della galleria. Ne parliamo con Umberto Di Marino, partendo da Napoli e allargando il discorso al modo in cui stanno cambiando le forme, i tempi e i luoghi dell’arte contemporanea. Casa Di Marino, veduta degli ambienti domestici, Napoli, ph. Danilo Donzelli Negli ultimi anni, dal passaggio da via Alabardieri a via Monte di Dio, la galleria sembra essersi sdoppiata in diverse identità che, in certi casi, sfumano l’una nell’altra: da una parte la “Galleria Umberto Di Marino”, con le sale più vicine al modello del white cube; dall’altra “Casa Di Marino”, dove lo spazio domestico e gli interessi privati – gli arredi, ",
-      "author": "Mario Francesco Simeone",
-      "category": "Art & Culture",
-      "source": "exibart.com",
-      "date": "2026-11-24T09:00:30+00:00",
-      "url": "https://www.exibart.com/arte-contemporanea/a-napoli-quattro-anni-di-casa-di-marino-come-cambia-il-ruolo-della-galleria/",
-      "image": "https://www.exibart.com/repository/media/2026/11/30_8B3A4361_%C2%A9-Danilo-Donzelli-Photography.jpg",
-      "image_verified": true,
-      "language": "it",
-      "image_width": 6720,
-      "image_height": 4480,
-      "image_format": "jpeg"
-    },
-    {
-      "id": "https://www.exibart.com/arte-contemporanea/con-il-suo-nuovo-spazio-a-torino-riccardo-costantini-ribalta-le-cronologie-dellarte/",
-      "title": "Con il suo nuovo spazio a Torino Riccardo Costantini ribalta le cronologie dell’arte",
-      "excerpt": "Seconda Soluzione è il nuovo spazio curato da Riccardo Costantini , recentemente inaugurato a Torino . Il nuovo progetto culturale è stato pensato e voluto dal gallerista che, in collaborazione con due amici, già suoi collezionisti, ha scelto di esplorare una nuova concezione della storia dell’arte, vista e attraversata come un territorio aperto, capace di generare dialoghi e linguaggi diversi superando quei limiti formali imposti da una linea temporale inibente. Un nuovo spazio per rileggere la storia dell’arte Nella sede di via Luigi Mercantini 5, è stata presentata al pubblico nei giorni immediatamente precedenti l’Art Week, Turning Time Around , la prima mostra collettiva che guarda al passato superando il confronto cronologico con il presente. Il titolo, scelto da Costantini che firma anche il testo critico, è preso in prestito da una traccia dell’album Ecstasy di Lou Reed e suggerisce quello che è il nucleo fondativo del percorso: cambiare direzione. Protagonisti della ricerca artistica sono gli artisti italiani della seconda metà Novecento in dialogo con alcuni esponenti delle generazioni successive, un confronto che supera la tradizionale impostazione che ravvisa l’arte storicizzata distinta da quella contemporanea. Turning Time Around, Seconda soluzione, veduta della mostra, Torino, 2026, ph. Isabella Castellano La necessità di generare nuove interpretazioni non implica snaturare la storia dell’arte, ma piuttosto creare un confronto tra i diversi linguaggi, riflettere sulle opere conosciute e constatare in che modo possano trasformarsi all’interno di nuove relazioni. Con Turning Time Around , Seconda Soluzione presenta dunque una prima dichiarazione d’intenti: considerare la storia dell’arte non come un insieme di esperienze concluse e ordinate, ma come un campo di possibilità da esplorare. Il tempo resta una coordinata documentata e ineludibile, ma lo sguardo di chi osserva, il contesto in cui vengono presentate e le narrazioni che possono originare, cambiano la percezione spazio-temporale e rimettono in gioco relazioni linguistiche e concettuali fuori dal canone prescritto. Girare intorno al tempo equivale a cambiare prospettiva, significa provare a r",
-      "author": "Simonetta Pavanello",
-      "category": "Art & Culture",
-      "source": "exibart.com",
-      "date": "2026-11-24T08:00:42+00:00",
-      "url": "https://www.exibart.com/arte-contemporanea/con-il-suo-nuovo-spazio-a-torino-riccardo-costantini-ribalta-le-cronologie-dellarte/",
-      "image": "https://www.exibart.com/repository/media/2026/11/IMG_8250-e1795191244100.jpg",
-      "image_verified": true,
-      "language": "it",
-      "image_width": 3024,
-      "image_height": 4032,
-      "image_format": "jpeg"
-    },
-    {
-      "id": "https://www.pambianconews.com/2026/11/24/dalla-piattaforma-alloperating-model-come-esw-e-shopify-cambiano-il-modo-di-crescere-allestero-499853/",
-      "title": "Dalla piattaforma all’operating model: come ESW e Shopify cambiano il modo di crescere all’estero",
-      "excerpt": "Per i brand della moda, del lusso e del lifestyle, crescere all’estero non significa più soltanto aprire un nuovo storefront. La vera sfida è far funzionare ogni mercato con la stessa qualità e lo stesso controllo del mercato domestico, mentre crescono le variabili da gestire: obblighi fiscali e doganali, pagamenti locali, frodi, logistica, consegne, resi e assistenza clienti. Il rischio è frammentare l’infrastruttura e perdere il controllo dell’esperienza d’acquisto. È in questo spazio che si inserisce la collaborazione tra ESW , specialista dell’ecommerce internazionale, e Shopify , la principale piattaforma per il commercio globale diffusa in oltre 175 Paesi nel mondo. Shopify resta il cuore della piattaforma commerce: offre una piattaforma di unified commerce che permette ai merchant di gestire e sviluppare la propria attività commerciale, attraverso un ecosistema integrato di strumenti e funzionalità. La piattaforma può inoltre essere integrata con le soluzioni di partner specializzati, che mettono a disposizione competenze e servizi complementari in risposta alle esigenze specifiche delle aziende. In questo contesto, ESW è il partner dell’ecosistema Shopify specializzato nell’ecommerce cross-border, che consente ai brand di rafforzare e consolidare la propria infrastruttura Shopify in una piattaforma per la crescita internazionale. ESW integra e gestisce le capability necessarie per vendere efficacemente nei mercati globali: localizzazione dell’esperienza d’acquisto, pagamenti internazionali, Merchant of Record, dazi e imposte, compliance, prevenzione delle frodi, logistica, resi e customer service. In questo modo, i brand possono sfruttare appieno la flessibilità di Shopify e affidare a ESW la complessità operativa del cross-border, mantenendo il controllo sulla propria identità e customer experience. Una proposta di valore pensata per l’enterprise. L’unione tra Shopify ed ESW non offre soltanto strumenti tecnologici, ma una soluzione enterprise end-to-end e un approccio operativo capace di sostenere volumi elevati, organizzazioni multi-brand, rollout multi-country e requisiti complessi di governance, controllo e performance. La logica è quella di far lev",
-      "author": "PambiancoNews",
-      "category": "Business",
-      "source": "pambianconews.com",
-      "date": "2026-11-24T08:00:38+00:00",
-      "url": "https://www.pambianconews.com/2026/11/24/dalla-piattaforma-alloperating-model-come-esw-e-shopify-cambiano-il-modo-di-crescere-allestero-499853/",
-      "image": "https://www.pambianconews.com/wp-content/uploads/2026/11/Shopify-Pambianco-image_v2.png",
-      "image_verified": true,
-      "language": "it",
-      "image_width": 1500,
-      "image_height": 700,
-      "image_format": "png"
-    },
-    {
-      "id": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQMHlhS3FkWkJNVVZ6LWVVRUR3TFNjRUtJQTBCQm5aaG1VNmFCazdLV293Q0dqWExaRGdhekkzVms3UWtYNEd4RDdFMWh6Z1pLRkRtWTlaWGtoOHBuM1lnZGdncGpXeS03ZWhVZnJKYjFSb3IzLVMxZ21ZdWl3emRHaXE2Q3hYeTRHQzFpc3NB?oc=5",
-      "title": "\"The Egg\", la nuova mostra di Scarlett Rouge da 10 Corso Como - Outpump",
-      "excerpt": "\"The Egg\", la nuova mostra di Scarlett Rouge da 10 Corso Como Outpump",
-      "author": "",
-      "category": "Art & Culture",
-      "source": "outpump.com",
-      "date": "2026-11-24T08:00:00+00:00",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQMHlhS3FkWkJNVVZ6LWVVRUR3TFNjRUtJQTBCQm5aaG1VNmFCazdLV293Q0dqWExaRGdhekkzVms3UWtYNEd4RDdFMWh6Z1pLRkRtWTlaWGtoOHBuM1lnZGdncGpXeS03ZWhVZnJKYjFSb3IzLVMxZ21ZdWl3emRHaXE2Q3hYeTRHQzFpc3NB?oc=5",
-      "image": "",
-      "image_verified": false,
-      "language": "it",
-      "image_attempted_at": "2026-11-26T01:28:21.114889+00:00",
-      "image_retry_after": "2026-11-26T13:28:21.114889+00:00",
-      "image_width": 0,
-      "image_height": 0,
-      "image_format": ""
     }
   ]
 }
